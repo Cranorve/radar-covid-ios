@@ -21,20 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEGAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cjg-pU-6HI">
-                                <rect key="frame" x="33" y="102" width="39" height="16"/>
-                                <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="12"/>
-                                <color key="textColor" red="0.5764058232" green="0.57650798560000005" blue="0.57639932630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Información legal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qok-ac-Npf">
-                                <rect key="frame" x="33" y="134" width="233" height="36"/>
+                                <rect key="frame" x="20" y="134" width="246" height="33"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="z7v-6D-imP">
-                                <rect key="frame" x="33" y="195" width="263" height="26"/>
+                                <rect key="frame" x="20" y="194" width="276" height="23.5"/>
                                 <string key="text">¡Bienvenido a Covid Monitor!
 </string>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
@@ -42,13 +36,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En Covid Monitor somos conscientes de la relevancia que tiene proteger la privacidad de tus datos personales" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BQP-bi-ONN">
-                                <rect key="frame" x="33" y="221" width="361" height="75.5"/>
+                                <rect key="frame" x="20" y="219" width="374" height="70"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por favor, acepta nuestra política antes de continuar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NxP-9R-dQy">
-                                <rect key="frame" x="33" y="332" width="361" height="50.5"/>
+                                <rect key="frame" x="20" y="324" width="374" height="47"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -84,7 +78,7 @@ mi consentimiento al tratamiento de mis datos personales</string>
                                 <rect key="frame" x="20" y="715" width="374" height="68"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recuerda que tienes que aceptar la política de privacidad para continuar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCg-yc-PiP">
-                                        <rect key="frame" x="71" y="17" width="281" height="33"/>
+                                        <rect key="frame" x="71" y="19.5" width="281" height="30.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -114,20 +108,26 @@ mi consentimiento al tratamiento de mis datos personales</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEGAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cjg-pU-6HI">
+                                <rect key="frame" x="20" y="99" width="38" height="14"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="12"/>
+                                <color key="textColor" red="0.5764058232" green="0.57650798560000005" blue="0.57639932630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.9804140925" green="0.97666078810000001" blue="0.96814030409999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qvQ-IX-8Bm" firstAttribute="leading" secondItem="nRw-aK-giZ" secondAttribute="trailing" constant="24" id="6vE-1Z-Po5"/>
                             <constraint firstItem="eob-KB-bI2" firstAttribute="trailing" secondItem="GDV-35-L2Q" secondAttribute="trailing" constant="20" id="7pO-Ew-pJx"/>
                             <constraint firstItem="TsE-yY-Id2" firstAttribute="top" secondItem="nRw-aK-giZ" secondAttribute="bottom" constant="54" id="87t-Pq-jt7"/>
-                            <constraint firstItem="BQP-bi-ONN" firstAttribute="top" secondItem="eob-KB-bI2" secondAttribute="top" constant="177" id="8cx-Hl-4Oa"/>
+                            <constraint firstItem="BQP-bi-ONN" firstAttribute="top" secondItem="eob-KB-bI2" secondAttribute="top" constant="175" id="8cx-Hl-4Oa"/>
                             <constraint firstItem="o8x-Gm-flA" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="CJn-1e-hRy"/>
                             <constraint firstItem="i7y-RN-bP7" firstAttribute="top" secondItem="nRw-aK-giZ" secondAttribute="bottom" constant="-10" id="D3d-1t-hfw"/>
                             <constraint firstItem="TsE-yY-Id2" firstAttribute="height" secondItem="BoD-dh-Smx" secondAttribute="height" multiplier="0.0758929" id="G0V-kt-jVE"/>
-                            <constraint firstItem="NxP-9R-dQy" firstAttribute="top" secondItem="eob-KB-bI2" secondAttribute="top" constant="288" id="IFF-72-7fK"/>
-                            <constraint firstItem="z7v-6D-imP" firstAttribute="top" secondItem="eob-KB-bI2" secondAttribute="top" constant="151" id="IPE-WI-qAM"/>
+                            <constraint firstItem="NxP-9R-dQy" firstAttribute="top" secondItem="eob-KB-bI2" secondAttribute="top" constant="280" id="IFF-72-7fK"/>
+                            <constraint firstItem="z7v-6D-imP" firstAttribute="top" secondItem="eob-KB-bI2" secondAttribute="top" constant="150" id="IPE-WI-qAM"/>
                             <constraint firstItem="i7y-RN-bP7" firstAttribute="leading" secondItem="nRw-aK-giZ" secondAttribute="trailing" constant="-10" id="JSt-EQ-Ijd"/>
-                            <constraint firstItem="z7v-6D-imP" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="33" id="JaX-pp-eXc"/>
+                            <constraint firstItem="z7v-6D-imP" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="JaX-pp-eXc"/>
                             <constraint firstAttribute="height" secondItem="o8x-Gm-flA" secondAttribute="height" multiplier="16" id="Mqm-IJ-sa2"/>
                             <constraint firstItem="TsE-yY-Id2" firstAttribute="top" secondItem="qvQ-IX-8Bm" secondAttribute="bottom" constant="8" id="R8e-zS-I6g"/>
                             <constraint firstItem="GDV-35-L2Q" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="Sxk-Cp-774"/>
@@ -136,18 +136,18 @@ mi consentimiento al tratamiento de mis datos personales</string>
                             <constraint firstItem="eob-KB-bI2" firstAttribute="trailing" secondItem="o8x-Gm-flA" secondAttribute="trailing" constant="20" id="W1e-rW-VSA"/>
                             <constraint firstItem="eob-KB-bI2" firstAttribute="trailing" secondItem="qvQ-IX-8Bm" secondAttribute="trailing" constant="20" id="bDA-7Z-wve"/>
                             <constraint firstItem="eob-KB-bI2" firstAttribute="bottom" secondItem="GDV-35-L2Q" secondAttribute="bottom" constant="15" id="bK2-IY-okT"/>
-                            <constraint firstItem="BQP-bi-ONN" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="33" id="cM9-hB-pZ5"/>
+                            <constraint firstItem="BQP-bi-ONN" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="cM9-hB-pZ5"/>
                             <constraint firstItem="TsE-yY-Id2" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="dNQ-mG-DAV"/>
                             <constraint firstItem="eob-KB-bI2" firstAttribute="trailing" secondItem="TsE-yY-Id2" secondAttribute="trailing" constant="20" id="dZe-mg-Dry"/>
-                            <constraint firstItem="qok-ac-Npf" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="33" id="e5x-g3-gCi"/>
+                            <constraint firstItem="qok-ac-Npf" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="e5x-g3-gCi"/>
                             <constraint firstItem="eob-KB-bI2" firstAttribute="trailing" secondItem="qok-ac-Npf" secondAttribute="trailing" constant="148" id="g6h-pj-zQM"/>
                             <constraint firstItem="qok-ac-Npf" firstAttribute="top" secondItem="eob-KB-bI2" secondAttribute="top" constant="90" id="hct-Il-twI"/>
-                            <constraint firstItem="NxP-9R-dQy" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="33" id="iOj-pL-P1g"/>
-                            <constraint firstItem="Cjg-pU-6HI" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="33" id="kym-o8-JZ7"/>
+                            <constraint firstItem="NxP-9R-dQy" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="iOj-pL-P1g"/>
+                            <constraint firstItem="Cjg-pU-6HI" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="l0u-LD-41N"/>
                             <constraint firstItem="qvQ-IX-8Bm" firstAttribute="top" secondItem="o8x-Gm-flA" secondAttribute="bottom" constant="37" id="nFw-aU-tyL"/>
                             <constraint firstItem="GDV-35-L2Q" firstAttribute="top" secondItem="TsE-yY-Id2" secondAttribute="bottom" constant="8" id="uew-Wj-HcM"/>
                             <constraint firstItem="nRw-aK-giZ" firstAttribute="top" secondItem="o8x-Gm-flA" secondAttribute="bottom" constant="37" id="vVt-oK-kiM"/>
-                            <constraint firstItem="Cjg-pU-6HI" firstAttribute="top" secondItem="eob-KB-bI2" secondAttribute="top" constant="58" id="w3z-2V-Zoj"/>
+                            <constraint firstItem="Cjg-pU-6HI" firstAttribute="top" secondItem="eob-KB-bI2" secondAttribute="top" constant="55" id="w3z-2V-Zoj"/>
                             <constraint firstItem="eob-KB-bI2" firstAttribute="trailing" secondItem="z7v-6D-imP" secondAttribute="trailing" constant="118" id="yB2-Dk-gv6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eob-KB-bI2"/>
@@ -155,7 +155,7 @@ mi consentimiento al tratamiento de mis datos personales</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsl-oB-D5A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="92.753623188405811" y="103.79464285714285"/>
+            <point key="canvasLocation" x="92" y="103.44827586206897"/>
         </scene>
     </scenes>
     <resources>

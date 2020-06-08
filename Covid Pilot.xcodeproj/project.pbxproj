@@ -23,6 +23,7 @@
 		6DF6ECAA248E7621007EAA40 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECA9248E7621007EAA40 /* AppRouter.swift */; };
 		6DF6ECAC248E79C1007EAA40 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECAB248E79C1007EAA40 /* Injection.swift */; };
 		6DF6ECB0248E88E6007EAA40 /* OnBoardingCompletedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECAF248E88E6007EAA40 /* OnBoardingCompletedUseCase.swift */; };
+		394E962F248E7F25009F640E /* MiSalud.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394E962E248E7F24009F640E /* MiSalud.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		6DF6ECA9248E7621007EAA40 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		6DF6ECAB248E79C1007EAA40 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		6DF6ECAF248E88E6007EAA40 /* OnBoardingCompletedUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCompletedUseCase.swift; sourceTree = "<group>"; };
+		394E962E248E7F24009F640E /* MiSalud.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MiSalud.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				6DF6EC97248E5987007EAA40 /* Terms */,
+				394E962D248E7DE3009F640E /* MiSalud */,
 				394E962A248E3EEB009F640E /* OnBoarding */,
 				394E9629248E3E93009F640E /* Splash */,
 			);
@@ -162,6 +165,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		394E962D248E7DE3009F640E /* MiSalud */ = {
+			isa = PBXGroup;
+			children = (
+				394E962E248E7F24009F640E /* MiSalud.storyboard */,
+			);
+			path = MiSalud;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 			files = (
 				39443296248939F500FF0217 /* LaunchScreen.storyboard in Resources */,
 				6DF6EC99248E59C6007EAA40 /* Terms.storyboard in Resources */,
+				394E962F248E7F25009F640E /* MiSalud.storyboard in Resources */,
 				39443293248939F500FF0217 /* Assets.xcassets in Resources */,
 				394E962C248E3F6E009F640E /* OnBoarding.storyboard in Resources */,
 				6DF6ECA1248E6191007EAA40 /* Running.xib in Resources */,
