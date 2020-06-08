@@ -13,6 +13,7 @@
 		39443291248939F000FF0217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3944328F248939F000FF0217 /* Main.storyboard */; };
 		39443293248939F500FF0217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39443292248939F500FF0217 /* Assets.xcassets */; };
 		39443296248939F500FF0217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39443294248939F500FF0217 /* LaunchScreen.storyboard */; };
+		394E962C248E3F6E009F640E /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394E962B248E3F6E009F640E /* OnBoarding.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		39443297248939F500FF0217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		394E9626248E38B7009F640E /* Muli-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Italic-VariableFont_wght.ttf"; path = "../../../../Fonts/Muli-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		394E9627248E38B7009F640E /* Muli-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-VariableFont_wght.ttf"; path = "../../../../Fonts/Muli-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		394E962B248E3F6E009F640E /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +62,10 @@
 			children = (
 				394E9625248E3845009F640E /* Fonts */,
 				3944329D248A7F7900FF0217 /* Application */,
+				394E9628248E3E71009F640E /* Modules */,
 				3944328D248939F000FF0217 /* ViewController.swift */,
 				3944328F248939F000FF0217 /* Main.storyboard */,
 				39443292248939F500FF0217 /* Assets.xcassets */,
-				39443294248939F500FF0217 /* LaunchScreen.storyboard */,
 				39443297248939F500FF0217 /* Info.plist */,
 			);
 			path = "Covid Pilot";
@@ -85,6 +87,31 @@
 				394E9627248E38B7009F640E /* Muli-VariableFont_wght.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		394E9628248E3E71009F640E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				394E962A248E3EEB009F640E /* OnBoarding */,
+				394E9629248E3E93009F640E /* Splash */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		394E9629248E3E93009F640E /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				39443294248939F500FF0217 /* LaunchScreen.storyboard */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		394E962A248E3EEB009F640E /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				394E962B248E3F6E009F640E /* OnBoarding.storyboard */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +175,7 @@
 				39443296248939F500FF0217 /* LaunchScreen.storyboard in Resources */,
 				39443293248939F500FF0217 /* Assets.xcassets in Resources */,
 				39443291248939F000FF0217 /* Main.storyboard in Resources */,
+				394E962C248E3F6E009F640E /* OnBoarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
