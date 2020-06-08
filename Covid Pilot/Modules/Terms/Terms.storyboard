@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Terms View Controller-->
+        <scene sceneID="3ur-SK-I2U">
+            <objects>
+                <viewController storyboardIdentifier="TermsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NWZ-Kz-asp" customClass="TermsViewController" customModule="Covid_Pilot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tQC-de-mDH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5o4-P0-9sl">
+                                <rect key="frame" x="187" y="813" width="39" height="37"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h7R-ot-dht">
+                                <rect key="frame" x="7" y="194" width="240" height="128"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="zQn-xb-n6I"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="qcU-5B-X2q"/>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HOLAAAA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hk6-3X-7Qm">
+                                <rect key="frame" x="187" y="125" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="h7R-ot-dht" firstAttribute="centerX" secondItem="91U-G1-9hd" secondAttribute="centerX" id="AZZ-hr-gqk"/>
+                            <constraint firstItem="5o4-P0-9sl" firstAttribute="leading" secondItem="91U-G1-9hd" secondAttribute="leading" constant="187" id="DOq-yM-lhG"/>
+                            <constraint firstItem="h7R-ot-dht" firstAttribute="width" secondItem="91U-G1-9hd" secondAttribute="width" multiplier="0.57971" id="GgZ-ru-3JQ"/>
+                            <constraint firstItem="h7R-ot-dht" firstAttribute="centerY" secondItem="91U-G1-9hd" secondAttribute="centerY" id="QVj-NZ-S8i"/>
+                            <constraint firstItem="91U-G1-9hd" firstAttribute="trailing" secondItem="5o4-P0-9sl" secondAttribute="trailing" constant="188" id="R6W-mI-gEa"/>
+                            <constraint firstItem="91U-G1-9hd" firstAttribute="bottom" secondItem="5o4-P0-9sl" secondAttribute="bottom" constant="12" id="ti4-bH-wmv"/>
+                            <constraint firstItem="h7R-ot-dht" firstAttribute="height" secondItem="91U-G1-9hd" secondAttribute="height" multiplier="0.156479" id="vAT-hp-F49"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="91U-G1-9hd"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="5o4-P0-9sl" id="dAd-FC-KRH"/>
+                        <outlet property="scrollView" destination="h7R-ot-dht" id="iSF-gD-eyt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2r0-0s-GJe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11.594202898550726" y="139.95535714285714"/>
+        </scene>
+    </scenes>
+</document>
