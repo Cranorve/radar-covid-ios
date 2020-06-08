@@ -24,6 +24,8 @@
 		39443292248939F500FF0217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39443295248939F500FF0217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39443297248939F500FF0217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		394E9626248E38B7009F640E /* Muli-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Italic-VariableFont_wght.ttf"; path = "../../../../Fonts/Muli-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		394E9627248E38B7009F640E /* Muli-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-VariableFont_wght.ttf"; path = "../../../../Fonts/Muli-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		39443288248939F000FF0217 /* Covid Pilot */ = {
 			isa = PBXGroup;
 			children = (
+				394E9625248E3845009F640E /* Fonts */,
 				3944329D248A7F7900FF0217 /* Application */,
 				3944328D248939F000FF0217 /* ViewController.swift */,
 				3944328F248939F000FF0217 /* Main.storyboard */,
@@ -73,6 +76,15 @@
 				39443289248939F000FF0217 /* AppDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		394E9625248E3845009F640E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				394E9626248E38B7009F640E /* Muli-Italic-VariableFont_wght.ttf */,
+				394E9627248E38B7009F640E /* Muli-VariableFont_wght.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
