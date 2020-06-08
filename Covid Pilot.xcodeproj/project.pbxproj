@@ -56,8 +56,7 @@
 		39443288248939F000FF0217 /* Covid Pilot */ = {
 			isa = PBXGroup;
 			children = (
-				39443289248939F000FF0217 /* AppDelegate.swift */,
-				3944328B248939F000FF0217 /* SceneDelegate.swift */,
+				3944329D248A7F7900FF0217 /* Application */,
 				3944328D248939F000FF0217 /* ViewController.swift */,
 				3944328F248939F000FF0217 /* Main.storyboard */,
 				39443292248939F500FF0217 /* Assets.xcassets */,
@@ -65,6 +64,15 @@
 				39443297248939F500FF0217 /* Info.plist */,
 			);
 			path = "Covid Pilot";
+			sourceTree = "<group>";
+		};
+		3944329D248A7F7900FF0217 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3944328B248939F000FF0217 /* SceneDelegate.swift */,
+				39443289248939F000FF0217 /* AppDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
