@@ -16,6 +16,8 @@ class TermsViewController: UIViewController, UIScrollViewDelegate {
     
     var slides:[UIView] = [];
     
+    var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

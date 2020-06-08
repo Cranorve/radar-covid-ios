@@ -25,6 +25,8 @@ public enum Routes {
 
 class AppRouter : Router {
     
+    var termsVC: TermsViewController?
+    
     func route(to routeID: Routes, from context: UIViewController, parameters: Any?...) {
         switch routeID {
         case .Terms:
@@ -33,12 +35,7 @@ class AppRouter : Router {
     }
     
     private func routeToTerms(_ context: UIViewController) {
-        //Instantiate the view controller
-        let viewController: TermsViewController =
-            UIStoryboard(name: "Terms", bundle: Bundle.main)
-                .instantiateViewController(withIdentifier: "TermsViewController") as! TermsViewController
-
-        self.loadViewAsRoot(navController: context as! UINavigationController, view: viewController)
+        self.loadViewAsRoot(navController: context as! UINavigationController, view: self.termsVC!)
     }
     
     private func loadViewAsRoot(navController: UINavigationController, view: UIViewController) {
