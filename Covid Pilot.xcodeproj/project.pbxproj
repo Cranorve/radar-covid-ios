@@ -31,6 +31,8 @@
 		6DF6ECBF248F604D007EAA40 /* RecomendationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6ECBD248F604D007EAA40 /* RecomendationsViewController.xib */; };
 		6DF6ECC2248F68DF007EAA40 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6ECC1248F68DF007EAA40 /* Home.storyboard */; };
 		6DF6ECC4248F691E007EAA40 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECC3248F691E007EAA40 /* HomeViewController.swift */; };
+		6DF6ECC8248F70DF007EAA40 /* PreferencesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECC7248F70DF007EAA40 /* PreferencesRepository.swift */; };
+		6DF6ECCA248F743B007EAA40 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECC9248F743B007EAA40 /* OnBoardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		6DF6ECBD248F604D007EAA40 /* RecomendationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecomendationsViewController.xib; sourceTree = "<group>"; };
 		6DF6ECC1248F68DF007EAA40 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6DF6ECC3248F691E007EAA40 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6DF6ECC7248F70DF007EAA40 /* PreferencesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesRepository.swift; sourceTree = "<group>"; };
+		6DF6ECC9248F743B007EAA40 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 		39443288248939F000FF0217 /* Covid Pilot */ = {
 			isa = PBXGroup;
 			children = (
+				6DF6ECC5248F6EBE007EAA40 /* Data */,
 				6DF6ECAE248E88B9007EAA40 /* Domain */,
 				394E9625248E3845009F640E /* Fonts */,
 				3944329D248A7F7900FF0217 /* Application */,
@@ -150,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				394E962B248E3F6E009F640E /* OnBoarding.storyboard */,
+				6DF6ECC9248F743B007EAA40 /* OnBoardingViewController.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -194,6 +200,22 @@
 				6DF6ECC3248F691E007EAA40 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		6DF6ECC5248F6EBE007EAA40 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6DF6ECC6248F6F36007EAA40 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6DF6ECC6248F6F36007EAA40 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				6DF6ECC7248F70DF007EAA40 /* PreferencesRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		A9352EC1087188BECA794383 /* Frameworks */ = {
@@ -298,6 +320,8 @@
 				6DF6ECBA248F5E56007EAA40 /* ProximityViewController.swift in Sources */,
 				6DF6ECAC248E79C1007EAA40 /* Injection.swift in Sources */,
 				6DF6ECB5248EAC7F007EAA40 /* RunningViewController.swift in Sources */,
+				6DF6ECCA248F743B007EAA40 /* OnBoardingViewController.swift in Sources */,
+				6DF6ECC8248F70DF007EAA40 /* PreferencesRepository.swift in Sources */,
 				3944328C248939F000FF0217 /* SceneDelegate.swift in Sources */,
 				6DF6ECBE248F604D007EAA40 /* RecomendationsViewController.swift in Sources */,
 				6DF6ECC4248F691E007EAA40 /* HomeViewController.swift in Sources */,
