@@ -21,20 +21,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MI SALUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Km-Li-R8Y">
-                                <rect key="frame" x="20" y="99" width="56.5" height="14"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="organicColor" translatesAutoresizingMaskIntoConstraints="NO" id="j1B-pg-cG8">
+                                <rect key="frame" x="0.0" y="-1" width="414" height="155.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MI DIAGNÓSTICO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Km-Li-R8Y">
+                                <rect key="frame" x="20" y="99" width="101.5" height="15.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="12"/>
                                 <color key="textColor" red="0.5764058232" green="0.57650798560000005" blue="0.57639932630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Cómo te encuentras hoy?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ub7-Zo-Om5">
-                                <rect key="frame" x="20" y="134" width="339.5" height="33"/>
+                                <rect key="frame" x="20" y="134" width="347" height="35.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reportando tu diagnóstico Covid-19, estás contribuyendo a detener la propagación del virus. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CSp-Na-Mxg">
-                                <rect key="frame" x="20" y="191.5" width="374" height="71"/>
+                                <rect key="frame" x="20" y="194" width="374" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="nII-BK-HGK"/>
                                 </constraints>
@@ -99,9 +102,6 @@
                                     <action selector="onBack:" destination="vmx-lJ-Xhc" eventType="primaryActionTriggered" id="JbM-VE-jJf"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="organicColor" translatesAutoresizingMaskIntoConstraints="NO" id="j1B-pg-cG8">
-                                <rect key="frame" x="0.0" y="-1" width="414" height="155.5"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
