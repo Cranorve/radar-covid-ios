@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Pageboy",
+        "repositoryURL": "https://github.com/uias/Pageboy",
+        "state": {
+          "branch": null,
+          "revision": "fcaaab06e634de68d2929883083683ec8cf5dade",
+          "version": "3.6.1"
+        }
+      },
+      {
         "package": "Swinject",
         "repositoryURL": "https://github.com/Swinject/Swinject",
         "state": {

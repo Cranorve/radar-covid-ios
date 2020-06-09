@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RunningViewController" customModule="Covid_Pilot" customModuleProvider="target">
+            <connections>
+                <outlet property="pageControl" destination="Za0-Sx-JLS" id="bXW-LB-PaH"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Ubl-RQ-wqj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAR-Iy-hQc">
+                    <rect key="frame" x="0.0" y="44" width="414" height="679"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJg-TW-Zyr">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="479.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FUNCIONAMIENTO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ln-m6-qGi">
+                                    <rect key="frame" x="16" y="122" width="382" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Queremos suministrarte una herramienta para mantenerte seguro." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLs-eE-Ixo">
+                                    <rect key="frame" x="16" y="166" width="382" height="48"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Con esta aplicación conocerás si has estado expuesto al coronavirus, ayudándote a protegerte y proteger a los tuyos." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHJ-VB-dcr">
+                                    <rect key="frame" x="16" y="234" width="382" height="72"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpa-3O-7Z9">
+                                    <rect key="frame" x="16" y="326" width="382" height="143.5"/>
+                                    <string key="text">Además, podrás cooperar con el resto de ciudadanos en el esfuerzo común de solucionar la situación lo más rápido posible: solo reporta si se te ha diagnosticado Covid, y la aplicación se encarga del resto.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="cpa-3O-7Z9" firstAttribute="top" secondItem="wHJ-VB-dcr" secondAttribute="bottom" constant="20" id="0uR-ma-NhD"/>
+                                <constraint firstItem="wHJ-VB-dcr" firstAttribute="top" secondItem="uLs-eE-Ixo" secondAttribute="bottom" constant="20" id="6F3-cZ-O0T"/>
+                                <constraint firstItem="cpa-3O-7Z9" firstAttribute="leading" secondItem="wHJ-VB-dcr" secondAttribute="leading" id="B57-jo-0Z6"/>
+                                <constraint firstItem="8Ln-m6-qGi" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="16" id="Caw-JH-QSF"/>
+                                <constraint firstItem="uLs-eE-Ixo" firstAttribute="leading" secondItem="8Ln-m6-qGi" secondAttribute="leading" id="ShS-hd-ofC"/>
+                                <constraint firstAttribute="bottom" secondItem="cpa-3O-7Z9" secondAttribute="bottom" constant="10" id="Vf5-PP-KX4"/>
+                                <constraint firstItem="uLs-eE-Ixo" firstAttribute="top" secondItem="8Ln-m6-qGi" secondAttribute="bottom" constant="20" id="W2J-hB-Q9h"/>
+                                <constraint firstAttribute="trailing" secondItem="8Ln-m6-qGi" secondAttribute="trailing" constant="16" id="dw4-fJ-q2u"/>
+                                <constraint firstItem="8Ln-m6-qGi" firstAttribute="top" secondItem="BJg-TW-Zyr" secondAttribute="top" constant="122" id="fVr-J1-V9v"/>
+                                <constraint firstAttribute="trailing" secondItem="wHJ-VB-dcr" secondAttribute="trailing" constant="16" id="fY3-Le-db3"/>
+                                <constraint firstItem="wHJ-VB-dcr" firstAttribute="leading" secondItem="uLs-eE-Ixo" secondAttribute="leading" id="gnE-hB-VU9"/>
+                                <constraint firstAttribute="trailing" secondItem="uLs-eE-Ixo" secondAttribute="trailing" constant="16" id="psw-xv-2xx"/>
+                                <constraint firstAttribute="trailing" secondItem="cpa-3O-7Z9" secondAttribute="trailing" constant="16" id="zFa-PV-PNN"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="BJg-TW-Zyr" firstAttribute="width" secondItem="a7M-l3-V7w" secondAttribute="width" id="2d1-fF-bzB"/>
+                        <constraint firstItem="Sau-QH-YRy" firstAttribute="trailing" secondItem="BJg-TW-Zyr" secondAttribute="trailing" id="5qy-Ru-ohT"/>
+                        <constraint firstItem="BJg-TW-Zyr" firstAttribute="leading" secondItem="Sau-QH-YRy" secondAttribute="leading" id="Uym-48-pTb"/>
+                        <constraint firstItem="BJg-TW-Zyr" firstAttribute="leading" secondItem="5kO-f9-Js0" secondAttribute="leading" id="ad9-eH-9dp"/>
+                        <constraint firstItem="5kO-f9-Js0" firstAttribute="trailing" secondItem="BJg-TW-Zyr" secondAttribute="trailing" id="fpA-ld-5oM"/>
+                        <constraint firstItem="BJg-TW-Zyr" firstAttribute="bottom" secondItem="Sau-QH-YRy" secondAttribute="bottom" id="jKC-as-QWU"/>
+                        <constraint firstItem="BJg-TW-Zyr" firstAttribute="top" secondItem="5kO-f9-Js0" secondAttribute="top" id="pYm-Rb-HhY"/>
+                        <constraint firstItem="BJg-TW-Zyr" firstAttribute="top" secondItem="Sau-QH-YRy" secondAttribute="top" id="vRO-tW-0F0"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="5kO-f9-Js0"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Sau-QH-YRy"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="a7M-l3-V7w"/>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nXk-o1-mlh">
+                    <rect key="frame" x="0.0" y="733" width="414" height="129"/>
+                    <subviews>
+                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Za0-Sx-JLS">
+                            <rect key="frame" x="16" y="10" width="382" height="37"/>
+                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="currentPageIndicatorTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </pageControl>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvl-fX-Ohw">
+                            <rect key="frame" x="16" y="63" width="382" height="56"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="D7e-ey-crZ"/>
+                            </constraints>
+                            <state key="normal" title="Continuar">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onContinue:" destination="-1" eventType="primaryActionTriggered" id="LGE-bP-YvP"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Za0-Sx-JLS" secondAttribute="trailing" constant="16" id="TE9-8S-4AP"/>
+                        <constraint firstItem="Za0-Sx-JLS" firstAttribute="leading" secondItem="nXk-o1-mlh" secondAttribute="leading" constant="16" id="W0T-kT-xpu"/>
+                        <constraint firstItem="Za0-Sx-JLS" firstAttribute="top" secondItem="nXk-o1-mlh" secondAttribute="top" constant="10" id="asr-8a-O14"/>
+                        <constraint firstAttribute="trailing" secondItem="qvl-fX-Ohw" secondAttribute="trailing" constant="16" id="hBu-bj-fE3"/>
+                        <constraint firstAttribute="bottom" secondItem="qvl-fX-Ohw" secondAttribute="bottom" constant="10" id="l60-6x-b3W"/>
+                        <constraint firstItem="qvl-fX-Ohw" firstAttribute="top" secondItem="Za0-Sx-JLS" secondAttribute="bottom" constant="16" id="sIw-5F-Y1x"/>
+                        <constraint firstItem="qvl-fX-Ohw" firstAttribute="leading" secondItem="nXk-o1-mlh" secondAttribute="leading" constant="16" id="yFk-Kr-dei"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nXk-o1-mlh" secondAttribute="trailing" id="T1O-Nq-bD8"/>
+                <constraint firstItem="nXk-o1-mlh" firstAttribute="top" secondItem="QAR-Iy-hQc" secondAttribute="bottom" constant="10" id="WgW-fL-gwu"/>
+                <constraint firstItem="nXk-o1-mlh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bfQ-Pl-Tx5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QAR-Iy-hQc" secondAttribute="trailing" id="f35-a4-UTy"/>
+                <constraint firstItem="QAR-Iy-hQc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="m4n-5d-HIl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="QAR-Iy-hQc" secondAttribute="top" id="usK-6X-z6K"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nXk-o1-mlh" secondAttribute="bottom" id="vez-jx-CUv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
+        </view>
+    </objects>
+</document>

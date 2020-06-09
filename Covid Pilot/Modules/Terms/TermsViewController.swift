@@ -7,61 +7,52 @@
 //
 
 import UIKit
+import Pageboy
 
-class TermsViewController: UIViewController, UIScrollViewDelegate {
+class TermsViewController: PageboyViewController, PageboyViewControllerDataSource, NextDelegate {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    @IBOutlet weak var pageControl: UIPageControl!
-    
-    var slides:[UIView] = [];
+    var slides:[UIViewController] = [];
     
     var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView.delegate = self
-
         slides = createSlides()
-        setupSlideScrollView(slides: slides)
         
-        pageControl.numberOfPages = slides.count
-        pageControl.currentPage = 0
-        view.bringSubviewToFront(pageControl)
+        self.dataSource = self
+        self.isScrollEnabled = false
+    
     }
     
-    func setupSlideScrollView(slides : [UIView]) {
-          scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-          scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: view.frame.height)
-          scrollView.isPagingEnabled = true
-          
-          for i in 0 ..< slides.count {
-              slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
-              scrollView.addSubview(slides[i])
-          }
-      }
     
-    func createSlides() -> [UIView] {
-        [Bundle.main.loadNibNamed("Running", owner: self, options: nil)?.first as! UIView,
-         Bundle.main.loadNibNamed("Privacy", owner: self, options: nil)?.first as! UIView]
+    func createSlides() -> [UIViewController] {
+        let runningVC = RunningViewController()
+        runningVC.nextDelegate = self
+        let privacyVC = PrivacyViewController()
+        privacyVC.nextDelegate = self
+        return [runningVC, privacyVC]
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
-        pageControl.currentPage = Int(pageIndex) 
-            
-            
+    func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
+        slides.count
+    }
+    
+    func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
+        slides[index]
+    }
+    
+    func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
+        nil
+    }
+    
+    func next() {
+        self.scrollToPage(.next, animated: true)
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+}
 
+protocol NextDelegate {
+    func next()
 }
