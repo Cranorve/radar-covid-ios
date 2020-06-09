@@ -13,9 +13,13 @@ import UIKit
 class TabBarController: UITabBarController {
     
     var homeViewController: HomeViewController
+    var myDataViewController: MyDataViewController
+    var helpLineViewController: HelpLineViewController
     
-    init(homeViewController: HomeViewController) {
+    init(homeViewController: HomeViewController, myDataViewController: MyDataViewController, helpLineViewController: HelpLineViewController) {
         self.homeViewController = homeViewController
+        self.myDataViewController = myDataViewController
+        self.helpLineViewController = helpLineViewController
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -26,11 +30,21 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         homeViewController.tabBarItem = UITabBarItem(
-            title: "Home",
-            image: UIImage(named: "iconsPositive"),
+            title: "",
+            image: UIImage(named: "MenuHomeNormal"),
+            selectedImage: UIImage(named: "MenuHomeSelected"))
+        
+        myDataViewController.tabBarItem = UITabBarItem(
+            title: "MyData",
+            image: UIImage(named: "MenuInfoNormal"),
+            selectedImage: UIImage(named: "MenuInfoSelected"))
+        
+        helpLineViewController.tabBarItem = UITabBarItem(
+            title: "HelpLine",
+            image: UIImage(named: "MenuHelpNormal"),
             selectedImage: UIImage(named: "iconsPositive"))
         
-        setViewControllers([homeViewController], animated: false)
+        setViewControllers([homeViewController, myDataViewController, helpLineViewController], animated: false)
     }
     
 }

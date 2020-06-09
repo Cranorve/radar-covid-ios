@@ -38,7 +38,9 @@ class Injection {
         
         container.register(TabBarController.self) { r in
             TabBarController(
-                homeViewController: r.resolve(HomeViewController.self)!
+                homeViewController: r.resolve(HomeViewController.self)!,
+                myDataViewController: r.resolve(MyDataViewController.self)!,
+                helpLineViewController: r.resolve(HelpLineViewController.self)!
             )
         }
         
@@ -57,6 +59,14 @@ class Injection {
         
         container.register(HomeViewController.self) {  r in
             self.createViewController(storyboard: "Home", id: "HomeViewController") as! HomeViewController
+        }
+        
+        container.register(MyDataViewController.self) {  r in
+            self.createViewController(storyboard: "MyData", id: "MyDataViewController") as! MyDataViewController
+        }
+        
+        container.register(HelpLineViewController.self) {  r in
+            self.createViewController(storyboard: "HelpLine", id: "HelpLineViewController") as! HelpLineViewController
         }
         
         container.register(OnBoardingViewController.self) {  r in
