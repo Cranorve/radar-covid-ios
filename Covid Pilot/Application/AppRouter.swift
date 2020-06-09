@@ -21,6 +21,7 @@ public enum Routes {
     case OnBoarding
     case Home
     case Terms
+    case MyHealth
 }
 
 class AppRouter : Router {
@@ -29,6 +30,7 @@ class AppRouter : Router {
     var homeVC: HomeViewController?
     var onBoardingVC: OnBoardingViewController?
     var tabBarController: TabBarController?
+    var myHealthVC: MyHealthViewController?
     
     func route(to routeID: Routes, from context: UIViewController, parameters: Any?...) {
         switch routeID {
@@ -38,6 +40,8 @@ class AppRouter : Router {
             routeToHome(context)
         case .Terms:
             routeToTerms(context)
+        case .MyHealth:
+            routeToMyHealth(context)
         }
     }
     
@@ -51,6 +55,10 @@ class AppRouter : Router {
     
     private func routeToTerms(_ context: UIViewController) {
         loadViewAsRoot(navController: context.navigationController, view: termsVC!)
+    }
+    
+    private func routeToMyHealth(_ context: UIViewController) {
+        context.navigationController?.pushViewController(myHealthVC!, animated: true)
     }
     
     private func loadViewAsRoot(navController: UINavigationController?, view: UIViewController) {

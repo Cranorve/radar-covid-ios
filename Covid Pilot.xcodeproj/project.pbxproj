@@ -38,6 +38,7 @@
 		6DF6ECD1248FA044007EAA40 /* MyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECD0248FA044007EAA40 /* MyDataViewController.swift */; };
 		6DF6ECD4248FA0B3007EAA40 /* HelpLine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6ECD3248FA0B3007EAA40 /* HelpLine.storyboard */; };
 		6DF6ECD6248FA0D0007EAA40 /* HelpLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECD5248FA0D0007EAA40 /* HelpLineViewController.swift */; };
+		6DF6ECD8248FBEC2007EAA40 /* MyHealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECD7248FBEC2007EAA40 /* MyHealthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		6DF6ECD0248FA044007EAA40 /* MyDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataViewController.swift; sourceTree = "<group>"; };
 		6DF6ECD3248FA0B3007EAA40 /* HelpLine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpLine.storyboard; sourceTree = "<group>"; };
 		6DF6ECD5248FA0D0007EAA40 /* HelpLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpLineViewController.swift; sourceTree = "<group>"; };
+		6DF6ECD7248FBEC2007EAA40 /* MyHealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHealthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				394E962E248E7F24009F640E /* MiSalud.storyboard */,
+				6DF6ECD7248FBEC2007EAA40 /* MyHealthViewController.swift */,
 			);
 			path = MiSalud;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				6DF6ECBA248F5E56007EAA40 /* ProximityViewController.swift in Sources */,
 				6DF6ECAC248E79C1007EAA40 /* Injection.swift in Sources */,
 				6DF6ECB5248EAC7F007EAA40 /* RunningViewController.swift in Sources */,
+				6DF6ECD8248FBEC2007EAA40 /* MyHealthViewController.swift in Sources */,
 				6DF6ECCA248F743B007EAA40 /* OnBoardingViewController.swift in Sources */,
 				6DF6ECC8248F70DF007EAA40 /* PreferencesRepository.swift in Sources */,
 				3944328C248939F000FF0217 /* SceneDelegate.swift in Sources */,

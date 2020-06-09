@@ -17,11 +17,16 @@ class OnBoardingViewController: UIViewController {
         router?.route(to: Routes.Terms, from:self)
     }
     
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidLoad()
         if (onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? false) {
             router?.route(to: Routes.Home, from: self)
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
     }
 
 }

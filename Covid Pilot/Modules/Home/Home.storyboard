@@ -100,6 +100,9 @@ Cuídate y cuida a los demás.</string>
                                 <state key="normal" title="Comunica tu positivo Covid">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCommunicate:" destination="boN-vE-v6h" eventType="primaryActionTriggered" id="V3n-sM-LVk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.92528989779874216" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

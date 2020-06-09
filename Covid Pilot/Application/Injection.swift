@@ -26,6 +26,7 @@ class Injection {
             appRouter.homeVC = r.resolve(HomeViewController.self)!
             appRouter.onBoardingVC = r.resolve(OnBoardingViewController.self)!
             appRouter.tabBarController = r.resolve(TabBarController.self)!
+            appRouter.myHealthVC = r.resolve(MyHealthViewController.self)!
         }
         
         container.register(PreferencesRepository.self) { r in
@@ -58,7 +59,9 @@ class Injection {
         }
         
         container.register(HomeViewController.self) {  r in
-            self.createViewController(storyboard: "Home", id: "HomeViewController") as! HomeViewController
+            let homeVC = self.createViewController(storyboard: "Home", id: "HomeViewController") as! HomeViewController
+            homeVC.router = r.resolve(AppRouter.self)!
+            return homeVC
         }
         
         container.register(MyDataViewController.self) {  r in
@@ -67,6 +70,10 @@ class Injection {
         
         container.register(HelpLineViewController.self) {  r in
             self.createViewController(storyboard: "HelpLine", id: "HelpLineViewController") as! HelpLineViewController
+        }
+        
+        container.register(MyHealthViewController.self) {  r in
+            self.createViewController(storyboard: "MiSalud", id: "MyHealthViewController") as! MyHealthViewController
         }
         
         container.register(OnBoardingViewController.self) {  r in
