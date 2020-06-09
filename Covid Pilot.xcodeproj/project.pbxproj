@@ -31,6 +31,14 @@
 		6DF6ECBF248F604D007EAA40 /* RecomendationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6ECBD248F604D007EAA40 /* RecomendationsViewController.xib */; };
 		6DF6ECC2248F68DF007EAA40 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6ECC1248F68DF007EAA40 /* Home.storyboard */; };
 		6DF6ECC4248F691E007EAA40 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECC3248F691E007EAA40 /* HomeViewController.swift */; };
+		6DF6ECC8248F70DF007EAA40 /* PreferencesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECC7248F70DF007EAA40 /* PreferencesRepository.swift */; };
+		6DF6ECCA248F743B007EAA40 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECC9248F743B007EAA40 /* OnBoardingViewController.swift */; };
+		6DF6ECCC248F9A71007EAA40 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECCB248F9A71007EAA40 /* TabBarController.swift */; };
+		6DF6ECCF248FA032007EAA40 /* MyData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6ECCE248FA032007EAA40 /* MyData.storyboard */; };
+		6DF6ECD1248FA044007EAA40 /* MyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECD0248FA044007EAA40 /* MyDataViewController.swift */; };
+		6DF6ECD4248FA0B3007EAA40 /* HelpLine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6ECD3248FA0B3007EAA40 /* HelpLine.storyboard */; };
+		6DF6ECD6248FA0D0007EAA40 /* HelpLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECD5248FA0D0007EAA40 /* HelpLineViewController.swift */; };
+		6DF6ECD8248FBEC2007EAA40 /* MyHealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECD7248FBEC2007EAA40 /* MyHealthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +68,14 @@
 		6DF6ECBD248F604D007EAA40 /* RecomendationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecomendationsViewController.xib; sourceTree = "<group>"; };
 		6DF6ECC1248F68DF007EAA40 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6DF6ECC3248F691E007EAA40 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6DF6ECC7248F70DF007EAA40 /* PreferencesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesRepository.swift; sourceTree = "<group>"; };
+		6DF6ECC9248F743B007EAA40 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		6DF6ECCB248F9A71007EAA40 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		6DF6ECCE248FA032007EAA40 /* MyData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyData.storyboard; sourceTree = "<group>"; };
+		6DF6ECD0248FA044007EAA40 /* MyDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataViewController.swift; sourceTree = "<group>"; };
+		6DF6ECD3248FA0B3007EAA40 /* HelpLine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpLine.storyboard; sourceTree = "<group>"; };
+		6DF6ECD5248FA0D0007EAA40 /* HelpLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpLineViewController.swift; sourceTree = "<group>"; };
+		6DF6ECD7248FBEC2007EAA40 /* MyHealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHealthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +111,7 @@
 		39443288248939F000FF0217 /* Covid Pilot */ = {
 			isa = PBXGroup;
 			children = (
+				6DF6ECC5248F6EBE007EAA40 /* Data */,
 				6DF6ECAE248E88B9007EAA40 /* Domain */,
 				394E9625248E3845009F640E /* Fonts */,
 				3944329D248A7F7900FF0217 /* Application */,
@@ -129,11 +146,14 @@
 		394E9628248E3E71009F640E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6DF6ECD2248FA091007EAA40 /* HelpLine */,
+				6DF6ECCD248FA01E007EAA40 /* MyData */,
 				6DF6ECC0248F68B2007EAA40 /* Home */,
 				6DF6EC97248E5987007EAA40 /* Terms */,
 				394E962D248E7DE3009F640E /* MiSalud */,
 				394E962A248E3EEB009F640E /* OnBoarding */,
 				394E9629248E3E93009F640E /* Splash */,
+				6DF6ECCB248F9A71007EAA40 /* TabBarController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -150,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				394E962B248E3F6E009F640E /* OnBoarding.storyboard */,
+				6DF6ECC9248F743B007EAA40 /* OnBoardingViewController.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -158,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				394E962E248E7F24009F640E /* MiSalud.storyboard */,
+				6DF6ECD7248FBEC2007EAA40 /* MyHealthViewController.swift */,
 			);
 			path = MiSalud;
 			sourceTree = "<group>";
@@ -194,6 +216,40 @@
 				6DF6ECC3248F691E007EAA40 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		6DF6ECC5248F6EBE007EAA40 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6DF6ECC6248F6F36007EAA40 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6DF6ECC6248F6F36007EAA40 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				6DF6ECC7248F70DF007EAA40 /* PreferencesRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		6DF6ECCD248FA01E007EAA40 /* MyData */ = {
+			isa = PBXGroup;
+			children = (
+				6DF6ECCE248FA032007EAA40 /* MyData.storyboard */,
+				6DF6ECD0248FA044007EAA40 /* MyDataViewController.swift */,
+			);
+			path = MyData;
+			sourceTree = "<group>";
+		};
+		6DF6ECD2248FA091007EAA40 /* HelpLine */ = {
+			isa = PBXGroup;
+			children = (
+				6DF6ECD3248FA0B3007EAA40 /* HelpLine.storyboard */,
+				6DF6ECD5248FA0D0007EAA40 /* HelpLineViewController.swift */,
+			);
+			path = HelpLine;
 			sourceTree = "<group>";
 		};
 		A9352EC1087188BECA794383 /* Frameworks */ = {
@@ -272,7 +328,9 @@
 				6DF6ECBB248F5E56007EAA40 /* ProximityViewController.xib in Resources */,
 				6DF6ECC2248F68DF007EAA40 /* Home.storyboard in Resources */,
 				39443296248939F500FF0217 /* LaunchScreen.storyboard in Resources */,
+				6DF6ECD4248FA0B3007EAA40 /* HelpLine.storyboard in Resources */,
 				6DF6EC99248E59C6007EAA40 /* Terms.storyboard in Resources */,
+				6DF6ECCF248FA032007EAA40 /* MyData.storyboard in Resources */,
 				6DF6ECBF248F604D007EAA40 /* RecomendationsViewController.xib in Resources */,
 				394E962F248E7F25009F640E /* MiSalud.storyboard in Resources */,
 				39443293248939F500FF0217 /* Assets.xcassets in Resources */,
@@ -292,12 +350,18 @@
 				3944328E248939F000FF0217 /* ViewController.swift in Sources */,
 				3944328A248939F000FF0217 /* AppDelegate.swift in Sources */,
 				6DF6EC9B248E5C77007EAA40 /* TermsViewController.swift in Sources */,
+				6DF6ECCC248F9A71007EAA40 /* TabBarController.swift in Sources */,
+				6DF6ECD1248FA044007EAA40 /* MyDataViewController.swift in Sources */,
 				6DF6ECAA248E7621007EAA40 /* AppRouter.swift in Sources */,
 				6DF6ECB0248E88E6007EAA40 /* OnBoardingCompletedUseCase.swift in Sources */,
+				6DF6ECD6248FA0D0007EAA40 /* HelpLineViewController.swift in Sources */,
 				6DF6ECB7248EACD7007EAA40 /* PrivacyViewController.swift in Sources */,
 				6DF6ECBA248F5E56007EAA40 /* ProximityViewController.swift in Sources */,
 				6DF6ECAC248E79C1007EAA40 /* Injection.swift in Sources */,
 				6DF6ECB5248EAC7F007EAA40 /* RunningViewController.swift in Sources */,
+				6DF6ECD8248FBEC2007EAA40 /* MyHealthViewController.swift in Sources */,
+				6DF6ECCA248F743B007EAA40 /* OnBoardingViewController.swift in Sources */,
+				6DF6ECC8248F70DF007EAA40 /* PreferencesRepository.swift in Sources */,
 				3944328C248939F000FF0217 /* SceneDelegate.swift in Sources */,
 				6DF6ECBE248F604D007EAA40 /* RecomendationsViewController.swift in Sources */,
 				6DF6ECC4248F691E007EAA40 /* HomeViewController.swift in Sources */,

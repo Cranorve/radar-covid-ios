@@ -9,13 +9,16 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    var router: AppRouter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
     }
     
-
+    @IBAction func onCommunicate(_ sender: Any) {
+        router?.route(to: Routes.MyHealth, from: self)
+    }
+    
 
 }

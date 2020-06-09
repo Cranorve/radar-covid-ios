@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         let router = AppDelegate.shared.injection.resolve(AppRouter.self)!
-        router.route(to: Routes.Terms, from: navigationController)
+        router.route(to: Routes.OnBoarding, from: navigationController)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

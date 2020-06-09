@@ -15,8 +15,6 @@ class TermsViewController: PageboyViewController, PageboyViewControllerDataSourc
     
     var recomendationsVC: RecomendationsViewController?
     
-    var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
