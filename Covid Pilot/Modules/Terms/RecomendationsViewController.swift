@@ -11,10 +11,12 @@ import UIKit
 class RecomendationsViewController: UIViewController {
     
     var router: AppRouter?
+    var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
 
     @IBOutlet weak var pageControl: UIPageControl!
     
     @IBAction func onFinish(_ sender: Any) {
+        onBoardingCompletedUseCase?.setOnboarding(completed: true)
         router?.route(to: Routes.Home, from: self)
     }
     

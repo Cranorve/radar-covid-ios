@@ -24,15 +24,19 @@ class Injection {
         .initCompleted {r, appRouter in
             appRouter.termsVC = r.resolve(TermsViewController.self)!
             appRouter.homeVC = r.resolve(HomeViewController.self)!
+            appRouter.onBoardingVC = r.resolve(OnBoardingViewController.self)!
         }
         
+        container.register(PreferencesRepository.self) { r in
+            UserDefaultsPreferencesRepository()
+        }.inObjectScope(.container)
+        
         container.register(OnboardingCompletedUseCase.self) { r in
-            OnboardingCompletedUseCase()
+            OnboardingCompletedUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(TermsViewController.self) { r in
             let termsVC = self.createViewController(storyboard: "Terms", id: "TermsViewController") as! TermsViewController
-            termsVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)
             termsVC.recomendationsVC = r.resolve(RecomendationsViewController.self)!
             return termsVC
         }
@@ -40,10 +44,20 @@ class Injection {
         container.register(RecomendationsViewController.self) {  r in
             let recVC = RecomendationsViewController()
             recVC.router = r.resolve(AppRouter.self)!
+            recVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
             return recVC
         }
+        
         container.register(HomeViewController.self) {  r in
             self.createViewController(storyboard: "Home", id: "HomeViewController") as! HomeViewController
+        }
+        
+        container.register(OnBoardingViewController.self) {  r in
+            let onbVC = self.createViewController(storyboard: "OnBoarding", id: "OnBoardingViewController") as! OnBoardingViewController
+            
+            onbVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
+            onbVC.router = r.resolve(AppRouter.self)!
+            return onbVC
         }
     }
     

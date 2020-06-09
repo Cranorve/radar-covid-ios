@@ -18,18 +18,21 @@ protocol Router {
 }
 
 public enum Routes {
+    case OnBoarding
     case Home
     case Terms
-
 }
 
 class AppRouter : Router {
     
     var termsVC: TermsViewController?
     var homeVC: HomeViewController?
+    var onBoardingVC: OnBoardingViewController?
     
     func route(to routeID: Routes, from context: UIViewController, parameters: Any?...) {
         switch routeID {
+        case .OnBoarding:
+            routeToOnboarding(context)
         case .Home:
             routeToHome(context)
         case .Terms:
@@ -37,12 +40,16 @@ class AppRouter : Router {
         }
     }
     
+    private func routeToOnboarding(_ context: UIViewController) {
+        loadViewAsRoot(navController: context as? UINavigationController, view: onBoardingVC!)
+    }
+    
     private func routeToHome(_ context: UIViewController) {
         loadViewAsRoot(navController: context.navigationController, view: homeVC!)
     }
     
     private func routeToTerms(_ context: UIViewController) {
-        loadViewAsRoot(navController: context as? UINavigationController, view: termsVC!)
+        loadViewAsRoot(navController: context.navigationController, view: termsVC!)
     }
     
     private func loadViewAsRoot(navController: UINavigationController?, view: UIViewController) {

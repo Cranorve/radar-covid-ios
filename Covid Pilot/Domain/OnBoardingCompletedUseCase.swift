@@ -10,12 +10,18 @@ import Foundation
 
 class OnboardingCompletedUseCase {
     
+    private let preferencesRepository: PreferencesRepository
+    
+    init(preferencesRepository: PreferencesRepository) {
+        self.preferencesRepository = preferencesRepository
+    }
+    
     func isOnBoardingCompleted() -> Bool {
-        true
+        self.preferencesRepository.isOnBoardingCompleted() ?? false
     }
     
     func setOnboarding(completed: Bool) {
-        
+        self.preferencesRepository.setOnboarding(completed: completed)
     }
     
 }

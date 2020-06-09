@@ -9,22 +9,19 @@
 import UIKit
 
 class OnBoardingViewController: UIViewController {
+    
+    var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
+    var router: AppRouter?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBAction func onOk(_ sender: Any) {
+        router?.route(to: Routes.Terms, from:self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if (onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? false) {
+            router?.route(to: Routes.Home, from: self)
+        }
     }
-    */
 
 }
