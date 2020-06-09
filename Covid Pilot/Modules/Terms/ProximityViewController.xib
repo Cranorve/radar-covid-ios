@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProximityViewController" customModule="Covid_Pilot" customModuleProvider="target">
+            <connections>
+                <outlet property="pageControl" destination="i4l-Qd-fUj" id="lpX-P7-syA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clA-8A-tCK">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l55-Aw-9eh">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROXIMIDAD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkV-ML-gs8">
+                                    <rect key="frame" x="16" y="122" width="382" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okc-Go-WbJ">
+                                    <rect key="frame" x="16" y="166" width="382" height="191"/>
+                                    <string key="text">Gracias a la tecnología contact tracing Bluetooth, guardamos las interacciones entre los teléfonos que están próximos entre sí: así, si un usuario confirma que tiene Covid-19, el histórico de teléfonos cercanos nos permite alertar a aquellos que estuvieron cerca para que tomen precauciones.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xko-kK-dvF">
+                                    <rect key="frame" x="16" y="377" width="382" height="95.5"/>
+                                    <string key="text">Pero ¡siempre con privacidad asegurada! Los teléfonos cercanos se almacenan con ids cambiantes, de modo que el usuario o el dispositivo no son identificables</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnD-2v-geH">
+                                    <rect key="frame" x="16" y="492.5" width="382" height="95.5"/>
+                                    <string key="text">¿Quieres ser alertado en caso de haber estado expuesto al Covid-19? Autoriza tu contact tracing Bluetooth en la app y mantén encendido el Bluetooth de tu móvil.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0Q-rd-e8E">
+                                    <rect key="frame" x="0.0" y="578" width="414" height="129"/>
+                                    <subviews>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="i4l-Qd-fUj">
+                                            <rect key="frame" x="16" y="10" width="382" height="37"/>
+                                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="currentPageIndicatorTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </pageControl>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gh7-C2-OVe">
+                                            <rect key="frame" x="16" y="63" width="382" height="56"/>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="3cO-0b-3sv"/>
+                                            </constraints>
+                                            <state key="normal" title="Autorizo">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onContinue:" destination="-1" eventType="primaryActionTriggered" id="YJV-d9-3AK"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Gh7-C2-OVe" firstAttribute="leading" secondItem="l0Q-rd-e8E" secondAttribute="leading" constant="16" id="0ed-78-Dac"/>
+                                        <constraint firstAttribute="trailing" secondItem="i4l-Qd-fUj" secondAttribute="trailing" constant="16" id="9Pn-k2-gXS"/>
+                                        <constraint firstAttribute="trailing" secondItem="Gh7-C2-OVe" secondAttribute="trailing" constant="16" id="M1f-TH-YHv"/>
+                                        <constraint firstAttribute="bottom" secondItem="Gh7-C2-OVe" secondAttribute="bottom" constant="10" id="NoN-GY-HeE"/>
+                                        <constraint firstItem="i4l-Qd-fUj" firstAttribute="leading" secondItem="l0Q-rd-e8E" secondAttribute="leading" constant="16" id="ola-A0-ISQ"/>
+                                        <constraint firstItem="i4l-Qd-fUj" firstAttribute="top" secondItem="l0Q-rd-e8E" secondAttribute="top" constant="10" id="thC-ch-QzB"/>
+                                        <constraint firstItem="Gh7-C2-OVe" firstAttribute="top" secondItem="i4l-Qd-fUj" secondAttribute="bottom" constant="16" id="vJm-c0-4zj"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="mnD-2v-geH" secondAttribute="trailing" constant="16" id="0S0-IY-hqA"/>
+                                <constraint firstItem="OkV-ML-gs8" firstAttribute="leading" secondItem="l55-Aw-9eh" secondAttribute="leading" constant="16" id="0Z6-eI-ccd"/>
+                                <constraint firstAttribute="trailing" secondItem="Xko-kK-dvF" secondAttribute="trailing" constant="16" id="3ua-PL-I7i"/>
+                                <constraint firstAttribute="trailing" secondItem="OkV-ML-gs8" secondAttribute="trailing" constant="16" id="7rV-51-7ko"/>
+                                <constraint firstItem="Xko-kK-dvF" firstAttribute="top" secondItem="okc-Go-WbJ" secondAttribute="bottom" constant="20" id="EhY-od-nza"/>
+                                <constraint firstItem="okc-Go-WbJ" firstAttribute="top" secondItem="OkV-ML-gs8" secondAttribute="bottom" constant="20" id="QqD-08-vSE"/>
+                                <constraint firstItem="okc-Go-WbJ" firstAttribute="leading" secondItem="OkV-ML-gs8" secondAttribute="leading" id="TOh-yx-BKf"/>
+                                <constraint firstAttribute="bottom" secondItem="l0Q-rd-e8E" secondAttribute="bottom" constant="10" id="TZi-25-6f3"/>
+                                <constraint firstAttribute="trailing" secondItem="l0Q-rd-e8E" secondAttribute="trailing" id="Ttv-mX-c8l"/>
+                                <constraint firstItem="l0Q-rd-e8E" firstAttribute="leading" secondItem="l55-Aw-9eh" secondAttribute="leading" id="eoN-1d-nMa"/>
+                                <constraint firstAttribute="trailing" secondItem="okc-Go-WbJ" secondAttribute="trailing" constant="16" id="fAe-is-YPI"/>
+                                <constraint firstItem="mnD-2v-geH" firstAttribute="top" secondItem="Xko-kK-dvF" secondAttribute="bottom" constant="20" id="hSK-Tq-Ts6"/>
+                                <constraint firstItem="mnD-2v-geH" firstAttribute="bottom" secondItem="l0Q-rd-e8E" secondAttribute="top" constant="10" id="j3t-SK-Iv2"/>
+                                <constraint firstItem="OkV-ML-gs8" firstAttribute="top" secondItem="l55-Aw-9eh" secondAttribute="top" constant="122" id="qO9-vb-dgR"/>
+                                <constraint firstItem="Xko-kK-dvF" firstAttribute="leading" secondItem="okc-Go-WbJ" secondAttribute="leading" id="unJ-ii-Xis"/>
+                                <constraint firstItem="mnD-2v-geH" firstAttribute="leading" secondItem="Xko-kK-dvF" secondAttribute="leading" id="xPv-le-pxC"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="l55-Aw-9eh" firstAttribute="leading" secondItem="f2o-dy-RuU" secondAttribute="leading" id="04V-SA-Puw"/>
+                        <constraint firstItem="l55-Aw-9eh" firstAttribute="bottom" secondItem="Y8x-1w-7Ql" secondAttribute="bottom" id="Blz-4P-1Is"/>
+                        <constraint firstItem="l55-Aw-9eh" firstAttribute="top" secondItem="Y8x-1w-7Ql" secondAttribute="top" id="NYH-Rh-cGb"/>
+                        <constraint firstItem="l55-Aw-9eh" firstAttribute="leading" secondItem="Y8x-1w-7Ql" secondAttribute="leading" id="Sa6-xn-ux4"/>
+                        <constraint firstItem="l55-Aw-9eh" firstAttribute="width" secondItem="ynP-56-ZDW" secondAttribute="width" id="fa7-uA-W4Y"/>
+                        <constraint firstItem="l55-Aw-9eh" firstAttribute="top" secondItem="f2o-dy-RuU" secondAttribute="top" id="lTc-Xk-PZS"/>
+                        <constraint firstItem="Y8x-1w-7Ql" firstAttribute="trailing" secondItem="l55-Aw-9eh" secondAttribute="trailing" id="m1A-3f-i1e"/>
+                        <constraint firstItem="f2o-dy-RuU" firstAttribute="trailing" secondItem="l55-Aw-9eh" secondAttribute="trailing" id="sXi-4a-J0S"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="f2o-dy-RuU"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Y8x-1w-7Ql"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="ynP-56-ZDW"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="clA-8A-tCK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6JS-AK-0ZD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="clA-8A-tCK" secondAttribute="top" id="RmD-r1-hUg"/>
+                <constraint firstItem="clA-8A-tCK" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="dIR-e1-isI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="clA-8A-tCK" secondAttribute="trailing" id="vhd-gN-L3e"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="110"/>
+        </view>
+    </objects>
+</document>

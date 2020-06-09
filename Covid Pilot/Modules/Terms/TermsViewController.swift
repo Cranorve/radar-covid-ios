@@ -11,7 +11,9 @@ import Pageboy
 
 class TermsViewController: PageboyViewController, PageboyViewControllerDataSource, NextDelegate {
 
-    var slides:[UIViewController] = [];
+    var slides: [UIViewController] = [];
+    
+    var recomendationsVC: RecomendationsViewController?
     
     var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
     
@@ -31,7 +33,10 @@ class TermsViewController: PageboyViewController, PageboyViewControllerDataSourc
         runningVC.nextDelegate = self
         let privacyVC = PrivacyViewController()
         privacyVC.nextDelegate = self
-        return [runningVC, privacyVC]
+        let proximityVC = ProximityViewController()
+        proximityVC.nextDelegate = self
+
+        return [runningVC, privacyVC, proximityVC, recomendationsVC!]
     }
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {

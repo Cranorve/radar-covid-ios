@@ -19,10 +19,12 @@ class Injection {
         container = Container();
         
         container.register(AppRouter.self) { r in
-            let appRouter = AppRouter()
-            appRouter.termsVC = r.resolve(TermsViewController.self)
-            return appRouter
+            AppRouter()
         }.inObjectScope(.container)
+        .initCompleted {r, appRouter in
+            appRouter.termsVC = r.resolve(TermsViewController.self)!
+            appRouter.homeVC = r.resolve(HomeViewController.self)!
+        }
         
         container.register(OnboardingCompletedUseCase.self) { r in
             OnboardingCompletedUseCase()
@@ -31,9 +33,18 @@ class Injection {
         container.register(TermsViewController.self) { r in
             let termsVC = self.createViewController(storyboard: "Terms", id: "TermsViewController") as! TermsViewController
             termsVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)
+            termsVC.recomendationsVC = r.resolve(RecomendationsViewController.self)!
             return termsVC
         }
         
+        container.register(RecomendationsViewController.self) {  r in
+            let recVC = RecomendationsViewController()
+            recVC.router = r.resolve(AppRouter.self)!
+            return recVC
+        }
+        container.register(HomeViewController.self) {  r in
+            self.createViewController(storyboard: "Home", id: "HomeViewController") as! HomeViewController
+        }
     }
     
     func resolve<Service>(_ serviceType: Service.Type) -> Service? {

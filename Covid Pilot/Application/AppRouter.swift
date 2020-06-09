@@ -18,7 +18,7 @@ protocol Router {
 }
 
 public enum Routes {
-
+    case Home
     case Terms
 
 }
@@ -26,22 +26,29 @@ public enum Routes {
 class AppRouter : Router {
     
     var termsVC: TermsViewController?
+    var homeVC: HomeViewController?
     
     func route(to routeID: Routes, from context: UIViewController, parameters: Any?...) {
         switch routeID {
+        case .Home:
+            routeToHome(context)
         case .Terms:
             routeToTerms(context)
         }
     }
     
-    private func routeToTerms(_ context: UIViewController) {
-        self.loadViewAsRoot(navController: context as! UINavigationController, view: self.termsVC!)
+    private func routeToHome(_ context: UIViewController) {
+        loadViewAsRoot(navController: context.navigationController, view: homeVC!)
     }
     
-    private func loadViewAsRoot(navController: UINavigationController, view: UIViewController) {
-        navController.viewControllers.removeAll()
-        navController.popToRootViewController(animated: false)
-        navController.pushViewController(view, animated: false)
+    private func routeToTerms(_ context: UIViewController) {
+        loadViewAsRoot(navController: context as? UINavigationController, view: termsVC!)
+    }
+    
+    private func loadViewAsRoot(navController: UINavigationController?, view: UIViewController) {
+        navController?.viewControllers.removeAll()
+        navController?.popToRootViewController(animated: false)
+        navController?.pushViewController(view, animated: false)
     }
 
 }

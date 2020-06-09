@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecomendationsViewController" customModule="Covid_Pilot" customModuleProvider="target">
+            <connections>
+                <outlet property="pageControl" destination="Jgc-zI-oGq" id="3Jb-b6-Xd3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxZ-br-7tq">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZ0-5O-JyL">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1115.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RECOMENDACIONES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgR-dc-W35">
+                                    <rect key="frame" x="16" y="122" width="382" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sg9-Hb-miz">
+                                    <rect key="frame" x="16" y="166" width="382" height="95.5"/>
+                                    <string key="text">Protégete a sí mismo y a quienes te rodean informándote y tomando las precauciones adecuadas. Sigue los consejos de tu organismo de salud pública local.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para evitar la propagación de la COVID-19:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ml8-Xd-Pyb">
+                                    <rect key="frame" x="16" y="281.5" width="382" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjM-6H-yvW">
+                                    <rect key="frame" x="16" y="325.5" width="382" height="501.5"/>
+                                    <mutableString key="text">•  Lávate las manos con frecuencia. Usa agua y jabón o un desinfectante de manos a base de alcohol
+
+•  Manténte a una distancia segura de cualquier persona que tosa o estornude.
+
+•  No te toque los ojos, la nariz o la boca.
+
+•  Cuando tosas o estornudes, cúbrete la nariz y la boca con el codo flexionado o con un pañuelo desechable.
+
+•  Quédate en casa si te sientes mal.
+
+•  Si tienen fiebre, tos y dificultad para respirar, solicita atención médica. Llama con antelación.
+
+•  Sigue las instrucciones de tu organismo sanitario local.</mutableString>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXt-nZ-4qM">
+                                    <rect key="frame" x="16" y="847" width="382" height="119.5"/>
+                                    <string key="text">Evitar las visitas innecesarias a los centros de atención médica permite que los sistemas sanitarios funcionen con mayor eficacia, lo que redunda en su protección y en la de los demás.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ld0-xt-Cke">
+                                    <rect key="frame" x="0.0" y="976.5" width="414" height="129"/>
+                                    <subviews>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Jgc-zI-oGq">
+                                            <rect key="frame" x="16" y="10" width="382" height="37"/>
+                                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="currentPageIndicatorTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </pageControl>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iod-fJ-uNa">
+                                            <rect key="frame" x="16" y="63" width="382" height="56"/>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="GM3-e7-QXM"/>
+                                            </constraints>
+                                            <state key="normal" title="Finalizar">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onFinish:" destination="-1" eventType="primaryActionTriggered" id="Hv8-jE-ivb"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="iod-fJ-uNa" firstAttribute="top" secondItem="Jgc-zI-oGq" secondAttribute="bottom" constant="16" id="Mfe-68-L6x"/>
+                                        <constraint firstItem="Jgc-zI-oGq" firstAttribute="top" secondItem="ld0-xt-Cke" secondAttribute="top" constant="10" id="N31-k4-D7n"/>
+                                        <constraint firstAttribute="bottom" secondItem="iod-fJ-uNa" secondAttribute="bottom" constant="10" id="PtD-Lb-jsk"/>
+                                        <constraint firstItem="iod-fJ-uNa" firstAttribute="leading" secondItem="ld0-xt-Cke" secondAttribute="leading" constant="16" id="Waa-Oh-ON1"/>
+                                        <constraint firstItem="Jgc-zI-oGq" firstAttribute="leading" secondItem="ld0-xt-Cke" secondAttribute="leading" constant="16" id="ecR-0k-kuQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="iod-fJ-uNa" secondAttribute="trailing" constant="16" id="rIE-gG-BxB"/>
+                                        <constraint firstAttribute="trailing" secondItem="Jgc-zI-oGq" secondAttribute="trailing" constant="16" id="vDW-ZR-vo9"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="BgR-dc-W35" secondAttribute="trailing" constant="16" id="2BE-nN-Zgc"/>
+                                <constraint firstItem="ld0-xt-Cke" firstAttribute="leading" secondItem="eZ0-5O-JyL" secondAttribute="leading" id="7cD-BC-ihX"/>
+                                <constraint firstAttribute="trailing" secondItem="Ml8-Xd-Pyb" secondAttribute="trailing" constant="16" id="Ama-XO-TRE"/>
+                                <constraint firstItem="BgR-dc-W35" firstAttribute="top" secondItem="eZ0-5O-JyL" secondAttribute="top" constant="122" id="BdA-j1-dos"/>
+                                <constraint firstItem="Ml8-Xd-Pyb" firstAttribute="leading" secondItem="sg9-Hb-miz" secondAttribute="leading" id="F8T-fx-MJP"/>
+                                <constraint firstItem="ld0-xt-Cke" firstAttribute="top" secondItem="DXt-nZ-4qM" secondAttribute="bottom" constant="10" id="Tpd-pR-DB7"/>
+                                <constraint firstItem="ZjM-6H-yvW" firstAttribute="top" secondItem="Ml8-Xd-Pyb" secondAttribute="bottom" constant="20" id="VaR-oB-wmZ"/>
+                                <constraint firstItem="ZjM-6H-yvW" firstAttribute="leading" secondItem="Ml8-Xd-Pyb" secondAttribute="leading" id="VmL-D7-wGI"/>
+                                <constraint firstItem="Ml8-Xd-Pyb" firstAttribute="top" secondItem="sg9-Hb-miz" secondAttribute="bottom" constant="20" id="ZEe-Dv-tCE"/>
+                                <constraint firstItem="DXt-nZ-4qM" firstAttribute="leading" secondItem="ZjM-6H-yvW" secondAttribute="leading" id="c45-QS-Ejf"/>
+                                <constraint firstAttribute="trailing" secondItem="sg9-Hb-miz" secondAttribute="trailing" constant="16" id="gld-0a-pcN"/>
+                                <constraint firstItem="DXt-nZ-4qM" firstAttribute="trailing" secondItem="ZjM-6H-yvW" secondAttribute="trailing" id="hDi-6j-8FL"/>
+                                <constraint firstAttribute="trailing" secondItem="ZjM-6H-yvW" secondAttribute="trailing" constant="16" id="iAs-gV-SJK"/>
+                                <constraint firstItem="sg9-Hb-miz" firstAttribute="top" secondItem="BgR-dc-W35" secondAttribute="bottom" constant="20" id="mob-ec-eIT"/>
+                                <constraint firstItem="DXt-nZ-4qM" firstAttribute="top" secondItem="ZjM-6H-yvW" secondAttribute="bottom" constant="20" id="otg-Rv-KF0"/>
+                                <constraint firstAttribute="bottom" secondItem="ld0-xt-Cke" secondAttribute="bottom" constant="10" id="qea-KG-L3e"/>
+                                <constraint firstAttribute="trailing" secondItem="ld0-xt-Cke" secondAttribute="trailing" id="rna-zL-uw4"/>
+                                <constraint firstItem="sg9-Hb-miz" firstAttribute="leading" secondItem="BgR-dc-W35" secondAttribute="leading" id="y65-Wq-zwK"/>
+                                <constraint firstItem="BgR-dc-W35" firstAttribute="leading" secondItem="eZ0-5O-JyL" secondAttribute="leading" constant="16" id="ymW-7w-EKM"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="eZ0-5O-JyL" firstAttribute="top" secondItem="siK-Oa-aWn" secondAttribute="top" id="4Aa-bt-5vx"/>
+                        <constraint firstItem="eZ0-5O-JyL" firstAttribute="bottom" secondItem="Dgi-50-SM6" secondAttribute="bottom" id="FI0-Ct-WaC"/>
+                        <constraint firstItem="siK-Oa-aWn" firstAttribute="trailing" secondItem="eZ0-5O-JyL" secondAttribute="trailing" id="La2-QL-5V1"/>
+                        <constraint firstItem="eZ0-5O-JyL" firstAttribute="leading" secondItem="Dgi-50-SM6" secondAttribute="leading" id="TJJ-MK-3vZ"/>
+                        <constraint firstItem="Dgi-50-SM6" firstAttribute="trailing" secondItem="eZ0-5O-JyL" secondAttribute="trailing" id="W21-tE-Iwr"/>
+                        <constraint firstItem="eZ0-5O-JyL" firstAttribute="top" secondItem="Dgi-50-SM6" secondAttribute="top" id="cav-pd-M7m"/>
+                        <constraint firstItem="eZ0-5O-JyL" firstAttribute="width" secondItem="jet-4G-G2o" secondAttribute="width" id="uQc-PD-mPn"/>
+                        <constraint firstItem="eZ0-5O-JyL" firstAttribute="leading" secondItem="siK-Oa-aWn" secondAttribute="leading" id="uaS-2L-QfG"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="siK-Oa-aWn"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Dgi-50-SM6"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="jet-4G-G2o"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bxZ-br-7tq" secondAttribute="bottom" id="EE1-GD-xKf"/>
+                <constraint firstItem="bxZ-br-7tq" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="KRG-Ll-Ypu"/>
+                <constraint firstItem="bxZ-br-7tq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lvW-EH-mEu"/>
+                <constraint firstItem="bxZ-br-7tq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sC8-j1-CvV"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="110"/>
+        </view>
+    </objects>
+</document>
