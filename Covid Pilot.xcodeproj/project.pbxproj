@@ -13,7 +13,7 @@
 		39443293248939F500FF0217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39443292248939F500FF0217 /* Assets.xcassets */; };
 		39443296248939F500FF0217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39443294248939F500FF0217 /* LaunchScreen.storyboard */; };
 		394E962C248E3F6E009F640E /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394E962B248E3F6E009F640E /* OnBoarding.storyboard */; };
-		394E962F248E7F25009F640E /* MiSalud.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394E962E248E7F24009F640E /* MiSalud.storyboard */; };
+		394E962F248E7F25009F640E /* MyHealth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394E962E248E7F24009F640E /* MyHealth.storyboard */; };
 		6DF6EC99248E59C6007EAA40 /* Terms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6EC98248E59C6007EAA40 /* Terms.storyboard */; };
 		6DF6EC9B248E5C77007EAA40 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6EC9A248E5C77007EAA40 /* TermsViewController.swift */; };
 		6DF6ECA1248E6191007EAA40 /* RunningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6ECA0248E6191007EAA40 /* RunningViewController.xib */; };
@@ -55,7 +55,7 @@
 		394E9626248E38B7009F640E /* Muli-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Italic-VariableFont_wght.ttf"; path = "../../../../Fonts/Muli-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		394E9627248E38B7009F640E /* Muli-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-VariableFont_wght.ttf"; path = "../../../../Fonts/Muli-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		394E962B248E3F6E009F640E /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
-		394E962E248E7F24009F640E /* MiSalud.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MiSalud.storyboard; sourceTree = "<group>"; };
+		394E962E248E7F24009F640E /* MyHealth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyHealth.storyboard; sourceTree = "<group>"; };
 		6DF6EC98248E59C6007EAA40 /* Terms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Terms.storyboard; sourceTree = "<group>"; };
 		6DF6EC9A248E5C77007EAA40 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		6DF6ECA0248E6191007EAA40 /* RunningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningViewController.xib; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 				6DF6ECCD248FA01E007EAA40 /* MyData */,
 				6DF6ECC0248F68B2007EAA40 /* Home */,
 				6DF6EC97248E5987007EAA40 /* Terms */,
-				394E962D248E7DE3009F640E /* MiSalud */,
+				394E962D248E7DE3009F640E /* MyHealth */,
 				394E962A248E3EEB009F640E /* OnBoarding */,
 				394E9629248E3E93009F640E /* Splash */,
 				6DF6ECCB248F9A71007EAA40 /* TabBarController.swift */,
@@ -181,13 +181,13 @@
 			path = OnBoarding;
 			sourceTree = "<group>";
 		};
-		394E962D248E7DE3009F640E /* MiSalud */ = {
+		394E962D248E7DE3009F640E /* MyHealth */ = {
 			isa = PBXGroup;
 			children = (
-				394E962E248E7F24009F640E /* MiSalud.storyboard */,
+				394E962E248E7F24009F640E /* MyHealth.storyboard */,
 				6DF6ECD7248FBEC2007EAA40 /* MyHealthViewController.swift */,
 			);
-			path = MiSalud;
+			path = MyHealth;
 			sourceTree = "<group>";
 		};
 		6DF6EC97248E5987007EAA40 /* Terms */ = {
@@ -350,7 +350,7 @@
 				6DF6EC99248E59C6007EAA40 /* Terms.storyboard in Resources */,
 				6DF6ECCF248FA032007EAA40 /* MyData.storyboard in Resources */,
 				6DF6ECBF248F604D007EAA40 /* RecomendationsViewController.xib in Resources */,
-				394E962F248E7F25009F640E /* MiSalud.storyboard in Resources */,
+				394E962F248E7F25009F640E /* MyHealth.storyboard in Resources */,
 				39443293248939F500FF0217 /* Assets.xcassets in Resources */,
 				394E962C248E3F6E009F640E /* OnBoarding.storyboard in Resources */,
 				6DF6ECA1248E6191007EAA40 /* RunningViewController.xib in Resources */,
