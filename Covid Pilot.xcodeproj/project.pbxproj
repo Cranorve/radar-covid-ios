@@ -33,6 +33,7 @@
 		6DF6ECC4248F691E007EAA40 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECC3248F691E007EAA40 /* HomeViewController.swift */; };
 		6DF6ECC8248F70DF007EAA40 /* PreferencesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECC7248F70DF007EAA40 /* PreferencesRepository.swift */; };
 		6DF6ECCA248F743B007EAA40 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECC9248F743B007EAA40 /* OnBoardingViewController.swift */; };
+		6DF6ECCC248F9A71007EAA40 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECCB248F9A71007EAA40 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		6DF6ECC3248F691E007EAA40 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6DF6ECC7248F70DF007EAA40 /* PreferencesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesRepository.swift; sourceTree = "<group>"; };
 		6DF6ECC9248F743B007EAA40 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		6DF6ECCB248F9A71007EAA40 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				394E962D248E7DE3009F640E /* MiSalud */,
 				394E962A248E3EEB009F640E /* OnBoarding */,
 				394E9629248E3E93009F640E /* Splash */,
+				6DF6ECCB248F9A71007EAA40 /* TabBarController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				3944328E248939F000FF0217 /* ViewController.swift in Sources */,
 				3944328A248939F000FF0217 /* AppDelegate.swift in Sources */,
 				6DF6EC9B248E5C77007EAA40 /* TermsViewController.swift in Sources */,
+				6DF6ECCC248F9A71007EAA40 /* TabBarController.swift in Sources */,
 				6DF6ECAA248E7621007EAA40 /* AppRouter.swift in Sources */,
 				6DF6ECB0248E88E6007EAA40 /* OnBoardingCompletedUseCase.swift in Sources */,
 				6DF6ECB7248EACD7007EAA40 /* PrivacyViewController.swift in Sources */,

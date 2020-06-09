@@ -25,6 +25,7 @@ class Injection {
             appRouter.termsVC = r.resolve(TermsViewController.self)!
             appRouter.homeVC = r.resolve(HomeViewController.self)!
             appRouter.onBoardingVC = r.resolve(OnBoardingViewController.self)!
+            appRouter.tabBarController = r.resolve(TabBarController.self)!
         }
         
         container.register(PreferencesRepository.self) { r in
@@ -34,6 +35,12 @@ class Injection {
         container.register(OnboardingCompletedUseCase.self) { r in
             OnboardingCompletedUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!)
         }.inObjectScope(.container)
+        
+        container.register(TabBarController.self) { r in
+            TabBarController(
+                homeViewController: r.resolve(HomeViewController.self)!
+            )
+        }
         
         container.register(TermsViewController.self) { r in
             let termsVC = self.createViewController(storyboard: "Terms", id: "TermsViewController") as! TermsViewController

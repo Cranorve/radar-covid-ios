@@ -28,6 +28,7 @@ class AppRouter : Router {
     var termsVC: TermsViewController?
     var homeVC: HomeViewController?
     var onBoardingVC: OnBoardingViewController?
+    var tabBarController: TabBarController?
     
     func route(to routeID: Routes, from context: UIViewController, parameters: Any?...) {
         switch routeID {
@@ -45,7 +46,7 @@ class AppRouter : Router {
     }
     
     private func routeToHome(_ context: UIViewController) {
-        loadViewAsRoot(navController: context.navigationController, view: homeVC!)
+        loadViewAsRoot(navController: context.navigationController, view: tabBarController!)
     }
     
     private func routeToTerms(_ context: UIViewController) {
