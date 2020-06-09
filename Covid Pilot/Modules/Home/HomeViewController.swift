@@ -7,18 +7,32 @@
 //
 
 import UIKit
+import RxSwift
 
 class HomeViewController: UIViewController {
     
+    private let disposeBag = DisposeBag()
+    
     var router: AppRouter?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    var expositionUseCase: ExpositionUseCase?
     
     @IBAction func onCommunicate(_ sender: Any) {
         router?.route(to: Routes.MyHealth, from: self)
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        expositionUseCase?.getExpositionInfo().subscribe(
+            onNext:{ [weak self] charts in
+
+            }, onError: {  [weak self] error in
+
+        }).disposed(by: disposeBag)
+        
+    }
+    
+
     
 
 }

@@ -37,6 +37,10 @@ class Injection {
             OnboardingCompletedUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!)
         }.inObjectScope(.container)
         
+        container.register(ExpositionUseCase.self) { r in
+            ExpositionUseCase()
+        }.inObjectScope(.container)
+        
         container.register(TabBarController.self) { r in
             TabBarController(
                 homeViewController: r.resolve(HomeViewController.self)!,
@@ -61,6 +65,7 @@ class Injection {
         container.register(HomeViewController.self) {  r in
             let homeVC = self.createViewController(storyboard: "Home", id: "HomeViewController") as! HomeViewController
             homeVC.router = r.resolve(AppRouter.self)!
+            homeVC.expositionUseCase = r.resolve(ExpositionUseCase.self)!
             return homeVC
         }
         
