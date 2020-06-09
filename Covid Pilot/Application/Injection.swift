@@ -78,7 +78,7 @@ class Injection {
         }
         
         container.register(MyHealthViewController.self) {  r in
-            self.createViewController(storyboard: "MiSalud", id: "MyHealthViewController") as! MyHealthViewController
+            self.createViewController(storyboard: "MyHealth", id: "MyHealthViewController") as! MyHealthViewController
         }
         
         container.register(OnBoardingViewController.self) {  r in
