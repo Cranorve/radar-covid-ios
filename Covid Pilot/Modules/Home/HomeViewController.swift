@@ -11,11 +11,11 @@ import RxSwift
 
 class HomeViewController: UIViewController {
     
+    private let disposeBag = DisposeBag()
+    
     @IBOutlet weak var expositionTitle: UILabel!
     @IBOutlet weak var expositionDescription: UILabel!
     @IBOutlet weak var expositionView: UIView!
-    
-    private let disposeBag = DisposeBag()
     
     var router: AppRouter?
     var expositionUseCase: ExpositionUseCase?

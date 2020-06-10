@@ -14,6 +14,7 @@ class TermsViewController: PageboyViewController, PageboyViewControllerDataSourc
     var slides: [UIViewController] = [];
     
     var recomendationsVC: RecomendationsViewController?
+    var proximityVC: ProximityViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +32,9 @@ class TermsViewController: PageboyViewController, PageboyViewControllerDataSourc
         runningVC.nextDelegate = self
         let privacyVC = PrivacyViewController()
         privacyVC.nextDelegate = self
-        let proximityVC = ProximityViewController()
-        proximityVC.nextDelegate = self
+        proximityVC!.nextDelegate = self
 
-        return [runningVC, privacyVC, proximityVC, recomendationsVC!]
+        return [runningVC, privacyVC, proximityVC!, recomendationsVC!]
     }
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
