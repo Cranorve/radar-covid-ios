@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "rectangleDot.png",
+      "filename" : "frame.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "rectangleDot@2x.png",
+      "filename" : "frame@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "rectangleDot@3x.png",
+      "filename" : "frame@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

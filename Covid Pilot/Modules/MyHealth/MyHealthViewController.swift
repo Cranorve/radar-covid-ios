@@ -14,6 +14,12 @@ class MyHealthViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func onReportDiagnosis(_ sender: Any) {
+        router?.route(to: Routes.MyHealthReported, from: self)
+    }
+    
+    var router: AppRouter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
