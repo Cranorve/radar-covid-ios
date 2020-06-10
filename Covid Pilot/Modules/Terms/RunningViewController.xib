@@ -18,6 +18,30 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkC-Jh-ngm">
+                    <rect key="frame" x="207" y="44" width="207" height="206.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightTopShade" translatesAutoresizingMaskIntoConstraints="NO" id="DpS-EF-eHd">
+                            <rect key="frame" x="-76.5" y="0.0" width="283.5" height="206.5"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GirlMobile" translatesAutoresizingMaskIntoConstraints="NO" id="7ke-rT-ezJ">
+                            <rect key="frame" x="66" y="21" width="118" height="131"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="131" id="ccD-xA-MY9"/>
+                                <constraint firstAttribute="width" constant="118" id="jgy-Qc-wOF"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="7ke-rT-ezJ" secondAttribute="trailing" constant="23" id="2GN-sN-x5R"/>
+                        <constraint firstAttribute="bottom" secondItem="DpS-EF-eHd" secondAttribute="bottom" id="3RV-ng-bGO"/>
+                        <constraint firstAttribute="trailing" secondItem="DpS-EF-eHd" secondAttribute="trailing" id="laL-UH-vmf"/>
+                        <constraint firstItem="7ke-rT-ezJ" firstAttribute="top" secondItem="lkC-Jh-ngm" secondAttribute="top" constant="21" id="qgZ-xg-mAX"/>
+                        <constraint firstItem="DpS-EF-eHd" firstAttribute="top" secondItem="lkC-Jh-ngm" secondAttribute="top" id="wdj-ev-fIy"/>
+                        <constraint firstAttribute="width" constant="207" id="zKm-dt-BKi"/>
+                    </constraints>
+                </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAR-Iy-hQc">
                     <rect key="frame" x="0.0" y="44" width="414" height="679"/>
                     <subviews>
@@ -50,7 +74,6 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="cpa-3O-7Z9" firstAttribute="top" secondItem="wHJ-VB-dcr" secondAttribute="bottom" constant="20" id="0uR-ma-NhD"/>
                                 <constraint firstItem="wHJ-VB-dcr" firstAttribute="top" secondItem="uLs-eE-Ixo" secondAttribute="bottom" constant="20" id="6F3-cZ-O0T"/>
@@ -123,6 +146,8 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nXk-o1-mlh" secondAttribute="trailing" id="T1O-Nq-bD8"/>
                 <constraint firstItem="nXk-o1-mlh" firstAttribute="top" secondItem="QAR-Iy-hQc" secondAttribute="bottom" constant="10" id="WgW-fL-gwu"/>
                 <constraint firstItem="nXk-o1-mlh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bfQ-Pl-Tx5"/>
+                <constraint firstItem="lkC-Jh-ngm" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="d7Y-0L-06j"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lkC-Jh-ngm" secondAttribute="trailing" id="edu-gi-PYk"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QAR-Iy-hQc" secondAttribute="trailing" id="f35-a4-UTy"/>
                 <constraint firstItem="QAR-Iy-hQc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="m4n-5d-HIl"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="QAR-Iy-hQc" secondAttribute="top" id="usK-6X-z6K"/>
@@ -132,4 +157,8 @@
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>
+    <resources>
+        <image name="GirlMobile" width="118" height="131"/>
+        <image name="RightTopShade" width="283.5" height="206.5"/>
+    </resources>
 </document>
