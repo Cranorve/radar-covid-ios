@@ -42,7 +42,7 @@ class TabBarController: UITabBarController {
         helpLineViewController.tabBarItem = UITabBarItem(
             title: "HelpLine",
             image: UIImage(named: "MenuHelpNormal"),
-            selectedImage: UIImage(named: "iconsPositive"))
+            selectedImage: UIImage(named: "MenuHelpSelected"))
         
         setViewControllers([homeViewController, myDataViewController, helpLineViewController], animated: false)
     }

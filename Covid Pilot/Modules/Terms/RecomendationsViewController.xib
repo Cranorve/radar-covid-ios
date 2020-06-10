@@ -18,6 +18,31 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xeq-k2-H3T">
+                    <rect key="frame" x="207" y="44" width="207" height="206.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightTopShade" translatesAutoresizingMaskIntoConstraints="NO" id="q2o-gb-75E">
+                            <rect key="frame" x="-76.5" y="0.0" width="283.5" height="206.5"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GirlMobile" translatesAutoresizingMaskIntoConstraints="NO" id="xQy-Ks-qEG">
+                            <rect key="frame" x="66" y="21" width="118" height="131"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="131" id="4wg-SG-MTo"/>
+                                <constraint firstAttribute="width" constant="118" id="oZn-K9-VZK"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="q2o-gb-75E" secondAttribute="trailing" id="8NY-Nx-Mt9"/>
+                        <constraint firstAttribute="trailing" secondItem="xQy-Ks-qEG" secondAttribute="trailing" constant="23" id="Hw0-VU-NbK"/>
+                        <constraint firstItem="xQy-Ks-qEG" firstAttribute="top" secondItem="xeq-k2-H3T" secondAttribute="top" constant="21" id="PKb-DY-7rW"/>
+                        <constraint firstAttribute="width" constant="207" id="VGV-KQ-JGH"/>
+                        <constraint firstAttribute="bottom" secondItem="q2o-gb-75E" secondAttribute="bottom" id="XgC-uY-jEK"/>
+                        <constraint firstItem="q2o-gb-75E" firstAttribute="top" secondItem="xeq-k2-H3T" secondAttribute="top" id="nV3-Xk-3Rn"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="WhP-Hd-C5N"/>
+                </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxZ-br-7tq">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
@@ -45,7 +70,7 @@
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjM-6H-yvW">
                                     <rect key="frame" x="16" y="325.5" width="382" height="501.5"/>
-                                    <mutableString key="text">•  Lávate las manos con frecuencia. Usa agua y jabón o un desinfectante de manos a base de alcohol
+                                    <string key="text">•  Lávate las manos con frecuencia. Usa agua y jabón o un desinfectante de manos a base de alcohol
 
 •  Manténte a una distancia segura de cualquier persona que tosa o estornude.
 
@@ -57,7 +82,7 @@
 
 •  Si tienen fiebre, tos y dificultad para respirar, solicita atención médica. Llama con antelación.
 
-•  Sigue las instrucciones de tu organismo sanitario local.</mutableString>
+•  Sigue las instrucciones de tu organismo sanitario local.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -105,7 +130,6 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="BgR-dc-W35" secondAttribute="trailing" constant="16" id="2BE-nN-Zgc"/>
                                 <constraint firstItem="ld0-xt-Cke" firstAttribute="leading" secondItem="eZ0-5O-JyL" secondAttribute="leading" id="7cD-BC-ihX"/>
@@ -150,9 +174,15 @@
                 <constraint firstItem="bxZ-br-7tq" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="KRG-Ll-Ypu"/>
                 <constraint firstItem="bxZ-br-7tq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lvW-EH-mEu"/>
                 <constraint firstItem="bxZ-br-7tq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sC8-j1-CvV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xeq-k2-H3T" secondAttribute="trailing" id="stF-2F-V54"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="xeq-k2-H3T" secondAttribute="top" id="yYt-KT-Ze4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="110"/>
         </view>
     </objects>
+    <resources>
+        <image name="GirlMobile" width="118" height="131"/>
+        <image name="RightTopShade" width="283.5" height="206.5"/>
+    </resources>
 </document>

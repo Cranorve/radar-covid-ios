@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,11 +15,36 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qjc-kM-eYE">
+                    <rect key="frame" x="207" y="44.000000000000014" width="207" height="206.33333333333337"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightTopShade" translatesAutoresizingMaskIntoConstraints="NO" id="4PJ-vd-77Z">
+                            <rect key="frame" x="-76.333333333333343" y="0.0" width="283.33333333333331" height="206.33333333333334"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoyMobileQuestions" translatesAutoresizingMaskIntoConstraints="NO" id="nAN-T2-0DX">
+                            <rect key="frame" x="66" y="21" width="118" height="131"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="131" id="X3D-kE-IpU"/>
+                                <constraint firstAttribute="width" constant="118" id="zj9-rm-Tth"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="207" id="5zS-4f-nBK"/>
+                        <constraint firstAttribute="bottom" secondItem="4PJ-vd-77Z" secondAttribute="bottom" id="TdI-qk-TgJ"/>
+                        <constraint firstAttribute="trailing" secondItem="nAN-T2-0DX" secondAttribute="trailing" constant="23" id="d6p-mu-t1w"/>
+                        <constraint firstItem="nAN-T2-0DX" firstAttribute="top" secondItem="qjc-kM-eYE" secondAttribute="top" constant="21" id="kMl-3u-Xny"/>
+                        <constraint firstAttribute="trailing" secondItem="4PJ-vd-77Z" secondAttribute="trailing" id="xd8-Ke-FHW"/>
+                        <constraint firstItem="4PJ-vd-77Z" firstAttribute="top" secondItem="qjc-kM-eYE" secondAttribute="top" id="zfp-90-gKD"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="fGP-kG-Jbs"/>
+                </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5N-Qs-GZN">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zo4-mc-Nhw">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="717.33333333333337"/>
@@ -86,7 +111,6 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="on2-T1-h5v" firstAttribute="leading" secondItem="f3M-gW-fLH" secondAttribute="leading" id="0on-qv-RsR"/>
                                 <constraint firstItem="f3M-gW-fLH" firstAttribute="top" secondItem="BJm-ps-GKq" secondAttribute="bottom" constant="20" id="3G2-OD-l5x"/>
@@ -124,7 +148,9 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qjc-kM-eYE" secondAttribute="trailing" id="Sy2-gh-LGa"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="n5N-Qs-GZN" secondAttribute="trailing" id="Urt-No-EV7"/>
+                <constraint firstItem="qjc-kM-eYE" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="agc-gZ-tgx"/>
                 <constraint firstItem="n5N-Qs-GZN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cVp-XB-Nqb"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="n5N-Qs-GZN" secondAttribute="bottom" id="eRd-LK-syi"/>
                 <constraint firstItem="n5N-Qs-GZN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="gAp-82-Lal"/>
@@ -133,4 +159,8 @@
             <point key="canvasLocation" x="137.68115942028987" y="153.2608695652174"/>
         </view>
     </objects>
+    <resources>
+        <image name="BoyMobileQuestions" width="124" height="151"/>
+        <image name="RightTopShade" width="283.33334350585938" height="206.33332824707031"/>
+    </resources>
 </document>
