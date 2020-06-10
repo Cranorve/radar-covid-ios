@@ -55,20 +55,9 @@ class HomeViewController: UIViewController {
         }
         expositionTitle.text = title
         expositionDescription.text = description
-        gradient(view: expositionView, startColor: .red, endColor: .white)
+//        expositionView.colors =  [UIColor.white.cgColor, UIColor.red.cgColor]
         
     }
-    
-    private func gradient(view: UIView, startColor: UIColor, endColor: UIColor) {
-        let gradient = CAGradientLayer()
-        gradient.frame = view.bounds
-        gradient.colors = [UIColor.white.cgColor, UIColor.red.cgColor]
-        let y = view.bounds.height / 2
-        gradient.startPoint = CGPoint(x: 0, y: y)
-        gradient.endPoint = CGPoint(x: view.bounds.width, y: y)
-        view.layer.insertSublayer(gradient, at: 0)
-    }
-    
     
 
 }
