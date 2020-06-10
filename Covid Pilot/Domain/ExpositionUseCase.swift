@@ -12,7 +12,7 @@ import RxSwift
 class ExpositionUseCase {
     
     func getExpositionInfo() -> Observable<ExpositionInfo> {
-        let exposition = ExpositionInfo(level: ExpositionInfo.Level.MEDIUM)
+        let exposition = ExpositionInfo(level: ExpositionInfo.Level.HIGH)
         return .just(exposition)
     }
     
