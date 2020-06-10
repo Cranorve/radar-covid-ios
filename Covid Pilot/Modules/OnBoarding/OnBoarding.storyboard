@@ -22,13 +22,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Información legal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qok-ac-Npf">
-                                <rect key="frame" x="20" y="134" width="246" height="33"/>
+                                <rect key="frame" x="20" y="134" width="246" height="35.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="z7v-6D-imP">
-                                <rect key="frame" x="20" y="194" width="276" height="23.5"/>
+                                <rect key="frame" x="20" y="194" width="276" height="25.5"/>
                                 <string key="text">¡Bienvenido a Covid Monitor!
 </string>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
@@ -36,13 +36,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En Covid Monitor somos conscientes de la relevancia que tiene proteger la privacidad de tus datos personales" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BQP-bi-ONN">
-                                <rect key="frame" x="20" y="219" width="374" height="70"/>
+                                <rect key="frame" x="20" y="219" width="374" height="75.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por favor, acepta nuestra política antes de continuar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NxP-9R-dQy">
-                                <rect key="frame" x="20" y="324" width="374" height="47"/>
+                                <rect key="frame" x="20" y="324" width="374" height="50.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -78,7 +78,7 @@ mi consentimiento al tratamiento de mis datos personales</string>
                                 <rect key="frame" x="20" y="715" width="374" height="68"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recuerda que tienes que aceptar la política de privacidad para continuar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCg-yc-PiP">
-                                        <rect key="frame" x="71" y="19.5" width="281" height="30.5"/>
+                                        <rect key="frame" x="71" y="17" width="281" height="33"/>
                                         <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -104,7 +104,7 @@ mi consentimiento al tratamiento de mis datos personales</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="UXS-Se-pyq"/>
                                 </constraints>
-                                <state key="normal" title="Entendido">
+                                <state key="normal" title="Entendido" backgroundImage="buttonsPrimary">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -112,7 +112,7 @@ mi consentimiento al tratamiento de mis datos personales</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEGAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cjg-pU-6HI">
-                                <rect key="frame" x="20" y="99" width="38" height="14"/>
+                                <rect key="frame" x="20" y="99" width="38" height="15.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="12"/>
                                 <color key="textColor" red="0.5764058232" green="0.57650798560000005" blue="0.57639932630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -140,6 +140,7 @@ mi consentimiento al tratamiento de mis datos personales</string>
                             <constraint firstItem="eob-KB-bI2" firstAttribute="trailing" secondItem="qvQ-IX-8Bm" secondAttribute="trailing" constant="20" id="bDA-7Z-wve"/>
                             <constraint firstItem="eob-KB-bI2" firstAttribute="bottom" secondItem="GDV-35-L2Q" secondAttribute="bottom" constant="15" id="bK2-IY-okT"/>
                             <constraint firstItem="BQP-bi-ONN" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="cM9-hB-pZ5"/>
+                            <constraint firstItem="i7y-RN-bP7" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="26" id="ciy-TY-SqF"/>
                             <constraint firstItem="TsE-yY-Id2" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="dNQ-mG-DAV"/>
                             <constraint firstItem="eob-KB-bI2" firstAttribute="trailing" secondItem="TsE-yY-Id2" secondAttribute="trailing" constant="20" id="dZe-mg-Dry"/>
                             <constraint firstItem="qok-ac-Npf" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="e5x-g3-gCi"/>
@@ -148,6 +149,7 @@ mi consentimiento al tratamiento de mis datos personales</string>
                             <constraint firstItem="NxP-9R-dQy" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="iOj-pL-P1g"/>
                             <constraint firstItem="Cjg-pU-6HI" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="l0u-LD-41N"/>
                             <constraint firstItem="qvQ-IX-8Bm" firstAttribute="top" secondItem="o8x-Gm-flA" secondAttribute="bottom" constant="37" id="nFw-aU-tyL"/>
+                            <constraint firstItem="nRw-aK-giZ" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="ri1-rZ-kWc"/>
                             <constraint firstItem="GDV-35-L2Q" firstAttribute="top" secondItem="TsE-yY-Id2" secondAttribute="bottom" constant="8" id="uew-Wj-HcM"/>
                             <constraint firstItem="nRw-aK-giZ" firstAttribute="top" secondItem="o8x-Gm-flA" secondAttribute="bottom" constant="37" id="vVt-oK-kiM"/>
                             <constraint firstItem="Cjg-pU-6HI" firstAttribute="top" secondItem="eob-KB-bI2" secondAttribute="top" constant="55" id="w3z-2V-Zoj"/>
@@ -162,6 +164,7 @@ mi consentimiento al tratamiento de mis datos personales</string>
         </scene>
     </scenes>
     <resources>
+        <image name="buttonsPrimary" width="343" height="56"/>
         <image name="iconsPositive" width="36" height="36"/>
         <image name="rectangle" width="16" height="16"/>
         <image name="rectangleDot" width="6" height="6"/>

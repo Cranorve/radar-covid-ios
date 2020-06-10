@@ -14,6 +14,8 @@
 		39443296248939F500FF0217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39443294248939F500FF0217 /* LaunchScreen.storyboard */; };
 		394E962C248E3F6E009F640E /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394E962B248E3F6E009F640E /* OnBoarding.storyboard */; };
 		394E962F248E7F25009F640E /* MyHealth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394E962E248E7F24009F640E /* MyHealth.storyboard */; };
+		399CA87D24912B96000B6BF4 /* MyHealthReported.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 399CA87C24912B96000B6BF4 /* MyHealthReported.storyboard */; };
+		399CA88124913B0E000B6BF4 /* MyHealthReportedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CA88024913B0E000B6BF4 /* MyHealthReportedViewController.swift */; };
 		6DF6EC99248E59C6007EAA40 /* Terms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6EC98248E59C6007EAA40 /* Terms.storyboard */; };
 		6DF6EC9B248E5C77007EAA40 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6EC9A248E5C77007EAA40 /* TermsViewController.swift */; };
 		6DF6ECA1248E6191007EAA40 /* RunningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6ECA0248E6191007EAA40 /* RunningViewController.xib */; };
@@ -58,6 +60,8 @@
 		394E9627248E38B7009F640E /* Muli-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-VariableFont_wght.ttf"; path = "../../../../Fonts/Muli-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		394E962B248E3F6E009F640E /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		394E962E248E7F24009F640E /* MyHealth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyHealth.storyboard; sourceTree = "<group>"; };
+		399CA87C24912B96000B6BF4 /* MyHealthReported.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyHealthReported.storyboard; sourceTree = "<group>"; };
+		399CA88024913B0E000B6BF4 /* MyHealthReportedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHealthReportedViewController.swift; sourceTree = "<group>"; };
 		6DF6EC98248E59C6007EAA40 /* Terms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Terms.storyboard; sourceTree = "<group>"; };
 		6DF6EC9A248E5C77007EAA40 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		6DF6ECA0248E6191007EAA40 /* RunningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningViewController.xib; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 			children = (
 				394E962E248E7F24009F640E /* MyHealth.storyboard */,
 				6DF6ECD7248FBEC2007EAA40 /* MyHealthViewController.swift */,
+				399CA87C24912B96000B6BF4 /* MyHealthReported.storyboard */,
+				399CA88024913B0E000B6BF4 /* MyHealthReportedViewController.swift */,
 			);
 			path = MyHealth;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 				6DF6ECD4248FA0B3007EAA40 /* HelpLine.storyboard in Resources */,
 				6DF6EC99248E59C6007EAA40 /* Terms.storyboard in Resources */,
 				6DF6ECCF248FA032007EAA40 /* MyData.storyboard in Resources */,
+				399CA87D24912B96000B6BF4 /* MyHealthReported.storyboard in Resources */,
 				6DF6ECBF248F604D007EAA40 /* RecomendationsViewController.xib in Resources */,
 				394E962F248E7F25009F640E /* MyHealth.storyboard in Resources */,
 				39443293248939F500FF0217 /* Assets.xcassets in Resources */,
@@ -398,6 +405,7 @@
 				6DF6ECCA248F743B007EAA40 /* OnBoardingViewController.swift in Sources */,
 				6DF6ECC8248F70DF007EAA40 /* PreferencesRepository.swift in Sources */,
 				3944328C248939F000FF0217 /* SceneDelegate.swift in Sources */,
+				399CA88124913B0E000B6BF4 /* MyHealthReportedViewController.swift in Sources */,
 				6DF6ECBE248F604D007EAA40 /* RecomendationsViewController.swift in Sources */,
 				6DF6ECE22490B83E007EAA40 /* BluetoothUseCase.swift in Sources */,
 				6DF6ECC4248F691E007EAA40 /* HomeViewController.swift in Sources */,
