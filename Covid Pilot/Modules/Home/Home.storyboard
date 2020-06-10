@@ -121,6 +121,11 @@ Cuídate y cuida a los demás.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AA3-07-0Pc"/>
                     </view>
+                    <connections>
+                        <outlet property="expositionDescription" destination="XCQ-uz-Hi1" id="SgW-aX-6xj"/>
+                        <outlet property="expositionTitle" destination="Tiy-hB-953" id="d36-84-O30"/>
+                        <outlet property="expositionView" destination="6hz-zu-Mhb" id="8iB-cX-vMh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGb-4j-Cjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

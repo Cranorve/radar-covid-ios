@@ -25,19 +25,19 @@
                                 <rect key="frame" x="0.0" y="-1" width="414" height="155.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MI DIAGNÓSTICO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Km-Li-R8Y">
-                                <rect key="frame" x="20" y="99" width="101.5" height="15.5"/>
+                                <rect key="frame" x="20" y="99" width="99" height="14"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="12"/>
                                 <color key="textColor" red="0.5764058232" green="0.57650798560000005" blue="0.57639932630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Cómo te encuentras hoy?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ub7-Zo-Om5">
-                                <rect key="frame" x="20" y="134" width="347" height="35.5"/>
+                                <rect key="frame" x="20" y="134" width="347" height="33"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reportando tu diagnóstico Covid-19, estás contribuyendo a detener la propagación del virus. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CSp-Na-Mxg">
-                                <rect key="frame" x="20" y="194" width="374" height="71"/>
+                                <rect key="frame" x="20" y="191.5" width="374" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="nII-BK-HGK"/>
                                 </constraints>
@@ -46,13 +46,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Ayúdanos a mantener a tus conocidos seguros!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ySm-4q-hhL">
-                                <rect key="frame" x="20" y="273" width="374" height="50.5"/>
+                                <rect key="frame" x="20" y="270.5" width="374" height="47"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YOD-Rc-mbN">
-                                <rect key="frame" x="20" y="352" width="374" height="50.5"/>
+                                <rect key="frame" x="20" y="346" width="374" height="47"/>
                                 <string key="text">¿Has sido diagnosticado Covid-19?
 </string>
                                 <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="20"/>
@@ -60,27 +60,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="codeInputFrame" translatesAutoresizingMaskIntoConstraints="NO" id="c5d-kc-7Ws">
-                                <rect key="frame" x="194" y="431" width="200" height="161"/>
+                                <rect key="frame" x="194" y="421.5" width="200" height="161"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Código de diagnóstico" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4gj-0b-5G9">
-                                <rect key="frame" x="20" y="431" width="374" height="25.5"/>
+                                <rect key="frame" x="20" y="421.5" width="374" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduce el código que te han enviado" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lr1-Za-iuV">
-                                <rect key="frame" x="20" y="510" width="200" height="50.5"/>
+                                <rect key="frame" x="20" y="498.5" width="200" height="47"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yb-R6-MLg">
-                                <rect key="frame" x="20" y="600" width="374" height="34"/>
+                                <rect key="frame" x="20" y="585" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ej. ABC1234567" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LVk-tn-nfe">
-                                <rect key="frame" x="20" y="642" width="151.5" height="25.5"/>
+                                <rect key="frame" x="20" y="627" width="145.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
