@@ -13,9 +13,12 @@ class HomeViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    private let bgImageRed = UIImage(named: "GradientBackgroundRed")
+    
     @IBOutlet weak var expositionTitle: UILabel!
     @IBOutlet weak var expositionDescription: UILabel!
-    @IBOutlet weak var expositionView: UIView!
+    @IBOutlet weak var expositionView: BackgroundView!
+
     
     var router: AppRouter?
     var expositionUseCase: ExpositionUseCase?
@@ -55,6 +58,7 @@ class HomeViewController: UIViewController {
         }
         expositionTitle.text = title
         expositionDescription.text = description
+        expositionView.image = bgImageRed
 //        expositionView.colors =  [UIColor.white.cgColor, UIColor.red.cgColor]
         
     }
