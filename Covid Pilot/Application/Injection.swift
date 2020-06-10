@@ -27,6 +27,7 @@ class Injection {
             appRouter.onBoardingVC = r.resolve(OnBoardingViewController.self)!
             appRouter.tabBarController = r.resolve(TabBarController.self)!
             appRouter.myHealthVC = r.resolve(MyHealthViewController.self)!
+            appRouter.expositionVC = r.resolve(ExpositionViewController.self)!
         }
         
         container.register(PreferencesRepository.self) { r in
@@ -75,6 +76,10 @@ class Injection {
             let recVC = ProximityViewController()
             recVC.bluetoothUseCase = r.resolve(BluetoothUseCase.self)!
             return recVC
+        }
+        
+        container.register(ExpositionViewController.self) {  r in
+            self.createViewController(storyboard: "Exposition", id: "ExpositionViewController") as! ExpositionViewController
         }
         
         container.register(HomeViewController.self) {  r in
