@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,26 +12,26 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="boN-vE-v6h" customClass="HomeViewController" customModule="Covid_Pilot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bH7-lt-L7E">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageHome" translatesAutoresizingMaskIntoConstraints="NO" id="6NQ-cJ-mH8">
-                                <rect key="frame" x="88" y="114" width="238" height="177"/>
+                                <rect key="frame" x="88" y="158" width="238" height="177"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="177" id="3eu-yc-v62"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hz-zu-Mhb">
-                                <rect key="frame" x="16" y="311" width="382" height="143.66666666666663"/>
+                                <rect key="frame" x="16" y="355" width="382" height="145"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exposición baja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tiy-hB-953">
-                                        <rect key="frame" x="26" y="20" width="336" height="27.666666666666671"/>
+                                        <rect key="frame" x="26" y="20" width="336" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCQ-uz-Hi1">
-                                        <rect key="frame" x="26" y="67.666666666666686" width="336" height="61"/>
+                                        <rect key="frame" x="26" y="69" width="336" height="61"/>
                                         <string key="text">Te informaremos en el caso de un posible contacto. 
 Cuídate y cuida a los demás.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -60,7 +60,7 @@ Cuídate y cuida a los demás.</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuQ-dg-Nwm">
-                                <rect key="frame" x="16" y="474.66666666666674" width="382" height="179"/>
+                                <rect key="frame" x="16" y="520" width="382" height="179"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CORONA radar activo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5A-O2-cnn">
                                         <rect key="frame" x="26" y="20" width="209" height="27"/>
@@ -72,7 +72,7 @@ Cuídate y cuida a los demás.</string>
                                         <rect key="frame" x="323" y="20" width="51" height="31"/>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Las interacciones con móviles cercanos se registarán siempre anónimamente. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DO-YK-Xnt">
-                                        <rect key="frame" x="26" y="84.999999999999943" width="336" height="79"/>
+                                        <rect key="frame" x="26" y="85" width="336" height="79"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -91,7 +91,7 @@ Cuídate y cuida a los demás.</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgD-SH-6Y2">
-                                <rect key="frame" x="16" y="666" width="382" height="54"/>
+                                <rect key="frame" x="16" y="792" width="382" height="54"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="UKC-Bh-shj"/>
@@ -133,7 +133,7 @@ Cuídate y cuida a los demás.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="arrowRight" width="25.666666030883789" height="17"/>
+        <image name="arrowRight" width="25.5" height="17"/>
         <image name="imageHome" width="238" height="177"/>
     </resources>
 </document>
