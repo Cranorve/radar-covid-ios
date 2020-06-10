@@ -33,12 +33,20 @@ class Injection {
             UserDefaultsPreferencesRepository()
         }.inObjectScope(.container)
         
+        container.register(BluetoothHandler.self) { r in
+            CentralManagerBluetoothHandler()
+        }.inObjectScope(.container)
+        
         container.register(OnboardingCompletedUseCase.self) { r in
             OnboardingCompletedUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(ExpositionUseCase.self) { r in
             ExpositionUseCase()
+        }.inObjectScope(.container)
+        
+        container.register(BluetoothUseCase.self) { r in
+            BluetoothUseCase(bluetoothHandler: r.resolve(BluetoothHandler.self) as! BluetoothHandler)
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in
@@ -52,6 +60,7 @@ class Injection {
         container.register(TermsViewController.self) { r in
             let termsVC = self.createViewController(storyboard: "Terms", id: "TermsViewController") as! TermsViewController
             termsVC.recomendationsVC = r.resolve(RecomendationsViewController.self)!
+            termsVC.proximityVC = r.resolve(ProximityViewController.self)!
             return termsVC
         }
         
@@ -59,6 +68,12 @@ class Injection {
             let recVC = RecomendationsViewController()
             recVC.router = r.resolve(AppRouter.self)!
             recVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
+            return recVC
+        }
+        
+        container.register(ProximityViewController.self) {  r in
+            let recVC = ProximityViewController()
+            recVC.bluetoothUseCase = r.resolve(BluetoothUseCase.self)!
             return recVC
         }
         

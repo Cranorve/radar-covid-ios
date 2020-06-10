@@ -52,6 +52,10 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Necesitamos Bluetooth para compartir información con otros dispositivos cercanos</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Necesitamos Bluetooth para compartir información con otros dispositivos cercanos</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
