@@ -14,6 +14,7 @@
 		39443296248939F500FF0217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39443294248939F500FF0217 /* LaunchScreen.storyboard */; };
 		394E962C248E3F6E009F640E /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394E962B248E3F6E009F640E /* OnBoarding.storyboard */; };
 		394E962F248E7F25009F640E /* MyHealth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394E962E248E7F24009F640E /* MyHealth.storyboard */; };
+		6DA18CBB2491055D00BE8AAB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CBA2491055D00BE8AAB /* GradientView.swift */; };
 		6DF6EC99248E59C6007EAA40 /* Terms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6EC98248E59C6007EAA40 /* Terms.storyboard */; };
 		6DF6EC9B248E5C77007EAA40 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6EC9A248E5C77007EAA40 /* TermsViewController.swift */; };
 		6DF6ECA1248E6191007EAA40 /* RunningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6ECA0248E6191007EAA40 /* RunningViewController.xib */; };
@@ -58,6 +59,7 @@
 		394E9627248E38B7009F640E /* Muli-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-VariableFont_wght.ttf"; path = "../../../../Fonts/Muli-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		394E962B248E3F6E009F640E /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		394E962E248E7F24009F640E /* MyHealth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyHealth.storyboard; sourceTree = "<group>"; };
+		6DA18CBA2491055D00BE8AAB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		6DF6EC98248E59C6007EAA40 /* Terms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Terms.storyboard; sourceTree = "<group>"; };
 		6DF6EC9A248E5C77007EAA40 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		6DF6ECA0248E6191007EAA40 /* RunningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningViewController.xib; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		39443288248939F000FF0217 /* Covid Pilot */ = {
 			isa = PBXGroup;
 			children = (
+				6DA18CB92491053700BE8AAB /* Components */,
 				6DF6ECC5248F6EBE007EAA40 /* Data */,
 				6DF6ECAE248E88B9007EAA40 /* Domain */,
 				394E9625248E3845009F640E /* Fonts */,
@@ -192,6 +195,14 @@
 				6DF6ECD7248FBEC2007EAA40 /* MyHealthViewController.swift */,
 			);
 			path = MyHealth;
+			sourceTree = "<group>";
+		};
+		6DA18CB92491053700BE8AAB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6DA18CBA2491055D00BE8AAB /* GradientView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		6DF6EC97248E5987007EAA40 /* Terms */ = {
@@ -380,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3944328E248939F000FF0217 /* ViewController.swift in Sources */,
+				6DA18CBB2491055D00BE8AAB /* GradientView.swift in Sources */,
 				6DF6ECE52490C1F5007EAA40 /* BluetoothHandler.swift in Sources */,
 				3944328A248939F000FF0217 /* AppDelegate.swift in Sources */,
 				6DF6EC9B248E5C77007EAA40 /* TermsViewController.swift in Sources */,
