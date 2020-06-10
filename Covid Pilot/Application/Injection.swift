@@ -46,6 +46,10 @@ class Injection {
             ExpositionUseCase()
         }.inObjectScope(.container)
         
+        container.register(RadarStatusUseCase.self) { r in
+            RadarStatusUseCase()
+        }.inObjectScope(.container)
+        
         container.register(BluetoothUseCase.self) { r in
             BluetoothUseCase(bluetoothHandler: r.resolve(BluetoothHandler.self) as! BluetoothHandler)
         }.inObjectScope(.container)
@@ -86,6 +90,7 @@ class Injection {
             let homeVC = self.createViewController(storyboard: "Home", id: "HomeViewController") as! HomeViewController
             homeVC.router = r.resolve(AppRouter.self)!
             homeVC.expositionUseCase = r.resolve(ExpositionUseCase.self)!
+            homeVC.radarStatusUseCase = r.resolve(RadarStatusUseCase.self)!
             return homeVC
         }
         

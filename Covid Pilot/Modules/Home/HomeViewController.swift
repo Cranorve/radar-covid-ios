@@ -27,13 +27,23 @@ class HomeViewController: UIViewController {
     
     var router: AppRouter?
     var expositionUseCase: ExpositionUseCase?
+    var radarStatusUseCase: RadarStatusUseCase?
     
     @IBAction func onCommunicate(_ sender: Any) {
         router?.route(to: Routes.MyHealth, from: self)
     }
     
     @IBAction func onRadarSwitchChange(_ sender: Any) {
-        changeMessage(active: radarSwitch.isOn)
+        
+        let active = radarSwitch.isOn
+        
+        radarStatusUseCase?.changeRadarStatus(active: active).subscribe(
+            onNext:{ [weak self] active in
+                self?.changeMessage(active: active)
+            }, onError: {  [weak self] error in
+
+        }).disposed(by: disposeBag)
+        
     }
     
     @objc func onExpositionTap() {
