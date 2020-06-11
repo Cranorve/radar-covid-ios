@@ -10,10 +10,16 @@ import UIKit
 
 class ExpositionViewController: UIViewController {
 
+    private let bgImageGreen = UIImage(named: "GradientBackgroundGreen")
+    
+    @IBOutlet weak var expositionBGView : BackgroundView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        expositionBGView.image = bgImageGreen
     }
     
 

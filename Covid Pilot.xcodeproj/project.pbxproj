@@ -13,6 +13,8 @@
 		39443296248939F500FF0217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39443294248939F500FF0217 /* LaunchScreen.storyboard */; };
 		394E962C248E3F6E009F640E /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394E962B248E3F6E009F640E /* OnBoarding.storyboard */; };
 		394E962F248E7F25009F640E /* MyHealth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394E962E248E7F24009F640E /* MyHealth.storyboard */; };
+		39779BC52492589500E1D5AA /* Muli-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39779BC32492589500E1D5AA /* Muli-VariableFont_wght.ttf */; };
+		39779BC62492589500E1D5AA /* Muli-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39779BC42492589500E1D5AA /* Muli-Italic-VariableFont_wght.ttf */; };
 		399CA87D24912B96000B6BF4 /* MyHealthReported.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 399CA87C24912B96000B6BF4 /* MyHealthReported.storyboard */; };
 		399CA88124913B0E000B6BF4 /* MyHealthReportedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CA88024913B0E000B6BF4 /* MyHealthReportedViewController.swift */; };
 		39A1AD46249225510049E48B /* HighExposition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A1AD45249225510049E48B /* HighExposition.storyboard */; };
@@ -59,10 +61,10 @@
 		39443292248939F500FF0217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39443295248939F500FF0217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39443297248939F500FF0217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		394E9626248E38B7009F640E /* Muli-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Italic-VariableFont_wght.ttf"; path = "../../../../Fonts/Muli-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
-		394E9627248E38B7009F640E /* Muli-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-VariableFont_wght.ttf"; path = "../../../../Fonts/Muli-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		394E962B248E3F6E009F640E /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		394E962E248E7F24009F640E /* MyHealth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyHealth.storyboard; sourceTree = "<group>"; };
+		39779BC32492589500E1D5AA /* Muli-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		39779BC42492589500E1D5AA /* Muli-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		399CA87C24912B96000B6BF4 /* MyHealthReported.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyHealthReported.storyboard; sourceTree = "<group>"; };
 		399CA88024913B0E000B6BF4 /* MyHealthReportedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHealthReportedViewController.swift; sourceTree = "<group>"; };
 		39A1AD45249225510049E48B /* HighExposition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HighExposition.storyboard; sourceTree = "<group>"; };
@@ -159,8 +161,8 @@
 		394E9625248E3845009F640E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				394E9626248E38B7009F640E /* Muli-Italic-VariableFont_wght.ttf */,
-				394E9627248E38B7009F640E /* Muli-VariableFont_wght.ttf */,
+				39779BC42492589500E1D5AA /* Muli-Italic-VariableFont_wght.ttf */,
+				39779BC32492589500E1D5AA /* Muli-VariableFont_wght.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -391,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39779BC52492589500E1D5AA /* Muli-VariableFont_wght.ttf in Resources */,
 				6DF6ECBB248F5E56007EAA40 /* ProximityViewController.xib in Resources */,
 				6DF6ECC2248F68DF007EAA40 /* Home.storyboard in Resources */,
 				39A1AD46249225510049E48B /* HighExposition.storyboard in Resources */,
@@ -402,6 +405,7 @@
 				399CA87D24912B96000B6BF4 /* MyHealthReported.storyboard in Resources */,
 				394E962F248E7F25009F640E /* MyHealth.storyboard in Resources */,
 				39443293248939F500FF0217 /* Assets.xcassets in Resources */,
+				39779BC62492589500E1D5AA /* Muli-Italic-VariableFont_wght.ttf in Resources */,
 				394E962C248E3F6E009F640E /* OnBoarding.storyboard in Resources */,
 				6DF6ECA1248E6191007EAA40 /* RunningViewController.xib in Resources */,
 				6DF6ECA3248E61E0007EAA40 /* PrivacyViewController.xib in Resources */,
