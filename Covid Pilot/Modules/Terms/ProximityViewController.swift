@@ -13,9 +13,9 @@ class ProximityViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    var router: AppRouter?
     var bluetoothUseCase: BluetoothUseCase?
-    
-    @IBOutlet weak var pageControl: UIPageControl!
+    var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
 
     @IBAction func onContinue(_ sender: Any) {
         bluetoothUseCase?.checkBluetoothActive().subscribe(
@@ -29,14 +29,12 @@ class ProximityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageControl.numberOfPages = 4
-        pageControl.currentPage = 2
-        view.bringSubviewToFront(pageControl)
     }
     
     private func navigateIf(active: Bool) {
         if (active) {
-
+            onBoardingCompletedUseCase?.setOnboarding(completed: true)
+            router?.route(to: Routes.Home, from: self)
         } else {
             
             let alert = Alert.showAlertOk(title:  "Bluetooth Inactivo", message: "Es necesario activar bluetooth para poder usar la aplicación", buttonTitle: "OK")

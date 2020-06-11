@@ -66,22 +66,17 @@ class Injection {
         
         container.register(TermsViewController.self) { r in
             let termsVC = self.createViewController(storyboard: "Terms", id: "TermsViewController") as! TermsViewController
-            termsVC.recomendationsVC = r.resolve(RecomendationsViewController.self)!
             termsVC.proximityVC = r.resolve(ProximityViewController.self)!
             return termsVC
         }
-        
-        container.register(RecomendationsViewController.self) {  r in
-            let recVC = RecomendationsViewController()
-            recVC.router = r.resolve(AppRouter.self)!
-            recVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
-            return recVC
-        }
+    
         
         container.register(ProximityViewController.self) {  r in
-            let recVC = ProximityViewController()
-            recVC.bluetoothUseCase = r.resolve(BluetoothUseCase.self)!
-            return recVC
+            let proxVC = ProximityViewController()
+            proxVC.bluetoothUseCase = r.resolve(BluetoothUseCase.self)!
+            proxVC.router = r.resolve(AppRouter.self)!
+            proxVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
+            return proxVC
         }
         
         container.register(ExpositionViewController.self) {  r in
