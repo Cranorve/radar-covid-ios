@@ -30,7 +30,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="531"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zo4-mc-Nhw">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="754.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="728.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qjc-kM-eYE">
                                     <rect key="frame" x="113" y="0.0" width="207" height="206.5"/>
@@ -59,19 +59,19 @@
                                     <viewLayoutGuide key="safeArea" id="fGP-kG-Jbs"/>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu privacidad es nuestra prioridad" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJm-ps-GKq">
-                                    <rect key="frame" x="16" y="155" width="288" height="70.5"/>
+                                    <rect key="frame" x="16" y="155" width="288" height="65.5"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuestros compromisos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnX-uA-736">
-                                    <rect key="frame" x="16" y="241.5" width="288" height="26"/>
+                                    <rect key="frame" x="16" y="236.5" width="288" height="26"/>
                                     <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="22"/>
                                     <color key="textColor" name="deepLilac"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbu-9o-T0K">
-                                    <rect key="frame" x="10" y="283.5" width="294" height="471"/>
+                                    <rect key="frame" x="10" y="278.5" width="294" height="450"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <attributedString key="attributedText">
                                         <fragment content="Anonimato">

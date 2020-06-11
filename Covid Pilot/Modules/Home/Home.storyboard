@@ -13,6 +13,9 @@
         <array key="muli_regular.ttf">
             <string>Muli-Regular</string>
         </array>
+        <array key="muli_semibold.ttf">
+            <string>Muli-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Home View Controller-->
@@ -69,7 +72,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="UKC-Bh-shj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
                                 <state key="normal" title="Comunica tu positivo Covid" backgroundImage="GradientBackgroundButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
