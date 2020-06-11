@@ -22,6 +22,7 @@ public enum Routes {
     case Home
     case Terms
     case MyHealth
+    case MyHealthReported
     case Exposition
 }
 
@@ -32,6 +33,7 @@ class AppRouter : Router {
     var onBoardingVC: OnBoardingViewController?
     var tabBarController: TabBarController?
     var myHealthVC: MyHealthViewController?
+    var myHealthReportedVC: MyHealthReportedViewController?
     var expositionVC: ExpositionViewController?
     
     func route(to routeID: Routes, from context: UIViewController, parameters: Any?...) {
@@ -44,6 +46,8 @@ class AppRouter : Router {
             routeToTerms(context)
         case .MyHealth:
             routeToMyHealth(context)
+        case .MyHealthReported:
+            routeToMyHealthReported(context)
         case .Exposition:
             routeToExposition(context)
         }
@@ -63,6 +67,10 @@ class AppRouter : Router {
     
     private func routeToMyHealth(_ context: UIViewController) {
         context.navigationController?.pushViewController(myHealthVC!, animated: true)
+    }
+    
+    private func routeToMyHealthReported(_ context: UIViewController) {
+        context.navigationController?.pushViewController(myHealthReportedVC!, animated: true)
     }
     
     private func routeToExposition(_ context: UIViewController) {

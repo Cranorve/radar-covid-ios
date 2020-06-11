@@ -1,24 +1,18 @@
 //
-//  MyHealthViewController.swift
+//  MyHealthReportedViewController.swift
 //  Covid Pilot
 //
-//  Created by alopezh on 09/06/2020.
+//  Created by Lino Bustamante on 10/06/2020.
 //  Copyright © 2020 Indra. All rights reserved.
 //
 
 import UIKit
 
-class MyHealthViewController: UIViewController {
+class MyHealthReportedViewController: UIViewController {
 
     @IBAction func onBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    @IBAction func onReportDiagnosis(_ sender: Any) {
-        router?.route(to: Routes.MyHealthReported, from: self)
-    }
-    
-    var router: AppRouter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
