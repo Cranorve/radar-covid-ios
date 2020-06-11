@@ -71,6 +71,8 @@ class AppRouter : Router {
     
     private func routeToMyHealthReported(_ context: UIViewController) {
         context.navigationController?.pushViewController(myHealthReportedVC!, animated: true)
+    }
+    
     private func routeToExposition(_ context: UIViewController) {
         context.navigationController?.pushViewController(expositionVC!, animated: true)
     }
