@@ -28,6 +28,7 @@ class Injection {
             appRouter.tabBarController = r.resolve(TabBarController.self)!
             appRouter.myHealthVC = r.resolve(MyHealthViewController.self)!
             appRouter.myHealthReportedVC = r.resolve(MyHealthReportedViewController.self)!
+            appRouter.expositionVC = r.resolve(ExpositionViewController.self)!
         }
         
         container.register(PreferencesRepository.self) { r in
@@ -44,6 +45,10 @@ class Injection {
         
         container.register(ExpositionUseCase.self) { r in
             ExpositionUseCase()
+        }.inObjectScope(.container)
+        
+        container.register(RadarStatusUseCase.self) { r in
+            RadarStatusUseCase()
         }.inObjectScope(.container)
         
         container.register(BluetoothUseCase.self) { r in
@@ -78,10 +83,15 @@ class Injection {
             return recVC
         }
         
+        container.register(ExpositionViewController.self) {  r in
+            self.createViewController(storyboard: "Exposition", id: "ExpositionViewController") as! ExpositionViewController
+        }
+        
         container.register(HomeViewController.self) {  r in
             let homeVC = self.createViewController(storyboard: "Home", id: "HomeViewController") as! HomeViewController
             homeVC.router = r.resolve(AppRouter.self)!
             homeVC.expositionUseCase = r.resolve(ExpositionUseCase.self)!
+            homeVC.radarStatusUseCase = r.resolve(RadarStatusUseCase.self)!
             return homeVC
         }
         
