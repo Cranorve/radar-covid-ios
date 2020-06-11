@@ -16,8 +16,6 @@ class ProximityViewController: UIViewController {
     var bluetoothUseCase: BluetoothUseCase?
     
     @IBOutlet weak var pageControl: UIPageControl!
-    
-    var nextDelegate: NextDelegate?
 
     @IBAction func onContinue(_ sender: Any) {
         bluetoothUseCase?.checkBluetoothActive().subscribe(
@@ -38,7 +36,7 @@ class ProximityViewController: UIViewController {
     
     private func navigateIf(active: Bool) {
         if (active) {
-            nextDelegate?.next()
+
         } else {
             
             let alert = Alert.showAlertOk(title:  "Bluetooth Inactivo", message: "Es necesario activar bluetooth para poder usar la aplicación", buttonTitle: "OK")

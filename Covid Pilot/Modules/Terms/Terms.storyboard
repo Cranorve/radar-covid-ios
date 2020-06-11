@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,13 +15,38 @@
                     <view key="view" contentMode="scaleToFill" id="tQC-de-mDH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5Bb-te-DcT">
+                                <rect key="frame" x="0.0" y="825" width="414" height="37"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="m7P-h4-9a1"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" name="deepLilac"/>
+                            </pageControl>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="91U-G1-9hd" firstAttribute="bottom" secondItem="5Bb-te-DcT" secondAttribute="bottom" id="hUT-Tt-kmW"/>
+                            <constraint firstItem="91U-G1-9hd" firstAttribute="trailing" secondItem="5Bb-te-DcT" secondAttribute="trailing" id="mlO-tL-i3m"/>
+                            <constraint firstItem="5Bb-te-DcT" firstAttribute="leading" secondItem="91U-G1-9hd" secondAttribute="leading" id="qnp-aS-fe8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="91U-G1-9hd"/>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="5Bb-te-DcT" id="y7b-rd-2TW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2r0-0s-GJe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="11.594202898550726" y="139.95535714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="deepLilac">
+            <color red="0.54100000858306885" green="0.48600000143051147" blue="0.71799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
