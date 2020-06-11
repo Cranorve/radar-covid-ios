@@ -169,7 +169,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="65" id="amu-zK-oiN"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" name="darkPeach"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
