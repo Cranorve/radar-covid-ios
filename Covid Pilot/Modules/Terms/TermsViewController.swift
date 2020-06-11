@@ -9,7 +9,9 @@
 import UIKit
 import Pageboy
 
-class TermsViewController: PageboyViewController, PageboyViewControllerDataSource, NextDelegate {
+class TermsViewController: PageboyViewController, PageboyViewControllerDataSource, PageboyViewControllerDelegate {
+
+    @IBOutlet weak var pageControl: UIPageControl!
 
     var slides: [UIViewController] = [];
     
@@ -21,19 +23,16 @@ class TermsViewController: PageboyViewController, PageboyViewControllerDataSourc
         
         slides = createSlides()
         
-        self.dataSource = self
-        self.isScrollEnabled = false
-    
+        pageControl.numberOfPages = 3
+        pageControl.currentPage = 0
+        
+        self.delegate = self
+        self.dataSource = self    
     }
-    
     
     func createSlides() -> [UIViewController] {
         let runningVC = RunningViewController()
-        runningVC.nextDelegate = self
         let privacyVC = PrivacyViewController()
-        privacyVC.nextDelegate = self
-        proximityVC!.nextDelegate = self
-
         return [runningVC, privacyVC, proximityVC!, recomendationsVC!]
     }
     
@@ -45,17 +44,21 @@ class TermsViewController: PageboyViewController, PageboyViewControllerDataSourc
         slides[index]
     }
     
+    func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: NavigationDirection,animated: Bool) {
+        pageControl.currentPage = index
+    }
+    
+    func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: Int, direction: NavigationDirection,animated: Bool) {
+    }
+    
+    func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+    }
+    
+    func pageboyViewController(_ pageboyViewController: PageboyViewController, didReloadWith currentViewController: UIViewController, currentPageIndex: PageboyViewController.PageIndex) {
+    }
+    
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         nil
     }
-    
-    func next() {
-        self.scrollToPage(.next, animated: true)
-    }
 
-
-}
-
-protocol NextDelegate {
-    func next()
 }
