@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var expositionView: BackgroundView!
     @IBOutlet weak var radarSwitch: UISwitch!
     @IBOutlet weak var radarMessage: UILabel!
+    @IBOutlet weak var radarView: BackgroundView!
     
     private var expositionInfo: ExpositionInfo?
     
@@ -56,6 +57,7 @@ class HomeViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.onExpositionTap))
         
         expositionView.addGestureRecognizer(gesture)
+        radarView.image = UIImage(named: "WhiteCard")
         
         radarSwitch.tintColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         radarSwitch.layer.cornerRadius = radarSwitch.frame.height / 2
