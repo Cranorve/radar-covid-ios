@@ -40,10 +40,10 @@ class ProximityViewController: UIViewController {
         if (active) {
             nextDelegate?.next()
         } else {
-            let alert = UIAlertController(title: "Bluetoot Inactivo", message: "Es necesario activar bluetooth para poder usar la aplicación", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default,handler: nil))
             
-            self.present(alert, animated: true)
+            let alert = Alert.showAlertOk(title:  "Bluetooth Inactivo", message: "Es necesario activar bluetooth para poder usar la aplicación", buttonTitle: "OK")
+            
+            present(alert, animated: true)
         }
     }
 
