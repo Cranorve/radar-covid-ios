@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -9,9 +9,6 @@
     <customFonts key="customFonts">
         <array key="muli_bold.ttf">
             <string>Muli-Bold</string>
-        </array>
-        <array key="muli_regular.ttf">
-            <string>Muli-Regular</string>
         </array>
         <array key="muli_semibold.ttf">
             <string>Muli-SemiBold</string>
@@ -23,33 +20,43 @@
             <objects>
                 <viewController storyboardIdentifier="HelpLineViewController" id="mMO-wQ-feO" customClass="HelpLineViewController" customModule="Covid_Pilot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NXc-EZ-zay">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="organicColor" translatesAutoresizingMaskIntoConstraints="NO" id="CFd-OD-gzT">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="155.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="155.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ayúdanos a mejorar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cst-er-eD4">
-                                <rect key="frame" x="16" y="174" width="382" height="36"/>
+                                <rect key="frame" x="16" y="130" width="343" height="36"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoyGirlHearts" translatesAutoresizingMaskIntoConstraints="NO" id="w9H-Jy-4ca">
-                                <rect key="frame" x="91" y="239" width="232" height="158"/>
+                                <rect key="frame" x="71.5" y="195" width="232" height="158"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="232" id="I00-gL-GWp"/>
                                     <constraint firstAttribute="height" constant="158" id="aDC-h2-llN"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tú opinión es muy importante. Tu haces posible ... (hablar de anonimato)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8G-Nn-de4">
-                                <rect key="frame" x="16" y="421" width="382" height="40.5"/>
-                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8G-Nn-de4">
+                                <rect key="frame" x="16" y="377" width="343" height="40.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Tú opinión es muy importante. ">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name="Muli-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Tu haces posible ... (hablar de anonimato)">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name="Muli-Regular"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HS-MA-jpT">
-                                <rect key="frame" x="16" y="477.5" width="382" height="54"/>
+                                <rect key="frame" x="16" y="433.5" width="343" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="pKx-r8-rQQ"/>
                                 </constraints>
@@ -63,15 +70,28 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onPollSelected:" destination="mMO-wQ-feO" eventType="primaryActionTriggered" id="v7x-Qg-509"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Necesitas ayuda?¿Tienes alguna duda? Contacta con nostros y te atenderemos en todo lo que necesites." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geQ-iZ-DDL">
-                                <rect key="frame" x="16" y="593.5" width="382" height="61"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geQ-iZ-DDL">
+                                <rect key="frame" x="16" y="549.5" width="343" height="62"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="¿Necesitas ayuda?¿Tienes alguna duda?">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Muli-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" Contacta con nostros y te atenderemos en todo lo que necesites.">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V70-Be-BMy">
-                                <rect key="frame" x="16" y="670.5" width="382" height="54"/>
+                                <rect key="frame" x="16" y="627.5" width="343" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="nPu-IS-I69"/>
                                 </constraints>
@@ -85,6 +105,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onContactSelected:" destination="mMO-wQ-feO" eventType="primaryActionTriggered" id="jCX-kn-9xl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

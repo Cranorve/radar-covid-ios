@@ -30,6 +30,8 @@ class Injection {
             appRouter.myHealthReportedVC = r.resolve(MyHealthReportedViewController.self)!
             appRouter.expositionVC = r.resolve(ExpositionViewController.self)!
             appRouter.highExpositionVC = r.resolve(HighExpositionViewController.self)!
+            appRouter.pollVC = r.resolve(PollViewController.self)!
+            appRouter.contactVC = r.resolve(ContactViewController.self)!
         }
         
         container.register(PreferencesRepository.self) { r in
@@ -100,7 +102,17 @@ class Injection {
         }
         
         container.register(HelpLineViewController.self) {  r in
-            self.createViewController(storyboard: "HelpLine", id: "HelpLineViewController") as! HelpLineViewController
+            let helpVC = self.createViewController(storyboard: "HelpLine", id: "HelpLineViewController") as! HelpLineViewController
+            helpVC.router = r.resolve(AppRouter.self)!
+            return helpVC
+        }
+        
+        container.register(ContactViewController.self) {  r in
+            self.createViewController(storyboard: "Contact", id: "ContactViewController") as! ContactViewController
+        }
+        
+        container.register(PollViewController.self) {  r in
+            self.createViewController(storyboard: "Poll", id: "PollViewController") as! PollViewController
         }
         
         container.register(MyHealthViewController.self) {  r in

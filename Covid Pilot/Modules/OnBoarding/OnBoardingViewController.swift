@@ -22,7 +22,7 @@ class OnBoardingViewController: UIViewController {
 //        if (onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? false) {
 //            router?.route(to: Routes.Home, from: self)
 //        }
-//        router?.route(to: Routes.Home, from: self)
+       router?.route(to: Routes.Home, from: self)
     }
     
     override func viewDidLoad() {
