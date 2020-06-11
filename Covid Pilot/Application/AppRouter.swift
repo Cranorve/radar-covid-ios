@@ -24,6 +24,7 @@ public enum Routes {
     case MyHealth
     case MyHealthReported
     case Exposition
+    case HighExposition
 }
 
 class AppRouter : Router {
@@ -35,6 +36,7 @@ class AppRouter : Router {
     var myHealthVC: MyHealthViewController?
     var myHealthReportedVC: MyHealthReportedViewController?
     var expositionVC: ExpositionViewController?
+    var highExpositionVC: HighExpositionViewController?
     
     func route(to routeID: Routes, from context: UIViewController, parameters: Any?...) {
         switch routeID {
@@ -50,6 +52,8 @@ class AppRouter : Router {
             routeToMyHealthReported(context)
         case .Exposition:
             routeToExposition(context)
+        case .HighExposition:
+            routeToHighExposition(context)
         }
     }
     
@@ -75,6 +79,10 @@ class AppRouter : Router {
     
     private func routeToExposition(_ context: UIViewController) {
         context.navigationController?.pushViewController(expositionVC!, animated: true)
+    }
+    
+    private func routeToHighExposition(_ context: UIViewController) {
+        context.navigationController?.pushViewController(highExpositionVC!, animated: true)
     }
     
     private func loadViewAsRoot(navController: UINavigationController?, view: UIViewController) {

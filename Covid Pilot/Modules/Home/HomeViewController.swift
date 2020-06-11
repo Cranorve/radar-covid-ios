@@ -48,7 +48,16 @@ class HomeViewController: UIViewController {
     }
     
     @objc func onExpositionTap() {
-        router?.route(to: Routes.Exposition, from: self, parameters: expositionInfo)
+        switch expositionInfo?.level {
+        case .LOW:
+            router?.route(to: Routes.Exposition, from: self, parameters: expositionInfo)
+        case .MEDIUM:
+            router?.route(to: Routes.Exposition, from: self, parameters: expositionInfo)
+        case .HIGH:
+            router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo)
+        default:
+            router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo)
+        }
     }
     
     override func viewDidLoad() {
@@ -73,6 +82,7 @@ class HomeViewController: UIViewController {
     }
     
     private func updateExpositionInfo(_ exposition: ExpositionInfo) {
+        self.expositionInfo = exposition
         switch exposition.level {
             case .HIGH:
                 expositionTitle.text = "Exposición alta"
