@@ -8,19 +8,24 @@
 
 import Foundation
 import CoreBluetooth
+import RxSwift
 
 protocol BluetoothHandler {
-    func isActive() -> Bool
+    func isActive() -> Observable<Bool>
 }
 
 class CentralManagerBluetoothHandler: NSObject, BluetoothHandler, CBCentralManagerDelegate {
     
     var centralManager: CBCentralManager?
+    var observerList: [AnyObserver<Bool>] = []
     
-    
-    func isActive() -> Bool {
+    func isActive() -> Observable<Bool> {
         centralManager = CBCentralManager(delegate: self, queue: nil)
-        return true
+        
+        return .create { [weak self] observer in
+            self?.observerList.append(observer)
+            return Disposables.create()
+        }
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -54,6 +59,15 @@ class CentralManagerBluetoothHandler: NSObject, BluetoothHandler, CBCentralManag
             active = false
         @unknown default:
             active = false
+        }
+        notify(state: active)
+        
+    }
+    
+    private func notify(state: Bool) {
+        observerList.forEach { observer in
+            observer.onNext(state)
+            observer.onCompleted()
         }
     }
     

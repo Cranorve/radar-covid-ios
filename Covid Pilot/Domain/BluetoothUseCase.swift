@@ -19,7 +19,6 @@ class BluetoothUseCase {
     
     func checkBluetoothActive() -> Observable<Bool> {
         bluetoothHandler.isActive()
-        return .just(true)
     }
     
 }
