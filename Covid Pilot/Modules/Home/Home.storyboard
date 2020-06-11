@@ -61,19 +61,24 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgD-SH-6Y2">
                                 <rect key="frame" x="16" y="792" width="382" height="54"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="UKC-Bh-shj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Comunica tu positivo Covid">
+                                <state key="normal" title="Comunica tu positivo Covid" backgroundImage="GradientBackgroundButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onCommunicate:" destination="boN-vE-v6h" eventType="primaryActionTriggered" id="V3n-sM-LVk"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hz-zu-Mhb">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hz-zu-Mhb" customClass="BackgroundView" customModule="Covid_Pilot" customModuleProvider="target">
                                 <rect key="frame" x="16" y="500.33333333333331" width="382" height="128.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Exposición baja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Tiy-hB-953">
@@ -94,7 +99,6 @@ Cuídate y cuida a los demás.</string>
                                         <rect key="frame" x="336.66666666666669" y="23.333333333333314" width="25.333333333333314" height="17"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Tiy-hB-953" firstAttribute="leading" secondItem="6hz-zu-Mhb" secondAttribute="leading" constant="26" id="Com-i8-olk"/>
                                     <constraint firstAttribute="trailing" secondItem="kNQ-4q-3vF" secondAttribute="trailing" constant="20" id="Gve-Uo-UE0"/>
@@ -141,6 +145,7 @@ Cuídate y cuida a los demás.</string>
         </scene>
     </scenes>
     <resources>
+        <image name="GradientBackgroundButton" width="343" height="56"/>
         <image name="arrowRight" width="25.666666030883789" height="17"/>
         <image name="circle" width="350.66665649414062" height="330.66665649414062"/>
         <image name="imageHome" width="238" height="177"/>
