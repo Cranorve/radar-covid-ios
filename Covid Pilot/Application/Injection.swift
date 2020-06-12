@@ -141,6 +141,7 @@ class Injection {
         
         container.register(MyHealthReportedViewController.self) { r in
             let myHealthReportedVC = self.createViewController(storyboard: "MyHealthReported", id: "MyHealthReportedViewController") as! MyHealthReportedViewController
+            myHealthReportedVC.router = r.resolve(AppRouter.self)!
             return myHealthReportedVC
         }
         
