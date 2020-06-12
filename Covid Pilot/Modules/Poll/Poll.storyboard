@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="muli_semibold.ttf">
+            <string>Muli-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Poll View Controller-->
         <scene sceneID="vcr-bv-D0a">
@@ -31,13 +36,16 @@
                                         </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="coW-Wu-xg7">
-                                        <rect key="frame" x="59" y="11" width="339" height="0.0"/>
+                                        <rect key="frame" x="59" y="6" width="339" height="10"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" id="cTX-Jw-jHs"/>
+                                            <constraint firstAttribute="height" constant="10" id="cTX-Jw-jHs"/>
                                         </constraints>
+                                        <color key="progressTintColor" name="deepLilac"/>
+                                        <color key="trackTintColor" name="powderBlue"/>
                                     </progressView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="coW-Wu-xg7" firstAttribute="leading" secondItem="shc-gz-JHv" secondAttribute="trailing" constant="16" id="5EE-IM-XSy"/>
                                     <constraint firstItem="shc-gz-JHv" firstAttribute="leading" secondItem="Eju-rC-0qu" secondAttribute="leading" constant="20" id="Ltd-Xx-8F7"/>
@@ -47,17 +55,40 @@
                                     <constraint firstItem="shc-gz-JHv" firstAttribute="top" secondItem="Eju-rC-0qu" secondAttribute="top" id="yBv-IZ-FG0"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdn-xL-agc">
+                                <rect key="frame" x="16" y="798" width="382" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="Twe-jq-L1W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
+                                <state key="normal" title="Siguiente" backgroundImage="GradientBackgroundButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onNext:" destination="65u-p4-oBj" eventType="primaryActionTriggered" id="Y54-G0-CLZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="tintColor" name="deepLilac"/>
                         <constraints>
                             <constraint firstItem="Eju-rC-0qu" firstAttribute="leading" secondItem="cjh-Lk-HpV" secondAttribute="leading" id="Re5-1e-ZEC"/>
+                            <constraint firstItem="xdn-xL-agc" firstAttribute="leading" secondItem="oFP-vf-rU6" secondAttribute="leading" constant="16" id="S8Q-ML-FUs"/>
                             <constraint firstItem="cjh-Lk-HpV" firstAttribute="trailing" secondItem="Eju-rC-0qu" secondAttribute="trailing" id="ZSL-vq-tnl"/>
+                            <constraint firstItem="cjh-Lk-HpV" firstAttribute="trailing" secondItem="xdn-xL-agc" secondAttribute="trailing" constant="16" id="hDx-cL-Ueo"/>
+                            <constraint firstItem="cjh-Lk-HpV" firstAttribute="bottom" secondItem="xdn-xL-agc" secondAttribute="bottom" constant="10" id="sBJ-M4-8eO"/>
                             <constraint firstItem="Eju-rC-0qu" firstAttribute="top" secondItem="cjh-Lk-HpV" secondAttribute="top" id="yHZ-YF-9be"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cjh-Lk-HpV"/>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="xdn-xL-agc" id="Tu7-WL-oP2"/>
                         <outlet property="progressView" destination="coW-Wu-xg7" id="x0s-oe-0oA"/>
                     </connections>
                 </viewController>
@@ -67,9 +98,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="GradientBackgroundButton" width="343" height="56"/>
         <image name="iconsBack" width="25.5" height="17"/>
         <namedColor name="deepLilac">
             <color red="0.54100000858306885" green="0.48600000143051147" blue="0.71799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="powderBlue">
+            <color red="0.82700002193450928" green="0.85100001096725464" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

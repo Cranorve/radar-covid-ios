@@ -18,7 +18,7 @@ class PollUseCase {
     }
     
     func getQuestions() -> Observable<[Question]> {
-        .just([])
+        .just([Question(type: QuestionType.Rate), Question(type: QuestionType.MultiSelect), Question(type: QuestionType.SingleSelect)])
     }
     
 }
