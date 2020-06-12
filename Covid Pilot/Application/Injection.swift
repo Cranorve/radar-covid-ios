@@ -12,11 +12,29 @@ import UIKit
 
 class Injection {
     
+    enum Endpoint: String {
+        case TOLL
+    }
+    
     private let container: Container;
     
     init() {
         
         container = Container();
+        
+        container.register(SwaggerClientAPI.self, name: Endpoint.TOLL.rawValue) { r in
+            let swaggerApi = SwaggerClientAPI()
+            swaggerApi.basePath = Config.tollUrl;
+            return swaggerApi;
+        }.inObjectScope(.container)
+        
+        container.register(QuestionnaireControllerAPI.self) { r in
+            QuestionnaireControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self)!)
+        }.inObjectScope(.container)
+        
+        container.register(AnswersControllerAPI.self) { r in
+            AnswersControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self)!)
+        }.inObjectScope(.container)
         
         container.register(AppRouter.self) { r in
             AppRouter()
@@ -55,7 +73,7 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(BluetoothUseCase.self) { r in
-            BluetoothUseCase(bluetoothHandler: r.resolve(BluetoothHandler.self) as! BluetoothHandler)
+            BluetoothUseCase(bluetoothHandler: r.resolve(BluetoothHandler.self)!)
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in
