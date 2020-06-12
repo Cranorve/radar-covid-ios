@@ -31,7 +31,7 @@ public struct QuestionDto: Codable {
         self.mandatory = mandatory
     }
 
-    public enum CodingKeys: String, CodingKey { 
+    public enum CodingKeys: String, CodingKey {
         case _id = "id"
         case order
         case question

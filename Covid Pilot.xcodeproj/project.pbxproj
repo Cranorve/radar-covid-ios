@@ -33,10 +33,8 @@
 		6D5AFCD92493626C00EFE838 /* JSONEncodableEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCC82493626C00EFE838 /* JSONEncodableEncoding.swift */; };
 		6D5AFCDA2493626C00EFE838 /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCC92493626C00EFE838 /* JSONValue.swift */; };
 		6D5AFCDB2493626C00EFE838 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCCA2493626C00EFE838 /* Configuration.swift */; };
-		6D5AFCDC2493626C00EFE838 /* Jwt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCCC2493626C00EFE838 /* Jwt.swift */; };
 		6D5AFCDD2493626C00EFE838 /* QuestionOptionDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCCD2493626C00EFE838 /* QuestionOptionDto.swift */; };
 		6D5AFCDE2493626C00EFE838 /* QuestionDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCCE2493626C00EFE838 /* QuestionDto.swift */; };
-		6D5AFCDF2493626C00EFE838 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCCF2493626C00EFE838 /* Body.swift */; };
 		6D5AFCE02493626C00EFE838 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCD02493626C00EFE838 /* APIHelper.swift */; };
 		6D5AFCE12493626C00EFE838 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCD12493626C00EFE838 /* Extensions.swift */; };
 		6D5AFCE22493626C00EFE838 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCD22493626C00EFE838 /* APIs.swift */; };
@@ -45,6 +43,11 @@
 		6D5AFCE52493626C00EFE838 /* AlamofireImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCD52493626C00EFE838 /* AlamofireImplementations.swift */; };
 		6D5AFCE8249369FE00EFE838 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6D5AFCE7249369FE00EFE838 /* Alamofire */; };
 		6D5AFCEC24936E7A00EFE838 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCEB24936E7A00EFE838 /* Config.swift */; };
+		6D5AFCEE24938CC000EFE838 /* PollUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCED24938CC000EFE838 /* PollUseCase.swift */; };
+		6D5AFCF024938D1900EFE838 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCEF24938D1900EFE838 /* Question.swift */; };
+		6D5AFCF22493910900EFE838 /* QuestionOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCF12493910900EFE838 /* QuestionOption.swift */; };
+		6D5AFCF72493A6E900EFE838 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCF52493A6E900EFE838 /* RatingViewController.swift */; };
+		6D5AFCF82493A6E900EFE838 /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFCF62493A6E900EFE838 /* RatingViewController.xib */; };
 		6DA18CBB2491055D00BE8AAB /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CBA2491055D00BE8AAB /* BackgroundView.swift */; };
 		6DA18CC024916B3300BE8AAB /* Exposition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA18CBF24916B3300BE8AAB /* Exposition.storyboard */; };
 		6DA18CC224916B4100BE8AAB /* ExpositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */; };
@@ -109,10 +112,8 @@
 		6D5AFCC82493626C00EFE838 /* JSONEncodableEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONEncodableEncoding.swift; path = Cuestionaire/JSONEncodableEncoding.swift; sourceTree = "<group>"; };
 		6D5AFCC92493626C00EFE838 /* JSONValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONValue.swift; path = Cuestionaire/JSONValue.swift; sourceTree = "<group>"; };
 		6D5AFCCA2493626C00EFE838 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Cuestionaire/Configuration.swift; sourceTree = "<group>"; };
-		6D5AFCCC2493626C00EFE838 /* Jwt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jwt.swift; sourceTree = "<group>"; };
 		6D5AFCCD2493626C00EFE838 /* QuestionOptionDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionOptionDto.swift; sourceTree = "<group>"; };
 		6D5AFCCE2493626C00EFE838 /* QuestionDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDto.swift; sourceTree = "<group>"; };
-		6D5AFCCF2493626C00EFE838 /* Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
 		6D5AFCD02493626C00EFE838 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIHelper.swift; path = Cuestionaire/APIHelper.swift; sourceTree = "<group>"; };
 		6D5AFCD12493626C00EFE838 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Cuestionaire/Extensions.swift; sourceTree = "<group>"; };
 		6D5AFCD22493626C00EFE838 /* APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIs.swift; path = Cuestionaire/APIs.swift; sourceTree = "<group>"; };
@@ -120,6 +121,11 @@
 		6D5AFCD42493626C00EFE838 /* JSONEncodingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONEncodingHelper.swift; path = Cuestionaire/JSONEncodingHelper.swift; sourceTree = "<group>"; };
 		6D5AFCD52493626C00EFE838 /* AlamofireImplementations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireImplementations.swift; path = Cuestionaire/AlamofireImplementations.swift; sourceTree = "<group>"; };
 		6D5AFCEB24936E7A00EFE838 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		6D5AFCED24938CC000EFE838 /* PollUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollUseCase.swift; sourceTree = "<group>"; };
+		6D5AFCEF24938D1900EFE838 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		6D5AFCF12493910900EFE838 /* QuestionOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOption.swift; sourceTree = "<group>"; };
+		6D5AFCF52493A6E900EFE838 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		6D5AFCF62493A6E900EFE838 /* RatingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
 		6DA18CBA2491055D00BE8AAB /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		6DA18CBF24916B3300BE8AAB /* Exposition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exposition.storyboard; sourceTree = "<group>"; };
 		6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpositionViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +281,8 @@
 			children = (
 				6D5AFC99249296F000EFE838 /* Poll.storyboard */,
 				6D5AFC9D2492972800EFE838 /* PollViewController.swift */,
+				6D5AFCF52493A6E900EFE838 /* RatingViewController.swift */,
+				6D5AFCF62493A6E900EFE838 /* RatingViewController.xib */,
 			);
 			path = Poll;
 			sourceTree = "<group>";
@@ -327,10 +335,8 @@
 		6D5AFCCB2493626C00EFE838 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6D5AFCCC2493626C00EFE838 /* Jwt.swift */,
 				6D5AFCCD2493626C00EFE838 /* QuestionOptionDto.swift */,
 				6D5AFCCE2493626C00EFE838 /* QuestionDto.swift */,
-				6D5AFCCF2493626C00EFE838 /* Body.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -394,6 +400,7 @@
 				6DF6ECDA248FD641007EAA40 /* ExpositionUseCase.swift */,
 				6DF6ECE12490B83E007EAA40 /* BluetoothUseCase.swift */,
 				6DA18CC32491733900BE8AAB /* RadarStatusUseCase.swift */,
+				6D5AFCED24938CC000EFE838 /* PollUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -447,6 +454,8 @@
 			isa = PBXGroup;
 			children = (
 				6DF6ECDF248FD772007EAA40 /* ExpositionInfo.swift */,
+				6D5AFCEF24938D1900EFE838 /* Question.swift */,
+				6D5AFCF12493910900EFE838 /* QuestionOption.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -543,6 +552,7 @@
 				39A1AD46249225510049E48B /* HighExposition.storyboard in Resources */,
 				6D5AFC8D2492827C00EFE838 /* muli_extrabold.ttf in Resources */,
 				6DA18CC024916B3300BE8AAB /* Exposition.storyboard in Resources */,
+				6D5AFCF82493A6E900EFE838 /* RatingViewController.xib in Resources */,
 				39443296248939F500FF0217 /* LaunchScreen.storyboard in Resources */,
 				6DF6ECD4248FA0B3007EAA40 /* HelpLine.storyboard in Resources */,
 				6DF6EC99248E59C6007EAA40 /* Terms.storyboard in Resources */,
@@ -579,8 +589,8 @@
 				6D5AFC9C2492971B00EFE838 /* ContactViewController.swift in Sources */,
 				39A1AD48249225A40049E48B /* HighExpositionViewController.swift in Sources */,
 				6D5AFCD82493626C00EFE838 /* AnswersControllerAPI.swift in Sources */,
-				6D5AFCDF2493626C00EFE838 /* Body.swift in Sources */,
 				6DF6ECD1248FA044007EAA40 /* MyDataViewController.swift in Sources */,
+				6D5AFCEE24938CC000EFE838 /* PollUseCase.swift in Sources */,
 				6DF6ECAA248E7621007EAA40 /* AppRouter.swift in Sources */,
 				6D5AFCE22493626C00EFE838 /* APIs.swift in Sources */,
 				6D5AFCDB2493626C00EFE838 /* Configuration.swift in Sources */,
@@ -593,23 +603,25 @@
 				6DA18CC42491733900BE8AAB /* RadarStatusUseCase.swift in Sources */,
 				6DF6ECE0248FD772007EAA40 /* ExpositionInfo.swift in Sources */,
 				6DF6ECB7248EACD7007EAA40 /* PrivacyViewController.swift in Sources */,
+				6D5AFCF72493A6E900EFE838 /* RatingViewController.swift in Sources */,
 				6DF6ECBA248F5E56007EAA40 /* ProximityViewController.swift in Sources */,
 				6DF6ECAC248E79C1007EAA40 /* Injection.swift in Sources */,
 				6D5AFCD92493626C00EFE838 /* JSONEncodableEncoding.swift in Sources */,
 				6DF6ECB5248EAC7F007EAA40 /* RunningViewController.swift in Sources */,
 				6D5AFCE32493626C00EFE838 /* Models.swift in Sources */,
+				6D5AFCF024938D1900EFE838 /* Question.swift in Sources */,
 				6DA18CC62492044E00BE8AAB /* Alert.swift in Sources */,
 				6DF6ECD8248FBEC2007EAA40 /* MyHealthViewController.swift in Sources */,
 				6D5AFC9E2492972800EFE838 /* PollViewController.swift in Sources */,
 				6DF6ECCA248F743B007EAA40 /* OnBoardingViewController.swift in Sources */,
 				6D5AFCD62493626C00EFE838 /* CodableHelper.swift in Sources */,
-				6D5AFCDC2493626C00EFE838 /* Jwt.swift in Sources */,
 				6DF6ECC8248F70DF007EAA40 /* PreferencesRepository.swift in Sources */,
 				3944328C248939F000FF0217 /* SceneDelegate.swift in Sources */,
 				399CA88124913B0E000B6BF4 /* MyHealthReportedViewController.swift in Sources */,
 				6D5AFCE12493626C00EFE838 /* Extensions.swift in Sources */,
 				6D5AFCDE2493626C00EFE838 /* QuestionDto.swift in Sources */,
 				6D5AFCE02493626C00EFE838 /* APIHelper.swift in Sources */,
+				6D5AFCF22493910900EFE838 /* QuestionOption.swift in Sources */,
 				6DF6ECE22490B83E007EAA40 /* BluetoothUseCase.swift in Sources */,
 				6D5AFCE52493626C00EFE838 /* AlamofireImplementations.swift in Sources */,
 				6DF6ECC4248F691E007EAA40 /* HomeViewController.swift in Sources */,

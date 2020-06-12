@@ -1,5 +1,5 @@
 //
-//  Config.swift
+//  QuestionOption.swift
 //  Covid Pilot
 //
 //  Created by alopezh on 12/06/2020.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-struct Config {
-    static let pollUrl : String = "http://localhost:8080/poll"
+struct QuestionOption {
+    public var _id: Int?
+    public var option: String?
 }

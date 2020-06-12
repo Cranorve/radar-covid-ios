@@ -21,7 +21,7 @@ public struct QuestionOptionDto: Codable {
         self.option = option
     }
 
-    public enum CodingKeys: String, CodingKey { 
+    public enum CodingKeys: String, CodingKey {
         case _id = "id"
         case order
         case option

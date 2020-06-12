@@ -13,7 +13,7 @@ import UIKit
 class Injection {
     
     enum Endpoint: String {
-        case TOLL
+        case POLL
     }
     
     private let container: Container;
@@ -22,14 +22,14 @@ class Injection {
         
         container = Container();
         
-        container.register(SwaggerClientAPI.self, name: Endpoint.TOLL.rawValue) { r in
+        container.register(SwaggerClientAPI.self, name: Endpoint.POLL.rawValue) { r in
             let swaggerApi = SwaggerClientAPI()
-            swaggerApi.basePath = Config.tollUrl;
+            swaggerApi.basePath = Config.pollUrl;
             return swaggerApi;
         }.inObjectScope(.container)
         
         container.register(QuestionnaireControllerAPI.self) { r in
-            QuestionnaireControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self)!)
+            QuestionnaireControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.POLL.rawValue)!)
         }.inObjectScope(.container)
         
         container.register(AnswersControllerAPI.self) { r in
@@ -74,6 +74,10 @@ class Injection {
         
         container.register(BluetoothUseCase.self) { r in
             BluetoothUseCase(bluetoothHandler: r.resolve(BluetoothHandler.self)!)
+        }.inObjectScope(.container)
+        
+        container.register(PollUseCase.self) { r in
+            PollUseCase(questionsApi: r.resolve(QuestionnaireControllerAPI.self)!)
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in
@@ -130,7 +134,9 @@ class Injection {
         }
         
         container.register(PollViewController.self) {  r in
-            self.createViewController(storyboard: "Poll", id: "PollViewController") as! PollViewController
+            let pollVC = self.createViewController(storyboard: "Poll", id: "PollViewController") as! PollViewController
+            pollVC.pollUseCase = r.resolve(PollUseCase.self)!
+            return pollVC
         }
         
         container.register(MyHealthViewController.self) {  r in

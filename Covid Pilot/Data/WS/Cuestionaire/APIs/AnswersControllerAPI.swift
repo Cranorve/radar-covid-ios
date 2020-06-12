@@ -21,7 +21,7 @@ open class AnswersControllerAPI {
     /**
      Borra las respuestas de un usuario
 
-     - parameter sEDIAUserToken: (header)  
+     - parameter sEDIAUserToken: (header)
      - parameter completion: completion handler to receive the data and the error objects
      */
     open func deleteAnswers(sEDIAUserToken: String, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
@@ -36,7 +36,7 @@ open class AnswersControllerAPI {
 
     /**
      Borra las respuestas de un usuario
-     - parameter sEDIAUserToken: (header)  
+     - parameter sEDIAUserToken: (header)
      - returns: Observable<Void>
      */
     open func deleteAnswers(sEDIAUserToken: String) -> Observable<Void> {
@@ -56,11 +56,11 @@ open class AnswersControllerAPI {
     /**
      Borra las respuestas de un usuario
      - DELETE /answers
-     - 
+     -
 
-     - parameter sEDIAUserToken: (header)  
+     - parameter sEDIAUserToken: (header)
 
-     - returns: RequestBuilder<Void> 
+     - returns: RequestBuilder<Void>
      */
     open func deleteAnswersWithRequestBuilder(sEDIAUserToken: String) -> RequestBuilder<Void> {
         let path = "/answers"
@@ -81,11 +81,11 @@ open class AnswersControllerAPI {
     /**
      Graba las respuestas de un usuario
 
-     - parameter body: (body)  
-     - parameter sEDIAUserToken: (header)  
+     - parameter body: (body)
+     - parameter sEDIAUserToken: (header)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open func saveQuestions(body: Body, sEDIAUserToken: String, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+    open func saveQuestions(body: [String:String], sEDIAUserToken: String, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
         saveQuestionsWithRequestBuilder(body: body, sEDIAUserToken: sEDIAUserToken).execute { (response, error) -> Void in
             if error == nil {
                 completion((), error)
@@ -97,11 +97,11 @@ open class AnswersControllerAPI {
 
     /**
      Graba las respuestas de un usuario
-     - parameter body: (body)  
-     - parameter sEDIAUserToken: (header)  
+     - parameter body: (body)
+     - parameter sEDIAUserToken: (header)
      - returns: Observable<Void>
      */
-    open func saveQuestions(body: Body, sEDIAUserToken: String) -> Observable<Void> {
+    open func saveQuestions(body: [String:String], sEDIAUserToken: String) -> Observable<Void> {
         return Observable.create { [weak self] observer -> Disposable in
             self?.saveQuestions(body: body, sEDIAUserToken: sEDIAUserToken) { data, error in
                 if let error = error {
@@ -118,14 +118,14 @@ open class AnswersControllerAPI {
     /**
      Graba las respuestas de un usuario
      - POST /answers
-     - 
+     -
 
-     - parameter body: (body)  
-     - parameter sEDIAUserToken: (header)  
+     - parameter body: (body)
+     - parameter sEDIAUserToken: (header)
 
-     - returns: RequestBuilder<Void> 
+     - returns: RequestBuilder<Void>
      */
-    open func saveQuestionsWithRequestBuilder(body: Body, sEDIAUserToken: String) -> RequestBuilder<Void> {
+    open func saveQuestionsWithRequestBuilder(body: [String:String], sEDIAUserToken: String) -> RequestBuilder<Void> {
         let path = "/answers"
         let URLString = clientApi.basePath + path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)
