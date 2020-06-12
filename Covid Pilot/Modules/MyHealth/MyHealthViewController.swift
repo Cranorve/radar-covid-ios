@@ -11,7 +11,13 @@ import UIKit
 class MyHealthViewController: UIViewController {
 
     @IBAction func onBack(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        let alert = Alert.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonTitle: "OK") { (UIAlertAction) in
+                self.navigationController?.popViewController(animated: true)
+        }
+        
+        present(alert, animated: true)
+        
+        
     }
     
     @IBAction func onReportDiagnosis(_ sender: Any) {
