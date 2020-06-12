@@ -21,23 +21,21 @@ open class QuestionnaireControllerAPI {
     /**
      Recupera las preguntas del cuestionario
 
-     - parameter principal: (query)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open func getQuestions(principal: Jwt, completion: @escaping ((_ data: [QuestionDto]?,_ error: Error?) -> Void)) {
-        getQuestionsWithRequestBuilder(principal: principal).execute { (response, error) -> Void in
+    open func getQuestions(completion: @escaping ((_ data: [QuestionDto]?,_ error: Error?) -> Void)) {
+        getQuestionsWithRequestBuilder().execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
 
     /**
      Recupera las preguntas del cuestionario
-     - parameter principal: (query)  
      - returns: Observable<[QuestionDto]>
      */
-    open func getQuestions(principal: Jwt) -> Observable<[QuestionDto]> {
+    open func getQuestions() -> Observable<[QuestionDto]> {
         return Observable.create { [weak self] observer -> Disposable in
-            self?.getQuestions(principal: principal) { data, error in
+            self?.getQuestions() { data, error in
                 if let error = error {
                     observer.on(.error(error))
                 } else {
@@ -52,7 +50,7 @@ open class QuestionnaireControllerAPI {
     /**
      Recupera las preguntas del cuestionario
      - GET /questions
-     - 
+     -
 
      - examples: [{contentType=application/json, example=[ {
   "minValue" : 2,
@@ -89,18 +87,15 @@ open class QuestionnaireControllerAPI {
   "mandatory" : true,
   "order" : 6
 } ]}]
-     - parameter principal: (query)  
 
-     - returns: RequestBuilder<[QuestionDto]> 
+     - returns: RequestBuilder<[QuestionDto]>
      */
-    open func getQuestionsWithRequestBuilder(principal: Jwt) -> RequestBuilder<[QuestionDto]> {
+    open func getQuestionsWithRequestBuilder() -> RequestBuilder<[QuestionDto]> {
         let path = "/questions"
         let URLString = clientApi.basePath + path
         let parameters: [String:Any]? = nil
-        var url = URLComponents(string: URLString)
-        url?.queryItems = APIHelper.mapValuesToQueryItems([
-                        "principal": principal
-        ])
+
+        let url = URLComponents(string: URLString)
 
         let requestBuilder: RequestBuilder<[QuestionDto]>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
