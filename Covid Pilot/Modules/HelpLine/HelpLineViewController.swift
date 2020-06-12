@@ -9,22 +9,19 @@
 import UIKit
 
 class HelpLineViewController: UIViewController {
+    
+    var router: AppRouter?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBAction func onPollSelected(_ sender: Any) {
+        router?.route(to: Routes.Poll, from: self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func onContactSelected(_ sender: Any) {
+        router?.route(to: Routes.Contact, from: self)
     }
-    */
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
 }

@@ -30,6 +30,8 @@ class Injection {
             appRouter.myHealthReportedVC = r.resolve(MyHealthReportedViewController.self)!
             appRouter.expositionVC = r.resolve(ExpositionViewController.self)!
             appRouter.highExpositionVC = r.resolve(HighExpositionViewController.self)!
+            appRouter.pollVC = r.resolve(PollViewController.self)!
+            appRouter.contactVC = r.resolve(ContactViewController.self)!
         }
         
         container.register(PreferencesRepository.self) { r in
@@ -66,22 +68,17 @@ class Injection {
         
         container.register(TermsViewController.self) { r in
             let termsVC = self.createViewController(storyboard: "Terms", id: "TermsViewController") as! TermsViewController
-            termsVC.recomendationsVC = r.resolve(RecomendationsViewController.self)!
             termsVC.proximityVC = r.resolve(ProximityViewController.self)!
             return termsVC
         }
-        
-        container.register(RecomendationsViewController.self) {  r in
-            let recVC = RecomendationsViewController()
-            recVC.router = r.resolve(AppRouter.self)!
-            recVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
-            return recVC
-        }
+    
         
         container.register(ProximityViewController.self) {  r in
-            let recVC = ProximityViewController()
-            recVC.bluetoothUseCase = r.resolve(BluetoothUseCase.self)!
-            return recVC
+            let proxVC = ProximityViewController()
+            proxVC.bluetoothUseCase = r.resolve(BluetoothUseCase.self)!
+            proxVC.router = r.resolve(AppRouter.self)!
+            proxVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
+            return proxVC
         }
         
         container.register(ExpositionViewController.self) {  r in
@@ -105,7 +102,17 @@ class Injection {
         }
         
         container.register(HelpLineViewController.self) {  r in
-            self.createViewController(storyboard: "HelpLine", id: "HelpLineViewController") as! HelpLineViewController
+            let helpVC = self.createViewController(storyboard: "HelpLine", id: "HelpLineViewController") as! HelpLineViewController
+            helpVC.router = r.resolve(AppRouter.self)!
+            return helpVC
+        }
+        
+        container.register(ContactViewController.self) {  r in
+            self.createViewController(storyboard: "Contact", id: "ContactViewController") as! ContactViewController
+        }
+        
+        container.register(PollViewController.self) {  r in
+            self.createViewController(storyboard: "Poll", id: "PollViewController") as! PollViewController
         }
         
         container.register(MyHealthViewController.self) {  r in

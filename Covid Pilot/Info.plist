@@ -43,8 +43,12 @@
 	<string>LaunchScreen</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Muli-Italic-VariableFont_wght.ttf</string>
-		<string>Muli-VariableFont_wght.ttf</string>
+		<string>muli_italic.ttf</string>
+		<string>muli_regular.ttf</string>
+		<string>muli_semibold.ttf</string>
+		<string>muli_bold.ttf</string>
+		<string>muli_light.ttf</string>
+		<string>muli_extrabold.ttf</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

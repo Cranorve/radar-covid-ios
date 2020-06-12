@@ -6,10 +6,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="muli_bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+        <array key="muli_regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProximityViewController" customModule="Covid_Pilot" customModuleProvider="target">
             <connections>
-                <outlet property="pageControl" destination="i4l-Qd-fUj" id="lpX-P7-syA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,120 +25,118 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUN-Rp-dez">
-                    <rect key="frame" x="207" y="44" width="207" height="206.5"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightTopShade" translatesAutoresizingMaskIntoConstraints="NO" id="iEV-BF-PAO">
-                            <rect key="frame" x="-76.5" y="0.0" width="283.5" height="206.5"/>
-                        </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GirlMobilePois" translatesAutoresizingMaskIntoConstraints="NO" id="I4c-w7-Rwa">
-                            <rect key="frame" x="66" y="21" width="118" height="131"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="131" id="91b-ox-Edj"/>
-                                <constraint firstAttribute="width" constant="118" id="qc8-GL-4bJ"/>
-                            </constraints>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstItem="iEV-BF-PAO" firstAttribute="top" secondItem="QUN-Rp-dez" secondAttribute="top" id="B0g-vc-naB"/>
-                        <constraint firstAttribute="bottom" secondItem="iEV-BF-PAO" secondAttribute="bottom" id="BLz-1D-0t6"/>
-                        <constraint firstAttribute="trailing" secondItem="iEV-BF-PAO" secondAttribute="trailing" id="Doz-Gp-DEh"/>
-                        <constraint firstAttribute="trailing" secondItem="I4c-w7-Rwa" secondAttribute="trailing" constant="23" id="EsO-NR-Q7e"/>
-                        <constraint firstItem="I4c-w7-Rwa" firstAttribute="top" secondItem="QUN-Rp-dez" secondAttribute="top" constant="21" id="QlF-76-rLt"/>
-                        <constraint firstAttribute="width" constant="207" id="w5n-PC-d8k"/>
-                    </constraints>
-                    <viewLayoutGuide key="safeArea" id="QFz-FT-HWn"/>
-                </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clA-8A-tCK">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="701"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l55-Aw-9eh">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="606"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROXIMIDAD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkV-ML-gs8">
-                                    <rect key="frame" x="16" y="122" width="382" height="24"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okc-Go-WbJ">
-                                    <rect key="frame" x="16" y="166" width="382" height="191"/>
-                                    <string key="text">Gracias a la tecnología contact tracing Bluetooth, guardamos las interacciones entre los teléfonos que están próximos entre sí: así, si un usuario confirma que tiene Covid-19, el histórico de teléfonos cercanos nos permite alertar a aquellos que estuvieron cerca para que tomen precauciones.</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xko-kK-dvF">
-                                    <rect key="frame" x="16" y="377" width="382" height="95.5"/>
-                                    <string key="text">Pero ¡siempre con privacidad asegurada! Los teléfonos cercanos se almacenan con ids cambiantes, de modo que el usuario o el dispositivo no son identificables</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnD-2v-geH">
-                                    <rect key="frame" x="16" y="492.5" width="382" height="95.5"/>
-                                    <string key="text">¿Quieres ser alertado en caso de haber estado expuesto al Covid-19? Autoriza tu contact tracing Bluetooth en la app y mantén encendido el Bluetooth de tu móvil.</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0Q-rd-e8E">
-                                    <rect key="frame" x="0.0" y="578" width="414" height="129"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUN-Rp-dez">
+                                    <rect key="frame" x="207" y="0.0" width="207" height="206.5"/>
                                     <subviews>
-                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="i4l-Qd-fUj">
-                                            <rect key="frame" x="16" y="10" width="382" height="37"/>
-                                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="currentPageIndicatorTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </pageControl>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gh7-C2-OVe">
-                                            <rect key="frame" x="16" y="63" width="382" height="56"/>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightTopShade" translatesAutoresizingMaskIntoConstraints="NO" id="iEV-BF-PAO">
+                                            <rect key="frame" x="-76.5" y="0.0" width="283.5" height="206.5"/>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GirlMobilePois" translatesAutoresizingMaskIntoConstraints="NO" id="I4c-w7-Rwa">
+                                            <rect key="frame" x="62" y="21" width="122" height="128"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="56" id="3cO-0b-3sv"/>
+                                                <constraint firstAttribute="height" constant="128" id="91b-ox-Edj"/>
+                                                <constraint firstAttribute="width" constant="122" id="qc8-GL-4bJ"/>
                                             </constraints>
-                                            <state key="normal" title="Autorizo">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="onContinue:" destination="-1" eventType="primaryActionTriggered" id="YJV-d9-3AK"/>
-                                            </connections>
-                                        </button>
+                                        </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="Gh7-C2-OVe" firstAttribute="leading" secondItem="l0Q-rd-e8E" secondAttribute="leading" constant="16" id="0ed-78-Dac"/>
-                                        <constraint firstAttribute="trailing" secondItem="i4l-Qd-fUj" secondAttribute="trailing" constant="16" id="9Pn-k2-gXS"/>
-                                        <constraint firstAttribute="trailing" secondItem="Gh7-C2-OVe" secondAttribute="trailing" constant="16" id="M1f-TH-YHv"/>
-                                        <constraint firstAttribute="bottom" secondItem="Gh7-C2-OVe" secondAttribute="bottom" constant="10" id="NoN-GY-HeE"/>
-                                        <constraint firstItem="i4l-Qd-fUj" firstAttribute="leading" secondItem="l0Q-rd-e8E" secondAttribute="leading" constant="16" id="ola-A0-ISQ"/>
-                                        <constraint firstItem="i4l-Qd-fUj" firstAttribute="top" secondItem="l0Q-rd-e8E" secondAttribute="top" constant="10" id="thC-ch-QzB"/>
-                                        <constraint firstItem="Gh7-C2-OVe" firstAttribute="top" secondItem="i4l-Qd-fUj" secondAttribute="bottom" constant="16" id="vJm-c0-4zj"/>
+                                        <constraint firstItem="iEV-BF-PAO" firstAttribute="top" secondItem="QUN-Rp-dez" secondAttribute="top" id="B0g-vc-naB"/>
+                                        <constraint firstAttribute="bottom" secondItem="iEV-BF-PAO" secondAttribute="bottom" id="BLz-1D-0t6"/>
+                                        <constraint firstAttribute="trailing" secondItem="iEV-BF-PAO" secondAttribute="trailing" id="Doz-Gp-DEh"/>
+                                        <constraint firstAttribute="trailing" secondItem="I4c-w7-Rwa" secondAttribute="trailing" constant="23" id="EsO-NR-Q7e"/>
+                                        <constraint firstItem="I4c-w7-Rwa" firstAttribute="top" secondItem="QUN-Rp-dez" secondAttribute="top" constant="21" id="QlF-76-rLt"/>
+                                        <constraint firstAttribute="width" constant="207" id="w5n-PC-d8k"/>
                                     </constraints>
+                                    <viewLayoutGuide key="safeArea" id="QFz-FT-HWn"/>
                                 </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cómo funciona en 3 pasos:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkV-ML-gs8">
+                                    <rect key="frame" x="16" y="145" width="382" height="35.5"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vy1-9t-Dpc">
+                                    <rect key="frame" x="15" y="190.5" width="383" height="415.5"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="01">
+                                            <attributes>
+                                                <color key="NSColor" red="0.4810534716" green="0.35028833149999999" blue="0.66210502390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="32" name="Muli-Light"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">
+Activa tu Bluetooth. Eso es todo lo que te pedimos. 
+
+</string>
+                                            <attributes>
+                                                <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <font key="NSFont" size="20" name="Muli-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="02">
+                                            <attributes>
+                                                <color key="NSColor" red="0.4810534716" green="0.35028833149999999" blue="0.66210502390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="32" name="Muli-Light"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">
+Visita la App con frecuencia para visualizar tu grado de exposición al coronavirus.
+
+</string>
+                                            <attributes>
+                                                <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <font key="NSFont" size="20" name="Muli-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="03">
+                                            <attributes>
+                                                <color key="NSColor" red="0.4810534716" green="0.35028833149999999" blue="0.66210502390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="32" name="Muli-Light"/>
+                                                <font key="NSOriginalFont" size="32" name="Muli-Light"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content">
+En caso de haber estado expuesto o reportar un diagnóstico positivo sigue las indicaciones que te enviaremos</string>
+                                            <attributes>
+                                                <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <font key="NSFont" size="20" name="Muli-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="mnD-2v-geH" secondAttribute="trailing" constant="16" id="0S0-IY-hqA"/>
                                 <constraint firstItem="OkV-ML-gs8" firstAttribute="leading" secondItem="l55-Aw-9eh" secondAttribute="leading" constant="16" id="0Z6-eI-ccd"/>
-                                <constraint firstAttribute="trailing" secondItem="Xko-kK-dvF" secondAttribute="trailing" constant="16" id="3ua-PL-I7i"/>
+                                <constraint firstAttribute="bottom" secondItem="Vy1-9t-Dpc" secondAttribute="bottom" id="42R-ld-EqK"/>
                                 <constraint firstAttribute="trailing" secondItem="OkV-ML-gs8" secondAttribute="trailing" constant="16" id="7rV-51-7ko"/>
-                                <constraint firstItem="Xko-kK-dvF" firstAttribute="top" secondItem="okc-Go-WbJ" secondAttribute="bottom" constant="20" id="EhY-od-nza"/>
-                                <constraint firstItem="okc-Go-WbJ" firstAttribute="top" secondItem="OkV-ML-gs8" secondAttribute="bottom" constant="20" id="QqD-08-vSE"/>
-                                <constraint firstItem="okc-Go-WbJ" firstAttribute="leading" secondItem="OkV-ML-gs8" secondAttribute="leading" id="TOh-yx-BKf"/>
-                                <constraint firstAttribute="bottom" secondItem="l0Q-rd-e8E" secondAttribute="bottom" constant="10" id="TZi-25-6f3"/>
-                                <constraint firstAttribute="trailing" secondItem="l0Q-rd-e8E" secondAttribute="trailing" id="Ttv-mX-c8l"/>
-                                <constraint firstItem="l0Q-rd-e8E" firstAttribute="leading" secondItem="l55-Aw-9eh" secondAttribute="leading" id="eoN-1d-nMa"/>
-                                <constraint firstAttribute="trailing" secondItem="okc-Go-WbJ" secondAttribute="trailing" constant="16" id="fAe-is-YPI"/>
-                                <constraint firstItem="mnD-2v-geH" firstAttribute="top" secondItem="Xko-kK-dvF" secondAttribute="bottom" constant="20" id="hSK-Tq-Ts6"/>
-                                <constraint firstItem="mnD-2v-geH" firstAttribute="bottom" secondItem="l0Q-rd-e8E" secondAttribute="top" constant="10" id="j3t-SK-Iv2"/>
-                                <constraint firstItem="OkV-ML-gs8" firstAttribute="top" secondItem="l55-Aw-9eh" secondAttribute="top" constant="122" id="qO9-vb-dgR"/>
-                                <constraint firstItem="Xko-kK-dvF" firstAttribute="leading" secondItem="okc-Go-WbJ" secondAttribute="leading" id="unJ-ii-Xis"/>
-                                <constraint firstItem="mnD-2v-geH" firstAttribute="leading" secondItem="Xko-kK-dvF" secondAttribute="leading" id="xPv-le-pxC"/>
+                                <constraint firstItem="Vy1-9t-Dpc" firstAttribute="top" secondItem="OkV-ML-gs8" secondAttribute="bottom" constant="10" id="AQ7-Pk-qeY"/>
+                                <constraint firstItem="Vy1-9t-Dpc" firstAttribute="leading" secondItem="l55-Aw-9eh" secondAttribute="leading" constant="15" id="DQK-II-4Tz"/>
+                                <constraint firstItem="QUN-Rp-dez" firstAttribute="top" secondItem="l55-Aw-9eh" secondAttribute="top" id="dVS-6t-a6M"/>
+                                <constraint firstItem="OkV-ML-gs8" firstAttribute="top" secondItem="l55-Aw-9eh" secondAttribute="top" constant="145" id="qO9-vb-dgR"/>
+                                <constraint firstAttribute="trailing" secondItem="Vy1-9t-Dpc" secondAttribute="trailing" constant="16" id="qpm-xv-SWA"/>
+                                <constraint firstAttribute="trailing" secondItem="QUN-Rp-dez" secondAttribute="trailing" id="tkv-Sf-zRN"/>
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="l55-Aw-9eh" firstAttribute="leading" secondItem="f2o-dy-RuU" secondAttribute="leading" id="04V-SA-Puw"/>
                         <constraint firstItem="l55-Aw-9eh" firstAttribute="bottom" secondItem="Y8x-1w-7Ql" secondAttribute="bottom" id="Blz-4P-1Is"/>
@@ -146,15 +151,37 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="Y8x-1w-7Ql"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="ynP-56-ZDW"/>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gh7-C2-OVe">
+                    <rect key="frame" x="16" y="761" width="382" height="56"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="3cO-0b-3sv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
+                    <state key="normal" title="Activar rastreo Bluetooth" backgroundImage="GradientBackgroundButton">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="onContinue:" destination="-1" eventType="primaryActionTriggered" id="YJV-d9-3AK"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Gh7-C2-OVe" secondAttribute="bottom" constant="45" id="1ka-TW-wFK"/>
                 <constraint firstItem="clA-8A-tCK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6JS-AK-0ZD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="clA-8A-tCK" secondAttribute="top" id="RmD-r1-hUg"/>
-                <constraint firstItem="clA-8A-tCK" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="dIR-e1-isI"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QUN-Rp-dez" secondAttribute="trailing" id="gwu-AM-a5o"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="QUN-Rp-dez" secondAttribute="top" id="uXz-u5-X3L"/>
+                <constraint firstItem="Gh7-C2-OVe" firstAttribute="top" secondItem="clA-8A-tCK" secondAttribute="bottom" constant="16" id="bsp-Bm-v0s"/>
+                <constraint firstItem="Gh7-C2-OVe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="sty-x6-R1A"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="clA-8A-tCK" secondAttribute="trailing" id="vhd-gN-L3e"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Gh7-C2-OVe" secondAttribute="trailing" constant="16" id="wIl-we-pGb"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="110"/>
@@ -162,6 +189,7 @@
     </objects>
     <resources>
         <image name="GirlMobilePois" width="122" height="128"/>
+        <image name="GradientBackgroundButton" width="343" height="56"/>
         <image name="RightTopShade" width="283.5" height="206.5"/>
     </resources>
 </document>
