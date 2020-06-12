@@ -10,8 +10,10 @@ import UIKit
 
 class MyHealthReportedViewController: UIViewController {
 
+    var router: AppRouter?
+    
     @IBAction func onBack(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        router?.route(to: Routes.MyHealth, from: self)
     }
     
     override func viewDidLoad() {
