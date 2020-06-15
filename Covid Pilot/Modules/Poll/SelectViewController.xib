@@ -3,12 +3,14 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectViewController" customModule="Covid_Pilot" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="llZ-g2-X2u" id="MwQ-sg-5py"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,17 +19,41 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VM9-Av-aw0">
-                    <rect key="frame" x="130" y="388" width="49" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xjz-i2-vZJ">
+                    <rect key="frame" x="0.0" y="234" width="414" height="554"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="llZ-g2-X2u">
+                            <rect key="frame" x="16" y="0.0" width="382" height="554"/>
+                            <color key="backgroundColor" name="bgColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="25" minimumInteritemSpacing="0.0" id="0xX-Jn-Gfk">
+                                <size key="itemSize" width="382" height="60"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="llZ-g2-X2u" secondAttribute="trailing" constant="16" id="OPo-O6-ING"/>
+                        <constraint firstItem="llZ-g2-X2u" firstAttribute="leading" secondItem="Xjz-i2-vZJ" secondAttribute="leading" constant="16" id="axp-GZ-c0j"/>
+                        <constraint firstAttribute="bottom" secondItem="llZ-g2-X2u" secondAttribute="bottom" id="dC4-8T-9fO"/>
+                        <constraint firstItem="llZ-g2-X2u" firstAttribute="top" secondItem="Xjz-i2-vZJ" secondAttribute="top" id="q3l-OK-l1m"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Xjz-i2-vZJ" secondAttribute="bottom" constant="74" id="A4F-kR-L9i"/>
+                <constraint firstItem="Xjz-i2-vZJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ake-qu-3uN"/>
+                <constraint firstItem="Xjz-i2-vZJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="190" id="PNi-4o-QlC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xjz-i2-vZJ" secondAttribute="trailing" id="rRe-lI-LFs"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="113"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="bgColor">
+            <color red="0.98000001907348633" green="0.97600001096725464" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -57,6 +57,10 @@
 		6DA18CC224916B4100BE8AAB /* ExpositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */; };
 		6DA18CC42491733900BE8AAB /* RadarStatusUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CC32491733900BE8AAB /* RadarStatusUseCase.swift */; };
 		6DA18CC62492044E00BE8AAB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CC52492044E00BE8AAB /* Alert.swift */; };
+		6DB5417B2497DFFE00166D37 /* QuestionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB541792497DFFE00166D37 /* QuestionItemCell.swift */; };
+		6DB5417C2497DFFE00166D37 /* QuestionItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5417A2497DFFE00166D37 /* QuestionItemCell.xib */; };
+		6DB541812497F55900166D37 /* FinishPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5417F2497F55900166D37 /* FinishPollViewController.swift */; };
+		6DB541822497F55900166D37 /* FinishPollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB541802497F55900166D37 /* FinishPollViewController.xib */; };
 		6DF6EC99248E59C6007EAA40 /* Terms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6EC98248E59C6007EAA40 /* Terms.storyboard */; };
 		6DF6EC9B248E5C77007EAA40 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6EC9A248E5C77007EAA40 /* TermsViewController.swift */; };
 		6DF6ECA1248E6191007EAA40 /* RunningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6ECA0248E6191007EAA40 /* RunningViewController.xib */; };
@@ -139,6 +143,10 @@
 		6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpositionViewController.swift; sourceTree = "<group>"; };
 		6DA18CC32491733900BE8AAB /* RadarStatusUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarStatusUseCase.swift; sourceTree = "<group>"; };
 		6DA18CC52492044E00BE8AAB /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		6DB541792497DFFE00166D37 /* QuestionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItemCell.swift; sourceTree = "<group>"; };
+		6DB5417A2497DFFE00166D37 /* QuestionItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionItemCell.xib; sourceTree = "<group>"; };
+		6DB5417F2497F55900166D37 /* FinishPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishPollViewController.swift; sourceTree = "<group>"; };
+		6DB541802497F55900166D37 /* FinishPollViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinishPollViewController.xib; sourceTree = "<group>"; };
 		6DF6EC98248E59C6007EAA40 /* Terms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Terms.storyboard; sourceTree = "<group>"; };
 		6DF6EC9A248E5C77007EAA40 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		6DF6ECA0248E6191007EAA40 /* RunningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningViewController.xib; sourceTree = "<group>"; };
@@ -294,6 +302,10 @@
 				6D5AFCF92493AA7F00EFE838 /* QuestionController.swift */,
 				6D5AFCFB2493B3AA00EFE838 /* SelectViewController.swift */,
 				6D5AFCFC2493B3AA00EFE838 /* SelectViewController.xib */,
+				6DB541792497DFFE00166D37 /* QuestionItemCell.swift */,
+				6DB5417A2497DFFE00166D37 /* QuestionItemCell.xib */,
+				6DB5417F2497F55900166D37 /* FinishPollViewController.swift */,
+				6DB541802497F55900166D37 /* FinishPollViewController.xib */,
 			);
 			path = Poll;
 			sourceTree = "<group>";
@@ -561,6 +573,7 @@
 				6DF6ECBB248F5E56007EAA40 /* ProximityViewController.xib in Resources */,
 				6D5AFC8E2492827C00EFE838 /* muli_semibold.ttf in Resources */,
 				6DF6ECC2248F68DF007EAA40 /* Home.storyboard in Resources */,
+				6DB541822497F55900166D37 /* FinishPollViewController.xib in Resources */,
 				39A1AD46249225510049E48B /* HighExposition.storyboard in Resources */,
 				6D5AFC8D2492827C00EFE838 /* muli_extrabold.ttf in Resources */,
 				6DA18CC024916B3300BE8AAB /* Exposition.storyboard in Resources */,
@@ -570,6 +583,7 @@
 				6DF6EC99248E59C6007EAA40 /* Terms.storyboard in Resources */,
 				6DF6ECCF248FA032007EAA40 /* MyData.storyboard in Resources */,
 				6D5AFC9A249296F000EFE838 /* Poll.storyboard in Resources */,
+				6DB5417C2497DFFE00166D37 /* QuestionItemCell.xib in Resources */,
 				6D5AFC932492883700EFE838 /* muli_regular.ttf in Resources */,
 				399CA87D24912B96000B6BF4 /* MyHealthReported.storyboard in Resources */,
 				6D5AFC98249296E400EFE838 /* Contact.storyboard in Resources */,
@@ -607,6 +621,7 @@
 				6DF6ECAA248E7621007EAA40 /* AppRouter.swift in Sources */,
 				6D5AFCE22493626C00EFE838 /* APIs.swift in Sources */,
 				6D5AFCDB2493626C00EFE838 /* Configuration.swift in Sources */,
+				6DB541812497F55900166D37 /* FinishPollViewController.swift in Sources */,
 				6DF6ECB0248E88E6007EAA40 /* OnBoardingCompletedUseCase.swift in Sources */,
 				6DF6ECD6248FA0D0007EAA40 /* HelpLineViewController.swift in Sources */,
 				6DA18CC224916B4100BE8AAB /* ExpositionViewController.swift in Sources */,
@@ -634,6 +649,7 @@
 				399CA88124913B0E000B6BF4 /* MyHealthReportedViewController.swift in Sources */,
 				6D5AFCE12493626C00EFE838 /* Extensions.swift in Sources */,
 				6D5AFCDE2493626C00EFE838 /* QuestionDto.swift in Sources */,
+				6DB5417B2497DFFE00166D37 /* QuestionItemCell.swift in Sources */,
 				39C3FEC32497746900D1A13E /* DiagnosisCodeUseCase.swift in Sources */,
 				6D5AFCE02493626C00EFE838 /* APIHelper.swift in Sources */,
 				6D5AFCF22493910900EFE838 /* QuestionOption.swift in Sources */,
@@ -776,7 +792,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Info.plist";
@@ -786,7 +802,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.indra.covidpilot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = linoDeveloperGOB;
+				PROVISIONING_PROFILE_SPECIFIER = CovidPilotAdHoc;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -796,7 +812,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Info.plist";
@@ -806,7 +822,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.indra.covidpilot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = linoDeveloperGOB;
+				PROVISIONING_PROFILE_SPECIFIER = CovidPilotAdHoc;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

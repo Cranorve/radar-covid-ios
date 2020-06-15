@@ -17,6 +17,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     @IBOutlet weak var progressView: UIProgressView!
     
     var pollUseCase: PollUseCase?
+    var finishPollVC: FinishPollViewController?
     
     private var questions: [Question]?
     private var viewControllers: [UIViewController] = []
@@ -29,7 +30,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     @IBAction func onNext(_ sender: Any) {
         
         if isLast() {
-//            TODO: Save
+            saveQuestions()
         } else {
             scrollToPage(.next, animated: true)
         }
@@ -129,6 +130,17 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         } else {
             nextButton.setTitle("Siguiente", for: .normal)
         }
+    }
+    
+    private func saveQuestions() {
+        pollUseCase?.saveQuestions(questions: questions ?? []).subscribe(
+            onNext:{ [weak self] questions in
+                if let strongSelf = self {
+                    strongSelf.navigationController?.pushViewController(strongSelf.finishPollVC!, animated: true)
+                }
+            }, onError: {  [weak self] error in
+                self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
+        }).disposed(by: disposeBag)
     }
 
 }

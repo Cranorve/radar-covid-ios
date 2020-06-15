@@ -140,7 +140,14 @@ class Injection {
         container.register(PollViewController.self) {  r in
             let pollVC = self.createViewController(storyboard: "Poll", id: "PollViewController") as! PollViewController
             pollVC.pollUseCase = r.resolve(PollUseCase.self)!
+            pollVC.finishPollVC = r.resolve(FinishPollViewController.self)!
             return pollVC
+        }
+        
+        container.register(FinishPollViewController.self) {  r in
+            let finishPollVC = FinishPollViewController()
+            finishPollVC.router = r.resolve(AppRouter.self)!
+            return finishPollVC
         }
         
         container.register(MyHealthViewController.self) {  r in

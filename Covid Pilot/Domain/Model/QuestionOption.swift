@@ -11,4 +11,5 @@ import Foundation
 struct QuestionOption {
     public var _id: Int?
     public var option: String?
+    public var selected: Bool?
 }
