@@ -8,8 +8,10 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Muli-VariableFont_wght.ttf">
-            <string>Muli-Regular</string>
             <string>Muli-Regular_Bold</string>
+        </array>
+        <array key="muli_regular.ttf">
+            <string>Muli-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -22,20 +24,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Información legal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qok-ac-Npf">
-                                <rect key="frame" x="20" y="134" width="246" height="35.5"/>
+                                <rect key="frame" x="20" y="134" width="246" height="33"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="z7v-6D-imP">
                                 <rect key="frame" x="20" y="194" width="276" height="25.5"/>
-                                <string key="text">¡Bienvenido a Covid Monitor!
+                                <string key="text">¡Bienvenido a Corona radar!
 </string>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En Covid Monitor somos conscientes de la relevancia que tiene proteger la privacidad de tus datos personales" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BQP-bi-ONN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En Corona radar somos conscientes de la relevancia que tiene proteger la privacidad de tus datos personales" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BQP-bi-ONN">
                                 <rect key="frame" x="20" y="219" width="374" height="75.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -68,11 +70,11 @@ mi consentimiento al tratamiento de mis datos personales</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TsE-yY-Id2">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TsE-yY-Id2" userLabel="ReminderTermsView">
                                 <rect key="frame" x="20" y="715" width="374" height="68"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recuerda que tienes que aceptar la política de privacidad para continuar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCg-yc-PiP">
-                                        <rect key="frame" x="71" y="17" width="281" height="33"/>
+                                        <rect key="frame" x="71" y="19.5" width="281" height="30.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -106,7 +108,7 @@ mi consentimiento al tratamiento de mis datos personales</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEGAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cjg-pU-6HI">
-                                <rect key="frame" x="20" y="99" width="38" height="15.5"/>
+                                <rect key="frame" x="20" y="99" width="38" height="14"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="12"/>
                                 <color key="textColor" red="0.5764058232" green="0.57650798560000005" blue="0.57639932630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -128,6 +130,7 @@ mi consentimiento al tratamiento de mis datos personales</string>
                             <constraint firstItem="z7v-6D-imP" firstAttribute="top" secondItem="eob-KB-bI2" secondAttribute="top" constant="150" id="IPE-WI-qAM"/>
                             <constraint firstItem="z7v-6D-imP" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="JaX-pp-eXc"/>
                             <constraint firstAttribute="height" secondItem="o8x-Gm-flA" secondAttribute="height" multiplier="16" id="Mqm-IJ-sa2"/>
+                            <constraint firstItem="jHq-8U-BtL" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="36" id="NBR-bD-CvP"/>
                             <constraint firstItem="TsE-yY-Id2" firstAttribute="top" secondItem="qvQ-IX-8Bm" secondAttribute="bottom" constant="8" id="R8e-zS-I6g"/>
                             <constraint firstItem="GDV-35-L2Q" firstAttribute="leading" secondItem="eob-KB-bI2" secondAttribute="leading" constant="20" id="Sxk-Cp-774"/>
                             <constraint firstItem="eob-KB-bI2" firstAttribute="trailing" secondItem="BQP-bi-ONN" secondAttribute="trailing" constant="20" id="TDj-uT-rF7"/>
@@ -153,6 +156,11 @@ mi consentimiento al tratamiento de mis datos personales</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eob-KB-bI2"/>
                     </view>
+                    <connections>
+                        <outlet property="acceptTermsLabel" destination="qvQ-IX-8Bm" id="xS0-E0-Ni0"/>
+                        <outlet property="checkBoxImage" destination="jHq-8U-BtL" id="63v-Vg-llX"/>
+                        <outlet property="reminderAcceptTermsView" destination="TsE-yY-Id2" id="WDy-fV-1Kd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsl-oB-D5A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
