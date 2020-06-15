@@ -17,6 +17,7 @@
 		399CA88124913B0E000B6BF4 /* MyHealthReportedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CA88024913B0E000B6BF4 /* MyHealthReportedViewController.swift */; };
 		39A1AD46249225510049E48B /* HighExposition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A1AD45249225510049E48B /* HighExposition.storyboard */; };
 		39A1AD48249225A40049E48B /* HighExpositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1AD47249225A40049E48B /* HighExpositionViewController.swift */; };
+		39C3FEC32497746900D1A13E /* DiagnosisCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3FEC22497746900D1A13E /* DiagnosisCodeUseCase.swift */; };
 		6D5AFC8D2492827C00EFE838 /* muli_extrabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC892492827B00EFE838 /* muli_extrabold.ttf */; };
 		6D5AFC8E2492827C00EFE838 /* muli_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC8A2492827C00EFE838 /* muli_semibold.ttf */; };
 		6D5AFC8F2492827C00EFE838 /* muli_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC8B2492827C00EFE838 /* muli_bold.ttf */; };
@@ -96,6 +97,7 @@
 		399CA88024913B0E000B6BF4 /* MyHealthReportedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHealthReportedViewController.swift; sourceTree = "<group>"; };
 		39A1AD45249225510049E48B /* HighExposition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HighExposition.storyboard; sourceTree = "<group>"; };
 		39A1AD47249225A40049E48B /* HighExpositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighExpositionViewController.swift; sourceTree = "<group>"; };
+		39C3FEC22497746900D1A13E /* DiagnosisCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisCodeUseCase.swift; sourceTree = "<group>"; };
 		6D5AFC892492827B00EFE838 /* muli_extrabold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = muli_extrabold.ttf; sourceTree = "<group>"; };
 		6D5AFC8A2492827C00EFE838 /* muli_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = muli_semibold.ttf; sourceTree = "<group>"; };
 		6D5AFC8B2492827C00EFE838 /* muli_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = muli_bold.ttf; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				6DF6ECE12490B83E007EAA40 /* BluetoothUseCase.swift */,
 				6DA18CC32491733900BE8AAB /* RadarStatusUseCase.swift */,
 				6D5AFCED24938CC000EFE838 /* PollUseCase.swift */,
+				39C3FEC22497746900D1A13E /* DiagnosisCodeUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				399CA88124913B0E000B6BF4 /* MyHealthReportedViewController.swift in Sources */,
 				6D5AFCE12493626C00EFE838 /* Extensions.swift in Sources */,
 				6D5AFCDE2493626C00EFE838 /* QuestionDto.swift in Sources */,
+				39C3FEC32497746900D1A13E /* DiagnosisCodeUseCase.swift in Sources */,
 				6D5AFCE02493626C00EFE838 /* APIHelper.swift in Sources */,
 				6D5AFCF22493910900EFE838 /* QuestionOption.swift in Sources */,
 				6DF6ECE22490B83E007EAA40 /* BluetoothUseCase.swift in Sources */,

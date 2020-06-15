@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import RxSwift
 
 class MyHealthViewController: UIViewController {
-
+    private let disposeBag = DisposeBag()
+    
+    var diagnosisCodeUseCase: DiagnosisCodeUseCase?
+    
     @IBAction func onBack(_ sender: Any) {
         let alert = Alert.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonTitle: "OK") { (UIAlertAction) in
                 self.navigationController?.popViewController(animated: true)
@@ -21,7 +25,13 @@ class MyHealthViewController: UIViewController {
     }
     
     @IBAction func onReportDiagnosis(_ sender: Any) {
-        router?.route(to: Routes.MyHealthReported, from: self)
+        diagnosisCodeUseCase?.sendDiagnosisCode().subscribe(
+            onNext:{ [weak self] reportedCodeBool in
+                self?.navigateIf(reported: reportedCodeBool)
+            }, onError: {  [weak self] error in
+
+        }).disposed(by: disposeBag)
+
     }
     
     var router: AppRouter?
@@ -32,7 +42,12 @@ class MyHealthViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    private func navigateIf(reported: Bool) {
+        if (reported){
+            router?.route(to: Routes.MyHealthReported, from: self)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

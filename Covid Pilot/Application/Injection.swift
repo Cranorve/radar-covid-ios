@@ -80,6 +80,10 @@ class Injection {
             PollUseCase(questionsApi: r.resolve(QuestionnaireControllerAPI.self)!)
         }.inObjectScope(.container)
         
+        container.register(DiagnosisCodeUseCase.self) { r in
+            DiagnosisCodeUseCase()
+        }
+        
         container.register(TabBarController.self) { r in
             TabBarController(
                 homeViewController: r.resolve(HomeViewController.self)!,
@@ -141,9 +145,12 @@ class Injection {
         
         container.register(MyHealthViewController.self) {  r in
             let myHealthVC = self.createViewController(storyboard: "MyHealth", id: "MyHealthViewController") as! MyHealthViewController
+            myHealthVC.diagnosisCodeUseCase = r.resolve(DiagnosisCodeUseCase.self)!
             myHealthVC.router = r.resolve(AppRouter.self)!
             return myHealthVC
         }
+        
+        
         
         container.register(MyHealthReportedViewController.self) { r in
             let myHealthReportedVC = self.createViewController(storyboard: "MyHealthReported", id: "MyHealthReportedViewController") as! MyHealthReportedViewController
