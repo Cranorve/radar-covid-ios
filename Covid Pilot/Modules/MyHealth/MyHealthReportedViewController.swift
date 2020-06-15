@@ -13,7 +13,7 @@ class MyHealthReportedViewController: UIViewController {
     var router: AppRouter?
     
     @IBAction func onBack(_ sender: Any) {
-        router?.route(to: Routes.MyHealth, from: self)
+        router?.route(to: Routes.Home, from: self)
     }
     
     override func viewDidLoad() {

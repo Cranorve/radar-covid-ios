@@ -16,7 +16,7 @@ class DiagnosisCodeUseCase {
         self.response = false
     }
     
-    func sendDiagnosisCode() -> Observable<Bool> {
+    func sendDiagnosisCode(code: String) -> Observable<Bool> {
         .just(true)
     }
 }

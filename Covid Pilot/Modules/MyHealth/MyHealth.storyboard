@@ -149,6 +149,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="599-Qh-McL"/>
                     </view>
+                    <connections>
+                        <outlet property="codeTextField" destination="2yb-R6-MLg" id="7VQ-42-Aip"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8v-PM-yNA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
