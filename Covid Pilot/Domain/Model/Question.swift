@@ -14,7 +14,7 @@ enum QuestionType: Int {
     case MultiSelect = 2
 }
 
-struct Question {
+class Question {
     public var _id: Int?
     public var type: QuestionType?
     public var question: String?
@@ -22,4 +22,12 @@ struct Question {
     public var minValue: Int?
     public var maxValue: Int?
     public var mandatory: Bool?
+    public var valuesSelected: [Any?]?
+    
+    init(type: QuestionType, question: String, minValue: Int?, maxValue: Int?) {
+        self.type = type
+        self.minValue = minValue
+        self.maxValue = maxValue
+        self.question = question
+    }
 }
