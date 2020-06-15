@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="muli_bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
         <array key="muli_semibold.ttf">
             <string>Muli-SemiBold</string>
         </array>
@@ -74,14 +77,31 @@
                                     <action selector="onNext:" destination="65u-p4-oBj" eventType="primaryActionTriggered" id="Y54-G0-CLZ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CUÉNTANOS TU EXPERIENCIA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXm-Xy-Hmh">
+                                <rect key="frame" x="16" y="116" width="177" height="15.5"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
+                                <color key="textColor" name="brownGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMn-C9-gIK">
+                                <rect key="frame" x="16" y="143.5" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="tintColor" name="deepLilac"/>
                         <constraints>
+                            <constraint firstItem="cMn-C9-gIK" firstAttribute="leading" secondItem="cjh-Lk-HpV" secondAttribute="leading" constant="16" id="9uf-tc-xvl"/>
+                            <constraint firstItem="mXm-Xy-Hmh" firstAttribute="leading" secondItem="cjh-Lk-HpV" secondAttribute="leading" constant="16" id="AGP-Ot-YaD"/>
+                            <constraint firstItem="cjh-Lk-HpV" firstAttribute="trailing" secondItem="cMn-C9-gIK" secondAttribute="trailing" constant="16" id="FVV-lx-5fd"/>
+                            <constraint firstItem="cMn-C9-gIK" firstAttribute="top" secondItem="mXm-Xy-Hmh" secondAttribute="bottom" constant="12" id="Kz4-FS-wbh"/>
                             <constraint firstItem="Eju-rC-0qu" firstAttribute="leading" secondItem="cjh-Lk-HpV" secondAttribute="leading" id="Re5-1e-ZEC"/>
                             <constraint firstItem="xdn-xL-agc" firstAttribute="leading" secondItem="oFP-vf-rU6" secondAttribute="leading" constant="16" id="S8Q-ML-FUs"/>
                             <constraint firstItem="cjh-Lk-HpV" firstAttribute="trailing" secondItem="Eju-rC-0qu" secondAttribute="trailing" id="ZSL-vq-tnl"/>
                             <constraint firstItem="cjh-Lk-HpV" firstAttribute="trailing" secondItem="xdn-xL-agc" secondAttribute="trailing" constant="16" id="hDx-cL-Ueo"/>
+                            <constraint firstItem="mXm-Xy-Hmh" firstAttribute="top" secondItem="Eju-rC-0qu" secondAttribute="bottom" constant="50" id="nw5-dV-wN6"/>
                             <constraint firstItem="cjh-Lk-HpV" firstAttribute="bottom" secondItem="xdn-xL-agc" secondAttribute="bottom" constant="10" id="sBJ-M4-8eO"/>
                             <constraint firstItem="Eju-rC-0qu" firstAttribute="top" secondItem="cjh-Lk-HpV" secondAttribute="top" id="yHZ-YF-9be"/>
                         </constraints>
@@ -90,6 +110,7 @@
                     <connections>
                         <outlet property="nextButton" destination="xdn-xL-agc" id="Tu7-WL-oP2"/>
                         <outlet property="progressView" destination="coW-Wu-xg7" id="x0s-oe-0oA"/>
+                        <outlet property="titleLabel" destination="cMn-C9-gIK" id="L18-ac-7Bq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fI-8Z-6j6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -100,6 +121,9 @@
     <resources>
         <image name="GradientBackgroundButton" width="343" height="56"/>
         <image name="iconsBack" width="25.5" height="17"/>
+        <namedColor name="brownGrey">
+            <color red="0.57599997520446777" green="0.57599997520446777" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="deepLilac">
             <color red="0.54100000858306885" green="0.48600000143051147" blue="0.71799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

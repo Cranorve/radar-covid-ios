@@ -18,7 +18,17 @@ class PollUseCase {
     }
     
     func getQuestions() -> Observable<[Question]> {
-        .just([Question(type: QuestionType.Rate), Question(type: QuestionType.MultiSelect), Question(type: QuestionType.SingleSelect)])
+        var questions: [Question] = []
+        questions.append(Question(
+            type: QuestionType.Rate,
+            question: "¿Cómo valorarías el funcionamiento de la aplicación?"))
+        questions.append(Question(
+            type: QuestionType.MultiSelect,
+            question: "¿Recibiste una alerta de contagio?"))
+        questions.append(Question(
+            type: QuestionType.SingleSelect,
+            question: "¿Seguiste las recomendaciones sanitarias y de prevención indicadas en la aplicación?"))
+        return .just(questions)
     }
     
 }

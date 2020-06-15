@@ -20,8 +20,11 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     
     private var questions: [Question]?
     private var viewControllers: [UIViewController] = []
+    private var curretnQuestion: Question?
 
     @IBOutlet weak var nextButton: UIButton!
+    
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBAction func onNext(_ sender: Any) {
         if isLast() {
@@ -59,9 +62,17 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     private func load(questions: [Question]?) {
         self.questions = questions
         questions?.forEach {question in
-            let vc = RatingViewController()
-            vc.question = question
-            viewControllers.append(vc)
+            var vc: QuestionController?
+            if question.type == .Rate {
+                vc = RatingViewController()
+            } else if question.type == .SingleSelect || question.type == .MultiSelect {
+                vc = SelectViewController()
+            }
+            if var vc = vc {
+                vc.question = question
+                viewControllers.append(vc as! UIViewController)
+            }
+
         }
         self.reloadData()
     }
@@ -83,14 +94,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     }
     
     func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: NavigationDirection,animated: Bool) {
-        if viewControllers.count > 0 {
-            progressView.progress = Float(index + 1) / Float(viewControllers.count)
-        }
-        if (isLast()) {
-            nextButton.setTitle("Finalizar", for: .normal)
-        } else {
-            nextButton.setTitle("Siguiente", for: .normal)
-        }
+        load(page: index)
        
     }
     
@@ -113,5 +117,17 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         currentIndex == (viewControllers.count - 1)
     }
     
+    private func load(page: Int) {
+        curretnQuestion = questions?[page]
+        titleLabel.text = curretnQuestion?.question
+        if viewControllers.count > 0 {
+            progressView.progress = Float(page + 1) / Float(viewControllers.count)
+        }
+        if (isLast()) {
+            nextButton.setTitle("Finalizar", for: .normal)
+        } else {
+            nextButton.setTitle("Siguiente", for: .normal)
+        }
+    }
 
 }
