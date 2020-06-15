@@ -22,7 +22,7 @@ public class Alert {
     }
     
     class func showAlertCancelContinue(title: String, message: String, buttonTitle: String, completionHandler: @escaping (_ action: UIAlertAction) -> Void ) -> UIAlertController {
-        let uiAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        let uiAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
                let action = UIAlertAction(title: buttonTitle, style: UIAlertAction.Style.default, handler: completionHandler)
                uiAlert.addAction(action)
                 let actionCancel = UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.default, handler: nil)
