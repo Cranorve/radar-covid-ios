@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,29 +16,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shc-gz-JHv">
-                                <rect key="frame" x="98" y="206" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="onBack:" destination="65u-p4-oBj" eventType="primaryActionTriggered" id="OQl-yb-zMO"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Poll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gu8-2T-rMM">
-                                <rect key="frame" x="215" y="391" width="28" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eju-rC-0qu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="22"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shc-gz-JHv">
+                                        <rect key="frame" x="20" y="0.0" width="23" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="Rox-ze-3hv"/>
+                                            <constraint firstAttribute="width" constant="23" id="SZN-La-2TW"/>
+                                        </constraints>
+                                        <state key="normal" title="Back" image="iconsBack"/>
+                                        <connections>
+                                            <action selector="onBack:" destination="65u-p4-oBj" eventType="primaryActionTriggered" id="OQl-yb-zMO"/>
+                                        </connections>
+                                    </button>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="coW-Wu-xg7">
+                                        <rect key="frame" x="59" y="11" width="339" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="cTX-Jw-jHs"/>
+                                        </constraints>
+                                    </progressView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="coW-Wu-xg7" firstAttribute="leading" secondItem="shc-gz-JHv" secondAttribute="trailing" constant="16" id="5EE-IM-XSy"/>
+                                    <constraint firstItem="shc-gz-JHv" firstAttribute="leading" secondItem="Eju-rC-0qu" secondAttribute="leading" constant="20" id="Ltd-Xx-8F7"/>
+                                    <constraint firstAttribute="trailing" secondItem="coW-Wu-xg7" secondAttribute="trailing" constant="16" id="Rh5-Ra-ifq"/>
+                                    <constraint firstAttribute="bottom" secondItem="shc-gz-JHv" secondAttribute="bottom" id="SsH-YG-2Dr"/>
+                                    <constraint firstItem="coW-Wu-xg7" firstAttribute="centerY" secondItem="shc-gz-JHv" secondAttribute="centerY" id="sTs-q6-Rxr"/>
+                                    <constraint firstItem="shc-gz-JHv" firstAttribute="top" secondItem="Eju-rC-0qu" secondAttribute="top" id="yBv-IZ-FG0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" name="deepLilac"/>
+                        <constraints>
+                            <constraint firstItem="Eju-rC-0qu" firstAttribute="leading" secondItem="cjh-Lk-HpV" secondAttribute="leading" id="Re5-1e-ZEC"/>
+                            <constraint firstItem="cjh-Lk-HpV" firstAttribute="trailing" secondItem="Eju-rC-0qu" secondAttribute="trailing" id="ZSL-vq-tnl"/>
+                            <constraint firstItem="Eju-rC-0qu" firstAttribute="top" secondItem="cjh-Lk-HpV" secondAttribute="top" id="yHZ-YF-9be"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cjh-Lk-HpV"/>
                     </view>
+                    <connections>
+                        <outlet property="progressView" destination="coW-Wu-xg7" id="x0s-oe-0oA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fI-8Z-6j6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="100" y="95"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconsBack" width="25.5" height="17"/>
+        <namedColor name="deepLilac">
+            <color red="0.54100000858306885" green="0.48600000143051147" blue="0.71799999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

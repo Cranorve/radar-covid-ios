@@ -12,11 +12,29 @@ import UIKit
 
 class Injection {
     
+    enum Endpoint: String {
+        case POLL
+    }
+    
     private let container: Container;
     
     init() {
         
         container = Container();
+        
+        container.register(SwaggerClientAPI.self, name: Endpoint.POLL.rawValue) { r in
+            let swaggerApi = SwaggerClientAPI()
+            swaggerApi.basePath = Config.pollUrl;
+            return swaggerApi;
+        }.inObjectScope(.container)
+        
+        container.register(QuestionnaireControllerAPI.self) { r in
+            QuestionnaireControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.POLL.rawValue)!)
+        }.inObjectScope(.container)
+        
+        container.register(AnswersControllerAPI.self) { r in
+            AnswersControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self)!)
+        }.inObjectScope(.container)
         
         container.register(AppRouter.self) { r in
             AppRouter()
@@ -55,7 +73,11 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(BluetoothUseCase.self) { r in
-            BluetoothUseCase(bluetoothHandler: r.resolve(BluetoothHandler.self) as! BluetoothHandler)
+            BluetoothUseCase(bluetoothHandler: r.resolve(BluetoothHandler.self)!)
+        }.inObjectScope(.container)
+        
+        container.register(PollUseCase.self) { r in
+            PollUseCase(questionsApi: r.resolve(QuestionnaireControllerAPI.self)!)
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in
@@ -112,7 +134,9 @@ class Injection {
         }
         
         container.register(PollViewController.self) {  r in
-            self.createViewController(storyboard: "Poll", id: "PollViewController") as! PollViewController
+            let pollVC = self.createViewController(storyboard: "Poll", id: "PollViewController") as! PollViewController
+            pollVC.pollUseCase = r.resolve(PollUseCase.self)!
+            return pollVC
         }
         
         container.register(MyHealthViewController.self) {  r in
