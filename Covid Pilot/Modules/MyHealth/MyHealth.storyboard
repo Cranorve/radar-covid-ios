@@ -97,9 +97,15 @@
                                     <constraint firstAttribute="height" constant="56" id="dys-3C-WpD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
-                                <state key="normal" title="Enviar diagnóstico anónimo" backgroundImage="buttonsPrimary">
+                                <state key="normal" title="Enviar diagnóstico anónimo" backgroundImage="GradientBackgroundButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="btn.clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onReportDiagnosis:" destination="vmx-lJ-Xhc" eventType="touchUpInside" id="8nB-va-nlc"/>
                                 </connections>
@@ -163,7 +169,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="buttonsPrimary" width="343" height="56"/>
+        <image name="GradientBackgroundButton" width="343" height="56"/>
         <image name="codeInputFrame" width="166" height="161"/>
         <image name="iconsBack" width="25.666666030883789" height="17"/>
         <image name="organicColor" width="375" height="155.33332824707031"/>
