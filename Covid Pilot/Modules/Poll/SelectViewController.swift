@@ -1,5 +1,5 @@
 //
-//  RatingViewController.swift
+//  SelectViewController.swift
 //  Covid Pilot
 //
 //  Created by alopezh on 12/06/2020.
@@ -8,15 +8,14 @@
 
 import UIKit
 
-class RatingViewController: UIViewController, QuestionController {
+class SelectViewController: UIViewController, QuestionController {
     
     var question: Question?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
     }
-
-
 
 }
