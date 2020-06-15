@@ -14,6 +14,8 @@ class MyHealthViewController: UIViewController {
     
     var diagnosisCodeUseCase: DiagnosisCodeUseCase?
     
+    @IBOutlet weak var codeTextField: UITextField!
+    
     @IBAction func onBack(_ sender: Any) {
         let alert = Alert.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonTitle: "OK") { (UIAlertAction) in
                 self.navigationController?.popViewController(animated: true)
@@ -25,13 +27,14 @@ class MyHealthViewController: UIViewController {
     }
     
     @IBAction func onReportDiagnosis(_ sender: Any) {
-        diagnosisCodeUseCase?.sendDiagnosisCode().subscribe(
-            onNext:{ [weak self] reportedCodeBool in
-                self?.navigateIf(reported: reportedCodeBool)
-            }, onError: {  [weak self] error in
+        if let codigoString = codeTextField.text {
+            diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
+                onNext:{ [weak self] reportedCodeBool in
+                    self?.navigateIf(reported: reportedCodeBool)
+                }, onError: {  [weak self] error in
 
-        }).disposed(by: disposeBag)
-
+            }).disposed(by: disposeBag)
+        }
     }
     
     var router: AppRouter?
