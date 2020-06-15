@@ -27,6 +27,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBAction func onNext(_ sender: Any) {
+        
         if isLast() {
 //            TODO: Save
         } else {

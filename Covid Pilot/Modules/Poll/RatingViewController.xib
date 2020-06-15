@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingViewController" customModule="Covid_Pilot" customModuleProvider="target">
             <connections>
+                <outlet property="options" destination="KFg-LL-nRF" id="lov-2Z-baI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,7 +17,36 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTM-er-8hz">
+                    <rect key="frame" x="0.0" y="244" width="414" height="544"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KFg-LL-nRF">
+                            <rect key="frame" x="22" y="0.0" width="370" height="32"/>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                            <connections>
+                                <action selector="onSelected:" destination="-1" eventType="primaryActionTriggered" id="7Xr-tf-ZlQ"/>
+                            </connections>
+                        </segmentedControl>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="KFg-LL-nRF" firstAttribute="top" secondItem="pTM-er-8hz" secondAttribute="top" id="3eg-yI-Thy"/>
+                        <constraint firstAttribute="trailing" secondItem="KFg-LL-nRF" secondAttribute="trailing" constant="22" id="KAr-mc-yvG"/>
+                        <constraint firstItem="KFg-LL-nRF" firstAttribute="leading" secondItem="pTM-er-8hz" secondAttribute="leading" constant="22" id="xBe-8s-vz9"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pTM-er-8hz" secondAttribute="bottom" constant="74" id="0PE-q9-fdt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pTM-er-8hz" secondAttribute="trailing" id="40o-qB-tON"/>
+                <constraint firstItem="pTM-er-8hz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="200" id="Ckd-7L-CTf"/>
+                <constraint firstItem="pTM-er-8hz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X8G-pN-Ljd"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="113"/>
         </view>

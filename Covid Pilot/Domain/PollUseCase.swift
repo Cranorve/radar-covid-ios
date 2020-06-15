@@ -21,13 +21,14 @@ class PollUseCase {
         var questions: [Question] = []
         questions.append(Question(
             type: QuestionType.Rate,
-            question: "¿Cómo valorarías el funcionamiento de la aplicación?"))
+            question: "¿Cómo valorarías el funcionamiento de la aplicación?",
+            minValue: 1, maxValue: 10)
+        )
         questions.append(Question(
-            type: QuestionType.MultiSelect,
-            question: "¿Recibiste una alerta de contagio?"))
+            type: QuestionType.MultiSelect, question: "¿Recibiste una alerta de contagio?", minValue: nil, maxValue: nil))
         questions.append(Question(
             type: QuestionType.SingleSelect,
-            question: "¿Seguiste las recomendaciones sanitarias y de prevención indicadas en la aplicación?"))
+            question: "¿Seguiste las recomendaciones sanitarias y de prevención indicadas en la aplicación?", minValue: nil, maxValue: nil))
         return .just(questions)
     }
     
