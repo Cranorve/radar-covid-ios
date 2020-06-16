@@ -12,7 +12,7 @@ import RxSwift
 
 open class AnswersControllerAPI {
     
-    let clientApi : SwaggerClientAPI
+    private let clientApi : SwaggerClientAPI
     
     init(clientApi : SwaggerClientAPI) {
         self.clientApi = clientApi;

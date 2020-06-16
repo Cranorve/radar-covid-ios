@@ -14,6 +14,7 @@ class Injection {
     
     enum Endpoint: String {
         case POLL
+        case CONFIG
     }
     
     private let container: Container;
@@ -28,12 +29,26 @@ class Injection {
             return swaggerApi;
         }.inObjectScope(.container)
         
+        container.register(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue) { r in
+            let swaggerApi = SwaggerClientAPI()
+            swaggerApi.basePath = Config.configUrl;
+            return swaggerApi;
+        }.inObjectScope(.container)
+        
         container.register(QuestionnaireControllerAPI.self) { r in
             QuestionnaireControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.POLL.rawValue)!)
         }.inObjectScope(.container)
         
         container.register(AnswersControllerAPI.self) { r in
             AnswersControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self)!)
+        }.inObjectScope(.container)
+        
+        container.register(TokenAPI.self) { r in
+            TokenAPI(clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue)!)
+        }.inObjectScope(.container)
+        
+        container.register(SettingsAPI.self) { r in
+            SettingsAPI(clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue)!)
         }.inObjectScope(.container)
         
         container.register(AppRouter.self) { r in
@@ -54,6 +69,10 @@ class Injection {
         
         container.register(PreferencesRepository.self) { r in
             UserDefaultsPreferencesRepository()
+        }.inObjectScope(.container)
+        
+        container.register(SettingsRepository.self) { r in
+            UserDefaultsSettingsRepository()
         }.inObjectScope(.container)
         
         container.register(BluetoothHandler.self) { r in
@@ -77,12 +96,19 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(PollUseCase.self) { r in
-            PollUseCase(questionsApi: r.resolve(QuestionnaireControllerAPI.self)!)
+            PollUseCase(questionsApi: r.resolve(QuestionnaireControllerAPI.self)!,
+                        settingsRepository: r.resolve(SettingsRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(DiagnosisCodeUseCase.self) { r in
             DiagnosisCodeUseCase()
-        }
+        }.inObjectScope(.container)
+        
+        container.register(ConfigurationUseCase.self) { r in
+            ConfigurationUseCase(settingsRepository: r.resolve(SettingsRepository.self)!,
+                                 tokenApi: r.resolve(TokenAPI.self)!,
+                                 settingsApi: r.resolve(SettingsAPI.self)!)
+        }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in
             TabBarController(
@@ -97,7 +123,6 @@ class Injection {
             termsVC.proximityVC = r.resolve(ProximityViewController.self)!
             return termsVC
         }
-    
         
         container.register(ProximityViewController.self) {  r in
             let proxVC = ProximityViewController()
@@ -120,6 +145,7 @@ class Injection {
             homeVC.router = r.resolve(AppRouter.self)!
             homeVC.expositionUseCase = r.resolve(ExpositionUseCase.self)!
             homeVC.radarStatusUseCase = r.resolve(RadarStatusUseCase.self)!
+            homeVC.configurationUseCase = r.resolve(ConfigurationUseCase.self)!
             return homeVC
         }
         
@@ -140,7 +166,14 @@ class Injection {
         container.register(PollViewController.self) {  r in
             let pollVC = self.createViewController(storyboard: "Poll", id: "PollViewController") as! PollViewController
             pollVC.pollUseCase = r.resolve(PollUseCase.self)!
+            pollVC.finishPollVC = r.resolve(FinishPollViewController.self)!
             return pollVC
+        }
+        
+        container.register(FinishPollViewController.self) {  r in
+            let finishPollVC = FinishPollViewController()
+            finishPollVC.router = r.resolve(AppRouter.self)!
+            return finishPollVC
         }
         
         container.register(MyHealthViewController.self) {  r in
@@ -149,8 +182,6 @@ class Injection {
             myHealthVC.router = r.resolve(AppRouter.self)!
             return myHealthVC
         }
-        
-        
         
         container.register(MyHealthReportedViewController.self) { r in
             let myHealthReportedVC = self.createViewController(storyboard: "MyHealthReported", id: "MyHealthReportedViewController") as! MyHealthReportedViewController

@@ -32,7 +32,6 @@
                             </connections>
                         </segmentedControl>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="KFg-LL-nRF" firstAttribute="top" secondItem="pTM-er-8hz" secondAttribute="top" id="3eg-yI-Thy"/>
                         <constraint firstAttribute="trailing" secondItem="KFg-LL-nRF" secondAttribute="trailing" constant="22" id="KAr-mc-yvG"/>

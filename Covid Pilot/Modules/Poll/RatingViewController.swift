@@ -28,15 +28,18 @@ class RatingViewController: UIViewController, QuestionController {
         var position = 0
         options.removeAllSegments()
         options.selectedSegmentTintColor = #colorLiteral(red: 0.5410000086, green: 0.4860000014, blue: 0.7179999948, alpha: 1)
-        
-        
         options.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         for index in (question?.minValue ?? 1) ... (question?.maxValue ?? 1) {
+            
+            
             options.insertSegment(withTitle: index.description, at: position, animated: false)
+            
             position += 1
         }
+        if let selected = question?.valuesSelected?.first {
+            options.selectedSegmentIndex = selected as? Int ?? 0
+        }
+        
     }
-
-
 
 }
