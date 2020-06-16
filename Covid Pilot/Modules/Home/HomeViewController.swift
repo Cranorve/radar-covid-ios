@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
     var router: AppRouter?
     var expositionUseCase: ExpositionUseCase?
     var radarStatusUseCase: RadarStatusUseCase?
+    var configurationUseCase: ConfigurationUseCase?
     
     @IBAction func onCommunicate(_ sender: Any) {
         router?.route(to: Routes.MyHealth, from: self)
@@ -77,6 +78,13 @@ class HomeViewController: UIViewController {
                 self?.updateExpositionInfo(expositionInfo)
             }, onError: {  [weak self] error in
 
+        }).disposed(by: disposeBag)
+        
+        configurationUseCase?.getConfig().subscribe(
+            onNext:{ [weak self] config in
+                print(config)
+            }, onError: {  [weak self] error in
+                print(error)
         }).disposed(by: disposeBag)
         
     }

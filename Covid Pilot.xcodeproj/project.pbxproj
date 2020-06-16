@@ -71,6 +71,7 @@
 		6DB541952498A29D00166D37 /* ConfiguratioUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB541942498A29D00166D37 /* ConfiguratioUseCase.swift */; };
 		6DB541972498A31700166D37 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB541962498A31700166D37 /* SettingsRepository.swift */; };
 		6DB541992498A55700166D37 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB541982498A55700166D37 /* Settings.swift */; };
+		6DE27C642499118200BBCF40 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C632499118200BBCF40 /* String+Extension.swift */; };
 		6DF6EC99248E59C6007EAA40 /* Terms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6EC98248E59C6007EAA40 /* Terms.storyboard */; };
 		6DF6EC9B248E5C77007EAA40 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6EC9A248E5C77007EAA40 /* TermsViewController.swift */; };
 		6DF6ECA1248E6191007EAA40 /* RunningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6ECA0248E6191007EAA40 /* RunningViewController.xib */; };
@@ -168,6 +169,7 @@
 		6DB541962498A31700166D37 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
 		6DB541982498A55700166D37 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		6DB5419A2498ABE900166D37 /* Covid Pilot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Covid Pilot.entitlements"; sourceTree = "<group>"; };
+		6DE27C632499118200BBCF40 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		6DF6EC98248E59C6007EAA40 /* Terms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Terms.storyboard; sourceTree = "<group>"; };
 		6DF6EC9A248E5C77007EAA40 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		6DF6ECA0248E6191007EAA40 /* RunningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningViewController.xib; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		39443288248939F000FF0217 /* Covid Pilot */ = {
 			isa = PBXGroup;
 			children = (
+				6DE27C622499116F00BBCF40 /* Extensions */,
 				6DB5419A2498ABE900166D37 /* Covid Pilot.entitlements */,
 				6D5AFCE924936E1700EFE838 /* Config */,
 				6DA18CB92491053700BE8AAB /* Components */,
@@ -453,6 +456,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		6DE27C622499116F00BBCF40 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6DE27C632499118200BBCF40 /* String+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		6DF6EC97248E5987007EAA40 /* Terms */ = {
 			isa = PBXGroup;
 			children = (
@@ -662,6 +673,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DA18CBB2491055D00BE8AAB /* BackgroundView.swift in Sources */,
+				6DE27C642499118200BBCF40 /* String+Extension.swift in Sources */,
 				6DF6ECE52490C1F5007EAA40 /* BluetoothHandler.swift in Sources */,
 				6D5AFCEC24936E7A00EFE838 /* Config.swift in Sources */,
 				6D5AFCDD2493626C00EFE838 /* QuestionOptionDto.swift in Sources */,

@@ -14,13 +14,30 @@ protocol SettingsRepository {
     func save(settings: Settings?)
 }
 
-class UserDefaultsConfigurationRepository : SettingsRepository {
+class UserDefaultsSettingsRepository : SettingsRepository {
+    
+    private static let kData = "UserDefaultsSettingsRepository.settings"
+    
+    private let encoder = JSONEncoder()
+    private let decoder = JSONDecoder()
+    
+    private let userDefaults: UserDefaults
+    
+    init() {
+        userDefaults = UserDefaults(suiteName: "es.indra.covid") ?? UserDefaults.standard
+    }
+    
     func getSettings() -> Settings? {
-        Settings()
+        let uncoded = userDefaults.data(forKey: UserDefaultsSettingsRepository.kData) ?? Data()
+        if (uncoded.isEmpty) {
+            return nil
+        }
+        return try? decoder.decode(Settings.self, from: uncoded)
     }
     
     func save(settings: Settings?) {
-        
+        let encoded = try! encoder.encode(settings)
+        userDefaults.set(encoded, forKey: UserDefaultsSettingsRepository.kData)
     }
     
     

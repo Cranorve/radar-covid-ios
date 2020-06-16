@@ -1,5 +1,5 @@
 //
-//  Config.swift
+//  String+Extension.swift
 //  Covid Pilot
 //
 //  Created by alopezh on 16/06/2020.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-class Settings : Codable {
-    var udid: String?
+extension String: LocalizedError {
+    public var errorDescription: String? { return self }
 }

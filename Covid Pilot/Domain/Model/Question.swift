@@ -9,9 +9,10 @@
 import Foundation
 
 enum QuestionType: Int {
-    case Rate = 0
-    case SingleSelect = 1
+    case Rate = 4
+    case SingleSelect = 3
     case MultiSelect = 2
+    case MultiSelect2 = 1
 }
 
 class Question {
@@ -23,6 +24,10 @@ class Question {
     public var maxValue: Int?
     public var mandatory: Bool?
     public var valuesSelected: [Any?]?
+    
+    init() {
+        
+    }
     
     init(type: QuestionType, question: String, minValue: Int?, maxValue: Int?) {
         self.type = type

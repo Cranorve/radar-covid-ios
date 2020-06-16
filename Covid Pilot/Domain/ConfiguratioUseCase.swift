@@ -13,17 +13,31 @@ class ConfigurationUseCase {
     
     private let settingsRepository: SettingsRepository
     private let tokenApi: TokenAPI
-    private let settingsAppi: SettingsAPI
+    private let settingsApi: SettingsAPI
     
     init(settingsRepository: SettingsRepository,
          tokenApi: TokenAPI,
-         settingsAppi: SettingsAPI) {
+         settingsApi: SettingsAPI) {
         self.settingsRepository = settingsRepository
         self.tokenApi = tokenApi
-        self.settingsAppi = settingsAppi
+        self.settingsApi = settingsApi
     }
     
     func getConfig() -> Observable<Settings> {
-        return .just(Settings())
+        .deferred {
+            
+            if let settings = self.settingsRepository.getSettings() {
+                return .just(settings)
+            }
+            
+            return .zip(self.tokenApi.getUuid(),
+                        self.settingsApi.getSettings()) { token, settings in
+                    let settings = Settings()
+                        settings.udid = token.uuid
+                            self.settingsRepository.save(settings: settings)
+                    return settings
+            }
+        }
     }
+    
 }

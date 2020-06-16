@@ -17,5 +17,6 @@ public struct UuidDto: Codable {
         self.uuid = uuid
     }
 
+
 }
 

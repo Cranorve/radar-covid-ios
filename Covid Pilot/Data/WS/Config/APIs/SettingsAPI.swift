@@ -23,7 +23,7 @@ open class SettingsAPI {
 
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open func getSettings(completion: @escaping ((_ data: [SettingsDto]?,_ error: Error?) -> Void)) {
+    open func getSettings(completion: @escaping ((_ data: SettingsDto?,_ error: Error?) -> Void)) {
         getSettingsWithRequestBuilder().execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -33,7 +33,7 @@ open class SettingsAPI {
      Get application settings
      - returns: Observable<[SettingsDto]>
      */
-    open func getSettings() -> Observable<[SettingsDto]> {
+    open func getSettings() -> Observable<SettingsDto> {
         return Observable.create { [weak self] observer -> Disposable in
             self?.getSettings() { data, error in
                 if let error = error {
@@ -106,14 +106,14 @@ open class SettingsAPI {
 
      - returns: RequestBuilder<[SettingsDto]> 
      */
-    open func getSettingsWithRequestBuilder() -> RequestBuilder<[SettingsDto]> {
+    open func getSettingsWithRequestBuilder() -> RequestBuilder<SettingsDto> {
         let path = "/settings"
         let URLString = clientApi.basePath + path
         let parameters: [String:Any]? = nil
 
         let url = URLComponents(string: URLString)
 
-        let requestBuilder: RequestBuilder<[SettingsDto]>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<SettingsDto>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
