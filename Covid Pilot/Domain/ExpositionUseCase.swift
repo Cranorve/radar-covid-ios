@@ -12,37 +12,49 @@ import RxSwift
 
 class ExpositionUseCase: DP3TTracingDelegate {
     
+    
+    
+    init() {
+        DP3TTracing.delegate = self
+    }
+    
     func DP3TTracingStateChanged(_ state: TracingState) {
-        // TODO Update our current expositionInfo 
+        // TODO Update our current expositionInfo
+            //observer.onNext(tracingStatusToExpositionInfo(tStatus: state))
     }
     
     
     func getExpositionInfo() -> Observable<ExpositionInfo> {
-        var tStatus : TracingState?
-        DP3TTracing.status { result in
-            switch result {
-            case let .success(state):
-                tStatus = state
-            case .failure:
-                break
+        .create { [weak self] observer in
+            DP3TTracing.status { result in
+                switch result {
+                case let .success(state):
+                    observer.onNext(self?.tracingStatusToExpositionInfo(tStatus: state) ?? ExpositionInfo(level: .LOW))
+                case .failure:
+                    observer.onError("Algo paso mal con la peticion del status.")
+                    break
+                }
             }
-        }
-        var exposition: ExpositionInfo = ExpositionInfo(level: ExpositionInfo.Level.LOW)
-        if let _ = tStatus {
-            switch tStatus!.infectionStatus {
-            case .healthy:
-                exposition = ExpositionInfo(level: ExpositionInfo.Level.LOW)
-                
-            case .infected:
-                exposition = ExpositionInfo(level: ExpositionInfo.Level.HIGH)
             
-            default:
-                exposition = ExpositionInfo(level: ExpositionInfo.Level.LOW)
-                
-            }
+            return Disposables.create()
+            
         }
-        
-        return .just(exposition)
+    }
+    
+    
+    // Metodo para mapear un TracingState a un ExpositionInfo
+    private func tracingStatusToExpositionInfo(tStatus: TracingState) -> ExpositionInfo {
+        switch tStatus.infectionStatus {
+        case .healthy:
+            return ExpositionInfo(level: ExpositionInfo.Level.LOW)
+            
+        case .infected:
+            return ExpositionInfo(level: ExpositionInfo.Level.HIGH)
+            
+        default:
+            return ExpositionInfo(level: ExpositionInfo.Level.LOW)
+            
+        }
     }
     
 }
