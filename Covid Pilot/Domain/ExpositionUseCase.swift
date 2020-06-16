@@ -12,35 +12,31 @@ import RxSwift
 
 class ExpositionUseCase: DP3TTracingDelegate {
     
-    
+    private let subject = PublishSubject<ExpositionInfo>()
     
     init() {
         DP3TTracing.delegate = self
     }
     
     func DP3TTracingStateChanged(_ state: TracingState) {
-        // TODO Update our current expositionInfo
-            //observer.onNext(tracingStatusToExpositionInfo(tStatus: state))
+        subject.onNext(tracingStatusToExpositionInfo(tStatus: state))
     }
     
     
     func getExpositionInfo() -> Observable<ExpositionInfo> {
-        .create { [weak self] observer in
+        .deferred { [weak self] in
             DP3TTracing.status { result in
                 switch result {
                 case let .success(state):
-                    observer.onNext(self?.tracingStatusToExpositionInfo(tStatus: state) ?? ExpositionInfo(level: .LOW))
+                    self?.subject.onNext(self?.tracingStatusToExpositionInfo(tStatus: state) ?? ExpositionInfo(level: .LOW))
                 case .failure:
-                    observer.onError("Algo paso mal con la peticion del status.")
+                    self?.subject.onError("Algo paso mal con la peticion del status.")
                     break
                 }
             }
-            
-            return Disposables.create()
-            
+            return self?.subject.asObservable() ?? .empty()
         }
     }
-    
     
     // Metodo para mapear un TracingState a un ExpositionInfo
     private func tracingStatusToExpositionInfo(tStatus: TracingState) -> ExpositionInfo {
