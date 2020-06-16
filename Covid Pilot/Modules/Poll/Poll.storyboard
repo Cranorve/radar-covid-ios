@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -21,11 +21,11 @@
             <objects>
                 <viewController storyboardIdentifier="PollViewController" id="65u-p4-oBj" customClass="PollViewController" customModule="Covid_Pilot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oFP-vf-rU6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eju-rC-0qu">
-                                <rect key="frame" x="0.0" y="44" width="414" height="22"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="22"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shc-gz-JHv">
                                         <rect key="frame" x="20" y="0.0" width="23" height="22"/>
@@ -39,7 +39,7 @@
                                         </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="coW-Wu-xg7">
-                                        <rect key="frame" x="59" y="6" width="339" height="10"/>
+                                        <rect key="frame" x="59" y="6" width="300" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="cTX-Jw-jHs"/>
                                         </constraints>
@@ -58,7 +58,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdn-xL-agc">
-                                <rect key="frame" x="16" y="798" width="382" height="54"/>
+                                <rect key="frame" x="16" y="603" width="343" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Twe-jq-L1W"/>
                                 </constraints>
@@ -77,15 +77,15 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CUÉNTANOS TU EXPERIENCIA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXm-Xy-Hmh">
-                                <rect key="frame" x="16" y="116" width="171.5" height="14"/>
+                                <rect key="frame" x="16" y="72" width="171.5" height="14"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                 <color key="textColor" name="brownGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMn-C9-gIK">
-                                <rect key="frame" x="16" y="142" width="382" height="23.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMn-C9-gIK">
+                                <rect key="frame" x="16" y="98" width="343" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

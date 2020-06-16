@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectViewController: UIViewController, QuestionController, UICollectionViewDelegate, UICollectionViewDataSource {
+class SelectViewController: UIViewController, QuestionController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     var question: Question?
     
@@ -44,6 +44,13 @@ class SelectViewController: UIViewController, QuestionController, UICollectionVi
             }
            
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let width = view.frame.size.width - 32
+
+        return CGSize(width: width, height: 60)
     }
     
     private func singleSelect(_ index: Int) {
