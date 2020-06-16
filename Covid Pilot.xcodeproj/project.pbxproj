@@ -790,7 +790,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.indra.covidpilot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = linoDeveloperGOB;
+				PROVISIONING_PROFILE_SPECIFIER = CovidPilotDevelopmentExposure;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -810,7 +810,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.indra.covidpilot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = linoDeveloperGOB;
+				PROVISIONING_PROFILE_SPECIFIER = CovidPilotDevelopmentExposure;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
