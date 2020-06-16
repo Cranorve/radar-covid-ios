@@ -209,6 +209,7 @@
 		39443288248939F000FF0217 /* Covid Pilot */ = {
 			isa = PBXGroup;
 			children = (
+				6DB5419A2498ABE900166D37 /* Covid Pilot.entitlements */,
 				6D5AFCE924936E1700EFE838 /* Config */,
 				6DA18CB92491053700BE8AAB /* Components */,
 				6DF6ECC5248F6EBE007EAA40 /* Data */,
@@ -792,7 +793,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Covid Pilot.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Info.plist";
@@ -802,7 +804,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.indra.covidpilot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = CovidPilotAdHoc;
+				PROVISIONING_PROFILE_SPECIFIER = CovidPilotDevelopmentExposure;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -812,7 +814,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Covid Pilot.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Info.plist";
@@ -822,7 +825,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.indra.covidpilot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = CovidPilotAdHoc;
+				PROVISIONING_PROFILE_SPECIFIER = CovidPilotDevelopmentExposure;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
