@@ -61,6 +61,16 @@
 		6DB5417C2497DFFE00166D37 /* QuestionItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5417A2497DFFE00166D37 /* QuestionItemCell.xib */; };
 		6DB541812497F55900166D37 /* FinishPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5417F2497F55900166D37 /* FinishPollViewController.swift */; };
 		6DB541822497F55900166D37 /* FinishPollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB541802497F55900166D37 /* FinishPollViewController.xib */; };
+		6DB5418D24989C2500166D37 /* TokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5418524989C2500166D37 /* TokenAPI.swift */; };
+		6DB5418E24989C2500166D37 /* SettingsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5418624989C2500166D37 /* SettingsAPI.swift */; };
+		6DB5418F24989C2500166D37 /* SettingsDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5418824989C2500166D37 /* SettingsDto.swift */; };
+		6DB5419024989C2500166D37 /* RiskScoreClassificationDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5418924989C2500166D37 /* RiskScoreClassificationDto.swift */; };
+		6DB5419124989C2500166D37 /* UuidDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5418A24989C2500166D37 /* UuidDto.swift */; };
+		6DB5419224989C2500166D37 /* ExposureConfigurationDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5418B24989C2500166D37 /* ExposureConfigurationDto.swift */; };
+		6DB5419324989C2500166D37 /* RiskLevelDataDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5418C24989C2500166D37 /* RiskLevelDataDto.swift */; };
+		6DB541952498A29D00166D37 /* ConfiguratioUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB541942498A29D00166D37 /* ConfiguratioUseCase.swift */; };
+		6DB541972498A31700166D37 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB541962498A31700166D37 /* SettingsRepository.swift */; };
+		6DB541992498A55700166D37 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB541982498A55700166D37 /* Settings.swift */; };
 		6DF6EC99248E59C6007EAA40 /* Terms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6EC98248E59C6007EAA40 /* Terms.storyboard */; };
 		6DF6EC9B248E5C77007EAA40 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6EC9A248E5C77007EAA40 /* TermsViewController.swift */; };
 		6DF6ECA1248E6191007EAA40 /* RunningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6ECA0248E6191007EAA40 /* RunningViewController.xib */; };
@@ -147,6 +157,17 @@
 		6DB5417A2497DFFE00166D37 /* QuestionItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionItemCell.xib; sourceTree = "<group>"; };
 		6DB5417F2497F55900166D37 /* FinishPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishPollViewController.swift; sourceTree = "<group>"; };
 		6DB541802497F55900166D37 /* FinishPollViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinishPollViewController.xib; sourceTree = "<group>"; };
+		6DB5418524989C2500166D37 /* TokenAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenAPI.swift; sourceTree = "<group>"; };
+		6DB5418624989C2500166D37 /* SettingsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAPI.swift; sourceTree = "<group>"; };
+		6DB5418824989C2500166D37 /* SettingsDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDto.swift; sourceTree = "<group>"; };
+		6DB5418924989C2500166D37 /* RiskScoreClassificationDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskScoreClassificationDto.swift; sourceTree = "<group>"; };
+		6DB5418A24989C2500166D37 /* UuidDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UuidDto.swift; sourceTree = "<group>"; };
+		6DB5418B24989C2500166D37 /* ExposureConfigurationDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExposureConfigurationDto.swift; sourceTree = "<group>"; };
+		6DB5418C24989C2500166D37 /* RiskLevelDataDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiskLevelDataDto.swift; sourceTree = "<group>"; };
+		6DB541942498A29D00166D37 /* ConfiguratioUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguratioUseCase.swift; sourceTree = "<group>"; };
+		6DB541962498A31700166D37 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
+		6DB541982498A55700166D37 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		6DB5419A2498ABE900166D37 /* Covid Pilot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Covid Pilot.entitlements"; sourceTree = "<group>"; };
 		6DF6EC98248E59C6007EAA40 /* Terms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Terms.storyboard; sourceTree = "<group>"; };
 		6DF6EC9A248E5C77007EAA40 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		6DF6ECA0248E6191007EAA40 /* RunningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningViewController.xib; sourceTree = "<group>"; };
@@ -323,6 +344,7 @@
 		6D5AFC9F2493621300EFE838 /* WS */ = {
 			isa = PBXGroup;
 			children = (
+				6DB5418324989BE900166D37 /* Config */,
 				6D5AFCD52493626C00EFE838 /* AlamofireImplementations.swift */,
 				6D5AFCD02493626C00EFE838 /* APIHelper.swift */,
 				6D5AFCD22493626C00EFE838 /* APIs.swift */,
@@ -368,17 +390,17 @@
 		6D5AFCE924936E1700EFE838 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				6D5AFCEA24936E2200EFE838 /* pre */,
+				6D5AFCEA24936E2200EFE838 /* dev */,
 			);
 			path = Config;
 			sourceTree = "<group>";
 		};
-		6D5AFCEA24936E2200EFE838 /* pre */ = {
+		6D5AFCEA24936E2200EFE838 /* dev */ = {
 			isa = PBXGroup;
 			children = (
 				6D5AFCEB24936E7A00EFE838 /* Config.swift */,
 			);
-			path = pre;
+			path = dev;
 			sourceTree = "<group>";
 		};
 		6DA18CB92491053700BE8AAB /* Components */ = {
@@ -399,6 +421,36 @@
 				39A1AD47249225A40049E48B /* HighExpositionViewController.swift */,
 			);
 			path = Exposition;
+			sourceTree = "<group>";
+		};
+		6DB5418324989BE900166D37 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				6DB5418424989C2500166D37 /* APIs */,
+				6DB5418724989C2500166D37 /* Models */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		6DB5418424989C2500166D37 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				6DB5418524989C2500166D37 /* TokenAPI.swift */,
+				6DB5418624989C2500166D37 /* SettingsAPI.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		6DB5418724989C2500166D37 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6DB5418824989C2500166D37 /* SettingsDto.swift */,
+				6DB5418924989C2500166D37 /* RiskScoreClassificationDto.swift */,
+				6DB5418A24989C2500166D37 /* UuidDto.swift */,
+				6DB5418B24989C2500166D37 /* ExposureConfigurationDto.swift */,
+				6DB5418C24989C2500166D37 /* RiskLevelDataDto.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6DF6EC97248E5987007EAA40 /* Terms */ = {
@@ -426,6 +478,7 @@
 				6DA18CC32491733900BE8AAB /* RadarStatusUseCase.swift */,
 				6D5AFCED24938CC000EFE838 /* PollUseCase.swift */,
 				39C3FEC22497746900D1A13E /* DiagnosisCodeUseCase.swift */,
+				6DB541942498A29D00166D37 /* ConfiguratioUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -453,6 +506,7 @@
 			isa = PBXGroup;
 			children = (
 				6DF6ECC7248F70DF007EAA40 /* PreferencesRepository.swift */,
+				6DB541962498A31700166D37 /* SettingsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -481,6 +535,7 @@
 				6DF6ECDF248FD772007EAA40 /* ExpositionInfo.swift */,
 				6D5AFCEF24938D1900EFE838 /* Question.swift */,
 				6D5AFCF12493910900EFE838 /* QuestionOption.swift */,
+				6DB541982498A55700166D37 /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -614,23 +669,32 @@
 				6DF6EC9B248E5C77007EAA40 /* TermsViewController.swift in Sources */,
 				6DF6ECCC248F9A71007EAA40 /* TabBarController.swift in Sources */,
 				6D5AFCE42493626C00EFE838 /* JSONEncodingHelper.swift in Sources */,
+				6DB5419324989C2500166D37 /* RiskLevelDataDto.swift in Sources */,
+				6DB5418D24989C2500166D37 /* TokenAPI.swift in Sources */,
 				6D5AFC9C2492971B00EFE838 /* ContactViewController.swift in Sources */,
 				39A1AD48249225A40049E48B /* HighExpositionViewController.swift in Sources */,
 				6D5AFCD82493626C00EFE838 /* AnswersControllerAPI.swift in Sources */,
 				6DF6ECD1248FA044007EAA40 /* MyDataViewController.swift in Sources */,
 				6D5AFCEE24938CC000EFE838 /* PollUseCase.swift in Sources */,
+				6DB541952498A29D00166D37 /* ConfiguratioUseCase.swift in Sources */,
 				6DF6ECAA248E7621007EAA40 /* AppRouter.swift in Sources */,
 				6D5AFCE22493626C00EFE838 /* APIs.swift in Sources */,
 				6D5AFCDB2493626C00EFE838 /* Configuration.swift in Sources */,
+				6DB5419224989C2500166D37 /* ExposureConfigurationDto.swift in Sources */,
 				6DB541812497F55900166D37 /* FinishPollViewController.swift in Sources */,
 				6DF6ECB0248E88E6007EAA40 /* OnBoardingCompletedUseCase.swift in Sources */,
 				6DF6ECD6248FA0D0007EAA40 /* HelpLineViewController.swift in Sources */,
 				6DA18CC224916B4100BE8AAB /* ExpositionViewController.swift in Sources */,
+				6DB5418F24989C2500166D37 /* SettingsDto.swift in Sources */,
+				6DB5419024989C2500166D37 /* RiskScoreClassificationDto.swift in Sources */,
 				6D5AFCD72493626C00EFE838 /* QuestionnaireControllerAPI.swift in Sources */,
 				6DF6ECDB248FD641007EAA40 /* ExpositionUseCase.swift in Sources */,
+				6DB5418E24989C2500166D37 /* SettingsAPI.swift in Sources */,
 				6D5AFCDA2493626C00EFE838 /* JSONValue.swift in Sources */,
 				6DA18CC42491733900BE8AAB /* RadarStatusUseCase.swift in Sources */,
+				6DB5419124989C2500166D37 /* UuidDto.swift in Sources */,
 				6DF6ECE0248FD772007EAA40 /* ExpositionInfo.swift in Sources */,
+				6DB541992498A55700166D37 /* Settings.swift in Sources */,
 				6DF6ECB7248EACD7007EAA40 /* PrivacyViewController.swift in Sources */,
 				6D5AFCF72493A6E900EFE838 /* RatingViewController.swift in Sources */,
 				6DF6ECBA248F5E56007EAA40 /* ProximityViewController.swift in Sources */,
@@ -651,6 +715,7 @@
 				6D5AFCE12493626C00EFE838 /* Extensions.swift in Sources */,
 				6D5AFCDE2493626C00EFE838 /* QuestionDto.swift in Sources */,
 				6DB5417B2497DFFE00166D37 /* QuestionItemCell.swift in Sources */,
+				6DB541972498A31700166D37 /* SettingsRepository.swift in Sources */,
 				39C3FEC32497746900D1A13E /* DiagnosisCodeUseCase.swift in Sources */,
 				6D5AFCE02493626C00EFE838 /* APIHelper.swift in Sources */,
 				6D5AFCF22493910900EFE838 /* QuestionOption.swift in Sources */,

@@ -8,12 +8,20 @@
 
 import Foundation
 
-protocol ConfigurationRepository {
-    func getConfiguration()-> Config?
+protocol SettingsRepository {
+    func getSettings()-> Settings?
 
-    func saveConfiguration(completed: Config?)
+    func save(settings: Settings?)
 }
 
-class UserDefaultsConfigurationRepository : ConfigurationRepository {
+class UserDefaultsConfigurationRepository : SettingsRepository {
+    func getSettings() -> Settings? {
+        Settings()
+    }
+    
+    func save(settings: Settings?) {
+        
+    }
+    
     
 }

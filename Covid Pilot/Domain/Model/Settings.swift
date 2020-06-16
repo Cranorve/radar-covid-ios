@@ -8,6 +8,6 @@
 
 import Foundation
 
-class Config {
-    var udid: String
+class Settings {
+    var udid: String?
 }

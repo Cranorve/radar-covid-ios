@@ -14,6 +14,7 @@ class Injection {
     
     enum Endpoint: String {
         case POLL
+        case CONFIG
     }
     
     private let container: Container;
@@ -28,8 +29,18 @@ class Injection {
             return swaggerApi;
         }.inObjectScope(.container)
         
+        container.register(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue) { r in
+            let swaggerApi = SwaggerClientAPI()
+            swaggerApi.basePath = Config.configUrl;
+            return swaggerApi;
+        }.inObjectScope(.container)
+        
         container.register(QuestionnaireControllerAPI.self) { r in
             QuestionnaireControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.POLL.rawValue)!)
+        }.inObjectScope(.container)
+        
+        container.register(QuestionnaireControllerAPI.self) { r in
+            QuestionnaireControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue)!)
         }.inObjectScope(.container)
         
         container.register(AnswersControllerAPI.self) { r in
