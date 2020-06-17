@@ -23,25 +23,14 @@ class PollUseCase {
     
     func getQuestions() -> Observable<[Question]> {
 
-        questionsApi.getQuestions().map { questionsDto in
+        questionsApi.getQuestions().map { [weak self] questionsDto in
             var questions: [Question] = []
             var questionsEdit = questionsDto
             questionsEdit.sort { ($0.order ?? 0) < ($1.order ?? 0) }
             for questionDto in questionsEdit {
-                let question = Question()
-                question._id =  questionDto._id
-                question.minValue = questionDto.minValue
-                question.maxValue = questionDto.maxValue
-                question.question  = questionDto.question
-                question.type = QuestionType.init(rawValue: questionDto.questionType ?? 0)
-                question.options = []
-                for optionDto in questionDto.options ?? [] {
-                    var option = QuestionOption()
-                    option._id = optionDto._id
-                    option.option = optionDto.option
-                    question.options?.append(option)
+                if let question = self?.map(questionDto: questionDto) {
+                    questions.append(question)
                 }
-                questions.append(question)
             }
             return questions
         }
@@ -74,6 +63,36 @@ class PollUseCase {
             }
             return .just(questions)
         }
+    }
+    
+    private func map(questionDto: QuestionDto) -> Question? {
+        let question = Question()
+        question._id =  questionDto._id
+        question.minValue = questionDto.minValue
+        question.maxValue = questionDto.maxValue
+        question.question  = questionDto.question
+        
+        switch questionDto.questionType {
+        case .dichotomous:
+            question.type = .SingleSelect
+        case .multipleChoice:
+            question.type = .MultiSelect
+        case .checkbox:
+            question.type = .SingleSelect
+        case .ratingScale:
+            question.type = .Rate
+        default:
+            return nil
+        }
+        
+        question.options = []
+        for optionDto in questionDto.options ?? [] {
+            var option = QuestionOption()
+            option._id = optionDto._id
+            option.option = optionDto.option
+            question.options?.append(option)
+        }
+        return question
     }
     
 }

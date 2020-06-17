@@ -88,7 +88,7 @@ open class AnswersControllerAPI {
      - parameter sEDIAUserToken: (header)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func saveQuestions(body: [AnswerOptionDto], sEDIAUserToken: String, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+    open func saveQuestions(body: [AnswerOptionDto], sEDIAUserToken: String, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
         saveQuestionsWithRequestBuilder(body: body, sEDIAUserToken: sEDIAUserToken).execute { (response, error) -> Void in
             if error == nil {
                 completion((), error)
@@ -104,9 +104,9 @@ open class AnswersControllerAPI {
      - parameter sEDIAUserToken: (header)  
      - returns: Observable<Void>
      */
-    open class func saveQuestions(body: [AnswerOptionDto], sEDIAUserToken: String) -> Observable<Void> {
-        return Observable.create { observer -> Disposable in
-            saveQuestions(body: body, sEDIAUserToken: sEDIAUserToken) { data, error in
+    open func saveQuestions(body: [AnswerOptionDto], sEDIAUserToken: String) -> Observable<Void> {
+        return Observable.create { [weak self] observer -> Disposable in
+            self?.saveQuestions(body: body, sEDIAUserToken: sEDIAUserToken) { data, error in
                 if let error = error {
                     observer.on(.error(error))
                 } else {
@@ -131,9 +131,9 @@ open class AnswersControllerAPI {
 
      - returns: RequestBuilder<Void> 
      */
-    open class func saveQuestionsWithRequestBuilder(body: [AnswerOptionDto], sEDIAUserToken: String) -> RequestBuilder<Void> {
+    open func saveQuestionsWithRequestBuilder(body: [AnswerOptionDto], sEDIAUserToken: String) -> RequestBuilder<Void> {
         let path = "/answers"
-        let URLString = SwaggerClientAPI.basePath + path
+        let URLString = clientApi.basePath + path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)
 
         let url = URLComponents(string: URLString)

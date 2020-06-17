@@ -8,11 +8,10 @@
 
 import Foundation
 
-enum QuestionType: Int {
-    case Rate = 4
-    case SingleSelect = 3
-    case MultiSelect = 2
-    case MultiSelect2 = 1
+enum QuestionType {
+    case Rate
+    case SingleSelect
+    case MultiSelect
 }
 
 class Question {
