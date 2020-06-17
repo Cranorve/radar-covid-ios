@@ -25,18 +25,23 @@ class ConfigurationUseCase {
     
     func getConfig() -> Observable<Settings> {
         .deferred {
-            
-            if let settings = self.settingsRepository.getSettings() {
-                return .just(settings)
-            }
-            
-            return .zip(self.tokenApi.getUuid(),
+
+            return .zip(self.getUuid(),
                         self.settingsApi.getSettings()) { token, settings in
                     let settings = Settings()
-                        settings.udid = token.uuid
+                        settings.udid = token
                             self.settingsRepository.save(settings: settings)
                     return settings
             }
+        }
+    }
+    
+    private func getUuid() -> Observable<String?> {
+        .deferred {
+            if let settings = self.settingsRepository.getSettings() {
+                return .just(settings.udid)
+            }
+            return self.tokenApi.getUuid().map { udid in udid.uuid }
         }
     }
     
