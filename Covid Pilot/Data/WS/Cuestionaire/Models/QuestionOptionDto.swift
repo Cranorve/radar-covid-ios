@@ -14,17 +14,20 @@ public struct QuestionOptionDto: Codable {
     public var _id: Int?
     public var order: Int?
     public var option: String?
+    public var other: Bool?
 
-    public init(_id: Int?, order: Int?, option: String?) {
+    public init(_id: Int?, order: Int?, option: String?, other: Bool?) {
         self._id = _id
         self.order = order
         self.option = option
+        self.other = other
     }
 
-    public enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey { 
         case _id = "id"
         case order
         case option
+        case other
     }
 
 }

@@ -11,16 +11,25 @@ import Foundation
 
 public struct QuestionDto: Codable {
 
+    public enum QuestionType: String, Codable { 
+        case multipleChoice = "MULTIPLE_CHOICE"
+        case ratingScale = "RATING_SCALE"
+        case checkbox = "CHECKBOX"
+        case openEndedNumber = "OPEN_ENDED_NUMBER"
+        case openEndedText = "OPEN_ENDED_TEXT"
+        case dichotomous = "DICHOTOMOUS"
+    }
     public var _id: Int?
     public var order: Int?
     public var question: String?
-    public var questionType: Int?
+    public var questionType: QuestionType?
     public var options: [QuestionOptionDto]?
     public var minValue: Int?
     public var maxValue: Int?
     public var mandatory: Bool?
+    public var parentId: Int?
 
-    public init(_id: Int?, order: Int?, question: String?, questionType: Int?, options: [QuestionOptionDto]?, minValue: Int?, maxValue: Int?, mandatory: Bool?) {
+    public init(_id: Int?, order: Int?, question: String?, questionType: QuestionType?, options: [QuestionOptionDto]?, minValue: Int?, maxValue: Int?, mandatory: Bool?, parentId: Int?) {
         self._id = _id
         self.order = order
         self.question = question
@@ -29,9 +38,10 @@ public struct QuestionDto: Codable {
         self.minValue = minValue
         self.maxValue = maxValue
         self.mandatory = mandatory
+        self.parentId = parentId
     }
 
-    public enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey { 
         case _id = "id"
         case order
         case question
@@ -40,6 +50,7 @@ public struct QuestionDto: Codable {
         case minValue
         case maxValue
         case mandatory
+        case parentId
     }
 
 }

@@ -50,45 +50,54 @@ open class QuestionnaireControllerAPI {
     /**
      Recupera las preguntas del cuestionario
      - GET /questions
-     -
+     - 
 
+     - :
+       - type: http
+       - name: bearerAuth
      - examples: [{contentType=application/json, example=[ {
-  "minValue" : 2,
+  "minValue" : 5,
   "question" : "question",
-  "maxValue" : 7,
+  "maxValue" : 2,
   "options" : [ {
-    "id" : 5,
+    "other" : true,
+    "id" : 1,
     "order" : 5,
     "option" : "option"
   }, {
-    "id" : 5,
+    "other" : true,
+    "id" : 1,
     "order" : 5,
     "option" : "option"
   } ],
   "id" : 0,
-  "questionType" : 1,
+  "questionType" : "MULTIPLE_CHOICE",
   "mandatory" : true,
+  "parentId" : 7,
   "order" : 6
 }, {
-  "minValue" : 2,
+  "minValue" : 5,
   "question" : "question",
-  "maxValue" : 7,
+  "maxValue" : 2,
   "options" : [ {
-    "id" : 5,
+    "other" : true,
+    "id" : 1,
     "order" : 5,
     "option" : "option"
   }, {
-    "id" : 5,
+    "other" : true,
+    "id" : 1,
     "order" : 5,
     "option" : "option"
   } ],
   "id" : 0,
-  "questionType" : 1,
+  "questionType" : "MULTIPLE_CHOICE",
   "mandatory" : true,
+  "parentId" : 7,
   "order" : 6
 } ]}]
 
-     - returns: RequestBuilder<[QuestionDto]>
+     - returns: RequestBuilder<[QuestionDto]> 
      */
     open func getQuestionsWithRequestBuilder() -> RequestBuilder<[QuestionDto]> {
         let path = "/questions"
