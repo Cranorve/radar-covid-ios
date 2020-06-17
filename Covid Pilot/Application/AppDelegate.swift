@@ -10,20 +10,14 @@ import DP3TSDK
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate {
 
     var window: UIWindow?
     
     var injection: Injection = Injection();
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        //DP3T Inizialization
-        let url = URL(string: "https://example.com/your/api/")!
-        try! DP3TTracing.initialize(with: .init(appId: "com.example.your.app",
-                                                bucketBaseUrl: url,
-                                                reportBaseUrl: url))
-        
+        initializeSDK()
         return true
     }
 
@@ -43,6 +37,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     static var shared: AppDelegate {
        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+    private func initializeSDK() {
+        
+        let url = URL(string: Config.dppptUrl)!
+        DP3TTracing.loggingDelegate = self
+        try! DP3TTracing.initialize(with: .init(appId: "com.indra.covidPilot",
+                                                bucketBaseUrl: url,
+                                                reportBaseUrl: url,
+                                                mode: Config.dp3tMode))
+        
+    }
+    
+    func log(_ string: String, type: OSLogType) {
+        debugPrint(string)
     }
 
 
