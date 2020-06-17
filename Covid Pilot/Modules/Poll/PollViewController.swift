@@ -56,6 +56,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
             onNext:{ [weak self] questions in
                 self?.load(questions: questions)
             }, onError: {  [weak self] error in
+                debugPrint(error)
                 self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
 
@@ -112,11 +113,11 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     }
     
     private func isFirst() -> Bool {
-        currentIndex == 0
+        (currentIndex ?? 0) == 0
     }
     
     private func isLast() -> Bool {
-        currentIndex == (viewControllers.count - 1)
+        (currentIndex ?? 0) == (viewControllers.count - 1)
     }
     
     private func load(page: Int) {
