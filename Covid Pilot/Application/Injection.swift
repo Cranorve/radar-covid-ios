@@ -145,7 +145,6 @@ class Injection {
             homeVC.router = r.resolve(AppRouter.self)!
             homeVC.expositionUseCase = r.resolve(ExpositionUseCase.self)!
             homeVC.radarStatusUseCase = r.resolve(RadarStatusUseCase.self)!
-            homeVC.configurationUseCase = r.resolve(ConfigurationUseCase.self)!
             return homeVC
         }
         

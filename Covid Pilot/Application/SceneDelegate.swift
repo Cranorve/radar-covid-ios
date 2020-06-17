@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import RxSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
+    private let disposeBag = DisposeBag()
 
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -28,7 +30,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         let router = AppDelegate.shared.injection.resolve(AppRouter.self)!
-        router.route(to: Routes.OnBoarding, from: navigationController)
+        let configUseCase =  AppDelegate.shared.injection.resolve(ConfigurationUseCase.self)!
+        
+        configUseCase.getConfig().subscribe(
+            onNext:{ _ in
+                router.route(to: Routes.OnBoarding, from: navigationController)
+            }, onError: {  [weak self] error in
+                self?.window?.rootViewController?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar"), animated: true)
+        }).disposed(by: disposeBag)
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

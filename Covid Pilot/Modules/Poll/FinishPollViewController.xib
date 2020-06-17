@@ -7,6 +7,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="muli_bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
         <array key="muli_semibold.ttf">
             <string>Muli-SemiBold</string>
         </array>
@@ -22,10 +25,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gracias por ayudarnos a mejorar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM1-HZ-hLD">
-                    <rect key="frame" x="119" y="210" width="249" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracias por ayudarnos a mejorar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM1-HZ-hLD">
+                    <rect key="frame" x="19" y="184" width="376" height="70.5"/>
+                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -51,9 +53,12 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="jM1-HZ-hLD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="19" id="BJ2-dv-GAP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ilO-j0-mxl" secondAttribute="trailing" constant="15" id="Oja-X6-a1r"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ilO-j0-mxl" secondAttribute="bottom" constant="10" id="dEC-30-yPV"/>
                 <constraint firstItem="ilO-j0-mxl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="v7S-dA-eRl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jM1-HZ-hLD" secondAttribute="trailing" constant="19" id="wCH-tp-lva"/>
+                <constraint firstItem="jM1-HZ-hLD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="140" id="z7C-7R-a5m"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="124"/>
