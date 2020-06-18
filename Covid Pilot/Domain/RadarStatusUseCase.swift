@@ -13,18 +13,34 @@ import RxSwift
 class RadarStatusUseCase {
     
     func changeRadarStatus(active: Bool) -> Observable<Bool> {
-        return .create { observer in
-            if (active) {
-                try? DP3TTracing.startTracing()
-                observer.onNext(true)
-            } else if (!active) {
-                DP3TTracing.stopTracing()
-                observer.onNext(false)
-            } //else {observer.onError("Error parsing push repository data")}
-            
+        .create { observer in
+            if (active){
+                do {
+                    try DP3TTracing.startTracing { error in
+                        if let error =  error {
+                            observer.onError("Error starting tracing. : \(error)")
+                        }
+                        observer.onNext(true)
+                        observer.onCompleted()
+                    }
+                } catch {
+                    observer.onError("Error starting tracing. : \(error)")
+                }
+                
+            } else {
+                DP3TTracing.stopTracing { error in
+                    if let error =  error {
+                        observer.onError("Error starting tracing. : \(error)")
+                    }
+                    observer.onNext(true)
+                    observer.onCompleted()
+                }
+            }
             return Disposables.create()
         }
-        
+            
     }
-    
+
 }
+    
+

@@ -10,20 +10,14 @@ import DP3TSDK
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate, ActivityDelegate {
 
     var window: UIWindow?
     
     var injection: Injection = Injection();
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        //DP3T Inizialization
-        let url = URL(string: "https://example.com/your/api/")!
-        try! DP3TTracing.initialize(with: .init(appId: "com.example.your.app",
-                                                bucketBaseUrl: url,
-                                                reportBaseUrl: url))
-        
+        initializeSDK()
         return true
     }
 
@@ -43,6 +37,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     static var shared: AppDelegate {
        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+    private func initializeSDK() {
+        
+        let preferencesRepository = injection.resolve(PreferencesRepository.self)!
+        
+        let url = URL(string: Config.dppptUrl)!
+        DP3TTracing.loggingDelegate = self
+        DP3TTracing.activityDelegate = self
+        try! DP3TTracing.initialize(with: .init(appId: "com.indra.covidPilot",
+                                                bucketBaseUrl: url,
+                                                reportBaseUrl: url,
+                                                mode: Config.dp3tMode))
+        
+        if (preferencesRepository.isTracingActive()) {
+            do {
+                try DP3TTracing.startTracing()
+            } catch error {
+                
+            }
+        } else {
+            DP3TTracing.stopTracing()
+        }
+        
+    }
+    
+    func log(_ string: String, type: OSLogType) {
+        debugPrint(string)
+    }
+    
+    func syncCompleted(totalRequest: Int, errors: [DP3TTracingError]) {
+        debugPrint("DP3T Sync totalRequest \(totalRequest)")
+        for error in errors {
+            debugPrint("DP3T Sync error \(error)")
+        }
+    }
+    
+    func fakeRequestCompleted(result: Result<Int, DP3TNetworkingError>) {
+        debugPrint("DP3T Fake request completed...")
+    }
+    
+    func outstandingKeyUploadCompleted(result: Result<Int, DP3TNetworkingError>) {
+        debugPrint("DP3T OutstandingKeyUpload...")
     }
 
 

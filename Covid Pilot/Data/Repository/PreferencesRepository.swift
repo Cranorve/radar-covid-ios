@@ -9,14 +9,19 @@
 import Foundation
 
 protocol PreferencesRepository {
-    func isOnBoardingCompleted()-> Bool?
+    func isOnBoardingCompleted()-> Bool
 
     func setOnboarding(completed: Bool)
+    
+    func isTracingActive() -> Bool
+    func setTracing(active: Bool)
 }
 
 class UserDefaultsPreferencesRepository : PreferencesRepository {
+
+    private static let kOnboarding = "UserDefaultsPreferencesRepository.onboarding"
+    private static let kTracing = "UserDefaultsPreferencesRepository.tracing"
     
-    private static let kData = "UserDefaultsPreferencesRepository.kData"
     private let userDefaults: UserDefaults
     
     init() {
@@ -24,12 +29,21 @@ class UserDefaultsPreferencesRepository : PreferencesRepository {
     }
     
     
-    func isOnBoardingCompleted() -> Bool? {
-         userDefaults.object(forKey: UserDefaultsPreferencesRepository.kData) as? Bool
+    func isOnBoardingCompleted() -> Bool {
+        userDefaults.object(forKey: UserDefaultsPreferencesRepository.kOnboarding) as? Bool ?? false
     }
     
     func setOnboarding(completed: Bool) {
-        userDefaults.set(completed, forKey: UserDefaultsPreferencesRepository.kData)
+        userDefaults.set(completed, forKey: UserDefaultsPreferencesRepository.kOnboarding)
     }
+    
+    func isTracingActive() -> Bool {
+        userDefaults.object(forKey: UserDefaultsPreferencesRepository.kTracing) as? Bool ?? false
+    }
+    
+    func setTracing(active: Bool) {
+        userDefaults.set(active, forKey: UserDefaultsPreferencesRepository.kTracing)
+    }
+
     
 }

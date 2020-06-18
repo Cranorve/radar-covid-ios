@@ -19,7 +19,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     var pollUseCase: PollUseCase?
     var finishPollVC: FinishPollViewController?
     
-    private var questions: [Question]?
+    private var poll: Poll?
     private var viewControllers: [UIViewController] = []
     private var curretnQuestion: Question?
 
@@ -28,11 +28,10 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBAction func onNext(_ sender: Any) {
-        
         if isLast() {
             saveQuestions()
         } else {
-            scrollToPage(.next, animated: true)
+            goToNext()
         }
     }
     
@@ -52,9 +51,9 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         
         self.isScrollEnabled = false
         
-        pollUseCase?.getQuestions().subscribe(
-            onNext:{ [weak self] questions in
-                self?.load(questions: questions)
+        pollUseCase?.getPoll().subscribe(
+            onNext:{ [weak self] poll in
+                self?.load(poll: poll)
             }, onError: {  [weak self] error in
                 debugPrint(error)
                 self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
@@ -62,9 +61,9 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
 
     }
     
-    private func load(questions: [Question]?) {
-        self.questions = questions
-        questions?.forEach {question in
+    private func load(poll: Poll?) {
+        self.poll = poll
+        poll?.questions?.forEach {question in
             var vc: QuestionController?
             if question.type == .Rate {
                 vc = RatingViewController()
@@ -85,7 +84,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     }
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
-        questions?.count ?? 0
+        poll?.questions?.count ?? 0
     }
     
     func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
@@ -121,10 +120,10 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     }
     
     private func load(page: Int) {
-        curretnQuestion = questions?[page]
+        curretnQuestion = poll?.questions?[page]
         titleLabel.text = curretnQuestion?.question
         if viewControllers.count > 0 {
-            progressView.progress = Float(page + 1) / Float(viewControllers.count)
+            progressView.progress = Float((curretnQuestion?.position ?? 0) + 1) / Float(poll?.numRootQuestions ?? 1)
         }
         if (isLast()) {
             nextButton.setTitle("Finalizar", for: .normal)
@@ -134,7 +133,10 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     }
     
     private func saveQuestions() {
-        pollUseCase?.saveQuestions(questions: questions ?? []).subscribe(
+        guard let poll = self.poll else {
+            return
+        }
+        pollUseCase?.save(poll: poll).subscribe(
             onNext:{ [weak self] questions in
                 if let strongSelf = self {
                     strongSelf.navigationController?.pushViewController(strongSelf.finishPollVC!, animated: true)
@@ -142,6 +144,19 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
             }, onError: {  [weak self] error in
                 self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
+    }
+    
+    private func goToNext() {
+        if let selectedOption = curretnQuestion?.getSelectedOption() {
+            if let nextQuestion = selectedOption.next {
+                scrollToPage(.at(index: nextQuestion), animated: true)
+            } else {
+                scrollToPage(.next, animated: true)
+            }
+        } else {
+            scrollToPage(.next, animated: true)
+        }
+        
     }
 
 }

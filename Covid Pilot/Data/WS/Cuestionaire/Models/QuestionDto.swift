@@ -28,8 +28,9 @@ public struct QuestionDto: Codable {
     public var maxValue: Int?
     public var mandatory: Bool?
     public var parentId: Int?
+    public var parentOptionId: Int?
 
-    public init(_id: Int?, order: Int?, question: String?, questionType: QuestionType?, options: [QuestionOptionDto]?, minValue: Int?, maxValue: Int?, mandatory: Bool?, parentId: Int?) {
+    public init(_id: Int?, order: Int?, question: String?, questionType: QuestionType?, options: [QuestionOptionDto]?, minValue: Int?, maxValue: Int?, mandatory: Bool?, parentId: Int?, parentOptionId: Int?) {
         self._id = _id
         self.order = order
         self.question = question
@@ -39,6 +40,7 @@ public struct QuestionDto: Codable {
         self.maxValue = maxValue
         self.mandatory = mandatory
         self.parentId = parentId
+        self.parentOptionId = parentOptionId
     }
 
     public enum CodingKeys: String, CodingKey { 
@@ -51,6 +53,7 @@ public struct QuestionDto: Codable {
         case maxValue
         case mandatory
         case parentId
+        case parentOptionId
     }
 
 }
