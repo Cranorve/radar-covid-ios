@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import DP3TSDK
 
 class ConfigurationUseCase {
     
@@ -24,15 +25,16 @@ class ConfigurationUseCase {
     }
     
     func getConfig() -> Observable<Settings> {
-        .deferred {
-
-            return .zip(self.getUuid(),
-                        self.settingsApi.getSettings()) { token, settings in
+        .deferred { [weak self] in
+            Observable<Settings>.zip(self?.getUuid() ?? .empty(),
+                        self?.settingsApi.getSettings() ?? .empty() ) { token, backSettings in
                     let settings = Settings()
-                        settings.udid = token
-                            self.settingsRepository.save(settings: settings)
+                    settings.udid = token
+                    self?.settingsRepository.save(settings: settings)
                     return settings
-            }
+                }.flatMap { (config) -> Observable<Settings> in
+                    self?.sync(config) ?? .empty()
+                }
         }
     }
     
@@ -42,6 +44,24 @@ class ConfigurationUseCase {
                 return .just(settings.udid)
             }
             return self.tokenApi.getUuid().map { udid in udid.uuid }
+        }
+    }
+    
+    private func sync(_ settings: Settings) -> Observable<Settings> {
+        .create { observer in
+            
+//            TODO cagar parámetros desde settings
+            
+            DP3TTracing.sync { result in
+                switch result {
+                case let .failure(error):
+                    // TODO: tratar los distintos casos de error
+                    observer.onError(error)
+                default:
+                    observer.onNext(settings)
+                }
+            }
+            return Disposables.create()
         }
     }
     
