@@ -99,7 +99,7 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(RadarStatusUseCase.self) { r in
-            RadarStatusUseCase()
+            RadarStatusUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(BluetoothUseCase.self) { r in

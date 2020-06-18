@@ -38,11 +38,13 @@ class HomeViewController: UIViewController {
         
         let active = radarSwitch.isOn
         
-        radarStatusUseCase?.changeRadarStatus(active: active).subscribe(
+        radarStatusUseCase?.changeTracingStatus(active: active).subscribe(
             onNext:{ [weak self] active in
-                self?.changeMessage(active: active)
+                self?.changeRadarMessage(active: active)
+                
             }, onError: {  [weak self] error in
-
+                debugPrint("Error: \(error)")
+                self?.radarSwitch.isOn = !active
         }).disposed(by: disposeBag)
         
     }
@@ -71,6 +73,10 @@ class HomeViewController: UIViewController {
         radarSwitch.tintColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         radarSwitch.layer.cornerRadius = radarSwitch.frame.height / 2
         radarSwitch.backgroundColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
+        
+        let isTracingActive = radarStatusUseCase?.isTracingActive() ?? false
+        changeRadarMessage(active: isTracingActive)
+        radarSwitch.isOn = isTracingActive
         
         expositionUseCase?.getExpositionInfo().subscribe(
             onNext:{ [weak self] expositionInfo in
@@ -108,7 +114,7 @@ class HomeViewController: UIViewController {
         
     }
     
-    private func changeMessage(active: Bool) {
+    private func changeRadarMessage(active: Bool) {
         if (active) {
             radarMessage.text = "Las interacciones con móviles cercanos se registarán siempre anónimamente. "
             radarMessage.textColor = UIColor.black
