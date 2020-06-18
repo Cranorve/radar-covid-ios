@@ -22,6 +22,7 @@ class Question {
     public var minValue: Int?
     public var maxValue: Int?
     public var mandatory: Bool?
+    public var position: Int?
     public var valuesSelected: [Any?]?
     
     init() {
@@ -33,5 +34,14 @@ class Question {
         self.minValue = minValue
         self.maxValue = maxValue
         self.question = question
+    }
+    
+    func getSelectedOption() -> QuestionOption? {
+        for option in options ?? [] {
+            if option.selected ?? false {
+                return option
+            }
+        }
+        return nil
     }
 }

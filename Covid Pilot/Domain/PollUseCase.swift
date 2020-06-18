@@ -21,19 +21,28 @@ class PollUseCase {
         self.settingsRepository = settingsRepository
     }
     
-    func getQuestions() -> Observable<[Question]> {
+    func getPoll() -> Observable<Poll> {
 
         questionsApi.getQuestions().map { [weak self] questionsDto in
+            let poll = Poll()
             var questions: [Question] = []
+            var rootQuestions = 0
             var questionsEdit = questionsDto
-            questionsEdit.sort { ($0.order ?? 0) < ($1.order ?? 0) }
+            questionsEdit.sort { ($0.order ?? Int.max) < ($1.order ?? Int.max) }
             for questionDto in questionsEdit {
                 if let question = self?.map(questionDto: questionDto) {
                     questions.append(question)
                 }
+                if questionDto.parentId == nil {
+                    rootQuestions += 1
+                }
             }
-            return questions
+            self?.asignOptions(questions, questionsDto)
+            poll.questions = questions
+            poll.numRootQuestions = rootQuestions
+            return poll
         }
+    
 
 //
 //        var questions: [Question] = []
@@ -56,12 +65,25 @@ class PollUseCase {
 //        return .just(questions)
     }
     
-    func saveQuestions(questions: [Question]) -> Observable<[Question]> {
+    private func asignOptions(_ questions: [Question], _ questionsDto: [QuestionDto]) {
+        for questionDto in questionsDto {
+            if let question = findParentQuestion(parentId: questionDto.parentId, questions: questions) {
+                for i in 0 ... (question.options?.count ?? 0) - 1 {
+                    var option = question.options?[i]
+                    if option?._id == questionDto.parentOptionId {
+                        option?.next = questionDto.order
+                    }
+                }
+            }
+        }
+    }
+    
+    func save(poll: Poll) -> Observable<Poll> {
         .deferred { [weak self] in
             guard let settings = self?.settingsRepository.getSettings() else {
                 return .error("Settings not loaded")
             }
-            return .just(questions)
+            return .just(poll)
         }
     }
     
@@ -92,7 +114,20 @@ class PollUseCase {
             option.option = optionDto.option
             question.options?.append(option)
         }
+        
         return question
+    }
+    
+    
+    private func findParentQuestion(parentId: Int?, questions: [Question]) -> Question? {
+        if let parentId = parentId {
+            for question in questions {
+                if question._id == parentId {
+                    return question
+                }
+            }
+        }
+        return nil
     }
     
 }

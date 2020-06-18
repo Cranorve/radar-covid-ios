@@ -10,7 +10,7 @@ import DP3TSDK
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate, ActivityDelegate {
 
     var window: UIWindow?
     
@@ -41,17 +41,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate {
     
     private func initializeSDK() {
         
+        let preferencesRepository = injection.resolve(PreferencesRepository.self)!
+        
         let url = URL(string: Config.dppptUrl)!
         DP3TTracing.loggingDelegate = self
+        DP3TTracing.activityDelegate = self
         try! DP3TTracing.initialize(with: .init(appId: "com.indra.covidPilot",
                                                 bucketBaseUrl: url,
                                                 reportBaseUrl: url,
                                                 mode: Config.dp3tMode))
         
+        if (preferencesRepository.isTracingActive()) {
+            do {
+                try DP3TTracing.startTracing()
+            } catch error {
+                
+            }
+        } else {
+            DP3TTracing.stopTracing()
+        }
+        
     }
     
     func log(_ string: String, type: OSLogType) {
         debugPrint(string)
+    }
+    
+    func syncCompleted(totalRequest: Int, errors: [DP3TTracingError]) {
+        debugPrint("DP3T Sync totalRequest \(totalRequest)")
+        for error in errors {
+            debugPrint("DP3T Sync error \(error)")
+        }
+    }
+    
+    func fakeRequestCompleted(result: Result<Int, DP3TNetworkingError>) {
+        debugPrint("DP3T Fake request completed...")
+    }
+    
+    func outstandingKeyUploadCompleted(result: Result<Int, DP3TNetworkingError>) {
+        debugPrint("DP3T OutstandingKeyUpload...")
     }
 
 
