@@ -17,4 +17,7 @@ struct Config {
     static let verificationUrl : String = "https://d3d0clxg4q92wk.cloudfront.net/verification"
     
     static let dp3tMode: ApplicationDescriptor.Mode = .test
+    
+    // Share keys of last 14 days
+    static let timeForKeys = -60 * 60 * 24 * 14
 }
