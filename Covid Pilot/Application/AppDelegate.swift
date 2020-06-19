@@ -49,7 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate, Activity
         try! DP3TTracing.initialize(with: .init(appId: "com.indra.covidPilot",
                                                 bucketBaseUrl: url,
                                                 reportBaseUrl: url,
-                                                mode: Config.dp3tMode))
+                                                jwtPublicKey: Config.validationKey,
+                                                mode: Config.dp3tMode) )
         
         if (preferencesRepository.isTracingActive()) {
             do {
@@ -64,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate, Activity
     }
     
     func log(_ string: String, type: OSLogType) {
-        debugPrint(string)
+//        debugPrint(string)
     }
     
     func syncCompleted(totalRequest: Int, errors: [DP3TTracingError]) {

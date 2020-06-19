@@ -23,7 +23,6 @@ class MyHealthViewController: UIViewController {
         
         present(alert, animated: true)
         
-        
     }
     
     @IBAction func onReportDiagnosis(_ sender: Any) {
@@ -32,7 +31,9 @@ class MyHealthViewController: UIViewController {
                 onNext:{ [weak self] reportedCodeBool in
                     self?.navigateIf(reported: reportedCodeBool)
                 }, onError: {  [weak self] error in
-                    Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok")
+                    print("Error reporting diagnosis \(error)")
+                    self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"), animated: true)
+                    
             }).disposed(by: disposeBag)
         }
     }

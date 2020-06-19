@@ -29,14 +29,14 @@ class OnBoardingViewController: UIViewController {
         }
         else {
             reminderAcceptTermsView.isHidden = false
-            router?.route(to: Routes.Terms, from:self)
+            router?.route(to: Routes.Info, from:self)
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidLoad()
         if (onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? false) {
-            router?.route(to: Routes.Home, from: self)
+//            router?.route(to: Routes.Home, from: self)
         }
 //        router?.route(to: Routes.Home, from: self)
     }

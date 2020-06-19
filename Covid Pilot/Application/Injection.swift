@@ -47,7 +47,7 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(AnswersControllerAPI.self) { r in
-            AnswersControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self)!)
+            AnswersControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.POLL.rawValue)!)
         }.inObjectScope(.container)
         
         container.register(TokenAPI.self) { r in
@@ -66,7 +66,7 @@ class Injection {
             AppRouter()
         }.inObjectScope(.container)
         .initCompleted {r, appRouter in
-            appRouter.termsVC = r.resolve(TermsViewController.self)!
+            appRouter.infoVC = r.resolve(InfoViewController.self)!
             appRouter.homeVC = r.resolve(HomeViewController.self)!
             appRouter.onBoardingVC = r.resolve(OnBoardingViewController.self)!
             appRouter.tabBarController = r.resolve(TabBarController.self)!
@@ -108,6 +108,7 @@ class Injection {
         
         container.register(PollUseCase.self) { r in
             PollUseCase(questionsApi: r.resolve(QuestionnaireControllerAPI.self)!,
+                        answersApi: r.resolve(AnswersControllerAPI.self)!,
                         settingsRepository: r.resolve(SettingsRepository.self)!)
         }.inObjectScope(.container)
         
@@ -129,8 +130,8 @@ class Injection {
             )
         }
         
-        container.register(TermsViewController.self) { r in
-            let termsVC = self.createViewController(storyboard: "Terms", id: "TermsViewController") as! TermsViewController
+        container.register(InfoViewController.self) { r in
+            let termsVC = self.createViewController(storyboard: "Info", id: "TermsViewController") as! InfoViewController
             termsVC.proximityVC = r.resolve(ProximityViewController.self)!
             return termsVC
         }
