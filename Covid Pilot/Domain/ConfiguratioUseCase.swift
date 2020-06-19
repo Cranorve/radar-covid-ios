@@ -30,6 +30,7 @@ class ConfigurationUseCase {
                         self?.settingsApi.getSettings() ?? .empty() ) { token, backSettings in
                     let settings = Settings()
                     settings.udid = token
+                    settings.parameters = backSettings
                     self?.settingsRepository.save(settings: settings)
                     return settings
                 }.flatMap { (config) -> Observable<Settings> in
@@ -48,9 +49,9 @@ class ConfigurationUseCase {
     }
     
     private func sync(_ settings: Settings) -> Observable<Settings> {
-        .create { observer in
+        .create { [weak self] observer in
             
-//            TODO cagar parámetros desde settings
+            self?.loadParameters(settings)
             
             DP3TTracing.sync { result in
                 switch result {
@@ -63,6 +64,17 @@ class ConfigurationUseCase {
             }
             return Disposables.create()
         }
+    }
+    
+    private func loadParameters(_ settings: Settings) {
+        var params = DP3TTracing.parameters
+        if let lower = settings.parameters?.exposureConfiguration?.attenuation?.riskLevelValue1 {
+            params.contactMatching.lowerThreshold = lower
+        }
+        if let higher = settings.parameters?.exposureConfiguration?.attenuation?.riskLevelValue2 {
+            params.contactMatching.higherThreshold = higher
+        }
+        DP3TTracing.parameters = params
     }
     
 }
