@@ -12,6 +12,8 @@ class MyHealthReportedViewController: UIViewController {
 
     var router: AppRouter?
     
+    @IBOutlet weak var moreInfoView: UIView!
+    
     @IBAction func onBack(_ sender: Any) {
         router?.route(to: Routes.Home, from: self)
     }
@@ -20,9 +22,13 @@ class MyHealthReportedViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        moreInfoView.isUserInteractionEnabled = true
+        moreInfoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userDidTapLabel(tapGestureRecognizer:))))
     }
     
-
+    @objc func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
+           // TODO queda por definir que pasa cuando se pincha en mas informacion
+       }
     /*
     // MARK: - Navigation
 
