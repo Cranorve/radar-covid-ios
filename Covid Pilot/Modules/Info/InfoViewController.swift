@@ -9,9 +9,7 @@
 import UIKit
 import Pageboy
 
-class TermsViewController: PageboyViewController, PageboyViewControllerDataSource, PageboyViewControllerDelegate {
-
-    @IBOutlet weak var pageControl: UIPageControl!
+class InfoViewController: PageboyViewController, PageboyViewControllerDataSource, PageboyViewControllerDelegate {
 
     var slides: [UIViewController] = [];
     
@@ -21,18 +19,15 @@ class TermsViewController: PageboyViewController, PageboyViewControllerDataSourc
         super.viewDidLoad()
         
         slides = createSlides()
-        
-        pageControl.numberOfPages = 3
-        pageControl.currentPage = 0
+
+        self.isScrollEnabled = false
         
         self.delegate = self
         self.dataSource = self    
     }
     
     func createSlides() -> [UIViewController] {
-        let runningVC = RunningViewController()
-        let privacyVC = PrivacyViewController()
-        return [runningVC, privacyVC, proximityVC!]
+        return [proximityVC!]
     }
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
@@ -44,7 +39,7 @@ class TermsViewController: PageboyViewController, PageboyViewControllerDataSourc
     }
     
     func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: NavigationDirection,animated: Bool) {
-        pageControl.currentPage = index
+
     }
     
     func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: Int, direction: NavigationDirection,animated: Bool) {
