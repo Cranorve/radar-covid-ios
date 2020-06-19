@@ -47,7 +47,7 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(AnswersControllerAPI.self) { r in
-            AnswersControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self)!)
+            AnswersControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.POLL.rawValue)!)
         }.inObjectScope(.container)
         
         container.register(TokenAPI.self) { r in
@@ -108,6 +108,7 @@ class Injection {
         
         container.register(PollUseCase.self) { r in
             PollUseCase(questionsApi: r.resolve(QuestionnaireControllerAPI.self)!,
+                        answersApi: r.resolve(AnswersControllerAPI.self)!,
                         settingsRepository: r.resolve(SettingsRepository.self)!)
         }.inObjectScope(.container)
         
