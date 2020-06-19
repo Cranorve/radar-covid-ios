@@ -66,7 +66,7 @@ class Injection {
             AppRouter()
         }.inObjectScope(.container)
         .initCompleted {r, appRouter in
-            appRouter.termsVC = r.resolve(TermsViewController.self)!
+            appRouter.infoVC = r.resolve(InfoViewController.self)!
             appRouter.homeVC = r.resolve(HomeViewController.self)!
             appRouter.onBoardingVC = r.resolve(OnBoardingViewController.self)!
             appRouter.tabBarController = r.resolve(TabBarController.self)!
@@ -130,8 +130,8 @@ class Injection {
             )
         }
         
-        container.register(TermsViewController.self) { r in
-            let termsVC = self.createViewController(storyboard: "Terms", id: "TermsViewController") as! TermsViewController
+        container.register(InfoViewController.self) { r in
+            let termsVC = self.createViewController(storyboard: "Info", id: "TermsViewController") as! InfoViewController
             termsVC.proximityVC = r.resolve(ProximityViewController.self)!
             return termsVC
         }

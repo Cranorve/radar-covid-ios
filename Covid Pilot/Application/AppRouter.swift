@@ -20,7 +20,7 @@ protocol Router {
 public enum Routes {
     case OnBoarding
     case Home
-    case Terms
+    case Info
     case MyHealth
     case MyHealthReported
     case Exposition
@@ -31,7 +31,7 @@ public enum Routes {
 
 class AppRouter : Router {
     
-    var termsVC: TermsViewController?
+    var infoVC: InfoViewController?
     var homeVC: HomeViewController?
     var onBoardingVC: OnBoardingViewController?
     var tabBarController: TabBarController?
@@ -48,8 +48,8 @@ class AppRouter : Router {
             routeToOnboarding(context)
         case .Home:
             routeToHome(context)
-        case .Terms:
-            routeToTerms(context)
+        case .Info:
+            routeToInfo(context)
         case .MyHealth:
             routeToMyHealth(context)
         case .MyHealthReported:
@@ -73,8 +73,8 @@ class AppRouter : Router {
         loadViewAsRoot(navController: context.navigationController, view: tabBarController!)
     }
     
-    private func routeToTerms(_ context: UIViewController) {
-        loadViewAsRoot(navController: context.navigationController, view: termsVC!)
+    private func routeToInfo(_ context: UIViewController) {
+        loadViewAsRoot(navController: context.navigationController, view: infoVC!)
     }
     
     private func routeToMyHealth(_ context: UIViewController) {

@@ -22,9 +22,13 @@ class ProximityViewController: UIViewController {
             onNext: { [weak self] active in
                 self?.navigateIf(active: active)
             }, onError: {  [weak self] error in
-//                TODO: Alert!
+                debugPrint("Error activating bluetooth \(error)")
         })
         .disposed(by: disposeBag)
+    }
+    
+    @IBAction func continueNoBluetooth(_ sender: Any) {
+        navigateIf(active: true)
     }
     
     override func viewDidLoad() {
