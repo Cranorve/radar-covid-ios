@@ -10,10 +10,14 @@ import Foundation
 import DP3TSDK
 
 struct Config {
-    static let configUrl: String = "https://d1p5vqzn33zen9.cloudfront.net/configuration"
-    static let pollUrl : String = "https://d1p5vqzn33zen9.cloudfront.net/questionnaire"
-    static let dppptUrl : String = "https://d1p5vqzn33zen9.cloudfront.net/dp3t/v1/gaen"
-    static let verificationUrl : String = "https://d1p5vqzn33zen9.cloudfront.net/verification/tan"
+    
+    static let configUrl: String = "https://d3d0clxg4q92wk.cloudfront.net/configuration"
+    static let pollUrl : String = "https://d3d0clxg4q92wk.cloudfront.net/questionnaire"
+    static let dppptUrl : String = "https://d3d0clxg4q92wk.cloudfront.net/dp3t/v1/gaen"
+    static let verificationUrl : String = "https://d3d0clxg4q92wk.cloudfront.net/verification"
     
     static let dp3tMode: ApplicationDescriptor.Mode = .test
+    
+    // Share keys of last 14 days
+    static let timeForKeys = -60 * 60 * 24 * 14
 }

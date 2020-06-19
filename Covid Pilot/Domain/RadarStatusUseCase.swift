@@ -12,17 +12,28 @@ import RxSwift
 
 class RadarStatusUseCase {
     
-    func changeRadarStatus(active: Bool) -> Observable<Bool> {
-        .create { observer in
+    private let preferencesRepository: PreferencesRepository
+    
+    init(preferencesRepository: PreferencesRepository) {
+        self.preferencesRepository = preferencesRepository
+    }
+    
+    func isTracingActive() -> Bool {
+        preferencesRepository.isTracingActive()
+    }
+    
+    func changeTracingStatus(active: Bool) -> Observable<Bool> {
+        .create { [weak self] observer in
             if (active){
                 do {
                     try DP3TTracing.startTracing { error in
                         if let error =  error {
                             observer.onError("Error starting tracing. : \(error)")
                         }
-                        observer.onNext(true)
-                        observer.onCompleted()
                     }
+                    self?.preferencesRepository.setTracing(active: active)
+                    observer.onNext(active)
+                    observer.onCompleted()
                 } catch {
                     observer.onError("Error starting tracing. : \(error)")
                 }
@@ -32,9 +43,10 @@ class RadarStatusUseCase {
                     if let error =  error {
                         observer.onError("Error starting tracing. : \(error)")
                     }
-                    observer.onNext(true)
-                    observer.onCompleted()
                 }
+                self?.preferencesRepository.setTracing(active: active)
+                observer.onNext(active)
+                observer.onCompleted()
             }
             return Disposables.create()
         }

@@ -54,8 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate, Activity
         if (preferencesRepository.isTracingActive()) {
             do {
                 try DP3TTracing.startTracing()
-            } catch error {
-                
+            } catch {
+                debugPrint("Error starting tracing \(error)")
             }
         } else {
             DP3TTracing.stopTracing()
