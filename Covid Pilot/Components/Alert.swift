@@ -21,11 +21,11 @@ public class Alert {
         return uiAlert
     }
     
-    class func showAlertCancelContinue(title: String, message: String, buttonTitle: String, completionHandler: @escaping (_ action: UIAlertAction) -> Void ) -> UIAlertController {
+    class func showAlertCancelContinue(title: String, message: String, buttonOkTitle: String, buttonCancelTitle: String,  completionHandler: @escaping (_ action: UIAlertAction) -> Void ) -> UIAlertController {
         let uiAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-               let action = UIAlertAction(title: buttonTitle, style: UIAlertAction.Style.default, handler: completionHandler)
+               let action = UIAlertAction(title: buttonOkTitle, style: UIAlertAction.Style.default, handler: completionHandler)
                uiAlert.addAction(action)
-                let actionCancel = UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.default, handler: nil)
+                let actionCancel = UIAlertAction(title: buttonCancelTitle, style: UIAlertAction.Style.default, handler: nil)
                 uiAlert.addAction(actionCancel)
                let buttonView = uiAlert.view.subviews.first?.subviews.first?.subviews.first?.subviews[1]
                uiAlert.view.tintColor = UIColor.white

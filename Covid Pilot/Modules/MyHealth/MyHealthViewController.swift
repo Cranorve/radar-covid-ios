@@ -17,7 +17,7 @@ class MyHealthViewController: UIViewController {
     @IBOutlet weak var codeTextField: UITextField!
     
     @IBAction func onBack(_ sender: Any) {
-        let alert = Alert.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonTitle: "OK") { (UIAlertAction) in
+        let alert = Alert.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar") { (UIAlertAction) in
                 self.navigationController?.popViewController(animated: true)
         }
         present(alert, animated: true)

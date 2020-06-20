@@ -39,16 +39,16 @@
                                     <fragment content="Acepto las ">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="16" name="Muli-Regular_Light"/>
-                                            <font key="NSOriginalFont" size="16" name="Muli-Regular_Light"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="condiciones de uso">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="16" name="Muli-Regular_Bold"/>
-                                            <font key="NSOriginalFont" size="16" name="Muli-Regular_Bold"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             <integer key="NSUnderline" value="1"/>
                                         </attributes>
@@ -59,16 +59,16 @@
 He leido la </string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="16" name="Muli-Regular_Light"/>
-                                            <font key="NSOriginalFont" size="16" name="Muli-Regular_Light"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="política de privacidad">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="16" name="Muli-Regular_Bold"/>
-                                            <font key="NSOriginalFont" size="16" name="Muli-Regular_Bold"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             <integer key="NSUnderline" value="1"/>
                                         </attributes>
@@ -76,8 +76,8 @@ He leido la </string>
                                     <fragment content=" ">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="16" name="Muli-Regular_Light"/>
-                                            <font key="NSOriginalFont" size="16" name="Muli-Regular_Light"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -134,7 +134,7 @@ He leido la </string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BQP-bi-ONN">
-                                                <rect key="frame" x="0.0" y="105" width="334" height="100.5"/>
+                                                <rect key="frame" x="0.0" y="105" width="334" height="95.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="334" id="FlW-x3-mQx"/>
                                                 </constraints>
@@ -144,27 +144,27 @@ He leido la </string>
 </string>
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="20" name="Muli-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment content="NO">
                                                         <attributes>
                                                             <color key="NSColor" red="0.44093990325927734" green="0.30395576357841492" blue="0.61949914693832397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="20" name="Muli-Regular_Bold"/>
-                                                            <font key="NSOriginalFont" size="20" name="Muli-Regular_Bold"/>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="20"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment content=" se recoge tu nombre, email, geolocalización ni tu telefono">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="20" name="Muli-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discrección" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hUn-Fp-rhp">
-                                                <rect key="frame" x="0.0" y="231" width="276" height="26"/>
+                                                <rect key="frame" x="0.0" y="226" width="276" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="276" id="Ppl-Qr-q5x"/>
                                                 </constraints>

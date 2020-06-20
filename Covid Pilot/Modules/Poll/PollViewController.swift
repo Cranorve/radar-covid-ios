@@ -29,11 +29,11 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBAction func onNext(_ sender: Any) {
-        if isLast() {
-            saveQuestions()
-        } else {
-            goToNext()
+        let alert = Alert.showAlertCancelContinue(title:  "No has respondido a una pregunta", message: "", buttonOkTitle: "Continuar sin respuesta", buttonCancelTitle: "Responder") { [weak self] _ in
+            self?.nextConfirmed()
         }
+        present(alert, animated: true)
+
     }
     
     @IBAction func onBack(_ sender: Any) {
@@ -41,6 +41,14 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
             navigationController?.popViewController(animated: true)
         } else {
             goToBack()
+        }
+    }
+    
+    func nextConfirmed() {
+        if isLast() {
+            saveQuestions()
+        } else {
+            goToNext()
         }
     }
     
