@@ -25,10 +25,10 @@ class OnBoardingViewController: UIViewController {
     @IBAction func onOk(_ sender: Any) {
         if (!termsAccepted){
             //show reminder view
-            reminderAcceptTermsView.isHidden = false
+            
         }
         else {
-            reminderAcceptTermsView.isHidden = false
+            
             router?.route(to: Routes.Info, from:self)
         }
     }
