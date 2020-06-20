@@ -148,7 +148,7 @@ class PollUseCase {
                 case .Text:
                     debugPrint("Text temporalmente deshabilitado")
 //                    for text in question.valuesSelected ?? [] {
-//                        answers.append(AnswerOptionDto.init(question: question._id, option: text as? Int , answer: (text as? String?) ?? "" ))
+//                        answers.append(AnswerOptionDto.init(question: question._id, option: 0 , answer: (text as? String?) ?? "" ))
 //                    }
             }
         }
