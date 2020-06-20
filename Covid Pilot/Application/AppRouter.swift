@@ -27,6 +27,7 @@ public enum Routes {
     case HighExposition
     case Poll
     case Contact
+    case PollFinished
 }
 
 class AppRouter : Router {
@@ -41,6 +42,7 @@ class AppRouter : Router {
     var highExpositionVC: HighExpositionViewController?
     var contactVC: ContactViewController?
     var pollVC: PollViewController?
+    var pollFinishedVC: FinishPollViewController?
     
     func route(to routeID: Routes, from context: UIViewController, parameters: Any?...) {
         switch routeID {
@@ -60,8 +62,10 @@ class AppRouter : Router {
             routeToHighExposition(context)
         case .Poll:
             routeToPoll(context)
-        case.Contact:
+        case .Contact:
             routeToContact(context)
+        case .PollFinished:
+            routeToPollFinished(context)
         }
     }
     
@@ -99,6 +103,10 @@ class AppRouter : Router {
     
     private func routeToContact(_ context: UIViewController) {
         context.navigationController?.pushViewController(contactVC!, animated: true)
+    }
+    
+    private func routeToPollFinished(_ context: UIViewController) {
+        context.navigationController?.pushViewController(pollFinishedVC!, animated: true)
     }
     
     private func loadViewAsRoot(navController: UINavigationController?, view: UIViewController) {

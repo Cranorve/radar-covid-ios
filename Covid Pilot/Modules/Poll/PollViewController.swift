@@ -149,6 +149,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
                     strongSelf.navigationController?.pushViewController(strongSelf.finishPollVC!, animated: true)
                 }
             }, onError: {  [weak self] error in
+                debugPrint("Error saving poll \(error)")
                 self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
     }

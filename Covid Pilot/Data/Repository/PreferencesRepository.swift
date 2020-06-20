@@ -10,16 +10,19 @@ import Foundation
 
 protocol PreferencesRepository {
     func isOnBoardingCompleted()-> Bool
-
     func setOnboarding(completed: Bool)
+    
+    func isPollCompleted() -> Bool
+    func setPoll(completed: Bool)
     
     func isTracingActive() -> Bool
     func setTracing(active: Bool)
 }
 
 class UserDefaultsPreferencesRepository : PreferencesRepository {
-
+    
     private static let kOnboarding = "UserDefaultsPreferencesRepository.onboarding"
+    private static let kPoll = "UserDefaultsPreferencesRepository.poll"
     private static let kTracing = "UserDefaultsPreferencesRepository.tracing"
     
     private let userDefaults: UserDefaults
@@ -45,5 +48,12 @@ class UserDefaultsPreferencesRepository : PreferencesRepository {
         userDefaults.set(active, forKey: UserDefaultsPreferencesRepository.kTracing)
     }
 
+    func isPollCompleted() -> Bool {
+        userDefaults.object(forKey: UserDefaultsPreferencesRepository.kPoll) as? Bool ?? false
+    }
+    
+    func setPoll(completed: Bool) {
+        userDefaults.set(completed, forKey: UserDefaultsPreferencesRepository.kPoll)
+    }
     
 }

@@ -76,6 +76,7 @@ class Injection {
             appRouter.highExpositionVC = r.resolve(HighExpositionViewController.self)!
             appRouter.pollVC = r.resolve(PollViewController.self)!
             appRouter.contactVC = r.resolve(ContactViewController.self)!
+            appRouter.pollFinishedVC = r.resolve(FinishPollViewController.self)!
         }
         
         container.register(PreferencesRepository.self) { r in
@@ -109,7 +110,8 @@ class Injection {
         container.register(PollUseCase.self) { r in
             PollUseCase(questionsApi: r.resolve(QuestionnaireControllerAPI.self)!,
                         answersApi: r.resolve(AnswersControllerAPI.self)!,
-                        settingsRepository: r.resolve(SettingsRepository.self)!)
+                        settingsRepository: r.resolve(SettingsRepository.self)!,
+                        preferencesRepository: r.resolve(PreferencesRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(DiagnosisCodeUseCase.self) { r in
@@ -167,6 +169,7 @@ class Injection {
         container.register(HelpLineViewController.self) {  r in
             let helpVC = self.createViewController(storyboard: "HelpLine", id: "HelpLineViewController") as! HelpLineViewController
             helpVC.router = r.resolve(AppRouter.self)!
+            helpVC.preferencesRepository = r.resolve(PreferencesRepository.self)!
             return helpVC
         }
         

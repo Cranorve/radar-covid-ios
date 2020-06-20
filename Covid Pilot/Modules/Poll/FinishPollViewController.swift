@@ -9,17 +9,15 @@
 import UIKit
 
 class FinishPollViewController: UIViewController {
+    
+    var router: AppRouter?
 
     @IBAction func onHome(_ sender: Any) {
         router?.route(to: .Home, from: self)
     }
-    
-    var router: AppRouter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
 

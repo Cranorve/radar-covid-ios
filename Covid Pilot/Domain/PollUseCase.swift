@@ -12,15 +12,17 @@ import RxSwift
 class PollUseCase {
     
     private let settingsRepository: SettingsRepository
+    private let preferencesRepository: PreferencesRepository
     
     private let questionsApi: QuestionnaireControllerAPI
     private let answersApi: AnswersControllerAPI
     
     init(questionsApi: QuestionnaireControllerAPI, answersApi: AnswersControllerAPI,
-        settingsRepository: SettingsRepository) {
+        settingsRepository: SettingsRepository, preferencesRepository: PreferencesRepository) {
         self.questionsApi = questionsApi
         self.answersApi = answersApi
         self.settingsRepository = settingsRepository
+        self.preferencesRepository = preferencesRepository
     }
     
     func getPoll() -> Observable<Poll> {
@@ -105,71 +107,54 @@ class PollUseCase {
     }
     
     
-    func save(poll: Poll) -> Observable<Bool> {
+    func save(poll: Poll) -> Observable<Poll> {
         .deferred { [weak self] in
-            guard let settings = self?.settingsRepository.getSettings() else {
-                return .error("Settings not loaded")
+            
+            guard let udid = self?.settingsRepository.getSettings()?.udid else {
+                return .error("UDID not found")
             }
             
-            //
             var answers: [AnswerOptionDto] = []
-            var answer: AnswerOptionDto
-            guard let questions = poll.questions else {
-                print("Error! al enviar respuestas por q no hay respuestas")
-                return .just(false)
+            
+            for question in poll.questions ?? [] {
+                answers.append(contentsOf: self?.questionToAnswers(question) ?? [])
             }
             
-            for question in questions {
-                // TODO switch con el tipo de pregunta
-                switch question.type {
-                case .SingleSelect:
-                    guard let options = question.options else { return .error("No hay opciones para la pregunta de single select") }
-                    for option in options {
-                        guard let selected = option.selected else { return .error("el booleano de la single select no esta definido")}
-                        if (selected) {
-                            answer = AnswerOptionDto.init(question: question._id, option: option._id, answer: option.option )
-                            answers.append(answer)
-                        }
-                    }
-                case .MultiSelect:
-                    guard let options = question.options else { return .error("No hay opciones para la pregunta de single select") }
-                    for option in options {
-                        guard let selected = option.selected else { return .error("el booleano de la single select no esta definido")}
-                        if (selected) {
-                            answer = AnswerOptionDto.init(question: question._id, option: option._id, answer: option.option )
-                            answers.append(answer)
-                        }
-                    }
-                case .Rate:
-                    guard let valuesSelected = question.valuesSelected else { return .error("el rate no tiene valor seleccionado") }
-                    if (valuesSelected.count > 0){
-                        answer = AnswerOptionDto.init(question: question._id, option: valuesSelected[0] as? Int , answer: valuesSelected[0] as? String)
-                        answers.append(answer)
-                        
-                    }
-                // TODO ?? case .some(<#T##QuestionType#>)
-                   
-                default:
-                    return .error("error en envio de respuesta: la pregunta no tiene tipologia")
-                }
-                
-            }
-            
-            
-            //TODO: where is the sEDIAUSERToken ?
-            do {
-                guard let userToken = settings.udid else { return .error("no se ha podido recuperar el user token")}
-                try self?.answersApi.saveQuestions(body: answers, sEDIAUserToken: userToken)
-                print("Exito al enviar respuestas")
-                return .just(true)
-            } catch {
-                print("Error! al enviar respuestas")
-                return .just(false)
-            }
+            return self?.answersApi.saveQuestions(body: answers, sEDIAUserToken: udid).map {
+                self?.preferencesRepository.setPoll(completed: true)
+                return poll
+            } ?? .empty()
     
         }
     }
     
+    private func questionToAnswers(_ question: Question) -> [AnswerOptionDto] {
 
+        var answers: [AnswerOptionDto] = []
+        
+        if let type = question.type {
+            switch type {
+                case .SingleSelect, .MultiSelect :
+                    for option in question.options ?? [] {
+                        if option.selected ?? false {
+                            answers.append(AnswerOptionDto.init(question: question._id, option: option._id, answer: option.option ))
+                        }
+                    }
+                case .Rate:
+                    for rate in question.valuesSelected ?? [] {
+                        answers.append(AnswerOptionDto.init(question: question._id, option: question._id , answer: (rate as? String?) ?? "" ))
+                    }
+                    
+                case .Text:
+                    debugPrint("Text temporalmente deshabilitado")
+//                    for text in question.valuesSelected ?? [] {
+//                        answers.append(AnswerOptionDto.init(question: question._id, option: text as? Int , answer: (text as? String?) ?? "" ))
+//                    }
+            }
+        }
+
+        return answers
+        
+    }
     
 }

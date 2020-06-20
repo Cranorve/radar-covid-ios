@@ -11,9 +11,15 @@ import UIKit
 class HelpLineViewController: UIViewController {
     
     var router: AppRouter?
+    var preferencesRepository: PreferencesRepository?
 
     @IBAction func onPollSelected(_ sender: Any) {
-        router?.route(to: Routes.Poll, from: self)
+        if preferencesRepository?.isPollCompleted() ?? false {
+            router?.route(to: Routes.PollFinished, from: self)
+        } else {
+            router?.route(to: Routes.Poll, from: self)
+        }
+        
     }
     
     @IBAction func onContactSelected(_ sender: Any) {
