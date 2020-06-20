@@ -20,21 +20,20 @@ class MyHealthViewController: UIViewController {
         let alert = Alert.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonTitle: "OK") { (UIAlertAction) in
                 self.navigationController?.popViewController(animated: true)
         }
-        
         present(alert, animated: true)
-        
     }
     
     @IBAction func onReportDiagnosis(_ sender: Any) {
         if let codigoString = codeTextField.text {
-            diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
-                onNext:{ [weak self] reportedCodeBool in
-                    self?.navigateIf(reported: reportedCodeBool)
-                }, onError: {  [weak self] error in
-                    print("Error reporting diagnosis \(error)")
-                    self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"), animated: true)
-                    
-            }).disposed(by: disposeBag)
+            self.navigateIf(reported: true)
+//            diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
+//                onNext:{ [weak self] reportedCodeBool in
+//                    self?.navigateIf(reported: reportedCodeBool)
+//                }, onError: {  [weak self] error in
+//                    print("Error reporting diagnosis \(error)")
+//                    self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"), animated: true)
+//
+//            }).disposed(by: disposeBag)
         }
     }
     
