@@ -12,6 +12,7 @@ enum QuestionType {
     case Rate
     case SingleSelect
     case MultiSelect
+    case Text
 }
 
 class Question {
@@ -23,6 +24,9 @@ class Question {
     public var maxValue: Int?
     public var mandatory: Bool?
     public var position: Int?
+    public var childPosition: Int?
+    public var parent: Int?
+    public var parentOption: Int?
     public var valuesSelected: [Any?]?
     
     init() {
@@ -43,5 +47,9 @@ class Question {
             }
         }
         return nil
+    }
+    
+    func isChild() -> Bool {
+        parent != nil
     }
 }

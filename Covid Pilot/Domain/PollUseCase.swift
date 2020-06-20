@@ -29,56 +29,81 @@ class PollUseCase {
             let poll = Poll()
             var questions: [Question] = []
             var rootQuestions = 0
-            var questionsEdit = questionsDto
-            questionsEdit.sort { ($0.order ?? Int.max) < ($1.order ?? Int.max) }
-            for questionDto in questionsEdit {
-                if let question = self?.map(questionDto: questionDto) {
+            for questionDto in questionsDto {
+                if let question = self?.map(questionDto,questionsDto) {
                     questions.append(question)
                 }
                 if questionDto.parentId == nil {
                     rootQuestions += 1
                 }
             }
-            self?.asignOptions(questions, questionsDto)
+            questions.sort {(self?.getOrder($0) ?? Int.max) < (self?.getOrder($1) ?? Int.max) }
             poll.questions = questions
             poll.numRootQuestions = rootQuestions
             return poll
         }
     
-
-//
-//        var questions: [Question] = []
-//        questions.append(Question(
-//            type: QuestionType.Rate,
-//            question: "¿Cómo valorarías el funcionamiento de la aplicación?",
-//            minValue: 1, maxValue: 10)
-//        )
-//        var question = Question(
-//        type: QuestionType.MultiSelect, question: "¿Recibiste una alerta de contagio?", minValue: nil, maxValue: nil)
-//        question.options = [QuestionOption(_id: 0, option: "Sí", selected: false), QuestionOption(_id: 0, option: "No", selected: false)]
-//        questions.append(question)
-//
-//        question = Question(
-//        type: QuestionType.SingleSelect,
-//        question: "¿Seguiste las recomendaciones sanitarias y de prevención indicadas en la aplicación?", minValue: nil, maxValue: nil)
-//        question.options = [QuestionOption(_id: 0, option: "Sí", selected: false), QuestionOption(_id: 0, option: "No", selected: false)]
-//        questions.append(question)
-//
-//        return .just(questions)
     }
     
-    private func asignOptions(_ questions: [Question], _ questionsDto: [QuestionDto]) {
-        for questionDto in questionsDto {
-            if let question = findParentQuestion(parentId: questionDto.parentId, questions: questions) {
-                for i in 0 ... (question.options?.count ?? 0) - 1 {
-                    var option = question.options?[i]
-                    if option?._id == questionDto.parentOptionId {
-                        option?.next = questionDto.order
-                    }
+    private func getOrder(_ question: Question) -> Int {
+        (question.position ?? 0) * 1000 + (question.childPosition ?? 0)
+    }
+    
+    private func map(_ questionDto: QuestionDto, _ questions: [QuestionDto]) -> Question? {
+        let question = Question()
+        question._id =  questionDto._id
+        question.minValue = questionDto.minValue
+        question.maxValue = questionDto.maxValue
+        question.question  = questionDto.question
+        question.parentOption = questionDto.parentOptionId
+        if let parentQuestion = findParentQuestion(questionDto.parentId, questions) {
+            question.parent = parentQuestion._id
+            question.position = parentQuestion.order
+            question.childPosition = questionDto.order
+        } else {
+            question.position = questionDto.order
+        }
+    
+        
+        switch questionDto.questionType {
+        case .dichotomous:
+            question.type = .SingleSelect
+        case .multipleChoice:
+            question.type = .MultiSelect
+        case .checkbox:
+            question.type = .SingleSelect
+        case .ratingScale:
+            question.type = .Rate
+        case .openEndedNumber:
+            question.type = .Rate
+        case .openEndedText:
+            question.type = .Text
+        case .none:
+            question.type = .Text
+        }
+        
+        question.options = []
+        for optionDto in questionDto.options ?? [] {
+            let option = QuestionOption()
+            option._id = optionDto._id
+            option.option = optionDto.option
+            question.options?.append(option)
+        }
+        
+        return question
+    }
+    
+    private func findParentQuestion(_ parentId: Int?, _ questions: [QuestionDto]) -> QuestionDto? {
+        if let parentId = parentId {
+            for question in questions {
+                if question._id == parentId {
+                    return question
                 }
             }
         }
+        return nil
     }
+    
     
     func save(poll: Poll) -> Observable<Bool> {
         .deferred { [weak self] in
@@ -145,47 +170,6 @@ class PollUseCase {
         }
     }
     
-    private func map(questionDto: QuestionDto) -> Question? {
-        let question = Question()
-        question._id =  questionDto._id
-        question.minValue = questionDto.minValue
-        question.maxValue = questionDto.maxValue
-        question.question  = questionDto.question
-        
-        switch questionDto.questionType {
-        case .dichotomous:
-            question.type = .SingleSelect
-        case .multipleChoice:
-            question.type = .MultiSelect
-        case .checkbox:
-            question.type = .SingleSelect
-        case .ratingScale:
-            question.type = .Rate
-        default:
-            return nil
-        }
-        
-        question.options = []
-        for optionDto in questionDto.options ?? [] {
-            var option = QuestionOption()
-            option._id = optionDto._id
-            option.option = optionDto.option
-            question.options?.append(option)
-        }
-        
-        return question
-    }
-    
-    
-    private func findParentQuestion(parentId: Int?, questions: [Question]) -> Question? {
-        if let parentId = parentId {
-            for question in questions {
-                if question._id == parentId {
-                    return question
-                }
-            }
-        }
-        return nil
-    }
+
     
 }

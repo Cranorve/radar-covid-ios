@@ -21,10 +21,11 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     
     private var poll: Poll?
     private var viewControllers: [UIViewController] = []
-    private var curretnQuestion: Question?
+    private var currentQuestion: Question?
 
     @IBOutlet weak var nextButton: UIButton!
     
+    @IBOutlet weak var indexLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBAction func onNext(_ sender: Any) {
@@ -39,7 +40,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         if isFirst() {
             navigationController?.popViewController(animated: true)
         } else {
-            scrollToPage(.previous, animated: true)
+            goToBack()
         }
     }
     
@@ -50,6 +51,9 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         self.dataSource = self
         
         self.isScrollEnabled = false
+        
+        progressView.clipsToBounds = true
+        progressView.layer.cornerRadius = 5.0;
         
         pollUseCase?.getPoll().subscribe(
             onNext:{ [weak self] poll in
@@ -69,6 +73,8 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
                 vc = RatingViewController()
             } else if question.type == .SingleSelect || question.type == .MultiSelect {
                 vc = SelectViewController()
+            } else if question.type == .Text {
+                vc = TextViewController()
             }
             if var vc = vc {
                 vc.question = question
@@ -77,10 +83,6 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
 
         }
         self.reloadData()
-    }
-    
-    func next() {
-        scrollToPage(.next, animated: true)
     }
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
@@ -116,16 +118,21 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     }
     
     private func isLast() -> Bool {
-        (currentIndex ?? 0) == (viewControllers.count - 1)
+        var hasMoreQuestions = false
+        if let currentQuestion = self.currentQuestion {
+            hasMoreQuestions = ((poll?.findNext(question: currentQuestion, option: currentQuestion.getSelectedOption())) != nil)
+        }
+        return (poll?.isLast(question: currentQuestion) ?? false) && !hasMoreQuestions
     }
     
     private func load(page: Int) {
-        curretnQuestion = poll?.questions?[page]
-        titleLabel.text = curretnQuestion?.question
-        if viewControllers.count > 0 {
-            progressView.progress = Float((curretnQuestion?.position ?? 0) + 1) / Float(poll?.numRootQuestions ?? 1)
+        currentQuestion = poll?.questions?[page]
+        titleLabel.text = currentQuestion?.question
+        if currentQuestion?.position != nil {
+            progressView.progress = Float(currentQuestion?.position ?? 0) / Float(poll?.numRootQuestions ?? 1)
+            loadPageIndex()
         }
-        if (isLast()) {
+        if poll?.isLast(question: currentQuestion) ?? false {
             nextButton.setTitle("Finalizar", for: .normal)
         } else {
             nextButton.setTitle("Siguiente", for: .normal)
@@ -147,16 +154,26 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     }
     
     private func goToNext() {
-        if let selectedOption = curretnQuestion?.getSelectedOption() {
-            if let nextQuestion = selectedOption.next {
+        if let currentQuestion = self.currentQuestion, let nextQuestion = poll?.findNext(question: currentQuestion, option: currentQuestion.getSelectedOption()) {
                 scrollToPage(.at(index: nextQuestion), animated: true)
-            } else {
-                scrollToPage(.next, animated: true)
-            }
         } else {
             scrollToPage(.next, animated: true)
         }
-        
+    }
+    
+    private func goToBack() {
+        guard let currentQuestion = self.currentQuestion else {
+            return
+        }
+        if let lastQuestion = poll?.findLast(question: currentQuestion) {
+            scrollToPage(.at(index: lastQuestion), animated: true)
+        } else {
+            scrollToPage(.previous, animated: true)
+        }
+    }
+    
+    private func loadPageIndex() {
+        indexLabel.text = (currentQuestion?.position ?? 0).description + " de " + (poll?.numRootQuestions ?? 0).description
     }
 
 }

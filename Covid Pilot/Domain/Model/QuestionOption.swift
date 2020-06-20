@@ -8,9 +8,8 @@
 
 import Foundation
 
-struct QuestionOption {
+class QuestionOption {
     public var _id: Int?
     public var option: String?
     public var selected: Bool?
-    public var next: Int?
 }
