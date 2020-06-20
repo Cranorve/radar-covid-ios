@@ -10,6 +10,9 @@ import UIKit
 
 class FinishPollViewController: UIViewController {
     
+    @IBOutlet weak var phoneView: BackgroundView!
+    
+    
     var router: AppRouter?
 
     @IBAction func onHome(_ sender: Any) {
@@ -18,6 +21,7 @@ class FinishPollViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        phoneView.image = UIImage(named: "WhiteCard")
     }
 
 

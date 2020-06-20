@@ -29,10 +29,14 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBAction func onNext(_ sender: Any) {
-        let alert = Alert.showAlertCancelContinue(title:  "No has respondido a una pregunta", message: "", buttonOkTitle: "Continuar sin respuesta", buttonCancelTitle: "Responder") { [weak self] _ in
-            self?.nextConfirmed()
+        if (currentQuestion?.hasResponse() ?? false) {
+            nextConfirmed()
+        } else {
+            let alert = Alert.showAlertCancelContinue(title:  "No has respondido a una pregunta", message: "", buttonOkTitle: "Continuar sin respuesta", buttonCancelTitle: "Responder") { [weak self] _ in
+                self?.nextConfirmed()
+            }
+            present(alert, animated: true)
         }
-        present(alert, animated: true)
 
     }
     

@@ -52,4 +52,17 @@ class Question {
     func isChild() -> Bool {
         parent != nil
     }
+    
+    func hasResponse() -> Bool {
+        if !(valuesSelected ?? []).isEmpty {
+            return true
+        }
+        
+        for option in options ?? [] {
+            if option.selected ?? false {
+                return true
+            }
+        }
+        return false
+    }
 }
