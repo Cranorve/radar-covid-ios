@@ -27,28 +27,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="Ker-eU-Kvi" userLabel="circleBG">
-                                <rect key="frame" x="0.0" y="105.33333333333334" width="414" height="330.33333333333326"/>
+                                <rect key="frame" x="0.0" y="118.33333333333334" width="414" height="330.33333333333326"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageHome" translatesAutoresizingMaskIntoConstraints="NO" id="6NQ-cJ-mH8">
-                                <rect key="frame" x="64" y="303.66666666666669" width="286" height="177"/>
+                                <rect key="frame" x="64" y="316.66666666666669" width="286" height="177"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuQ-dg-Nwm" customClass="BackgroundView" customModule="Covid_Pilot" customModuleProvider="target">
-                                <rect key="frame" x="16" y="643.66666666666663" width="382" height="137.33333333333337"/>
+                                <rect key="frame" x="14" y="656.66666666666663" width="386" height="124.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CORONA radar activo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p5A-O2-cnn">
-                                        <rect key="frame" x="26" y="20" width="275.66666666666669" height="23.333333333333329"/>
+                                        <rect key="frame" x="26" y="20" width="279.66666666666669" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5m-HH-dbd">
-                                        <rect key="frame" x="323" y="20" width="51" height="31"/>
+                                        <rect key="frame" x="321" y="20" width="51" height="31"/>
                                         <connections>
                                             <action selector="onRadarSwitchChange:" destination="boN-vE-v6h" eventType="primaryActionTriggered" id="D5V-zT-Di5"/>
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Las interacciones con móviles cercanos se registarán siempre anónimamente. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5DO-YK-Xnt">
-                                        <rect key="frame" x="26" y="85" width="336" height="37.333333333333343"/>
+                                        <rect key="frame" x="26" y="71" width="340" height="37.333333333333343"/>
                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -56,15 +56,15 @@
                                 </subviews>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="G5m-HH-dbd" secondAttribute="trailing" constant="10" id="0Ga-bk-Oh3"/>
+                                    <constraint firstAttribute="trailing" secondItem="G5m-HH-dbd" secondAttribute="trailing" constant="16" id="0Ga-bk-Oh3"/>
                                     <constraint firstItem="5DO-YK-Xnt" firstAttribute="leading" secondItem="fuQ-dg-Nwm" secondAttribute="leading" constant="26" id="2wE-rB-QOY"/>
-                                    <constraint firstItem="5DO-YK-Xnt" firstAttribute="top" secondItem="G5m-HH-dbd" secondAttribute="bottom" constant="34" id="9PY-CB-g6T"/>
+                                    <constraint firstItem="5DO-YK-Xnt" firstAttribute="top" secondItem="G5m-HH-dbd" secondAttribute="bottom" constant="20" id="9PY-CB-g6T"/>
                                     <constraint firstAttribute="trailing" secondItem="5DO-YK-Xnt" secondAttribute="trailing" constant="20" id="PYC-Nq-Yra"/>
                                     <constraint firstItem="p5A-O2-cnn" firstAttribute="leading" secondItem="fuQ-dg-Nwm" secondAttribute="leading" constant="26" id="XN3-H8-MRn"/>
                                     <constraint firstItem="G5m-HH-dbd" firstAttribute="top" secondItem="fuQ-dg-Nwm" secondAttribute="top" constant="20" id="bZd-3M-S6P"/>
                                     <constraint firstItem="p5A-O2-cnn" firstAttribute="top" secondItem="fuQ-dg-Nwm" secondAttribute="top" constant="20" id="o9Z-Bv-0Dp"/>
                                     <constraint firstAttribute="trailing" secondItem="p5A-O2-cnn" secondAttribute="trailing" constant="80.333328247070312" id="r1a-c3-5B9"/>
-                                    <constraint firstAttribute="bottom" secondItem="5DO-YK-Xnt" secondAttribute="bottom" constant="15" id="sch-zQ-C0y"/>
+                                    <constraint firstAttribute="bottom" secondItem="5DO-YK-Xnt" secondAttribute="bottom" constant="16" id="sch-zQ-C0y"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgD-SH-6Y2">
@@ -87,16 +87,16 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hz-zu-Mhb" customClass="BackgroundView" customModule="Covid_Pilot" customModuleProvider="target">
-                                <rect key="frame" x="16" y="495.66666666666674" width="382" height="133"/>
+                                <rect key="frame" x="14" y="508.66666666666674" width="386" height="133"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Exposición baja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Tiy-hB-953">
-                                        <rect key="frame" x="26" y="19.999999999999943" width="336" height="28"/>
+                                        <rect key="frame" x="26" y="19.999999999999943" width="340" height="28"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XCQ-uz-Hi1">
-                                        <rect key="frame" x="26" y="57.333333333333314" width="336" height="56"/>
+                                        <rect key="frame" x="26" y="57.333333333333314" width="340" height="56"/>
                                         <string key="text">Te informaremos en el caso de un posible contacto. 
 Cuídate y cuida a los demás.</string>
                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
@@ -104,7 +104,7 @@ Cuídate y cuida a los demás.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="kNQ-4q-3vF">
-                                        <rect key="frame" x="336.66666666666669" y="25.666666666666686" width="25.333333333333314" height="17"/>
+                                        <rect key="frame" x="340.66666666666669" y="25.666666666666686" width="25.333333333333314" height="17"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -128,16 +128,16 @@ Cuídate y cuida a los demás.</string>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="mgD-SH-6Y2" secondAttribute="trailing" constant="16" id="3eO-Kl-moS"/>
                             <constraint firstItem="6NQ-cJ-mH8" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" constant="64" id="DPA-gr-BTv"/>
                             <constraint firstItem="6hz-zu-Mhb" firstAttribute="top" secondItem="Ker-eU-Kvi" secondAttribute="bottom" constant="60" id="GCf-fD-8Us"/>
-                            <constraint firstItem="6hz-zu-Mhb" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" constant="16" id="Ihf-J3-GiC"/>
-                            <constraint firstItem="fuQ-dg-Nwm" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" constant="16" id="Nii-Y7-MiU"/>
+                            <constraint firstItem="6hz-zu-Mhb" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" constant="14" id="Ihf-J3-GiC"/>
+                            <constraint firstItem="fuQ-dg-Nwm" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" constant="14" id="Nii-Y7-MiU"/>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="bottom" secondItem="mgD-SH-6Y2" secondAttribute="bottom" constant="16" id="PQY-LE-EIo"/>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="6NQ-cJ-mH8" secondAttribute="trailing" constant="64" id="Qcx-X3-6tP"/>
                             <constraint firstItem="Ker-eU-Kvi" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" id="UwN-nT-G9h"/>
-                            <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="6hz-zu-Mhb" secondAttribute="trailing" constant="16" id="Xn5-ha-Ui9"/>
+                            <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="6hz-zu-Mhb" secondAttribute="trailing" constant="14" id="Xn5-ha-Ui9"/>
                             <constraint firstItem="6NQ-cJ-mH8" firstAttribute="centerX" secondItem="AA3-07-0Pc" secondAttribute="centerX" id="aVc-9l-wUb"/>
                             <constraint firstItem="mgD-SH-6Y2" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" constant="16" id="bV0-qf-MCr"/>
                             <constraint firstItem="mgD-SH-6Y2" firstAttribute="top" secondItem="fuQ-dg-Nwm" secondAttribute="bottom" constant="11" id="oCl-Y5-gbF"/>
-                            <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="fuQ-dg-Nwm" secondAttribute="trailing" constant="16" id="shj-zg-gqY"/>
+                            <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="fuQ-dg-Nwm" secondAttribute="trailing" constant="14" id="shj-zg-gqY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AA3-07-0Pc"/>
                     </view>

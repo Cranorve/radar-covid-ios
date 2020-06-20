@@ -74,6 +74,8 @@ class HomeViewController: UIViewController {
         radarSwitch.layer.cornerRadius = radarSwitch.frame.height / 2
         radarSwitch.backgroundColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         
+        updateExpositionInfo(ExpositionInfo.init(level: .LOW))
+        
         let isTracingActive = radarStatusUseCase?.isTracingActive() ?? false
         changeRadarMessage(active: isTracingActive)
         radarSwitch.isOn = isTracingActive
@@ -81,8 +83,8 @@ class HomeViewController: UIViewController {
         expositionUseCase?.getExpositionInfo().subscribe(
             onNext:{ [weak self] expositionInfo in
                 self?.updateExpositionInfo(expositionInfo)
-            }, onError: {  [weak self] error in
-
+            }, onError: {  error in
+                print( "Error getting exposure info \(error)")
         }).disposed(by: disposeBag)
         
     }
