@@ -9,8 +9,10 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Muli-VariableFont_wght.ttf">
-            <string>Muli-Regular</string>
             <string>Muli-Regular_Bold</string>
+        </array>
+        <array key="muli_regular.ttf">
+            <string>Muli-Regular</string>
         </array>
     </customFonts>
     <scenes>
