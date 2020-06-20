@@ -20,6 +20,7 @@ class TabBarController: UITabBarController {
         self.homeViewController = homeViewController
         self.myDataViewController = myDataViewController
         self.helpLineViewController = helpLineViewController
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -29,18 +30,25 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tabBar.layer.masksToBounds = true
+        tabBar.isTranslucent = true
+        tabBar.barStyle = .default
+        tabBar.layer.cornerRadius = 15
+        tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
         homeViewController.tabBarItem = UITabBarItem(
             title: "",
             image: UIImage(named: "MenuHomeNormal"),
             selectedImage: UIImage(named: "MenuHomeSelected"))
         
         myDataViewController.tabBarItem = UITabBarItem(
-            title: "MyData",
+            title: "",
             image: UIImage(named: "MenuInfoNormal"),
             selectedImage: UIImage(named: "MenuInfoSelected"))
         
         helpLineViewController.tabBarItem = UITabBarItem(
-            title: "HelpLine",
+            title: "",
             image: UIImage(named: "MenuHelpNormal"),
             selectedImage: UIImage(named: "MenuHelpSelected"))
         
