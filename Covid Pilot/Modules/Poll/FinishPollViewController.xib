@@ -34,16 +34,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="155.5"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nR4-yi-sQf">
-                    <rect key="frame" x="16" y="120" width="343" height="319"/>
+                    <rect key="frame" x="16" y="120" width="343" height="298"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracias por ayudarnos a mejorar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM1-HZ-hLD">
-                            <rect key="frame" x="0.0" y="0.0" width="343" height="70.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="65.5"/>
                             <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpg-aw-X39">
-                            <rect key="frame" x="0.0" y="80.5" width="343" height="201"/>
+                            <rect key="frame" x="0.0" y="75.5" width="343" height="186.5"/>
                             <string key="text">Muchas gracias por participar en el piloto de la APP Covid-19, tu opinión será clave para mejorarla y contribuir a prevenir futuros contagios.
 
 Si es así, escríbenos al siguiente correo electrónico para poder participar. Uno de  nuestros colaboradores se pondrá en contacto contigo para fijar el día y la hora que se adapte mejor a tí:</string>
@@ -52,7 +52,7 @@ Si es así, escríbenos al siguiente correo electrónico para poder participar. 
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="piloto.appcovid@economia.gob.es" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6e-AX-MY6">
-                            <rect key="frame" x="0.0" y="297.5" width="343" height="21.5"/>
+                            <rect key="frame" x="0.0" y="278" width="343" height="20"/>
                             <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@ Si es así, escríbenos al siguiente correo electrónico para poder participar. 
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nea-G6-sbV" customClass="BackgroundView" customModule="Covid_Pilot" customModuleProvider="target">
-                    <rect key="frame" x="14" y="459" width="347" height="107.5"/>
+                    <rect key="frame" x="14" y="438" width="347" height="103.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="bzO-7o-4Uf">
                             <rect key="frame" x="16" y="19" width="22" height="22"/>
@@ -82,13 +82,13 @@ Si es así, escríbenos al siguiente correo electrónico para poder participar. 
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teléfono de soporte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMI-9Z-YVc">
-                            <rect key="frame" x="50" y="19" width="281" height="18"/>
+                            <rect key="frame" x="50" y="19" width="281" height="16.5"/>
                             <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="900 000 000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCL-we-dUf">
-                            <rect key="frame" x="50" y="57" width="281" height="30.5"/>
+                            <rect key="frame" x="50" y="55.5" width="281" height="28"/>
                             <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

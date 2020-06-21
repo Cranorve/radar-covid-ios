@@ -13,6 +13,8 @@ class HelpLineViewController: UIViewController {
     var router: AppRouter?
     var preferencesRepository: PreferencesRepository?
 
+    @IBOutlet weak var phoneView: BackgroundView!
+    
     @IBAction func onPollSelected(_ sender: Any) {
         if preferencesRepository?.isPollCompleted() ?? false {
             router?.route(to: Routes.PollFinished, from: self)
@@ -28,6 +30,7 @@ class HelpLineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        phoneView.image = UIImage(named: "WhiteCard")
     }
 
 }
