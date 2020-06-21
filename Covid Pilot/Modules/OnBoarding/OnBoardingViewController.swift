@@ -72,7 +72,7 @@ class OnBoardingViewController: UIViewController {
     }
     
     @objc func userDidTapTerms(tapGestureRecognizer: UITapGestureRecognizer) {
-
+        navigationController?.pushViewController(TermsViewController(), animated: true)
     }
     
     @objc func userDidTapPrivacy(tapGestureRecognizer: UITapGestureRecognizer) {

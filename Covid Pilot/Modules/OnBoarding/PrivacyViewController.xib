@@ -38,19 +38,19 @@
                     </connections>
                 </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWd-KT-OUa">
-                    <rect key="frame" x="0.0" y="40" width="375" height="627"/>
+                    <rect key="frame" x="0.0" y="65" width="375" height="602"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOc-67-Qld">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="547.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="476"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Política de privacidad" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4H3-OB-bkE">
-                                    <rect key="frame" x="16" y="80" width="343" height="35.5"/>
+                                    <rect key="frame" x="16" y="40" width="343" height="33"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcP-Gk-fYs">
-                                    <rect key="frame" x="16" y="135.5" width="343" height="402"/>
+                                    <rect key="frame" x="16" y="93" width="343" height="373"/>
                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 
 Duis aute irure dolor in reprehenderit in volup "Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occasionecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
@@ -66,7 +66,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <constraint firstItem="GcP-Gk-fYs" firstAttribute="top" secondItem="4H3-OB-bkE" secondAttribute="bottom" constant="20" id="BET-ur-n0W"/>
                                 <constraint firstAttribute="trailing" secondItem="4H3-OB-bkE" secondAttribute="trailing" constant="16" id="SW0-IA-qrs"/>
                                 <constraint firstAttribute="bottom" secondItem="GcP-Gk-fYs" secondAttribute="bottom" constant="10" id="Wjr-QK-fuI"/>
-                                <constraint firstItem="4H3-OB-bkE" firstAttribute="top" secondItem="FOc-67-Qld" secondAttribute="top" constant="80" id="ekL-JF-DLp"/>
+                                <constraint firstItem="4H3-OB-bkE" firstAttribute="top" secondItem="FOc-67-Qld" secondAttribute="top" constant="40" id="ekL-JF-DLp"/>
                                 <constraint firstItem="4H3-OB-bkE" firstAttribute="leading" secondItem="FOc-67-Qld" secondAttribute="leading" constant="16" id="pND-94-PGf"/>
                                 <constraint firstItem="GcP-Gk-fYs" firstAttribute="leading" secondItem="FOc-67-Qld" secondAttribute="leading" constant="16" id="vzD-Qu-Xxm"/>
                             </constraints>
@@ -85,7 +85,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             </subviews>
             <color key="backgroundColor" name="bgColor"/>
             <constraints>
-                <constraint firstItem="jWd-KT-OUa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="3iS-ZS-qTt"/>
+                <constraint firstItem="jWd-KT-OUa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="65" id="3iS-ZS-qTt"/>
                 <constraint firstItem="9Og-x0-0QP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="26" id="8dd-HE-P50"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9Og-x0-0QP" secondAttribute="trailing" constant="26" id="I54-EL-9Lg"/>
                 <constraint firstItem="jWd-KT-OUa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SyQ-Rc-Gbe"/>
