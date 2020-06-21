@@ -262,6 +262,7 @@ Cg
                         <viewLayoutGuide key="safeArea" id="ucK-r6-0qo"/>
                     </view>
                     <connections>
+                        <outlet property="phoneNumberLabel" destination="UhJ-I7-T6K" id="19E-b2-ABo"/>
                         <outlet property="phoneView" destination="1da-Fl-GEo" id="E5d-MT-S53"/>
                     </connections>
                 </viewController>

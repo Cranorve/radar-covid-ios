@@ -12,6 +12,7 @@ class FinishPollViewController: UIViewController {
     
     @IBOutlet weak var phoneView: BackgroundView!
     
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     
     var router: AppRouter?
 
@@ -21,8 +22,18 @@ class FinishPollViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        phoneView.isUserInteractionEnabled = true
+        
+        phoneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCallTap(tapGestureRecognizer:))))
+
+        
+        phoneNumberLabel.text = Config.contactNumber
+        
         phoneView.image = UIImage(named: "WhiteCard")
     }
 
+    @objc func onCallTap(tapGestureRecognizer: UITapGestureRecognizer) {
+        open(phone: Config.contactNumber)
+    }
 
 }
