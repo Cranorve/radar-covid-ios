@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate, Activity
         let url = URL(string: Config.dppptUrl)!
         DP3TTracing.loggingDelegate = self
         DP3TTracing.activityDelegate = self
-        try! DP3TTracing.initialize(with: .init(appId: "com.indra.covidPilot",
+        try! DP3TTracing.initialize(with: .init(appId: "com.indra.covidpilot",
                                                 bucketBaseUrl: url,
                                                 reportBaseUrl: url,
                                                 jwtPublicKey: Config.validationKey,
