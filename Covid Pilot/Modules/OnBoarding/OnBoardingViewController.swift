@@ -46,8 +46,9 @@ class OnBoardingViewController: UIViewController {
         
         //Adding tapgesture to the Accept terms checkboxImage and label
         acceptTermsLabel.isUserInteractionEnabled = true
-        acceptView.isUserInteractionEnabled = true
         privacyLabel.isUserInteractionEnabled = true
+        acceptView.isUserInteractionEnabled = true
+        
         
         acceptView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userDidTapAccept(tapGestureRecognizer:))))
         

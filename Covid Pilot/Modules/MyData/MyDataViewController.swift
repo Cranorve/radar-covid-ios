@@ -10,7 +10,9 @@ import UIKit
 
 class MyDataViewController: UIViewController {
 
+    @IBOutlet weak var acceptTermsLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var privacyLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -19,6 +21,21 @@ class MyDataViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        acceptTermsLabel.isUserInteractionEnabled = true
+        privacyLabel.isUserInteractionEnabled = true
+        
+        acceptTermsLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userDidTapTerms(tapGestureRecognizer:))))
+        
+        privacyLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userDidTapPrivacy(tapGestureRecognizer:))))
+    }
+    
+    @objc func userDidTapTerms(tapGestureRecognizer: UITapGestureRecognizer) {
+        navigationController?.pushViewController(TermsViewController(), animated: true)
+    }
+    
+    @objc func userDidTapPrivacy(tapGestureRecognizer: UITapGestureRecognizer) {
+        navigationController?.pushViewController(PrivacyViewController(), animated: true)
     }
     
     private func loadTexts() {

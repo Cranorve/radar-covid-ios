@@ -196,7 +196,9 @@
                         <viewLayoutGuide key="safeArea" id="LcH-Cx-Sa2"/>
                     </view>
                     <connections>
+                        <outlet property="acceptTermsLabel" destination="8fH-8T-cla" id="y5C-9N-06Y"/>
                         <outlet property="descriptionLabel" destination="Uiy-SU-ykG" id="3Kz-7P-Cfg"/>
+                        <outlet property="privacyLabel" destination="XwU-rQ-MAh" id="hAM-UG-3yc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yh7-yu-SIT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
