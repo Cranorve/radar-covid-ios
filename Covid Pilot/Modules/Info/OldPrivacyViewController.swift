@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PrivacyViewController: UIViewController {
+class OldPrivacyViewController: UIViewController {
     
     @IBAction func onContinue(_ sender: Any) {
 

@@ -187,6 +187,9 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                 <state key="normal" title="Continuar" backgroundImage="buttonsPrimary">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.80231521120000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="onOk:" destination="5jd-jE-NO7" eventType="primaryActionTriggered" id="wiD-pc-Mij"/>
                                 </connections>
@@ -209,6 +212,7 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                         <viewLayoutGuide key="safeArea" id="C15-Ne-DdG"/>
                     </view>
                     <connections>
+                        <outlet property="acceptButotn" destination="GDV-35-L2Q" id="eJB-rf-R7k"/>
                         <outlet property="acceptTermsLabel" destination="qvQ-IX-8Bm" id="xS0-E0-Ni0"/>
                         <outlet property="acceptView" destination="XRM-kg-RAx" id="Bc4-iU-0Eh"/>
                         <outlet property="checkBoxImage" destination="jHq-8U-BtL" id="63v-Vg-llX"/>

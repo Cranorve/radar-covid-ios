@@ -22,15 +22,12 @@ class OnBoardingViewController: UIViewController {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    @IBOutlet weak var acceptView: UIView!
+    
+    @IBOutlet weak var acceptButotn: UIButton!
+    
     @IBAction func onOk(_ sender: Any) {
-        if (!termsAccepted){
-            //show reminder view
-            
-        }
-        else {
-            
-            router?.route(to: Routes.Info, from:self)
-        }
+        router?.route(to: Routes.Info, from:self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,7 +35,9 @@ class OnBoardingViewController: UIViewController {
         if (onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? false) {
 //            router?.route(to: Routes.Home, from: self)
         }
-//        router?.route(to: Routes.Home, from: self)
+        //router?.route(to: Routes.Home, from: self)
+        acceptButotn.isEnabled = termsAccepted
+        
         loadTexts()
     }
     
@@ -58,17 +57,18 @@ class OnBoardingViewController: UIViewController {
 
     }
     
-    @IBOutlet weak var acceptView: UIView!
     
     @objc func userDidTapAccept(tapGestureRecognizer: UITapGestureRecognizer) {
         if (!termsAccepted) {
             checkBoxImage.image = UIImage(named:"CheckboxSelected")
+            
             termsAccepted = true
         }
         else {
             checkBoxImage.image = UIImage(named:"CheckboxUnselected")
             termsAccepted = false
         }
+        acceptButotn.isEnabled = termsAccepted
     }
     
     @objc func userDidTapTerms(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -76,7 +76,7 @@ class OnBoardingViewController: UIViewController {
     }
     
     @objc func userDidTapPrivacy(tapGestureRecognizer: UITapGestureRecognizer) {
-
+        navigationController?.pushViewController(PrivacyViewController(), animated: true)
     }
     
     private func loadTexts() {

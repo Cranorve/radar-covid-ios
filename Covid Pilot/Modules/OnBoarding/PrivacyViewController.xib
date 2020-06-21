@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="muli_bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+        <array key="muli_regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrivacyViewController" customModule="Covid_Pilot" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Og-x0-0QP">
+                    <rect key="frame" x="314" y="26" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="5iy-2M-m1c"/>
+                        <constraint firstAttribute="width" constant="35" id="NM9-ab-6bm"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="circleClose"/>
+                    <connections>
+                        <action selector="onClose:" destination="-1" eventType="primaryActionTriggered" id="fon-hV-pRq"/>
+                    </connections>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWd-KT-OUa">
+                    <rect key="frame" x="0.0" y="40" width="375" height="627"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOc-67-Qld">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="547.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Política de privacidad" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4H3-OB-bkE">
+                                    <rect key="frame" x="16" y="80" width="343" height="35.5"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcP-Gk-fYs">
+                                    <rect key="frame" x="16" y="135.5" width="343" height="402"/>
+                                    <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+Duis aute irure dolor in reprehenderit in volup "Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occasionecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+                                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="GcP-Gk-fYs" secondAttribute="trailing" constant="16" id="7a1-ZQ-XyH"/>
+                                <constraint firstItem="GcP-Gk-fYs" firstAttribute="top" secondItem="4H3-OB-bkE" secondAttribute="bottom" constant="20" id="BET-ur-n0W"/>
+                                <constraint firstAttribute="trailing" secondItem="4H3-OB-bkE" secondAttribute="trailing" constant="16" id="SW0-IA-qrs"/>
+                                <constraint firstAttribute="bottom" secondItem="GcP-Gk-fYs" secondAttribute="bottom" constant="10" id="Wjr-QK-fuI"/>
+                                <constraint firstItem="4H3-OB-bkE" firstAttribute="top" secondItem="FOc-67-Qld" secondAttribute="top" constant="80" id="ekL-JF-DLp"/>
+                                <constraint firstItem="4H3-OB-bkE" firstAttribute="leading" secondItem="FOc-67-Qld" secondAttribute="leading" constant="16" id="pND-94-PGf"/>
+                                <constraint firstItem="GcP-Gk-fYs" firstAttribute="leading" secondItem="FOc-67-Qld" secondAttribute="leading" constant="16" id="vzD-Qu-Xxm"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="50x-Ss-n3b" firstAttribute="top" secondItem="FOc-67-Qld" secondAttribute="top" id="2WV-2z-Xen"/>
+                        <constraint firstItem="FOc-67-Qld" firstAttribute="trailing" secondItem="50x-Ss-n3b" secondAttribute="trailing" id="42y-5e-z6M"/>
+                        <constraint firstItem="FOc-67-Qld" firstAttribute="bottom" secondItem="50x-Ss-n3b" secondAttribute="bottom" id="HmY-M6-lo2"/>
+                        <constraint firstItem="50x-Ss-n3b" firstAttribute="leading" secondItem="FOc-67-Qld" secondAttribute="leading" id="fD9-q8-was"/>
+                        <constraint firstItem="FOc-67-Qld" firstAttribute="width" secondItem="J4W-rk-clO" secondAttribute="width" id="mHg-XO-P62"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="50x-Ss-n3b"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="J4W-rk-clO"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" name="bgColor"/>
+            <constraints>
+                <constraint firstItem="jWd-KT-OUa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="3iS-ZS-qTt"/>
+                <constraint firstItem="9Og-x0-0QP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="26" id="8dd-HE-P50"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9Og-x0-0QP" secondAttribute="trailing" constant="26" id="I54-EL-9Lg"/>
+                <constraint firstItem="jWd-KT-OUa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SyQ-Rc-Gbe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jWd-KT-OUa" secondAttribute="trailing" id="Zds-gu-VVU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jWd-KT-OUa" secondAttribute="bottom" id="kEL-PT-cGM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="140" y="120.98950524737631"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="circleClose" width="37" height="37"/>
+        <namedColor name="bgColor">
+            <color red="0.98000001907348633" green="0.97600001096725464" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
