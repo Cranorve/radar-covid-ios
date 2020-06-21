@@ -24,118 +24,246 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cui-45-0yl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJ6-m7-TJp">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="955"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ayúdanos a mejorar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cst-er-eD4">
+                                                <rect key="frame" x="23" y="100" width="329" height="35.5"/>
+                                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoyGirlHearts" translatesAutoresizingMaskIntoConstraints="NO" id="w9H-Jy-4ca">
+                                                <rect key="frame" x="71.5" y="155.5" width="232" height="158"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="232" id="I00-gL-GWp"/>
+                                                    <constraint firstAttribute="height" constant="158" id="aDC-h2-llN"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8G-Nn-de4">
+                                                <rect key="frame" x="16" y="333.5" width="343" height="80.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Muchas gracias por participar en el piloto de la APP Covid-19, ">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="Muli-Light"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="contándonos tu opinión de forma anónima nos ayuda a mejorar">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="Muli-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                            <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" ">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="Muli-Light"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                            <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" y contribuir a prevenir futuros contagios.">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="Muli-Light"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                            <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HS-MA-jpT">
+                                                <rect key="frame" x="16" y="434" width="343" height="54"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="54" id="pKx-r8-rQQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="17"/>
+                                                <state key="normal" title="Cuéntanos tu experiencia" backgroundImage="GradientBackgroundButton">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onPollSelected:" destination="mMO-wQ-feO" eventType="primaryActionTriggered" id="v7x-Qg-509"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geQ-iZ-DDL">
+                                                <rect key="frame" x="16" y="508" width="343" height="87"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <string key="content">Reportar incidencia
+</string>
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="18" name="Muli-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="Si necesitas ayuda funcional o reportar cualquier tipo de incidencia puedes contactar con nosotros de forma rápida">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="16" name="Muli-Light"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="9" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1da-Fl-GEo" customClass="BackgroundView" customModule="Covid_Pilot" customModuleProvider="target">
+                                                <rect key="frame" x="14" y="615" width="347" height="107.5"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="nS9-3b-zgN">
+                                                        <rect key="frame" x="16" y="19" width="22" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="22" id="YAM-MM-2Av"/>
+                                                            <constraint firstAttribute="height" constant="22" id="xdZ-he-LgV"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teléfono de soporte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCK-AU-t8c">
+                                                        <rect key="frame" x="50" y="19" width="281" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="900 000 000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhJ-I7-T6K">
+                                                        <rect key="frame" x="50" y="57" width="281" height="30.5"/>
+                                                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="KCK-AU-t8c" secondAttribute="trailing" constant="16" id="699-VM-ZzU"/>
+                                                    <constraint firstItem="UhJ-I7-T6K" firstAttribute="top" secondItem="KCK-AU-t8c" secondAttribute="bottom" constant="20" id="7PL-vk-xPO"/>
+                                                    <constraint firstItem="nS9-3b-zgN" firstAttribute="leading" secondItem="1da-Fl-GEo" secondAttribute="leading" constant="16" id="Fyv-64-Zhs"/>
+                                                    <constraint firstItem="KCK-AU-t8c" firstAttribute="top" secondItem="1da-Fl-GEo" secondAttribute="top" constant="19" id="IcC-ZP-zHr"/>
+                                                    <constraint firstItem="UhJ-I7-T6K" firstAttribute="leading" secondItem="1da-Fl-GEo" secondAttribute="leading" constant="50" id="Kjb-dg-1uH"/>
+                                                    <constraint firstItem="nS9-3b-zgN" firstAttribute="top" secondItem="1da-Fl-GEo" secondAttribute="top" constant="19" id="cZ7-YY-1Be"/>
+                                                    <constraint firstItem="KCK-AU-t8c" firstAttribute="leading" secondItem="1da-Fl-GEo" secondAttribute="leading" constant="50" id="hUH-Dy-eNU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="UhJ-I7-T6K" secondAttribute="trailing" constant="16" id="pt1-n8-tb9"/>
+                                                    <constraint firstAttribute="bottom" secondItem="UhJ-I7-T6K" secondAttribute="bottom" constant="20" id="tqJ-H7-878"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAO-RJ-tDo">
+                                                <rect key="frame" x="16" y="742.5" width="343" height="202.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <string key="content">Un paso más
+</string>
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="18" name="Muli-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="13" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment>
+                                                        <string key="content">¿Te interesaría participar en una entrevista telefónica para concocer más sobre tu experiencia con Covid Radar? Escribe a:
+</string>
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="16" name="Muli-Light"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="piloto.appcovid@economia.gob.es">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="16" name="Muli-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                            <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment>
+                                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="16" name="Muli-Light"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                            <integer key="NSUnderline" value="1"/>
+                                                            <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="Uno de  nuestros colaboradores se pondrá en contacto contigo para fijar el día y la hora que se adapte mejor a tí">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="16" name="Muli-Light"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="lAO-RJ-tDo" secondAttribute="trailing" constant="16" id="0wG-Aw-1eJ"/>
+                                            <constraint firstItem="Cst-er-eD4" firstAttribute="top" secondItem="UJ6-m7-TJp" secondAttribute="top" constant="100" id="6aj-WW-r0v"/>
+                                            <constraint firstItem="0HS-MA-jpT" firstAttribute="bottom" secondItem="geQ-iZ-DDL" secondAttribute="top" constant="-20" id="86B-tO-1GW"/>
+                                            <constraint firstItem="Cst-er-eD4" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="23" id="CSX-5l-JUX"/>
+                                            <constraint firstAttribute="trailing" secondItem="M8G-Nn-de4" secondAttribute="trailing" constant="16" id="Gsy-1v-FWo"/>
+                                            <constraint firstItem="1da-Fl-GEo" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="14" id="HhP-fG-QJ1"/>
+                                            <constraint firstItem="lAO-RJ-tDo" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="OJA-aD-pvL"/>
+                                            <constraint firstItem="Cst-er-eD4" firstAttribute="bottom" secondItem="w9H-Jy-4ca" secondAttribute="top" constant="-20" id="PKM-RQ-AzA"/>
+                                            <constraint firstAttribute="trailing" secondItem="Cst-er-eD4" secondAttribute="trailing" constant="23" id="RRl-eo-dto"/>
+                                            <constraint firstAttribute="bottom" secondItem="lAO-RJ-tDo" secondAttribute="bottom" constant="10" id="Ugp-lt-OUE"/>
+                                            <constraint firstItem="w9H-Jy-4ca" firstAttribute="centerX" secondItem="UJ6-m7-TJp" secondAttribute="centerX" id="Ugt-r6-NJE"/>
+                                            <constraint firstAttribute="trailing" secondItem="1da-Fl-GEo" secondAttribute="trailing" constant="14" id="clL-b8-EpE"/>
+                                            <constraint firstItem="geQ-iZ-DDL" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="de5-1a-Gcy"/>
+                                            <constraint firstItem="geQ-iZ-DDL" firstAttribute="bottom" secondItem="1da-Fl-GEo" secondAttribute="top" constant="-20" id="k7o-X6-5vd"/>
+                                            <constraint firstAttribute="trailing" secondItem="geQ-iZ-DDL" secondAttribute="trailing" constant="16" id="kpy-AS-W8a"/>
+                                            <constraint firstAttribute="trailing" secondItem="0HS-MA-jpT" secondAttribute="trailing" constant="16" id="l1q-lm-fTD"/>
+                                            <constraint firstItem="1da-Fl-GEo" firstAttribute="bottom" secondItem="lAO-RJ-tDo" secondAttribute="top" constant="-20" id="nhK-oT-FtC"/>
+                                            <constraint firstItem="w9H-Jy-4ca" firstAttribute="bottom" secondItem="M8G-Nn-de4" secondAttribute="top" constant="-20" id="o1T-zL-r5H"/>
+                                            <constraint firstItem="M8G-Nn-de4" firstAttribute="bottom" secondItem="0HS-MA-jpT" secondAttribute="top" constant="-20" id="oEA-dz-u3J"/>
+                                            <constraint firstItem="M8G-Nn-de4" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="oVY-OP-hxZ"/>
+                                            <constraint firstItem="0HS-MA-jpT" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="wA7-bp-OtO"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hag-IQ-odJ" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" id="2NJ-BG-JWc"/>
+                                    <constraint firstItem="UJ6-m7-TJp" firstAttribute="trailing" secondItem="hag-IQ-odJ" secondAttribute="trailing" id="SPh-a6-cvX"/>
+                                    <constraint firstItem="hag-IQ-odJ" firstAttribute="top" secondItem="UJ6-m7-TJp" secondAttribute="top" id="eeD-1s-TnB"/>
+                                    <constraint firstItem="UJ6-m7-TJp" firstAttribute="bottom" secondItem="hag-IQ-odJ" secondAttribute="bottom" id="far-z7-7vb"/>
+                                    <constraint firstItem="UJ6-m7-TJp" firstAttribute="width" secondItem="C2m-MZ-TZQ" secondAttribute="width" id="lCQ-4Z-JWG"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="hag-IQ-odJ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="C2m-MZ-TZQ"/>
+                            </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="organicColor" translatesAutoresizingMaskIntoConstraints="NO" id="CFd-OD-gzT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="155.5"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ayúdanos a mejorar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cst-er-eD4">
-                                <rect key="frame" x="16" y="130" width="343" height="33"/>
-                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoyGirlHearts" translatesAutoresizingMaskIntoConstraints="NO" id="w9H-Jy-4ca">
-                                <rect key="frame" x="71.5" y="192" width="232" height="158"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="232" id="I00-gL-GWp"/>
-                                    <constraint firstAttribute="height" constant="158" id="aDC-h2-llN"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8G-Nn-de4">
-                                <rect key="frame" x="16" y="374" width="343" height="38.5"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Tú opinión es muy importante. ">
-                                        <attributes>
-                                            <font key="NSFont" size="16" name="Muli-Bold"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Tu haces posible ... (hablar de anonimato)">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="16"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HS-MA-jpT">
-                                <rect key="frame" x="16" y="428.5" width="343" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="pKx-r8-rQQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="17"/>
-                                <state key="normal" title="Cuéntanos tu experiencia" backgroundImage="GradientBackgroundButton">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="onPollSelected:" destination="mMO-wQ-feO" eventType="primaryActionTriggered" id="v7x-Qg-509"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geQ-iZ-DDL">
-                                <rect key="frame" x="16" y="544.5" width="343" height="61"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="¿Necesitas ayuda?¿Tienes alguna duda?">
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Muli-Bold"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=" Contacta con nostros y te atenderemos en todo lo que necesites.">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V70-Be-BMy">
-                                <rect key="frame" x="16" y="621.5" width="343" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="nPu-IS-I69"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="17"/>
-                                <state key="normal" title="Reporta incidencia" backgroundImage="GradientBackgroundButton">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="onContactSelected:" destination="mMO-wQ-feO" eventType="primaryActionTriggered" id="jCX-kn-9xl"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" name="bgColor"/>
                         <constraints>
                             <constraint firstItem="CFd-OD-gzT" firstAttribute="leading" secondItem="ucK-r6-0qo" secondAttribute="leading" id="0Ig-nw-FUn"/>
-                            <constraint firstItem="V70-Be-BMy" firstAttribute="top" secondItem="geQ-iZ-DDL" secondAttribute="bottom" constant="16" id="3cc-sN-oF5"/>
-                            <constraint firstItem="M8G-Nn-de4" firstAttribute="leading" secondItem="ucK-r6-0qo" secondAttribute="leading" constant="16" id="3wf-Xi-NR6"/>
-                            <constraint firstItem="w9H-Jy-4ca" firstAttribute="centerX" secondItem="NXc-EZ-zay" secondAttribute="centerX" id="Bz4-A7-cyY"/>
-                            <constraint firstAttribute="trailing" secondItem="geQ-iZ-DDL" secondAttribute="trailing" constant="16" id="O6U-Vd-S5p"/>
-                            <constraint firstItem="0HS-MA-jpT" firstAttribute="leading" secondItem="ucK-r6-0qo" secondAttribute="leading" constant="16" id="RJ9-g5-jCp"/>
-                            <constraint firstItem="ucK-r6-0qo" firstAttribute="trailing" secondItem="Cst-er-eD4" secondAttribute="trailing" constant="16" id="RZy-xR-qNZ"/>
-                            <constraint firstAttribute="trailing" secondItem="V70-Be-BMy" secondAttribute="trailing" constant="16" id="UX1-GN-8Jt"/>
-                            <constraint firstItem="geQ-iZ-DDL" firstAttribute="top" secondItem="0HS-MA-jpT" secondAttribute="bottom" constant="62" id="WAG-Ol-aEl"/>
-                            <constraint firstItem="Cst-er-eD4" firstAttribute="top" secondItem="ucK-r6-0qo" secondAttribute="top" constant="130" id="Z5Y-Ko-6JM"/>
+                            <constraint firstItem="Cui-45-0yl" firstAttribute="top" secondItem="ucK-r6-0qo" secondAttribute="top" id="EBR-Dy-5Ms"/>
+                            <constraint firstItem="ucK-r6-0qo" firstAttribute="trailing" secondItem="Cui-45-0yl" secondAttribute="trailing" id="IDe-4f-08L"/>
+                            <constraint firstItem="ucK-r6-0qo" firstAttribute="bottom" secondItem="Cui-45-0yl" secondAttribute="bottom" id="aqG-kg-XMk"/>
                             <constraint firstItem="CFd-OD-gzT" firstAttribute="trailing" secondItem="ucK-r6-0qo" secondAttribute="trailing" id="hsi-yR-og8"/>
-                            <constraint firstItem="M8G-Nn-de4" firstAttribute="top" secondItem="w9H-Jy-4ca" secondAttribute="bottom" constant="24" id="j9H-Ku-fgE"/>
-                            <constraint firstItem="w9H-Jy-4ca" firstAttribute="top" secondItem="Cst-er-eD4" secondAttribute="bottom" constant="29" id="jm1-1Y-1iC"/>
-                            <constraint firstItem="Cst-er-eD4" firstAttribute="leading" secondItem="ucK-r6-0qo" secondAttribute="leading" constant="16" id="m0H-mT-N9b"/>
-                            <constraint firstItem="geQ-iZ-DDL" firstAttribute="leading" secondItem="ucK-r6-0qo" secondAttribute="leading" constant="16" id="qo2-WJ-Pqg"/>
                             <constraint firstItem="CFd-OD-gzT" firstAttribute="top" secondItem="NXc-EZ-zay" secondAttribute="top" id="srz-Is-L5O"/>
-                            <constraint firstAttribute="trailing" secondItem="M8G-Nn-de4" secondAttribute="trailing" constant="16" id="tc8-hI-b6u"/>
-                            <constraint firstItem="V70-Be-BMy" firstAttribute="leading" secondItem="ucK-r6-0qo" secondAttribute="leading" constant="16" id="u2t-w0-qtJ"/>
-                            <constraint firstItem="ucK-r6-0qo" firstAttribute="trailing" secondItem="0HS-MA-jpT" secondAttribute="trailing" constant="16" id="w7P-Vp-JaP"/>
-                            <constraint firstItem="0HS-MA-jpT" firstAttribute="top" secondItem="M8G-Nn-de4" secondAttribute="bottom" constant="16" id="zYh-GX-zm8"/>
+                            <constraint firstItem="Cui-45-0yl" firstAttribute="leading" secondItem="ucK-r6-0qo" secondAttribute="leading" id="xA5-pc-1w6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ucK-r6-0qo"/>
                     </view>
+                    <connections>
+                        <outlet property="phoneView" destination="1da-Fl-GEo" id="E5d-MT-S53"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBY-8b-jcn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,6 +274,7 @@
         <image name="BoyGirlHearts" width="232" height="158"/>
         <image name="GradientBackgroundButton" width="343" height="56"/>
         <image name="organicColor" width="375" height="155.5"/>
+        <image name="phone" width="22" height="22"/>
         <namedColor name="bgColor">
             <color red="0.98000001907348633" green="0.97600001096725464" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
