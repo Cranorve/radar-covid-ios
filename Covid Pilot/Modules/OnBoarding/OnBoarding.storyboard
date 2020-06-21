@@ -21,22 +21,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightTopShade" translatesAutoresizingMaskIntoConstraints="NO" id="26u-YC-f5R">
-                                <rect key="frame" x="91.5" y="0.0" width="283.5" height="206.5"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoyMobileQuestions" translatesAutoresizingMaskIntoConstraints="NO" id="oan-rX-oAc">
-                                <rect key="frame" x="226" y="5" width="124" height="151"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="151" id="e2W-Vb-7UD"/>
-                                    <constraint firstAttribute="width" constant="124" id="sk2-78-hYj"/>
-                                </constraints>
-                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="put-jW-Lmz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZX-eB-vJ1" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="783"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightTopShade" translatesAutoresizingMaskIntoConstraints="NO" id="26u-YC-f5R">
+                                                <rect key="frame" x="91.5" y="0.0" width="283.5" height="206.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoyMobileQuestions" translatesAutoresizingMaskIntoConstraints="NO" id="oan-rX-oAc">
+                                                <rect key="frame" x="226" y="7" width="124" height="151"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="151" id="e2W-Vb-7UD"/>
+                                                    <constraint firstAttribute="width" constant="124" id="sk2-78-hYj"/>
+                                                </constraints>
+                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5oe-1F-JPZ">
                                                 <rect key="frame" x="16" y="150" width="343" height="547"/>
                                                 <subviews>
@@ -158,12 +158,16 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                             </view>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="oan-rX-oAc" secondAttribute="trailing" constant="25" id="4dr-9K-Ar9"/>
                                             <constraint firstAttribute="trailing" secondItem="SwM-SS-Bb9" secondAttribute="trailing" constant="16" id="5bG-0u-nMb"/>
+                                            <constraint firstAttribute="trailing" secondItem="26u-YC-f5R" secondAttribute="trailing" id="7FV-e8-SZk"/>
                                             <constraint firstItem="5oe-1F-JPZ" firstAttribute="bottom" secondItem="SwM-SS-Bb9" secondAttribute="top" constant="-20" id="EFv-9w-kTQ"/>
                                             <constraint firstItem="5oe-1F-JPZ" firstAttribute="top" secondItem="RZX-eB-vJ1" secondAttribute="top" constant="150" id="MIp-Ge-xFv"/>
                                             <constraint firstItem="5oe-1F-JPZ" firstAttribute="leading" secondItem="RZX-eB-vJ1" secondAttribute="leading" constant="16" id="O7J-e3-iwJ"/>
+                                            <constraint firstItem="oan-rX-oAc" firstAttribute="top" secondItem="RZX-eB-vJ1" secondAttribute="top" constant="7" id="VnH-1u-pDO"/>
                                             <constraint firstItem="SwM-SS-Bb9" firstAttribute="leading" secondItem="RZX-eB-vJ1" secondAttribute="leading" constant="16" id="YI3-rp-jf0"/>
                                             <constraint firstAttribute="trailing" secondItem="5oe-1F-JPZ" secondAttribute="trailing" constant="16" id="lXh-8c-jP2"/>
+                                            <constraint firstItem="26u-YC-f5R" firstAttribute="top" secondItem="RZX-eB-vJ1" secondAttribute="top" id="odz-Jt-trs"/>
                                             <constraint firstAttribute="bottom" secondItem="SwM-SS-Bb9" secondAttribute="bottom" constant="10" id="wgm-dE-Bd0"/>
                                         </constraints>
                                     </view>
@@ -200,12 +204,8 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                             <constraint firstItem="put-jW-Lmz" firstAttribute="top" secondItem="C15-Ne-DdG" secondAttribute="top" id="1RG-C1-I0Q"/>
                             <constraint firstItem="C15-Ne-DdG" firstAttribute="trailing" secondItem="GDV-35-L2Q" secondAttribute="trailing" constant="16" id="74T-qD-TzM"/>
                             <constraint firstItem="put-jW-Lmz" firstAttribute="bottom" secondItem="GDV-35-L2Q" secondAttribute="top" constant="-10" id="CdO-gK-KWx"/>
-                            <constraint firstItem="C15-Ne-DdG" firstAttribute="trailing" secondItem="26u-YC-f5R" secondAttribute="trailing" id="TyQ-0e-WTw"/>
                             <constraint firstItem="C15-Ne-DdG" firstAttribute="trailing" secondItem="put-jW-Lmz" secondAttribute="trailing" id="XS3-Vr-BDa"/>
                             <constraint firstItem="GDV-35-L2Q" firstAttribute="leading" secondItem="C15-Ne-DdG" secondAttribute="leading" constant="16" id="hMp-LG-wy8"/>
-                            <constraint firstItem="C15-Ne-DdG" firstAttribute="trailing" secondItem="oan-rX-oAc" secondAttribute="trailing" constant="25" id="jHe-pr-sEV"/>
-                            <constraint firstItem="26u-YC-f5R" firstAttribute="top" secondItem="C15-Ne-DdG" secondAttribute="top" id="oj6-c8-Rs4"/>
-                            <constraint firstItem="oan-rX-oAc" firstAttribute="top" secondItem="C15-Ne-DdG" secondAttribute="top" constant="5" id="p7i-bP-3Bg"/>
                             <constraint firstItem="C15-Ne-DdG" firstAttribute="bottom" secondItem="GDV-35-L2Q" secondAttribute="bottom" constant="10" id="tlK-vp-Odt"/>
                             <constraint firstItem="put-jW-Lmz" firstAttribute="leading" secondItem="C15-Ne-DdG" secondAttribute="leading" id="v1J-7G-Wtq"/>
                         </constraints>

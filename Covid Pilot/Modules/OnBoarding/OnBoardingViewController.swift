@@ -31,7 +31,7 @@ class OnBoardingViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidLoad()
+        super.viewWillAppear(animated)
         if (onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? false) {
 //            router?.route(to: Routes.Home, from: self)
         }
