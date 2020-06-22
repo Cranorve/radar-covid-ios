@@ -27,9 +27,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="organicColor" translatesAutoresizingMaskIntoConstraints="NO" id="95K-mM-l5A">
-                                <rect key="frame" x="0.0" y="44" width="414" height="156"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MX-SC-z1N">
                                 <rect key="frame" x="20" y="64" width="22" height="22"/>
                                 <constraints>
@@ -321,13 +318,10 @@
                         </subviews>
                         <color key="backgroundColor" name="bgColor"/>
                         <constraints>
-                            <constraint firstItem="YZg-9j-EKM" firstAttribute="trailing" secondItem="95K-mM-l5A" secondAttribute="trailing" id="DLA-M9-K0r"/>
-                            <constraint firstItem="95K-mM-l5A" firstAttribute="leading" secondItem="YZg-9j-EKM" secondAttribute="leading" id="FAT-Oc-GaU"/>
                             <constraint firstItem="1MX-SC-z1N" firstAttribute="top" secondItem="YZg-9j-EKM" secondAttribute="top" constant="20" id="Gzj-KY-SbE"/>
                             <constraint firstItem="SQn-NY-03I" firstAttribute="top" secondItem="1MX-SC-z1N" secondAttribute="bottom" constant="10" id="K9N-Wr-xpZ"/>
                             <constraint firstItem="1MX-SC-z1N" firstAttribute="leading" secondItem="YZg-9j-EKM" secondAttribute="leading" constant="20" id="OG4-3g-HQF"/>
                             <constraint firstItem="SQn-NY-03I" firstAttribute="leading" secondItem="YZg-9j-EKM" secondAttribute="leading" id="ULJ-WH-1kW"/>
-                            <constraint firstItem="YZg-9j-EKM" firstAttribute="top" secondItem="95K-mM-l5A" secondAttribute="top" id="Ve8-Nl-xmd"/>
                             <constraint firstItem="SQn-NY-03I" firstAttribute="trailing" secondItem="YZg-9j-EKM" secondAttribute="trailing" id="aGw-A8-phQ"/>
                             <constraint firstItem="YZg-9j-EKM" firstAttribute="bottom" secondItem="SQn-NY-03I" secondAttribute="bottom" id="glo-D6-d1V"/>
                         </constraints>
@@ -353,7 +347,6 @@
         <image name="WashHandsFrame" width="50" height="55"/>
         <image name="arrowRightIcon" width="8" height="14"/>
         <image name="iconsBack" width="25.5" height="17"/>
-        <image name="organicColor" width="375" height="155.5"/>
         <namedColor name="algae">
             <color red="0.3449999988079071" green="0.68999999761581421" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
