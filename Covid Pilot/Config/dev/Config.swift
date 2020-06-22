@@ -11,16 +11,16 @@ import DP3TSDK
 
 struct Config {
 //    PRE
-    static let configUrl: String = "https://d3d0clxg4q92wk.cloudfront.net/configuration"
-    static let pollUrl : String = "https://d3d0clxg4q92wk.cloudfront.net/questionnaire"
-    static let dppptUrl : String = "https://d3d0clxg4q92wk.cloudfront.net/dp3t"
-    static let verificationUrl : String = "https://d3d0clxg4q92wk.cloudfront.net/verification"
+//    static let configUrl: String = "https://d3d0clxg4q92wk.cloudfront.net/configuration"
+//    static let pollUrl : String = "https://d3d0clxg4q92wk.cloudfront.net/questionnaire"
+//    static let dppptUrl : String = "https://d3d0clxg4q92wk.cloudfront.net/dp3t"
+//    static let verificationUrl : String = "https://d3d0clxg4q92wk.cloudfront.net/verification"
     
 //  PRO
-//    static let configUrl: String = "https://dqarr2dc0prei.cloudfront.net/configuration"
-//    static let pollUrl : String = "https://dqarr2dc0prei.cloudfront.net/questionnaire"
-//    static let dppptUrl : String = "https://dqarr2dc0prei.cloudfront.net/dp3t"
-//    static let verificationUrl : String = "https://dqarr2dc0prei.cloudfront.net/verification"
+    static let configUrl: String = "https://dqarr2dc0prei.cloudfront.net/configuration"
+    static let pollUrl : String = "https://dqarr2dc0prei.cloudfront.net/questionnaire"
+    static let dppptUrl : String = "https://dqarr2dc0prei.cloudfront.net/dp3t"
+    static let verificationUrl : String = "https://dqarr2dc0prei.cloudfront.net/verification"
     
     static let dp3tMode: ApplicationDescriptor.Mode = .production
     
