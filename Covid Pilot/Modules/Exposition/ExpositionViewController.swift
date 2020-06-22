@@ -12,17 +12,25 @@ class ExpositionViewController: UIViewController {
 
     private let bgImageGreen = UIImage(named: "GradientBackgroundGreen")
     
+    @IBOutlet weak var moreInfoView: UIView!
     @IBOutlet weak var expositionBGView : BackgroundView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         expositionBGView.image = bgImageGreen
+        
+        moreInfoView.isUserInteractionEnabled = true
+        moreInfoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userDidTapLabel(tapGestureRecognizer:))))
     }
     
-
+    
+    
+    @objc func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
+        // TODO queda por definir que pasa cuando se pincha en mas informacion
+    }
     /*
     // MARK: - Navigation
 
