@@ -33,7 +33,7 @@ class OnBoardingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if (onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? false) {
-//            router?.route(to: Routes.Home, from: self)
+            router?.route(to: Routes.Home, from: self)
         }
         //router?.route(to: Routes.Home, from: self)
         acceptButotn.isEnabled = termsAccepted
