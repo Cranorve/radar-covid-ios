@@ -11,6 +11,9 @@
         <array key="muli_bold.ttf">
             <string>Muli-Bold</string>
         </array>
+        <array key="muli_regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--On Boarding View Controller-->
@@ -182,18 +185,25 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                 <viewLayoutGuide key="contentLayoutGuide" id="kTL-66-zlq"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Q5y-H2-Snj"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDV-35-L2Q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDV-35-L2Q">
                                 <rect key="frame" x="16" y="601" width="343" height="56"/>
                                 <color key="backgroundColor" red="0.46558642389999999" green="0.56896358729999996" blue="0.89667195079999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="UXS-Se-pyq"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="18"/>
                                 <state key="normal" title="Continuar" backgroundImage="buttonsPrimary">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <state key="disabled">
-                                    <color key="titleColor" white="0.80231521120000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="disabled" backgroundImage="ButtonPrimaryDisabled">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onOk:" destination="5jd-jE-NO7" eventType="primaryActionTriggered" id="wiD-pc-Mij"/>
                                 </connections>
@@ -227,6 +237,7 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
     </scenes>
     <resources>
         <image name="BoyMobileQuestions" width="124" height="151"/>
+        <image name="ButtonPrimaryDisabled" width="351" height="64"/>
         <image name="CheckboxUnselected" width="16" height="16"/>
         <image name="RightTopShade" width="283.5" height="206.5"/>
         <image name="buttonsPrimary" width="343" height="56"/>

@@ -38,6 +38,20 @@ class HomeViewController: UIViewController {
         
         let active = radarSwitch.isOn
         
+        if !active {
+            let alert = Alert.showAlertCancelContinue(title: "¿Estas seguro?", message: "Si desactivas el radar COVID (Bluetooth), no podremos avisarte." , buttonOkTitle: "Continuar", buttonCancelTitle: "Cancelar",
+                okHandler: { [weak self] _ in self?.changeRadarStatus(false)},
+                cancelHandler: { [weak self] _ in self?.radarSwitch.isOn = true})
+        
+            present(alert, animated: true)
+                
+        } else {
+            changeRadarStatus(active)
+        }
+        
+    }
+    
+    func changeRadarStatus(_ active: Bool) {
         radarStatusUseCase?.changeTracingStatus(active: active).subscribe(
             onNext:{ [weak self] active in
                 self?.changeRadarMessage(active: active)
@@ -46,7 +60,6 @@ class HomeViewController: UIViewController {
                 debugPrint("Error: \(error)")
                 self?.radarSwitch.isOn = !active
         }).disposed(by: disposeBag)
-        
     }
     
     @objc func onExpositionTap() {

@@ -21,11 +21,14 @@ public class Alert {
         return uiAlert
     }
     
-    class func showAlertCancelContinue(title: String, message: String, buttonOkTitle: String, buttonCancelTitle: String,  completionHandler: @escaping (_ action: UIAlertAction) -> Void ) -> UIAlertController {
+    class func showAlertCancelContinue(title: String, message: String, buttonOkTitle: String, buttonCancelTitle: String,
+        okHandler:  ((UIAlertAction) -> Void)? = nil,
+        cancelHandler:  ((UIAlertAction) -> Void)? = nil ) -> UIAlertController {
+        
         let uiAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-               let action = UIAlertAction(title: buttonOkTitle, style: UIAlertAction.Style.default, handler: completionHandler)
+               let action = UIAlertAction(title: buttonOkTitle, style: UIAlertAction.Style.default, handler: okHandler)
                uiAlert.addAction(action)
-                let actionCancel = UIAlertAction(title: buttonCancelTitle, style: UIAlertAction.Style.default, handler: nil)
+                let actionCancel = UIAlertAction(title: buttonCancelTitle, style: UIAlertAction.Style.default, handler: cancelHandler)
                 uiAlert.addAction(actionCancel)
                let buttonView = uiAlert.view.subviews.first?.subviews.first?.subviews.first?.subviews[1]
                uiAlert.view.tintColor = UIColor.white
@@ -33,4 +36,9 @@ public class Alert {
            
                return uiAlert
     }
+    
+    class func showAlertCancelContinue(title: String, message: String, buttonOkTitle: String, buttonCancelTitle: String,  okHandler:  ((UIAlertAction) -> Void)? = nil ) -> UIAlertController {
+        showAlertCancelContinue(title: title, message: message, buttonOkTitle: buttonOkTitle, buttonCancelTitle: buttonCancelTitle, okHandler: okHandler, cancelHandler: nil)
+    }
+    
 }
