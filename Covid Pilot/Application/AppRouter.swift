@@ -78,7 +78,7 @@ class AppRouter : Router {
     }
     
     private func routeToInfo(_ context: UIViewController) {
-        loadViewAsRoot(navController: context.navigationController, view: infoVC!)
+        context.navigationController?.pushViewController(infoVC!, animated: true)
     }
     
     private func routeToMyHealth(_ context: UIViewController) {
