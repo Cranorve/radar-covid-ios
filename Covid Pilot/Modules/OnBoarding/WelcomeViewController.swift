@@ -8,17 +8,18 @@
 
 import UIKit
 
-class RunningViewController: UIViewController {
+class WelcomeViewController: UIViewController {
+    
+    var router: AppRouter?
     
     @IBOutlet weak var bulletTextView: UITextView!
     
     @IBAction func onContinue(_ sender: Any) {
-
+        router?.route(to: .OnBoarding, from: self)
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        bulletTextView.backgroundColor = UIColor.white
+
         loadText()
     }
     
@@ -26,7 +27,7 @@ class RunningViewController: UIViewController {
         let bullet1 = "Conoce en todo momento si te expones al coronavirus, ayudándote a protegerte y proteger a los demás.\n"
         
         let bullet2 = "Comunica de forma anónima tu diagnóstico Covid positivo.\n"
-        let bullet3 = "Si eres positivo, comunicaremos la exposición de forma anónima a las personas con las que has estado en contacto."
+        let bullet3 = "Si tu estuvieras afectado, comunicaremos la exposición de forma anonima a las personas con las que has estado en contacto."
         let strings = [bullet1, bullet2, bullet3]
         
         let fullAttributedString = NSMutableAttributedString()

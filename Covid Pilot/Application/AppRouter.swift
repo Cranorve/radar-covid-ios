@@ -18,6 +18,7 @@ protocol Router {
 }
 
 public enum Routes {
+    case Welcome
     case OnBoarding
     case Home
     case Info
@@ -41,9 +42,12 @@ class AppRouter : Router {
     var highExpositionVC: HighExpositionViewController?
     var pollVC: PollViewController?
     var pollFinishedVC: FinishPollViewController?
+    var welcomeVC: WelcomeViewController?
     
     func route(to routeID: Routes, from context: UIViewController, parameters: Any?...) {
         switch routeID {
+        case .Welcome:
+            routeToWelcome(context)
         case .OnBoarding:
             routeToOnboarding(context)
         case .Home:
@@ -66,7 +70,7 @@ class AppRouter : Router {
     }
     
     private func routeToOnboarding(_ context: UIViewController) {
-        loadViewAsRoot(navController: context as? UINavigationController, view: onBoardingVC!)
+        context.navigationController?.pushViewController(onBoardingVC!, animated: true)
     }
     
     private func routeToHome(_ context: UIViewController) {
@@ -99,6 +103,10 @@ class AppRouter : Router {
     
     private func routeToPollFinished(_ context: UIViewController) {
         context.navigationController?.pushViewController(pollFinishedVC!, animated: true)
+    }
+    
+    private func routeToWelcome(_ context: UIViewController) {
+        loadViewAsRoot(navController: context as? UINavigationController, view: welcomeVC!)
     }
     
     private func loadViewAsRoot(navController: UINavigationController?, view: UIViewController) {

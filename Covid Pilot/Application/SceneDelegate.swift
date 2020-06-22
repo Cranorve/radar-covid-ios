@@ -39,7 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 self?.window?.rootViewController?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
         
-        router.route(to: Routes.OnBoarding, from: navigationController)
+        router.route(to: Routes.Welcome, from: navigationController)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

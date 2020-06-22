@@ -76,6 +76,7 @@ class Injection {
             appRouter.highExpositionVC = r.resolve(HighExpositionViewController.self)!
             appRouter.pollVC = r.resolve(PollViewController.self)!
             appRouter.pollFinishedVC = r.resolve(FinishPollViewController.self)!
+            appRouter.welcomeVC = r.resolve(WelcomeViewController.self)!
         }
         
         container.register(PreferencesRepository.self) { r in
@@ -204,6 +205,12 @@ class Injection {
             onbVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
             onbVC.router = r.resolve(AppRouter.self)!
             return onbVC
+        }
+        
+        container.register(WelcomeViewController.self) {  r in
+            let welcomeVC = WelcomeViewController()
+            welcomeVC.router = r.resolve(AppRouter.self)!
+            return welcomeVC
         }
     }
     

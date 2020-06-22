@@ -3,23 +3,29 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Muli-VariableFont_wght.ttf">
-            <string>Muli-Regular</string>
             <string>Muli-Regular_Bold</string>
         </array>
         <array key="muli_bold.ttf">
             <string>Muli-Bold</string>
         </array>
+        <array key="muli_regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+        <array key="muli_semibold.ttf">
+            <string>Muli-SemiBold</string>
+        </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RunningViewController" customModule="Covid_Pilot" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="Covid_Pilot" customModuleProvider="target">
             <connections>
-                <outlet property="bulletTextView" destination="yPI-qo-fJp" id="VbG-w3-YCL"/>
-                <outlet property="view" destination="iN0-l3-epB" id="Ubl-RQ-wqj"/>
+                <outlet property="bulletTextView" destination="yPI-qo-fJp" id="al5-Dw-hpi"/>
+                <outlet property="view" destination="iN0-l3-epB" id="7Ry-pS-xMF"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,10 +34,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAR-Iy-hQc">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="531"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="494"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJg-TW-Zyr">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="380.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="355.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkC-Jh-ngm">
                                     <rect key="frame" x="113" y="0.0" width="207" height="206.5"/>
@@ -47,7 +53,6 @@
                                             </constraints>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="7ke-rT-ezJ" secondAttribute="trailing" constant="23" id="2GN-sN-x5R"/>
                                         <constraint firstAttribute="bottom" secondItem="DpS-EF-eHd" secondAttribute="bottom" id="3RV-ng-bGO"/>
@@ -57,21 +62,22 @@
                                         <constraint firstAttribute="width" constant="207" id="zKm-dt-BKi"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuídate y cuida a los demás" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ln-m6-qGi">
-                                    <rect key="frame" x="16" y="158" width="288" height="70.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ln-m6-qGi">
+                                    <rect key="frame" x="16" y="150" width="288" height="65.5"/>
+                                    <string key="text">Bienvenido a 
+Corona Radar</string>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracias por cuidarte y ayudarnos a ayudar a los demás." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpa-3O-7Z9">
-                                    <rect key="frame" x="16" y="295" width="288" height="75.5"/>
+                                    <rect key="frame" x="16" y="275.5" width="288" height="70"/>
                                     <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="20"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPI-qo-fJp">
-                                    <rect key="frame" x="5" y="248.5" width="299" height="41.5"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="5" y="235.5" width="299" height="40"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -82,10 +88,10 @@
                                 <constraint firstItem="yPI-qo-fJp" firstAttribute="top" secondItem="8Ln-m6-qGi" secondAttribute="bottom" constant="20" id="8Xe-J9-9s3"/>
                                 <constraint firstItem="8Ln-m6-qGi" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="16" id="Caw-JH-QSF"/>
                                 <constraint firstItem="cpa-3O-7Z9" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="16" id="Hf6-a3-gBF"/>
-                                <constraint firstItem="cpa-3O-7Z9" firstAttribute="top" secondItem="yPI-qo-fJp" secondAttribute="bottom" constant="5" id="N2m-Gw-Y2k"/>
+                                <constraint firstItem="cpa-3O-7Z9" firstAttribute="top" secondItem="yPI-qo-fJp" secondAttribute="bottom" id="N2m-Gw-Y2k"/>
                                 <constraint firstAttribute="bottom" secondItem="cpa-3O-7Z9" secondAttribute="bottom" constant="10" id="Vf5-PP-KX4"/>
                                 <constraint firstAttribute="trailing" secondItem="8Ln-m6-qGi" secondAttribute="trailing" constant="16" id="dw4-fJ-q2u"/>
-                                <constraint firstItem="8Ln-m6-qGi" firstAttribute="top" secondItem="BJg-TW-Zyr" secondAttribute="top" constant="158" id="fVr-J1-V9v"/>
+                                <constraint firstItem="8Ln-m6-qGi" firstAttribute="top" secondItem="BJg-TW-Zyr" secondAttribute="top" constant="150" id="fVr-J1-V9v"/>
                                 <constraint firstAttribute="trailing" secondItem="lkC-Jh-ngm" secondAttribute="trailing" id="gPR-lk-4uH"/>
                                 <constraint firstItem="lkC-Jh-ngm" firstAttribute="top" secondItem="BJg-TW-Zyr" secondAttribute="top" id="gvm-9Z-jh4"/>
                                 <constraint firstItem="yPI-qo-fJp" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="5" id="pED-c9-siy"/>
@@ -93,7 +99,6 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="BJg-TW-Zyr" firstAttribute="width" secondItem="a7M-l3-V7w" secondAttribute="width" id="2d1-fF-bzB"/>
                         <constraint firstItem="Sau-QH-YRy" firstAttribute="trailing" secondItem="BJg-TW-Zyr" secondAttribute="trailing" id="5qy-Ru-ohT"/>
@@ -108,21 +113,35 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="Sau-QH-YRy"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="a7M-l3-V7w"/>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nXk-o1-mlh">
-                    <rect key="frame" x="0.0" y="541" width="320" height="27"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ks-pf-IGN">
+                    <rect key="frame" x="16" y="504" width="288" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="hQk-Nu-kUO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
+                    <state key="normal" title="Continuar" backgroundImage="GradientBackgroundButton">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="onContinue:" destination="-1" eventType="primaryActionTriggered" id="BHS-aM-Uab"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="bgColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QAR-Iy-hQc" secondAttribute="bottom" constant="37" id="K58-fH-Ti9"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nXk-o1-mlh" secondAttribute="trailing" id="T1O-Nq-bD8"/>
-                <constraint firstItem="nXk-o1-mlh" firstAttribute="top" secondItem="QAR-Iy-hQc" secondAttribute="bottom" constant="10" id="WgW-fL-gwu"/>
-                <constraint firstItem="nXk-o1-mlh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bfQ-Pl-Tx5"/>
+                <constraint firstItem="0ks-pf-IGN" firstAttribute="top" secondItem="QAR-Iy-hQc" secondAttribute="bottom" constant="10" id="GxU-t4-Qkd"/>
+                <constraint firstAttribute="trailing" secondItem="0ks-pf-IGN" secondAttribute="trailing" constant="16" id="d8A-3e-cAd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QAR-Iy-hQc" secondAttribute="trailing" id="f35-a4-UTy"/>
                 <constraint firstItem="QAR-Iy-hQc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="m4n-5d-HIl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0ks-pf-IGN" secondAttribute="bottom" constant="10" id="s6y-In-9Sd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="QAR-Iy-hQc" secondAttribute="top" id="usK-6X-z6K"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nXk-o1-mlh" secondAttribute="bottom" id="vez-jx-CUv"/>
+                <constraint firstItem="0ks-pf-IGN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="weM-ih-7J9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
@@ -130,6 +149,10 @@
     </objects>
     <resources>
         <image name="GirlMobile" width="118" height="131"/>
+        <image name="GradientBackgroundButton" width="343" height="56"/>
         <image name="RightTopShade" width="283.5" height="206.5"/>
+        <namedColor name="bgColor">
+            <color red="0.98000001907348633" green="0.97600001096725464" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
