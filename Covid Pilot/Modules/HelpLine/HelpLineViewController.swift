@@ -26,10 +26,6 @@ class HelpLineViewController: UIViewController {
         
     }
     
-    @IBAction func onContactSelected(_ sender: Any) {
-        router?.route(to: Routes.Contact, from: self)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -75,7 +75,6 @@ class Injection {
             appRouter.expositionVC = r.resolve(ExpositionViewController.self)!
             appRouter.highExpositionVC = r.resolve(HighExpositionViewController.self)!
             appRouter.pollVC = r.resolve(PollViewController.self)!
-            appRouter.contactVC = r.resolve(ContactViewController.self)!
             appRouter.pollFinishedVC = r.resolve(FinishPollViewController.self)!
         }
         
@@ -171,10 +170,6 @@ class Injection {
             helpVC.router = r.resolve(AppRouter.self)!
             helpVC.preferencesRepository = r.resolve(PreferencesRepository.self)!
             return helpVC
-        }
-        
-        container.register(ContactViewController.self) {  r in
-            self.createViewController(storyboard: "Contact", id: "ContactViewController") as! ContactViewController
         }
         
         container.register(PollViewController.self) {  r in
