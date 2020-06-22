@@ -11,6 +11,9 @@
         <array key="muli_bold.ttf">
             <string>Muli-Bold</string>
         </array>
+        <array key="muli_regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--On Boarding View Controller-->
@@ -25,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZX-eB-vJ1" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="783"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="826.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightTopShade" translatesAutoresizingMaskIntoConstraints="NO" id="26u-YC-f5R">
                                                 <rect key="frame" x="91.5" y="0.0" width="283.5" height="206.5"/>
@@ -38,16 +41,16 @@
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5oe-1F-JPZ">
-                                                <rect key="frame" x="16" y="150" width="343" height="547"/>
+                                                <rect key="frame" x="16" y="150" width="343" height="587.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu privacidad es nuestra prioridad" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cjg-pU-6HI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="70.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qok-ac-Npf">
-                                                        <rect key="frame" x="0.0" y="85.5" width="343" height="461.5"/>
+                                                        <rect key="frame" x="0.0" y="90.5" width="343" height="497"/>
                                                         <string key="text">Nuestros compromisos
 
 Anonimato 
@@ -75,10 +78,10 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SwM-SS-Bb9" userLabel="CheckView">
-                                                <rect key="frame" x="16" y="717" width="343" height="56"/>
+                                                <rect key="frame" x="16" y="757.5" width="343" height="59"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvQ-IX-8Bm">
-                                                        <rect key="frame" x="30" y="0.0" width="313" height="19"/>
+                                                        <rect key="frame" x="30" y="0.0" width="313" height="20.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Acepto las ">
                                                                 <attributes>
@@ -102,7 +105,7 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNP-Ib-LaU">
-                                                        <rect key="frame" x="30" y="37" width="313" height="19"/>
+                                                        <rect key="frame" x="30" y="38.5" width="313" height="20.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="He leído la ">
                                                                 <attributes>
@@ -182,18 +185,25 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                 <viewLayoutGuide key="contentLayoutGuide" id="kTL-66-zlq"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Q5y-H2-Snj"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDV-35-L2Q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDV-35-L2Q">
                                 <rect key="frame" x="16" y="601" width="343" height="56"/>
                                 <color key="backgroundColor" red="0.46558642389999999" green="0.56896358729999996" blue="0.89667195079999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="UXS-Se-pyq"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="18"/>
                                 <state key="normal" title="Continuar" backgroundImage="buttonsPrimary">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <state key="disabled">
-                                    <color key="titleColor" white="0.80231521120000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="disabled" backgroundImage="ButtonPrimaryDisabled">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onOk:" destination="5jd-jE-NO7" eventType="primaryActionTriggered" id="wiD-pc-Mij"/>
                                 </connections>
@@ -227,6 +237,7 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
     </scenes>
     <resources>
         <image name="BoyMobileQuestions" width="124" height="151"/>
+        <image name="ButtonPrimaryDisabled" width="351" height="64"/>
         <image name="CheckboxUnselected" width="16" height="16"/>
         <image name="RightTopShade" width="283.5" height="206.5"/>
         <image name="buttonsPrimary" width="343" height="56"/>
