@@ -37,8 +37,8 @@ public class Alert {
                return uiAlert
     }
     
-    class func showAlertCancelContinue(title: String, message: String, buttonOkTitle: String, buttonCancelTitle: String,  okHandler:  (_ action: UIAlertAction) -> Void ) -> UIAlertController {
-        showAlertCancelContinue(title: title, message: message, buttonOkTitle: buttonOkTitle, buttonCancelTitle: buttonCancelTitle, okHandler: okHandler)
+    class func showAlertCancelContinue(title: String, message: String, buttonOkTitle: String, buttonCancelTitle: String,  okHandler:  ((UIAlertAction) -> Void)? = nil ) -> UIAlertController {
+        showAlertCancelContinue(title: title, message: message, buttonOkTitle: buttonOkTitle, buttonCancelTitle: buttonCancelTitle, okHandler: okHandler, cancelHandler: nil)
     }
     
 }
