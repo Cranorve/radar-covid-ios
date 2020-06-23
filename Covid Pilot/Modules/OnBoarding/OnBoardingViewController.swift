@@ -10,7 +10,6 @@ import UIKit
 
 class OnBoardingViewController: UIViewController {
     
-    var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
     var router: AppRouter?
     
     private var termsAccepted: Bool = false
@@ -33,10 +32,7 @@ class OnBoardingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if (onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? false) {
-            router?.route(to: Routes.Home, from: self)
-        }
-        //router?.route(to: Routes.Home, from: self)
+
         acceptButton.isEnabled = termsAccepted
         scrollView.alwaysBounceVertical = false
         
