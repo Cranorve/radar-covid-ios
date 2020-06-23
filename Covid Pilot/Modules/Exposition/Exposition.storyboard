@@ -42,7 +42,7 @@
                                 <rect key="frame" x="0.0" y="96" width="414" height="1120"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mz4-S1-tfj">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1320"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1120"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1H-mT-hEv" userLabel="ExpositionBGView" customClass="BackgroundView" customModule="Covid_Pilot" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="8" width="374" height="156"/>
@@ -268,7 +268,7 @@
                                             <constraint firstItem="vBQ-H2-P9H" firstAttribute="top" secondItem="A1H-mT-hEv" secondAttribute="bottom" constant="35" id="A2j-hw-KS6"/>
                                             <constraint firstItem="VgO-ZR-mh8" firstAttribute="leading" secondItem="oeR-rl-M0m" secondAttribute="trailing" constant="54" id="ANt-Wl-TGe"/>
                                             <constraint firstItem="PEX-K7-wuy" firstAttribute="top" secondItem="MaH-n7-rlV" secondAttribute="bottom" constant="25" id="AVS-oG-sTc"/>
-                                            <constraint firstAttribute="bottom" secondItem="RVv-Kt-0V0" secondAttribute="bottom" constant="201" id="Aov-ed-PEt"/>
+                                            <constraint firstAttribute="bottom" secondItem="RVv-Kt-0V0" secondAttribute="bottom" constant="1" id="Aov-ed-PEt"/>
                                             <constraint firstAttribute="trailing" secondItem="A1H-mT-hEv" secondAttribute="trailing" constant="20" id="C0s-4Z-k7H"/>
                                             <constraint firstItem="syr-YP-tqL" firstAttribute="leading" secondItem="MaH-n7-rlV" secondAttribute="trailing" constant="54" id="D7u-YI-ZcC"/>
                                             <constraint firstAttribute="trailing" secondItem="GeS-2i-Gcu" secondAttribute="trailing" constant="20" id="FQH-Ks-OZY"/>
@@ -309,7 +309,7 @@
                                     <constraint firstItem="mz4-S1-tfj" firstAttribute="leading" secondItem="h6U-Qw-7ZT" secondAttribute="leading" id="GdS-AS-Q4h"/>
                                     <constraint firstItem="mz4-S1-tfj" firstAttribute="width" secondItem="h6U-Qw-7ZT" secondAttribute="width" id="I6m-wF-fdc"/>
                                     <constraint firstItem="mz4-S1-tfj" firstAttribute="bottom" secondItem="h6U-Qw-7ZT" secondAttribute="bottom" id="LoD-Np-ttv"/>
-                                    <constraint firstItem="mz4-S1-tfj" firstAttribute="height" secondItem="h6U-Qw-7ZT" secondAttribute="height" id="pO1-Yu-rex"/>
+                                    <constraint firstItem="mz4-S1-tfj" firstAttribute="height" secondItem="h6U-Qw-7ZT" secondAttribute="height" priority="250" id="pO1-Yu-rex"/>
                                     <constraint firstItem="mz4-S1-tfj" firstAttribute="centerX" secondItem="SQn-NY-03I" secondAttribute="centerX" id="uvP-Lt-KVC"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="h6U-Qw-7ZT"/>
