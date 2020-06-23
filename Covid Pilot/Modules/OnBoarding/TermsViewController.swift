@@ -8,9 +8,11 @@
 
 import UIKit
 
-class TermsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TermsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExpandDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
     private var hiddenSections = Set<Int>()
     
@@ -26,16 +28,20 @@ class TermsViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = UITableView.automaticDimension;
-        tableView.estimatedRowHeight = 80
         tableView.delegate = self
         tableView.dataSource = self
         registerTableViewCells()
+        setAllSectionsHidden()
+    }
+    
+    private func setAllSectionsHidden() {
+        for i  in 1..<self.tableViewData.count {
+            hiddenSections.insert(i)
+        }
     }
     
     private func registerTableViewCells() {
-        let textFieldCell = UINib(nibName: "TextTableViewCell",bundle: nil)
-        tableView.register(textFieldCell, forCellReuseIdentifier: "CELL")
+        tableView.register(TableHeaderView.self, forHeaderFooterViewReuseIdentifier: "header")
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -43,15 +49,12 @@ class TermsViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: "CELL") as? TextTableViewCell {
-//            cell.set(content: self.tableViewData[indexPath.section][indexPath.row])
-//            return cell
-//        }
         let cell = UITableViewCell()
         cell.textLabel?.text = self.tableViewData[indexPath.section][indexPath.row]
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.font = UIFont(name: "Muli-Light", size: 20.0)
+        cell.backgroundColor = #colorLiteral(red: 0.9800000191, green: 0.976000011, blue: 0.9689999819, alpha: 1)
         return cell
-    
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,29 +63,33 @@ class TermsViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         return self.tableViewData[section].count
     }
+
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let sectionButton = UIButton()
-        sectionButton.setTitle(tableHeaders[section], for: .normal)
-        sectionButton.backgroundColor = .systemBlue
-        sectionButton.tag = section
-        sectionButton.addTarget(self, action: #selector(self.hideSection(sender:)), for: .touchUpInside)
-        return sectionButton
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as! TableHeaderView
+        view.title = tableHeaders[section]
+        view.expanded = !hiddenSections.contains(section)
+        view.delegate = self
+        view.section = section
+        tableViewHeight.constant = calculateHeight()
+        return view
     }
     
-    @objc
-    private func hideSection(sender: UIButton) {
-        let section = sender.tag
-        
-        if self.hiddenSections.contains(section) {
-            self.hiddenSections.remove(section)
-            self.tableView.insertRows(at: indexPathsForSection(section),
-                                      with: .fade)
-        } else {
-            self.hiddenSections.insert(section)
-            self.tableView.deleteRows(at: indexPathsForSection(section),
-                                      with: .fade)
+    func toggle(section: Int?) {
+        if let section = section {
+            if self.hiddenSections.contains(section) {
+                self.hiddenSections.remove(section)
+                self.tableView.insertRows(at: indexPathsForSection(section),
+                                          with: .fade)
+            } else {
+                self.hiddenSections.insert(section)
+                self.tableView.deleteRows(at: indexPathsForSection(section),
+                                          with: .fade)
+               
+            }
         }
+        tableView.reloadData()
+        tableViewHeight.constant = calculateHeight()
     }
     
     private func indexPathsForSection(_ section: Int) -> [IndexPath] {
@@ -94,6 +101,14 @@ class TermsViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         
         return indexPaths
+    }
+    
+    private func calculateHeight() -> CGFloat {
+//        return 30 * CGFloat(tableHeaders.count)
+       
+        tableView.layoutIfNeeded()
+
+        return tableView.contentSize.height + tableView.contentInset.bottom + tableView.contentInset.top
     }
 
 
