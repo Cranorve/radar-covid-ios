@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate, Activity
     var injection: Injection = Injection();
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        if JailBreakDetect.isJailbroken() {
+            exit(-1)
+        }
         initializeSDK()
         return true
     }
@@ -44,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate, Activity
         let preferencesRepository = injection.resolve(PreferencesRepository.self)!
         
         let url = URL(string: Config.dppptUrl)!
+//        DP3TTracing.loggingEnabled = true
         DP3TTracing.loggingDelegate = self
         DP3TTracing.activityDelegate = self
         try! DP3TTracing.initialize(with: .init(appId: "com.indra.covidpilot",
