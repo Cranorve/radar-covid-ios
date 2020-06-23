@@ -15,6 +15,7 @@ class OnBoardingViewController: UIViewController {
     
     private var termsAccepted: Bool = false
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var checkBoxImage: UIImageView!
    
     @IBOutlet weak var acceptTermsLabel: UILabel!
@@ -37,6 +38,7 @@ class OnBoardingViewController: UIViewController {
         }
         //router?.route(to: Routes.Home, from: self)
         acceptButton.isEnabled = termsAccepted
+        scrollView.alwaysBounceVertical = false
         
         loadTexts()
     }
