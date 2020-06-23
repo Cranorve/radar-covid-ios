@@ -114,7 +114,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		39443286248939F000FF0217 /* Covid Pilot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid Pilot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39443286248939F000FF0217 /* Radar Covid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Radar Covid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39443289248939F000FF0217 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3944328B248939F000FF0217 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		39443292248939F500FF0217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -246,7 +246,7 @@
 		39443287248939F000FF0217 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				39443286248939F000FF0217 /* Covid Pilot.app */,
+				39443286248939F000FF0217 /* Radar Covid.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -638,7 +638,7 @@
 				39C3FEC52497CE0800D1A13E /* DP3TSDK */,
 			);
 			productName = "Covid Pilot";
-			productReference = 39443286248939F000FF0217 /* Covid Pilot.app */;
+			productReference = 39443286248939F000FF0217 /* Radar Covid.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
