@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZX-eB-vJ1" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="783"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="784"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightTopShade" translatesAutoresizingMaskIntoConstraints="NO" id="26u-YC-f5R">
                                                 <rect key="frame" x="91.5" y="0.0" width="283.5" height="206.5"/>
@@ -78,15 +78,15 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SwM-SS-Bb9" userLabel="CheckView">
-                                                <rect key="frame" x="16" y="717" width="343" height="56"/>
+                                                <rect key="frame" x="16" y="717" width="343" height="57"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvQ-IX-8Bm">
-                                                        <rect key="frame" x="30" y="0.0" width="313" height="19"/>
+                                                        <rect key="frame" x="30" y="0.0" width="313" height="19.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Acepto las ">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="16" name="Muli-Light"/>
+                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                     <real key="NSKern" value="0.0"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
@@ -94,7 +94,7 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                                             <fragment content="condiciones de uso ">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="16" name="Muli-Light"/>
+                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                     <real key="NSKern" value="0.0"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                     <integer key="NSUnderline" value="1"/>
@@ -105,12 +105,12 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNP-Ib-LaU">
-                                                        <rect key="frame" x="30" y="37" width="313" height="19"/>
+                                                        <rect key="frame" x="30" y="37.5" width="313" height="19.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="He leído la ">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="16" name="Muli-Light"/>
+                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                     <real key="NSKern" value="0.0"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
@@ -118,7 +118,7 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                                             <fragment content="política de privacidad">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="16" name="Muli-Light"/>
+                                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                                     <real key="NSKern" value="0.0"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                     <integer key="NSUnderline" value="1"/>
@@ -185,7 +185,7 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                 <viewLayoutGuide key="contentLayoutGuide" id="kTL-66-zlq"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Q5y-H2-Snj"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDV-35-L2Q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDV-35-L2Q" userLabel="Accept Button">
                                 <rect key="frame" x="16" y="601" width="343" height="56"/>
                                 <color key="backgroundColor" red="0.46558642389999999" green="0.56896358729999996" blue="0.89667195079999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -222,7 +222,7 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                         <viewLayoutGuide key="safeArea" id="C15-Ne-DdG"/>
                     </view>
                     <connections>
-                        <outlet property="acceptButotn" destination="GDV-35-L2Q" id="eJB-rf-R7k"/>
+                        <outlet property="acceptButton" destination="GDV-35-L2Q" id="DI6-CX-z4Y"/>
                         <outlet property="acceptTermsLabel" destination="qvQ-IX-8Bm" id="xS0-E0-Ni0"/>
                         <outlet property="acceptView" destination="XRM-kg-RAx" id="Bc4-iU-0Eh"/>
                         <outlet property="checkBoxImage" destination="jHq-8U-BtL" id="63v-Vg-llX"/>

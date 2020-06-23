@@ -24,7 +24,7 @@ class OnBoardingViewController: UIViewController {
     
     @IBOutlet weak var acceptView: UIView!
     
-    @IBOutlet weak var acceptButotn: UIButton!
+    @IBOutlet weak var acceptButton: UIButton!
     
     @IBAction func onOk(_ sender: Any) {
         router?.route(to: Routes.Info, from:self)
@@ -36,7 +36,7 @@ class OnBoardingViewController: UIViewController {
 //            router?.route(to: Routes.Home, from: self)
         }
         //router?.route(to: Routes.Home, from: self)
-        acceptButotn.isEnabled = termsAccepted
+        acceptButton.isEnabled = termsAccepted
         
         loadTexts()
     }
@@ -69,7 +69,7 @@ class OnBoardingViewController: UIViewController {
             checkBoxImage.image = UIImage(named:"CheckboxUnselected")
             termsAccepted = false
         }
-        acceptButotn.isEnabled = termsAccepted
+        acceptButton.isEnabled = termsAccepted
     }
     
     @objc func userDidTapTerms(tapGestureRecognizer: UITapGestureRecognizer) {
