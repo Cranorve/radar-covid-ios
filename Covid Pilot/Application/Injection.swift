@@ -201,8 +201,6 @@ class Injection {
         
         container.register(OnBoardingViewController.self) {  r in
             let onbVC = self.createViewController(storyboard: "OnBoarding", id: "OnBoardingViewController") as! OnBoardingViewController
-            
-            onbVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
             onbVC.router = r.resolve(AppRouter.self)!
             return onbVC
         }
@@ -210,6 +208,7 @@ class Injection {
         container.register(WelcomeViewController.self) {  r in
             let welcomeVC = WelcomeViewController()
             welcomeVC.router = r.resolve(AppRouter.self)!
+            welcomeVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
             return welcomeVC
         }
     }

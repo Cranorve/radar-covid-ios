@@ -11,11 +11,20 @@ import UIKit
 class WelcomeViewController: UIViewController {
     
     var router: AppRouter?
+    var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
     
     @IBOutlet weak var bulletTextView: UITextView!
     
     @IBAction func onContinue(_ sender: Any) {
         router?.route(to: .OnBoarding, from: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if (onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? false) {
+            router?.route(to: Routes.Home, from: self)
+        }
+        //router?.route(to: Routes.Home, from: self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

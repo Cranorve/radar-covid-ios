@@ -25,15 +25,14 @@ class MyHealthViewController: UIViewController {
     
     @IBAction func onReportDiagnosis(_ sender: Any) {
         if let codigoString = codeTextField.text {
-            self.navigateIf(reported: true)
-//            diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
-//                onNext:{ [weak self] reportedCodeBool in
-//                    self?.navigateIf(reported: reportedCodeBool)
-//                }, onError: {  [weak self] error in
-//                    print("Error reporting diagnosis \(error)")
-//                    self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"), animated: true)
-//
-//            }).disposed(by: disposeBag)
+            diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
+                onNext:{ [weak self] reportedCodeBool in
+                    self?.navigateIf(reported: reportedCodeBool)
+                }, onError: {  [weak self] error in
+                    print("Error reporting diagnosis \(error)")
+                    self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"), animated: true)
+
+            }).disposed(by: disposeBag)
         }
     }
     
