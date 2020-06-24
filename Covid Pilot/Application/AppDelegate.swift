@@ -20,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate, Activity
         if JailBreakDetect.isJailbroken() {
             exit(-1)
         }
+        #if DEBUG
+            NetworkActivityLogger.shared.startLogging()
+        #endif
+        
         initializeSDK()
         return true
     }
