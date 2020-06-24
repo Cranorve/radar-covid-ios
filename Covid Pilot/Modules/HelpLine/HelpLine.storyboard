@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJ6-m7-TJp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="925"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="932.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ayúdanos a mejorar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cst-er-eD4">
                                                 <rect key="frame" x="23" y="100" width="329" height="33"/>
@@ -44,28 +44,19 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8G-Nn-de4">
-                                                <rect key="frame" x="16" y="331" width="343" height="75"/>
+                                                <rect key="frame" x="16" y="331" width="343" height="76.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Muchas gracias por participar en el piloto de la APP Covid-19, ">
                                                         <attributes>
                                                             <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="16" name="Muli-Light"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
                                                     </fragment>
-                                                    <fragment content="contándonos tu opinión de forma anónima nos ayuda a mejorar">
+                                                    <fragment content="contándonos tu opinión de forma anónima nos ayuda a mejorar ">
                                                         <attributes>
                                                             <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="16" name="Muli-Bold"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                            <integer key="NSUnderline" value="1"/>
-                                                            <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content=" ">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="16" name="Muli-Light"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                             <integer key="NSUnderline" value="1"/>
                                                             <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,7 +65,7 @@
                                                     <fragment content=" y contribuir a prevenir futuros contagios.">
                                                         <attributes>
                                                             <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="16" name="Muli-Light"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                             <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </attributes>
@@ -83,7 +74,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HS-MA-jpT">
-                                                <rect key="frame" x="16" y="426" width="343" height="54"/>
+                                                <rect key="frame" x="16" y="427.5" width="343" height="54"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="54" id="pKx-r8-rQQ"/>
                                                 </constraints>
@@ -102,28 +93,28 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geQ-iZ-DDL">
-                                                <rect key="frame" x="16" y="500" width="343" height="81"/>
+                                                <rect key="frame" x="16" y="501.5" width="343" height="83"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">Reportar incidencia
 </string>
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="18" name="Muli-Bold"/>
+                                                            <font key="NSFont" metaFont="system" size="18"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment content="Si necesitas ayuda funcional o reportar cualquier tipo de incidencia puedes contactar con nosotros de forma rápida">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="16" name="Muli-Light"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="9" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1da-Fl-GEo" customClass="BackgroundView" customModule="Covid_Pilot" customModuleProvider="target">
-                                                <rect key="frame" x="14" y="601" width="347" height="103.5"/>
+                                                <rect key="frame" x="14" y="604.5" width="347" height="103.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="nS9-3b-zgN">
                                                         <rect key="frame" x="16" y="19" width="22" height="22"/>
@@ -158,14 +149,14 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAO-RJ-tDo">
-                                                <rect key="frame" x="16" y="724.5" width="343" height="190.5"/>
+                                                <rect key="frame" x="16" y="728" width="343" height="194.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">Un paso más
 </string>
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="18" name="Muli-Bold"/>
+                                                            <font key="NSFont" metaFont="system" size="18"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="13" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
                                                     </fragment>
@@ -174,26 +165,16 @@
 </string>
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="16" name="Muli-Light"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="piloto.appcovid@economia.gob.es">
-                                                        <attributes>
-                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="16" name="Muli-Bold"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                            <integer key="NSUnderline" value="1"/>
-                                                            <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment>
-                                                        <string key="content" base64-UTF8="YES">
-Cg
+                                                        <string key="content">piloto.appcovid@economia.gob.es
 </string>
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="16" name="Muli-Light"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                             <integer key="NSUnderline" value="1"/>
                                                             <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -202,7 +183,7 @@ Cg
                                                     <fragment content="Uno de  nuestros colaboradores se pondrá en contacto contigo para fijar el día y la hora que se adapte mejor a tí">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="16" name="Muli-Light"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
                                                     </fragment>
@@ -262,6 +243,7 @@ Cg
                         <viewLayoutGuide key="safeArea" id="ucK-r6-0qo"/>
                     </view>
                     <connections>
+                        <outlet property="infoLabel" destination="lAO-RJ-tDo" id="Td0-ue-gWl"/>
                         <outlet property="phoneNumberLabel" destination="UhJ-I7-T6K" id="19E-b2-ABo"/>
                         <outlet property="phoneView" destination="1da-Fl-GEo" id="E5d-MT-S53"/>
                     </connections>

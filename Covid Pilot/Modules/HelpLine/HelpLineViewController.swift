@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import MessageUI
 
-class HelpLineViewController: UIViewController {
+class HelpLineViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     var router: AppRouter?
     var preferencesRepository: PreferencesRepository?
     
+    @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
     @IBOutlet weak var phoneView: BackgroundView!
@@ -36,10 +38,34 @@ class HelpLineViewController: UIViewController {
         
         phoneNumberLabel.text = Config.contactNumber
         phoneView.image = UIImage(named: "WhiteCard")
+        
+        infoLabel.isUserInteractionEnabled = true
+        infoLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onEmailTap(tapGestureRecognizer:))))
+        
     }
     
     @objc func onCallTap(tapGestureRecognizer: UITapGestureRecognizer) {
         open(phone: Config.contactNumber)
+    }
+    
+    @objc func onEmailTap(tapGestureRecognizer: UITapGestureRecognizer) {
+        let email = Config.contactEmail
+        
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients([email])
+            mail.setMessageBody("<p></p>", isHTML: true)
+
+            present(mail, animated: true)
+        } else {
+            // show failure alert
+        }
+
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 
 }

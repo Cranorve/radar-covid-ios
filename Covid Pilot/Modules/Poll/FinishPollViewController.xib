@@ -21,6 +21,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FinishPollViewController" customModule="Covid_Pilot" customModuleProvider="target">
             <connections>
+                <outlet property="emailLabel" destination="p6e-AX-MY6" id="oh4-EX-CHY"/>
                 <outlet property="phoneNumberLabel" destination="UCL-we-dUf" id="0NK-ep-0sN"/>
                 <outlet property="phoneView" destination="Nea-G6-sbV" id="P7k-ll-eli"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
