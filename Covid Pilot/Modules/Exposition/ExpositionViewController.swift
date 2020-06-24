@@ -29,7 +29,8 @@ class ExpositionViewController: UIViewController {
     
     
     @objc func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
-        // TODO queda por definir que pasa cuando se pincha en mas informacion
+        guard let url = URL(string: "https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/ciudadania.htm") else { return }
+        UIApplication.shared.open(url)
     }
     /*
     // MARK: - Navigation
