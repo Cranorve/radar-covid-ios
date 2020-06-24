@@ -169,7 +169,7 @@
 		6DB541942498A29D00166D37 /* ConfiguratioUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguratioUseCase.swift; sourceTree = "<group>"; };
 		6DB541962498A31700166D37 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
 		6DB541982498A55700166D37 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		6DB5419A2498ABE900166D37 /* Covid Pilot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Covid Pilot.entitlements"; sourceTree = "<group>"; };
+		6DB5419A2498ABE900166D37 /* release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = release.entitlements; sourceTree = "<group>"; };
 		6DE27C632499118200BBCF40 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		6DE27C652499F65E00BBCF40 /* AnswerOptionDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerOptionDto.swift; sourceTree = "<group>"; };
 		6DE27C67249A6D4500BBCF40 /* JSONEncodingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodingHelper.swift; sourceTree = "<group>"; };
@@ -196,6 +196,7 @@
 		6DE27CA824A0D34C00BBCF40 /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
 		6DE27CAA24A25F9D00BBCF40 /* JailBreakDetect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JailBreakDetect.swift; sourceTree = "<group>"; };
 		6DE27CB224A379F800BBCF40 /* NetworkActivityLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityLogger.swift; sourceTree = "<group>"; };
+		6DE27CB424A37EF500BBCF40 /* debug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = debug.entitlements; sourceTree = "<group>"; };
 		6DF6EC98248E59C6007EAA40 /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
 		6DF6EC9A248E5C77007EAA40 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		6DF6ECA2248E61E0007EAA40 /* OLdPrivacyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OLdPrivacyViewController.xib; sourceTree = "<group>"; };
@@ -258,8 +259,9 @@
 		39443288248939F000FF0217 /* Covid Pilot */ = {
 			isa = PBXGroup;
 			children = (
+				6DE27CB424A37EF500BBCF40 /* debug.entitlements */,
 				6DE27C622499116F00BBCF40 /* Extensions */,
-				6DB5419A2498ABE900166D37 /* Covid Pilot.entitlements */,
+				6DB5419A2498ABE900166D37 /* release.entitlements */,
 				6D5AFCE924936E1700EFE838 /* Config */,
 				6DA18CB92491053700BE8AAB /* Components */,
 				6DF6ECC5248F6EBE007EAA40 /* Data */,
@@ -940,7 +942,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Covid Pilot.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/release.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
@@ -961,7 +963,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Covid Pilot.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/release.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
@@ -1037,7 +1039,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Covid Pilot.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/debug.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
