@@ -31,6 +31,7 @@ struct Config {
     
     static let validationKey = Data(base64Encoded: "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFUEFMemYyNFZwMDRtYk9aRWNKbnhyR1NDc3BUTApKT1VNcURXV1ZCU1JjSWl3NDR3Mm1JaFFIbEtNaHlyc2pHeVFMY0dxQXB2cTR6SEp2eVRNYi80ZE1RPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==")
     
-    static let contactNumber = "900 000 001"
+    static let timeTable = "Horario lunes a viernes de 08H a 20H"
+    static let contactNumber = "900 112 061"
     static let contactEmail = "piloto.appcovid@economia.gob.es"
 }

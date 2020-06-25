@@ -59,7 +59,7 @@
                                     </constraints>
                                     <viewLayoutGuide key="safeArea" id="QFz-FT-HWn"/>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cómo funciona en 3 pasos:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkV-ML-gs8">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cómo funciona" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkV-ML-gs8">
                                     <rect key="frame" x="16" y="145" width="382" height="33"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,7 +71,7 @@
                                         <fragment content="01">
                                             <attributes>
                                                 <color key="NSColor" red="0.4810534716" green="0.35028833149999999" blue="0.66210502390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="32" name="Muli-Light"/>
+                                                <font key="NSFont" metaFont="system" size="32"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -89,7 +89,7 @@ Activa tu Bluetooth. Eso es todo lo que te pedimos.
                                         <fragment content="02">
                                             <attributes>
                                                 <color key="NSColor" red="0.4810534716" green="0.35028833149999999" blue="0.66210502390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="32" name="Muli-Light"/>
+                                                <font key="NSFont" metaFont="system" size="32"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -107,14 +107,14 @@ Visita la App con frecuencia para visualizar tu grado de exposición al coronavi
                                         <fragment content="03">
                                             <attributes>
                                                 <color key="NSColor" red="0.4810534716" green="0.35028833149999999" blue="0.66210502390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="32" name="Muli-Light"/>
-                                                <font key="NSOriginalFont" size="32" name="Muli-Light"/>
+                                                <font key="NSFont" metaFont="system" size="32"/>
+                                                <font key="NSOriginalFont" metaFont="system" size="32"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                         <fragment>
                                             <string key="content">
-En caso de haber estado expuesto o reportar un diagnóstico positivo sigue las indicaciones que te enviaremos</string>
+En caso de haber estado expuesto o reportar un diagnóstico positivo sigue las indicaciones que te enviaremos.</string>
                                             <attributes>
                                                 <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <font key="NSFont" metaFont="system" size="20"/>
@@ -162,7 +162,7 @@ En caso de haber estado expuesto o reportar un diagnóstico positivo sigue las i
                                 <constraint firstAttribute="height" constant="56" id="3cO-0b-3sv"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
-                            <state key="normal" title="Activar Bluetooth de bajo consumo" backgroundImage="GradientBackgroundButton">
+                            <state key="normal" title="Activar rastreo Bluetooth" backgroundImage="GradientBackgroundButton">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
