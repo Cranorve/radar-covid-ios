@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="muli_bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+        <array key="muli_italic.ttf">
+            <string>Muli-Italic</string>
+        </array>
+        <array key="muli_light.ttf">
+            <string>Muli-Light</string>
+        </array>
+        <array key="muli_semibold.ttf">
+            <string>Muli-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--My Health View Controller-->
+        <scene sceneID="dd0-sZ-C0u">
+            <objects>
+                <viewController storyboardIdentifier="MyHealthViewController" id="vmx-lJ-Xhc" customClass="MyHealthViewController" customModule="Covid_Pilot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N4X-xp-aN3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="organicColor" translatesAutoresizingMaskIntoConstraints="NO" id="j1B-pg-cG8">
+                                <rect key="frame" x="0.0" y="-1" width="414" height="155.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MI DIAGNÓSTICO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Km-Li-R8Y">
+                                <rect key="frame" x="16" y="99" width="99" height="14"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
+                                <color key="textColor" red="0.5764058232" green="0.57650798560000005" blue="0.57639932630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ub7-Zo-Om5">
+                                <rect key="frame" x="16" y="115" width="382" height="65.5"/>
+                                <string key="text">Envía tu diagnóstico 
+COVID positivo</string>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enviando tu diagnóstico anónimo Covid-19, estás contribuyendo a detener la propagación del virus. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CSp-Na-Mxg">
+                                <rect key="frame" x="16" y="205" width="382" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="nII-BK-HGK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracias por ayudarnos a cuidar a los demás." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ySm-4q-hhL">
+                                <rect key="frame" x="16" y="296" width="382" height="19"/>
+                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu información está segura y será tratada siempre anonimamente " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YOD-Rc-mbN">
+                                <rect key="frame" x="16" y="335" width="382" height="37.5"/>
+                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="codeInputFrame" translatesAutoresizingMaskIntoConstraints="NO" id="c5d-kc-7Ws">
+                                <rect key="frame" x="194" y="388.5" width="200" height="161"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Código de diagnóstico" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4gj-0b-5G9">
+                                <rect key="frame" x="20" y="401" width="244" height="19"/>
+                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduce el código que te han enviado" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lr1-Za-iuV">
+                                <rect key="frame" x="16" y="473.5" width="204" height="37.5"/>
+                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yb-R6-MLg">
+                                <rect key="frame" x="16" y="542.5" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ej. ABC1234567" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LVk-tn-nfe">
+                                <rect key="frame" x="16" y="584.5" width="94.5" height="15.5"/>
+                                <fontDescription key="fontDescription" name="Muli-Italic" family="Muli" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yjq-yA-SHq">
+                                <rect key="frame" x="16" y="796" width="382" height="56"/>
+                                <color key="backgroundColor" red="0.46558642389999999" green="0.56896358729999996" blue="0.89667195079999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="dys-3C-WpD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
+                                <state key="normal" title="Enviar diagnóstico anónimo" backgroundImage="GradientBackgroundButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="btn.clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onReportDiagnosis:" destination="vmx-lJ-Xhc" eventType="touchUpInside" id="8nB-va-nlc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6r9-h6-6CB">
+                                <rect key="frame" x="16" y="60" width="26" height="22"/>
+                                <state key="normal" image="iconsBack"/>
+                                <connections>
+                                    <action selector="onBack:" destination="vmx-lJ-Xhc" eventType="primaryActionTriggered" id="JbM-VE-jJf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CSp-Na-Mxg" firstAttribute="top" secondItem="Ub7-Zo-Om5" secondAttribute="bottom" constant="24.5" id="135-3b-dOW"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="j1B-pg-cG8" secondAttribute="trailing" id="2bP-OY-SeE"/>
+                            <constraint firstItem="Ub7-Zo-Om5" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="83B-GS-Pxu"/>
+                            <constraint firstItem="lr1-Za-iuV" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="HJd-aO-gCz"/>
+                            <constraint firstItem="4gj-0b-5G9" firstAttribute="top" secondItem="YOD-Rc-mbN" secondAttribute="bottom" constant="28.5" id="HSm-Vb-DyD"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="Yjq-yA-SHq" secondAttribute="trailing" constant="16" id="I4P-P3-Tma"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="2yb-R6-MLg" secondAttribute="trailing" constant="16" id="JsJ-9M-f2s"/>
+                            <constraint firstItem="ySm-4q-hhL" firstAttribute="top" secondItem="CSp-Na-Mxg" secondAttribute="bottom" constant="20" id="Mu1-eT-tAc"/>
+                            <constraint firstItem="6r9-h6-6CB" firstAttribute="top" secondItem="599-Qh-McL" secondAttribute="top" constant="16" id="NRV-mM-SyI"/>
+                            <constraint firstItem="YOD-Rc-mbN" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="New-zk-XOG"/>
+                            <constraint firstItem="Yjq-yA-SHq" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="NuJ-jN-kaD"/>
+                            <constraint firstItem="3Km-Li-R8Y" firstAttribute="top" secondItem="599-Qh-McL" secondAttribute="top" constant="55" id="RA0-nx-o1J"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="ySm-4q-hhL" secondAttribute="trailing" constant="16" id="Udv-Rb-IWO"/>
+                            <constraint firstItem="6r9-h6-6CB" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="V4Q-cf-bJ0"/>
+                            <constraint firstItem="2yb-R6-MLg" firstAttribute="top" secondItem="c5d-kc-7Ws" secondAttribute="bottom" constant="-7" id="Vha-Bh-OTo"/>
+                            <constraint firstItem="ySm-4q-hhL" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="VuQ-1l-idv"/>
+                            <constraint firstItem="CSp-Na-Mxg" firstAttribute="leading" secondItem="Ub7-Zo-Om5" secondAttribute="leading" id="ZOL-zh-Pfq"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="Ub7-Zo-Om5" secondAttribute="trailing" constant="16" id="auU-xv-pss"/>
+                            <constraint firstItem="c5d-kc-7Ws" firstAttribute="top" secondItem="YOD-Rc-mbN" secondAttribute="bottom" constant="16" id="dL1-x8-T1o"/>
+                            <constraint firstItem="4gj-0b-5G9" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="20" id="eoc-Qd-PFG"/>
+                            <constraint firstItem="lr1-Za-iuV" firstAttribute="top" secondItem="4gj-0b-5G9" secondAttribute="bottom" constant="53.5" id="evS-Q1-lle"/>
+                            <constraint firstItem="YOD-Rc-mbN" firstAttribute="top" secondItem="ySm-4q-hhL" secondAttribute="bottom" constant="20" id="gE1-xV-Rhc"/>
+                            <constraint firstItem="c5d-kc-7Ws" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="194" id="iup-xM-Pwz"/>
+                            <constraint firstItem="LVk-tn-nfe" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="lFM-AO-YT8"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="CSp-Na-Mxg" secondAttribute="trailing" constant="16" id="lp3-OR-MVO"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="YOD-Rc-mbN" secondAttribute="trailing" constant="16" id="mHv-X3-Na9"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="c5d-kc-7Ws" secondAttribute="trailing" constant="20" id="mIv-Zi-OQG"/>
+                            <constraint firstItem="2yb-R6-MLg" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="mdR-h7-8m5"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="4gj-0b-5G9" secondAttribute="trailing" constant="150" id="qCJ-T2-jAy"/>
+                            <constraint firstItem="3Km-Li-R8Y" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="rTA-Za-tcb"/>
+                            <constraint firstItem="Ub7-Zo-Om5" firstAttribute="top" secondItem="599-Qh-McL" secondAttribute="top" constant="71" id="sMC-9y-Qni"/>
+                            <constraint firstItem="j1B-pg-cG8" firstAttribute="top" secondItem="599-Qh-McL" secondAttribute="top" constant="-45" id="tMc-zY-ofj"/>
+                            <constraint firstItem="j1B-pg-cG8" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" id="uB4-Iw-qf1"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="bottom" secondItem="Yjq-yA-SHq" secondAttribute="bottom" constant="10" id="uUc-zQ-WTI"/>
+                            <constraint firstItem="LVk-tn-nfe" firstAttribute="top" secondItem="2yb-R6-MLg" secondAttribute="bottom" constant="8" id="ui9-Ro-zoC"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="lr1-Za-iuV" secondAttribute="trailing" constant="194" id="vMV-z9-9ca"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="599-Qh-McL"/>
+                    </view>
+                    <connections>
+                        <outlet property="codeTextField" destination="2yb-R6-MLg" id="7VQ-42-Aip"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x8v-PM-yNA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-282.39999999999998" y="84.236453201970448"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GradientBackgroundButton" width="343" height="56"/>
+        <image name="codeInputFrame" width="166" height="161"/>
+        <image name="iconsBack" width="25.5" height="17"/>
+        <image name="organicColor" width="375" height="155.5"/>
+    </resources>
+</document>
