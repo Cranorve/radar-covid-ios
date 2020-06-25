@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate, Activity
         if JailBreakDetect.isJailbroken() {
             exit(-1)
         }
-        #if DEBUG
-            NetworkActivityLogger.shared.startLogging()
-        #endif
+        if Config.debug {
+             NetworkActivityLogger.shared.startLogging()
+        }
         
         initializeSDK()
         return true
@@ -50,11 +50,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate, Activity
         
         let preferencesRepository = injection.resolve(PreferencesRepository.self)!
         
-        let url = URL(string: Config.dppptUrl)!
+        let url = URL(string: Config.endpoints.dpppt)!
 //        DP3TTracing.loggingEnabled = true
         DP3TTracing.loggingDelegate = self
         DP3TTracing.activityDelegate = self
-        try! DP3TTracing.initialize(with: .init(appId: "com.indra.covidpilot",
+        try! DP3TTracing.initialize(with: .init(appId: "es.gob.covidradar",
                                                 bucketBaseUrl: url,
                                                 reportBaseUrl: url,
                                                 jwtPublicKey: Config.validationKey,
