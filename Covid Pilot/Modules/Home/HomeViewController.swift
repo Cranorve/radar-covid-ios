@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
         let active = radarSwitch.isOn
         
         if !active {
-            let alert = Alert.showAlertCancelContinue(title: "¿Estas seguro?", message: "Si desactivas el radar COVID (Bluetooth), no podremos avisarte." , buttonOkTitle: "Continuar", buttonCancelTitle: "Cancelar",
+            let alert = Alert.showAlertCancelContinue(title: "¿Estas seguro?", message: "Si desactivas el radar COVID (el Bluetooth), no podremos avisarte." , buttonOkTitle: "Continuar", buttonCancelTitle: "Cancelar",
                 okHandler: { [weak self] _ in self?.changeRadarStatus(false)},
                 cancelHandler: { [weak self] _ in self?.radarSwitch.isOn = true})
         
@@ -107,7 +107,16 @@ class HomeViewController: UIViewController {
         switch exposition.level {
             case .HIGH:
                 expositionTitle.text = "Exposición alta"
-                expositionDescription.text = "Has estado en contacto con una persona contagiada de Covid-19 . Cuídate y cuida a los demás."
+                let attributedString = NSMutableAttributedString(string: "Has estado en contacto con una persona contagiada de Covid-19 . Cuídate y cuida a los demás. \nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
+                    .font: UIFont(name: "Muli-Regular", size: 16.0)!,
+                    .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
+                ])
+                attributedString.addAttributes([
+                    .font: UIFont(name: "Muli-Bold", size: 16.0)!,
+                    .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
+                    //                  .foregroundColor: UIColor(red: 112.0 / 255.0, green: 80.0 / 255.0, blue: 156.0 / 255.0, alpha: 1.0)
+                ], range: NSRange(location: 0, length: 92))
+                expositionDescription.attributedText  = attributedString
                 expositionView.image = bgImageRed
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
             case .MEDIUM:
@@ -117,7 +126,17 @@ class HomeViewController: UIViewController {
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
             case .LOW:
                 expositionTitle.text = "Exposición baja"
-                expositionDescription.text  = "Te informaremos en el caso de un posible contacto. Cuídate y cuida a los demás."
+                let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un posible contacto. Cuídate y cuida a los demás. \nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
+                  .font: UIFont(name: "Muli-Regular", size: 16.0)!,
+                  .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
+                ])
+                attributedString.addAttributes([
+                  .font: UIFont(name: "Muli-Bold", size: 16.0)!,
+                  .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
+//                  .foregroundColor: UIColor(red: 112.0 / 255.0, green: 80.0 / 255.0, blue: 156.0 / 255.0, alpha: 1.0)
+                ], range: NSRange(location: 0, length: 80))
+                
+                expositionDescription.attributedText  = attributedString
                 expositionView.image = bgImageGreen
                 expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)
             case .none:

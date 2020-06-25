@@ -24,6 +24,7 @@
                 <outlet property="emailLabel" destination="p6e-AX-MY6" id="oh4-EX-CHY"/>
                 <outlet property="phoneNumberLabel" destination="UCL-we-dUf" id="0NK-ep-0sN"/>
                 <outlet property="phoneView" destination="Nea-G6-sbV" id="P7k-ll-eli"/>
+                <outlet property="timeTableLabel" destination="UMI-9Z-YVc" id="xJm-AB-xoS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

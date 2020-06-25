@@ -53,7 +53,7 @@
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRG-61-1Ta">
                                     <rect key="frame" x="16" y="125.5" width="382" height="186.5"/>
-                                    <string key="text">Estos Términos y Condiciones regulan la descarga, acceso y utilización de la aplicación Corona radar. 
+                                    <string key="text">Estos Términos y Condiciones regulan la descarga, acceso y utilización de la aplicación Radar COVID. 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>

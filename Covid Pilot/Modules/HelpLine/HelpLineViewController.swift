@@ -14,6 +14,9 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
     var router: AppRouter?
     var preferencesRepository: PreferencesRepository?
     
+    @IBOutlet weak var thanksLabel: UILabel!
+    @IBOutlet weak var reportLabel: UILabel!
+    @IBOutlet weak var timeTableLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
@@ -28,6 +31,9 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        loadTexts()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +41,7 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         phoneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCallTap(tapGestureRecognizer:))))
 
-        
+        timeTableLabel.text = Config.timeTable
         phoneNumberLabel.text = Config.contactNumber
         phoneView.image = UIImage(named: "WhiteCard")
         
@@ -66,6 +72,35 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
+    }
+    
+    private func loadTexts() {
+        let attributedString = NSMutableAttributedString(string: "Muchas gracias por participar en el piloto de la APP Radar COVID, contándonos tu opinión de forma anónima nos ayuda a mejorar  y contribuir a prevenir futuros contagios.", attributes: [
+          .font: UIFont(name: "Muli-Light", size: 16.0)!,
+          .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
+        ])
+        attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 66, length: 60))
+        
+        thanksLabel.attributedText = attributedString
+        
+        let attributedString2 = NSMutableAttributedString(string: "Contacta con nosotros si tu riesgo de exposición en la aplicación es alto o si tienes cualquier incidencia sobre la aplicación.", attributes: [
+          .font: UIFont(name: "Muli-Light", size: 16.0)!,
+          .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
+        ])
+        attributedString2.addAttribute(.font, value: UIFont(name: "Muli-SemiBold", size: 16.0)!, range: NSRange(location: 22, length: 51))
+        attributedString2.addAttribute(.font, value: UIFont(name: "Muli-SemiBold", size: 16.0)!, range: NSRange(location: 96, length: 10))
+        
+        reportLabel.attributedText = attributedString2
+        
+        let attributedString3 = NSMutableAttributedString(string: "Un paso más \n\n¿Te interesaría participar en una entrevista telefónica para conocer más sobre tu experiencia con Radar COVID? Escribe a:\npiloto.appcovid@economia.gob.es\nNos pondremos en contacto contigo para fijar el día y la hora que se adapte mejor a tí.", attributes: [
+          .font: UIFont(name: "Muli-Light", size: 16.0)!,
+          .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
+        ])
+        attributedString3.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 18.0)!, range: NSRange(location: 0, length: 12))
+        attributedString3.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 135, length: 32))
+        attributedString3.addAttribute(.font, value: UIFont(name: "Muli-Light", size: 16.0)!, range: NSRange(location: 167, length: 87))
+        infoLabel.attributedText = attributedString3
+        
     }
 
 }

@@ -14,6 +14,7 @@ class FinishPollViewController: UIViewController, MFMailComposeViewControllerDel
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneView: BackgroundView!
     
+    @IBOutlet weak var timeTableLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
 
     override func viewDidLoad() {
@@ -22,7 +23,7 @@ class FinishPollViewController: UIViewController, MFMailComposeViewControllerDel
         
         phoneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCallTap(tapGestureRecognizer:))))
 
-        
+        timeTableLabel.text = Config.timeTable
         phoneNumberLabel.text = Config.contactNumber
         
         phoneView.image = UIImage(named: "WhiteCard")
