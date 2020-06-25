@@ -83,7 +83,7 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvQ-IX-8Bm">
                                                         <rect key="frame" x="30" y="0.0" width="313" height="19.5"/>
                                                         <attributedString key="attributedText">
-                                                            <fragment content="Acepto las ">
+                                                            <fragment content="Acepto la ">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <font key="NSFont" metaFont="system" size="16"/>
@@ -91,7 +91,7 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
-                                                            <fragment content="condiciones de uso ">
+                                                            <fragment content="política de privacidad ">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <font key="NSFont" metaFont="system" size="16"/>
@@ -107,7 +107,7 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNP-Ib-LaU">
                                                         <rect key="frame" x="30" y="37.5" width="313" height="19.5"/>
                                                         <attributedString key="attributedText">
-                                                            <fragment content="He leído la ">
+                                                            <fragment content="He leído las ">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <font key="NSFont" metaFont="system" size="16"/>
@@ -115,7 +115,7 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="1" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
-                                                            <fragment content="política de privacidad">
+                                                            <fragment content="condiciones de uso">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <font key="NSFont" metaFont="system" size="16"/>
