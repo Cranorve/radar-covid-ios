@@ -128,7 +128,9 @@ class Injection {
             TabBarController(
                 homeViewController: r.resolve(HomeViewController.self)!,
                 myDataViewController: r.resolve(MyDataViewController.self)!,
-                helpLineViewController: r.resolve(HelpLineViewController.self)!
+                helpLineViewController: r.resolve(HelpLineViewController.self)!,
+                finishPollViewController: r.resolve(FinishPollViewController.self)!,
+                preferencesRepository: r.resolve(PreferencesRepository.self)!
             )
         }
         
@@ -177,12 +179,12 @@ class Injection {
             let pollVC = self.createViewController(storyboard: "Poll", id: "PollViewController") as! PollViewController
             pollVC.pollUseCase = r.resolve(PollUseCase.self)!
             pollVC.finishPollVC = r.resolve(FinishPollViewController.self)!
+            pollVC.router = r.resolve(AppRouter.self)!
             return pollVC
         }
         
         container.register(FinishPollViewController.self) {  r in
             let finishPollVC = FinishPollViewController()
-            finishPollVC.router = r.resolve(AppRouter.self)!
             return finishPollVC
         }
         

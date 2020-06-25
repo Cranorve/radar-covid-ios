@@ -16,6 +16,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     
     @IBOutlet weak var progressView: UIProgressView!
     
+    var router: AppRouter?
     var pollUseCase: PollUseCase?
     var finishPollVC: FinishPollViewController?
     
@@ -158,7 +159,8 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         pollUseCase?.save(poll: poll).subscribe(
             onNext:{ [weak self] questions in
                 if let strongSelf = self {
-                    strongSelf.navigationController?.pushViewController(strongSelf.finishPollVC!, animated: true)
+                    strongSelf.router?.route(to: .Home, from: strongSelf)
+//                    strongSelf.navigationController?.pushViewController(strongSelf.finishPollVC!, animated: true)
                 }
             }, onError: {  [weak self] error in
                 debugPrint("Error saving poll \(error)")

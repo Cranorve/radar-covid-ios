@@ -108,25 +108,6 @@ Si es así, escríbenos al siguiente correo electrónico para poder participar. 
                         <constraint firstAttribute="trailing" secondItem="UMI-9Z-YVc" secondAttribute="trailing" constant="16" id="rnL-9S-aTd"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilO-j0-mxl">
-                    <rect key="frame" x="16" y="603" width="343" height="54"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="54" id="BYk-76-jpA"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
-                    <state key="normal" title="Volver a la página de inicio" backgroundImage="GradientBackgroundButton">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="onHome:" destination="-1" eventType="primaryActionTriggered" id="QSR-Qx-PAm"/>
-                    </connections>
-                </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheckIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uYj-az-2jz">
                     <rect key="frame" x="16" y="65" width="36" height="36"/>
                     <constraints>
@@ -138,19 +119,16 @@ Si es así, escríbenos al siguiente correo electrónico para poder participar. 
             <color key="backgroundColor" name="bgColor"/>
             <constraints>
                 <constraint firstItem="uYj-az-2jz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="3dS-2k-wNK"/>
-                <constraint firstItem="ilO-j0-mxl" firstAttribute="bottom" secondItem="OJ1-1F-FXe" secondAttribute="bottom" constant="-10" id="D3h-BM-dSJ"/>
                 <constraint firstAttribute="trailing" secondItem="K55-xf-zck" secondAttribute="trailing" id="Fzv-R6-B0T"/>
                 <constraint firstItem="nR4-yi-sQf" firstAttribute="top" secondItem="OJ1-1F-FXe" secondAttribute="top" constant="120" id="PL4-0u-wy1"/>
                 <constraint firstItem="Nea-G6-sbV" firstAttribute="leading" secondItem="OJ1-1F-FXe" secondAttribute="leading" constant="14" id="Q6A-uY-3lP"/>
                 <constraint firstItem="K55-xf-zck" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tqn-Qn-8x4"/>
                 <constraint firstItem="Nea-G6-sbV" firstAttribute="top" secondItem="nR4-yi-sQf" secondAttribute="bottom" constant="20" id="aS3-Fb-mB5"/>
-                <constraint firstItem="OJ1-1F-FXe" firstAttribute="trailing" secondItem="ilO-j0-mxl" secondAttribute="trailing" constant="16" id="ajO-JC-HhU"/>
                 <constraint firstItem="OJ1-1F-FXe" firstAttribute="trailing" secondItem="Nea-G6-sbV" secondAttribute="trailing" constant="14" id="cil-3G-5gC"/>
                 <constraint firstItem="OJ1-1F-FXe" firstAttribute="trailing" secondItem="nR4-yi-sQf" secondAttribute="trailing" constant="16" id="ixs-Qp-Rsb"/>
                 <constraint firstItem="uYj-az-2jz" firstAttribute="top" secondItem="OJ1-1F-FXe" secondAttribute="top" constant="65" id="mLT-iT-Vc9"/>
                 <constraint firstItem="K55-xf-zck" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mpp-mJ-Abk"/>
                 <constraint firstItem="nR4-yi-sQf" firstAttribute="leading" secondItem="OJ1-1F-FXe" secondAttribute="leading" constant="16" id="qwr-Nz-JH4"/>
-                <constraint firstItem="ilO-j0-mxl" firstAttribute="leading" secondItem="OJ1-1F-FXe" secondAttribute="leading" constant="16" id="y7B-2v-bgz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="OJ1-1F-FXe"/>
             <point key="canvasLocation" x="139" y="124"/>
@@ -158,7 +136,6 @@ Si es así, escríbenos al siguiente correo electrónico para poder participar. 
     </objects>
     <resources>
         <image name="CheckIcon" width="36" height="36"/>
-        <image name="GradientBackgroundButton" width="343" height="56"/>
         <image name="organicColor" width="375" height="155.5"/>
         <image name="phone" width="22" height="22"/>
         <namedColor name="bgColor">

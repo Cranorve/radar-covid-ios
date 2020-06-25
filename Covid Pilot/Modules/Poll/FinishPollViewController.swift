@@ -15,12 +15,6 @@ class FinishPollViewController: UIViewController, MFMailComposeViewControllerDel
     @IBOutlet weak var phoneView: BackgroundView!
     
     @IBOutlet weak var phoneNumberLabel: UILabel!
-    
-    var router: AppRouter?
-
-    @IBAction func onHome(_ sender: Any) {
-        router?.route(to: .Home, from: self)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
