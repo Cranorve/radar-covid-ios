@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingViewController" customModule="Covid_Pilot" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingViewController" customModule="radar_COVID" customModuleProvider="target">
             <connections>
                 <outlet property="options" destination="KFg-LL-nRF" id="lov-2Z-baI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -31,10 +31,26 @@
                                 <action selector="onSelected:" destination="-1" eventType="primaryActionTriggered" id="7Xr-tf-ZlQ"/>
                             </connections>
                         </segmentedControl>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="muy mala" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZ3-e9-2U8">
+                            <rect key="frame" x="22" y="51" width="74" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="excelente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BO3-OY-Q0e">
+                            <rect key="frame" x="318" y="51" width="74" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <constraints>
                         <constraint firstItem="KFg-LL-nRF" firstAttribute="top" secondItem="pTM-er-8hz" secondAttribute="top" id="3eg-yI-Thy"/>
+                        <constraint firstItem="pZ3-e9-2U8" firstAttribute="leading" secondItem="KFg-LL-nRF" secondAttribute="leading" id="7zD-Zh-MbA"/>
                         <constraint firstAttribute="trailing" secondItem="KFg-LL-nRF" secondAttribute="trailing" constant="22" id="KAr-mc-yvG"/>
+                        <constraint firstItem="pZ3-e9-2U8" firstAttribute="centerY" secondItem="BO3-OY-Q0e" secondAttribute="centerY" id="XSc-Xa-yVL"/>
+                        <constraint firstItem="BO3-OY-Q0e" firstAttribute="top" secondItem="KFg-LL-nRF" secondAttribute="bottom" constant="20" id="Xhy-NC-oHN"/>
+                        <constraint firstItem="BO3-OY-Q0e" firstAttribute="trailing" secondItem="KFg-LL-nRF" secondAttribute="trailing" id="Xpc-Uo-Nms"/>
                         <constraint firstItem="KFg-LL-nRF" firstAttribute="leading" secondItem="pTM-er-8hz" secondAttribute="leading" constant="22" id="xBe-8s-vz9"/>
                     </constraints>
                 </view>
