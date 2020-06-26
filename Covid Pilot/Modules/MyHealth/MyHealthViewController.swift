@@ -94,6 +94,14 @@ class MyHealthViewController: UIViewController {
             let next = codeChars[actualPos + 1]
             next.becomeFirstResponder();
         }
+        
+        if (actualPos == self.codeChars.count - 1) {
+            let actualText = textField.text ?? "\u{200B}"
+            if (actualText != "\u{200B}") {
+                let trimmedString = String(actualText.prefix(2))
+                textField.text = trimmedString
+            }
+        }
        
         self.sendDiagnosticButton.isEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
     }
