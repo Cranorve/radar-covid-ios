@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate, Activity
 //        DP3TTracing.loggingEnabled = true
         DP3TTracing.loggingDelegate = self
         DP3TTracing.activityDelegate = self
-        try! DP3TTracing.initialize(with: .init(appId: "es.gob.covidradar",
+        try! DP3TTracing.initialize(with: .init(appId: "es.gob.radarcovid",
                                                 bucketBaseUrl: url,
                                                 reportBaseUrl: url,
                                                 jwtPublicKey: Config.validationKey,

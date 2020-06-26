@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "39443285248939F000FF0217"
-               BuildableName = "radar COVID.app"
+               BuildableName = "Radar COVID.app"
                BlueprintName = "Covid Pilot"
                ReferencedContainer = "container:Covid Pilot.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "39443285248939F000FF0217"
-            BuildableName = "radar COVID.app"
+            BuildableName = "Radar COVID.app"
             BlueprintName = "Covid Pilot"
             ReferencedContainer = "container:Covid Pilot.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "39443285248939F000FF0217"
-            BuildableName = "radar COVID.app"
+            BuildableName = "Radar COVID.app"
             BlueprintName = "Covid Pilot"
             ReferencedContainer = "container:Covid Pilot.xcodeproj">
          </BuildableReference>
