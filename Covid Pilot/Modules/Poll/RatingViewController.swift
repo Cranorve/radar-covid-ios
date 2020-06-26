@@ -28,6 +28,9 @@ class RatingViewController: UIViewController, QuestionController {
         var position = 0
         options.removeAllSegments()
         options.selectedSegmentTintColor = #colorLiteral(red: 0.5410000086, green: 0.4860000014, blue: 0.7179999948, alpha: 1)
+        options.backgroundColor = UIColor.white
+        options.layer.borderColor = #colorLiteral(red: 0.5410000086, green: 0.4860000014, blue: 0.7179999948, alpha: 1)
+        options.layer.borderWidth = 1
         options.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         for index in (question?.minValue ?? 1) ... (question?.maxValue ?? 1) {
             

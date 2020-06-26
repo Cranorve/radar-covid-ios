@@ -68,6 +68,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         progressView.clipsToBounds = true
         progressView.layer.cornerRadius = 5.0;
         
+        
         pollUseCase?.getPoll().subscribe(
             onNext:{ [weak self] poll in
                 self?.load(poll: poll)

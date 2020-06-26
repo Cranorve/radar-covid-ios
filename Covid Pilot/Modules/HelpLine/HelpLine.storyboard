@@ -19,7 +19,7 @@
         <!--Help Line View Controller-->
         <scene sceneID="PDA-62-Nfe">
             <objects>
-                <viewController storyboardIdentifier="HelpLineViewController" id="mMO-wQ-feO" customClass="HelpLineViewController" customModule="Covid_Pilot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelpLineViewController" id="mMO-wQ-feO" customClass="HelpLineViewController" customModule="Radar_COVID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NXc-EZ-zay">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJ6-m7-TJp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="894"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="945"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ayúdanos a mejorar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cst-er-eD4">
                                                 <rect key="frame" x="23" y="100" width="329" height="33"/>
@@ -93,28 +93,28 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geQ-iZ-DDL">
-                                                <rect key="frame" x="16" y="501.5" width="343" height="83"/>
+                                                <rect key="frame" x="16" y="542.5" width="343" height="83"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">Reportar incidencia
 </string>
                                                         <attributes>
-                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <font key="NSFont" metaFont="system" size="18"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment content="Si necesitas ayuda funcional o reportar cualquier tipo de incidencia puedes contactar con nosotros de forma rápida">
                                                         <attributes>
-                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <font key="NSFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="9" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1da-Fl-GEo" customClass="BackgroundView" customModule="Covid_Pilot" customModuleProvider="target">
-                                                <rect key="frame" x="14" y="604.5" width="347" height="103.5"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1da-Fl-GEo" customClass="BackgroundView" customModule="Radar_COVID" customModuleProvider="target">
+                                                <rect key="frame" x="14" y="645.5" width="347" height="103.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="nS9-3b-zgN">
                                                         <rect key="frame" x="16" y="19" width="22" height="22"/>
@@ -149,13 +149,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAO-RJ-tDo">
-                                                <rect key="frame" x="16" y="728" width="343" height="156"/>
+                                                <rect key="frame" x="16" y="769" width="343" height="156"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">Un paso más
 </string>
                                                         <attributes>
-                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <font key="NSFont" metaFont="system" size="18"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="13" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
@@ -165,7 +165,7 @@
 Cg
 </string>
                                                         <attributes>
-                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <font key="NSFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
@@ -174,7 +174,7 @@ Cg
                                                         <string key="content">piloto.appcovid@economia.gob.es
 </string>
                                                         <attributes>
-                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <font key="NSFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                             <integer key="NSUnderline" value="1"/>
@@ -183,7 +183,7 @@ Cg
                                                     </fragment>
                                                     <fragment content="Uno de  nuestros colaboradores se pondrá en contacto contigo para fijar el día y la hora que se adapte mejor a tí">
                                                         <attributes>
-                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <font key="NSFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
@@ -191,30 +191,38 @@ Cg
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atención Telefónica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGs-Ug-xTr">
+                                                <rect key="frame" x="16" y="501.5" width="157" height="21"/>
+                                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" name="bgColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="lAO-RJ-tDo" secondAttribute="trailing" constant="16" id="0wG-Aw-1eJ"/>
                                             <constraint firstItem="Cst-er-eD4" firstAttribute="top" secondItem="UJ6-m7-TJp" secondAttribute="top" constant="100" id="6aj-WW-r0v"/>
-                                            <constraint firstItem="0HS-MA-jpT" firstAttribute="bottom" secondItem="geQ-iZ-DDL" secondAttribute="top" constant="-20" id="86B-tO-1GW"/>
                                             <constraint firstItem="Cst-er-eD4" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="23" id="CSX-5l-JUX"/>
+                                            <constraint firstItem="geQ-iZ-DDL" firstAttribute="top" secondItem="jGs-Ug-xTr" secondAttribute="bottom" constant="20" id="Fi1-uY-u2c"/>
                                             <constraint firstAttribute="trailing" secondItem="M8G-Nn-de4" secondAttribute="trailing" constant="16" id="Gsy-1v-FWo"/>
                                             <constraint firstItem="1da-Fl-GEo" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="14" id="HhP-fG-QJ1"/>
                                             <constraint firstItem="lAO-RJ-tDo" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="OJA-aD-pvL"/>
                                             <constraint firstItem="Cst-er-eD4" firstAttribute="bottom" secondItem="w9H-Jy-4ca" secondAttribute="top" constant="-20" id="PKM-RQ-AzA"/>
                                             <constraint firstAttribute="trailing" secondItem="Cst-er-eD4" secondAttribute="trailing" constant="23" id="RRl-eo-dto"/>
-                                            <constraint firstAttribute="bottom" secondItem="lAO-RJ-tDo" secondAttribute="bottom" constant="10" id="Ugp-lt-OUE"/>
+                                            <constraint firstItem="jGs-Ug-xTr" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="UcJ-1n-ApH"/>
+                                            <constraint firstAttribute="bottom" secondItem="lAO-RJ-tDo" secondAttribute="bottom" constant="20" id="Ugp-lt-OUE"/>
                                             <constraint firstItem="w9H-Jy-4ca" firstAttribute="centerX" secondItem="UJ6-m7-TJp" secondAttribute="centerX" id="Ugt-r6-NJE"/>
                                             <constraint firstAttribute="trailing" secondItem="1da-Fl-GEo" secondAttribute="trailing" constant="14" id="clL-b8-EpE"/>
                                             <constraint firstItem="geQ-iZ-DDL" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="de5-1a-Gcy"/>
-                                            <constraint firstItem="geQ-iZ-DDL" firstAttribute="bottom" secondItem="1da-Fl-GEo" secondAttribute="top" constant="-20" id="k7o-X6-5vd"/>
                                             <constraint firstAttribute="trailing" secondItem="geQ-iZ-DDL" secondAttribute="trailing" constant="16" id="kpy-AS-W8a"/>
                                             <constraint firstAttribute="trailing" secondItem="0HS-MA-jpT" secondAttribute="trailing" constant="16" id="l1q-lm-fTD"/>
                                             <constraint firstItem="1da-Fl-GEo" firstAttribute="bottom" secondItem="lAO-RJ-tDo" secondAttribute="top" constant="-20" id="nhK-oT-FtC"/>
                                             <constraint firstItem="w9H-Jy-4ca" firstAttribute="bottom" secondItem="M8G-Nn-de4" secondAttribute="top" constant="-20" id="o1T-zL-r5H"/>
                                             <constraint firstItem="M8G-Nn-de4" firstAttribute="bottom" secondItem="0HS-MA-jpT" secondAttribute="top" constant="-20" id="oEA-dz-u3J"/>
                                             <constraint firstItem="M8G-Nn-de4" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="oVY-OP-hxZ"/>
+                                            <constraint firstItem="jGs-Ug-xTr" firstAttribute="top" secondItem="0HS-MA-jpT" secondAttribute="bottom" constant="20" id="q2J-et-BgO"/>
                                             <constraint firstItem="0HS-MA-jpT" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="wA7-bp-OtO"/>
+                                            <constraint firstItem="1da-Fl-GEo" firstAttribute="top" secondItem="geQ-iZ-DDL" secondAttribute="bottom" constant="20" id="xMm-k3-cRk"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -264,7 +272,7 @@ Cg
         <image name="organicColor" width="375" height="155.5"/>
         <image name="phone" width="22" height="22"/>
         <namedColor name="bgColor">
-            <color red="0.98000001907348633" green="0.97600001096725464" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98039215686274506" green="0.97647058823529409" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
