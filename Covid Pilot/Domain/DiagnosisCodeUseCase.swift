@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import DP3TSDK
+import SwiftJWT
 
 class DiagnosisCodeUseCase {
     
@@ -22,7 +23,10 @@ class DiagnosisCodeUseCase {
     
     func sendDiagnosisCode(code: String) -> Observable<Bool> {
         .create { [weak self] observer in
-            DP3TTracing.iWasExposed(onset: Date(timeIntervalSinceNow: TimeInterval(Config.timeForKeys)),  authentication: .none, isFakeRequest: self?.isfake ?? false) {  result in
+            let onset =  Date(timeIntervalSinceNow: TimeInterval(Config.timeForKeys))
+            let token = self?.getToken(reportCode: code, onset: onset)
+            DP3TTracing.iWasExposed(onset onset:,
+                                    authentication: .none, isFakeRequest: self?.isfake ?? false) {  result in
                 switch result {
                     case let .failure(error):
 //                        TODO: tratar los distintos casos de error
@@ -36,4 +40,45 @@ class DiagnosisCodeUseCase {
         }
             
     }
+    
+    private func getToken(reportCode: String, onset: Date) -> String {
+
+        
+        let issuedDate = Date()
+        let expirationDate = Date()  // todo: calcular fecha +30
+        
+        let header = Header()
+        let claims = ClaimsStandardJWT()
+        claims.iss = "http://es.gob.radarcovid.android"
+        claims.aud = ["http://es.gob.radarcovid.android"]
+        claims.sub = "iosApp"
+        claims.exp = expirationDate
+        
+        if let url = Bundle.main.url(forResource: "input", withExtension: "txt") {
+            let privateKey: Data? = try? Data(contentsOf: url, options: .alwaysMapped)
+            var myJWT = JWT(header: header, claims: claims)
+            
+            let jwtSigner = JWTSigner.rs256(privateKey: privateKey ?? Data())
+            
+            let signedJWT = try? myJWT.sign(using: jwtSigner)
+            
+            return signedJWT?.description ?? ""
+        }
+        return ""
+    }
+    
+    
+}
+
+struct MyClaims : Claims {
+    public var iss: String?
+    public var sub: String?
+    public var aud: [String]?
+    public var exp: Date?
+    public var nbf: Date?
+    public var iat: Date?
+    public var jti: String?
+    public var tan: String?
+    public var scope: String?
+    public var onSet: String?
 }
