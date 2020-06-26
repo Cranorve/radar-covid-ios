@@ -16,7 +16,7 @@ class MyHealthViewController: UIViewController {
     
     @IBOutlet var codeChars: [UITextField]!
     @IBOutlet weak var codeTextField: UITextField!
-    
+    @IBOutlet weak var sendDiagnosticButton: UIButton!
     
     @IBAction func onBack(_ sender: Any) {
         let alert = Alert.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar") { (UIAlertAction) in
@@ -25,17 +25,21 @@ class MyHealthViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    
     @IBAction func onReportDiagnosis(_ sender: Any) {
-        if let codigoString = codeTextField.text {
-            diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
-                onNext:{ [weak self] reportedCodeBool in
-                    self?.navigateIf(reported: reportedCodeBool)
-                }, onError: {  [weak self] error in
-                    print("Error reporting diagnosis \(error)")
-                    self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"), animated: true)
+        var codigoString = ""
+        self.codeChars.forEach { codigoString += $0.text ?? "" }
+        router?.route(to: Routes.MyHealthReported, from: self)
 
-            }).disposed(by: disposeBag)
-        }
+        diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
+            onNext:{ [weak self] reportedCodeBool in
+                self?.navigateIf(reported: reportedCodeBool)
+            }, onError: {  [weak self] error in
+                print("Error reporting diagnosis \(error)")
+                self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"), animated: true)
+
+        }).disposed(by: disposeBag)
+        
     }
     
     var router: AppRouter?
@@ -43,21 +47,17 @@ class MyHealthViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //hide kayboard in case is shown
         self.view.frame.origin.y = 0
-        codeTextField.text = ""
     }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.sendDiagnosticButton.isEnabled = false
         
         self.codeChars.forEach { (char) in
             char.text = "\u{200B}"
-            char.layer.borderWidth = 2
-//            char.layer.borderColor = UIColor(displayP3Red: 0.240, green: 0.240, blue: 0.240, alpha: 0.240).cgColor
-            char.layer.borderColor = UIColor.red.cgColor
-//            char.layer.cornerRadius = 2
+            char.layer.cornerRadius = 5
             char.addTarget(self, action: #selector(MyHealthViewController.textFieldDidChange(_:)), for: .editingChanged)
 
         }
@@ -73,7 +73,6 @@ class MyHealthViewController: UIViewController {
     }
   
     @objc func textFieldDidChange(_ textField: UITextField) {
-        print("textFieldDidChange", textField.tag, textField.text)
         let actualPos = textField.tag
         
         // if the initial value is an empty string do nothing
@@ -87,15 +86,17 @@ class MyHealthViewController: UIViewController {
                 let prev = codeChars[actualPos - 1]
                 prev.becomeFirstResponder()
                 prev.text = "\u{200B}"
+                textField.text = "\u{200B}"
            }
         }
         
         // detect new input and pass to the next one
-        else if (actualPos < self.codeChars.count) {
+        else if (actualPos < self.codeChars.count - 1) {
             let next = codeChars[actualPos + 1]
             next.becomeFirstResponder();
         }
        
+        self.sendDiagnosticButton.isEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
     }
     
     private func navigateIf(reported: Bool) {

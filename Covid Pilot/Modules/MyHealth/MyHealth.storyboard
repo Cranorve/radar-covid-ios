@@ -34,13 +34,13 @@
                                 <rect key="frame" x="0.0" y="-1" width="414" height="155.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MI DIAGNÓSTICO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Km-Li-R8Y">
-                                <rect key="frame" x="16" y="144" width="101.5" height="15.5"/>
+                                <rect key="frame" x="16" y="144" width="99" height="14"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                 <color key="textColor" red="0.5764058232" green="0.57650798560000005" blue="0.57639932630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ub7-Zo-Om5">
-                                <rect key="frame" x="16" y="167.5" width="382" height="70.5"/>
+                                <rect key="frame" x="16" y="166" width="382" height="65.5"/>
                                 <string key="text">Envía tu diagnóstico 
 COVID positivo</string>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
@@ -48,7 +48,7 @@ COVID positivo</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enviando tu diagnóstico anónimo Covid-19, estás contribuyendo a detener la propagación del virus. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CSp-Na-Mxg">
-                                <rect key="frame" x="16" y="262.5" width="382" height="71"/>
+                                <rect key="frame" x="16" y="256" width="358" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="nII-BK-HGK"/>
                                 </constraints>
@@ -57,45 +57,40 @@ COVID positivo</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracias por ayudarnos a cuidar a los demás." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ySm-4q-hhL">
-                                <rect key="frame" x="16" y="353.5" width="382" height="20.5"/>
+                                <rect key="frame" x="16" y="347" width="358" height="19"/>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu información está segura y será tratada siempre anonimamente " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YOD-Rc-mbN">
-                                <rect key="frame" x="16" y="394" width="382" height="40.5"/>
+                                <rect key="frame" x="16" y="386" width="358" height="37.5"/>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="codeInputFrame" translatesAutoresizingMaskIntoConstraints="NO" id="c5d-kc-7Ws">
-                                <rect key="frame" x="194" y="450.5" width="200" height="161"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="codeInputFrame" translatesAutoresizingMaskIntoConstraints="NO" id="c5d-kc-7Ws">
+                                <rect key="frame" x="194" y="439.5" width="200" height="161"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Código de diagnóstico" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4gj-0b-5G9">
-                                <rect key="frame" x="20" y="463" width="244" height="20.5"/>
+                                <rect key="frame" x="20" y="452" width="244" height="19"/>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduce el código que te han enviado" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lr1-Za-iuV">
-                                <rect key="frame" x="16" y="537" width="204" height="40.5"/>
+                                <rect key="frame" x="16" y="491" width="204" height="37.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yb-R6-MLg">
-                                <rect key="frame" x="16" y="604.5" width="382" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ej. ABC1234567" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LVk-tn-nfe">
-                                <rect key="frame" x="16" y="646.5" width="98.5" height="16.5"/>
+                                <rect key="frame" x="16" y="664.5" width="94.5" height="15.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Italic" family="Muli" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yjq-yA-SHq">
-                                <rect key="frame" x="16" y="796" width="382" height="56"/>
+                                <rect key="frame" x="16" y="720" width="382" height="56"/>
                                 <color key="backgroundColor" red="0.46558642389999999" green="0.56896358729999996" blue="0.89667195079999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="dys-3C-WpD"/>
@@ -122,82 +117,118 @@ COVID positivo</string>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x7j-MD-yO9">
-                                <rect key="frame" x="16" y="671" width="382" height="62"/>
+                                <rect key="frame" x="16" y="580.5" width="382" height="64"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="YCb-R8-WBP">
-                                        <rect key="frame" x="19" y="14" width="344" height="34"/>
+                                        <rect key="frame" x="19" y="14.5" width="344" height="35"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HHi-si-IWt">
-                                                <rect key="frame" x="0.0" y="0.0" width="26" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HHi-si-IWt">
+                                                <rect key="frame" x="0.0" y="0.0" width="26" height="35"/>
                                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="R3s-hf-Dfw"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="405-qe-SRW">
-                                                <rect key="frame" x="29" y="0.0" width="26" height="34"/>
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="405-qe-SRW">
+                                                <rect key="frame" x="29" y="0.0" width="26" height="35"/>
                                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="GqO-3s-TJH"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qUu-zT-uLd">
-                                                <rect key="frame" x="58" y="0.0" width="26" height="34"/>
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qUu-zT-uLd">
+                                                <rect key="frame" x="58" y="0.0" width="26" height="35"/>
                                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="vah-jx-P6i"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8UP-df-oki">
-                                                <rect key="frame" x="87" y="0.0" width="25.5" height="34"/>
+                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8UP-df-oki">
+                                                <rect key="frame" x="87" y="0.0" width="25.5" height="35"/>
                                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="GBg-rK-baC"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEz-ac-pla">
-                                                <rect key="frame" x="115.5" y="0.0" width="26" height="34"/>
+                                            <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CEz-ac-pla">
+                                                <rect key="frame" x="115.5" y="0.0" width="26" height="35"/>
                                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="CKG-wx-b4U"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WGi-3Q-gO5">
-                                                <rect key="frame" x="144.5" y="0.0" width="26" height="34"/>
+                                            <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WGi-3Q-gO5">
+                                                <rect key="frame" x="144.5" y="0.0" width="26" height="35"/>
                                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="7Bk-82-Utq"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qjq-L0-Gee">
-                                                <rect key="frame" x="173.5" y="0.0" width="26" height="34"/>
+                                            <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qjq-L0-Gee">
+                                                <rect key="frame" x="173.5" y="0.0" width="26" height="35"/>
                                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="Pfb-nt-mpS"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xUn-qk-J9W">
-                                                <rect key="frame" x="202.5" y="0.0" width="26" height="34"/>
+                                            <textField opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xUn-qk-J9W">
+                                                <rect key="frame" x="202.5" y="0.0" width="26" height="35"/>
                                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="0bL-eK-2Uy"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Zb-gQ-pUv">
-                                                <rect key="frame" x="231.5" y="0.0" width="25.5" height="34"/>
+                                            <textField opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Zb-gQ-pUv">
+                                                <rect key="frame" x="231.5" y="0.0" width="25.5" height="35"/>
                                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="qFR-b3-yxI"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rfC-vm-jHz">
-                                                <rect key="frame" x="260" y="0.0" width="26" height="34"/>
+                                            <textField opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rfC-vm-jHz">
+                                                <rect key="frame" x="260" y="0.0" width="26" height="35"/>
                                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="Jdf-ZI-L9P"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="488-Js-aiy">
-                                                <rect key="frame" x="289" y="0.0" width="26" height="34"/>
+                                            <textField opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="488-Js-aiy">
+                                                <rect key="frame" x="289" y="0.0" width="26" height="35"/>
                                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="0Vc-rY-A01"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="56p-Dq-6u7">
-                                                <rect key="frame" x="318" y="0.0" width="26" height="34"/>
+                                            <textField opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="56p-Dq-6u7">
+                                                <rect key="frame" x="318" y="0.0" width="26" height="35"/>
                                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="pWh-r6-h4m"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -212,7 +243,7 @@ COVID positivo</string>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
+                                        <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -222,47 +253,46 @@ COVID positivo</string>
                             <constraint firstItem="CSp-Na-Mxg" firstAttribute="top" secondItem="Ub7-Zo-Om5" secondAttribute="bottom" constant="24.5" id="135-3b-dOW"/>
                             <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="j1B-pg-cG8" secondAttribute="trailing" id="2bP-OY-SeE"/>
                             <constraint firstItem="Ub7-Zo-Om5" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="83B-GS-Pxu"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="x7j-MD-yO9" secondAttribute="trailing" constant="16" id="ELf-Fh-yHh"/>
                             <constraint firstItem="lr1-Za-iuV" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="HJd-aO-gCz"/>
                             <constraint firstItem="4gj-0b-5G9" firstAttribute="top" secondItem="YOD-Rc-mbN" secondAttribute="bottom" constant="28.5" id="HSm-Vb-DyD"/>
                             <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="Yjq-yA-SHq" secondAttribute="trailing" constant="16" id="I4P-P3-Tma"/>
-                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="2yb-R6-MLg" secondAttribute="trailing" constant="16" id="JsJ-9M-f2s"/>
                             <constraint firstItem="ySm-4q-hhL" firstAttribute="top" secondItem="CSp-Na-Mxg" secondAttribute="bottom" constant="20" id="Mu1-eT-tAc"/>
                             <constraint firstItem="6r9-h6-6CB" firstAttribute="top" secondItem="599-Qh-McL" secondAttribute="top" constant="16" id="NRV-mM-SyI"/>
                             <constraint firstItem="YOD-Rc-mbN" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="New-zk-XOG"/>
                             <constraint firstItem="Yjq-yA-SHq" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="NuJ-jN-kaD"/>
                             <constraint firstItem="3Km-Li-R8Y" firstAttribute="top" secondItem="599-Qh-McL" secondAttribute="top" constant="100" id="RA0-nx-o1J"/>
-                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="ySm-4q-hhL" secondAttribute="trailing" constant="16" id="Udv-Rb-IWO"/>
+                            <constraint firstItem="LVk-tn-nfe" firstAttribute="top" secondItem="x7j-MD-yO9" secondAttribute="bottom" constant="20" id="U3a-wL-6bf"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="ySm-4q-hhL" secondAttribute="trailing" constant="40" id="Udv-Rb-IWO"/>
                             <constraint firstItem="6r9-h6-6CB" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="V4Q-cf-bJ0"/>
-                            <constraint firstItem="2yb-R6-MLg" firstAttribute="top" secondItem="c5d-kc-7Ws" secondAttribute="bottom" constant="-7" id="Vha-Bh-OTo"/>
                             <constraint firstItem="ySm-4q-hhL" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="VuQ-1l-idv"/>
                             <constraint firstItem="CSp-Na-Mxg" firstAttribute="leading" secondItem="Ub7-Zo-Om5" secondAttribute="leading" id="ZOL-zh-Pfq"/>
                             <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="Ub7-Zo-Om5" secondAttribute="trailing" constant="16" id="auU-xv-pss"/>
+                            <constraint firstItem="x7j-MD-yO9" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="cjV-dD-TnC"/>
                             <constraint firstItem="c5d-kc-7Ws" firstAttribute="top" secondItem="YOD-Rc-mbN" secondAttribute="bottom" constant="16" id="dL1-x8-T1o"/>
                             <constraint firstItem="Ub7-Zo-Om5" firstAttribute="top" secondItem="3Km-Li-R8Y" secondAttribute="bottom" constant="8" id="dOr-hp-wWN"/>
                             <constraint firstItem="4gj-0b-5G9" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="20" id="eoc-Qd-PFG"/>
-                            <constraint firstItem="lr1-Za-iuV" firstAttribute="top" secondItem="4gj-0b-5G9" secondAttribute="bottom" constant="53.5" id="evS-Q1-lle"/>
+                            <constraint firstItem="lr1-Za-iuV" firstAttribute="top" secondItem="4gj-0b-5G9" secondAttribute="bottom" constant="20" id="evS-Q1-lle"/>
                             <constraint firstItem="YOD-Rc-mbN" firstAttribute="top" secondItem="ySm-4q-hhL" secondAttribute="bottom" constant="20" id="gE1-xV-Rhc"/>
+                            <constraint firstItem="x7j-MD-yO9" firstAttribute="top" secondItem="c5d-kc-7Ws" secondAttribute="bottom" constant="-20" id="gze-c1-dtd"/>
                             <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="x7j-MD-yO9" secondAttribute="trailing" constant="16" id="hlN-ZV-ah7"/>
                             <constraint firstItem="c5d-kc-7Ws" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="194" id="iup-xM-Pwz"/>
                             <constraint firstItem="LVk-tn-nfe" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="lFM-AO-YT8"/>
-                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="CSp-Na-Mxg" secondAttribute="trailing" constant="16" id="lp3-OR-MVO"/>
-                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="YOD-Rc-mbN" secondAttribute="trailing" constant="16" id="mHv-X3-Na9"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="CSp-Na-Mxg" secondAttribute="trailing" constant="40" id="lp3-OR-MVO"/>
+                            <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="YOD-Rc-mbN" secondAttribute="trailing" constant="40" id="mHv-X3-Na9"/>
                             <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="c5d-kc-7Ws" secondAttribute="trailing" constant="20" id="mIv-Zi-OQG"/>
-                            <constraint firstItem="2yb-R6-MLg" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="mdR-h7-8m5"/>
-                            <constraint firstItem="x7j-MD-yO9" firstAttribute="top" secondItem="LVk-tn-nfe" secondAttribute="bottom" constant="8" id="nNr-CI-vzz"/>
                             <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="4gj-0b-5G9" secondAttribute="trailing" constant="150" id="qCJ-T2-jAy"/>
                             <constraint firstItem="3Km-Li-R8Y" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="rTA-Za-tcb"/>
+                            <constraint firstItem="Yjq-yA-SHq" firstAttribute="top" secondItem="LVk-tn-nfe" secondAttribute="bottom" constant="40" id="tIk-E7-PjG"/>
                             <constraint firstItem="j1B-pg-cG8" firstAttribute="top" secondItem="599-Qh-McL" secondAttribute="top" constant="-45" id="tMc-zY-ofj"/>
                             <constraint firstItem="x7j-MD-yO9" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="16" id="tiy-jK-z8a"/>
                             <constraint firstItem="j1B-pg-cG8" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" id="uB4-Iw-qf1"/>
-                            <constraint firstItem="599-Qh-McL" firstAttribute="bottom" secondItem="Yjq-yA-SHq" secondAttribute="bottom" constant="10" id="uUc-zQ-WTI"/>
-                            <constraint firstItem="LVk-tn-nfe" firstAttribute="top" secondItem="2yb-R6-MLg" secondAttribute="bottom" constant="8" id="ui9-Ro-zoC"/>
                             <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="lr1-Za-iuV" secondAttribute="trailing" constant="194" id="vMV-z9-9ca"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="599-Qh-McL"/>
                     </view>
                     <connections>
-                        <outlet property="codeTextField" destination="2yb-R6-MLg" id="7VQ-42-Aip"/>
+                        <outlet property="sendDiagnosticButton" destination="Yjq-yA-SHq" id="bpb-x4-6wV"/>
                         <outletCollection property="codeChars" destination="HHi-si-IWt" collectionClass="NSMutableArray" id="L0C-LO-bxv"/>
                         <outletCollection property="codeChars" destination="405-qe-SRW" collectionClass="NSMutableArray" id="E8q-Y2-K3U"/>
                         <outletCollection property="codeChars" destination="qUu-zT-uLd" collectionClass="NSMutableArray" id="8Jf-Qd-lhD"/>
