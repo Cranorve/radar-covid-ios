@@ -22,7 +22,7 @@
         <!--Exposition View Controller-->
         <scene sceneID="pip-Ym-Sat">
             <objects>
-                <viewController storyboardIdentifier="ExpositionViewController" id="uNG-oM-41S" userLabel="Exposition View Controller" customClass="ExpositionViewController" customModule="Covid_Pilot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExpositionViewController" id="uNG-oM-41S" userLabel="Exposition View Controller" customClass="ExpositionViewController" customModule="radar_COVID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZY2-Fu-bfk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +44,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mz4-S1-tfj">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1117"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1H-mT-hEv" userLabel="ExpositionBGView" customClass="BackgroundView" customModule="Covid_Pilot" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1H-mT-hEv" userLabel="ExpositionBGView" customClass="BackgroundView" customModule="radar_COVID" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="8" width="374" height="153"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Tu exposición es baja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oRi-0Z-J6b">
