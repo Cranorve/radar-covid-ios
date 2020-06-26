@@ -12,6 +12,7 @@ class SelectViewController: UIViewController, QuestionController, UICollectionVi
 
     var question: Question?
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -21,6 +22,9 @@ class SelectViewController: UIViewController, QuestionController, UICollectionVi
     }
     
     override func viewDidLoad() {
+        if self.question?._id == 16 {
+            self.topConstraint.constant = 260
+        }
         super.viewDidLoad()
         collectionView.delegate = self
     }
