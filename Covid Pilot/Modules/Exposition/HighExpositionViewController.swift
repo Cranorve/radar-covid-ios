@@ -12,6 +12,9 @@ class HighExpositionViewController: UIViewController {
     
     private let bgImageRed = UIImage(named: "GradientBackgroundRed")
     
+    @IBOutlet weak var phoneView: BackgroundView!
+    @IBOutlet weak var timeTableLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var moreInfoView: UIView!
     @IBOutlet weak var expositionBGView : BackgroundView!
     
@@ -24,6 +27,16 @@ class HighExpositionViewController: UIViewController {
         
         moreInfoView.isUserInteractionEnabled = true
         moreInfoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userDidTapLabel(tapGestureRecognizer:))))
+        phoneView.isUserInteractionEnabled = true
+        
+        phoneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCallTap(tapGestureRecognizer:))))
+        phoneView.image = UIImage(named: "WhiteCard")
+        phoneLabel.text = Config.contactNumber
+        timeTableLabel.text = Config.timeTable
+    }
+    
+    @objc func onCallTap(tapGestureRecognizer: UITapGestureRecognizer) {
+        open(phone: Config.contactNumber)
     }
     
     @objc func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
