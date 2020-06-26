@@ -29,11 +29,15 @@ class RadarStatusUseCase {
                     try DP3TTracing.startTracing { error in
                         if let error =  error {
                             observer.onError("Error starting tracing. : \(error)")
+
+                        }else{
+                            self?.preferencesRepository.setTracing(active: active)
+                            observer.onNext(active)
+                            observer.onCompleted()
+
                         }
                     }
-                    self?.preferencesRepository.setTracing(active: active)
-                    observer.onNext(active)
-                    observer.onCompleted()
+                   
                 } catch {
                     observer.onError("Error starting tracing. : \(error)")
                 }
@@ -42,11 +46,13 @@ class RadarStatusUseCase {
                 DP3TTracing.stopTracing { error in
                     if let error =  error {
                         observer.onError("Error starting tracing. : \(error)")
+                    }else{
+                        self?.preferencesRepository.setTracing(active: active)
+                        observer.onNext(active)
+                        observer.onCompleted()
                     }
                 }
-                self?.preferencesRepository.setTracing(active: active)
-                observer.onNext(active)
-                observer.onCompleted()
+                
             }
             return Disposables.create()
         }

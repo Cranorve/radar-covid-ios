@@ -19,7 +19,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FinishPollViewController" customModule="Covid_Pilot" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FinishPollViewController" customModule="radar_COVID" customModuleProvider="target">
             <connections>
                 <outlet property="emailLabel" destination="p6e-AX-MY6" id="oh4-EX-CHY"/>
                 <outlet property="phoneNumberLabel" destination="UCL-we-dUf" id="0NK-ep-0sN"/>
@@ -74,7 +74,7 @@ Si es así, escríbenos al siguiente correo electrónico para poder participar. 
                         <constraint firstItem="Hpg-aw-X39" firstAttribute="bottom" secondItem="p6e-AX-MY6" secondAttribute="top" constant="-16" id="zWa-Bg-E1z"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nea-G6-sbV" customClass="BackgroundView" customModule="Covid_Pilot" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nea-G6-sbV" customClass="BackgroundView" customModule="radar_COVID" customModuleProvider="target">
                     <rect key="frame" x="14" y="438" width="347" height="103.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="bzO-7o-4Uf">

@@ -22,7 +22,7 @@
         <!--High Exposition View Controller-->
         <scene sceneID="XLG-Az-Juh">
             <objects>
-                <viewController storyboardIdentifier="HighExpositionViewController" id="Q7K-4K-XeD" customClass="HighExpositionViewController" customModule="Covid_Pilot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HighExpositionViewController" id="Q7K-4K-XeD" customClass="HighExpositionViewController" customModule="radar_COVID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QtI-Z8-cSw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,7 +122,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBR-5L-ywI" userLabel="ExpositionBGView" customClass="BackgroundView" customModule="Covid_Pilot" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBR-5L-ywI" userLabel="ExpositionBGView" customClass="BackgroundView" customModule="radar_COVID" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="7.9999999999999858" width="374" height="155.66666666666663"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="Tu exposición es alta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7G0-Fd-EDb">
@@ -166,7 +166,7 @@
                                                     <constraint firstItem="4DN-pv-kcP" firstAttribute="top" secondItem="UBR-5L-ywI" secondAttribute="top" constant="15" id="vWJ-ch-hAQ"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Por favor, aíslate durante 14 días y presta atención a posíbles sintomas: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aoZ-sh-yH7">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Por favor, aíslate durante 14 días y llama al siguiente teléfono:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aoZ-sh-yH7">
                                                 <rect key="frame" x="20" y="273.66666666666663" width="374" height="65"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="65" id="amu-zK-oiN"/>
