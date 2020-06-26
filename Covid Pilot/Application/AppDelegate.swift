@@ -10,6 +10,7 @@ import DP3TSDK
 import UIKit
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate, ActivityDelegate {
 
     var window: UIWindow?
