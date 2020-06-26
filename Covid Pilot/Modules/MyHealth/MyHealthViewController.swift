@@ -38,6 +38,10 @@ class MyHealthViewController: UIViewController {
     
     var router: AppRouter?
     
+    override func viewWillAppear(_ animated: Bool) {
+         codeTextField.text = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

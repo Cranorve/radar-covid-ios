@@ -24,7 +24,7 @@
         <!--My Health View Controller-->
         <scene sceneID="dd0-sZ-C0u">
             <objects>
-                <viewController storyboardIdentifier="MyHealthViewController" id="vmx-lJ-Xhc" customClass="MyHealthViewController" customModule="Covid_Pilot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyHealthViewController" id="vmx-lJ-Xhc" customClass="MyHealthViewController" customModule="radar_COVID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N4X-xp-aN3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
