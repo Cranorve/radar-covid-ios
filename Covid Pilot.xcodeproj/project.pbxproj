@@ -116,7 +116,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		39443286248939F000FF0217 /* radar COVID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "radar COVID.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39443286248939F000FF0217 /* Radar COVID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Radar COVID.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39443289248939F000FF0217 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3944328B248939F000FF0217 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		39443292248939F500FF0217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 		39443287248939F000FF0217 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				39443286248939F000FF0217 /* radar COVID.app */,
+				39443286248939F000FF0217 /* Radar COVID.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -646,7 +646,7 @@
 				39C3FEC52497CE0800D1A13E /* DP3TSDK */,
 			);
 			productName = "Covid Pilot";
-			productReference = 39443286248939F000FF0217 /* radar COVID.app */;
+			productReference = 39443286248939F000FF0217 /* Radar COVID.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -952,7 +952,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = es.gob.radarcovid;
-				PRODUCT_NAME = "radar COVID";
+				PRODUCT_NAME = "Radar COVID";
 				PROVISIONING_PROFILE_SPECIFIER = RadarCovidDevelopmentExposure;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -973,7 +973,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = es.gob.radarcovid;
-				PRODUCT_NAME = "radar COVID";
+				PRODUCT_NAME = "Radar COVID";
 				PROVISIONING_PROFILE_SPECIFIER = RadarCovidAdHocExposure;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1050,7 +1050,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = es.gob.radarcovid;
-				PRODUCT_NAME = "radar COVID";
+				PRODUCT_NAME = "Radar COVID";
 				PROVISIONING_PROFILE_SPECIFIER = RadarCovidAdHocExposure;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1131,7 +1131,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = es.gob.radarcovid;
-				PRODUCT_NAME = "radar COVID";
+				PRODUCT_NAME = "Radar COVID";
 				PROVISIONING_PROFILE_SPECIFIER = RadarCovidDevelopmentExposure;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
