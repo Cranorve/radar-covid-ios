@@ -19,7 +19,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProximityViewController" customModule="Covid_Pilot" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProximityViewController" customModule="Radar_COVID" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,7 +33,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="672"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l55-Aw-9eh">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="564"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="561.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUN-Rp-dez">
                                     <rect key="frame" x="207" y="0.0" width="207" height="206.5"/>
@@ -60,13 +60,13 @@
                                     <viewLayoutGuide key="safeArea" id="QFz-FT-HWn"/>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cómo funciona" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkV-ML-gs8">
-                                    <rect key="frame" x="16" y="145" width="382" height="35.5"/>
+                                    <rect key="frame" x="16" y="145" width="382" height="33"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vy1-9t-Dpc">
-                                    <rect key="frame" x="15" y="190.5" width="383" height="373.5"/>
+                                    <rect key="frame" x="15" y="188" width="383" height="373.5"/>
                                     <attributedString key="attributedText">
                                         <fragment content="01">
                                             <attributes>
@@ -125,6 +125,7 @@ En caso de haber estado expuesto o reportar un diagnóstico positivo sigue las i
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                             </subviews>
+                            <color key="backgroundColor" name="bgColor"/>
                             <constraints>
                                 <constraint firstItem="OkV-ML-gs8" firstAttribute="leading" secondItem="l55-Aw-9eh" secondAttribute="leading" constant="16" id="0Z6-eI-ccd"/>
                                 <constraint firstAttribute="bottom" secondItem="Vy1-9t-Dpc" secondAttribute="bottom" id="42R-ld-EqK"/>
@@ -198,6 +199,7 @@ En caso de haber estado expuesto o reportar un diagnóstico positivo sigue las i
                             </connections>
                         </button>
                     </subviews>
+                    <color key="backgroundColor" name="bgColor"/>
                     <constraints>
                         <constraint firstItem="Gh7-C2-OVe" firstAttribute="leading" secondItem="QJN-UP-OSP" secondAttribute="leading" constant="16" id="5rg-wX-fXR"/>
                         <constraint firstItem="VQO-n1-ENt" firstAttribute="leading" secondItem="QJN-UP-OSP" secondAttribute="leading" constant="16" id="6sc-dt-eyA"/>

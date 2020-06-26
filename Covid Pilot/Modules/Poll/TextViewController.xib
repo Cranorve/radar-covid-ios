@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +13,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextViewController" customModule="Covid_Pilot" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextViewController" customModule="Radar_COVID" customModuleProvider="target">
             <connections>
                 <outlet property="textView" destination="4YJ-cc-c4u" id="Hec-z1-hDL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -44,6 +45,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <color key="backgroundColor" name="bgColor"/>
             <constraints>
                 <constraint firstItem="BXR-Rj-HCN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="4bi-on-SJ8"/>
                 <constraint firstItem="BXR-Rj-HCN" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kcS-M3-WCm"/>
@@ -54,4 +56,9 @@
             <point key="canvasLocation" x="141" y="137"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="bgColor">
+            <color red="0.98000001907348633" green="0.97600001096725464" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

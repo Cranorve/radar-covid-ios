@@ -39,7 +39,9 @@ class MyHealthViewController: UIViewController {
     var router: AppRouter?
     
     override func viewWillAppear(_ animated: Bool) {
-         codeTextField.text = ""
+        //hide kayboard in case is shown
+        self.view.frame.origin.y = 0
+        codeTextField.text = ""
     }
     
     override func viewDidLoad() {

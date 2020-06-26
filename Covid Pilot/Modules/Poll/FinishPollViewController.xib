@@ -61,6 +61,7 @@ Si es así, escríbenos al siguiente correo electrónico para poder participar. 
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <color key="backgroundColor" name="bgColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="jM1-HZ-hLD" secondAttribute="trailing" id="69s-No-WeQ"/>
                         <constraint firstAttribute="trailing" secondItem="p6e-AX-MY6" secondAttribute="trailing" id="8ca-m3-bjf"/>

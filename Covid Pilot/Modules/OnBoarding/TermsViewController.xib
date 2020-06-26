@@ -68,6 +68,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     </constraints>
                                 </tableView>
                             </subviews>
+                            <color key="backgroundColor" name="bgColor"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="6Gf-RK-ATp" secondAttribute="trailing" constant="16" id="33c-qY-fIi"/>
                                 <constraint firstItem="6Gf-RK-ATp" firstAttribute="top" secondItem="WCp-dS-9Lh" secondAttribute="top" constant="40" id="Hfl-Ev-ijG"/>

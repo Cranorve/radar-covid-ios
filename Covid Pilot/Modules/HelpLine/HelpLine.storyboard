@@ -192,6 +192,7 @@ Cg
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <color key="backgroundColor" name="bgColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="lAO-RJ-tDo" secondAttribute="trailing" constant="16" id="0wG-Aw-1eJ"/>
                                             <constraint firstItem="Cst-er-eD4" firstAttribute="top" secondItem="UJ6-m7-TJp" secondAttribute="top" constant="100" id="6aj-WW-r0v"/>
