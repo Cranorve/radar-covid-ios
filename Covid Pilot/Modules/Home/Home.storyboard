@@ -3,6 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -120,7 +121,7 @@ Cuídate y cuida a los demás.</string>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.92528989779874216" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="bgColor"/>
                         <constraints>
                             <constraint firstItem="6hz-zu-Mhb" firstAttribute="top" secondItem="6NQ-cJ-mH8" secondAttribute="bottom" constant="15" id="1EU-an-LhB"/>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="Ker-eU-Kvi" secondAttribute="trailing" id="26m-Vh-9Sc"/>
@@ -160,5 +161,8 @@ Cuídate y cuida a los demás.</string>
         <image name="arrowRight" width="25.666666030883789" height="17"/>
         <image name="circle" width="350.66665649414062" height="330.66665649414062"/>
         <image name="imageHome" width="238" height="177"/>
+        <namedColor name="bgColor">
+            <color red="0.98000001907348633" green="0.97600001096725464" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
