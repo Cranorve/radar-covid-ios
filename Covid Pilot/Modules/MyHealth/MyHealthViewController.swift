@@ -29,7 +29,6 @@ class MyHealthViewController: UIViewController {
     @IBAction func onReportDiagnosis(_ sender: Any) {
         var codigoString = ""
         self.codeChars.forEach { codigoString += $0.text ?? "" }
-        router?.route(to: Routes.MyHealthReported, from: self)
 
         diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
             onNext:{ [weak self] reportedCodeBool in
