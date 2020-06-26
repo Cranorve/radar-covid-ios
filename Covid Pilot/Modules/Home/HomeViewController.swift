@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
                 
             }, onError: {  [weak self] error in
                 debugPrint("Error: \(error)")
-                self?.radarSwitch.isOn = !active
+                self?.radarSwitch.isOn = false
         }).disposed(by: disposeBag)
     }
     
@@ -74,6 +74,8 @@ class HomeViewController: UIViewController {
             router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo)
         }
     }
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()

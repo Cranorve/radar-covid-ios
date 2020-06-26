@@ -97,7 +97,7 @@
                                                 <rect key="frame" x="16" y="362.33333333333331" width="343" height="55.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwU-rQ-MAh">
-                                                        <rect key="frame" x="0.0" y="36.666666666666686" width="343" height="18.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="18.666666666666668"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Consulta las ">
                                                                 <attributes>
@@ -120,7 +120,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fH-8T-cla">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="18.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="36.666666666666686" width="343" height="18.666666666666671"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Consulta las ">
                                                                 <attributes>
@@ -144,13 +144,13 @@
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="8fH-8T-cla" secondAttribute="trailing" id="2cR-CF-ybn"/>
-                                                    <constraint firstItem="XwU-rQ-MAh" firstAttribute="top" secondItem="8fH-8T-cla" secondAttribute="bottom" constant="18" id="5DV-DD-Qkn"/>
-                                                    <constraint firstAttribute="bottom" secondItem="XwU-rQ-MAh" secondAttribute="bottom" id="KPs-7m-5dU"/>
+                                                    <constraint firstItem="XwU-rQ-MAh" firstAttribute="top" secondItem="7aC-xr-L9s" secondAttribute="top" id="8xx-qz-G4E"/>
                                                     <constraint firstAttribute="trailing" secondItem="XwU-rQ-MAh" secondAttribute="trailing" id="Kfo-bb-hnu"/>
                                                     <constraint firstItem="XwU-rQ-MAh" firstAttribute="leading" secondItem="7aC-xr-L9s" secondAttribute="leading" id="Lac-1f-QLh"/>
-                                                    <constraint firstItem="8fH-8T-cla" firstAttribute="leading" secondItem="7aC-xr-L9s" secondAttribute="leading" id="hme-8s-HEY"/>
-                                                    <constraint firstItem="8fH-8T-cla" firstAttribute="top" secondItem="7aC-xr-L9s" secondAttribute="top" id="zh3-g5-1Ri"/>
+                                                    <constraint firstItem="8fH-8T-cla" firstAttribute="top" secondItem="XwU-rQ-MAh" secondAttribute="bottom" constant="18" id="QXy-uR-QeA"/>
+                                                    <constraint firstAttribute="bottom" secondItem="8fH-8T-cla" secondAttribute="bottom" id="g8K-jQ-fcg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8fH-8T-cla" secondAttribute="trailing" id="hxn-MI-76x"/>
+                                                    <constraint firstItem="8fH-8T-cla" firstAttribute="leading" secondItem="7aC-xr-L9s" secondAttribute="leading" id="pP9-mh-hUq"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CO6-3S-7mQ">
