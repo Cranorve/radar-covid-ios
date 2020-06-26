@@ -9,22 +9,50 @@
 import Foundation
 import DP3TSDK
 
+enum Endpoits {
+    case pre
+    case pro
+    
+    var config: String {
+        switch self {
+        case .pre: return "https://d3d0clxg4q92wk.cloudfront.net/configuration"
+        case .pro: return "https://dqarr2dc0prei.cloudfront.net/configuration"
+        }
+    }
+    var poll: String {
+        switch self {
+        case .pre: return "https://d3d0clxg4q92wk.cloudfront.net/questionnaire"
+        case .pro: return "https://dqarr2dc0prei.cloudfront.net/questionnaire"
+        }
+    }
+    var dpppt: String {
+        switch self {
+        case .pre: return "https://d3d0clxg4q92wk.cloudfront.net/dp3t"
+        case .pro: return "https://dqarr2dc0prei.cloudfront.net/dp3t"
+        }
+    }
+}
+
 struct Config {
-    #if RELEASE
-        //PRO
-        static let configUrl: String = "https://dqarr2dc0prei.cloudfront.net/configuration"
-        static let pollUrl : String = "https://dqarr2dc0prei.cloudfront.net/questionnaire"
-        static let dppptUrl : String = "https://dqarr2dc0prei.cloudfront.net/dp3t"
-        static let verificationUrl : String = "https://dqarr2dc0prei.cloudfront.net/verification"
-    #else
-        //PRE
-        static let configUrl: String = "https://d3d0clxg4q92wk.cloudfront.net/configuration"
-        static let pollUrl : String = "https://d3d0clxg4q92wk.cloudfront.net/questionnaire"
-        static let dppptUrl : String = "https://d3d0clxg4q92wk.cloudfront.net/dp3t"
-        static let verificationUrl : String = "https://d3d0clxg4q92wk.cloudfront.net/verification"
+    
+    #if DEBUG_PRE
+        static let debug = true
+        static let endpoints: Endpoits = .pre
+        static let dp3tMode: ApplicationDescriptor.Mode = .production
+    #elseif DEBUG_PRO
+        static let debug = true
+        static let endpoints: Endpoits = .pre
+        static let dp3tMode: ApplicationDescriptor.Mode = .production
+    #elseif RELEASE_PRE
+        static let debug = true
+        static let endpoints: Endpoits = .pre
+        static let dp3tMode: ApplicationDescriptor.Mode = .production
+    #elseif RELEASE_PRO
+        static let debug = true
+        static let endpoints: Endpoits = .pre
+        static let dp3tMode: ApplicationDescriptor.Mode = .production
     #endif
     
-    static let dp3tMode: ApplicationDescriptor.Mode = .production
     
     // Share keys of last 14 days
     static let timeForKeys = -60 * 60 * 24 * 14

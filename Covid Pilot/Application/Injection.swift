@@ -26,19 +26,13 @@ class Injection {
         
         container.register(SwaggerClientAPI.self, name: Endpoint.POLL.rawValue) { r in
             let swaggerApi = SwaggerClientAPI()
-            swaggerApi.basePath = Config.pollUrl;
+            swaggerApi.basePath = Config.endpoints.poll;
             return swaggerApi;
         }.inObjectScope(.container)
         
         container.register(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue) { r in
             let swaggerApi = SwaggerClientAPI()
-            swaggerApi.basePath = Config.configUrl;
-            return swaggerApi;
-        }.inObjectScope(.container)
-        
-        container.register(SwaggerClientAPI.self, name: Endpoint.VERIFICATION.rawValue) { r in
-            let swaggerApi = SwaggerClientAPI()
-            swaggerApi.basePath = Config.verificationUrl;
+            swaggerApi.basePath = Config.endpoints.config;
             return swaggerApi;
         }.inObjectScope(.container)
         
@@ -56,10 +50,6 @@ class Injection {
         
         container.register(SettingsAPI.self) { r in
             SettingsAPI(clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue)!)
-        }.inObjectScope(.container)
-        
-        container.register(VerificationControllerAPI.self) { r in
-            VerificationControllerAPI(clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.VERIFICATION.rawValue)!)
         }.inObjectScope(.container)
         
         container.register(AppRouter.self) { r in
