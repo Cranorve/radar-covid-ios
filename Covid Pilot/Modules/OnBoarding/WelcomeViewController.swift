@@ -46,9 +46,9 @@ class WelcomeViewController: UIViewController {
             let bulletPoint: String = "\u{2022}"
             let attributedString = NSMutableAttributedString(string: bulletPoint, attributes: bulletAttributes)
             
-            attributedString.append(NSAttributedString(string: " \(text) \n", attributes: bodyAttributes))
-            let indent:CGFloat = 20
-            let paragraphStyle = createParagraphAttribute(tabStopLocation: indent, defaultTabInterval: indent, firstLineHeadIndent: indent - 15, headIndent: indent)
+            attributedString.append(NSAttributedString(string: "    \(text)    \n", attributes: bodyAttributes))
+            let indent:CGFloat = 40
+            let paragraphStyle = createParagraphAttribute(tabStopLocation: indent, defaultTabInterval: indent, firstLineHeadIndent: indent - 30, headIndent: indent)
             attributedString.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle], range: NSMakeRange(0, attributedString.length))
             fullAttributedString.append(attributedString)
         }

@@ -11,6 +11,9 @@
         <array key="muli_bold.ttf">
             <string>Muli-Bold</string>
         </array>
+        <array key="muli_light.ttf">
+            <string>Muli-Light</string>
+        </array>
         <array key="muli_regular.ttf">
             <string>Muli-Regular</string>
         </array>
@@ -33,7 +36,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="672"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l55-Aw-9eh">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="561.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="607.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUN-Rp-dez">
                                     <rect key="frame" x="207" y="0.0" width="207" height="206.5"/>
@@ -60,81 +63,70 @@
                                     <viewLayoutGuide key="safeArea" id="QFz-FT-HWn"/>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cómo funciona" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkV-ML-gs8">
-                                    <rect key="frame" x="16" y="145" width="382" height="33"/>
+                                    <rect key="frame" x="16" y="145" width="382" height="35.5"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vy1-9t-Dpc">
-                                    <rect key="frame" x="15" y="188" width="383" height="373.5"/>
-                                    <attributedString key="attributedText">
-                                        <fragment content="01">
-                                            <attributes>
-                                                <color key="NSColor" red="0.4810534716" green="0.35028833149999999" blue="0.66210502390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" metaFont="system" size="32"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment>
-                                            <string key="content">
-Activa tu Bluetooth. Eso es todo lo que te pedimos. 
-
-</string>
-                                            <attributes>
-                                                <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <font key="NSFont" metaFont="system" size="20"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment content="02">
-                                            <attributes>
-                                                <color key="NSColor" red="0.4810534716" green="0.35028833149999999" blue="0.66210502390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" metaFont="system" size="32"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment>
-                                            <string key="content">
-Visita la App con frecuencia para visualizar tu grado de exposición al coronavirus.
-
-</string>
-                                            <attributes>
-                                                <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <font key="NSFont" metaFont="system" size="20"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment content="03">
-                                            <attributes>
-                                                <color key="NSColor" red="0.4810534716" green="0.35028833149999999" blue="0.66210502390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" metaFont="system" size="32"/>
-                                                <font key="NSOriginalFont" metaFont="system" size="32"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment>
-                                            <string key="content">
-En caso de haber estado expuesto o reportar un diagnóstico positivo sigue las indicaciones que te enviaremos.</string>
-                                            <attributes>
-                                                <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <font key="NSFont" metaFont="system" size="20"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pB4-tP-eNW">
+                                    <rect key="frame" x="16" y="200.5" width="38.5" height="40.5"/>
+                                    <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="32"/>
+                                    <color key="textColor" red="0.4392156862745098" green="0.31372549019607843" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3x-dp-zNZ">
+                                    <rect key="frame" x="16" y="319.5" width="38.5" height="40.5"/>
+                                    <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="32"/>
+                                    <color key="textColor" red="0.43921568630000002" green="0.31372549020000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSf-Zq-yVw">
+                                    <rect key="frame" x="16" y="463.5" width="38.5" height="40.5"/>
+                                    <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="32"/>
+                                    <color key="textColor" red="0.43921568630000002" green="0.31372549020000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activa tu Bluetooth. Eso es todo lo que te pedimos. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRE-DP-Oha">
+                                    <rect key="frame" x="16" y="249" width="382" height="50.5"/>
+                                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visita la App con frecuencia para visualizar tu grado de exposición al coronavirus." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLu-AC-alt">
+                                    <rect key="frame" x="16" y="368" width="382" height="75.5"/>
+                                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En caso de haber estado expuesto o reportar un diagnóstico positivo sigue las indicaciones que te enviaremos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2g-Q2-hb8">
+                                    <rect key="frame" x="16" y="512" width="382" height="75.5"/>
+                                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" name="bgColor"/>
                             <constraints>
                                 <constraint firstItem="OkV-ML-gs8" firstAttribute="leading" secondItem="l55-Aw-9eh" secondAttribute="leading" constant="16" id="0Z6-eI-ccd"/>
-                                <constraint firstAttribute="bottom" secondItem="Vy1-9t-Dpc" secondAttribute="bottom" id="42R-ld-EqK"/>
+                                <constraint firstAttribute="trailing" secondItem="GLu-AC-alt" secondAttribute="trailing" constant="16" id="2MC-nq-g2N"/>
+                                <constraint firstItem="GLu-AC-alt" firstAttribute="top" secondItem="a3x-dp-zNZ" secondAttribute="bottom" constant="8" id="2WP-AL-PQM"/>
+                                <constraint firstAttribute="trailing" secondItem="aRE-DP-Oha" secondAttribute="trailing" constant="16" id="2fH-4M-LQ4"/>
+                                <constraint firstItem="pB4-tP-eNW" firstAttribute="leading" secondItem="l55-Aw-9eh" secondAttribute="leading" constant="16" id="366-sO-fXC"/>
+                                <constraint firstItem="rSf-Zq-yVw" firstAttribute="leading" secondItem="l55-Aw-9eh" secondAttribute="leading" constant="16" id="4UQ-bc-SQF"/>
                                 <constraint firstAttribute="trailing" secondItem="OkV-ML-gs8" secondAttribute="trailing" constant="16" id="7rV-51-7ko"/>
-                                <constraint firstItem="Vy1-9t-Dpc" firstAttribute="top" secondItem="OkV-ML-gs8" secondAttribute="bottom" constant="10" id="AQ7-Pk-qeY"/>
-                                <constraint firstItem="Vy1-9t-Dpc" firstAttribute="leading" secondItem="l55-Aw-9eh" secondAttribute="leading" constant="15" id="DQK-II-4Tz"/>
+                                <constraint firstItem="aRE-DP-Oha" firstAttribute="top" secondItem="pB4-tP-eNW" secondAttribute="bottom" constant="8" id="8CX-aM-GM9"/>
+                                <constraint firstItem="a3x-dp-zNZ" firstAttribute="leading" secondItem="l55-Aw-9eh" secondAttribute="leading" constant="16" id="Nac-Q4-X3D"/>
+                                <constraint firstItem="GLu-AC-alt" firstAttribute="leading" secondItem="l55-Aw-9eh" secondAttribute="leading" constant="16" id="NwX-Ne-9Uv"/>
+                                <constraint firstAttribute="trailing" secondItem="v2g-Q2-hb8" secondAttribute="trailing" constant="16" id="Y4b-nz-LYb"/>
+                                <constraint firstItem="aRE-DP-Oha" firstAttribute="leading" secondItem="l55-Aw-9eh" secondAttribute="leading" constant="16" id="ZfZ-Ay-pDg"/>
                                 <constraint firstItem="QUN-Rp-dez" firstAttribute="top" secondItem="l55-Aw-9eh" secondAttribute="top" id="dVS-6t-a6M"/>
+                                <constraint firstItem="pB4-tP-eNW" firstAttribute="top" secondItem="OkV-ML-gs8" secondAttribute="bottom" constant="20" id="f62-QM-qzx"/>
+                                <constraint firstAttribute="bottom" secondItem="v2g-Q2-hb8" secondAttribute="bottom" constant="20" id="ihq-mt-QVO"/>
+                                <constraint firstItem="rSf-Zq-yVw" firstAttribute="top" secondItem="GLu-AC-alt" secondAttribute="bottom" constant="20" id="kXY-6k-2PI"/>
+                                <constraint firstItem="a3x-dp-zNZ" firstAttribute="top" secondItem="aRE-DP-Oha" secondAttribute="bottom" constant="20" id="nSp-RI-G5o"/>
+                                <constraint firstItem="v2g-Q2-hb8" firstAttribute="leading" secondItem="l55-Aw-9eh" secondAttribute="leading" constant="16" id="oMa-VK-w56"/>
                                 <constraint firstItem="OkV-ML-gs8" firstAttribute="top" secondItem="l55-Aw-9eh" secondAttribute="top" constant="145" id="qO9-vb-dgR"/>
-                                <constraint firstAttribute="trailing" secondItem="Vy1-9t-Dpc" secondAttribute="trailing" constant="16" id="qpm-xv-SWA"/>
+                                <constraint firstItem="v2g-Q2-hb8" firstAttribute="top" secondItem="rSf-Zq-yVw" secondAttribute="bottom" constant="8" id="shh-dj-Ky7"/>
                                 <constraint firstAttribute="trailing" secondItem="QUN-Rp-dez" secondAttribute="trailing" id="tkv-Sf-zRN"/>
                             </constraints>
                         </view>
@@ -192,7 +184,13 @@ En caso de haber estado expuesto o reportar un diagnóstico positivo sigue las i
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                     <integer key="value" value="10"/>
                                 </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                    <color key="value" red="0.43921568630000002" green="0.31372549020000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="continueNoBluetooth:" destination="-1" eventType="primaryActionTriggered" id="DpW-Di-ENR"/>
