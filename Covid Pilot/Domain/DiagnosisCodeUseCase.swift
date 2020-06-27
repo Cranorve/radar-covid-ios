@@ -13,6 +13,8 @@ import SwiftJWT
 
 class DiagnosisCodeUseCase {
     
+    
+    
     private let isfake = false
     
     private let response: Bool
@@ -23,9 +25,9 @@ class DiagnosisCodeUseCase {
     
     func sendDiagnosisCode(code: String) -> Observable<Bool> {
         .create { [weak self] observer in
-            let onset =  Date(timeIntervalSinceNow: TimeInterval(Config.timeForKeys))
+            let onset = Date(timeIntervalSinceNow: TimeInterval(Config.timeForKeys))
             let token = self?.getToken(reportCode: code, onset: onset)
-            DP3TTracing.iWasExposed(onset onset:,
+            DP3TTracing.iWasExposed(onset: onset,
                                     authentication: .none, isFakeRequest: self?.isfake ?? false) {  result in
                 switch result {
                     case let .failure(error):
@@ -54,16 +56,19 @@ class DiagnosisCodeUseCase {
         claims.sub = "iosApp"
         claims.exp = expirationDate
         
-        if let url = Bundle.main.url(forResource: "input", withExtension: "txt") {
-            let privateKey: Data? = try? Data(contentsOf: url, options: .alwaysMapped)
-            var myJWT = JWT(header: header, claims: claims)
-            
-            let jwtSigner = JWTSigner.rs256(privateKey: privateKey ?? Data())
-            
-            let signedJWT = try? myJWT.sign(using: jwtSigner)
-            
-            return signedJWT?.description ?? ""
+        let privateKey: Data? = Config.privateKey.data(using: .utf8)!
+        var myJWT = JWT(header: header, claims: claims)
+        
+        let jwtSigner = JWTSigner.rs256(privateKey: privateKey ?? Data())
+        
+        do {
+            let signedJWT = try myJWT.sign(using: jwtSigner)
+            return signedJWT.description
+        } catch let error {
+            debugPrint(error)
         }
+            
+        
         return ""
     }
     
@@ -82,3 +87,6 @@ struct MyClaims : Claims {
     public var scope: String?
     public var onSet: String?
 }
+
+
+
