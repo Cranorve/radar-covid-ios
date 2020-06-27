@@ -32,6 +32,8 @@ class OnBoardingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.acceptTermsLabel.font = UIFont(name: "Muli-Light", size: 16.0)!
+        self.privacyLabel.font = UIFont(name: "Muli-Light", size: 16.0)!
 
         acceptButton.isEnabled = termsAccepted
         scrollView.alwaysBounceVertical = false

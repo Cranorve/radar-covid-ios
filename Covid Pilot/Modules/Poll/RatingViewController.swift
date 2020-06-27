@@ -16,6 +16,8 @@ class RatingViewController: UIViewController, QuestionController {
         question?.valuesSelected = [options.titleForSegment(at: options.selectedSegmentIndex) ]
     }
     
+    @IBOutlet weak var labelmuymala: UILabel!
+    @IBOutlet weak var labelexcelente: UILabel!
     @IBOutlet weak var viewTop: NSLayoutConstraint!
     
     var question: Question?
@@ -24,6 +26,10 @@ class RatingViewController: UIViewController, QuestionController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadValues()
+        if (question?._id == 8){
+            labelmuymala.text = "seguro que no"
+            labelexcelente.text = "seguro que si"
+        }
     }
     
     private func loadValues() {

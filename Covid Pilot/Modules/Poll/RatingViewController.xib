@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingViewController" customModule="Radar_COVID" customModuleProvider="target">
             <connections>
+                <outlet property="labelexcelente" destination="BO3-OY-Q0e" id="EOr-7C-fKe"/>
+                <outlet property="labelmuymala" destination="pZ3-e9-2U8" id="tDG-oC-khP"/>
                 <outlet property="options" destination="KFg-LL-nRF" id="lov-2Z-baI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewTop" destination="Ckd-7L-CTf" id="PRC-3x-Nlq"/>
@@ -20,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTM-er-8hz">
-                    <rect key="frame" x="0.0" y="244" width="414" height="544"/>
+                    <rect key="frame" x="0.0" y="314" width="414" height="474"/>
                     <subviews>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KFg-LL-nRF">
                             <rect key="frame" x="22" y="0.0" width="370" height="51"/>
@@ -64,7 +66,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pTM-er-8hz" secondAttribute="bottom" constant="74" id="0PE-q9-fdt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pTM-er-8hz" secondAttribute="trailing" id="40o-qB-tON"/>
-                <constraint firstItem="pTM-er-8hz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="200" id="Ckd-7L-CTf"/>
+                <constraint firstItem="pTM-er-8hz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="270" id="Ckd-7L-CTf"/>
                 <constraint firstItem="pTM-er-8hz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X8G-pN-Ljd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

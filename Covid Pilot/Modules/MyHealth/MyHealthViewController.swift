@@ -116,6 +116,15 @@ class MyHealthViewController: UIViewController {
         self.diagnosticEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
     }
     
+    
+    @IBAction func insertCode(_ sender: Any) {
+        guard let emptyInput = self.codeChars.filter({ $0.text == "\u{200B}" }).first else {
+            self.codeChars.last?.becomeFirstResponder()
+            return
+        }
+        emptyInput.becomeFirstResponder()
+    }
+    
     private func navigateIf(reported: Bool) {
         if (reported){
             router?.route(to: Routes.MyHealthReported, from: self)
@@ -130,14 +139,6 @@ class MyHealthViewController: UIViewController {
       
       // move the root view up by the distance of keyboard height
         self.view.frame.origin.y = 0 - keyboardSize.height
-        
-     // make the notification bar NOT transparent
-//        let statusBarFrame = UIApplication.shared.statusBarFrame
-//        let statusBarView = UIView(frame: statusBarFrame)
-//        self.statusBar = statusBarView
-//        self.view.addSubview(statusBarView)
-//        statusBarView.backgroundColor = .white
-//        self.view.bringSubviewToFront(statusBarView)
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
