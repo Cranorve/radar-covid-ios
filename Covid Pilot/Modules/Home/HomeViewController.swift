@@ -64,14 +64,12 @@ class HomeViewController: UIViewController {
     
     @objc func onExpositionTap() {
         switch expositionInfo?.level {
-        case .LOW:
-            router?.route(to: Routes.Exposition, from: self, parameters: expositionInfo)
-        case .MEDIUM:
-            router?.route(to: Routes.Exposition, from: self, parameters: expositionInfo)
-        case .HIGH:
-            router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo)
+        case .Healthy(lastCheck: let lastCheck):
+            router?.route(to: Routes.Exposition, from: self, parameters: lastCheck)
+        case .Exposed(since: let since):
+            router?.route(to: Routes.HighExposition, from: self, parameters: since)
         default:
-            router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo)
+            router?.route(to: Routes.HighExposition, from: self)
         }
     }
     
@@ -89,7 +87,7 @@ class HomeViewController: UIViewController {
         radarSwitch.layer.cornerRadius = radarSwitch.frame.height / 2
         radarSwitch.backgroundColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         
-        updateExpositionInfo(ExpositionInfo.init(level: .LOW))
+        updateExpositionInfo(ExpositionInfo.init(level: .Healthy(lastCheck: nil)))
         
         let isTracingActive = radarStatusUseCase?.isTracingActive() ?? false
         changeRadarMessage(active: isTracingActive)
@@ -107,7 +105,7 @@ class HomeViewController: UIViewController {
     private func updateExpositionInfo(_ exposition: ExpositionInfo) {
         self.expositionInfo = exposition
         switch exposition.level {
-            case .HIGH:
+            case .Exposed(since: let since):
                 expositionTitle.text = "Exposición alta"
                 let attributedString = NSMutableAttributedString(string: "Has estado en contacto con una persona contagiada de Covid-19 . \nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
                     .font: UIFont(name: "Muli-Regular", size: 16.0)!,
@@ -121,12 +119,7 @@ class HomeViewController: UIViewController {
                 expositionDescription.attributedText  = attributedString
                 expositionView.image = bgImageRed
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
-            case .MEDIUM:
-                expositionTitle.text = "Exposición media"
-                expositionDescription.text = "Has estado en contacto con una persona contagiada de Covid-19."
-                expositionView.image = bgImageOrange
-                expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
-            case .LOW:
+            case .Healthy(lastCheck: let lastCheck):
                 expositionTitle.text = "Exposición baja"
                 let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un posible contacto. \nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
                   .font: UIFont(name: "Muli-Regular", size: 16.0)!,
@@ -141,11 +134,12 @@ class HomeViewController: UIViewController {
                 expositionDescription.attributedText  = attributedString
                 expositionView.image = bgImageGreen
                 expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)
-            case .none:
+            default:
                 expositionTitle.text = ""
                 expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)
                 expositionDescription.text = ""
                 expositionView.image = bgImageGreen
+
         }
         
     }

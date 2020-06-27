@@ -28,7 +28,7 @@ class ExpositionUseCase: DP3TTracingDelegate {
             DP3TTracing.status { result in
                 switch result {
                 case let .success(state):
-                    self?.subject.onNext(self?.tracingStatusToExpositionInfo(tStatus: state) ?? ExpositionInfo(level: .LOW))
+                    self?.subject.onNext(self?.tracingStatusToExpositionInfo(tStatus: state) ?? ExpositionInfo(level: .Healthy(lastCheck: Date())))
                 case .failure:
                     self?.subject.onError("Algo paso mal con la peticion del status.")
                     break
@@ -42,14 +42,11 @@ class ExpositionUseCase: DP3TTracingDelegate {
     private func tracingStatusToExpositionInfo(tStatus: TracingState) -> ExpositionInfo {
         switch tStatus.infectionStatus {
         case .healthy:
-            return ExpositionInfo(level: ExpositionInfo.Level.LOW)
-            
+            return ExpositionInfo(level: ExpositionInfo.Level.Healthy(lastCheck: tStatus.lastSync))
         case .infected:
-            return ExpositionInfo(level: ExpositionInfo.Level.HIGH)
-            
-        default:
-            return ExpositionInfo(level: ExpositionInfo.Level.LOW)
-            
+            return ExpositionInfo(level: ExpositionInfo.Level.Infected)
+        case .exposed(days: let days):
+            return ExpositionInfo(level: ExpositionInfo.Level.Exposed(since: days.first?.exposedDate))
         }
     }
     
