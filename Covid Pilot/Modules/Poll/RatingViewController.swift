@@ -26,6 +26,10 @@ class RatingViewController: UIViewController, QuestionController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadValues()
+        if (question?._id == 8){
+            labelmuymala.text = "seguro que no"
+            labelexcelente.text = "seguro que si"
+        }
     }
     
     private func loadValues() {

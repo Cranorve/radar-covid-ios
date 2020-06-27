@@ -129,7 +129,7 @@ class HomeViewController: UIViewController {
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
             case .LOW:
                 expositionTitle.text = "Exposición baja"
-                let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un posible contacto. \nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
+                let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un posible contacto de riesgo. \nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
                   .font: UIFont(name: "Muli-Regular", size: 16.0)!,
                   .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
                 ])

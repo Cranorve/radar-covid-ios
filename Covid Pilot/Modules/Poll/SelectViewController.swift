@@ -23,7 +23,7 @@ class SelectViewController: UIViewController, QuestionController, UICollectionVi
     
     override func viewDidLoad() {
         if self.question?._id == 16 {
-            self.topConstraint.constant = 300
+            self.topConstraint.constant = 270
         }
         super.viewDidLoad()
         collectionView.delegate = self
