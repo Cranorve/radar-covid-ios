@@ -33,8 +33,6 @@ class ConfigurationUseCase {
                     settings.parameters = backSettings
                     self?.settingsRepository.save(settings: settings)
                     return settings
-                }.flatMap { (config) -> Observable<Settings> in
-                    self?.sync(config) ?? .empty()
                 }
         }
     }
