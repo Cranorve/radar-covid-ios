@@ -56,13 +56,13 @@ class DiagnosisCodeUseCase {
         let expirationDate = Date(timeIntervalSinceNow: TimeInterval(tokenValidity))
         
         let header = Header()
-        var claims = MyClaims(exp: expirationDate, iat: Date())
+        var claims = MyClaims(exp: Int(expirationDate.timeIntervalSince1970), iat: Int((Date().timeIntervalSince1970)))
         claims.iss = "http://es.gob.radarcovid.android"
-        claims.aud = ["http://es.gob.radarcovid.android"]
+        claims.aud = "http://es.gob.radarcovid.android"
         claims.sub = "iosApp"
         claims.jti = id
         claims.scope = "exposed"
-        claims.onSet = dateFormatter.string(from: onset)
+        claims.onset = dateFormatter.string(from: onset)
         claims.tan = reportCode
         
         let privateKey: Data? = Config.privateKey.data(using: .utf8)!
@@ -84,14 +84,13 @@ class DiagnosisCodeUseCase {
 struct MyClaims : Claims {
     public var iss: String?
     public var sub: String?
-    public var aud: [String]?
-    public var exp: Date
-    public var nbf: Date?
-    public var iat: Date
+    public var aud: String?
+    public var exp: Int
+    public var iat: Int
     public var jti: String?
     public var tan: String?
     public var scope: String?
-    public var onSet: String?
+    public var onset: String?
 }
 
 
