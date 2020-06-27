@@ -15,11 +15,11 @@ struct ExpositionInfo {
     public init(level: Level?) {
         self.level = level
     }
-    
+
     enum Level {
-         case LOW
-         case MEDIUM
-         case HIGH
+         case Healthy(lastCheck: Date?)
+         case Exposed(since: Date?)
+         case Infected
     }
     
 }

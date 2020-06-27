@@ -105,13 +105,17 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(DiagnosisCodeUseCase.self) { r in
-            DiagnosisCodeUseCase()
+            DiagnosisCodeUseCase(settingsRepository: r.resolve(SettingsRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(ConfigurationUseCase.self) { r in
             ConfigurationUseCase(settingsRepository: r.resolve(SettingsRepository.self)!,
                                  tokenApi: r.resolve(TokenAPI.self)!,
                                  settingsApi: r.resolve(SettingsAPI.self)!)
+        }.inObjectScope(.container)
+        
+        container.register(SyncUseCase.self) { r in
+            SyncUseCase()
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in

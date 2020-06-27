@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoggingDelegate, Activity
              NetworkActivityLogger.shared.startLogging()
         }
         
+        debugPrint("Current Environment: \(Config.environment)")
+        
         initializeSDK()
         return true
     }
