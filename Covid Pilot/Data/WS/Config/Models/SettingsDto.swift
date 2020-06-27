@@ -17,11 +17,13 @@ public struct SettingsDto: Codable {
     public var minRiskScore: Int64?
     /** Risk score classification */
     public var riskScoreClassification: [RiskScoreClassificationDto]?
+    public var attenuationDurationThresholds: AttenuationDurationThresholdsDto?
 
-    public init(exposureConfiguration: ExposureConfigurationDto?, minRiskScore: Int64?, riskScoreClassification: [RiskScoreClassificationDto]?) {
+    public init(exposureConfiguration: ExposureConfigurationDto?, minRiskScore: Int64?, riskScoreClassification: [RiskScoreClassificationDto]?, attenuationDurationThresholds: AttenuationDurationThresholdsDto?) {
         self.exposureConfiguration = exposureConfiguration
         self.minRiskScore = minRiskScore
         self.riskScoreClassification = riskScoreClassification
+        self.attenuationDurationThresholds = attenuationDurationThresholds
     }
 
 

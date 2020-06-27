@@ -68,10 +68,10 @@ class ConfigurationUseCase {
     
     private func loadParameters(_ settings: Settings) {
         var params = DP3TTracing.parameters
-        if let lower = settings.parameters?.exposureConfiguration?.attenuation?.riskLevelValue1 {
+        if let lower = settings.parameters?.attenuationDurationThresholds?.low {
             params.contactMatching.lowerThreshold = lower
         }
-        if let higher = settings.parameters?.exposureConfiguration?.attenuation?.riskLevelValue2 {
+        if let higher = settings.parameters?.attenuationDurationThresholds?.medium {
             params.contactMatching.higherThreshold = higher
         }
         DP3TTracing.parameters = params
