@@ -61,6 +61,7 @@ class DiagnosisCodeUseCase {
         claims.aud = ["http://es.gob.radarcovid.android"]
         claims.sub = "iosApp"
         claims.exp = expirationDate
+        claims.iat = Date()
         claims.jti = id
         claims.scope = "exposed"
         claims.onSet = dateFormatter.string(from: onset)
