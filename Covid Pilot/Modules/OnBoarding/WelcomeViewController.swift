@@ -33,10 +33,9 @@ class WelcomeViewController: UIViewController {
     }
     
     private func loadText() {
-        let bullet1 = "Conoce en todo momento si te expones al coronavirus, ayudándote a protegerte y proteger a los demás.\n"
-        
-        let bullet2 = "Comunica de forma anónima tu diagnóstico Covid positivo.\n"
-        let bullet3 = "Si tu estuvieras afectado, comunicaremos la exposición de forma anonima a las personas con las que has estado en contacto."
+        let bullet1 = "Conoce en todo momento si te expones al coronavirus, por tu propia seguridad y la de los demás.\n"
+        let bullet2 = "Registra de forma anónima tu diagnóstico positivo por COVID-19.\n"
+        let bullet3 = "En este caso, y con tu consentimiento, comunicaremos anónimamente el posible riesgo de exposición a las personas con las que has estado en contacto estrecho."
         let strings = [bullet1, bullet2, bullet3]
         
         let fullAttributedString = NSMutableAttributedString()
@@ -48,8 +47,8 @@ class WelcomeViewController: UIViewController {
             let attributedString = NSMutableAttributedString(string: bulletPoint, attributes: bulletAttributes)
             
             attributedString.append(NSAttributedString(string: " \(text) \n", attributes: bodyAttributes))
-            let indent:CGFloat = 15
-            let paragraphStyle = createParagraphAttribute(tabStopLocation: indent, defaultTabInterval: indent, firstLineHeadIndent: indent - 10, headIndent: indent)
+            let indent:CGFloat = 20
+            let paragraphStyle = createParagraphAttribute(tabStopLocation: indent, defaultTabInterval: indent, firstLineHeadIndent: indent - 15, headIndent: indent)
             attributedString.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle], range: NSMakeRange(0, attributedString.length))
             fullAttributedString.append(attributedString)
         }

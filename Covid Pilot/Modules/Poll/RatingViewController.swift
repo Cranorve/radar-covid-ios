@@ -16,6 +16,8 @@ class RatingViewController: UIViewController, QuestionController {
         question?.valuesSelected = [options.titleForSegment(at: options.selectedSegmentIndex) ]
     }
     
+    @IBOutlet weak var labelmuymala: UILabel!
+    @IBOutlet weak var labelexcelente: UILabel!
     @IBOutlet weak var viewTop: NSLayoutConstraint!
     
     var question: Question?

@@ -59,6 +59,7 @@ class HomeViewController: UIViewController {
             }, onError: {  [weak self] error in
                 debugPrint("Error: \(error)")
                 self?.radarSwitch.isOn = false
+                self?.changeRadarMessage(active: (self?.radarSwitch.isOn)!)
         }).disposed(by: disposeBag)
     }
     
