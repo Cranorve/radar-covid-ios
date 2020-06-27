@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xjz-i2-vZJ">
-                    <rect key="frame" x="0.0" y="264" width="414" height="524"/>
+                    <rect key="frame" x="0.0" y="314" width="414" height="474"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="llZ-g2-X2u">
-                            <rect key="frame" x="16" y="0.0" width="382" height="524"/>
+                            <rect key="frame" x="16" y="0.0" width="382" height="474"/>
                             <color key="backgroundColor" name="bgColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="25" minimumInteritemSpacing="0.0" id="0xX-Jn-Gfk">
                                 <size key="itemSize" width="0.0" height="0.0"/>
@@ -45,7 +45,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Xjz-i2-vZJ" secondAttribute="bottom" constant="74" id="A4F-kR-L9i"/>
                 <constraint firstItem="Xjz-i2-vZJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ake-qu-3uN"/>
-                <constraint firstItem="Xjz-i2-vZJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="220" id="PNi-4o-QlC"/>
+                <constraint firstItem="Xjz-i2-vZJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="270" id="PNi-4o-QlC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xjz-i2-vZJ" secondAttribute="trailing" id="rRe-lI-LFs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

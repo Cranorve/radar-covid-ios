@@ -25,10 +25,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXR-Rj-HCN">
-                    <rect key="frame" x="0.0" y="150" width="414" height="672"/>
+                    <rect key="frame" x="0.0" y="180" width="414" height="642"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4YJ-cc-c4u">
-                            <rect key="frame" x="16" y="21" width="382" height="300"/>
+                            <rect key="frame" x="16" y="25" width="382" height="300"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="300" id="ofy-LK-vJW"/>
@@ -39,7 +39,7 @@
                         </textView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="4YJ-cc-c4u" firstAttribute="top" secondItem="BXR-Rj-HCN" secondAttribute="top" constant="21" id="RB6-H0-uP2"/>
+                        <constraint firstItem="4YJ-cc-c4u" firstAttribute="top" secondItem="BXR-Rj-HCN" secondAttribute="top" constant="25" id="RB6-H0-uP2"/>
                         <constraint firstItem="4YJ-cc-c4u" firstAttribute="leading" secondItem="BXR-Rj-HCN" secondAttribute="leading" constant="16" id="mDd-nF-Dpz"/>
                         <constraint firstAttribute="trailing" secondItem="4YJ-cc-c4u" secondAttribute="trailing" constant="16" id="y5u-HG-ZcJ"/>
                     </constraints>
@@ -47,7 +47,7 @@
             </subviews>
             <color key="backgroundColor" name="bgColor"/>
             <constraints>
-                <constraint firstItem="BXR-Rj-HCN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="4bi-on-SJ8"/>
+                <constraint firstItem="BXR-Rj-HCN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="180" id="4bi-on-SJ8"/>
                 <constraint firstItem="BXR-Rj-HCN" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kcS-M3-WCm"/>
                 <constraint firstAttribute="bottom" secondItem="BXR-Rj-HCN" secondAttribute="bottom" constant="74" id="qGC-VA-ZcT"/>
                 <constraint firstItem="BXR-Rj-HCN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xX1-gi-o5Y"/>
@@ -58,7 +58,7 @@
     </objects>
     <resources>
         <namedColor name="bgColor">
-            <color red="0.98000001907348633" green="0.97600001096725464" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98039215686274506" green="0.97647058823529409" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
