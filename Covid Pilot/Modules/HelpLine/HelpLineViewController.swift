@@ -75,7 +75,7 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
     }
     
     private func loadTexts() {
-        let attributedString = NSMutableAttributedString(string: "Muchas gracias por participar en el piloto de la APP Radar COVID, contándonos tu opinión de forma anónima nos ayuda a mejorar  y contribuir a prevenir futuros contagios.", attributes: [
+        let attributedString = NSMutableAttributedString(string: "Muchas gracias por participar en el piloto de la APP Radar COVID; contándonos tu opinión de forma anónima nos ayuda a mejorar  y contribuir a prevenir futuros contagios.", attributes: [
           .font: UIFont(name: "Muli-Light", size: 16.0)!,
           .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
         ])
@@ -92,7 +92,7 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         reportLabel.attributedText = attributedString2
         
-        let attributedString3 = NSMutableAttributedString(string: "Un paso más \n\n¿Te interesaría participar en una entrevista telefónica para conocer más sobre tu experiencia con Radar COVID? Escribe a:\npiloto.appcovid@economia.gob.es\n\nNos pondremos en contacto contigo para fijar el día y la hora que se adapte mejor a tí.", attributes: [
+        let attributedString3 = NSMutableAttributedString(string: "Un paso más \n\n¿Te interesaría participar en una entrevista telefónica para conocer más sobre tu experiencia con Radar COVID? Escribe a:\npiloto.appcovid@economia.gob.es\n\nNos pondremos en contacto contigo para fijar el día y la hora que se adapte mejor a ti.", attributes: [
           .font: UIFont(name: "Muli-Light", size: 16.0)!,
           .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
         ])

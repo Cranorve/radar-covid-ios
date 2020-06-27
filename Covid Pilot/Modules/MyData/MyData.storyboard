@@ -99,8 +99,9 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwU-rQ-MAh">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="18.666666666666668"/>
                                                         <attributedString key="attributedText">
-                                                            <fragment content="Consulta las ">
+                                                            <fragment content="Consulta la ">
                                                                 <attributes>
+                                                                    <color key="NSColor" red="0.16470588235294117" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <font key="NSFont" size="16" name="Helvetica"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="424.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0">
                                                                         <tabStops/>
@@ -109,6 +110,7 @@
                                                             </fragment>
                                                             <fragment content="política de privacidad">
                                                                 <attributes>
+                                                                    <color key="NSColor" red="0.16470588235294117" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <font key="NSFont" size="16" name="Helvetica-Bold"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="424.89999999999998" defaultTabInterval="35.399999999999999" tighteningFactorForTruncation="0.0">
                                                                         <tabStops/>
