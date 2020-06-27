@@ -86,6 +86,8 @@
 		6DE27CA924A0D34C00BBCF40 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27CA824A0D34C00BBCF40 /* TableHeaderView.swift */; };
 		6DE27CAB24A25F9D00BBCF40 /* JailBreakDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27CAA24A25F9D00BBCF40 /* JailBreakDetect.swift */; };
 		6DE27CB324A379F800BBCF40 /* NetworkActivityLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27CB224A379F800BBCF40 /* NetworkActivityLogger.swift */; };
+		6DE27D3C24A7196200BBCF40 /* sedia_rsa_private_key_pro.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6DE27D3A24A7196200BBCF40 /* sedia_rsa_private_key_pro.txt */; };
+		6DE27D3D24A7196200BBCF40 /* sedia_rsa_private_key_pre.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6DE27D3B24A7196200BBCF40 /* sedia_rsa_private_key_pre.txt */; };
 		6DF6EC99248E59C6007EAA40 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6EC98248E59C6007EAA40 /* Info.storyboard */; };
 		6DF6EC9B248E5C77007EAA40 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6EC9A248E5C77007EAA40 /* InfoViewController.swift */; };
 		6DF6ECA3248E61E0007EAA40 /* OLdPrivacyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF6ECA2248E61E0007EAA40 /* OLdPrivacyViewController.xib */; };
@@ -197,6 +199,8 @@
 		6DE27CAA24A25F9D00BBCF40 /* JailBreakDetect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JailBreakDetect.swift; sourceTree = "<group>"; };
 		6DE27CB224A379F800BBCF40 /* NetworkActivityLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityLogger.swift; sourceTree = "<group>"; };
 		6DE27CB424A37EF500BBCF40 /* debug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = debug.entitlements; sourceTree = "<group>"; };
+		6DE27D3A24A7196200BBCF40 /* sedia_rsa_private_key_pro.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sedia_rsa_private_key_pro.txt; sourceTree = "<group>"; };
+		6DE27D3B24A7196200BBCF40 /* sedia_rsa_private_key_pre.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sedia_rsa_private_key_pre.txt; sourceTree = "<group>"; };
 		6DF6EC98248E59C6007EAA40 /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
 		6DF6EC9A248E5C77007EAA40 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		6DF6ECA2248E61E0007EAA40 /* OLdPrivacyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OLdPrivacyViewController.xib; sourceTree = "<group>"; };
@@ -259,9 +263,8 @@
 		39443288248939F000FF0217 /* Covid Pilot */ = {
 			isa = PBXGroup;
 			children = (
-				6DE27CB424A37EF500BBCF40 /* debug.entitlements */,
+				6DE27D3924A7187500BBCF40 /* Supporting */,
 				6DE27C622499116F00BBCF40 /* Extensions */,
-				6DB5419A2498ABE900166D37 /* release.entitlements */,
 				6D5AFCE924936E1700EFE838 /* Config */,
 				6DA18CB92491053700BE8AAB /* Components */,
 				6DF6ECC5248F6EBE007EAA40 /* Data */,
@@ -270,7 +273,6 @@
 				3944329D248A7F7900FF0217 /* Application */,
 				394E9628248E3E71009F640E /* Modules */,
 				39443292248939F500FF0217 /* Assets.xcassets */,
-				39443297248939F500FF0217 /* Info.plist */,
 			);
 			path = "Covid Pilot";
 			sourceTree = "<group>";
@@ -424,17 +426,9 @@
 		6D5AFCE924936E1700EFE838 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				6D5AFCEA24936E2200EFE838 /* dev */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
-		6D5AFCEA24936E2200EFE838 /* dev */ = {
-			isa = PBXGroup;
-			children = (
 				6D5AFCEB24936E7A00EFE838 /* Config.swift */,
 			);
-			path = dev;
+			path = Config;
 			sourceTree = "<group>";
 		};
 		6DA18CB92491053700BE8AAB /* Components */ = {
@@ -519,6 +513,18 @@
 				6DE27C7F249A6D4F00BBCF40 /* Tan.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6DE27D3924A7187500BBCF40 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				6DE27D3B24A7196200BBCF40 /* sedia_rsa_private_key_pre.txt */,
+				6DE27D3A24A7196200BBCF40 /* sedia_rsa_private_key_pro.txt */,
+				6DE27CB424A37EF500BBCF40 /* debug.entitlements */,
+				6DB5419A2498ABE900166D37 /* release.entitlements */,
+				39443297248939F500FF0217 /* Info.plist */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 		6DF6EC97248E5987007EAA40 /* Info */ = {
@@ -699,6 +705,7 @@
 				6D5AFC8E2492827C00EFE838 /* muli_semibold.ttf in Resources */,
 				6DE27C8F249F6D9100BBCF40 /* PrivacyViewController.xib in Resources */,
 				6DF6ECC2248F68DF007EAA40 /* Home.storyboard in Resources */,
+				6DE27D3C24A7196200BBCF40 /* sedia_rsa_private_key_pro.txt in Resources */,
 				6DB541822497F55900166D37 /* FinishPollViewController.xib in Resources */,
 				39A1AD46249225510049E48B /* HighExposition.storyboard in Resources */,
 				6D5AFC8D2492827C00EFE838 /* muli_extrabold.ttf in Resources */,
@@ -708,6 +715,7 @@
 				39443296248939F500FF0217 /* LaunchScreen.storyboard in Resources */,
 				6DF6ECD4248FA0B3007EAA40 /* HelpLine.storyboard in Resources */,
 				6DF6EC99248E59C6007EAA40 /* Info.storyboard in Resources */,
+				6DE27D3D24A7196200BBCF40 /* sedia_rsa_private_key_pre.txt in Resources */,
 				6DF6ECCF248FA032007EAA40 /* MyData.storyboard in Resources */,
 				6D5AFC9A249296F000EFE838 /* Poll.storyboard in Resources */,
 				6DB5417C2497DFFE00166D37 /* QuestionItemCell.xib in Resources */,
@@ -942,11 +950,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/debug.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/debug.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
-				INFOPLIST_FILE = "Covid Pilot/Info.plist";
+				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -963,11 +971,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/release.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/release.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
-				INFOPLIST_FILE = "Covid Pilot/Info.plist";
+				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1040,11 +1048,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/release.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/release.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
-				INFOPLIST_FILE = "Covid Pilot/Info.plist";
+				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1121,11 +1129,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/debug.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/debug.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
-				INFOPLIST_FILE = "Covid Pilot/Info.plist";
+				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

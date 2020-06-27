@@ -39,25 +39,32 @@ struct Config {
         static let debug = true
         static let endpoints: Endpoits = .pre
         static let dp3tMode: ApplicationDescriptor.Mode = .production
+        static let privateKey = "sedia_rsa_private_key_pre"
+        static let validationKey = Data(base64Encoded:"LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFd3o4YllrUWpucjk1eU1vSFo2aUlscXVyWklvUwpmbCtXRXpubXBueGxLak1Sa0d5SnhjdSswWkRRSkhmVGx6RXNGMDZ3ZnlPaFNtYzBkcW16Z1hTbFp3PT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t")
     #elseif DEBUG_PRO
         static let debug = true
-        static let endpoints: Endpoits = .pre
+        static let endpoints: Endpoits = .pro
         static let dp3tMode: ApplicationDescriptor.Mode = .production
+        static let privateKey = "sedia_rsa_private_key_pro"
+        static let validationKey = Data(base64Encoded: "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFUEFMemYyNFZwMDRtYk9aRWNKbnhyR1NDc3BUTApKT1VNcURXV1ZCU1JjSWl3NDR3Mm1JaFFIbEtNaHlyc2pHeVFMY0dxQXB2cTR6SEp2eVRNYi80ZE1RPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==")
     #elseif RELEASE_PRE
         static let debug = true
         static let endpoints: Endpoits = .pre
         static let dp3tMode: ApplicationDescriptor.Mode = .production
+        static let privateKey = "sedia_rsa_private_key_pre"
+        static let validationKey = Data(base64Encoded:"LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFd3o4YllrUWpucjk1eU1vSFo2aUlscXVyWklvUwpmbCtXRXpubXBueGxLak1Sa0d5SnhjdSswWkRRSkhmVGx6RXNGMDZ3ZnlPaFNtYzBkcW16Z1hTbFp3PT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t")
     #elseif RELEASE_PRO
         static let debug = true
-        static let endpoints: Endpoits = .pre
+        static let endpoints: Endpoits = .pro
         static let dp3tMode: ApplicationDescriptor.Mode = .production
+        static let privateKey = "sedia_rsa_private_key_pre"
+        static let validationKey = Data(base64Encoded: "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFUEFMemYyNFZwMDRtYk9aRWNKbnhyR1NDc3BUTApKT1VNcURXV1ZCU1JjSWl3NDR3Mm1JaFFIbEtNaHlyc2pHeVFMY0dxQXB2cTR6SEp2eVRNYi80ZE1RPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==")
     #endif
     
     
     // Share keys of last 14 days
     static let timeForKeys = -60 * 60 * 24 * 14
     
-    static let validationKey = Data(base64Encoded: "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFUEFMemYyNFZwMDRtYk9aRWNKbnhyR1NDc3BUTApKT1VNcURXV1ZCU1JjSWl3NDR3Mm1JaFFIbEtNaHlyc2pHeVFMY0dxQXB2cTR6SEp2eVRNYi80ZE1RPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==")
     
     static let timeTable = "Horario lunes a viernes de 08H a 20H"
     static let contactNumber = "900 112 061"
