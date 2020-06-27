@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
                 
             }, onError: {  [weak self] error in
                 debugPrint("Error: \(error)")
-                self?.radarSwitch.isOn = !active
+                self?.radarSwitch.isOn = false
         }).disposed(by: disposeBag)
     }
     
@@ -74,6 +74,8 @@ class HomeViewController: UIViewController {
             router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo)
         }
     }
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,7 +109,7 @@ class HomeViewController: UIViewController {
         switch exposition.level {
             case .HIGH:
                 expositionTitle.text = "Exposición alta"
-                let attributedString = NSMutableAttributedString(string: "Has estado en contacto con una persona contagiada de Covid-19 . Cuídate y cuida a los demás. \nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
+                let attributedString = NSMutableAttributedString(string: "Has estado en contacto con una persona contagiada de Covid-19 . \nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
                     .font: UIFont(name: "Muli-Regular", size: 16.0)!,
                     .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
                 ])
@@ -121,12 +123,12 @@ class HomeViewController: UIViewController {
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
             case .MEDIUM:
                 expositionTitle.text = "Exposición media"
-                expositionDescription.text = "Has estado en contacto con una persona contagiada de Covid-19. Cuídate y cuida a los demás."
+                expositionDescription.text = "Has estado en contacto con una persona contagiada de Covid-19."
                 expositionView.image = bgImageOrange
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
             case .LOW:
                 expositionTitle.text = "Exposición baja"
-                let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un posible contacto. Cuídate y cuida a los demás. \nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
+                let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un posible contacto. \nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
                   .font: UIFont(name: "Muli-Regular", size: 16.0)!,
                   .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
                 ])
