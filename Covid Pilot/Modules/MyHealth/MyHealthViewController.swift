@@ -13,7 +13,7 @@ class MyHealthViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     var diagnosisCodeUseCase: DiagnosisCodeUseCase?
-    
+    var statusBar: UIView?
     @IBOutlet var codeChars: [UITextField]!
     @IBOutlet weak var sendDiagnosticButton: UIButton!
     var diagnosticEnabled: Bool = false
@@ -28,7 +28,7 @@ class MyHealthViewController: UIViewController {
     
     @IBAction func onReportDiagnosis(_ sender: Any) {
         if !diagnosticEnabled {
-            self.present(Alert.showAlertOk(title: "Error", message: "Por favor introduce un código positivo", buttonTitle: "Aceptar"), animated: true)
+            self.present(Alert.showAlertOk(title: "Error", message: "Por favor introduce un código válido de 12 dígitos", buttonTitle: "Aceptar"), animated: true)
 
         }else{
             var codigoString = ""
@@ -61,6 +61,7 @@ class MyHealthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         
         self.codeChars.forEach { (char) in
             char.text = "\u{200B}"
@@ -128,12 +129,25 @@ class MyHealthViewController: UIViewController {
         }
       
       // move the root view up by the distance of keyboard height
-      self.view.frame.origin.y = 0 - keyboardSize.height
+        self.view.frame.origin.y = 0 - keyboardSize.height
+        
+     // make the notification bar NOT transparent
+//        let statusBarFrame = UIApplication.shared.statusBarFrame
+//        let statusBarView = UIView(frame: statusBarFrame)
+//        self.statusBar = statusBarView
+//        self.view.addSubview(statusBarView)
+//        statusBarView.backgroundColor = .white
+//        self.view.bringSubviewToFront(statusBarView)
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
       // move back the root view origin to zero
-      self.view.frame.origin.y = 0
+        self.view.frame.origin.y = 0
+        
+      // make the notification bar transparent again
+        if let status = self.statusBar {
+            status.removeFromSuperview();
+        }
     }
     
 
