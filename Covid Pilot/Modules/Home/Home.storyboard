@@ -98,7 +98,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XCQ-uz-Hi1">
                                         <rect key="frame" x="26" y="57.333333333333314" width="340" height="56"/>
-                                        <string key="text">Te informaremos en el caso de un posible contacto. 
+                                        <string key="text">Te informaremos en el caso de un posible contacto de riesgo. 
 Cuídate y cuida a los demás.</string>
                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
