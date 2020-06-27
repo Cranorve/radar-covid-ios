@@ -29,8 +29,8 @@ class DiagnosisCodeUseCase {
         .create { [weak self] observer in
             
             let onset = Date(timeIntervalSinceNow: TimeInterval(Config.timeForKeys))
-            let udid: String = self?.settingsRepository.getSettings()?.udid ?? ""
-            
+//            let udid: String = self?.settingsRepository.getSettings()?.udid ?? ""
+            let udid = UUID().uuidString
             guard let token = self?.getToken(id: udid, reportCode: code, onset: onset) else {
                 observer.onError("Couldn't Create Token")
                 return Disposables.create()
