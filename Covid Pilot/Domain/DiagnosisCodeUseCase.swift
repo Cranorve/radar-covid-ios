@@ -13,25 +13,33 @@ import SwiftJWT
 
 class DiagnosisCodeUseCase {
     
+    private let tokenValidity = 30 * 60 // 30 minutes
+    private let dateFormatter = DateFormatter()
     
+    private let settingsRepository: SettingsRepository
     
     private let isfake = false
     
-    private let response: Bool
-    
-    init() {
-        self.response = false
+    init(settingsRepository: SettingsRepository) {
+        self.settingsRepository = settingsRepository
+        dateFormatter.dateFormat = "yyyy-MM-dd"
     }
     
     func sendDiagnosisCode(code: String) -> Observable<Bool> {
         .create { [weak self] observer in
+            
             let onset = Date(timeIntervalSinceNow: TimeInterval(Config.timeForKeys))
-            let token = self?.getToken(reportCode: code, onset: onset)
+            let udid: String = self?.settingsRepository.getSettings()?.udid ?? ""
+            
+            guard let token = self?.getToken(id: udid, reportCode: code, onset: onset) else {
+                observer.onError("Couldn't Create Token")
+                return Disposables.create()
+            }
+            
             DP3TTracing.iWasExposed(onset: onset,
-                                    authentication: .none, isFakeRequest: self?.isfake ?? false) {  result in
+                                    authentication: .HTTPAuthorizationBearer(token: token), isFakeRequest: self?.isfake ?? false) {  result in
                 switch result {
                     case let .failure(error):
-//                        TODO: tratar los distintos casos de error
                         observer.onError(error)
                     default:
                         observer.onNext(true)
@@ -43,35 +51,34 @@ class DiagnosisCodeUseCase {
             
     }
     
-    private func getToken(reportCode: String, onset: Date) -> String {
+    private func getToken(id: String, reportCode: String, onset: Date) -> String? {
 
-        
-        let issuedDate = Date()
-        let expirationDate = Date()  // todo: calcular fecha +30
+        let expirationDate = Date(timeIntervalSinceNow: TimeInterval(tokenValidity))
         
         let header = Header()
-        let claims = ClaimsStandardJWT()
+        var claims = MyClaims()
         claims.iss = "http://es.gob.radarcovid.android"
         claims.aud = ["http://es.gob.radarcovid.android"]
         claims.sub = "iosApp"
         claims.exp = expirationDate
+        claims.jti = id
+        claims.scope = "exposed"
+        claims.onSet = dateFormatter.string(from: onset)
+        claims.tan = reportCode
         
         let privateKey: Data? = Config.privateKey.data(using: .utf8)!
         var myJWT = JWT(header: header, claims: claims)
-        
         let jwtSigner = JWTSigner.rs256(privateKey: privateKey ?? Data())
         
         do {
             let signedJWT = try myJWT.sign(using: jwtSigner)
             return signedJWT.description
         } catch let error {
-            debugPrint(error)
+            os_log("Error signing token  %@", log: OSLog.default, type: .error,  error.localizedDescription)
         }
             
-        
-        return ""
+        return nil
     }
-    
     
 }
 
