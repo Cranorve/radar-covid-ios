@@ -13,10 +13,10 @@ class MyHealthViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     var diagnosisCodeUseCase: DiagnosisCodeUseCase?
-    
+    var statusBar: UIView?
     @IBOutlet var codeChars: [UITextField]!
-    @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var sendDiagnosticButton: UIButton!
+    var diagnosticEnabled: Bool = false
     
     @IBAction func onBack(_ sender: Any) {
         let alert = Alert.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar") { (UIAlertAction) in
@@ -27,17 +27,24 @@ class MyHealthViewController: UIViewController {
     
     
     @IBAction func onReportDiagnosis(_ sender: Any) {
-        var codigoString = ""
-        self.codeChars.forEach { codigoString += $0.text ?? "" }
+        if !diagnosticEnabled {
+            self.present(Alert.showAlertOk(title: "Error", message: "Por favor introduce un código válido de 12 dígitos", buttonTitle: "Aceptar"), animated: true)
 
-        diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
-            onNext:{ [weak self] reportedCodeBool in
-                self?.navigateIf(reported: reportedCodeBool)
-            }, onError: {  [weak self] error in
-                print("Error reporting diagnosis \(error)")
-                self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"), animated: true)
+        }else{
+            var codigoString = ""
+            self.codeChars.forEach { codigoString += $0.text ?? "" }
 
-        }).disposed(by: disposeBag)
+            diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
+                onNext:{ [weak self] reportedCodeBool in
+                    self?.navigateIf(reported: reportedCodeBool)
+                }, onError: {  [weak self] error in
+                    print("Error reporting diagnosis \(error)")
+                    self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"), animated: true)
+
+            }).disposed(by: disposeBag)
+        }
+        
+        
         
     }
     
@@ -46,13 +53,15 @@ class MyHealthViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //hide kayboard in case is shown
         self.view.frame.origin.y = 0
+        self.diagnosticEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
+
     }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.sendDiagnosticButton.isEnabled = false
+       
         
         self.codeChars.forEach { (char) in
             char.text = "\u{200B}"
@@ -94,8 +103,17 @@ class MyHealthViewController: UIViewController {
             let next = codeChars[actualPos + 1]
             next.becomeFirstResponder();
         }
+        
+        // avoid multiple character in the last input
+        if (actualPos == self.codeChars.count - 1) {
+            let actualText = textField.text ?? "\u{200B}"
+            if (actualText != "\u{200B}") {
+                let trimmedString = String(actualText.prefix(2))
+                textField.text = trimmedString
+            }
+        }
        
-        self.sendDiagnosticButton.isEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
+        self.diagnosticEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
     }
     
     private func navigateIf(reported: Bool) {
@@ -111,12 +129,25 @@ class MyHealthViewController: UIViewController {
         }
       
       // move the root view up by the distance of keyboard height
-      self.view.frame.origin.y = 0 - keyboardSize.height
+        self.view.frame.origin.y = 0 - keyboardSize.height
+        
+     // make the notification bar NOT transparent
+//        let statusBarFrame = UIApplication.shared.statusBarFrame
+//        let statusBarView = UIView(frame: statusBarFrame)
+//        self.statusBar = statusBarView
+//        self.view.addSubview(statusBarView)
+//        statusBarView.backgroundColor = .white
+//        self.view.bringSubviewToFront(statusBarView)
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
       // move back the root view origin to zero
-      self.view.frame.origin.y = 0
+        self.view.frame.origin.y = 0
+        
+      // make the notification bar transparent again
+        if let status = self.statusBar {
+            status.removeFromSuperview();
+        }
     }
     
 
