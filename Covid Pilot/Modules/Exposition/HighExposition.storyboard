@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8Y-yv-ZK5">
-                                <rect key="frame" x="20" y="44" width="26" height="105"/>
+                                <rect key="frame" x="20" y="64" width="26" height="85"/>
                                 <state key="normal" image="iconsBack"/>
                                 <connections>
                                     <action selector="onBack:" destination="Q7K-4K-XeD" eventType="touchUpInside" id="6AD-1O-JGe"/>
@@ -388,7 +388,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.9804140925" green="0.97666078810000001" blue="0.96814030409999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="u8Y-yv-ZK5" firstAttribute="top" secondItem="pkY-Wo-8bj" secondAttribute="top" id="WaL-VI-lh2"/>
+                            <constraint firstItem="u8Y-yv-ZK5" firstAttribute="top" secondItem="pkY-Wo-8bj" secondAttribute="top" constant="20" id="WaL-VI-lh2"/>
                             <constraint firstAttribute="bottomMargin" secondItem="fpW-j5-VBB" secondAttribute="bottom" id="cdQ-t6-yUV"/>
                             <constraint firstItem="u8Y-yv-ZK5" firstAttribute="leading" secondItem="QtI-Z8-cSw" secondAttribute="leadingMargin" id="dKB-ef-FkC"/>
                             <constraint firstItem="fpW-j5-VBB" firstAttribute="height" secondItem="pkY-Wo-8bj" secondAttribute="height" multiplier="0.924205" id="drj-DN-dnb"/>
