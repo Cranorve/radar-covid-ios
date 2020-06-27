@@ -16,11 +16,16 @@ class TermsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     private var hiddenSections = Set<Int>()
     
-    private var tableHeaders = ["1. Objeto","2. Derechos de propiedad"]
+    private var tableHeaders = ["1. Objeto","2. Derechos de propiedad", "3. Política de privacidad", "4. Excepteur sint occasionecat", "5. Duis aute irure dolor", "6. Laboris nisi ut aliquip ex"]
     
     private let tableViewData = [
         ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nDuis aute irure dolor in reprehenderit in volup Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occasionecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"],
+        ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nDuis aute irure dolor in reprehenderit in volup Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occasionecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"],
+        ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nDuis aute irure dolor in reprehenderit in volup Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occasionecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"],
+        ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nDuis aute irure dolor in reprehenderit in volup Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occasionecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"],
+        ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nDuis aute irure dolor in reprehenderit in volup Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occasionecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"],
         ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nDuis aute irure dolor in reprehenderit in volup Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occasionecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"]
+        
     ]
     
     @IBAction func onClose(_ sender: Any) {
@@ -79,12 +84,10 @@ class TermsViewController: UIViewController, UITableViewDataSource, UITableViewD
         if let section = section {
             if self.hiddenSections.contains(section) {
                 self.hiddenSections.remove(section)
-                self.tableView.insertRows(at: indexPathsForSection(section),
-                                          with: .fade)
+//                self.tableView.insertRows(at: indexPathsForSection(section), with: .none)
             } else {
                 self.hiddenSections.insert(section)
-                self.tableView.deleteRows(at: indexPathsForSection(section),
-                                          with: .fade)
+//                self.tableView.deleteRows(at: indexPathsForSection(section), with: .none)
                
             }
         }
