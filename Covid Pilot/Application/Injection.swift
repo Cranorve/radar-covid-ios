@@ -114,6 +114,10 @@ class Injection {
                                  settingsApi: r.resolve(SettingsAPI.self)!)
         }.inObjectScope(.container)
         
+        container.register(SyncUseCase.self) { r in
+            SyncUseCase()
+        }.inObjectScope(.container)
+        
         container.register(TabBarController.self) { r in
             TabBarController(
                 homeViewController: r.resolve(HomeViewController.self)!,

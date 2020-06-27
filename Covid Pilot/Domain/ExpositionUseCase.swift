@@ -30,7 +30,7 @@ class ExpositionUseCase: DP3TTracingDelegate {
                 case let .success(state):
                     self?.subject.onNext(self?.tracingStatusToExpositionInfo(tStatus: state) ?? ExpositionInfo(level: .Healthy(lastCheck: Date())))
                 case .failure:
-                    self?.subject.onError("Algo paso mal con la peticion del status.")
+                    self?.subject.onError("Error retrieving exposition status")
                     break
                 }
             }

@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
     var router: AppRouter?
     var expositionUseCase: ExpositionUseCase?
     var radarStatusUseCase: RadarStatusUseCase?
+    var syncUseCase: SyncUseCase?
     
     @IBAction func onCommunicate(_ sender: Any) {
         router?.route(to: Routes.MyHealth, from: self)
@@ -55,7 +56,6 @@ class HomeViewController: UIViewController {
         radarStatusUseCase?.changeTracingStatus(active: active).subscribe(
             onNext:{ [weak self] active in
                 self?.changeRadarMessage(active: active)
-                
             }, onError: {  [weak self] error in
                 debugPrint("Error: \(error)")
                 self?.radarSwitch.isOn = false
@@ -72,8 +72,6 @@ class HomeViewController: UIViewController {
             router?.route(to: Routes.HighExposition, from: self)
         }
     }
-    
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,11 +91,20 @@ class HomeViewController: UIViewController {
         changeRadarMessage(active: isTracingActive)
         radarSwitch.isOn = isTracingActive
         
+        syncUseCase?.sync().subscribe(
+            onNext:{ _ in
+                debugPrint("Sync Completed")
+            }, onError: { [weak self] error in
+                debugPrint(error)
+                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener datos de exposición", buttonTitle: "Aceptar"), animated: true)
+        }).disposed(by: disposeBag)
+        
         expositionUseCase?.getExpositionInfo().subscribe(
             onNext:{ [weak self] expositionInfo in
                 self?.updateExpositionInfo(expositionInfo)
-            }, onError: {  error in
-                print( "Error getting exposure info \(error)")
+            }, onError: { [weak self] error in
+                debugPrint(error)
+                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
         
     }

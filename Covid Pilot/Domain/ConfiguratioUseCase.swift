@@ -31,6 +31,7 @@ class ConfigurationUseCase {
                     let settings = Settings()
                     settings.udid = token
                     settings.parameters = backSettings
+                    self?.loadParameters(settings)
                     self?.settingsRepository.save(settings: settings)
                     return settings
                 }
@@ -46,23 +47,6 @@ class ConfigurationUseCase {
         }
     }
     
-    private func sync(_ settings: Settings) -> Observable<Settings> {
-        .create { [weak self] observer in
-            
-            self?.loadParameters(settings)
-            
-            DP3TTracing.sync { result in
-                switch result {
-                case let .failure(error):
-                    // TODO: tratar los distintos casos de error
-                    observer.onError(error)
-                default:
-                    observer.onNext(settings)
-                }
-            }
-            return Disposables.create()
-        }
-    }
     
     private func loadParameters(_ settings: Settings) {
         var params = DP3TTracing.parameters
