@@ -59,7 +59,6 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.load(poll: poll)
 
         self.delegate = self
         self.dataSource = self
@@ -69,13 +68,22 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         progressView.clipsToBounds = true
         progressView.layer.cornerRadius = 5.0;
         
-//        pollUseCase?.getPoll().subscribe(
-//            onNext:{ [weak self] poll in
-//                self?.load(poll: poll)
-//            }, onError: {  [weak self] error in
-//                debugPrint(error)
-//                self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
-//        }).disposed(by: disposeBag)
+        DispatchQueue.main.async {
+            self.view.showLoading()
+        }
+        pollUseCase?.getPoll().subscribe(
+            onNext:{ [weak self] poll in
+                DispatchQueue.main.async {
+                    self?.view.hideLoading()
+                }
+                self?.load(poll: poll)
+            }, onError: {  [weak self] error in
+                DispatchQueue.main.async {
+                    self?.view.hideLoading()
+                }
+                debugPrint(error)
+                self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
+        }).disposed(by: disposeBag)
 
     }
     

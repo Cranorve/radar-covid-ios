@@ -24,11 +24,13 @@ class ExpositionUseCase: DP3TTracingDelegate {
     
     
     func getExpositionInfo() -> Observable<ExpositionInfo> {
+        
         .deferred { [weak self] in
             DP3TTracing.status { result in
                 switch result {
                 case let .success(state):
                     self?.subject.onNext(self?.tracingStatusToExpositionInfo(tStatus: state) ?? ExpositionInfo(level: .Healthy(lastCheck: Date())))
+                    break;
                 case .failure:
                     self?.subject.onError("Error retrieving exposition status")
                     break
