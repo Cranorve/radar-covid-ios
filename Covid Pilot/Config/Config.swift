@@ -25,6 +25,12 @@ enum Endpoits {
         case .pro: return "https://dqarr2dc0prei.cloudfront.net/questionnaire"
         }
     }
+    var kpi: String {
+        switch self {
+        case .pre: return "https://d3d0clxg4q92wk.cloudfront.net/kpi"
+        case .pro: return "https://dqarr2dc0prei.cloudfront.net/kpi"
+        }
+    }
     var dpppt: String {
         switch self {
         case .pre: return "https://d3d0clxg4q92wk.cloudfront.net/dp3t"
@@ -39,14 +45,14 @@ struct Config {
         static let debug = true
         static let environment = "PRE"
         static let endpoints: Endpoits = .pre
-        static let dp3tMode: ApplicationDescriptor.Mode = .production
+        static let dp3tMode: ApplicationDescriptor.Mode = .test
         static let validationKey = Data(base64Encoded:"LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFdmx1bzYyTFVVcFllcVVGM3haWVhYSG03cjBGWApScENFbVBqTUlxUHVERjcvYmRua1FIbndxbVNoVzIvOU9BcllEd09FUUZmdEE4ZDV6T3NEZmh0T2NRPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t")
         static let privateKey = privateKeyPre
     #elseif DEBUG_PRO
         static let debug = true
         static let environment = "PRO"
         static let endpoints: Endpoits = .pro
-        static let dp3tMode: ApplicationDescriptor.Mode = .production
+        static let dp3tMode: ApplicationDescriptor.Mode = .test
         static let validationKey = Data(base64Encoded: "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFdmx1bzYyTFVVcFllcVVGM3haWVhYSG03cjBGWApScENFbVBqTUlxUHVERjcvYmRua1FIbndxbVNoVzIvOU9BcllEd09FUUZmdEE4ZDV6T3NEZmh0T2NRPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t")
         static let privateKey = privateKeyPro
     #elseif RELEASE_PRE
