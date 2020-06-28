@@ -19,6 +19,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     var router: AppRouter?
     var pollUseCase: PollUseCase?
     var finishPollVC: FinishPollViewController?
+    var nextButtonYOrigin:CGFloat = 0
     
     var poll: Poll?
     private var viewControllers: [UIViewController] = []
@@ -84,6 +85,14 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
                 debugPrint(error)
                 self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
+        
+
+        
+        //Add observers to move up/down the main view when the keyboard appears/dissapear
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
 
     }
     
@@ -200,4 +209,20 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         indexLabel.text = (currentQuestion?.position ?? 0).description + " de " + (poll?.numRootQuestions ?? 0).description
     }
 
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+           // if keyboard size is not available for some reason, dont do anything
+           return
+        }
+      
+      // move the root view up by the distance of keyboard height
+        self.nextButtonYOrigin = self.nextButton.frame.origin.y
+        self.nextButton.frame.origin.y = self.nextButtonYOrigin - keyboardSize.height
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+      // move back the root view origin to zero
+        self.nextButton.frame.origin.y = self.nextButtonYOrigin
+    }
 }

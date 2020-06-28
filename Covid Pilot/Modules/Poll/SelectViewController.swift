@@ -27,6 +27,7 @@ class SelectViewController: UIViewController, QuestionController, UICollectionVi
         }
         super.viewDidLoad()
         collectionView.delegate = self
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -66,4 +67,5 @@ class SelectViewController: UIViewController, QuestionController, UICollectionVi
     }
     
 
+   
 }
