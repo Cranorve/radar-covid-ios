@@ -18,7 +18,7 @@ struct ExpositionInfo {
 
     enum Level {
          case Healthy(lastCheck: Date?)
-         case Exposed(since: Date?)
+         case Exposed(since: Date?, lastCheck: Date?)
          case Infected
     }
     
