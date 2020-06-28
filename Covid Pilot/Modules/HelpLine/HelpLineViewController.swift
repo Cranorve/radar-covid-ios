@@ -8,12 +8,14 @@
 
 import UIKit
 import MessageUI
+import RxSwift
 
 class HelpLineViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     var router: AppRouter?
     var preferencesRepository: PreferencesRepository?
-    
+    private let disposeBag = DisposeBag()
+
     @IBOutlet weak var thanksLabel: UILabel!
     @IBOutlet weak var reportLabel: UILabel!
     @IBOutlet weak var timeTableLabel: UILabel!
@@ -21,12 +23,32 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
     @IBOutlet weak var phoneView: BackgroundView!
-    
+    var pollUseCase: PollUseCase?
     @IBAction func onPollSelected(_ sender: Any) {
         if preferencesRepository?.isPollCompleted() ?? false {
             router?.route(to: Routes.PollFinished, from: self)
         } else {
-            router?.route(to: Routes.Poll, from: self)
+            DispatchQueue.main.async {
+                self.view.showLoading()
+            }
+            
+            pollUseCase?.getPoll().subscribe(
+                onNext:{ [weak self] poll in
+                    DispatchQueue.main.async { [weak self] in
+                        self?.view.hideLoading()
+                        
+                    }
+                    guard let this = self else {
+                        return
+                    }
+                    this.router?.route(to: Routes.Poll, from: this, parameters: poll)
+                }, onError: {  [weak self] error in
+                    debugPrint(error)
+                    DispatchQueue.main.async { [weak self] in
+                        self?.view.hideLoading()
+                    }
+                    self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
+            }).disposed(by: disposeBag)
         }
         
     }

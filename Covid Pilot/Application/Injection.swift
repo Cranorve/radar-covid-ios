@@ -169,6 +169,7 @@ class Injection {
         
         container.register(HelpLineViewController.self) {  r in
             let helpVC = self.createViewController(storyboard: "HelpLine", id: "HelpLineViewController") as! HelpLineViewController
+            helpVC.pollUseCase = r.resolve(PollUseCase.self)!
             helpVC.router = r.resolve(AppRouter.self)!
             helpVC.preferencesRepository = r.resolve(PreferencesRepository.self)!
             return helpVC
