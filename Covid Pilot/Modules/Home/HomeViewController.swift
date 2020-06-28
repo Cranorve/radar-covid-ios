@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import DP3TSDK
 
 class HomeViewController: UIViewController {
     

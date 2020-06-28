@@ -25,6 +25,12 @@ enum Endpoits {
         case .pro: return "https://dqarr2dc0prei.cloudfront.net/questionnaire"
         }
     }
+    var kpi: String {
+        switch self {
+        case .pre: return "https://d3d0clxg4q92wk.cloudfront.net/kpi"
+        case .pro: return "https://dqarr2dc0prei.cloudfront.net/kpi"
+        }
+    }
     var dpppt: String {
         switch self {
         case .pre: return "https://d3d0clxg4q92wk.cloudfront.net/dp3t"

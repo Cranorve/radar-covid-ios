@@ -47,6 +47,8 @@
 		6DA18CC42491733900BE8AAB /* RadarStatusUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CC32491733900BE8AAB /* RadarStatusUseCase.swift */; };
 		6DA18CC62492044E00BE8AAB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CC52492044E00BE8AAB /* Alert.swift */; };
 		6DAD76AE24A884EF00643AAD /* ResetDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAD76AD24A884EF00643AAD /* ResetDataUseCase.swift */; };
+		6DB14CC024A8F498001FC6C1 /* KpiControllerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB14CBD24A8F498001FC6C1 /* KpiControllerAPI.swift */; };
+		6DB14CC124A8F498001FC6C1 /* KpiDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB14CBF24A8F498001FC6C1 /* KpiDto.swift */; };
 		6DB5417B2497DFFE00166D37 /* QuestionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB541792497DFFE00166D37 /* QuestionItemCell.swift */; };
 		6DB5417C2497DFFE00166D37 /* QuestionItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5417A2497DFFE00166D37 /* QuestionItemCell.xib */; };
 		6DB541812497F55900166D37 /* FinishPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5417F2497F55900166D37 /* FinishPollViewController.swift */; };
@@ -73,8 +75,6 @@
 		6DE27C78249A6D4600BBCF40 /* AlamofireImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C6E249A6D4500BBCF40 /* AlamofireImplementations.swift */; };
 		6DE27C79249A6D4600BBCF40 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C6F249A6D4500BBCF40 /* APIHelper.swift */; };
 		6DE27C7A249A6D4600BBCF40 /* CodableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C70249A6D4500BBCF40 /* CodableHelper.swift */; };
-		6DE27C80249A6D4F00BBCF40 /* VerificationControllerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C7D249A6D4F00BBCF40 /* VerificationControllerAPI.swift */; };
-		6DE27C81249A6D4F00BBCF40 /* Tan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C7F249A6D4F00BBCF40 /* Tan.swift */; };
 		6DE27C83249A7E3900BBCF40 /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C82249A7E3900BBCF40 /* Poll.swift */; };
 		6DE27C86249E14CA00BBCF40 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C84249E14CA00BBCF40 /* TextViewController.swift */; };
 		6DE27C87249E14CA00BBCF40 /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE27C85249E14CA00BBCF40 /* TextViewController.xib */; };
@@ -199,6 +199,8 @@
 		6DA18CC32491733900BE8AAB /* RadarStatusUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarStatusUseCase.swift; sourceTree = "<group>"; };
 		6DA18CC52492044E00BE8AAB /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		6DAD76AD24A884EF00643AAD /* ResetDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetDataUseCase.swift; sourceTree = "<group>"; };
+		6DB14CBD24A8F498001FC6C1 /* KpiControllerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KpiControllerAPI.swift; sourceTree = "<group>"; };
+		6DB14CBF24A8F498001FC6C1 /* KpiDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KpiDto.swift; sourceTree = "<group>"; };
 		6DB541792497DFFE00166D37 /* QuestionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItemCell.swift; sourceTree = "<group>"; };
 		6DB5417A2497DFFE00166D37 /* QuestionItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionItemCell.xib; sourceTree = "<group>"; };
 		6DB5417F2497F55900166D37 /* FinishPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishPollViewController.swift; sourceTree = "<group>"; };
@@ -226,8 +228,6 @@
 		6DE27C6E249A6D4500BBCF40 /* AlamofireImplementations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireImplementations.swift; sourceTree = "<group>"; };
 		6DE27C6F249A6D4500BBCF40 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		6DE27C70249A6D4500BBCF40 /* CodableHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableHelper.swift; sourceTree = "<group>"; };
-		6DE27C7D249A6D4F00BBCF40 /* VerificationControllerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationControllerAPI.swift; sourceTree = "<group>"; };
-		6DE27C7F249A6D4F00BBCF40 /* Tan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tan.swift; sourceTree = "<group>"; };
 		6DE27C82249A7E3900BBCF40 /* Poll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
 		6DE27C84249E14CA00BBCF40 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		6DE27C85249E14CA00BBCF40 /* TextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
@@ -461,7 +461,7 @@
 		6D5AFC9F2493621300EFE838 /* WS */ = {
 			isa = PBXGroup;
 			children = (
-				6DE27C7B249A6D4F00BBCF40 /* Verification */,
+				6DB14CBB24A8F498001FC6C1 /* Kpi */,
 				6DE27C6E249A6D4500BBCF40 /* AlamofireImplementations.swift */,
 				6DE27C6F249A6D4500BBCF40 /* APIHelper.swift */,
 				6DE27C69249A6D4500BBCF40 /* APIs.swift */,
@@ -535,6 +535,31 @@
 			path = Exposition;
 			sourceTree = "<group>";
 		};
+		6DB14CBB24A8F498001FC6C1 /* Kpi */ = {
+			isa = PBXGroup;
+			children = (
+				6DB14CBC24A8F498001FC6C1 /* APIs */,
+				6DB14CBE24A8F498001FC6C1 /* Models */,
+			);
+			path = Kpi;
+			sourceTree = "<group>";
+		};
+		6DB14CBC24A8F498001FC6C1 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				6DB14CBD24A8F498001FC6C1 /* KpiControllerAPI.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		6DB14CBE24A8F498001FC6C1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6DB14CBF24A8F498001FC6C1 /* KpiDto.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		6DB5418324989BE900166D37 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -574,31 +599,6 @@
 				76D9BD4424A8996700BA6697 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		6DE27C7B249A6D4F00BBCF40 /* Verification */ = {
-			isa = PBXGroup;
-			children = (
-				6DE27C7C249A6D4F00BBCF40 /* APIs */,
-				6DE27C7E249A6D4F00BBCF40 /* Models */,
-			);
-			path = Verification;
-			sourceTree = "<group>";
-		};
-		6DE27C7C249A6D4F00BBCF40 /* APIs */ = {
-			isa = PBXGroup;
-			children = (
-				6DE27C7D249A6D4F00BBCF40 /* VerificationControllerAPI.swift */,
-			);
-			path = APIs;
-			sourceTree = "<group>";
-		};
-		6DE27C7E249A6D4F00BBCF40 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				6DE27C7F249A6D4F00BBCF40 /* Tan.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		6DE27D3924A7187500BBCF40 /* Supporting */ = {
@@ -890,7 +890,6 @@
 				6DE27C79249A6D4600BBCF40 /* APIHelper.swift in Sources */,
 				6DE27C662499F65E00BBCF40 /* AnswerOptionDto.swift in Sources */,
 				6DA18CBB2491055D00BE8AAB /* BackgroundView.swift in Sources */,
-				6DE27C81249A6D4F00BBCF40 /* Tan.swift in Sources */,
 				6DE27C642499118200BBCF40 /* String+Extension.swift in Sources */,
 				6DF6ECE52490C1F5007EAA40 /* BluetoothHandler.swift in Sources */,
 				6DE27C74249A6D4600BBCF40 /* JSONEncodableEncoding.swift in Sources */,
@@ -942,6 +941,7 @@
 				6DE27C97249FB1F600BBCF40 /* UIViewController+Extension.swift in Sources */,
 				6DE27D3F24A76D7E00BBCF40 /* AttenuationDurationThresholdsDto.swift in Sources */,
 				76D9BD2B24A8992000BA6697 /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
+				6DB14CC124A8F498001FC6C1 /* KpiDto.swift in Sources */,
 				76D9BD3524A8992000BA6697 /* NVActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				6DE27C86249E14CA00BBCF40 /* TextViewController.swift in Sources */,
 				6D5AFCD72493626C00EFE838 /* QuestionnaireControllerAPI.swift in Sources */,
@@ -949,9 +949,9 @@
 				6DF6ECDB248FD641007EAA40 /* ExpositionUseCase.swift in Sources */,
 				6DE27C72249A6D4600BBCF40 /* Models.swift in Sources */,
 				6DB5418E24989C2500166D37 /* SettingsAPI.swift in Sources */,
+				6DB14CC024A8F498001FC6C1 /* KpiControllerAPI.swift in Sources */,
 				6DE27C71249A6D4500BBCF40 /* JSONEncodingHelper.swift in Sources */,
 				6DA18CC42491733900BE8AAB /* RadarStatusUseCase.swift in Sources */,
-				6DE27C80249A6D4F00BBCF40 /* VerificationControllerAPI.swift in Sources */,
 				6DB5419124989C2500166D37 /* UuidDto.swift in Sources */,
 				76D9BD3724A8992000BA6697 /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				6DF6ECE0248FD772007EAA40 /* ExpositionInfo.swift in Sources */,
