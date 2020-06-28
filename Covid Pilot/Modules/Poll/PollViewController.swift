@@ -86,7 +86,6 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
                 self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
         
-
         
         //Add observers to move up/down the main view when the keyboard appears/dissapear
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
