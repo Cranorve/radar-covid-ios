@@ -35,7 +35,7 @@ class MyHealthViewController: UIViewController {
             self.codeChars.forEach {
                 let s: String = $0.text ?? ""
                 // Clean weird chars
-                codigoString += s.suffix(1)
+                codigoString += s
             }
 
             diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
@@ -104,6 +104,9 @@ class MyHealthViewController: UIViewController {
         
         // detect new input and pass to the next one
         else if (actualPos < self.codeChars.count - 1) {
+            // the first character is an unicode empty space so we need to take the second character and assign it to the input
+            let finalText = textField.text?.suffix(1)
+            textField.text = String(finalText ?? "")
             let next = codeChars[actualPos + 1]
             next.becomeFirstResponder();
         }
