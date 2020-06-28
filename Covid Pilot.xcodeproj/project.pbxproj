@@ -1372,8 +1372,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.7.0;
+				kind = exactVersion;
+				version = 1.0.1;
 			};
 		};
 		6D5AFCE6249369FE00EFE838 /* XCRemoteSwiftPackageReference "Alamofire" */ = {

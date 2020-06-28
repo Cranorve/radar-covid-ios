@@ -15,7 +15,7 @@ class SyncUseCase {
     func sync() -> Observable<Void> {
         .create { observer in
             
-            DP3TTracing.sync { result in
+            DP3TTracing.sync(runningInBackground: false) { result in
                 switch result {
                 case let .failure(error):
                     observer.onError(error)
