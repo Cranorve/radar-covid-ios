@@ -116,7 +116,8 @@ class MyHealthViewController: UIViewController {
             let actualText = textField.text ?? "\u{200B}"
             if (actualText != "\u{200B}") {
                 let trimmedString = String(actualText.prefix(2))
-                textField.text = trimmedString
+                let finalString = String(trimmedString.suffix(1))
+                textField.text = finalString
             }
         }
        
