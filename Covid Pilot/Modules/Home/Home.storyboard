@@ -126,12 +126,27 @@ Cuídate y cuida a los demás.</string>
                                     <constraint firstAttribute="bottom" secondItem="5DO-YK-Xnt" secondAttribute="bottom" constant="30" id="sch-zQ-C0y"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKG-lv-3X4">
+                                <rect key="frame" x="132" y="246.66666666666663" width="150" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="CoS-lc-BeT"/>
+                                    <constraint firstAttribute="height" constant="50" id="cLY-FJ-P9P"/>
+                                </constraints>
+                                <state key="normal" title="RESET DATA">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onReset:" destination="boN-vE-v6h" eventType="primaryActionTriggered" id="7cg-2h-x95"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="bgColor"/>
                         <constraints>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="mgD-SH-6Y2" secondAttribute="trailing" constant="16" id="3eO-Kl-moS"/>
                             <constraint firstItem="mgD-SH-6Y2" firstAttribute="top" secondItem="fuQ-dg-Nwm" secondAttribute="bottom" constant="30" id="B8C-1D-2un"/>
                             <constraint firstItem="6hz-zu-Mhb" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" constant="14" id="Ihf-J3-GiC"/>
+                            <constraint firstItem="AKG-lv-3X4" firstAttribute="centerX" secondItem="bH7-lt-L7E" secondAttribute="centerX" id="MVc-Dr-zgZ"/>
                             <constraint firstItem="fuQ-dg-Nwm" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" constant="14" id="Nii-Y7-MiU"/>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="bottom" secondItem="mgD-SH-6Y2" secondAttribute="bottom" constant="20" id="PQY-LE-EIo"/>
                             <constraint firstItem="6hz-zu-Mhb" firstAttribute="height" secondItem="bH7-lt-L7E" secondAttribute="height" multiplier="0.209895" id="V5n-og-X5a"/>
@@ -142,6 +157,7 @@ Cuídate y cuida a los demás.</string>
                             <constraint firstItem="6NQ-cJ-mH8" firstAttribute="centerX" secondItem="AA3-07-0Pc" secondAttribute="centerX" id="kB7-cO-j2Z"/>
                             <constraint firstItem="Ker-eU-Kvi" firstAttribute="centerX" secondItem="6NQ-cJ-mH8" secondAttribute="centerX" id="m1k-21-WlV"/>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="fuQ-dg-Nwm" secondAttribute="trailing" constant="14" id="m9G-Ms-gYl"/>
+                            <constraint firstItem="AKG-lv-3X4" firstAttribute="centerY" secondItem="Ker-eU-Kvi" secondAttribute="centerY" id="mff-oS-dxd"/>
                             <constraint firstItem="Ker-eU-Kvi" firstAttribute="centerY" secondItem="6NQ-cJ-mH8" secondAttribute="centerY" id="oxX-c2-Xhu"/>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="fuQ-dg-Nwm" secondAttribute="trailing" constant="14" id="shj-zg-gqY"/>
                             <constraint firstItem="fuQ-dg-Nwm" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" constant="14" id="ywM-AN-4KD"/>
@@ -155,6 +171,7 @@ Cuídate y cuida a los demás.</string>
                         <outlet property="radarMessage" destination="5DO-YK-Xnt" id="mg3-Yj-6Kn"/>
                         <outlet property="radarSwitch" destination="G5m-HH-dbd" id="eo5-R2-GwJ"/>
                         <outlet property="radarView" destination="fuQ-dg-Nwm" id="bzd-Ez-hrg"/>
+                        <outlet property="resetDataButton" destination="AKG-lv-3X4" id="amN-hh-hpR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGb-4j-Cjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

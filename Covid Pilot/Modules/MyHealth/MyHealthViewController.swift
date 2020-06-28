@@ -32,7 +32,11 @@ class MyHealthViewController: UIViewController {
 
         }else{
             var codigoString = ""
-            self.codeChars.forEach { codigoString += $0.text ?? "" }
+            self.codeChars.forEach {
+                let s: String = $0.text ?? ""
+                // Clean weird chars
+                codigoString += s.suffix(1)
+            }
 
             diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
                 onNext:{ [weak self] reportedCodeBool in

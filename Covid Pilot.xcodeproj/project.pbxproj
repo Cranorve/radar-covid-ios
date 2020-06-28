@@ -46,6 +46,7 @@
 		6DA18CC224916B4100BE8AAB /* ExpositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */; };
 		6DA18CC42491733900BE8AAB /* RadarStatusUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CC32491733900BE8AAB /* RadarStatusUseCase.swift */; };
 		6DA18CC62492044E00BE8AAB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CC52492044E00BE8AAB /* Alert.swift */; };
+		6DAD76AE24A884EF00643AAD /* ResetDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAD76AD24A884EF00643AAD /* ResetDataUseCase.swift */; };
 		6DB5417B2497DFFE00166D37 /* QuestionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB541792497DFFE00166D37 /* QuestionItemCell.swift */; };
 		6DB5417C2497DFFE00166D37 /* QuestionItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5417A2497DFFE00166D37 /* QuestionItemCell.xib */; };
 		6DB541812497F55900166D37 /* FinishPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5417F2497F55900166D37 /* FinishPollViewController.swift */; };
@@ -157,6 +158,7 @@
 		6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpositionViewController.swift; sourceTree = "<group>"; };
 		6DA18CC32491733900BE8AAB /* RadarStatusUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarStatusUseCase.swift; sourceTree = "<group>"; };
 		6DA18CC52492044E00BE8AAB /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		6DAD76AD24A884EF00643AAD /* ResetDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetDataUseCase.swift; sourceTree = "<group>"; };
 		6DB541792497DFFE00166D37 /* QuestionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItemCell.swift; sourceTree = "<group>"; };
 		6DB5417A2497DFFE00166D37 /* QuestionItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionItemCell.xib; sourceTree = "<group>"; };
 		6DB5417F2497F55900166D37 /* FinishPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishPollViewController.swift; sourceTree = "<group>"; };
@@ -551,6 +553,7 @@
 				39C3FEC22497746900D1A13E /* DiagnosisCodeUseCase.swift */,
 				6DB541942498A29D00166D37 /* ConfiguratioUseCase.swift */,
 				6DE27D4024A7A08C00BBCF40 /* SyncUseCase.swift */,
+				6DAD76AD24A884EF00643AAD /* ResetDataUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				6DE27C642499118200BBCF40 /* String+Extension.swift in Sources */,
 				6DF6ECE52490C1F5007EAA40 /* BluetoothHandler.swift in Sources */,
 				6DE27C74249A6D4600BBCF40 /* JSONEncodableEncoding.swift in Sources */,
+				6DAD76AE24A884EF00643AAD /* ResetDataUseCase.swift in Sources */,
 				6D5AFCEC24936E7A00EFE838 /* Config.swift in Sources */,
 				6DE27C76249A6D4600BBCF40 /* Configuration.swift in Sources */,
 				6D5AFCDD2493626C00EFE838 /* QuestionOptionDto.swift in Sources */,
