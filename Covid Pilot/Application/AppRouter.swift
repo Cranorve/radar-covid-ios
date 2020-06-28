@@ -63,7 +63,7 @@ class AppRouter : Router {
         case .HighExposition:
             routeToHighExposition(context)
         case .Poll:
-            routeToPoll(context, pollInfo: parameters[0] as? Poll)
+            routeToPoll(context)
         case .PollFinished:
             routeToPollFinished(context)
         }
@@ -99,11 +99,7 @@ class AppRouter : Router {
         context.navigationController?.pushViewController(highExpositionVC!, animated: true)
     }
     
-    private func routeToPoll(_ context: UIViewController, pollInfo: Poll?) {
-        guard let vc = pollVC else {
-            return
-        }
-        vc.poll = pollInfo
+    private func routeToPoll(_ context: UIViewController) {
         context.navigationController?.pushViewController(pollVC!, animated: true)
     }
     

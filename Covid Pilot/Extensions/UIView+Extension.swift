@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 extension UIView {
     func showLoading() {
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light )
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -20,7 +20,7 @@ extension UIView {
             self?.addSubview(blurEffectView)
         }
         
-        let loader = NVActivityIndicatorView(frame: CGRect(x: self.center.x-65, y: self.center.y-65, width: 130, height: 130), type: NVActivityIndicatorType.ballScaleMultiple, color: UIColor().fromHex(hex: "#8a7cb7"))
+        let loader = NVActivityIndicatorView(frame: CGRect(x: self.center.x-65, y: self.center.y-65, width: 130, height: 130), type: NVActivityIndicatorType.ballScaleMultiple, color: UIColor.twilight )
             DispatchQueue.main.async { [weak self] in
                 loader.startAnimating()
                 self?.addSubview(loader)
