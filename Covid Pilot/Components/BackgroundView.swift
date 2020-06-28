@@ -23,8 +23,12 @@ class BackgroundView : UIView {
     
     var image: UIImage? {
         didSet {
+            if let imageView = imageView {
+                imageView.removeFromSuperview()
+            }
             imageView = UIImageView(frame: self.bounds)
             imageView!.image = image
+            draw(self.bounds)
         }
     }
     
