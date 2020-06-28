@@ -128,7 +128,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podrías estar infectado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qbx-0G-Sye">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podrías estar infectado desde hace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qbx-0G-Sye">
                                                         <rect key="frame" x="26" y="76.666666666666657" width="329" height="18.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -401,6 +401,7 @@
                     <size key="freeformSize" width="414" height="1650"/>
                     <connections>
                         <outlet property="expositionBGView" destination="UBR-5L-ywI" id="wiM-fJ-hDf"/>
+                        <outlet property="infectedText" destination="eGa-Fa-itF" id="rIV-3f-Eib"/>
                         <outlet property="moreInfoView" destination="XB5-Tr-IGD" id="XLb-ce-b9D"/>
                         <outlet property="phoneLabel" destination="EFk-2i-ncm" id="eSF-Zz-J1M"/>
                         <outlet property="phoneView" destination="TEw-0H-yKe" id="r4r-N9-MSq"/>

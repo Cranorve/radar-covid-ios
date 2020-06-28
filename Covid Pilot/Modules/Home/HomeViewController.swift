@@ -136,6 +136,7 @@ class HomeViewController: UIViewController {
         
         expositionUseCase?.getExpositionInfo().subscribe(
             onNext:{ [weak self] expositionInfo in
+                print(expositionInfo.level)
                 DispatchQueue.main.async { [weak self] in
                     self?.view.hideLoading()
                 }
@@ -165,6 +166,7 @@ class HomeViewController: UIViewController {
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
                 break
             case .Healthy(lastCheck: let lastCheck):
+                print(lastCheck)
                 expositionTitle.text = "Exposición baja"
                 let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un\nposible contacto de riesgo.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
                   .font: UIFont(name: "Muli-Light", size: 16.0)!,
