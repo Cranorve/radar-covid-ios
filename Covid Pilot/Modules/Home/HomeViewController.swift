@@ -122,6 +122,8 @@ class HomeViewController: UIViewController {
         changeRadarMessage(active: isTracingActive)
         radarSwitch.isOn = isTracingActive
         
+        
+        
         syncUseCase?.sync().subscribe(
             onNext:{ _ in
                 debugPrint("Sync Completed")

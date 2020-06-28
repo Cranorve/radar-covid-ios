@@ -314,18 +314,18 @@ COVID positivo</string>
                     </view>
                     <connections>
                         <outlet property="sendDiagnosticButton" destination="Yjq-yA-SHq" id="bpb-x4-6wV"/>
-                        <outletCollection property="codeChars" destination="rfC-vm-jHz" collectionClass="NSMutableArray" id="OCJ-81-fwp"/>
-                        <outletCollection property="codeChars" destination="qUu-zT-uLd" collectionClass="NSMutableArray" id="8Jf-Qd-lhD"/>
-                        <outletCollection property="codeChars" destination="WGi-3Q-gO5" collectionClass="NSMutableArray" id="ZR1-Qq-fnm"/>
-                        <outletCollection property="codeChars" destination="HHi-si-IWt" collectionClass="NSMutableArray" id="L0C-LO-bxv"/>
-                        <outletCollection property="codeChars" destination="xUn-qk-J9W" collectionClass="NSMutableArray" id="jNb-9X-GIX"/>
-                        <outletCollection property="codeChars" destination="56p-Dq-6u7" collectionClass="NSMutableArray" id="Pc2-VV-aEL"/>
-                        <outletCollection property="codeChars" destination="488-Js-aiy" collectionClass="NSMutableArray" id="Urc-F6-eNU"/>
-                        <outletCollection property="codeChars" destination="8UP-df-oki" collectionClass="NSMutableArray" id="3Vd-bA-Ner"/>
-                        <outletCollection property="codeChars" destination="8Zb-gQ-pUv" collectionClass="NSMutableArray" id="wpb-t4-vLE"/>
-                        <outletCollection property="codeChars" destination="CEz-ac-pla" collectionClass="NSMutableArray" id="pJw-Bc-9hP"/>
-                        <outletCollection property="codeChars" destination="405-qe-SRW" collectionClass="NSMutableArray" id="E8q-Y2-K3U"/>
-                        <outletCollection property="codeChars" destination="Qjq-L0-Gee" collectionClass="NSMutableArray" id="6mA-5d-Vi1"/>
+                        <outletCollection property="codeChars" destination="HHi-si-IWt" collectionClass="NSMutableArray" id="j2w-Pk-kVC"/>
+                        <outletCollection property="codeChars" destination="405-qe-SRW" collectionClass="NSMutableArray" id="WUc-f5-qu6"/>
+                        <outletCollection property="codeChars" destination="qUu-zT-uLd" collectionClass="NSMutableArray" id="x3d-St-ZR3"/>
+                        <outletCollection property="codeChars" destination="8UP-df-oki" collectionClass="NSMutableArray" id="4Vf-gi-Hyf"/>
+                        <outletCollection property="codeChars" destination="CEz-ac-pla" collectionClass="NSMutableArray" id="AKE-VX-aK1"/>
+                        <outletCollection property="codeChars" destination="WGi-3Q-gO5" collectionClass="NSMutableArray" id="h0K-ix-FDM"/>
+                        <outletCollection property="codeChars" destination="Qjq-L0-Gee" collectionClass="NSMutableArray" id="HHr-WM-3EX"/>
+                        <outletCollection property="codeChars" destination="xUn-qk-J9W" collectionClass="NSMutableArray" id="pyb-25-Zp2"/>
+                        <outletCollection property="codeChars" destination="8Zb-gQ-pUv" collectionClass="NSMutableArray" id="RWT-fb-gAP"/>
+                        <outletCollection property="codeChars" destination="rfC-vm-jHz" collectionClass="NSMutableArray" id="FGi-Qz-4nN"/>
+                        <outletCollection property="codeChars" destination="488-Js-aiy" collectionClass="NSMutableArray" id="wuP-s7-ucc"/>
+                        <outletCollection property="codeChars" destination="56p-Dq-6u7" collectionClass="NSMutableArray" id="fu1-oK-euo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8v-PM-yNA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
