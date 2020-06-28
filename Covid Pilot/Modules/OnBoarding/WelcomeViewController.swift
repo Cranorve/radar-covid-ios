@@ -35,7 +35,7 @@ class WelcomeViewController: UIViewController {
     private func loadText() {
         let bullet1 = "Conoce en todo momento si te expones al coronavirus, por tu propia seguridad y la de los demás.\n"
         let bullet2 = "Registra de forma anónima tu diagnóstico positivo por COVID-19.\n"
-        let bullet3 = "En este caso, y con tu consentimiento, comunicaremos anónimamente el posible riesgo de exposición a las personas con las que has estado en contacto estrecho."
+        let bullet3 = "Si estuvieras afectado, comunicaremos la exposición de forma anónima a las personas con las que has estado en contacto."
         let strings = [bullet1, bullet2, bullet3]
         
         let fullAttributedString = NSMutableAttributedString()

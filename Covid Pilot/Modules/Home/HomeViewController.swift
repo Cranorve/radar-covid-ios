@@ -69,7 +69,10 @@ class HomeViewController: UIViewController {
     @objc func onExpositionTap() {
         switch expositionInfo?.level {
         case .Healthy(lastCheck: let lastCheck):
-            router?.route(to: Routes.Exposition, from: self, parameters: lastCheck)
+            guard let lastCheckDate = lastCheck else {
+                return
+            }
+            router?.route(to: Routes.Exposition, from: self, parameters: lastCheckDate)
         case .Exposed(since: let since):
             router?.route(to: Routes.HighExposition, from: self, parameters: since)
         default:
@@ -142,33 +145,27 @@ class HomeViewController: UIViewController {
         switch exposition.level {
             case .Exposed(since: let since):
                 expositionTitle.text = "Exposición alta"
-                let attributedString = NSMutableAttributedString(string: "Has estado en contacto con una persona contagiada de Covid-19 . \nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
-                    .font: UIFont(name: "Muli-Regular", size: 16.0)!,
-                    .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
+               let attributedString = NSMutableAttributedString(string: "Has estado en contacto con una persona contagiada de Covid-19.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas", attributes: [
+                  .font: UIFont(name: "Muli-Light", size: 16.0)!,
+                  .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
                 ])
-                attributedString.addAttributes([
-                    .font: UIFont(name: "Muli-Bold", size: 16.0)!,
-                    .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
-                    //                  .foregroundColor: UIColor(red: 112.0 / 255.0, green: 80.0 / 255.0, blue: 156.0 / 255.0, alpha: 1.0)
-                ], range: NSRange(location: 0, length: 92))
+                attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 0, length: 63))
                 expositionDescription.attributedText  = attributedString
                 expositionView.image = bgImageRed
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
+                break
             case .Healthy(lastCheck: let lastCheck):
                 expositionTitle.text = "Exposición baja"
-                let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un posible contacto de riesgo. \nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
-                  .font: UIFont(name: "Muli-Regular", size: 16.0)!,
+                let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un\nposible contacto de riesgo.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
+                  .font: UIFont(name: "Muli-Light", size: 16.0)!,
                   .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
                 ])
-                attributedString.addAttributes([
-                  .font: UIFont(name: "Muli-Bold", size: 16.0)!,
-                  .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
-//                  .foregroundColor: UIColor(red: 112.0 / 255.0, green: 80.0 / 255.0, blue: 156.0 / 255.0, alpha: 1.0)
-                ], range: NSRange(location: 0, length: 80))
+                attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 0, length: 61))
                 
                 expositionDescription.attributedText  = attributedString
                 expositionView.image = bgImageGreen
                 expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)
+                break
             default:
                 expositionTitle.text = ""
                 expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)

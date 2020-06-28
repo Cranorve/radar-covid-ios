@@ -14,7 +14,7 @@ class ExpositionViewController: UIViewController {
     
     @IBOutlet weak var moreInfoView: UIView!
     @IBOutlet weak var expositionBGView : BackgroundView!
-    
+    var lastCheck:Date? 
     override func viewDidLoad() {
         super.viewDidLoad()
         
