@@ -123,8 +123,9 @@ class HomeViewController: UIViewController {
         changeRadarMessage(active: isTracingActive)
         radarSwitch.isOn = isTracingActive
         
-        
-        
+        DispatchQueue.main.async {
+            self.view.showLoading()
+        }
         syncUseCase?.sync().subscribe(
             onNext:{ _ in
                 debugPrint("Sync Completed")
@@ -135,9 +136,15 @@ class HomeViewController: UIViewController {
         
         expositionUseCase?.getExpositionInfo().subscribe(
             onNext:{ [weak self] expositionInfo in
+                DispatchQueue.main.async { [weak self] in
+                    self?.view.hideLoading()
+                }
                 self?.updateExpositionInfo(expositionInfo)
             }, onError: { [weak self] error in
                 debugPrint(error)
+                DispatchQueue.main.async { [weak self] in
+                    self?.view.hideLoading()
+                }
                 self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
         

@@ -12,7 +12,7 @@ import RxSwift
 
 class ExpositionUseCase: DP3TTracingDelegate {
     
-    private let subject = PublishSubject<ExpositionInfo>()
+    private let subject = BehaviorSubject<ExpositionInfo>(value: ExpositionInfo(level: .Healthy(lastCheck: Date())))
     
     init() {
         DP3TTracing.delegate = self
@@ -29,6 +29,7 @@ class ExpositionUseCase: DP3TTracingDelegate {
                 switch result {
                 case let .success(state):
                     self?.subject.onNext(self?.tracingStatusToExpositionInfo(tStatus: state) ?? ExpositionInfo(level: .Healthy(lastCheck: Date())))
+                    break;
                 case .failure:
                     self?.subject.onError("Error retrieving exposition status")
                     break

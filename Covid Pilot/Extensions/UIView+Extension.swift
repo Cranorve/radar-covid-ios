@@ -9,11 +9,44 @@
 import Foundation
 import UIKit
 extension UIView {
-    func showLoading(){
-        DispatchQueue.main.async {
-            // MARK: not finished yet
-            let activityIndicatorView = NVActivityIndicatorView(frame: self.frame, type: .audioEqualizer, color: UIColor.init(red: 0.138, green: 0.124, blue: 0.183, alpha: 1), padding: 100)
-            activityIndicatorView.startAnimating()
+    func showLoading() {
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light )
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.tag = 99
+        DispatchQueue.main.async { [weak self] in
+            blurEffectView.fadeIn()
+            self?.addSubview(blurEffectView)
         }
+        
+        let loader = NVActivityIndicatorView(frame: CGRect(x: self.center.x-65, y: self.center.y-65, width: 130, height: 130), type: NVActivityIndicatorType.ballScaleMultiple, color: UIColor.twilight )
+            DispatchQueue.main.async { [weak self] in
+                loader.startAnimating()
+                self?.addSubview(loader)
+            }
+        
+    }
+    func hideLoading(){
+        DispatchQueue.main.async { [weak self] in
+            for view in self?.subviews ?? [] {
+                if view is NVActivityIndicatorView || view.tag == 99{
+                    view.removeFromSuperview()
+                }
+            }
+        }
+    }
+    func fadeIn(){
+        self.alpha = 0.0
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            self.alpha = 1.0
+        }, completion: nil)
+    }
+    
+    
+    func fadeOut(){
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+            self.alpha = 0.0
+        }, completion: nil)
     }
 }

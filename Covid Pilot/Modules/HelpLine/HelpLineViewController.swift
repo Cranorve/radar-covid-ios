@@ -8,12 +8,14 @@
 
 import UIKit
 import MessageUI
+import RxSwift
 
 class HelpLineViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     var router: AppRouter?
     var preferencesRepository: PreferencesRepository?
-    
+    private let disposeBag = DisposeBag()
+
     @IBOutlet weak var thanksLabel: UILabel!
     @IBOutlet weak var reportLabel: UILabel!
     @IBOutlet weak var timeTableLabel: UILabel!
@@ -21,12 +23,12 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
     @IBOutlet weak var phoneView: BackgroundView!
-    
+    var pollUseCase: PollUseCase?
     @IBAction func onPollSelected(_ sender: Any) {
         if preferencesRepository?.isPollCompleted() ?? false {
             router?.route(to: Routes.PollFinished, from: self)
         } else {
-            router?.route(to: Routes.Poll, from: self)
+            self.router?.route(to: Routes.Poll, from: self)
         }
         
     }
