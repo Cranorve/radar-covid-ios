@@ -59,7 +59,7 @@ class AppRouter : Router {
         case .MyHealthReported:
             routeToMyHealthReported(context)
         case .Exposition:
-            routeToExposition(context)
+            routeToExposition(context, lastCheck: parameters[0] as? Date)
         case .HighExposition:
             routeToHighExposition(context)
         case .Poll:
@@ -89,7 +89,9 @@ class AppRouter : Router {
         context.navigationController?.pushViewController(myHealthReportedVC!, animated: true)
     }
     
-    private func routeToExposition(_ context: UIViewController) {
+    private func routeToExposition(_ context: UIViewController, lastCheck: Date?) {
+        
+        expositionVC?.lastCheck = lastCheck
         context.navigationController?.pushViewController(expositionVC!, animated: true)
     }
     
