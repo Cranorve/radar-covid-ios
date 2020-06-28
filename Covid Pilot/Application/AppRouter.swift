@@ -61,7 +61,7 @@ class AppRouter : Router {
         case .Exposition:
             routeToExposition(context, lastCheck: parameters[0] as? Date)
         case .HighExposition:
-            routeToHighExposition(context)
+            routeToHighExposition(context, since: parameters[0] as? Date)
         case .Poll:
             routeToPoll(context)
         case .PollFinished:
@@ -90,12 +90,12 @@ class AppRouter : Router {
     }
     
     private func routeToExposition(_ context: UIViewController, lastCheck: Date?) {
-        
         expositionVC?.lastCheck = lastCheck
         context.navigationController?.pushViewController(expositionVC!, animated: true)
     }
     
-    private func routeToHighExposition(_ context: UIViewController) {
+    private func routeToHighExposition(_ context: UIViewController, since: Date?) {
+        highExpositionVC?.since = since
         context.navigationController?.pushViewController(highExpositionVC!, animated: true)
     }
     

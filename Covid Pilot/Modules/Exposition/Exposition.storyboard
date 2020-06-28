@@ -336,6 +336,7 @@
                     <size key="freeformSize" width="414" height="1250"/>
                     <connections>
                         <outlet property="expositionBGView" destination="A1H-mT-hEv" id="5Td-Gy-dyO"/>
+                        <outlet property="expositionDate" destination="p4J-om-ycL" id="1HD-bz-SBc"/>
                         <outlet property="moreInfoView" destination="xSh-DP-kva" id="hiO-Pb-RLy"/>
                     </connections>
                 </viewController>
