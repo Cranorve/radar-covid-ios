@@ -35,6 +35,7 @@ class FinishPollViewController: UIViewController, MFMailComposeViewControllerDel
         phoneNumberLabel.text = Config.contactNumber
         
         phoneView.image = UIImage(named: "WhiteCard")
+        emailLabel.attributedText = "<u><b>piloto.appcovid@economia.gob.es</b></u>".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli", andSize: 16)
 //        
 //        emailLabel.isUserInteractionEnabled = true
 //        emailLabel.addGestureRecognizer(  UITapGestureRecognizer(target: self, action: #selector(onEmailTap(tapGestureRecognizer:)))  )
