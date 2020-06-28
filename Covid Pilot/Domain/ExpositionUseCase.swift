@@ -12,7 +12,7 @@ import RxSwift
 
 class ExpositionUseCase: DP3TTracingDelegate {
     
-    private let subject = PublishSubject<ExpositionInfo>()
+    private let subject = BehaviorSubject<ExpositionInfo>(value: ExpositionInfo(level: .Healthy(lastCheck: Date())))
     
     init() {
         DP3TTracing.delegate = self
@@ -24,7 +24,6 @@ class ExpositionUseCase: DP3TTracingDelegate {
     
     
     func getExpositionInfo() -> Observable<ExpositionInfo> {
-        
         .deferred { [weak self] in
             DP3TTracing.status { result in
                 switch result {
