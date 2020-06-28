@@ -46,7 +46,7 @@ class ExpositionUseCase: DP3TTracingDelegate {
         case .infected:
             return ExpositionInfo(level: ExpositionInfo.Level.Infected)
         case .exposed(days: let days):
-            return ExpositionInfo(level: ExpositionInfo.Level.Exposed(since: days.first?.exposedDate))
+            return ExpositionInfo(level: ExpositionInfo.Level.Exposed(since: days.first?.exposedDate, lastCheck: tStatus.lastSync))
         }
     }
     
