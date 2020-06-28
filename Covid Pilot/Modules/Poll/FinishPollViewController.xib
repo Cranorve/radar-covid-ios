@@ -40,184 +40,197 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="organicColor" translatesAutoresizingMaskIntoConstraints="NO" id="K55-xf-zck">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="155.66666666666666"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nR4-yi-sQf">
-                    <rect key="frame" x="16" y="164" width="382" height="562"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSB-CW-TMi">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracias por ayudarnos a mejorar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM1-HZ-hLD">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="65.333333333333329"/>
-                            <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpg-aw-X39">
-                            <rect key="frame" x="0.0" y="75.333333333333343" width="382" height="56"/>
-                            <string key="text">Muchas gracias por participar en el piloto de la APP Radar COVID, tu opinión será clave para mejorarla y contribuir a prevenir futuros contagios.</string>
-                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                            <size key="shadowOffset" width="0.0" height="0.0"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un paso más" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVE-9K-eKV">
-                            <rect key="frame" x="0.0" y="161.33333333333331" width="107" height="21"/>
-                            <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Te interesaría participar en una entrevista telefónica para conocer más sobre tu experiencia con Radar COVID? Escribe a:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lg7-EO-dIN">
-                            <rect key="frame" x="0.0" y="197.33333333333331" width="382" height="56"/>
-                            <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="16"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nos pondremos en contacto contigo para fijar el día y la hora que se adapte mejor a tí." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxG-La-XxB">
-                            <rect key="frame" x="0.0" y="292" width="382" height="37.333333333333314"/>
-                            <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="16"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atención teléfónica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9z-X8-t99">
-                            <rect key="frame" x="0.0" y="359.33333333333337" width="154.33333333333334" height="21"/>
-                            <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc9-pw-lyn">
-                            <rect key="frame" x="0.0" y="388.33333333333337" width="382" height="30.333333333333314"/>
-                            <attributedString key="attributedText">
-                                <fragment content="Contacta con nosotros ">
-                                    <attributes>
-                                        <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content="si tu riesgo de exposición en la aplicación es alto">
-                                    <attributes>
-                                        <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        <integer key="NSUnderline" value="1"/>
-                                        <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content=" o si tienes cualquier ">
-                                    <attributes>
-                                        <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content="incidencia">
-                                    <attributes>
-                                        <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        <integer key="NSUnderline" value="1"/>
-                                        <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content=" sobre la aplicación.">
-                                    <attributes>
-                                        <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nea-G6-sbV" customClass="BackgroundView" customModule="Radar_COVID" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="438.66666666666663" width="382" height="103.33333333333337"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nR4-yi-sQf">
+                            <rect key="frame" x="20" y="20" width="414" height="708.66666666666663"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="bzO-7o-4Uf">
-                                    <rect key="frame" x="16" y="19" width="22" height="22"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracias por ayudarnos a mejorar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM1-HZ-hLD">
+                                    <rect key="frame" x="20" y="106" width="374" height="70.333333333333314"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpg-aw-X39">
+                                    <rect key="frame" x="20" y="186.33333333333334" width="374" height="60.333333333333343"/>
+                                    <string key="text">Muchas gracias por participar en el piloto de la APP Radar COVID, tu opinión será clave para mejorarla y contribuir a prevenir futuros contagios.</string>
+                                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un paso más" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVE-9K-eKV">
+                                    <rect key="frame" x="20.000000000000007" y="276.66666666666669" width="112.66666666666669" height="22.666666666666686"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Te interesaría participar en una entrevista telefónica para conocer más sobre tu experiencia con Radar COVID? Escribe a:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lg7-EO-dIN">
+                                    <rect key="frame" x="20" y="314.33333333333331" width="374" height="60.333333333333314"/>
+                                    <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nos pondremos en contacto contigo para fijar el día y la hora que se adapte mejor a tí." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxG-La-XxB">
+                                    <rect key="frame" x="20" y="415" width="374" height="40.333333333333314"/>
+                                    <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atención teléfónica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9z-X8-t99">
+                                    <rect key="frame" x="20" y="485.33333333333337" width="165.33333333333334" height="22.666666666666686"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc9-pw-lyn">
+                                    <rect key="frame" x="20" y="516" width="374" height="45.666666666666629"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Contacta con nosotros ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="si tu riesgo de exposición en la aplicación es alto">
+                                            <attributes>
+                                                <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                                <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" o si tienes cualquier ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="incidencia">
+                                            <attributes>
+                                                <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                                <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" sobre la aplicación.">
+                                            <attributes>
+                                                <color key="NSColor" red="0.33300000000000002" green="0.30199999999999999" blue="0.33700000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nea-G6-sbV" customClass="BackgroundView" customModule="Radar_COVID" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="581.66666666666663" width="374" height="107"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="bzO-7o-4Uf">
+                                            <rect key="frame" x="16" y="19" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="VxB-pf-4SR"/>
+                                                <constraint firstAttribute="width" constant="22" id="fBO-J2-LzL"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teléfono de soporte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMI-9Z-YVc">
+                                            <rect key="frame" x="50" y="19" width="308" height="17.666666666666671"/>
+                                            <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="900 000 000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCL-we-dUf">
+                                            <rect key="frame" x="50" y="56.66666666666675" width="308" height="30.333333333333336"/>
+                                            <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="22" id="VxB-pf-4SR"/>
-                                        <constraint firstAttribute="width" constant="22" id="fBO-J2-LzL"/>
+                                        <constraint firstItem="bzO-7o-4Uf" firstAttribute="leading" secondItem="Nea-G6-sbV" secondAttribute="leading" constant="16" id="1ET-mX-Jsf"/>
+                                        <constraint firstItem="UMI-9Z-YVc" firstAttribute="leading" secondItem="Nea-G6-sbV" secondAttribute="leading" constant="50" id="6iV-VE-5LL"/>
+                                        <constraint firstItem="UCL-we-dUf" firstAttribute="top" secondItem="UMI-9Z-YVc" secondAttribute="bottom" constant="20" id="RdY-dC-zCJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="UCL-we-dUf" secondAttribute="bottom" constant="20" id="SEp-lj-W92"/>
+                                        <constraint firstItem="UCL-we-dUf" firstAttribute="leading" secondItem="Nea-G6-sbV" secondAttribute="leading" constant="50" id="XAu-7I-40h"/>
+                                        <constraint firstItem="UMI-9Z-YVc" firstAttribute="top" secondItem="Nea-G6-sbV" secondAttribute="top" constant="19" id="Xik-8n-XLt"/>
+                                        <constraint firstAttribute="trailing" secondItem="UCL-we-dUf" secondAttribute="trailing" constant="16" id="Zgh-a6-3bo"/>
+                                        <constraint firstItem="bzO-7o-4Uf" firstAttribute="top" secondItem="Nea-G6-sbV" secondAttribute="top" constant="19" id="djC-HQ-6JF"/>
+                                        <constraint firstAttribute="trailing" secondItem="UMI-9Z-YVc" secondAttribute="trailing" constant="16" id="rnL-9S-aTd"/>
                                     </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="piloto.appcovid@economia.gob.es" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaH-gy-ViT">
+                                    <rect key="frame" x="20" y="374.66666666666669" width="374" height="20.333333333333314"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheckIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uYj-az-2jz">
+                                    <rect key="frame" x="20" y="50" width="36" height="36"/>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teléfono de soporte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMI-9Z-YVc">
-                                    <rect key="frame" x="50" y="19" width="316" height="16.333333333333329"/>
-                                    <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="900 000 000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCL-we-dUf">
-                                    <rect key="frame" x="50" y="55.333333333333371" width="316" height="28"/>
-                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="bzO-7o-4Uf" firstAttribute="leading" secondItem="Nea-G6-sbV" secondAttribute="leading" constant="16" id="1ET-mX-Jsf"/>
-                                <constraint firstItem="UMI-9Z-YVc" firstAttribute="leading" secondItem="Nea-G6-sbV" secondAttribute="leading" constant="50" id="6iV-VE-5LL"/>
-                                <constraint firstItem="UCL-we-dUf" firstAttribute="top" secondItem="UMI-9Z-YVc" secondAttribute="bottom" constant="20" id="RdY-dC-zCJ"/>
-                                <constraint firstAttribute="bottom" secondItem="UCL-we-dUf" secondAttribute="bottom" constant="20" id="SEp-lj-W92"/>
-                                <constraint firstItem="UCL-we-dUf" firstAttribute="leading" secondItem="Nea-G6-sbV" secondAttribute="leading" constant="50" id="XAu-7I-40h"/>
-                                <constraint firstItem="UMI-9Z-YVc" firstAttribute="top" secondItem="Nea-G6-sbV" secondAttribute="top" constant="19" id="Xik-8n-XLt"/>
-                                <constraint firstAttribute="trailing" secondItem="UCL-we-dUf" secondAttribute="trailing" constant="16" id="Zgh-a6-3bo"/>
-                                <constraint firstItem="bzO-7o-4Uf" firstAttribute="top" secondItem="Nea-G6-sbV" secondAttribute="top" constant="19" id="djC-HQ-6JF"/>
-                                <constraint firstAttribute="trailing" secondItem="UMI-9Z-YVc" secondAttribute="trailing" constant="16" id="rnL-9S-aTd"/>
+                                <constraint firstItem="Lg7-EO-dIN" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" constant="20" id="0zD-LT-Lw6"/>
+                                <constraint firstItem="uYj-az-2jz" firstAttribute="top" secondItem="nR4-yi-sQf" secondAttribute="top" constant="50" id="1cv-D5-kDH"/>
+                                <constraint firstItem="jM1-HZ-hLD" firstAttribute="top" secondItem="uYj-az-2jz" secondAttribute="bottom" constant="20" id="2u9-eU-MgN"/>
+                                <constraint firstAttribute="trailing" secondItem="jM1-HZ-hLD" secondAttribute="trailing" constant="20" id="69s-No-WeQ"/>
+                                <constraint firstAttribute="trailing" secondItem="pxG-La-XxB" secondAttribute="trailing" constant="20" id="Evo-Gj-7DS"/>
+                                <constraint firstItem="uYj-az-2jz" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" constant="20" id="HWL-Ha-HoA"/>
+                                <constraint firstItem="tVE-9K-eKV" firstAttribute="top" secondItem="Hpg-aw-X39" secondAttribute="bottom" constant="30" id="Hg4-mw-ogy"/>
+                                <constraint firstItem="jM1-HZ-hLD" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" constant="20" id="LZC-OZ-Ux6"/>
+                                <constraint firstItem="pxG-La-XxB" firstAttribute="top" secondItem="kaH-gy-ViT" secondAttribute="bottom" constant="20" id="Ll4-9I-iik"/>
+                                <constraint firstItem="tVE-9K-eKV" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" constant="20" id="Q72-85-HEG"/>
+                                <constraint firstItem="Hc9-pw-lyn" firstAttribute="top" secondItem="H9z-X8-t99" secondAttribute="bottom" constant="8" id="RHq-Nf-Ql8"/>
+                                <constraint firstItem="kaH-gy-ViT" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" constant="20" id="RVP-C7-WPa"/>
+                                <constraint firstItem="Nea-G6-sbV" firstAttribute="top" secondItem="Hc9-pw-lyn" secondAttribute="bottom" constant="20" id="TG1-nv-Re8"/>
+                                <constraint firstAttribute="bottom" secondItem="Nea-G6-sbV" secondAttribute="bottom" constant="20" id="VVQ-Gb-mS5"/>
+                                <constraint firstItem="Hpg-aw-X39" firstAttribute="top" secondItem="jM1-HZ-hLD" secondAttribute="bottom" constant="10" id="Yhg-2I-eF3"/>
+                                <constraint firstItem="Lg7-EO-dIN" firstAttribute="top" secondItem="tVE-9K-eKV" secondAttribute="bottom" constant="15" id="a2A-ts-yOv"/>
+                                <constraint firstItem="Nea-G6-sbV" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" constant="20" id="dlj-gw-qqp"/>
+                                <constraint firstItem="H9z-X8-t99" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" constant="20" id="eld-fc-rrP"/>
+                                <constraint firstItem="Hc9-pw-lyn" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" constant="20" id="g10-og-PLc"/>
+                                <constraint firstItem="pxG-La-XxB" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" constant="20" id="ieZ-sv-Hlk"/>
+                                <constraint firstItem="Hpg-aw-X39" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" constant="20" id="jdD-71-myy"/>
+                                <constraint firstItem="kaH-gy-ViT" firstAttribute="top" secondItem="Lg7-EO-dIN" secondAttribute="bottom" id="niq-Qc-mXm"/>
+                                <constraint firstItem="H9z-X8-t99" firstAttribute="top" secondItem="pxG-La-XxB" secondAttribute="bottom" constant="30" id="o2z-mA-zyM"/>
+                                <constraint firstAttribute="trailing" secondItem="kaH-gy-ViT" secondAttribute="trailing" constant="20" id="pQC-vI-Ah0"/>
+                                <constraint firstAttribute="trailing" secondItem="Lg7-EO-dIN" secondAttribute="trailing" constant="20" id="sNe-n1-8UK"/>
+                                <constraint firstAttribute="trailing" secondItem="Hpg-aw-X39" secondAttribute="trailing" constant="20" id="wtI-nX-dBo"/>
+                                <constraint firstAttribute="trailing" secondItem="Nea-G6-sbV" secondAttribute="trailing" constant="20" id="y9j-A1-9fQ"/>
+                                <constraint firstAttribute="trailing" secondItem="Hc9-pw-lyn" secondAttribute="trailing" constant="20" id="yhX-KK-WPc"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="piloto.appcovid@economia.gob.es" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaH-gy-ViT">
-                            <rect key="frame" x="0.0" y="253.33333333333329" width="382" height="18.666666666666657"/>
-                            <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="16"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
-                    <color key="backgroundColor" name="bgColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="Lg7-EO-dIN" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" id="0zD-LT-Lw6"/>
-                        <constraint firstAttribute="trailing" secondItem="jM1-HZ-hLD" secondAttribute="trailing" id="69s-No-WeQ"/>
-                        <constraint firstAttribute="trailing" secondItem="pxG-La-XxB" secondAttribute="trailing" id="Evo-Gj-7DS"/>
-                        <constraint firstItem="tVE-9K-eKV" firstAttribute="top" secondItem="Hpg-aw-X39" secondAttribute="bottom" constant="30" id="Hg4-mw-ogy"/>
-                        <constraint firstItem="jM1-HZ-hLD" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" id="LZC-OZ-Ux6"/>
-                        <constraint firstItem="pxG-La-XxB" firstAttribute="top" secondItem="kaH-gy-ViT" secondAttribute="bottom" constant="20" id="Ll4-9I-iik"/>
-                        <constraint firstItem="tVE-9K-eKV" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" id="Q72-85-HEG"/>
-                        <constraint firstItem="Hc9-pw-lyn" firstAttribute="top" secondItem="H9z-X8-t99" secondAttribute="bottom" constant="8" id="RHq-Nf-Ql8"/>
-                        <constraint firstItem="kaH-gy-ViT" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" id="RVP-C7-WPa"/>
-                        <constraint firstItem="Nea-G6-sbV" firstAttribute="top" secondItem="Hc9-pw-lyn" secondAttribute="bottom" constant="20" id="TG1-nv-Re8"/>
-                        <constraint firstAttribute="bottom" secondItem="Nea-G6-sbV" secondAttribute="bottom" constant="20" id="VVQ-Gb-mS5"/>
-                        <constraint firstItem="Hpg-aw-X39" firstAttribute="top" secondItem="jM1-HZ-hLD" secondAttribute="bottom" constant="10" id="Yhg-2I-eF3"/>
-                        <constraint firstItem="Lg7-EO-dIN" firstAttribute="top" secondItem="tVE-9K-eKV" secondAttribute="bottom" constant="15" id="a2A-ts-yOv"/>
-                        <constraint firstItem="Nea-G6-sbV" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" id="dlj-gw-qqp"/>
-                        <constraint firstItem="H9z-X8-t99" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" id="eld-fc-rrP"/>
-                        <constraint firstItem="Hc9-pw-lyn" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" id="g10-og-PLc"/>
-                        <constraint firstItem="pxG-La-XxB" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" id="ieZ-sv-Hlk"/>
-                        <constraint firstItem="Hpg-aw-X39" firstAttribute="leading" secondItem="nR4-yi-sQf" secondAttribute="leading" id="jdD-71-myy"/>
-                        <constraint firstItem="kaH-gy-ViT" firstAttribute="top" secondItem="Lg7-EO-dIN" secondAttribute="bottom" id="niq-Qc-mXm"/>
-                        <constraint firstItem="H9z-X8-t99" firstAttribute="top" secondItem="pxG-La-XxB" secondAttribute="bottom" constant="30" id="o2z-mA-zyM"/>
-                        <constraint firstAttribute="trailing" secondItem="kaH-gy-ViT" secondAttribute="trailing" id="pQC-vI-Ah0"/>
-                        <constraint firstItem="jM1-HZ-hLD" firstAttribute="top" secondItem="nR4-yi-sQf" secondAttribute="top" id="s8r-OO-Q9f"/>
-                        <constraint firstAttribute="trailing" secondItem="Lg7-EO-dIN" secondAttribute="trailing" id="sNe-n1-8UK"/>
-                        <constraint firstAttribute="trailing" secondItem="Hpg-aw-X39" secondAttribute="trailing" id="wtI-nX-dBo"/>
-                        <constraint firstAttribute="trailing" secondItem="Nea-G6-sbV" secondAttribute="trailing" id="y9j-A1-9fQ"/>
-                        <constraint firstAttribute="trailing" secondItem="Hc9-pw-lyn" secondAttribute="trailing" id="yhX-KK-WPc"/>
+                        <constraint firstItem="nR4-yi-sQf" firstAttribute="leading" secondItem="CSB-CW-TMi" secondAttribute="leading" constant="20" id="OVR-4p-ySa"/>
+                        <constraint firstAttribute="bottom" secondItem="nR4-yi-sQf" secondAttribute="bottom" constant="20" id="h0D-Mp-hlT"/>
+                        <constraint firstItem="nR4-yi-sQf" firstAttribute="top" secondItem="CSB-CW-TMi" secondAttribute="top" constant="20" id="slP-ns-TqD"/>
+                        <constraint firstAttribute="trailing" secondItem="nR4-yi-sQf" secondAttribute="trailing" constant="20" id="wuG-2U-FZ1"/>
                     </constraints>
-                </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheckIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uYj-az-2jz">
-                    <rect key="frame" x="16" y="109" width="36" height="36"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="36" id="2Oj-2m-gcN"/>
-                        <constraint firstAttribute="width" constant="36" id="t3X-b1-Trh"/>
-                    </constraints>
-                </imageView>
+                    <viewLayoutGuide key="contentLayoutGuide" id="xu5-Z3-LE4"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="9Gn-Zn-OGB"/>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" name="bgColor"/>
             <constraints>
-                <constraint firstItem="uYj-az-2jz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="3dS-2k-wNK"/>
+                <constraint firstAttribute="trailing" secondItem="CSB-CW-TMi" secondAttribute="trailing" id="0GJ-DX-Ahq"/>
+                <constraint firstItem="nR4-yi-sQf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="4m3-9c-Q33"/>
                 <constraint firstAttribute="trailing" secondItem="K55-xf-zck" secondAttribute="trailing" id="Fzv-R6-B0T"/>
-                <constraint firstItem="nR4-yi-sQf" firstAttribute="top" secondItem="OJ1-1F-FXe" secondAttribute="top" constant="120" id="PL4-0u-wy1"/>
+                <constraint firstItem="OJ1-1F-FXe" firstAttribute="bottom" secondItem="CSB-CW-TMi" secondAttribute="bottom" id="Lh3-tz-KnM"/>
                 <constraint firstItem="K55-xf-zck" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tqn-Qn-8x4"/>
-                <constraint firstItem="OJ1-1F-FXe" firstAttribute="trailing" secondItem="nR4-yi-sQf" secondAttribute="trailing" constant="16" id="ixs-Qp-Rsb"/>
-                <constraint firstItem="uYj-az-2jz" firstAttribute="top" secondItem="OJ1-1F-FXe" secondAttribute="top" constant="65" id="mLT-iT-Vc9"/>
+                <constraint firstItem="nR4-yi-sQf" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" priority="250" id="bU5-WO-HaO"/>
+                <constraint firstItem="CSB-CW-TMi" firstAttribute="top" secondItem="OJ1-1F-FXe" secondAttribute="top" id="jIX-6e-kjo"/>
                 <constraint firstItem="K55-xf-zck" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mpp-mJ-Abk"/>
-                <constraint firstItem="nR4-yi-sQf" firstAttribute="leading" secondItem="OJ1-1F-FXe" secondAttribute="leading" constant="16" id="qwr-Nz-JH4"/>
+                <constraint firstItem="CSB-CW-TMi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zp4-j8-62J"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="OJ1-1F-FXe"/>
             <point key="canvasLocation" x="139" y="124"/>
