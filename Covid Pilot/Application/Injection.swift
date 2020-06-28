@@ -170,6 +170,7 @@ class Injection {
             homeVC.expositionUseCase = r.resolve(ExpositionUseCase.self)!
             homeVC.radarStatusUseCase = r.resolve(RadarStatusUseCase.self)!
             homeVC.resetDataUseCase = r.resolve(ResetDataUseCase.self)!
+            homeVC.syncUseCase = r.resolve(SyncUseCase.self)!
             return homeVC
         }
         
