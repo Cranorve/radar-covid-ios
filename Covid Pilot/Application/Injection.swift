@@ -97,6 +97,10 @@ class Injection {
             BluetoothUseCase(bluetoothHandler: r.resolve(BluetoothHandler.self)!)
         }.inObjectScope(.container)
         
+        container.register(ResetDataUseCase.self) { r in
+            ResetDataUseCase()
+        }.inObjectScope(.container)
+        
         container.register(PollUseCase.self) { r in
             PollUseCase(questionsApi: r.resolve(QuestionnaireControllerAPI.self)!,
                         answersApi: r.resolve(AnswersControllerAPI.self)!,
@@ -155,6 +159,7 @@ class Injection {
             homeVC.router = r.resolve(AppRouter.self)!
             homeVC.expositionUseCase = r.resolve(ExpositionUseCase.self)!
             homeVC.radarStatusUseCase = r.resolve(RadarStatusUseCase.self)!
+            homeVC.resetDataUseCase = r.resolve(ResetDataUseCase.self)!
             return homeVC
         }
         

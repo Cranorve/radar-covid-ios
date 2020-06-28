@@ -24,12 +24,15 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var radarMessage: UILabel!
     @IBOutlet weak var radarView: BackgroundView!
     
+    @IBOutlet weak var resetDataButton: UIButton!
+    
     private var expositionInfo: ExpositionInfo?
     
     var router: AppRouter?
     var expositionUseCase: ExpositionUseCase?
     var radarStatusUseCase: RadarStatusUseCase?
     var syncUseCase: SyncUseCase?
+    var resetDataUseCase: ResetDataUseCase?
     
     @IBAction func onCommunicate(_ sender: Any) {
         router?.route(to: Routes.MyHealth, from: self)
@@ -72,6 +75,30 @@ class HomeViewController: UIViewController {
         default:
             router?.route(to: Routes.HighExposition, from: self)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        resetDataButton.isHidden = !Config.debug
+    }
+    
+    @IBAction func onReset(_ sender: Any) {
+        
+        present(Alert.showAlertCancelContinue(title:  "Confirmación", message: "¿Confirmas el reseteo?", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar") { [weak self] (UIAlertAction) in
+            self?.reset()
+        },animated: true)
+
+    }
+    
+    private func reset() {
+        resetDataUseCase?.reset().subscribe(
+                onNext:{ [weak self] expositionInfo in
+                    debugPrint("Data reseted")
+                    self?.present(Alert.showAlertOk(title: "Reset", message: "Datos reseteados", buttonTitle: "Aceptar"), animated: true)
+                }, onError: { [weak self] error in
+                    debugPrint(error)
+                    self?.present(Alert.showAlertOk(title: "Error", message: "Error resetear datos", buttonTitle: "Aceptar"), animated: true)
+            }).disposed(by: disposeBag)
     }
     
     override func viewDidLoad() {
