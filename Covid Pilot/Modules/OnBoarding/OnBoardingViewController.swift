@@ -33,7 +33,7 @@ class OnBoardingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.acceptTermsLabel.attributedText = "Acepto la <b><u>política de privacidad </u></b>".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli-Light", andSize: 16)
-        self.privacyLabel.attributedText = "<b><u>He leido las condiciones de uso</u></b>".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli-Light", andSize: 16)
+        self.privacyLabel.attributedText = "He leido las <b><u>condiciones de uso</u></b>".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli-Light", andSize: 16)
         
 
 
