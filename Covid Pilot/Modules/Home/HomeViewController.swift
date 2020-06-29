@@ -136,7 +136,6 @@ class HomeViewController: UIViewController {
         
         expositionUseCase?.getExpositionInfo().subscribe(
             onNext:{ [weak self] expositionInfo in
-                print(expositionInfo.level)
                 DispatchQueue.main.async { [weak self] in
                     self?.view.hideLoading()
                 }
@@ -154,7 +153,7 @@ class HomeViewController: UIViewController {
     private func updateExpositionInfo(_ exposition: ExpositionInfo) {
         self.expositionInfo = exposition
         switch exposition.level {
-            case .Exposed(since: let since):
+            case .Exposed(since: _):
                 expositionTitle.text = "Exposición alta"
                let attributedString = NSMutableAttributedString(string: "Has estado en contacto con una persona contagiada de Covid-19.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas", attributes: [
                   .font: UIFont(name: "Muli-Light", size: 16.0)!,
@@ -165,8 +164,7 @@ class HomeViewController: UIViewController {
                 expositionView.image = bgImageRed
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
                 break
-            case .Healthy(lastCheck: let lastCheck):
-                print(lastCheck)
+            case .Healthy(lastCheck: _):
                 expositionTitle.text = "Exposición baja"
                 let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un\nposible contacto de riesgo.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
                   .font: UIFont(name: "Muli-Light", size: 16.0)!,
@@ -178,6 +176,15 @@ class HomeViewController: UIViewController {
                 expositionView.image = bgImageGreen
                 expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)
                 break
+            case .Infected:
+                expositionTitle.text = "COVID-19 Positivo"
+                let attributedString = "<b>Tu diagnóstico ha sido enviado.<br>Por favor, aíslate durante 14 días</b>.<br> Recuerda que esta aplicación es un piloto y sus alertas son simuladas".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli-Light", andSize: 16)
+                expositionDescription.attributedText  = attributedString
+                expositionView.image = bgImageRed
+                expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
+                break;
+            
+
             default:
                 expositionTitle.text = ""
                 expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)

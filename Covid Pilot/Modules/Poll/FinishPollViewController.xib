@@ -44,9 +44,9 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nR4-yi-sQf">
-                            <rect key="frame" x="20" y="20" width="414" height="683.33333333333337"/>
+                            <rect key="frame" x="0.0" y="20" width="414" height="683.33333333333337"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracias por ayudarnos a mejorar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM1-HZ-hLD">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracias por ayudarnos a mejorar." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM1-HZ-hLD">
                                     <rect key="frame" x="20" y="106" width="374" height="65.333333333333314"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                     <nil key="textColor"/>
@@ -211,10 +211,10 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="nR4-yi-sQf" firstAttribute="leading" secondItem="CSB-CW-TMi" secondAttribute="leading" constant="20" id="OVR-4p-ySa"/>
+                        <constraint firstItem="nR4-yi-sQf" firstAttribute="leading" secondItem="CSB-CW-TMi" secondAttribute="leading" id="OVR-4p-ySa"/>
                         <constraint firstAttribute="bottom" secondItem="nR4-yi-sQf" secondAttribute="bottom" constant="20" id="h0D-Mp-hlT"/>
                         <constraint firstItem="nR4-yi-sQf" firstAttribute="top" secondItem="CSB-CW-TMi" secondAttribute="top" constant="20" id="slP-ns-TqD"/>
-                        <constraint firstAttribute="trailing" secondItem="nR4-yi-sQf" secondAttribute="trailing" constant="20" id="wuG-2U-FZ1"/>
+                        <constraint firstAttribute="trailing" secondItem="nR4-yi-sQf" secondAttribute="trailing" id="wuG-2U-FZ1"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="xu5-Z3-LE4"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="9Gn-Zn-OGB"/>
