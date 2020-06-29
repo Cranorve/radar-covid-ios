@@ -13,6 +13,8 @@ import RxSwift
 
 class SetupUseCase : LoggingDelegate, ActivityDelegate {
     
+    private let dateFormatter = DateFormatter()
+    
     private let disposeBag = DisposeBag()
     
     private let preferencesRepository: PreferencesRepository
@@ -23,6 +25,7 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate {
          kpiApi: KpiControllerAPI) {
         self.preferencesRepository = preferencesRepository
         self.kpiApi  = kpiApi
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss.SSS z"
     }
     
     func initializeSDK() {
@@ -83,7 +86,7 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate {
     
     private func mapSummaryToKpi(_ summary: ENExposureDetectionSummary) -> [KpiDto] {
         var kpiDtos: [KpiDto] = []
-        let date = Date()
+        let date = dateFormatter.string(from: Date())
         if summary.attenuationDurations.count >= 3 {
             kpiDtos.append(KpiDto(
                 kpi: KpiDto.Kpi.attenuationDurations1, timestamp: date,
