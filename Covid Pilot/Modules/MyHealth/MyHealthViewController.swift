@@ -23,10 +23,16 @@ class MyHealthViewController: UIViewController {
         let alert = Alert.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar") { (UIAlertAction) in
                 self.navigationController?.popViewController(animated: true)
         }
+        endEditingCodeChars()
         present(alert, animated: true)
     }
     
-    
+    func endEditingCodeChars(){
+        for item in codeChars {
+            item.endEditing(true)
+        }
+    }
+
     @IBAction func onReportDiagnosis(_ sender: Any) {
         if !diagnosticEnabled {
             self.present(Alert.showAlertOk(title: "Error", message: "Por favor introduce un código válido de 12 dígitos", buttonTitle: "Aceptar"), animated: true)
@@ -157,6 +163,6 @@ class MyHealthViewController: UIViewController {
       // move back the root view origin to zero
         self.viewContent.frame.origin.y = 0        
     }
-    
+
 
 }
