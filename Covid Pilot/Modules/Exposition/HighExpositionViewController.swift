@@ -12,16 +12,17 @@ class HighExpositionViewController: UIViewController {
     
     private let bgImageRed = UIImage(named: "GradientBackgroundRed")
     
+    @IBOutlet weak var infectedText: UILabel!
     @IBOutlet weak var phoneView: BackgroundView!
     @IBOutlet weak var timeTableLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var moreInfoView: UIView!
     @IBOutlet weak var expositionBGView : BackgroundView!
+    var since:Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.infectedText.attributedText = setInfectedText()
         
         expositionBGView.image = bgImageRed
         
@@ -33,6 +34,18 @@ class HighExpositionViewController: UIViewController {
         phoneView.image = UIImage(named: "WhiteCard")
         phoneLabel.text = Config.contactNumber
         timeTableLabel.text = Config.timeTable
+    }
+    
+    func setInfectedText() -> NSMutableAttributedString{
+        let date = self.since ?? Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.YYYY"
+        let actualizado = formatter.string(from: date)
+        
+        
+        let daysSinceLastInfection = Date().days(sinceDate: since ?? Date()) ?? 0
+        let text = "<b>\(daysSinceLastInfection) días</b> (actualizado \(actualizado))".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli", andSize: 16)
+        return text ?? NSMutableAttributedString()
     }
     
     @objc func onCallTap(tapGestureRecognizer: UITapGestureRecognizer) {

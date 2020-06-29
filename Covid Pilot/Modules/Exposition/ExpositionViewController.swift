@@ -13,20 +13,26 @@ class ExpositionViewController: UIViewController {
     private let bgImageGreen = UIImage(named: "GradientBackgroundGreen")
     
     @IBOutlet weak var moreInfoView: UIView!
+    @IBOutlet weak var expositionDate: UILabel!
     @IBOutlet weak var expositionBGView : BackgroundView!
     var lastCheck:Date? 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+        self.expositionDate.text = "(actualizado \(expositionDateWithFormat()))"
         expositionBGView.image = bgImageGreen
         
         moreInfoView.isUserInteractionEnabled = true
         moreInfoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userDidTapLabel(tapGestureRecognizer:))))
     }
     
-    
+    func expositionDateWithFormat() -> String{
+        let date = self.lastCheck ?? Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.YYYY"
+        return formatter.string(from: date)
+    }
     
     @objc func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
         guard let url = URL(string: "https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/ciudadania.htm") else { return }

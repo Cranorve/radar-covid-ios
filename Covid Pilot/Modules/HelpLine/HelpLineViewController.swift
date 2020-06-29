@@ -94,14 +94,21 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         reportLabel.attributedText = attributedString2
         
-        let attributedString3 = NSMutableAttributedString(string: "Un paso más \n\n¿Te interesaría participar en una entrevista telefónica para conocer más sobre tu experiencia con Radar COVID? Escribe a:\npiloto.appcovid@economia.gob.es\n\nNos pondremos en contacto contigo para fijar el día y la hora que se adapte mejor a ti.", attributes: [
-          .font: UIFont(name: "Muli-Light", size: 16.0)!,
-          .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
-        ])
-        attributedString3.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 18.0)!, range: NSRange(location: 0, length: 12))
-        attributedString3.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 135, length: 32))
-        attributedString3.addAttribute(.font, value: UIFont(name: "Muli-Light", size: 16.0)!, range: NSRange(location: 167, length: 87))
+   
+
+        let attributedString3 = NSMutableAttributedString(string: "Un paso más\n\n¿Te interesaría participar en una entrevista telefónica para conocer más sobre tu experiencia con Radar COVID? Escribe a:\npiloto.appcovid@economia.gob.es\n\nNos pondremos en contacto contigo para fijar el día y la hora que se adapte mejor a tí.")
+
+        attributedString3.addAttribute(NSAttributedString.Key.font, value:UIFont(name:"Muli-Bold", size:18.0)!, range:NSMakeRange(0,13))
+        attributedString3.addAttribute(NSAttributedString.Key.font, value:UIFont(name:"Muli-Light", size:16.0)!, range:NSMakeRange(13,122))
+        attributedString3.addAttribute(NSAttributedString.Key.font, value:UIFont(name:"Muli-Bold", size:16.0)!, range:NSMakeRange(135,33))
+        attributedString3.addAttribute(NSAttributedString.Key.font, value:UIFont(name:"Muli-Light", size:16.0)!, range:NSMakeRange(168,87))
+
+        
+        attributedString3.addAttribute(NSAttributedString.Key.underlineStyle, value:1.0, range:NSMakeRange(135,33))
+        
         infoLabel.attributedText = attributedString3
+       
+        
         
     }
 

@@ -8,9 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Muli-VariableFont_wght.ttf">
-            <string>Muli-Regular_Bold</string>
-        </array>
         <array key="muli_bold.ttf">
             <string>Muli-Bold</string>
         </array>
@@ -73,7 +70,7 @@
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RIESGO BAJO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTT-u6-S6Y">
                                                         <rect key="frame" x="26" y="15" width="198" height="14"/>
-                                                        <fontDescription key="fontDescription" name="Muli-Regular_Bold" family="Muli" pointSize="12"/>
+                                                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -336,6 +333,7 @@
                     <size key="freeformSize" width="414" height="1250"/>
                     <connections>
                         <outlet property="expositionBGView" destination="A1H-mT-hEv" id="5Td-Gy-dyO"/>
+                        <outlet property="expositionDate" destination="p4J-om-ycL" id="1HD-bz-SBc"/>
                         <outlet property="moreInfoView" destination="xSh-DP-kva" id="hiO-Pb-RLy"/>
                     </connections>
                 </viewController>

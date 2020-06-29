@@ -20,6 +20,7 @@
             <connections>
                 <outlet property="tableView" destination="o2K-y8-If8" id="avq-jo-iDh"/>
                 <outlet property="tableViewHeight" destination="qGM-Xl-d5N" id="Vrn-zy-O6D"/>
+                <outlet property="termsHeader" destination="gRG-61-1Ta" id="LJc-xf-B7R"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,7 +46,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCp-dS-9Lh">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Términos y condiciones de uso Corona radar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gf-RK-ATp">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Términos y condiciones de uso Radar COVID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gf-RK-ATp">
                                     <rect key="frame" x="16" y="40" width="382" height="65.5"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                     <nil key="textColor"/>
@@ -59,6 +60,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
+                                    <string key="userLabel">Estos Términos y Condiciones regulan la descarga, acceso y utilización de la aplicación Radar COVID.   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
                                 </label>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="60" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o2K-y8-If8">
                                     <rect key="frame" x="0.0" y="328" width="414" height="500"/>

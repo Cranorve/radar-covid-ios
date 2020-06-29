@@ -55,6 +55,8 @@ class TableHeaderView: UITableViewHeaderFooterView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         titleLabel.font = UIFont(name: "Muli-Bold",  size: 20.0)
+        titleLabel.numberOfLines = 0
+        
 
         tintColor = #colorLiteral(red: 0.9800000191, green: 0.976000011, blue: 0.9689999819, alpha: 1)
 
@@ -72,7 +74,7 @@ class TableHeaderView: UITableViewHeaderFooterView {
         
             // Center the label vertically, and use it to fill the remaining
             // space in the header view.
-            titleLabel.heightAnchor.constraint(equalToConstant: 40),
+            titleLabel.heightAnchor.constraint(equalToConstant: 80),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor,
                    constant: 0),
             titleLabel.trailingAnchor.constraint(equalTo:

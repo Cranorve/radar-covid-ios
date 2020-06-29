@@ -12,6 +12,7 @@ import RxSwift
 class MyHealthViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
+    @IBOutlet weak var viewContent: UIView!
     var diagnosisCodeUseCase: DiagnosisCodeUseCase?
     var statusBar: UIView?
     @IBOutlet var codeChars: [UITextField]!
@@ -57,9 +58,17 @@ class MyHealthViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //hide kayboard in case is shown
         self.view.frame.origin.y = 0
-        self.diagnosticEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
+        
+        self.codeChars.forEach { (char) in
+           char.text = "\u{200B}"
+           char.layer.cornerRadius = 5
+           char.addTarget(self, action: #selector(MyHealthViewController.textFieldDidChange(_:)), for: .editingChanged)
+
+       }
+       self.diagnosticEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
 
     }
+    
     
     
     
@@ -67,12 +76,7 @@ class MyHealthViewController: UIViewController {
         super.viewDidLoad()
        
         
-        self.codeChars.forEach { (char) in
-            char.text = "\u{200B}"
-            char.layer.cornerRadius = 5
-            char.addTarget(self, action: #selector(MyHealthViewController.textFieldDidChange(_:)), for: .editingChanged)
-
-        }
+       
         // Do any additional setup after loading the view.
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
@@ -146,17 +150,12 @@ class MyHealthViewController: UIViewController {
         }
       
       // move the root view up by the distance of keyboard height
-        self.view.frame.origin.y = 0 - keyboardSize.height
+        self.viewContent.frame.origin.y = 0 - keyboardSize.height
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
       // move back the root view origin to zero
-        self.view.frame.origin.y = 0
-        
-      // make the notification bar transparent again
-        if let status = self.statusBar {
-            status.removeFromSuperview();
-        }
+        self.viewContent.frame.origin.y = 0        
     }
     
 
