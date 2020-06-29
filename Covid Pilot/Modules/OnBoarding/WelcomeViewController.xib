@@ -34,7 +34,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="494"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJg-TW-Zyr">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="483"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="464"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkC-Jh-ngm">
                                     <rect key="frame" x="113" y="0.0" width="207" height="206.5"/>
@@ -60,7 +60,7 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ln-m6-qGi">
-                                    <rect key="frame" x="16" y="150" width="288" height="70.5"/>
+                                    <rect key="frame" x="16" y="150" width="288" height="65.5"/>
                                     <string key="text">Bienvenido a 
 Radar COVID</string>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
@@ -68,19 +68,19 @@ Radar COVID</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracias por cuidarte y ayudarnos a proteger a los demás." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpa-3O-7Z9">
-                                    <rect key="frame" x="16" y="397.5" width="288" height="75.5"/>
+                                    <rect key="frame" x="16" y="384" width="288" height="70"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPI-qo-fJp">
-                                    <rect key="frame" x="5" y="356" width="299" height="41.5"/>
+                                    <rect key="frame" x="5" y="344" width="299" height="40"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjg-12-rKN">
-                                    <rect key="frame" x="16" y="240.5" width="288" height="100.5"/>
+                                    <rect key="frame" x="16" y="235.5" width="288" height="93.5"/>
                                     <string key="text">Fase Piloto sólo operativa en
 San Sebastián de la Gomera. Recuerda que
 las alertas son simuladas.</string>
