@@ -31,7 +31,13 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBAction func onNext(_ sender: Any) {
-        if (currentQuestion?.hasResponse() ?? false) {
+        
+        guard let currentQuestion = currentQuestion else {
+            fetchPoll()
+            return
+        }
+        
+        if currentQuestion.hasResponse() {
             nextConfirmed()
         } else {
             let alert = Alert.showAlertCancelContinue(title:  "No has respondido a una pregunta", message: "", buttonOkTitle: "Continuar sin respuesta", buttonCancelTitle: "Responder") { [weak self] _ in
@@ -68,13 +74,29 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         
         progressView.clipsToBounds = true
         progressView.layer.cornerRadius = 5.0;
+
+        //Add observers to move up/down the main view when the keyboard appears/dissapear
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    
+        fetchPoll()
+
+    }
+    
+    private func fetchPoll() {
+
         self.view.showLoading()
         
         pollUseCase?.getPoll().subscribe(
             onNext:{ [weak self] poll in
                 self?.view.hideLoading()
-                
                 self?.load(poll: poll)
             }, onError: {  [weak self] error in
                 self?.view.hideLoading()
@@ -86,17 +108,10 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
                 self?.present(alert, animated: true)
 //                self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
-        
-        
-        //Add observers to move up/down the main view when the keyboard appears/dissapear
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-
-
     }
     
     private func load(poll: Poll?) {
+        nextButton.titleLabel?.text = "Siguiente"
         self.poll = poll
         poll?.questions?.forEach {question in
             var vc: QuestionController?

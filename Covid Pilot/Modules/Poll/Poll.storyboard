@@ -69,7 +69,7 @@
                                     <constraint firstAttribute="height" constant="54" id="Twe-jq-L1W"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
-                                <state key="normal" title="Siguiente" backgroundImage="GradientBackgroundButton">
+                                <state key="normal" title="Recargar" backgroundImage="GradientBackgroundButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>

@@ -15,7 +15,7 @@ class MyHealthReportedViewController: UIViewController {
     @IBOutlet weak var moreInfoView: UIView!
     
     @IBAction func onBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     override func viewDidLoad() {
@@ -30,14 +30,6 @@ class MyHealthReportedViewController: UIViewController {
         guard let url = URL(string: "https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/ciudadania.htm") else { return }
         UIApplication.shared.open(url)
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -41,8 +41,8 @@
         "package": "DP3TSDK",
         "repositoryURL": "https://github.com/alopezh/dp3t-sdk-ios",
         "state": {
-          "branch": "develop",
-          "revision": "bf5555a9d14b432989b297e30302f3f2dafb3e40",
+          "branch": "master",
+          "revision": "d5d0a3311706995e784ccc210cd164a00bfc977e",
           "version": null
         }
       },

@@ -26,11 +26,8 @@ class ExpositionUseCase: DP3TTracingDelegate {
     func getExpositionInfo() -> Observable<ExpositionInfo> {
         .deferred { [weak self] in
             DP3TTracing.status { result in
-                print(try! result.get())
                 switch result {
                 case let .success(state):
-                    
-                    print(state.lastSync, state.infectionStatus, state.trackingState)
                     self?.subject.onNext(self?.tracingStatusToExpositionInfo(tStatus: state) ?? ExpositionInfo(level: .Healthy(lastCheck: Date())))
                     break;
                 case .failure:
