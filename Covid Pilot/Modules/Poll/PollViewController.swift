@@ -19,7 +19,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     var router: AppRouter?
     var pollUseCase: PollUseCase?
     var finishPollVC: FinishPollViewController?
-    var nextButtonYOrigin:CGFloat = 0
+    var nextButtonYOrigin:CGFloat?
     
     var poll: Poll?
     private var viewControllers: [UIViewController] = []
@@ -212,12 +212,21 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         }
       
       // move the root view up by the distance of keyboard height
-        self.nextButtonYOrigin = self.nextButton.frame.origin.y
-        self.nextButton.frame.origin.y = self.nextButtonYOrigin - keyboardSize.height
+        guard let origin = self.nextButtonYOrigin else {
+            self.nextButtonYOrigin = self.nextButton.frame.origin.y
+            self.nextButton.frame.origin.y = self.nextButtonYOrigin! - keyboardSize.height
+            return
+        }
+       self.nextButton.frame.origin.y = origin - keyboardSize.height
+
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
       // move back the root view origin to zero
-        self.nextButton.frame.origin.y = self.nextButtonYOrigin
+        guard let origin = self.nextButtonYOrigin else {
+            return
+            
+        }
+        self.nextButton.frame.origin.y = origin
     }
 }
