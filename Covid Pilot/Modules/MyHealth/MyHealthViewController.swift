@@ -62,17 +62,16 @@ class MyHealthViewController: UIViewController {
     
     var router: AppRouter?
     
-    override func viewWillAppear(_ animated: Bool) {
-        //hide kayboard in case is shown
-        self.view.frame.origin.y = 0
-        
+    override func viewWillAppear(_ animated: Bool) {        
         self.codeChars.forEach { (char) in
-           char.text = "\u{200B}"
-           char.layer.cornerRadius = 5
-           char.addTarget(self, action: #selector(MyHealthViewController.textFieldDidChange(_:)), for: .editingChanged)
+            char.text = "\u{200B}"
+            char.layer.cornerRadius = 5
+            char.addTarget(self, action: #selector(MyHealthViewController.textFieldDidChange(_:)), for: .editingChanged)
+            
 
-       }
-       self.diagnosticEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
+        }
+        
+        self.diagnosticEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
 
     }
     
