@@ -108,7 +108,7 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(ResetDataUseCase.self) { r in
-            ResetDataUseCase()
+            ResetDataUseCase(setupUseCase: r.resolve(SetupUseCase.self)!)
         }.inObjectScope(.container)
         
         container.register(PollUseCase.self) { r in
@@ -130,6 +130,10 @@ class Injection {
         
         container.register(SyncUseCase.self) { r in
             SyncUseCase()
+        }.inObjectScope(.container)
+        
+        container.register(SetupUseCase.self) { r in
+            SetupUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in
