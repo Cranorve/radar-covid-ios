@@ -15,7 +15,7 @@ class MyHealthReportedViewController: UIViewController {
     @IBOutlet weak var moreInfoView: UIView!
     
     @IBAction func onBack(_ sender: Any) {
-        router?.route(to: Routes.Home, from: self)
+        navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {

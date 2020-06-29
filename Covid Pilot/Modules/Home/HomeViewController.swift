@@ -36,7 +36,15 @@ class HomeViewController: UIViewController {
     var resetDataUseCase: ResetDataUseCase?
     
     @IBAction func onCommunicate(_ sender: Any) {
-        router?.route(to: Routes.MyHealth, from: self)
+        guard let expositionInfo = expositionInfo else {
+            return
+        }
+        if (expositionInfo.level == .Infected) {
+            router?.route(to: Routes.MyHealthReported, from: self)
+        } else {
+            router?.route(to: Routes.MyHealth, from: self)
+        }
+        
     }
     
     @IBAction func onRadarSwitchChange(_ sender: Any) {

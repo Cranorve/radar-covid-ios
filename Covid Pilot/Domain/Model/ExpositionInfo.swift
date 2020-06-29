@@ -16,7 +16,7 @@ struct ExpositionInfo {
         self.level = level
     }
 
-    enum Level {
+    enum Level : Equatable{
          case Healthy(lastCheck: Date?)
          case Exposed(since: Date?, lastCheck: Date?)
          case Infected
