@@ -21,7 +21,7 @@ class ProximityViewController: UIViewController {
         bluetoothUseCase?.checkBluetoothActive().subscribe(
             onNext: { [weak self] active in
                 self?.navigateIf(active: active)
-            }, onError: {  [weak self] error in
+            }, onError: { error in
                 debugPrint("Error activating bluetooth \(error)")
         })
         .disposed(by: disposeBag)
