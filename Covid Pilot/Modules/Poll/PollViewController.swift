@@ -101,7 +101,12 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
             }, onError: {  [weak self] error in
                 self?.view.hideLoading()
                 debugPrint(error)
-                self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
+                let alert = Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar") { (action) in
+                    self?.navigationController?.popViewController(animated: true)
+
+                }
+                self?.present(alert, animated: true)
+//                self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
     }
     
