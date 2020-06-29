@@ -69,19 +69,15 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         progressView.clipsToBounds = true
         progressView.layer.cornerRadius = 5.0;
         
-        DispatchQueue.main.async {
-            self.view.showLoading()
-        }
+        self.view.showLoading()
+        
         pollUseCase?.getPoll().subscribe(
             onNext:{ [weak self] poll in
-                DispatchQueue.main.async {
-                    self?.view.hideLoading()
-                }
+                self?.view.hideLoading()
+                
                 self?.load(poll: poll)
             }, onError: {  [weak self] error in
-                DispatchQueue.main.async {
-                    self?.view.hideLoading()
-                }
+                self?.view.hideLoading()
                 debugPrint(error)
                 self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
