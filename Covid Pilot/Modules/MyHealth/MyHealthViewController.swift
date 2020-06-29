@@ -157,17 +157,11 @@ class MyHealthViewController: UIViewController {
         }
       
       // move the root view up by the distance of keyboard height
-//        self.viewContent.frame.origin.y = 0 - keyboardSize.height
         self.scrollView.setContentOffset(CGPoint(x: 0, y: keyboardSize.height), animated: true)
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
       // move back the root view origin to zero
-//        self.viewContent.frame.origin.y = 0
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-           // if keyboard size is not available for some reason, dont do anything
-           return
-        }
         self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
 
