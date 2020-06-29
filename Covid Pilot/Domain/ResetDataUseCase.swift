@@ -12,14 +12,21 @@ import DP3TSDK
 
 class ResetDataUseCase {
     
+    private let setupUseCase: SetupUseCase
+    
+    init(setupUseCase: SetupUseCase) {
+        self.setupUseCase = setupUseCase
+    }
+    
     func reset() -> Observable<Void> {
-        .deferred {
+        .deferred { [weak self] in
             do {
                 try DP3TTracing.reset()
             } catch {
                 return .error(error)
             }
-    
+            self?.setupUseCase.initializeSDK()
+            
             return .just(())
         }
 
