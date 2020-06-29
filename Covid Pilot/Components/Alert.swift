@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 public class Alert {
-    class func showAlertOk(title: String, message: String, buttonTitle: String) -> UIAlertController {
+    class func showAlertOk(title: String, message: String, buttonTitle: String, _ callback: ((Any) -> Void)? = nil) -> UIAlertController {
         let uiAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: buttonTitle, style: UIAlertAction.Style.default, handler: nil)
+        let action = UIAlertAction(title: buttonTitle, style: UIAlertAction.Style.default, handler: callback)
         uiAlert.addAction(action)
         let buttonView = uiAlert.view.subviews.first?.subviews.first?.subviews.first?.subviews[1]
         uiAlert.view.tintColor = UIColor.white
