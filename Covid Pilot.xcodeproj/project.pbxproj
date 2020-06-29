@@ -18,7 +18,6 @@
 		39A1AD46249225510049E48B /* HighExposition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A1AD45249225510049E48B /* HighExposition.storyboard */; };
 		39A1AD48249225A40049E48B /* HighExpositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1AD47249225A40049E48B /* HighExpositionViewController.swift */; };
 		39C3FEC32497746900D1A13E /* DiagnosisCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3FEC22497746900D1A13E /* DiagnosisCodeUseCase.swift */; };
-		39C3FEC62497CE0800D1A13E /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 39C3FEC52497CE0800D1A13E /* DP3TSDK */; };
 		6D5AFC8D2492827C00EFE838 /* muli_extrabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC892492827B00EFE838 /* muli_extrabold.ttf */; };
 		6D5AFC8E2492827C00EFE838 /* muli_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC8A2492827C00EFE838 /* muli_semibold.ttf */; };
 		6D5AFC8F2492827C00EFE838 /* muli_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC8B2492827C00EFE838 /* muli_bold.ttf */; };
@@ -41,6 +40,7 @@
 		6D5AFCFA2493AA7F00EFE838 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCF92493AA7F00EFE838 /* QuestionController.swift */; };
 		6D5AFCFD2493B3AA00EFE838 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCFB2493B3AA00EFE838 /* SelectViewController.swift */; };
 		6D5AFCFE2493B3AA00EFE838 /* SelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFCFC2493B3AA00EFE838 /* SelectViewController.xib */; };
+		6D78B43F24A93F9800FBC23F /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 6D78B43E24A93F9800FBC23F /* DP3TSDK */; };
 		6DA18CBB2491055D00BE8AAB /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CBA2491055D00BE8AAB /* BackgroundView.swift */; };
 		6DA18CC024916B3300BE8AAB /* Exposition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA18CBF24916B3300BE8AAB /* Exposition.storyboard */; };
 		6DA18CC224916B4100BE8AAB /* ExpositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */; };
@@ -315,7 +315,7 @@
 			files = (
 				6DF6ECDE248FD751007EAA40 /* RxSwift in Frameworks */,
 				6D5AFCE8249369FE00EFE838 /* Alamofire in Frameworks */,
-				39C3FEC62497CE0800D1A13E /* DP3TSDK in Frameworks */,
+				6D78B43F24A93F9800FBC23F /* DP3TSDK in Frameworks */,
 				6DF6ECB3248EAA65007EAA40 /* Pageboy in Frameworks */,
 				6DF6ECA8248E7453007EAA40 /* Swinject in Frameworks */,
 			);
@@ -803,7 +803,7 @@
 				6DF6ECB2248EAA65007EAA40 /* Pageboy */,
 				6DF6ECDD248FD751007EAA40 /* RxSwift */,
 				6D5AFCE7249369FE00EFE838 /* Alamofire */,
-				39C3FEC52497CE0800D1A13E /* DP3TSDK */,
+				6D78B43E24A93F9800FBC23F /* DP3TSDK */,
 			);
 			productName = "Covid Pilot";
 			productReference = 39443286248939F000FF0217 /* Radar COVID.app */;
@@ -838,7 +838,7 @@
 				6DF6ECB1248EAA65007EAA40 /* XCRemoteSwiftPackageReference "Pageboy" */,
 				6DF6ECDC248FD751007EAA40 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				6D5AFCE6249369FE00EFE838 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				39C3FEC42497CE0800D1A13E /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */,
+				6D78B43D24A93F9800FBC23F /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */,
 			);
 			productRefGroup = 39443287248939F000FF0217 /* Products */;
 			projectDirPath = "";
@@ -1368,20 +1368,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		39C3FEC42497CE0800D1A13E /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
-			requirement = {
-				kind = exactVersion;
-				version = 1.0.1;
-			};
-		};
 		6D5AFCE6249369FE00EFE838 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
 				kind = exactVersion;
 				version = 4.9.1;
+			};
+		};
+		6D78B43D24A93F9800FBC23F /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alopezh/dp3t-sdk-ios";
+			requirement = {
+				branch = develop;
+				kind = branch;
 			};
 		};
 		6DF6ECA6248E7453007EAA40 /* XCRemoteSwiftPackageReference "Swinject" */ = {
@@ -1411,15 +1411,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		39C3FEC52497CE0800D1A13E /* DP3TSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 39C3FEC42497CE0800D1A13E /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */;
-			productName = DP3TSDK;
-		};
 		6D5AFCE7249369FE00EFE838 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6D5AFCE6249369FE00EFE838 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		6D78B43E24A93F9800FBC23F /* DP3TSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6D78B43D24A93F9800FBC23F /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */;
+			productName = DP3TSDK;
 		};
 		6DF6ECA7248E7453007EAA40 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
