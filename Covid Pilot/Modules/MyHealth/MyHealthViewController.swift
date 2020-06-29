@@ -12,7 +12,8 @@ import RxSwift
 class MyHealthViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
-    @IBOutlet weak var viewContent: UIView!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     var diagnosisCodeUseCase: DiagnosisCodeUseCase?
     var statusBar: UIView?
     @IBOutlet var codeChars: [UITextField]!
@@ -61,17 +62,16 @@ class MyHealthViewController: UIViewController {
     
     var router: AppRouter?
     
-    override func viewWillAppear(_ animated: Bool) {
-        //hide kayboard in case is shown
-        self.view.frame.origin.y = 0
-        
+    override func viewWillAppear(_ animated: Bool) {        
         self.codeChars.forEach { (char) in
-           char.text = "\u{200B}"
-           char.layer.cornerRadius = 5
-           char.addTarget(self, action: #selector(MyHealthViewController.textFieldDidChange(_:)), for: .editingChanged)
+            char.text = "\u{200B}"
+            char.layer.cornerRadius = 5
+            char.addTarget(self, action: #selector(MyHealthViewController.textFieldDidChange(_:)), for: .editingChanged)
+            
 
-       }
-       self.diagnosticEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
+        }
+        
+        self.diagnosticEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
 
     }
     
@@ -156,12 +156,18 @@ class MyHealthViewController: UIViewController {
         }
       
       // move the root view up by the distance of keyboard height
-        self.viewContent.frame.origin.y = 0 - keyboardSize.height
+//        self.viewContent.frame.origin.y = 0 - keyboardSize.height
+        self.scrollView.setContentOffset(CGPoint(x: 0, y: keyboardSize.height), animated: true)
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
       // move back the root view origin to zero
-        self.viewContent.frame.origin.y = 0        
+//        self.viewContent.frame.origin.y = 0
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+           // if keyboard size is not available for some reason, dont do anything
+           return
+        }
+        self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
 
 
