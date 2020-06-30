@@ -83,15 +83,14 @@ class HomeViewController: UIViewController {
         if let level = expositionInfo?.level {
             switch level {
                 case .Healthy(lastCheck: let lastCheck):
-                    guard let lastCheckDate = lastCheck else {
-                        return
-                    }
-                    router?.route(to: Routes.Exposition, from: self, parameters: lastCheckDate)
+                    router?.route(to: Routes.Exposition, from: self, parameters: lastCheck)
                 case .Exposed(since: let since):
                     router?.route(to: Routes.HighExposition, from: self, parameters: since)
                 case .Infected:
                     router?.route(to: Routes.MyHealthReported, from: self)
             }
+        } else {
+            router?.route(to: Routes.Exposition, from: self, parameters: Date())
         }
     }
     
@@ -162,6 +161,11 @@ class HomeViewController: UIViewController {
     }
     
     private func updateExpositionInfo(_ exposition: ExpositionInfo) {
+        
+        guard (exposition.level != nil) else {
+            return
+        }
+        
         self.expositionInfo = exposition
         switch exposition.level {
             case .Exposed(since: _):
