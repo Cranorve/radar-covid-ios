@@ -16,25 +16,25 @@ enum Endpoits {
     var config: String {
         switch self {
         case .pre: return "https://d3d0clxg4q92wk.cloudfront.net/configuration"
-        case .pro: return "https://dqarr2dc0prei.cloudfront.net/configuration"
+        case .pro: return "https://radarcovid.covid19.gob.es/configuration"
         }
     }
     var poll: String {
         switch self {
         case .pre: return "https://d3d0clxg4q92wk.cloudfront.net/questionnaire"
-        case .pro: return "https://dqarr2dc0prei.cloudfront.net/questionnaire"
+        case .pro: return "https://radarcovid.covid19.gob.es/questionnaire"
         }
     }
     var kpi: String {
         switch self {
         case .pre: return "https://d3d0clxg4q92wk.cloudfront.net/kpi"
-        case .pro: return "https://dqarr2dc0prei.cloudfront.net/kpi"
+        case .pro: return "https://radarcovid.covid19.gob.es/kpi"
         }
     }
     var dpppt: String {
         switch self {
         case .pre: return "https://d3d0clxg4q92wk.cloudfront.net/dp3t"
-        case .pro: return "https://dqarr2dc0prei.cloudfront.net/dp3t"
+        case .pro: return "https://radarcovid.covid19.gob.es/dp3t"
         }
     }
 }
