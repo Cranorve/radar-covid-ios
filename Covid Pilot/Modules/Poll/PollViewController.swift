@@ -91,7 +91,8 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        
+        self.poll = nil
+        viewControllers = []
     }
     
     private func fetchPoll() {
