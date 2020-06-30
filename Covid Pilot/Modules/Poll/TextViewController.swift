@@ -25,8 +25,16 @@ class TextViewController: UIViewController, UITextViewDelegate, QuestionControll
     
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        endEditingTextView()
+    }
+    
     func textViewDidChange(_ textView: UITextView) {
         question?.valuesSelected = [textView.text]
+    }
+    
+    func endEditingTextView(){
+        textView.endEditing(true)
     }
 
     
