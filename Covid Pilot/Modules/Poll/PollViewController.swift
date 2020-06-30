@@ -90,6 +90,19 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
 
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        //disable all questanaires with textviews edition enabled
+        for item in self.viewControllers {
+            print("eco")
+            guard let item: TextViewController = item as? TextViewController else {
+                continue
+            }
+            item.textView.endEditing(true)
+        }
+        
+    }
+    
     private func fetchPoll() {
 
         self.view.showLoading()
