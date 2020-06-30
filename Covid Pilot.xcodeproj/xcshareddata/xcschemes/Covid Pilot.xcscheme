@@ -72,7 +72,7 @@
       buildConfiguration = "DebugPre">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "ReleasePro"
+      buildConfiguration = "ReleasePre"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
