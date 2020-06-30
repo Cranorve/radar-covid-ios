@@ -38,19 +38,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZX-eB-vJ1" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="754"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="794.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5oe-1F-JPZ">
-                                                <rect key="frame" x="16" y="120" width="343" height="547"/>
+                                                <rect key="frame" x="16" y="120" width="343" height="587.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu privacidad es nuestra prioridad" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cjg-pU-6HI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="70.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qok-ac-Npf">
-                                                        <rect key="frame" x="0.0" y="85.5" width="343" height="461.5"/>
+                                                        <rect key="frame" x="0.0" y="90.5" width="343" height="497"/>
                                                         <string key="text">Nuestros compromisos
 
 Anonimato 
@@ -78,7 +78,7 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SwM-SS-Bb9" userLabel="CheckView">
-                                                <rect key="frame" x="16" y="687" width="343" height="57"/>
+                                                <rect key="frame" x="16" y="727.5" width="343" height="57"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvQ-IX-8Bm">
                                                         <rect key="frame" x="30" y="0.0" width="313" height="19.5"/>
