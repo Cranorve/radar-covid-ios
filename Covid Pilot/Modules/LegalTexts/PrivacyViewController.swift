@@ -55,7 +55,7 @@ class PrivacyViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     private func setAllSectionsHidden() {
-        for i  in 1..<self.tableViewData.count {
+        for i  in 0..<self.tableViewData.count {
             hiddenSections.insert(i)
         }
     }

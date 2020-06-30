@@ -51,7 +51,7 @@ class TermsViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     private func setAllSectionsHidden() {
-        for i  in 1..<self.tableViewData.count {
+        for i  in 0..<self.tableViewData.count {
             hiddenSections.insert(i)
         }
     }
