@@ -331,7 +331,9 @@ COVID positivo</string>
                         <viewLayoutGuide key="safeArea" id="599-Qh-McL"/>
                     </view>
                     <connections>
+                        <outlet property="scrollContainer" destination="aqS-jX-ZBj" id="eG0-WE-Ykf"/>
                         <outlet property="scrollView" destination="8qu-xN-VKL" id="2et-HO-0LF"/>
+                        <outlet property="scrollViewBottonConstraint" destination="BCo-02-kbu" id="pCN-GQ-d9a"/>
                         <outlet property="sendDiagnosticButton" destination="Yjq-yA-SHq" id="bpb-x4-6wV"/>
                         <outletCollection property="codeChars" destination="HHi-si-IWt" collectionClass="NSMutableArray" id="I1o-Jw-m2r"/>
                         <outletCollection property="codeChars" destination="405-qe-SRW" collectionClass="NSMutableArray" id="pLg-IZ-lPu"/>

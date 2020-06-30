@@ -13,7 +13,10 @@ class MyHealthViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     
+    @IBOutlet weak var scrollViewBottonConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollContainer: UIView!
+
     var diagnosisCodeUseCase: DiagnosisCodeUseCase?
     var statusBar: UIView?
     @IBOutlet var codeChars: [UITextField]!
@@ -156,17 +159,19 @@ class MyHealthViewController: UIViewController {
         }
       
       // move the root view up by the distance of keyboard height
-//        self.viewContent.frame.origin.y = 0 - keyboardSize.height
-        self.scrollView.setContentOffset(CGPoint(x: 0, y: keyboardSize.height), animated: true)
+        DispatchQueue.main.async {
+            self.scrollViewBottonConstraint.constant = keyboardSize.height
+            self.scrollView.setContentOffset(CGPoint(x: 0, y: keyboardSize.height), animated: true)
+           
+
+        }
+
+//        self.scrollView.setContentOffset(CGPoint(x: 0, y: keyboardSize.height), animated: true)
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
       // move back the root view origin to zero
-//        self.viewContent.frame.origin.y = 0
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-           // if keyboard size is not available for some reason, dont do anything
-           return
-        }
+        self.scrollViewBottonConstraint.constant = 0
         self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
 
