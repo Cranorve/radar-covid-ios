@@ -15,7 +15,6 @@ class ProximityViewController: UIViewController {
     
     var router: AppRouter?
     var bluetoothUseCase: BluetoothUseCase?
-    var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
 
     @IBAction func onContinue(_ sender: Any) {
         bluetoothUseCase?.checkBluetoothActive().subscribe(
@@ -37,7 +36,6 @@ class ProximityViewController: UIViewController {
     
     private func navigateIf(active: Bool) {
         if (active) {
-            onBoardingCompletedUseCase?.setOnboarding(completed: true)
             router?.route(to: Routes.Home, from: self)
         } else {
             

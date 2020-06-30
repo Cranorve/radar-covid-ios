@@ -39,6 +39,13 @@
                                     <constraint firstAttribute="width" constant="250" id="rRz-TQ-CGn"/>
                                 </constraints>
                             </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheckWhite" translatesAutoresizingMaskIntoConstraints="NO" id="s47-VN-7tM">
+                                <rect key="frame" x="162" y="226.66666666666663" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="5rp-cy-SZ4"/>
+                                    <constraint firstAttribute="width" constant="90" id="wUK-6X-b5G"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgD-SH-6Y2">
                                 <rect key="frame" x="16" y="788" width="382" height="54"/>
                                 <constraints>
@@ -143,6 +150,7 @@ Cuídate y cuida a los demás.</string>
                         </subviews>
                         <color key="backgroundColor" name="bgColor"/>
                         <constraints>
+                            <constraint firstItem="s47-VN-7tM" firstAttribute="centerX" secondItem="Ker-eU-Kvi" secondAttribute="centerX" id="2fL-ND-GLm"/>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="mgD-SH-6Y2" secondAttribute="trailing" constant="16" id="3eO-Kl-moS"/>
                             <constraint firstItem="mgD-SH-6Y2" firstAttribute="top" secondItem="fuQ-dg-Nwm" secondAttribute="bottom" constant="30" id="B8C-1D-2un"/>
                             <constraint firstItem="6hz-zu-Mhb" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" constant="14" id="Ihf-J3-GiC"/>
@@ -151,6 +159,7 @@ Cuídate y cuida a los demás.</string>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="bottom" secondItem="mgD-SH-6Y2" secondAttribute="bottom" constant="20" id="PQY-LE-EIo"/>
                             <constraint firstItem="6NQ-cJ-mH8" firstAttribute="centerY" secondItem="AA3-07-0Pc" secondAttribute="centerY" multiplier="0.6" id="XU9-CW-wmL"/>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="6hz-zu-Mhb" secondAttribute="trailing" constant="14" id="Xn5-ha-Ui9"/>
+                            <constraint firstItem="s47-VN-7tM" firstAttribute="centerY" secondItem="Ker-eU-Kvi" secondAttribute="centerY" id="ax0-4K-sNt"/>
                             <constraint firstItem="mgD-SH-6Y2" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" constant="16" id="bV0-qf-MCr"/>
                             <constraint firstItem="fuQ-dg-Nwm" firstAttribute="top" secondItem="6hz-zu-Mhb" secondAttribute="bottom" constant="20" id="gY7-TF-3Oc"/>
                             <constraint firstItem="6NQ-cJ-mH8" firstAttribute="centerX" secondItem="AA3-07-0Pc" secondAttribute="centerX" id="kB7-cO-j2Z"/>
@@ -167,6 +176,8 @@ Cuídate y cuida a los demás.</string>
                         <outlet property="expositionDescription" destination="XCQ-uz-Hi1" id="SgW-aX-6xj"/>
                         <outlet property="expositionTitle" destination="Tiy-hB-953" id="d36-84-O30"/>
                         <outlet property="expositionView" destination="6hz-zu-Mhb" id="8iB-cX-vMh"/>
+                        <outlet property="imageCheck" destination="s47-VN-7tM" id="pmS-0V-GBe"/>
+                        <outlet property="imageDefault" destination="6NQ-cJ-mH8" id="Vdx-I6-dIm"/>
                         <outlet property="radarMessage" destination="5DO-YK-Xnt" id="mg3-Yj-6Kn"/>
                         <outlet property="radarSwitch" destination="G5m-HH-dbd" id="eo5-R2-GwJ"/>
                         <outlet property="radarTitle" destination="p5A-O2-cnn" id="pwU-lr-a3Q"/>
@@ -180,6 +191,7 @@ Cuídate y cuida a los demás.</string>
         </scene>
     </scenes>
     <resources>
+        <image name="CheckWhite" width="90" height="90"/>
         <image name="GradientBackgroundButton" width="343" height="56"/>
         <image name="arrowRight" width="25.666666030883789" height="17"/>
         <image name="circle" width="350.66665649414062" height="330.66665649414062"/>
