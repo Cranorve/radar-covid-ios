@@ -77,16 +77,18 @@ class HomeViewController: UIViewController {
     }
     
     @objc func onExpositionTap() {
-        switch expositionInfo?.level {
-        case .Healthy(lastCheck: let lastCheck):
-            guard let lastCheckDate = lastCheck else {
-                return
+        if let level = expositionInfo?.level {
+            switch level {
+                case .Healthy(lastCheck: let lastCheck):
+                    guard let lastCheckDate = lastCheck else {
+                        return
+                    }
+                    router?.route(to: Routes.Exposition, from: self, parameters: lastCheckDate)
+                case .Exposed(since: let since):
+                    router?.route(to: Routes.HighExposition, from: self, parameters: since)
+                case .Infected:
+                    router?.route(to: Routes.MyHealthReported, from: self)
             }
-            router?.route(to: Routes.Exposition, from: self, parameters: lastCheckDate)
-        case .Exposed(since: let since):
-            router?.route(to: Routes.HighExposition, from: self, parameters: since)
-        default:
-            router?.route(to: Routes.HighExposition, from: self)
         }
     }
     
