@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var expositionView: BackgroundView!
     @IBOutlet weak var radarSwitch: UISwitch!
     @IBOutlet weak var radarMessage: UILabel!
+    @IBOutlet weak var radarTitle: UILabel!
     @IBOutlet weak var radarView: BackgroundView!
     
     @IBOutlet weak var resetDataButton: UIButton!
@@ -199,9 +200,11 @@ class HomeViewController: UIViewController {
     
     private func changeRadarMessage(active: Bool) {
         if (active) {
+            radarTitle.text = "Radar COVID activo"
             radarMessage.text = "Las interacciones con móviles cercanos se registarán siempre anónimamente. "
             radarMessage.textColor = UIColor.black
         } else {
+            radarTitle.text = "Radar COVID inactivo"
             radarMessage.text = "Por favor, activa el Bluetooth para poder identificar posibles contagios."
             radarMessage.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         }

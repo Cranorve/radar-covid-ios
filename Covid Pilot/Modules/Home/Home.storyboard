@@ -169,6 +169,7 @@ Cuídate y cuida a los demás.</string>
                         <outlet property="expositionView" destination="6hz-zu-Mhb" id="8iB-cX-vMh"/>
                         <outlet property="radarMessage" destination="5DO-YK-Xnt" id="mg3-Yj-6Kn"/>
                         <outlet property="radarSwitch" destination="G5m-HH-dbd" id="eo5-R2-GwJ"/>
+                        <outlet property="radarTitle" destination="p5A-O2-cnn" id="pwU-lr-a3Q"/>
                         <outlet property="radarView" destination="fuQ-dg-Nwm" id="bzd-Ez-hrg"/>
                         <outlet property="resetDataButton" destination="AKG-lv-3X4" id="amN-hh-hpR"/>
                     </connections>
