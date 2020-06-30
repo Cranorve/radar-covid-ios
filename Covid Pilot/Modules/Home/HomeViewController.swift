@@ -111,6 +111,13 @@ class HomeViewController: UIViewController {
 
         resetDataButton.isHidden = !Config.debug
         
+        syncUseCase?.sync().subscribe(
+            onError: { [weak self] error in
+                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener datos de exposición", buttonTitle: "Aceptar"), animated: true)
+            }, onCompleted: {
+                debugPrint("Sync Completed")
+        }).disposed(by: disposeBag)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,14 +128,6 @@ class HomeViewController: UIViewController {
         let isTracingActive = radarStatusUseCase?.isTracingActive() ?? false
         changeRadarMessage(active: isTracingActive)
         radarSwitch.isOn = isTracingActive
-        
-        syncUseCase?.sync().subscribe(
-            onNext:{ _ in
-                debugPrint("Sync Completed")
-            }, onError: { [weak self] error in
-                debugPrint(error)
-                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener datos de exposición", buttonTitle: "Aceptar"), animated: true)
-        }).disposed(by: disposeBag)
         
         self.view.showLoading()
         expositionUseCase?.getExpositionInfo().subscribe(
