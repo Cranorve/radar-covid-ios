@@ -197,7 +197,6 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
             onNext:{ [weak self] questions in
                 if let strongSelf = self {
                     strongSelf.router?.route(to: .Home, from: strongSelf)
-//                    strongSelf.navigationController?.pushViewController(strongSelf.finishPollVC!, animated: true)
                 }
             }, onError: {  [weak self] error in
                 debugPrint("Error saving poll \(error)")
