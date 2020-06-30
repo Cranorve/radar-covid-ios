@@ -17,17 +17,17 @@ class PrivacyViewController: UIViewController, UITableViewDataSource, UITableVie
     private var hiddenSections = Set<Int>()
     
     private var tableHeaders = [
-        "1. ¿Quién es responsable del tratamiento de tus datos como usuario de “Radar COVID”?",
-        "2.  ¿Qué datos tratamos sobre ti?",
-        "3. ¿Cómo obtenemos y de dónde proceden tus datos?",
-        "4. ¿Para qué y por qué utilizamos tus datos? ",
-        "5. ¿Durante cuánto tiempo conservamos tus datos?",
-        "6. ¿Quién tiene acceso a tus datos?",
-        "7. ¿Cuáles son tus derechos y cómo puedes controlar tus datos?",
-        "8.  ¿Cómo protegemos tus datos?",
-        "9.  ¿Cuál es la legitimación para el tratamiento de tus datos?",
-        "10. Transmisión y flujo de datos",
-        "11. ¿Qué tienes que tener especialmente en cuenta al utilizar “Radar COVID”?",
+        "1. ¿Qué es Radar COVID?",
+        "2. ¿Cómo funciona la aplicación?",
+        "3. ¿Qué datos tratamos sobre ti?",
+        "4. ¿Cómo obtenemos y de dónde proceden tus datos?",
+        "5. ¿Para qué y por qué utilizamos tus datos?",
+        "6. ¿Durante cuánto tiempo conservamos tus datos?",
+        "7. ¿Quién tiene acceso a tus datos?",
+        "8. ¿Cuáles son tus derechos y cómo puedes controlar tus datos?",
+        "9. ¿Cómo protegemos tus datos?",
+        "10. ¿Cuál es la legitimación para el tratamiento de tus datos?",
+        "11. ¿Qué tienes que tener especialmente en cuenta al utilizar \"Radar COVID\"?",
         "12. Política de cookies"
     ]
     
