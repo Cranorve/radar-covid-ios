@@ -104,7 +104,8 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(BluetoothUseCase.self) { r in
-            BluetoothUseCase(bluetoothHandler: r.resolve(BluetoothHandler.self)!)
+            BluetoothUseCase(bluetoothHandler: r.resolve(BluetoothHandler.self)!,
+                             preferencesRepository: r.resolve(PreferencesRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(ResetDataUseCase.self) { r in
