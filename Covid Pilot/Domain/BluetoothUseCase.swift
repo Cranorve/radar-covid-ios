@@ -21,8 +21,11 @@ class BluetoothUseCase {
     }
     
     func checkBluetoothActive() -> Observable<Bool> {
-        preferencesRepository.setTracing(active: true)
-        return bluetoothHandler.isActive()
+       
+        return bluetoothHandler.isActive().map { [weak self] active in
+            self?.preferencesRepository.setTracing(active: active)
+            return active
+        }
     }
     
 }
