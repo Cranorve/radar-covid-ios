@@ -22,10 +22,11 @@ class CentralManagerBluetoothHandler: NSObject, BluetoothHandler, CBCentralManag
 
     
     func isActive() -> Observable<Bool> {
-        .deferred { [weak self] in
-            self?.centralManager = CBCentralManager(delegate: self, queue: nil)
-            return self?.subject.asObservable() ?? .empty()
-        }
+//        .deferred { [weak self] in
+//            self?.centralManager = CBCentralManager(delegate: self, queue: nil)
+//            return self?.subject.asObservable() ?? .empty()
+//        }
+        .just(true)
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
