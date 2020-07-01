@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingViewController" customModule="Radar_COVID" customModuleProvider="target">
+            <connections>
+                <outlet property="labelexcelente" destination="BO3-OY-Q0e" id="EOr-7C-fKe"/>
+                <outlet property="labelmuymala" destination="pZ3-e9-2U8" id="tDG-oC-khP"/>
+                <outlet property="options" destination="KFg-LL-nRF" id="lov-2Z-baI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewTop" destination="Ckd-7L-CTf" id="PRC-3x-Nlq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTM-er-8hz">
+                    <rect key="frame" x="0.0" y="314" width="414" height="474"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KFg-LL-nRF">
+                            <rect key="frame" x="22" y="0.0" width="370" height="51"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="s8e-Cp-czk"/>
+                            </constraints>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                            <connections>
+                                <action selector="onSelected:" destination="-1" eventType="primaryActionTriggered" id="7Xr-tf-ZlQ"/>
+                            </connections>
+                        </segmentedControl>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="muy mala" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZ3-e9-2U8">
+                            <rect key="frame" x="22" y="70" width="74" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="excelente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BO3-OY-Q0e">
+                            <rect key="frame" x="318" y="70" width="74" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="KFg-LL-nRF" firstAttribute="top" secondItem="pTM-er-8hz" secondAttribute="top" id="3eg-yI-Thy"/>
+                        <constraint firstItem="pZ3-e9-2U8" firstAttribute="leading" secondItem="KFg-LL-nRF" secondAttribute="leading" id="7zD-Zh-MbA"/>
+                        <constraint firstAttribute="trailing" secondItem="KFg-LL-nRF" secondAttribute="trailing" constant="22" id="KAr-mc-yvG"/>
+                        <constraint firstItem="pZ3-e9-2U8" firstAttribute="centerY" secondItem="BO3-OY-Q0e" secondAttribute="centerY" id="XSc-Xa-yVL"/>
+                        <constraint firstItem="BO3-OY-Q0e" firstAttribute="top" secondItem="KFg-LL-nRF" secondAttribute="bottom" constant="20" id="Xhy-NC-oHN"/>
+                        <constraint firstItem="BO3-OY-Q0e" firstAttribute="trailing" secondItem="KFg-LL-nRF" secondAttribute="trailing" id="Xpc-Uo-Nms"/>
+                        <constraint firstItem="KFg-LL-nRF" firstAttribute="leading" secondItem="pTM-er-8hz" secondAttribute="leading" constant="22" id="xBe-8s-vz9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pTM-er-8hz" secondAttribute="bottom" constant="74" id="0PE-q9-fdt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pTM-er-8hz" secondAttribute="trailing" id="40o-qB-tON"/>
+                <constraint firstItem="pTM-er-8hz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="270" id="Ckd-7L-CTf"/>
+                <constraint firstItem="pTM-er-8hz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X8G-pN-Ljd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="113"/>
+        </view>
+    </objects>
+</document>
