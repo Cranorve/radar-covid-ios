@@ -56,6 +56,16 @@ class ConfigurationUseCase {
         if let higher = settings.parameters?.attenuationDurationThresholds?.medium {
             params.contactMatching.higherThreshold = higher
         }
+        if let minDurationForExposure = settings.parameters?.minDurationForExposure {
+            params.contactMatching.triggerThreshold = Int(minDurationForExposure)
+        }
+        
+        if let factorLow = settings.parameters?.attenuationFactor?.low {
+            params.contactMatching.factorLow = factorLow
+        }
+        if let factorHigh = settings.parameters?.attenuationFactor?.medium {
+            params.contactMatching.factorHigh = factorHigh
+        }
         DP3TTracing.parameters = params
     }
     

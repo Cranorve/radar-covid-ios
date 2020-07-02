@@ -38,16 +38,14 @@ class MyHealthViewController: UIViewController {
     }
 
     @IBAction func onReportDiagnosis(_ sender: Any) {
-        self.view.showLoading()
         if !diagnosticEnabled {
-            self.view.hideLoading()
-            self.present(Alert.showAlertOk(title: "Error", message: "Por favor introduce un código válido de 12 dígitos", buttonTitle: "Aceptar"), animated: true)
+            present(Alert.showAlertOk(title: "Error", message: "Por favor introduce un código válido de 12 dígitos", buttonTitle: "Aceptar"), animated: true)
 
-        }else{
+        } else {
+            view.showLoading()
             var codigoString = ""
-            self.codeChars.forEach {
+            codeChars.forEach {
                 let s: String = $0.text ?? ""
-                // Clean weird chars
                 codigoString += s
             }
 
@@ -62,9 +60,6 @@ class MyHealthViewController: UIViewController {
 
             }).disposed(by: disposeBag)
         }
-        
-        
-        
     }
     
     var router: AppRouter?

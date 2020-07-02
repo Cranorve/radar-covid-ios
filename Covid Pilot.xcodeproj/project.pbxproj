@@ -42,6 +42,9 @@
 		6D5AFCFD2493B3AA00EFE838 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCFB2493B3AA00EFE838 /* SelectViewController.swift */; };
 		6D5AFCFE2493B3AA00EFE838 /* SelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFCFC2493B3AA00EFE838 /* SelectViewController.xib */; };
 		6D78B44124A9F13A00FBC23F /* SetupUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D78B44024A9F13A00FBC23F /* SetupUseCase.swift */; };
+		6D7AB27324AE375200F30E0B /* AttenuationFactorDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB27024AE375200F30E0B /* AttenuationFactorDto.swift */; };
+		6D7AB27424AE375200F30E0B /* VersionDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB27124AE375200F30E0B /* VersionDto.swift */; };
+		6D7AB27524AE375200F30E0B /* ApplicationVersionDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB27224AE375200F30E0B /* ApplicationVersionDto.swift */; };
 		6DA18CBB2491055D00BE8AAB /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CBA2491055D00BE8AAB /* BackgroundView.swift */; };
 		6DA18CC024916B3300BE8AAB /* Exposition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA18CBF24916B3300BE8AAB /* Exposition.storyboard */; };
 		6DA18CC224916B4100BE8AAB /* ExpositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */; };
@@ -196,6 +199,9 @@
 		6D5AFCFB2493B3AA00EFE838 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		6D5AFCFC2493B3AA00EFE838 /* SelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectViewController.xib; sourceTree = "<group>"; };
 		6D78B44024A9F13A00FBC23F /* SetupUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupUseCase.swift; sourceTree = "<group>"; };
+		6D7AB27024AE375200F30E0B /* AttenuationFactorDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttenuationFactorDto.swift; sourceTree = "<group>"; };
+		6D7AB27124AE375200F30E0B /* VersionDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionDto.swift; sourceTree = "<group>"; };
+		6D7AB27224AE375200F30E0B /* ApplicationVersionDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationVersionDto.swift; sourceTree = "<group>"; };
 		6DA18CBA2491055D00BE8AAB /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		6DA18CBF24916B3300BE8AAB /* Exposition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exposition.storyboard; sourceTree = "<group>"; };
 		6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpositionViewController.swift; sourceTree = "<group>"; };
@@ -583,6 +589,9 @@
 		6DB5418724989C2500166D37 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6D7AB27224AE375200F30E0B /* ApplicationVersionDto.swift */,
+				6D7AB27024AE375200F30E0B /* AttenuationFactorDto.swift */,
+				6D7AB27124AE375200F30E0B /* VersionDto.swift */,
 				6DE27D3E24A76D7D00BBCF40 /* AttenuationDurationThresholdsDto.swift */,
 				6DB5418824989C2500166D37 /* SettingsDto.swift */,
 				6DB5418924989C2500166D37 /* RiskScoreClassificationDto.swift */,
@@ -901,6 +910,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DE27C79249A6D4600BBCF40 /* APIHelper.swift in Sources */,
+				6D7AB27424AE375200F30E0B /* VersionDto.swift in Sources */,
 				6DE27C662499F65E00BBCF40 /* AnswerOptionDto.swift in Sources */,
 				6DA18CBB2491055D00BE8AAB /* BackgroundView.swift in Sources */,
 				6DE27C642499118200BBCF40 /* String+Extension.swift in Sources */,
@@ -931,6 +941,7 @@
 				6DF6ECD1248FA044007EAA40 /* MyDataViewController.swift in Sources */,
 				6D5AFCEE24938CC000EFE838 /* PollUseCase.swift in Sources */,
 				76D9BD4524A8996700BA6697 /* UIView+Extension.swift in Sources */,
+				6D7AB27324AE375200F30E0B /* AttenuationFactorDto.swift in Sources */,
 				76D9BD2D24A8992000BA6697 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
 				6DB541952498A29D00166D37 /* ConfiguratioUseCase.swift in Sources */,
 				6DF6ECAA248E7621007EAA40 /* AppRouter.swift in Sources */,
@@ -1015,6 +1026,7 @@
 				6DE27C75249A6D4600BBCF40 /* Extensions.swift in Sources */,
 				76D9BD3E24A8992000BA6697 /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				76D9BD4324A8992000BA6697 /* NVActivityIndicatorAnimationOrbit.swift in Sources */,
+				6D7AB27524AE375200F30E0B /* ApplicationVersionDto.swift in Sources */,
 				76D9BD3D24A8992000BA6697 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				6DF6ECC4248F691E007EAA40 /* HomeViewController.swift in Sources */,
 				6DE27CA924A0D34C00BBCF40 /* TableHeaderView.swift in Sources */,
