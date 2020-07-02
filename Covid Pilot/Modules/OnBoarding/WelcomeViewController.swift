@@ -33,7 +33,7 @@ class WelcomeViewController: UIViewController {
     }
     
     private func loadText() {
-        let bullet1 = "Conoce en todo momento si te expones al virus, ayudándote a protegerte y proteger a los demás.\n"
+        let bullet1 = "Conoce en todo momento si te expones al coronavirus, ayudándote a protegerte y proteger a los demás.\n"
         let bullet2 = "Comunica de forma anónima tu diagnóstico Covid positivo.\n"
         let bullet3 = "Si estuvieras afectado, comunicaremos la exposición de forma anónima a las personas con las que has estado en contacto."
         let strings = [bullet1, bullet2, bullet3]
