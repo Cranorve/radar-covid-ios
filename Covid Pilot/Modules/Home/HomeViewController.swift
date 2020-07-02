@@ -110,11 +110,21 @@ class HomeViewController: UIViewController {
 
         resetDataButton.isHidden = !Config.debug
         
-        syncUseCase?.sync().subscribe(
-            onError: { [weak self] error in
-                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener datos de exposición", buttonTitle: "Aceptar"), animated: true)
-            }, onCompleted: {
-                debugPrint("Sync Completed")
+        //        syncUseCase?.sync().subscribe(
+        //            onError: { [weak self] error in
+        //                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener datos de exposición", buttonTitle: "Aceptar"), animated: true)
+        //            }, onCompleted: {
+        //                debugPrint("Sync Completed")
+        //        }).disposed(by: disposeBag)
+        
+        expositionUseCase?.getExpositionInfo().subscribe(
+            onNext:{ [weak self] expositionInfo in
+                self?.view.hideLoading()
+                self?.updateExpositionInfo(expositionInfo)
+            }, onError: { [weak self] error in
+                debugPrint(error)
+                self?.view.hideLoading()
+                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
         
     }
@@ -127,17 +137,7 @@ class HomeViewController: UIViewController {
         let isTracingActive = radarStatusUseCase?.isTracingActive() ?? false
         changeRadarMessage(active: isTracingActive)
         radarSwitch.isOn = isTracingActive
-        
-        self.view.showLoading()
-        expositionUseCase?.getExpositionInfo().subscribe(
-            onNext:{ [weak self] expositionInfo in
-                self?.view.hideLoading()
-                self?.updateExpositionInfo(expositionInfo)
-            }, onError: { [weak self] error in
-                debugPrint(error)
-                self?.view.hideLoading()
-                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar"), animated: true)
-        }).disposed(by: disposeBag)
+    
         
     }
     
