@@ -28,7 +28,7 @@ class UserDefaultsPreferencesRepository : PreferencesRepository {
     private let userDefaults: UserDefaults
     
     init() {
-        userDefaults = UserDefaults(suiteName: "com.minsait.mobile.sedia") ?? UserDefaults.standard
+        userDefaults = UserDefaults(suiteName: "es.gob.radarcovid") ?? UserDefaults.standard
     }
     
     

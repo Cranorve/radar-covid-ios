@@ -27,6 +27,7 @@ class ProximityViewController: UIViewController {
     }
     
     @IBAction func continueNoBluetooth(_ sender: Any) {
+//        UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
         navigateIf(active: true)
     }
     

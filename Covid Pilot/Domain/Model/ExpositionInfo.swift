@@ -8,17 +8,19 @@
 
 import Foundation
 
-struct ExpositionInfo {
+struct ExpositionInfo: Codable, Equatable {
     
-    var level: Level?
+    var level: Level
+    var lastCheck: Date?
+    var since: Date?
     
-    public init(level: Level?) {
+    public init(level: Level) {
         self.level = level
     }
-
-    enum Level : Equatable{
-         case Healthy(lastCheck: Date?)
-         case Exposed(since: Date?, lastCheck: Date?)
+    
+    enum Level: String, Codable {
+         case Healthy
+         case Exposed
          case Infected
     }
     

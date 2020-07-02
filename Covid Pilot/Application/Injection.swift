@@ -87,6 +87,10 @@ class Injection {
             UserDefaultsSettingsRepository()
         }.inObjectScope(.container)
         
+        container.register(ExpositionInfoRepository.self) { r in
+            UserDefaultsExpositionInfoRepository()
+        }.inObjectScope(.container)
+        
         container.register(BluetoothHandler.self) { r in
             CentralManagerBluetoothHandler()
         }.inObjectScope(.container)
@@ -100,7 +104,8 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(ExpositionUseCase.self) { r in
-            ExpositionUseCase(notificationHandler: r.resolve(NotificationHandler.self)!)
+            ExpositionUseCase(notificationHandler: r.resolve(NotificationHandler.self)!,
+                              expositionInfoRepository: r.resolve(ExpositionInfoRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(RadarStatusUseCase.self) { r in
@@ -113,7 +118,8 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(ResetDataUseCase.self) { r in
-            ResetDataUseCase(setupUseCase: r.resolve(SetupUseCase.self)!)
+            ResetDataUseCase(setupUseCase: r.resolve(SetupUseCase.self)!,
+                             expositionInfoRepository: r.resolve(ExpositionInfoRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(PollUseCase.self) { r in

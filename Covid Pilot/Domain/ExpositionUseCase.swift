@@ -12,18 +12,25 @@ import RxSwift
 
 class ExpositionUseCase: DP3TTracingDelegate {
     
-    private let subject = BehaviorSubject<ExpositionInfo>(value: ExpositionInfo(level: .Healthy(lastCheck: Date())))
+    private let subject = BehaviorSubject<ExpositionInfo>(value: ExpositionInfo(level: .Healthy))
+    
+    private let expositionInfoRepository: ExpositionInfoRepository
     private let notificationHandler: NotificationHandler
     
-    init(notificationHandler: NotificationHandler) {
+    init(notificationHandler: NotificationHandler,
+         expositionInfoRepository: ExpositionInfoRepository) {
         self.notificationHandler = notificationHandler
+        self.expositionInfoRepository = expositionInfoRepository
         DP3TTracing.delegate = self
     }
     
     func DP3TTracingStateChanged(_ state: TracingState) {
         let expositionInfo = tracingStatusToExpositionInfo(tStatus: state)
         subject.onNext(expositionInfo)
-        notificationHandler.scheduleNotification(expositionInfo: expositionInfo)
+        if (showNotification(expositionInfo)) {
+            notificationHandler.scheduleNotification(expositionInfo: expositionInfo)
+        }
+        expositionInfoRepository.save(expositionInfo: expositionInfo)
     }
     
     
@@ -48,12 +55,24 @@ class ExpositionUseCase: DP3TTracingDelegate {
     private func tracingStatusToExpositionInfo(tStatus: TracingState) -> ExpositionInfo {
         switch tStatus.infectionStatus {
         case .healthy:
-            return ExpositionInfo(level: ExpositionInfo.Level.Healthy(lastCheck: tStatus.lastSync))
+            var info = ExpositionInfo(level: ExpositionInfo.Level.Healthy)
+            info.lastCheck = tStatus.lastSync
+            return info
         case .infected:
             return ExpositionInfo(level: ExpositionInfo.Level.Infected)
         case .exposed(days: let days):
-            return ExpositionInfo(level: ExpositionInfo.Level.Exposed(since: days.first?.exposedDate, lastCheck: tStatus.lastSync))
+            var info = ExpositionInfo(level: ExpositionInfo.Level.Exposed)
+            info.since = days.first?.exposedDate
+            info.lastCheck = tStatus.lastSync
+            return info
         }
+    }
+    
+    private func showNotification(_ expositionInfo: ExpositionInfo) -> Bool {
+        if let localEI = expositionInfoRepository.getExpositionInfo() {
+            return localEI != expositionInfo
+        }
+        return false
     }
     
     

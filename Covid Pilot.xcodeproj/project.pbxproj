@@ -43,6 +43,7 @@
 		6D5AFCFE2493B3AA00EFE838 /* SelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFCFC2493B3AA00EFE838 /* SelectViewController.xib */; };
 		6D78B44124A9F13A00FBC23F /* SetupUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D78B44024A9F13A00FBC23F /* SetupUseCase.swift */; };
 		6D7AB26D24ADCC9A00F30E0B /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB26C24ADCC9A00F30E0B /* NotificationHandler.swift */; };
+		6D7AB26F24ADED7400F30E0B /* ExpositionInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB26E24ADED7400F30E0B /* ExpositionInfoRepository.swift */; };
 		6DA18CBB2491055D00BE8AAB /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CBA2491055D00BE8AAB /* BackgroundView.swift */; };
 		6DA18CC024916B3300BE8AAB /* Exposition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA18CBF24916B3300BE8AAB /* Exposition.storyboard */; };
 		6DA18CC224916B4100BE8AAB /* ExpositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */; };
@@ -198,6 +199,7 @@
 		6D5AFCFC2493B3AA00EFE838 /* SelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectViewController.xib; sourceTree = "<group>"; };
 		6D78B44024A9F13A00FBC23F /* SetupUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupUseCase.swift; sourceTree = "<group>"; };
 		6D7AB26C24ADCC9A00F30E0B /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		6D7AB26E24ADED7400F30E0B /* ExpositionInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpositionInfoRepository.swift; sourceTree = "<group>"; };
 		6DA18CBA2491055D00BE8AAB /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		6DA18CBF24916B3300BE8AAB /* Exposition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exposition.storyboard; sourceTree = "<group>"; };
 		6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpositionViewController.swift; sourceTree = "<group>"; };
@@ -670,6 +672,7 @@
 			children = (
 				6DF6ECC7248F70DF007EAA40 /* PreferencesRepository.swift */,
 				6DB541962498A31700166D37 /* SettingsRepository.swift */,
+				6D7AB26E24ADED7400F30E0B /* ExpositionInfoRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -1021,6 +1024,7 @@
 				76D9BD4324A8992000BA6697 /* NVActivityIndicatorAnimationOrbit.swift in Sources */,
 				76D9BD3D24A8992000BA6697 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				6DF6ECC4248F691E007EAA40 /* HomeViewController.swift in Sources */,
+				6D7AB26F24ADED7400F30E0B /* ExpositionInfoRepository.swift in Sources */,
 				6DE27CA924A0D34C00BBCF40 /* TableHeaderView.swift in Sources */,
 				6D5AFCFA2493AA7F00EFE838 /* QuestionController.swift in Sources */,
 			);

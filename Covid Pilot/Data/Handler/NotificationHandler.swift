@@ -47,10 +47,10 @@ class NotificationHandler: NSObject, UNUserNotificationCenterDelegate {
         var sound: UNNotificationSound?
         formatter.dateFormat = "dd.MM.YYYY"
         switch expositionInfo.level {
-            case let .Exposed(since, _):
+            case .Exposed:
                 title = "Exposición Alta"
                 var desde = ""
-                if let since = since {
+                if let since = expositionInfo.since {
                     desde = "Desde \(formatter.string(from: since))"
                 }
                 body = "Has estado expuesto. \(desde)"
@@ -60,7 +60,7 @@ class NotificationHandler: NSObject, UNUserNotificationCenterDelegate {
                 body = "Tu exposicion ahora es baja"
                 sound = .default
             default:
-                debugPrint("No notification exposition: \(expositionInfo.level.debugDescription)")
+                debugPrint("No notification exposition: \(expositionInfo.level.rawValue)")
         }
         if let title = title, let body = body, let sound = sound {
             scheduleNotification(title: title, body: body, sound: sound)
