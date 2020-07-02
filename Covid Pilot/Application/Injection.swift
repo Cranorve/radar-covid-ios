@@ -133,7 +133,8 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(SetupUseCase.self) { r in
-            SetupUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!)
+            SetupUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!,
+                         kpiApi: r.resolve(KpiControllerAPI.self)!)
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in

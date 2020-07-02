@@ -17,7 +17,7 @@ class OnboardingCompletedUseCase {
     }
     
     func isOnBoardingCompleted() -> Bool {
-        self.preferencesRepository.isOnBoardingCompleted() ?? false
+        self.preferencesRepository.isOnBoardingCompleted() 
     }
     
     func setOnboarding(completed: Bool) {

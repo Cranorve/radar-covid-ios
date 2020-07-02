@@ -21,10 +21,10 @@ public struct KpiDto: Codable {
         case summationRiskScore = "SUMMATION_RISK_SCORE"
     }
     public var kpi: Kpi?
-    public var timestamp: Date?
+    public var timestamp: String?
     public var value: Int?
 
-    public init(kpi: Kpi?, timestamp: Date?, value: Int?) {
+    public init(kpi: Kpi?, timestamp: String?, value: Int?) {
         self.kpi = kpi
         self.timestamp = timestamp
         self.value = value

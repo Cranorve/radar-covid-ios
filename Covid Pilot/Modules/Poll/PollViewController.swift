@@ -19,7 +19,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     var router: AppRouter?
     var pollUseCase: PollUseCase?
     var finishPollVC: FinishPollViewController?
-    var nextButtonYOrigin:CGFloat = 0
+    var nextButtonYOrigin:CGFloat?
     
     var poll: Poll?
     private var viewControllers: [UIViewController] = []
@@ -31,7 +31,13 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBAction func onNext(_ sender: Any) {
-        if (currentQuestion?.hasResponse() ?? false) {
+        
+        guard let currentQuestion = currentQuestion else {
+            fetchPoll()
+            return
+        }
+        
+        if currentQuestion.hasResponse() {
             nextConfirmed()
         } else {
             let alert = Alert.showAlertCancelContinue(title:  "No has respondido a una pregunta", message: "", buttonOkTitle: "Continuar sin respuesta", buttonCancelTitle: "Responder") { [weak self] _ in
@@ -68,25 +74,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         
         progressView.clipsToBounds = true
         progressView.layer.cornerRadius = 5.0;
-        
-        DispatchQueue.main.async {
-            self.view.showLoading()
-        }
-        pollUseCase?.getPoll().subscribe(
-            onNext:{ [weak self] poll in
-                DispatchQueue.main.async {
-                    self?.view.hideLoading()
-                }
-                self?.load(poll: poll)
-            }, onError: {  [weak self] error in
-                DispatchQueue.main.async {
-                    self?.view.hideLoading()
-                }
-                debugPrint(error)
-                self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
-        }).disposed(by: disposeBag)
-        
-        
+
         //Add observers to move up/down the main view when the keyboard appears/dissapear
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
@@ -95,7 +83,35 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    
+        fetchPoll()
+
+    }
+    
+    private func fetchPoll() {
+
+        self.view.showLoading()
+        
+        pollUseCase?.getPoll().subscribe(
+            onNext:{ [weak self] poll in
+                self?.view.hideLoading()
+                self?.load(poll: poll)
+            }, onError: {  [weak self] error in
+                self?.view.hideLoading()
+                debugPrint(error)
+                let alert = Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar") { (action) in
+                    self?.navigationController?.popViewController(animated: true)
+
+                }
+                self?.present(alert, animated: true)
+//                self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
+        }).disposed(by: disposeBag)
+    }
+    
     private func load(poll: Poll?) {
+        nextButton.titleLabel?.text = "Siguiente"
         self.poll = poll
         poll?.questions?.forEach {question in
             var vc: QuestionController?
@@ -216,12 +232,21 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         }
       
       // move the root view up by the distance of keyboard height
-        self.nextButtonYOrigin = self.nextButton.frame.origin.y
-        self.nextButton.frame.origin.y = self.nextButtonYOrigin - keyboardSize.height
+        guard let origin = self.nextButtonYOrigin else {
+            self.nextButtonYOrigin = self.nextButton.frame.origin.y
+            self.nextButton.frame.origin.y = self.nextButtonYOrigin! - keyboardSize.height
+            return
+        }
+       self.nextButton.frame.origin.y = origin - keyboardSize.height
+
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
       // move back the root view origin to zero
-        self.nextButton.frame.origin.y = self.nextButtonYOrigin
+        guard let origin = self.nextButtonYOrigin else {
+            return
+            
+        }
+        self.nextButton.frame.origin.y = origin
     }
 }
