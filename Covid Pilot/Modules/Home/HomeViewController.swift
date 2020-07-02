@@ -97,6 +97,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        checkOnboarding()
+        
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.onExpositionTap))
         
         expositionView.addGestureRecognizer(gesture)
@@ -121,8 +123,6 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        checkOnboarding()
         
         let isTracingActive = radarStatusUseCase?.isTracingActive() ?? false
         changeRadarMessage(active: isTracingActive)
@@ -223,13 +223,19 @@ class HomeViewController: UIViewController {
     }
     
     private func checkOnboarding() {
-        if !(onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? true) {
-            onBoardingCompletedUseCase?.setOnboarding(completed: true)
+        //show check image 1.5 sec
+        if !(self.onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? true) {
             imageCheck.isHidden = false
             imageDefault.isHidden = true
-        } else {
-            imageCheck.isHidden = true
-            imageDefault.isHidden = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                //Update UI
+                
+                self.onBoardingCompletedUseCase?.setOnboarding(completed: true)
+                
+                self.imageCheck.isHidden = true
+                self.imageDefault.isHidden = false
+                
+            }
         }
     }
     
