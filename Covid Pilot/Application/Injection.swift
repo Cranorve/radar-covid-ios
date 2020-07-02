@@ -100,7 +100,7 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(ExpositionUseCase.self) { r in
-            ExpositionUseCase()
+            ExpositionUseCase(notificationHandler: r.resolve(NotificationHandler.self)!)
         }.inObjectScope(.container)
         
         container.register(RadarStatusUseCase.self) { r in
@@ -139,7 +139,8 @@ class Injection {
         
         container.register(SetupUseCase.self) { r in
             SetupUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!,
-                         kpiApi: r.resolve(KpiControllerAPI.self)!)
+                         kpiApi: r.resolve(KpiControllerAPI.self)!,
+                         notificationHandler: r.resolve(NotificationHandler.self)!)
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in
