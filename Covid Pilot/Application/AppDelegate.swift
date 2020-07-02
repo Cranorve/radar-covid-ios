@@ -7,14 +7,12 @@
 //
 
 import UIKit
-import BackgroundTasks
+
 
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    static let backgroundTaskIdentifier = "es.gov.radarcovid.syncBgTask"
-
     var window: UIWindow?
     
     var injection: Injection = Injection();
@@ -33,8 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setupUseCase.initializeSDK()
         
-        registerBgTask()
-        scheduleBackgroundTaskIfNeeded()
+        let notificationHandler = injection.resolve(NotificationHandler.self)!
+        
+        notificationHandler.setupNotifications()
         
         return true
     }
@@ -53,32 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    func registerBgTask() {
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: AppDelegate.backgroundTaskIdentifier, using: .main) { task in
-    
-            debugPrint("Running task...")
-            
-            // Handle running out of time
-            task.expirationHandler = {
-                debugPrint("Task Running out of time")
-            }
-            
-            // Schedule the next background task
-            self.scheduleBackgroundTaskIfNeeded()
-        }
-    }
-    
-    private func scheduleBackgroundTaskIfNeeded() {
-
-        let taskRequest = BGProcessingTaskRequest(identifier: AppDelegate.backgroundTaskIdentifier)
-        taskRequest.requiresNetworkConnectivity = true
-        taskRequest.earliestBeginDate = Date(timeIntervalSinceNow: 1)
-        do {
-            try BGTaskScheduler.shared.submit(taskRequest)
-        } catch {
-            print("Unable to schedule background task: \(error)")
-        }
-    }
     
     static var shared: AppDelegate {
        return UIApplication.shared.delegate as! AppDelegate

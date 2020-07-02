@@ -91,6 +91,10 @@ class Injection {
             CentralManagerBluetoothHandler()
         }.inObjectScope(.container)
         
+        container.register(NotificationHandler.self) { r in
+            NotificationHandler()
+        }.inObjectScope(.container)
+        
         container.register(OnboardingCompletedUseCase.self) { r in
             OnboardingCompletedUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!)
         }.inObjectScope(.container)
