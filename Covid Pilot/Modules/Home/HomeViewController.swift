@@ -18,11 +18,14 @@ class HomeViewController: UIViewController {
     private let bgImageOrange = UIImage(named: "GradientBackgroundOrange")
     private let bgImageGreen = UIImage(named: "GradientBackgroundGreen")
     
+    @IBOutlet weak var imageDefault: UIImageView!
+    @IBOutlet weak var imageCheck: UIImageView!
     @IBOutlet weak var expositionTitle: UILabel!
     @IBOutlet weak var expositionDescription: UILabel!
     @IBOutlet weak var expositionView: BackgroundView!
     @IBOutlet weak var radarSwitch: UISwitch!
     @IBOutlet weak var radarMessage: UILabel!
+    @IBOutlet weak var radarTitle: UILabel!
     @IBOutlet weak var radarView: BackgroundView!
     
     @IBOutlet weak var resetDataButton: UIButton!
@@ -34,6 +37,7 @@ class HomeViewController: UIViewController {
     var radarStatusUseCase: RadarStatusUseCase?
     var syncUseCase: SyncUseCase?
     var resetDataUseCase: ResetDataUseCase?
+    var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
     
     @IBAction func onCommunicate(_ sender: Any) {
         guard let expositionInfo = expositionInfo else {
@@ -76,22 +80,65 @@ class HomeViewController: UIViewController {
     }
     
     @objc func onExpositionTap() {
-        switch expositionInfo?.level {
-        case .Healthy(lastCheck: let lastCheck):
-            guard let lastCheckDate = lastCheck else {
-                return
+        if let level = expositionInfo?.level {
+            switch level {
+                case .Healthy(lastCheck: let lastCheck):
+                    router?.route(to: Routes.Exposition, from: self, parameters: lastCheck)
+                case .Exposed(since: let since):
+                    router?.route(to: Routes.HighExposition, from: self, parameters: since)
+                case .Infected:
+                    router?.route(to: Routes.MyHealthReported, from: self)
             }
-            router?.route(to: Routes.Exposition, from: self, parameters: lastCheckDate)
-        case .Exposed(since: let since):
-            router?.route(to: Routes.HighExposition, from: self, parameters: since)
-        default:
-            router?.route(to: Routes.HighExposition, from: self)
+        } else {
+            router?.route(to: Routes.Exposition, from: self, parameters: Date())
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.onExpositionTap))
+        
+        expositionView.addGestureRecognizer(gesture)
+        radarView.image = UIImage(named: "WhiteCard")
+        
+        radarSwitch.tintColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
+        radarSwitch.layer.cornerRadius = radarSwitch.frame.height / 2
+        radarSwitch.backgroundColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
+        
+        updateExpositionInfo(ExpositionInfo.init(level: .Healthy(lastCheck: nil)))
+
+        resetDataButton.isHidden = !Config.debug
+        
+        syncUseCase?.sync().subscribe(
+            onError: { [weak self] error in
+                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener datos de exposición", buttonTitle: "Aceptar"), animated: true)
+            }, onCompleted: {
+                debugPrint("Sync Completed")
+        }).disposed(by: disposeBag)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        resetDataButton.isHidden = !Config.debug
+        
+        checkOnboarding()
+        
+        let isTracingActive = radarStatusUseCase?.isTracingActive() ?? false
+        changeRadarMessage(active: isTracingActive)
+        radarSwitch.isOn = isTracingActive
+        
+        self.view.showLoading()
+        expositionUseCase?.getExpositionInfo().subscribe(
+            onNext:{ [weak self] expositionInfo in
+                self?.view.hideLoading()
+                self?.updateExpositionInfo(expositionInfo)
+            }, onError: { [weak self] error in
+                debugPrint(error)
+                self?.view.hideLoading()
+                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar"), animated: true)
+        }).disposed(by: disposeBag)
+        
     }
     
     @IBAction func onReset(_ sender: Any) {
@@ -113,46 +160,12 @@ class HomeViewController: UIViewController {
             }).disposed(by: disposeBag)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.onExpositionTap))
-        
-        expositionView.addGestureRecognizer(gesture)
-        radarView.image = UIImage(named: "WhiteCard")
-        
-        radarSwitch.tintColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
-        radarSwitch.layer.cornerRadius = radarSwitch.frame.height / 2
-        radarSwitch.backgroundColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
-        
-        updateExpositionInfo(ExpositionInfo.init(level: .Healthy(lastCheck: nil)))
-        
-        let isTracingActive = radarStatusUseCase?.isTracingActive() ?? false
-        changeRadarMessage(active: isTracingActive)
-        radarSwitch.isOn = isTracingActive
-        self.view.showLoading()
-        
-        syncUseCase?.sync().subscribe(
-            onNext:{ _ in
-                debugPrint("Sync Completed")
-            }, onError: { [weak self] error in
-                debugPrint(error)
-                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener datos de exposición", buttonTitle: "Aceptar"), animated: true)
-        }).disposed(by: disposeBag)
-        
-        expositionUseCase?.getExpositionInfo().subscribe(
-            onNext:{ [weak self] expositionInfo in
-                self?.view.hideLoading()
-                self?.updateExpositionInfo(expositionInfo)
-            }, onError: { [weak self] error in
-                debugPrint(error)
-                self?.view.hideLoading()
-                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar"), animated: true)
-        }).disposed(by: disposeBag)
-        
-    }
-    
     private func updateExpositionInfo(_ exposition: ExpositionInfo) {
+        
+        guard (exposition.level != nil) else {
+            return
+        }
+        
         self.expositionInfo = exposition
         switch exposition.level {
             case .Exposed(since: _):
@@ -199,13 +212,25 @@ class HomeViewController: UIViewController {
     
     private func changeRadarMessage(active: Bool) {
         if (active) {
+            radarTitle.text = "Radar COVID activo"
             radarMessage.text = "Las interacciones con móviles cercanos se registarán siempre anónimamente. "
             radarMessage.textColor = UIColor.black
         } else {
+            radarTitle.text = "Radar COVID inactivo"
             radarMessage.text = "Por favor, activa el Bluetooth para poder identificar posibles contagios."
             radarMessage.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         }
     }
     
+    private func checkOnboarding() {
+        if !(onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? true) {
+            onBoardingCompletedUseCase?.setOnboarding(completed: true)
+            imageCheck.isHidden = false
+            imageDefault.isHidden = true
+        } else {
+            imageCheck.isHidden = true
+            imageDefault.isHidden = false
+        }
+    }
     
 }

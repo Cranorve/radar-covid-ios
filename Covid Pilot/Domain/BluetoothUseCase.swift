@@ -13,12 +13,16 @@ class BluetoothUseCase {
     
     private let bluetoothHandler: BluetoothHandler
     
-    init(bluetoothHandler: BluetoothHandler) {
+    private let preferencesRepository: PreferencesRepository
+    
+    init(bluetoothHandler: BluetoothHandler, preferencesRepository: PreferencesRepository) {
         self.bluetoothHandler = bluetoothHandler
+        self.preferencesRepository = preferencesRepository
     }
     
     func checkBluetoothActive() -> Observable<Bool> {
-        bluetoothHandler.isActive()
+        preferencesRepository.setTracing(active: true)
+        return .just(true)
     }
     
 }

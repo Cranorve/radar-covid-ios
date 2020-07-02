@@ -16,16 +16,17 @@ protocol BluetoothHandler {
 
 class CentralManagerBluetoothHandler: NSObject, BluetoothHandler, CBCentralManagerDelegate {
     
+    private let subject = PublishSubject<Bool>()
+    
     var centralManager: CBCentralManager?
-    var observerList: [AnyObserver<Bool>] = []
+
     
     func isActive() -> Observable<Bool> {
-        centralManager = CBCentralManager(delegate: self, queue: nil)
-        
-        return .create { [weak self] observer in
-            self?.observerList.append(observer)
-            return Disposables.create()
-        }
+//        .deferred { [weak self] in
+//            self?.centralManager = CBCentralManager(delegate: self, queue: nil)
+//            return self?.subject.asObservable() ?? .empty()
+//        }
+        .just(true)
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -35,7 +36,7 @@ class CentralManagerBluetoothHandler: NSObject, BluetoothHandler, CBCentralManag
         switch central.state {
 
         case .unauthorized:
-            switch central.authorization {
+            switch CBCentralManager.authorization {
                 case .allowedAlways:
                     active = false
                 case .denied:
@@ -60,15 +61,10 @@ class CentralManagerBluetoothHandler: NSObject, BluetoothHandler, CBCentralManag
         @unknown default:
             active = false
         }
-        notify(state: active)
+        
+        subject.onNext(active)
         
     }
     
-    private func notify(state: Bool) {
-        observerList.forEach { observer in
-            observer.onNext(state)
-            observer.onCompleted()
-        }
-    }
     
 }

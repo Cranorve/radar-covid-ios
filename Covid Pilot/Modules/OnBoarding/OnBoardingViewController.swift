@@ -81,7 +81,7 @@ class OnBoardingViewController: UIViewController {
     }
     
     private func loadTexts() {
-        let attributedString = NSMutableAttributedString(string: "Nuestros compromisos\n\nAnonimato \nLa aplicación funciona sin revelar tu identidad ni la de tu smartphone. \nNO se recoge tu nombre, email, geolocalización, ni tu teléfono\n\nDiscreción \nLas alertas de exposición se envían sin indicar cuándo y dónde se produjo la exposición.\n\nTú decides\nElige en todo momento si quieres desactivar el servicio o dejar de utilizar la App", attributes: [
+        let attributedString = NSMutableAttributedString(string: "Nuestros compromisos\n\nAnonimato \nLa aplicación funciona sin revelar tu identidad ni la de tu smartphone. \nNO se recoge tu nombre, email, geolocalización, ni tu teléfono.\n\nDiscreción \nLas alertas de exposición se envían sin indicar cuándo y dónde se produjo la exposición.\n\nTú decides\nElige en todo momento si quieres desactivar el servicio o dejar de utilizar la App.", attributes: [
           .font: UIFont(name: "Muli-Light", size: 20.0)!,
           .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
         ])
@@ -92,7 +92,7 @@ class OnBoardingViewController: UIViewController {
         attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 21, length: 12))
         attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 106, length: 2))
         attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 169, length: 12))
-        attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 271, length: 11))
+        attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 272, length: 11))
         
         descriptionLabel.attributedText = attributedString
         

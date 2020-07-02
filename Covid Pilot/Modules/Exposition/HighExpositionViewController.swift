@@ -43,7 +43,10 @@ class HighExpositionViewController: UIViewController {
         let actualizado = formatter.string(from: date)
         
         
-        let daysSinceLastInfection = Date().days(sinceDate: since ?? Date()) ?? 0
+        var daysSinceLastInfection = Date().days(sinceDate: since ?? Date()) ?? 1
+        if daysSinceLastInfection == 0 {
+            daysSinceLastInfection = 1
+        }
         let text = "<b>\(daysSinceLastInfection) días</b> (actualizado \(actualizado))".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli", andSize: 16)
         return text ?? NSMutableAttributedString()
     }

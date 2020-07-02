@@ -77,7 +77,7 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
     }
     
     private func loadTexts() {
-        let attributedString = NSMutableAttributedString(string: "Muchas gracias por participar en el piloto de la APP Radar COVID; contándonos tu opinión de forma anónima nos ayuda a mejorar  y contribuir a prevenir futuros contagios.", attributes: [
+        let attributedString = NSMutableAttributedString(string: "Muchas gracias por participar en el piloto de la APP Radar COVID.  Contándonos tu opinión de forma anónima nos ayuda a mejorar  y contribuir a prevenir futuros contagios.", attributes: [
           .font: UIFont(name: "Muli-Light", size: 16.0)!,
           .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
         ])

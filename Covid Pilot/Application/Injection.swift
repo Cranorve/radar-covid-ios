@@ -104,7 +104,8 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(BluetoothUseCase.self) { r in
-            BluetoothUseCase(bluetoothHandler: r.resolve(BluetoothHandler.self)!)
+            BluetoothUseCase(bluetoothHandler: r.resolve(BluetoothHandler.self)!,
+                             preferencesRepository: r.resolve(PreferencesRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(ResetDataUseCase.self) { r in
@@ -157,7 +158,6 @@ class Injection {
             let proxVC = ProximityViewController()
             proxVC.bluetoothUseCase = r.resolve(BluetoothUseCase.self)!
             proxVC.router = r.resolve(AppRouter.self)!
-            proxVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
             return proxVC
         }
         
@@ -176,6 +176,7 @@ class Injection {
             homeVC.radarStatusUseCase = r.resolve(RadarStatusUseCase.self)!
             homeVC.resetDataUseCase = r.resolve(ResetDataUseCase.self)!
             homeVC.syncUseCase = r.resolve(SyncUseCase.self)!
+            homeVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
             return homeVC
         }
         

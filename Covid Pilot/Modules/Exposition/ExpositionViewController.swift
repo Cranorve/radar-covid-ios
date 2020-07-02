@@ -28,10 +28,12 @@ class ExpositionViewController: UIViewController {
     }
     
     func expositionDateWithFormat() -> String{
-        let date = self.lastCheck ?? Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.YYYY"
-        return formatter.string(from: date)
+        if let date = self.lastCheck  {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd.MM.YYYY"
+            return formatter.string(from: date)
+        }
+        return ""
     }
     
     @objc func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
