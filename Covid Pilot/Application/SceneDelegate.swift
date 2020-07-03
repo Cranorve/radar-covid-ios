@@ -37,15 +37,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 debugPrint("Configuration  finished")
 
                 if  !(settings.isUpdated ?? false) {
-                        let alert = Alert.showAlertOk(title: "Error", message: "Es necesario disponer de una versión actualizada de Google Play Services", buttonTitle: "Aceptar") { (action) in
-                            if let url = NSURL(string: "itms://itunes.apple.com") as URL? {
-                                UIApplication.shared.open(url) { (open) in
-                                    exit(0);
-                                }
+                    let configUrl = settings.parameters?.applicationVersion?.ios?.bundleUrl ?? "itms://itunes.apple.com"
+                    let alert = Alert.showAlertOk(title: "Error", message: "Es necesario disponer de una versión actualizada de Google Play Services", buttonTitle: "Aceptar") { (action) in
+                        if let url = NSURL(string: configUrl) as URL? {
+                            UIApplication.shared.open(url) { (open) in
+                                exit(0);
                             }
-                            
                         }
-                        self.window?.rootViewController?.present(alert, animated: true)
+                    }
+                    self.window?.rootViewController?.present(alert, animated: true)
                 }
                 
             }, onError: {  [weak self] error in

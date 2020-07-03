@@ -16,6 +16,8 @@ public struct VersionDto: Codable {
     public var version: String?
     /** Compilation identifier */
     public var compilation: Int?
+    
+    public var bundleUrl: String?
 
     public init(version: String?, compilation: Int?) {
         self.version = version
