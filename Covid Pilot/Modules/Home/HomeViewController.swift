@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     private let bgImageOrange = UIImage(named: "GradientBackgroundOrange")
     private let bgImageGreen = UIImage(named: "GradientBackgroundGreen")
     
+    @IBOutlet weak var envLabel: UILabel!
     @IBOutlet weak var imageDefault: UIImageView!
     @IBOutlet weak var imageCheck: UIImageView!
     @IBOutlet weak var expositionTitle: UILabel!
@@ -111,6 +112,11 @@ class HomeViewController: UIViewController {
         updateExpositionInfo(ExpositionInfo.init(level: .Healthy(lastCheck: nil)))
 
         resetDataButton.isHidden = !Config.debug
+        if Config.endpoints == .pre {
+            envLabel.text = Config.environment
+        } else {
+            envLabel.text = ""
+        }
         
         syncUseCase?.sync().subscribe(
             onError: { [weak self] error in

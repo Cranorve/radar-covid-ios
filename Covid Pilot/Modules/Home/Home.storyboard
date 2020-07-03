@@ -36,6 +36,12 @@
                                     <constraint firstAttribute="width" constant="250" id="rRz-TQ-CGn"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmz-7G-kLr">
+                                <rect key="frame" x="173.66666666666666" y="315.33333333333331" width="67" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheckWhite" translatesAutoresizingMaskIntoConstraints="NO" id="s47-VN-7tM">
                                 <rect key="frame" x="162" y="138.66666666666666" width="90" height="90"/>
                                 <constraints>
@@ -63,16 +69,16 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hz-zu-Mhb" customClass="BackgroundView" customModule="Radar_COVID" customModuleProvider="target">
-                                <rect key="frame" x="14" y="446.66666666666674" width="386" height="133"/>
+                                <rect key="frame" x="14" y="437" width="386" height="139.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Exposición baja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Tiy-hB-953">
-                                        <rect key="frame" x="26" y="20" width="340" height="28"/>
+                                        <rect key="frame" x="26" y="20" width="340" height="30.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XCQ-uz-Hi1">
-                                        <rect key="frame" x="26" y="57.333333333333314" width="340" height="56"/>
+                                        <rect key="frame" x="26" y="59.666666666666686" width="340" height="60.333333333333343"/>
                                         <string key="text">Te informaremos en el caso de un posible contacto. 
 Cuídate y cuida a los demás.</string>
                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
@@ -80,7 +86,7 @@ Cuídate y cuida a los demás.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="kNQ-4q-3vF">
-                                        <rect key="frame" x="340.66666666666669" y="25.666666666666629" width="25.333333333333314" height="17"/>
+                                        <rect key="frame" x="340.66666666666669" y="26.666666666666686" width="25.333333333333314" height="17"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -96,10 +102,10 @@ Cuídate y cuida a los demás.</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuQ-dg-Nwm" customClass="BackgroundView" customModule="Radar_COVID" customModuleProvider="target">
-                                <rect key="frame" x="14" y="599.66666666666663" width="386" height="158.33333333333337"/>
+                                <rect key="frame" x="14" y="596.66666666666663" width="386" height="161.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radar COVID activo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p5A-O2-cnn">
-                                        <rect key="frame" x="26" y="20" width="279.66666666666669" height="23.333333333333329"/>
+                                        <rect key="frame" x="26" y="20" width="279.66666666666669" height="25.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -111,7 +117,7 @@ Cuídate y cuida a los demás.</string>
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Las interacciones con móviles cercanos se registarán siempre anónimamente. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5DO-YK-Xnt">
-                                        <rect key="frame" x="26" y="91" width="340" height="37.333333333333343"/>
+                                        <rect key="frame" x="26" y="91" width="340" height="40.333333333333343"/>
                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -149,6 +155,7 @@ Cuídate y cuida a los demás.</string>
                         <constraints>
                             <constraint firstItem="s47-VN-7tM" firstAttribute="centerX" secondItem="Ker-eU-Kvi" secondAttribute="centerX" id="2fL-ND-GLm"/>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="mgD-SH-6Y2" secondAttribute="trailing" constant="16" id="3eO-Kl-moS"/>
+                            <constraint firstItem="pmz-7G-kLr" firstAttribute="top" secondItem="6NQ-cJ-mH8" secondAttribute="bottom" id="86b-tN-ApF"/>
                             <constraint firstItem="mgD-SH-6Y2" firstAttribute="top" secondItem="fuQ-dg-Nwm" secondAttribute="bottom" constant="30" id="B8C-1D-2un"/>
                             <constraint firstItem="6hz-zu-Mhb" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" constant="14" id="Ihf-J3-GiC"/>
                             <constraint firstItem="AKG-lv-3X4" firstAttribute="centerX" secondItem="bH7-lt-L7E" secondAttribute="centerX" id="MVc-Dr-zgZ"/>
@@ -158,6 +165,7 @@ Cuídate y cuida a los demás.</string>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="6hz-zu-Mhb" secondAttribute="trailing" constant="14" id="Xn5-ha-Ui9"/>
                             <constraint firstItem="s47-VN-7tM" firstAttribute="centerY" secondItem="Ker-eU-Kvi" secondAttribute="centerY" constant="-10.666666666666714" id="ax0-4K-sNt"/>
                             <constraint firstItem="mgD-SH-6Y2" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" constant="16" id="bV0-qf-MCr"/>
+                            <constraint firstItem="pmz-7G-kLr" firstAttribute="centerX" secondItem="bH7-lt-L7E" secondAttribute="centerX" id="bdv-bh-LYd"/>
                             <constraint firstItem="fuQ-dg-Nwm" firstAttribute="top" secondItem="6hz-zu-Mhb" secondAttribute="bottom" constant="20" id="gY7-TF-3Oc"/>
                             <constraint firstItem="6NQ-cJ-mH8" firstAttribute="centerX" secondItem="AA3-07-0Pc" secondAttribute="centerX" id="kB7-cO-j2Z"/>
                             <constraint firstItem="Ker-eU-Kvi" firstAttribute="centerX" secondItem="6NQ-cJ-mH8" secondAttribute="centerX" id="m1k-21-WlV"/>
@@ -170,6 +178,7 @@ Cuídate y cuida a los demás.</string>
                         <viewLayoutGuide key="safeArea" id="AA3-07-0Pc"/>
                     </view>
                     <connections>
+                        <outlet property="envLabel" destination="pmz-7G-kLr" id="OFt-F3-dct"/>
                         <outlet property="expositionDescription" destination="XCQ-uz-Hi1" id="SgW-aX-6xj"/>
                         <outlet property="expositionTitle" destination="Tiy-hB-953" id="d36-84-O30"/>
                         <outlet property="expositionView" destination="6hz-zu-Mhb" id="8iB-cX-vMh"/>
