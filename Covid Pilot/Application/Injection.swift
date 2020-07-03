@@ -91,6 +91,10 @@ class Injection {
             CentralManagerBluetoothHandler()
         }.inObjectScope(.container)
         
+        container.register(VersionHandler.self) { r in
+            VersionHandler()
+        }.inObjectScope(.container)
+        
         container.register(OnboardingCompletedUseCase.self) { r in
             OnboardingCompletedUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!)
         }.inObjectScope(.container)
@@ -126,7 +130,8 @@ class Injection {
         container.register(ConfigurationUseCase.self) { r in
             ConfigurationUseCase(settingsRepository: r.resolve(SettingsRepository.self)!,
                                  tokenApi: r.resolve(TokenAPI.self)!,
-                                 settingsApi: r.resolve(SettingsAPI.self)!)
+                                 settingsApi: r.resolve(SettingsAPI.self)!,
+                                 versionHandler: r.resolve(VersionHandler.self)!)
         }.inObjectScope(.container)
         
         container.register(SyncUseCase.self) { r in

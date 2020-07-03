@@ -35,25 +35,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         configUseCase.getConfig().subscribe(
             onNext:{ settings in
                 debugPrint("Configuration  finished")
-                let minversion = settings.parameters?.applicationVersion?.ios?.version
-                let currentversion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-                let minfloat = Float(String((minversion?.prefix(3))!))
-                let currentfloat = Float(String((currentversion?.prefix(3))!))
-                let minint = Int(String((minversion?.suffix(1))!))
-                let currentint = Int(String((currentversion?.suffix(1))!))
-                if ((currentfloat?.isLess(than: minfloat ?? 0)) ?? false || ((currentfloat?.isEqual(to: minfloat ?? 0)) ?? false && (currentint ?? 0) < (minint ?? 0))){
-                        let alert = Alert.showAlertOk(title: "Error", message: "La versión actual de la aplicación debe ser actualizada a la versión " + String(minfloat!) + "." + String(minint!), buttonTitle: "Aceptar") { (action) in
-                            exit(0);
 
+                if  !(settings.isUpdated ?? false) {
+                        let alert = Alert.showAlertOk(title: "Error", message: "Es necesario disponer de una versión actualizada de Google Play Services", buttonTitle: "Aceptar") { (action) in
+                            if let url = NSURL(string: "itms://itunes.apple.com") as URL? {
+                                UIApplication.shared.open(url) { (open) in
+                                    exit(0);
+                                }
+                            }
+                            
                         }
                         self.window?.rootViewController?.present(alert, animated: true)
                 }
+                
             }, onError: {  [weak self] error in
                 debugPrint("Configuration errro \(error)")
                 self?.window?.rootViewController?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
         
         router.route(to: Routes.Welcome, from: navigationController)
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
