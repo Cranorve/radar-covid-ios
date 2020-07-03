@@ -87,12 +87,20 @@ class Injection {
             UserDefaultsSettingsRepository()
         }.inObjectScope(.container)
         
+        container.register(ExpositionInfoRepository.self) { r in
+            UserDefaultsExpositionInfoRepository()
+        }.inObjectScope(.container)
+        
         container.register(BluetoothHandler.self) { r in
             CentralManagerBluetoothHandler()
         }.inObjectScope(.container)
-        
+
         container.register(VersionHandler.self) { r in
             VersionHandler()
+        }.inObjectScope(.container)
+
+        container.register(NotificationHandler.self) { r in
+            NotificationHandler()
         }.inObjectScope(.container)
         
         container.register(OnboardingCompletedUseCase.self) { r in
@@ -100,7 +108,8 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(ExpositionUseCase.self) { r in
-            ExpositionUseCase()
+            ExpositionUseCase(notificationHandler: r.resolve(NotificationHandler.self)!,
+                              expositionInfoRepository: r.resolve(ExpositionInfoRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(RadarStatusUseCase.self) { r in
@@ -113,7 +122,8 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(ResetDataUseCase.self) { r in
-            ResetDataUseCase(setupUseCase: r.resolve(SetupUseCase.self)!)
+            ResetDataUseCase(setupUseCase: r.resolve(SetupUseCase.self)!,
+                             expositionInfoRepository: r.resolve(ExpositionInfoRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(PollUseCase.self) { r in
@@ -140,7 +150,8 @@ class Injection {
         
         container.register(SetupUseCase.self) { r in
             SetupUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!,
-                         kpiApi: r.resolve(KpiControllerAPI.self)!)
+                         kpiApi: r.resolve(KpiControllerAPI.self)!,
+                         notificationHandler: r.resolve(NotificationHandler.self)!)
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in

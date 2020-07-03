@@ -12,10 +12,12 @@ import DP3TSDK
 
 class ResetDataUseCase {
     
+    private let expositionInfoRepository: ExpositionInfoRepository
     private let setupUseCase: SetupUseCase
     
-    init(setupUseCase: SetupUseCase) {
+    init(setupUseCase: SetupUseCase, expositionInfoRepository: ExpositionInfoRepository) {
         self.setupUseCase = setupUseCase
+        self.expositionInfoRepository = expositionInfoRepository
     }
     
     func reset() -> Observable<Void> {
@@ -26,6 +28,7 @@ class ResetDataUseCase {
                 return .error(error)
             }
             self?.setupUseCase.initializeSDK()
+            self?.expositionInfoRepository.clearData()
             
             return .just(())
         }
