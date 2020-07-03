@@ -38,7 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
                 if  !(settings.isUpdated ?? false) {
                     let configUrl = settings.parameters?.applicationVersion?.ios?.bundleUrl ?? "itms://itunes.apple.com"
-                    let alert = Alert.showAlertOk(title: "Error", message: "Es necesario disponer de una versión actualizada de Google Play Services", buttonTitle: "Aceptar") { (action) in
+                    let alert = Alert.showAlertOk(title: "Error", message: "Para poder seguir utilizando Radar COVID es necesario que actualices la aplicación.", buttonTitle: "ACTUALIZAR") { (action) in
                         if let url = NSURL(string: configUrl) as URL? {
                             UIApplication.shared.open(url) { (open) in
                                 exit(0);
