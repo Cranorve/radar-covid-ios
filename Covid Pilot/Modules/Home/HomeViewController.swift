@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     private let bgImageOrange = UIImage(named: "GradientBackgroundOrange")
     private let bgImageGreen = UIImage(named: "GradientBackgroundGreen")
     
+
     @IBOutlet weak var envLabel: UILabel!
     @IBOutlet weak var imageDefault: UIImageView!
     @IBOutlet weak var imageCheck: UIImageView!

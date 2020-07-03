@@ -33,8 +33,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let configUseCase =  AppDelegate.shared.injection.resolve(ConfigurationUseCase.self)!
         
         configUseCase.getConfig().subscribe(
-            onNext:{ _ in
+            onNext:{ settings in
                 debugPrint("Configuration  finished")
+                let minversion = settings.parameters?.applicationVersion?.ios?.version
+                let currentversion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+                let minfloat = Float(String((minversion?.prefix(3))!))
+                let currentfloat = Float(String((currentversion?.prefix(3))!))
+                let minint = Int(String((minversion?.suffix(1))!))
+                let currentint = Int(String((currentversion?.suffix(1))!))
+                if ((currentfloat?.isLess(than: minfloat ?? 0)) ?? false || ((currentfloat?.isEqual(to: minfloat ?? 0)) ?? false && (currentint ?? 0) < (minint ?? 0))){
+                        let alert = Alert.showAlertOk(title: "Error", message: "La versión actual de la aplicación debe ser actualizada a la versión " + String(minfloat!) + "." + String(minint!), buttonTitle: "Aceptar") { (action) in
+                            exit(0);
+
+                        }
+                        self.window?.rootViewController?.present(alert, animated: true)
+                }
             }, onError: {  [weak self] error in
                 debugPrint("Configuration errro \(error)")
                 self?.window?.rootViewController?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar"), animated: true)
