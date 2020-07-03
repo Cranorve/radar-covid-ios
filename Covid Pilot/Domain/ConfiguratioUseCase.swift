@@ -15,13 +15,16 @@ class ConfigurationUseCase {
     private let settingsRepository: SettingsRepository
     private let tokenApi: TokenAPI
     private let settingsApi: SettingsAPI
+    private let versionHandler: VersionHandler
     
     init(settingsRepository: SettingsRepository,
          tokenApi: TokenAPI,
-         settingsApi: SettingsAPI) {
+         settingsApi: SettingsAPI,
+         versionHandler: VersionHandler) {
         self.settingsRepository = settingsRepository
         self.tokenApi = tokenApi
         self.settingsApi = settingsApi
+        self.versionHandler = versionHandler
     }
     
     func getConfig() -> Observable<Settings> {
@@ -33,8 +36,11 @@ class ConfigurationUseCase {
                     settings.parameters = backSettings
                     self?.loadParameters(settings)
                     self?.settingsRepository.save(settings: settings)
+                    if let currentVersion  = self?.versionHandler.getCurrenVersion(), let minVersion = settings.parameters?.applicationVersion?.ios?.compilation {
+                        settings.isUpdated = currentVersion >= minVersion
+                    }
                     return settings
-                }
+            }
         }
     }
     
@@ -55,6 +61,16 @@ class ConfigurationUseCase {
         }
         if let higher = settings.parameters?.attenuationDurationThresholds?.medium {
             params.contactMatching.higherThreshold = higher
+        }
+        if let minDurationForExposure = settings.parameters?.minDurationForExposure {
+            params.contactMatching.triggerThreshold = Int(minDurationForExposure)
+        }
+        
+        if let factorLow = settings.parameters?.attenuationFactor?.low {
+            params.contactMatching.factorLow = factorLow
+        }
+        if let factorHigh = settings.parameters?.attenuationFactor?.medium {
+            params.contactMatching.factorHigh = factorHigh
         }
         DP3TTracing.parameters = params
     }

@@ -8,10 +8,11 @@
 
 import UIKit
 
+
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     
     var injection: Injection = Injection();
@@ -30,6 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setupUseCase.initializeSDK()
         
+        let notificationHandler = injection.resolve(NotificationHandler.self)!
+        
+        notificationHandler.setupNotifications()
+        
         return true
     }
 
@@ -47,11 +52,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
+    
     static var shared: AppDelegate {
        return UIApplication.shared.delegate as! AppDelegate
     }
-    
-
 
 }
 
