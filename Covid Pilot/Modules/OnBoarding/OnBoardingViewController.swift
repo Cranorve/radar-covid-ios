@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class OnBoardingViewController: UIViewController {
     
@@ -73,11 +74,25 @@ class OnBoardingViewController: UIViewController {
     }
     
     @objc func userDidTapTerms(tapGestureRecognizer: UITapGestureRecognizer) {
-        navigationController?.pushViewController(TermsViewController(), animated: true)
+        let urlString = "https://radarcovid.covid19.gob.es/terms-of-service/use-conditions.html"
+        if let url = URL(string: urlString) {
+            let config = SFSafariViewController.Configuration()
+//            config.entersReaderIfAvailable = true
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
+        }
+//        navigationController?.pushViewController(TermsViewController(), animated: true)
     }
     
     @objc func userDidTapPrivacy(tapGestureRecognizer: UITapGestureRecognizer) {
-        navigationController?.pushViewController(PrivacyViewController(), animated: true)
+        let urlString = "https://radarcovid.covid19.gob.es/terms-of-service/privacy-policy.html"
+        if let url = URL(string: urlString) {
+            let config = SFSafariViewController.Configuration()
+//            config.entersReaderIfAvailable = true
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
+        }
+//        navigationController?.pushViewController(PrivacyViewController(), animated: true)
     }
     
     private func loadTexts() {
