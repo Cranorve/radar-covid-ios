@@ -11,7 +11,7 @@ import ExposureNotification
 import DP3TSDK
 import RxSwift
 
-class SetupUseCase : LoggingDelegate, ActivityDelegate {
+class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
     
     private let dateFormatter = DateFormatter()
     
@@ -19,13 +19,17 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate {
     
     private let preferencesRepository: PreferencesRepository
     
+    private let notificationHandler: NotificationHandler
+    
     private let kpiApi: KpiControllerAPI
     
     init(preferencesRepository: PreferencesRepository,
-         kpiApi: KpiControllerAPI) {
+         kpiApi: KpiControllerAPI,
+         notificationHandler: NotificationHandler) {
         self.preferencesRepository = preferencesRepository
         self.kpiApi  = kpiApi
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss.SSS z"
+        self.notificationHandler = notificationHandler
     }
     
     func initializeSDK() {
@@ -38,7 +42,7 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate {
                                                 bucketBaseUrl: url,
                                                 reportBaseUrl: url,
                                                 jwtPublicKey: Config.validationKey,
-                                                mode: Config.dp3tMode) )
+                                                mode: Config.dp3tMode), backgroundHandler: self)
         
         if (preferencesRepository.isTracingActive()) {
             do {
@@ -133,6 +137,16 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate {
         debugPrint("- matchedKeyCount: \(summary.matchedKeyCount)")
         debugPrint("- maximumRiskScore: \(summary.maximumRiskScore)")
         debugPrint("- riskScoreSumFullRange: \(String(describing: summary.metadata?["riskScoreSumFullRange"]))")
+    }
+    
+    func performBackgroundTasks(completionHandler: @escaping (Bool) -> Void) {
+        if Config.debug {
+            notificationHandler.scheduleNotification(title: "BackgroundTask", body: "Sync?", sound: .default)
+        }
+    }
+    
+    func didScheduleBackgrounTask() {
+        debugPrint("didScheduleBackgrounTask")
     }
 
 }

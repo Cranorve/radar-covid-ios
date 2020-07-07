@@ -33,14 +33,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let configUseCase =  AppDelegate.shared.injection.resolve(ConfigurationUseCase.self)!
         
         configUseCase.getConfig().subscribe(
-            onNext:{ _ in
+            onNext:{ settings in
                 debugPrint("Configuration  finished")
+
+                if  !(settings.isUpdated ?? false) {
+                    let configUrl = settings.parameters?.applicationVersion?.ios?.bundleUrl ?? "itms://itunes.apple.com"
+                    let alert = Alert.showAlertOk(title: "Error", message: "Para poder seguir utilizando Radar COVID es necesario que actualices la aplicación.", buttonTitle: "ACTUALIZAR") { (action) in
+                        if let url = NSURL(string: configUrl) as URL? {
+                            UIApplication.shared.open(url) { (open) in
+                                exit(0);
+                            }
+                        }
+                    }
+                    self.window?.rootViewController?.present(alert, animated: true)
+                }
+                
             }, onError: {  [weak self] error in
                 debugPrint("Configuration errro \(error)")
                 self?.window?.rootViewController?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
         
         router.route(to: Routes.Welcome, from: navigationController)
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

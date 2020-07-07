@@ -11,4 +11,5 @@ import Foundation
 class Settings : Codable {
     var udid: String?
     var parameters: SettingsDto?
+    var isUpdated: Bool?
 }

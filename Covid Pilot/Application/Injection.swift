@@ -74,6 +74,7 @@ class Injection {
             appRouter.myHealthReportedVC = r.resolve(MyHealthReportedViewController.self)!
             appRouter.expositionVC = r.resolve(ExpositionViewController.self)!
             appRouter.highExpositionVC = r.resolve(HighExpositionViewController.self)!
+            appRouter.positiveExposedVC = r.resolve(PositiveExposedViewController.self)!
             appRouter.pollVC = r.resolve(PollViewController.self)!
             appRouter.pollFinishedVC = r.resolve(FinishPollViewController.self)!
             appRouter.welcomeVC = r.resolve(WelcomeViewController.self)!
@@ -87,8 +88,20 @@ class Injection {
             UserDefaultsSettingsRepository()
         }.inObjectScope(.container)
         
+        container.register(ExpositionInfoRepository.self) { r in
+            UserDefaultsExpositionInfoRepository()
+        }.inObjectScope(.container)
+        
         container.register(BluetoothHandler.self) { r in
             CentralManagerBluetoothHandler()
+        }.inObjectScope(.container)
+
+        container.register(VersionHandler.self) { r in
+            VersionHandler()
+        }.inObjectScope(.container)
+
+        container.register(NotificationHandler.self) { r in
+            NotificationHandler()
         }.inObjectScope(.container)
         
         container.register(OnboardingCompletedUseCase.self) { r in
@@ -96,7 +109,8 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(ExpositionUseCase.self) { r in
-            ExpositionUseCase()
+            ExpositionUseCase(notificationHandler: r.resolve(NotificationHandler.self)!,
+                              expositionInfoRepository: r.resolve(ExpositionInfoRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(RadarStatusUseCase.self) { r in
@@ -109,7 +123,8 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(ResetDataUseCase.self) { r in
-            ResetDataUseCase(setupUseCase: r.resolve(SetupUseCase.self)!)
+            ResetDataUseCase(setupUseCase: r.resolve(SetupUseCase.self)!,
+                             expositionInfoRepository: r.resolve(ExpositionInfoRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(PollUseCase.self) { r in
@@ -126,7 +141,8 @@ class Injection {
         container.register(ConfigurationUseCase.self) { r in
             ConfigurationUseCase(settingsRepository: r.resolve(SettingsRepository.self)!,
                                  tokenApi: r.resolve(TokenAPI.self)!,
-                                 settingsApi: r.resolve(SettingsAPI.self)!)
+                                 settingsApi: r.resolve(SettingsAPI.self)!,
+                                 versionHandler: r.resolve(VersionHandler.self)!)
         }.inObjectScope(.container)
         
         container.register(SyncUseCase.self) { r in
@@ -135,7 +151,8 @@ class Injection {
         
         container.register(SetupUseCase.self) { r in
             SetupUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!,
-                         kpiApi: r.resolve(KpiControllerAPI.self)!)
+                         kpiApi: r.resolve(KpiControllerAPI.self)!,
+                         notificationHandler: r.resolve(NotificationHandler.self)!)
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in
@@ -167,6 +184,10 @@ class Injection {
         
         container.register(HighExpositionViewController.self) {  r in
             self.createViewController(storyboard: "HighExposition", id: "HighExpositionViewController") as! HighExpositionViewController
+        }
+        
+        container.register(PositiveExposedViewController.self) {  r in
+            self.createViewController(storyboard: "PositiveExposed", id: "PositiveExposedViewController") as! PositiveExposedViewController
         }
         
         container.register(HomeViewController.self) {  r in

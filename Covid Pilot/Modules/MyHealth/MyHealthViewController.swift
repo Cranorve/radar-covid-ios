@@ -39,28 +39,27 @@ class MyHealthViewController: UIViewController {
 
     @IBAction func onReportDiagnosis(_ sender: Any) {
         if !diagnosticEnabled {
-            self.present(Alert.showAlertOk(title: "Error", message: "Por favor introduce un código válido de 12 dígitos", buttonTitle: "Aceptar"), animated: true)
+            present(Alert.showAlertOk(title: "Error", message: "Por favor introduce un código válido de 12 dígitos", buttonTitle: "Aceptar"), animated: true)
 
-        }else{
+        } else {
+            view.showLoading()
             var codigoString = ""
-            self.codeChars.forEach {
+            codeChars.forEach {
                 let s: String = $0.text ?? ""
-                // Clean weird chars
                 codigoString += s
             }
 
             diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
                 onNext:{ [weak self] reportedCodeBool in
+                    self?.view.hideLoading()
                     self?.navigateIf(reported: reportedCodeBool)
                 }, onError: {  [weak self] error in
+                    self?.view.hideLoading()
                     print("Error reporting diagnosis \(error)")
                     self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"), animated: true)
 
             }).disposed(by: disposeBag)
         }
-        
-        
-        
     }
     
     var router: AppRouter?

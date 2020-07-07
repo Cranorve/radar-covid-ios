@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class OnBoardingViewController: UIViewController {
     
@@ -32,7 +33,7 @@ class OnBoardingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.acceptTermsLabel.attributedText = "He leido las <b><u>condiciones de uso</u></b>".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli-Light", andSize: 16)
+        self.acceptTermsLabel.attributedText = "He leído las <b><u>condiciones de uso</u></b>".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli-Light", andSize: 16)
         self.privacyLabel.attributedText = "Acepto la <b><u>política de privacidad </u></b>".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli-Light", andSize: 16)
 
         acceptButton.isEnabled = termsAccepted
@@ -73,11 +74,25 @@ class OnBoardingViewController: UIViewController {
     }
     
     @objc func userDidTapTerms(tapGestureRecognizer: UITapGestureRecognizer) {
-        navigationController?.pushViewController(TermsViewController(), animated: true)
+        let urlString = "https://radarcovid.covid19.gob.es/terms-of-service/use-conditions.html"
+        if let url = URL(string: urlString) {
+            let config = SFSafariViewController.Configuration()
+//            config.entersReaderIfAvailable = true
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
+        }
+//        navigationController?.pushViewController(TermsViewController(), animated: true)
     }
     
     @objc func userDidTapPrivacy(tapGestureRecognizer: UITapGestureRecognizer) {
-        navigationController?.pushViewController(PrivacyViewController(), animated: true)
+        let urlString = "https://radarcovid.covid19.gob.es/terms-of-service/privacy-policy.html"
+        if let url = URL(string: urlString) {
+            let config = SFSafariViewController.Configuration()
+//            config.entersReaderIfAvailable = true
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
+        }
+//        navigationController?.pushViewController(PrivacyViewController(), animated: true)
     }
     
     private func loadTexts() {
@@ -91,8 +106,8 @@ class OnBoardingViewController: UIViewController {
         ], range: NSRange(location: 0, length: 21))
         attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 21, length: 12))
         attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 106, length: 2))
-        attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 169, length: 12))
-        attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 272, length: 11))
+        attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 170, length: 13))
+        attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 273, length: 11))
         
         descriptionLabel.attributedText = attributedString
         

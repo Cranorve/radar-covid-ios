@@ -18,6 +18,8 @@ class HomeViewController: UIViewController {
     private let bgImageOrange = UIImage(named: "GradientBackgroundOrange")
     private let bgImageGreen = UIImage(named: "GradientBackgroundGreen")
     
+
+    @IBOutlet weak var envLabel: UILabel!
     @IBOutlet weak var imageDefault: UIImageView!
     @IBOutlet weak var imageCheck: UIImageView!
     @IBOutlet weak var expositionTitle: UILabel!
@@ -27,6 +29,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var radarMessage: UILabel!
     @IBOutlet weak var radarTitle: UILabel!
     @IBOutlet weak var radarView: BackgroundView!
+    @IBOutlet weak var communicationButton: UIButton!
     
     @IBOutlet weak var resetDataButton: UIButton!
     
@@ -82,12 +85,12 @@ class HomeViewController: UIViewController {
     @objc func onExpositionTap() {
         if let level = expositionInfo?.level {
             switch level {
-                case .Healthy(lastCheck: let lastCheck):
-                    router?.route(to: Routes.Exposition, from: self, parameters: lastCheck)
-                case .Exposed(since: let since):
-                    router?.route(to: Routes.HighExposition, from: self, parameters: since)
+                case .Healthy:
+                    router?.route(to: Routes.Exposition, from: self, parameters: expositionInfo?.lastCheck)
+                case .Exposed:
+                    router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo?.since)
                 case .Infected:
-                    router?.route(to: Routes.MyHealthReported, from: self)
+                    router?.route(to: Routes.PositiveExposed, from: self, parameters: expositionInfo?.lastCheck)
             }
         } else {
             router?.route(to: Routes.Exposition, from: self, parameters: Date())
@@ -97,6 +100,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        checkOnboarding()
+        
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.onExpositionTap))
         
         expositionView.addGestureRecognizer(gesture)
@@ -106,29 +111,22 @@ class HomeViewController: UIViewController {
         radarSwitch.layer.cornerRadius = radarSwitch.frame.height / 2
         radarSwitch.backgroundColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         
-        updateExpositionInfo(ExpositionInfo.init(level: .Healthy(lastCheck: nil)))
+        updateExpositionInfo(ExpositionInfo.init(level: .Healthy))
 
         resetDataButton.isHidden = !Config.debug
+        if Config.endpoints == .pre {
+            envLabel.text = Config.environment
+        } else {
+            envLabel.text = ""
+        }
         
-        syncUseCase?.sync().subscribe(
-            onError: { [weak self] error in
-                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener datos de exposición", buttonTitle: "Aceptar"), animated: true)
-            }, onCompleted: {
-                debugPrint("Sync Completed")
-        }).disposed(by: disposeBag)
+        //        syncUseCase?.sync().subscribe(
+        //            onError: { [weak self] error in
+        //                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener datos de exposición", buttonTitle: "Aceptar"), animated: true)
+        //            }, onCompleted: {
+        //                debugPrint("Sync Completed")
+        //        }).disposed(by: disposeBag)
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        checkOnboarding()
-        
-        let isTracingActive = radarStatusUseCase?.isTracingActive() ?? false
-        changeRadarMessage(active: isTracingActive)
-        radarSwitch.isOn = isTracingActive
-        
-        self.view.showLoading()
         expositionUseCase?.getExpositionInfo().subscribe(
             onNext:{ [weak self] expositionInfo in
                 self?.view.hideLoading()
@@ -139,6 +137,19 @@ class HomeViewController: UIViewController {
                 self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let isTracingActive = radarStatusUseCase?.isTracingActive() ?? false
+        changeRadarMessage(active: isTracingActive)
+        radarSwitch.isOn = isTracingActive
+        
+        //Remove comminication covid button if already infected
+        if (expositionInfo?.level == .Infected ){
+            self.communicationButton.isHidden = true
+        }
     }
     
     @IBAction func onReset(_ sender: Any) {
@@ -161,14 +172,10 @@ class HomeViewController: UIViewController {
     }
     
     private func updateExpositionInfo(_ exposition: ExpositionInfo) {
-        
-        guard (exposition.level != nil) else {
-            return
-        }
-        
+                
         self.expositionInfo = exposition
         switch exposition.level {
-            case .Exposed(since: _):
+            case .Exposed:
                 expositionTitle.text = "Exposición alta"
                let attributedString = NSMutableAttributedString(string: "Has estado en contacto con una persona contagiada de Covid-19.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas", attributes: [
                   .font: UIFont(name: "Muli-Light", size: 16.0)!,
@@ -179,7 +186,7 @@ class HomeViewController: UIViewController {
                 expositionView.image = bgImageRed
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
                 break
-            case .Healthy(lastCheck: _):
+            case .Healthy:
                 expositionTitle.text = "Exposición baja"
                 let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un\nposible contacto de riesgo.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
                   .font: UIFont(name: "Muli-Light", size: 16.0)!,
@@ -198,13 +205,6 @@ class HomeViewController: UIViewController {
                 expositionView.image = bgImageRed
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
                 break;
-            
-
-            default:
-                expositionTitle.text = ""
-                expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)
-                expositionDescription.text = ""
-                expositionView.image = bgImageGreen
 
         }
         
@@ -217,19 +217,25 @@ class HomeViewController: UIViewController {
             radarMessage.textColor = UIColor.black
         } else {
             radarTitle.text = "Radar COVID inactivo"
-            radarMessage.text = "Por favor, activa el Bluetooth para poder identificar posibles contagios."
+            radarMessage.text = "Por favor, activa esta opción para poder identificar posibles contagios."
             radarMessage.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         }
     }
     
     private func checkOnboarding() {
-        if !(onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? true) {
-            onBoardingCompletedUseCase?.setOnboarding(completed: true)
+        //show check image 1.5 sec
+        if !(self.onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? true) {
             imageCheck.isHidden = false
             imageDefault.isHidden = true
-        } else {
-            imageCheck.isHidden = true
-            imageDefault.isHidden = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                //Update UI
+                
+                self.onBoardingCompletedUseCase?.setOnboarding(completed: true)
+                
+                self.imageCheck.isHidden = true
+                self.imageDefault.isHidden = false
+                
+            }
         }
     }
     

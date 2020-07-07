@@ -24,7 +24,7 @@ class UserDefaultsSettingsRepository : SettingsRepository {
     private let userDefaults: UserDefaults
     
     init() {
-        userDefaults = UserDefaults(suiteName: "es.indra.covid") ?? UserDefaults.standard
+        userDefaults = UserDefaults(suiteName: "es.gob.radarcovid") ?? UserDefaults.standard
     }
     
     func getSettings() -> Settings? {
