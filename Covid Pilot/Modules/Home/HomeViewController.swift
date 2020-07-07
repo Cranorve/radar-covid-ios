@@ -76,9 +76,8 @@ class HomeViewController: UIViewController {
             onNext:{ [weak self] active in
                 self?.changeRadarMessage(active: active)
             }, onError: {  [weak self] error in
-                debugPrint("Error: \(error)")
-                self?.radarSwitch.isOn = false
-                self?.changeRadarMessage(active: (self?.radarSwitch.isOn)!)
+                debugPrint(error)
+                self?.changeRadarMessage(active: false)
         }).disposed(by: disposeBag)
     }
     
@@ -145,9 +144,9 @@ class HomeViewController: UIViewController {
         radarStatusUseCase?.restoreLastState().subscribe(
             onNext:{ [weak self] isTracingActive in
                 self?.changeRadarMessage(active: isTracingActive)
-                self?.radarSwitch.isOn = isTracingActive
-            }, onError: { error in
+            }, onError: { [weak self] error in
                 debugPrint(error)
+                self?.changeRadarMessage(active: false)
         }).disposed(by: disposeBag)
         
         //Remove comminication covid button if already infected
@@ -211,13 +210,13 @@ class HomeViewController: UIViewController {
                 break;
 
             case .Error:
-                debugPrint("Error")
                 expositionTitle.text = exposition.error?.rawValue
         }
         
     }
     
     private func changeRadarMessage(active: Bool) {
+        radarSwitch.isOn = active
         if (active) {
             radarTitle.text = "Radar COVID activo"
             radarMessage.text = "Las interacciones con móviles cercanos se registarán siempre anónimamente. "

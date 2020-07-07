@@ -144,11 +144,12 @@ class Injection {
             ConfigurationUseCase(settingsRepository: r.resolve(SettingsRepository.self)!,
                                  tokenApi: r.resolve(TokenAPI.self)!,
                                  settingsApi: r.resolve(SettingsAPI.self)!,
-                                 versionHandler: r.resolve(VersionHandler.self)!)
+                                 versionHandler: r.resolve(VersionHandler.self)!,
+                                 syncUseCase: r.resolve(SyncUseCase.self)!)
         }.inObjectScope(.container)
         
         container.register(SyncUseCase.self) { r in
-            SyncUseCase()
+            SyncUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(ErrorUseCase.self) { r in

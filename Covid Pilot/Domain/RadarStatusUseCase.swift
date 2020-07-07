@@ -27,11 +27,8 @@ class RadarStatusUseCase {
             if (active){
                 do {
                     try DP3TTracing.startTracing { error in
-                        guard let strongSelf = self else {
-                            return
-                        }
                         if let error =  error {
-                            observer.onError(strongSelf.handle(error: error))
+                            observer.onError(error)
                         } else {
                             self?.preferencesRepository.setTracing(active: active)
                             observer.onNext(active)
@@ -64,6 +61,7 @@ class RadarStatusUseCase {
         changeTracingStatus(active: preferencesRepository.isTracingActive())
     }
     
+    
     private func handle(error: Error) -> Error {
         var domainError: DomainError = DomainError.Unexpected
         if let dp3tError = error as? DP3TTracingError {
@@ -72,8 +70,7 @@ class RadarStatusUseCase {
         
         if let enError = error as? ENError {
             if enError.code == ENError.Code.notAuthorized {
-                domainError = DomainError.NotAuthorized
-                errorUseCase.setState(error: domainError)
+
             }
         }
         
