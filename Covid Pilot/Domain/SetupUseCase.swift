@@ -39,15 +39,21 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
 //        DP3TTracing.loggingEnabled = true
         DP3TTracing.loggingDelegate = self
         DP3TTracing.activityDelegate = self
-        do {
-            try DP3TTracing.initialize(with: .init(appId: "es.gob.radarcovid",
-                                                    bucketBaseUrl: url,
-                                                    reportBaseUrl: url,
-                                                    jwtPublicKey: Config.validationKey,
-                                                    mode: Config.dp3tMode), backgroundHandler: self)
-        } catch {
-            debugPrint("Error initializing \(error)")
-            throw mapInitializeError(error)
+        
+        try! DP3TTracing.initialize(with: .init(appId: "es.gob.radarcovid",
+                                                bucketBaseUrl: url,
+                                                reportBaseUrl: url,
+                                                jwtPublicKey: Config.validationKey,
+                                                mode: Config.dp3tMode), backgroundHandler: self)
+        
+        if (preferencesRepository.isTracingActive()) {
+            do {
+                try DP3TTracing.startTracing()
+            } catch {
+                debugPrint("Error starting tracing \(error)")
+            }
+        } else {
+            DP3TTracing.stopTracing()
         }
         
     }
