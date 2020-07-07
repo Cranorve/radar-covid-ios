@@ -13,7 +13,28 @@ import DP3TSDK
 
 class SyncUseCase {
     
-    func sync() -> Observable<Void> {
+    private let syncInterval: TimeInterval = 10
+    
+    private let preferencesRepository: PreferencesRepository
+    
+    init(preferencesRepository: PreferencesRepository) {
+        self.preferencesRepository = preferencesRepository
+    }
+    
+    func syncIfNeeded() -> Observable<Void> {
+        .deferred { [weak self] in
+            if let lastSync = self?.preferencesRepository.getLastSync(), let syncInterval = self?.syncInterval {
+                if (-lastSync.timeIntervalSinceNow) > syncInterval {
+                    return self?.forceSync() ?? .empty()
+                } else {
+                    return .empty()
+                }
+            }
+            return self?.forceSync() ?? .empty()
+        }
+    }
+    
+    func forceSync() -> Observable<Void> {
         .create { observer in
             
             DP3TTracing.sync(runningInBackground: false) { result in

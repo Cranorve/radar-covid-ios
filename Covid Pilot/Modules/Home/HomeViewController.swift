@@ -76,9 +76,8 @@ class HomeViewController: UIViewController {
             onNext:{ [weak self] active in
                 self?.changeRadarMessage(active: active)
             }, onError: {  [weak self] error in
-                debugPrint("Error: \(error)")
-                self?.radarSwitch.isOn = false
-                self?.changeRadarMessage(active: (self?.radarSwitch.isOn)!)
+                debugPrint(error)
+                self?.changeRadarMessage(active: false)
         }).disposed(by: disposeBag)
     }
     
@@ -91,6 +90,8 @@ class HomeViewController: UIViewController {
                     router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo?.since)
                 case .Infected:
                     router?.route(to: Routes.PositiveExposed, from: self, parameters: expositionInfo?.lastCheck)
+                case .Error:
+                    debugPrint("Navigate to Error")
             }
         } else {
             router?.route(to: Routes.Exposition, from: self, parameters: Date())
@@ -110,8 +111,6 @@ class HomeViewController: UIViewController {
         radarSwitch.tintColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         radarSwitch.layer.cornerRadius = radarSwitch.frame.height / 2
         radarSwitch.backgroundColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
-        
-        updateExpositionInfo(ExpositionInfo.init(level: .Healthy))
 
         resetDataButton.isHidden = !Config.debug
         if Config.endpoints == .pre {
@@ -142,9 +141,13 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let isTracingActive = radarStatusUseCase?.isTracingActive() ?? false
-        changeRadarMessage(active: isTracingActive)
-        radarSwitch.isOn = isTracingActive
+        radarStatusUseCase?.restoreLastState().subscribe(
+            onNext:{ [weak self] isTracingActive in
+                self?.changeRadarMessage(active: isTracingActive)
+            }, onError: { [weak self] error in
+                debugPrint(error)
+                self?.changeRadarMessage(active: false)
+        }).disposed(by: disposeBag)
         
         //Remove comminication covid button if already infected
         if (expositionInfo?.level == .Infected ){
@@ -206,11 +209,14 @@ class HomeViewController: UIViewController {
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
                 break;
 
+            case .Error:
+                expositionTitle.text = exposition.error?.rawValue
         }
         
     }
     
     private func changeRadarMessage(active: Bool) {
+        radarSwitch.isOn = active
         if (active) {
             radarTitle.text = "Radar COVID activo"
             radarMessage.text = "Las interacciones con móviles cercanos se registarán siempre anónimamente. "

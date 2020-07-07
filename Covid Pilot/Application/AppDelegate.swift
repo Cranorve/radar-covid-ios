@@ -29,7 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let setupUseCase = injection.resolve(SetupUseCase.self)!
         
-        setupUseCase.initializeSDK()
+        do {
+            try setupUseCase.initializeSDK()
+        } catch {
+            debugPrint("Error initializing DP3T \(error)")
+        }
         
         let notificationHandler = injection.resolve(NotificationHandler.self)!
         

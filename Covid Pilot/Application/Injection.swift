@@ -110,11 +110,13 @@ class Injection {
         
         container.register(ExpositionUseCase.self) { r in
             ExpositionUseCase(notificationHandler: r.resolve(NotificationHandler.self)!,
-                              expositionInfoRepository: r.resolve(ExpositionInfoRepository.self)!)
+                              expositionInfoRepository: r.resolve(ExpositionInfoRepository.self)!,
+                              errorUseCase: r.resolve(ErrorUseCase.self)!)
         }.inObjectScope(.container)
         
         container.register(RadarStatusUseCase.self) { r in
-            RadarStatusUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!)
+            RadarStatusUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!,
+                               errorUseCase: r.resolve(ErrorUseCase.self)!)
         }.inObjectScope(.container)
         
         container.register(BluetoothUseCase.self) { r in
@@ -142,16 +144,22 @@ class Injection {
             ConfigurationUseCase(settingsRepository: r.resolve(SettingsRepository.self)!,
                                  tokenApi: r.resolve(TokenAPI.self)!,
                                  settingsApi: r.resolve(SettingsAPI.self)!,
-                                 versionHandler: r.resolve(VersionHandler.self)!)
+                                 versionHandler: r.resolve(VersionHandler.self)!,
+                                 syncUseCase: r.resolve(SyncUseCase.self)!)
         }.inObjectScope(.container)
         
         container.register(SyncUseCase.self) { r in
-            SyncUseCase()
+            SyncUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!)
+        }.inObjectScope(.container)
+        
+        container.register(ErrorUseCase.self) { r in
+            ErrorUseCase()
         }.inObjectScope(.container)
         
         container.register(SetupUseCase.self) { r in
             SetupUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!,
                          kpiApi: r.resolve(KpiControllerAPI.self)!,
+                         errorUseCase: r.resolve(ErrorUseCase.self)!,
                          notificationHandler: r.resolve(NotificationHandler.self)!)
         }.inObjectScope(.container)
         

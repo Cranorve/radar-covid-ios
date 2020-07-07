@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let router = AppDelegate.shared.injection.resolve(AppRouter.self)!
         let configUseCase =  AppDelegate.shared.injection.resolve(ConfigurationUseCase.self)!
         
-        configUseCase.getConfig().subscribe(
+        configUseCase.loadConfig().subscribe(
             onNext:{ settings in
                 debugPrint("Configuration  finished")
 

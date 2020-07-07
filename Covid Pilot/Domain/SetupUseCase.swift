@@ -18,40 +18,36 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
     private let disposeBag = DisposeBag()
     
     private let preferencesRepository: PreferencesRepository
-    
     private let notificationHandler: NotificationHandler
-    
+    private let errorUseCase: ErrorUseCase
     private let kpiApi: KpiControllerAPI
     
     init(preferencesRepository: PreferencesRepository,
          kpiApi: KpiControllerAPI,
+         errorUseCase: ErrorUseCase,
          notificationHandler: NotificationHandler) {
         self.preferencesRepository = preferencesRepository
         self.kpiApi  = kpiApi
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss.SSS z"
         self.notificationHandler = notificationHandler
+        self.errorUseCase = errorUseCase
     }
     
-    func initializeSDK() {
+    func initializeSDK() throws {
         
         let url = URL(string: Config.endpoints.dpppt)!
 //        DP3TTracing.loggingEnabled = true
         DP3TTracing.loggingDelegate = self
         DP3TTracing.activityDelegate = self
-        try! DP3TTracing.initialize(with: .init(appId: "es.gob.radarcovid",
-                                                bucketBaseUrl: url,
-                                                reportBaseUrl: url,
-                                                jwtPublicKey: Config.validationKey,
-                                                mode: Config.dp3tMode), backgroundHandler: self)
-        
-        if (preferencesRepository.isTracingActive()) {
-            do {
-                try DP3TTracing.startTracing()
-            } catch {
-                debugPrint("Error starting tracing \(error)")
-            }
-        } else {
-            DP3TTracing.stopTracing()
+        do {
+            try DP3TTracing.initialize(with: .init(appId: "es.gob.radarcovid",
+                                                    bucketBaseUrl: url,
+                                                    reportBaseUrl: url,
+                                                    jwtPublicKey: Config.validationKey,
+                                                    mode: Config.dp3tMode), backgroundHandler: self)
+        } catch {
+            debugPrint("Error initializing \(error)")
+            throw mapInitializeError(error)
         }
         
     }
@@ -65,6 +61,7 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
         for error in errors {
             debugPrint("DP3T Sync error \(error)")
         }
+        preferencesRepository.setLastSync(date: Date())
     }
     
     func fakeRequestCompleted(result: Result<Int, DP3TNetworkingError>) {
@@ -140,13 +137,23 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
     }
     
     func performBackgroundTasks(completionHandler: @escaping (Bool) -> Void) {
+        debugPrint("performBackgroundTasks")
+        let sync = preferencesRepository.getLastSync()?.description ?? "no Sync"
         if Config.debug {
-            notificationHandler.scheduleNotification(title: "BackgroundTask", body: "Sync?", sound: .default)
+            notificationHandler.scheduleNotification(title: "BackgroundTask", body: "Last sync: \(sync)", sound: .default)
         }
     }
     
     func didScheduleBackgrounTask() {
         debugPrint("didScheduleBackgrounTask")
+    }
+    
+    private func mapInitializeError(_ error: Error) -> DomainError {
+        if let e = error as? DP3TTracingError {
+            debugPrint("Error \(error)")
+        }
+        
+        return DomainError.Unexpected
     }
 
 }
