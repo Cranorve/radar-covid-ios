@@ -74,6 +74,7 @@ class Injection {
             appRouter.myHealthReportedVC = r.resolve(MyHealthReportedViewController.self)!
             appRouter.expositionVC = r.resolve(ExpositionViewController.self)!
             appRouter.highExpositionVC = r.resolve(HighExpositionViewController.self)!
+            appRouter.positiveExposedVC = r.resolve(PositiveExposedViewController.self)!
             appRouter.pollVC = r.resolve(PollViewController.self)!
             appRouter.pollFinishedVC = r.resolve(FinishPollViewController.self)!
             appRouter.welcomeVC = r.resolve(WelcomeViewController.self)!
@@ -183,6 +184,10 @@ class Injection {
         
         container.register(HighExpositionViewController.self) {  r in
             self.createViewController(storyboard: "HighExposition", id: "HighExpositionViewController") as! HighExpositionViewController
+        }
+        
+        container.register(PositiveExposedViewController.self) {  r in
+            self.createViewController(storyboard: "PositiveExposed", id: "PositiveExposedViewController") as! PositiveExposedViewController
         }
         
         container.register(HomeViewController.self) {  r in
