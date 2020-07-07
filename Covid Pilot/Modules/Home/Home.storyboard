@@ -204,6 +204,7 @@ Cuídate y cuida a los demás.</string>
                         <viewLayoutGuide key="safeArea" id="AA3-07-0Pc"/>
                     </view>
                     <connections>
+                        <outlet property="communicationButton" destination="mgD-SH-6Y2" id="PD0-jV-Ds1"/>
                         <outlet property="envLabel" destination="iWR-aJ-g5N" id="OpB-d4-Ngt"/>
                         <outlet property="expositionDescription" destination="XCQ-uz-Hi1" id="SgW-aX-6xj"/>
                         <outlet property="expositionTitle" destination="Tiy-hB-953" id="d36-84-O30"/>
