@@ -141,7 +141,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        radarStatusUseCase?.restoreLastState().subscribe(
+        radarStatusUseCase?.restoreLastStateAndSync().subscribe(
             onNext:{ [weak self] isTracingActive in
                 self?.changeRadarMessage(active: isTracingActive)
             }, onError: { [weak self] error in
