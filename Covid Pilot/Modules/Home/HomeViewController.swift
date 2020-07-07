@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var radarMessage: UILabel!
     @IBOutlet weak var radarTitle: UILabel!
     @IBOutlet weak var radarView: BackgroundView!
+    @IBOutlet weak var communicationButton: UIButton!
     
     @IBOutlet weak var resetDataButton: UIButton!
     
@@ -89,7 +90,7 @@ class HomeViewController: UIViewController {
                 case .Exposed:
                     router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo?.since)
                 case .Infected:
-                    router?.route(to: Routes.MyHealthReported, from: self)
+                    router?.route(to: Routes.PositiveExposed, from: self, parameters: expositionInfo?.lastCheck)
             }
         } else {
             router?.route(to: Routes.Exposition, from: self, parameters: Date())
@@ -144,8 +145,11 @@ class HomeViewController: UIViewController {
         let isTracingActive = radarStatusUseCase?.isTracingActive() ?? false
         changeRadarMessage(active: isTracingActive)
         radarSwitch.isOn = isTracingActive
-    
         
+        //Remove comminication covid button if already infected
+        if (expositionInfo?.level == .Infected ){
+            self.communicationButton.isHidden = true
+        }
     }
     
     @IBAction func onReset(_ sender: Any) {

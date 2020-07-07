@@ -26,6 +26,7 @@ public enum Routes {
     case MyHealthReported
     case Exposition
     case HighExposition
+    case PositiveExposed
     case Poll
     case PollFinished
 }
@@ -40,6 +41,7 @@ class AppRouter : Router {
     var myHealthReportedVC: MyHealthReportedViewController?
     var expositionVC: ExpositionViewController?
     var highExpositionVC: HighExpositionViewController?
+    var positiveExposedVC: PositiveExposedViewController?
     var pollVC: PollViewController?
     var pollFinishedVC: FinishPollViewController?
     var welcomeVC: WelcomeViewController?
@@ -62,6 +64,8 @@ class AppRouter : Router {
             routeToExposition(context, lastCheck: parameters[0] as? Date)
         case .HighExposition:
             routeToHighExposition(context, since: parameters[0] as? Date)
+        case .PositiveExposed:
+            routeToPositiveExposed(context, since: parameters[0] as? Date)
         case .Poll:
             routeToPoll(context)
         case .PollFinished:
@@ -97,6 +101,11 @@ class AppRouter : Router {
     private func routeToHighExposition(_ context: UIViewController, since: Date?) {
         highExpositionVC?.since = since
         context.navigationController?.pushViewController(highExpositionVC!, animated: true)
+    }
+    
+    private func routeToPositiveExposed(_ context: UIViewController, since: Date?) {
+        positiveExposedVC?.since = since
+        context.navigationController?.pushViewController(positiveExposedVC!, animated: true)
     }
     
     private func routeToPoll(_ context: UIViewController) {
