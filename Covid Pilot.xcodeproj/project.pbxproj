@@ -21,6 +21,8 @@
 		6D1F99D724AA1C60001CFDE2 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 6D1F99D624AA1C60001CFDE2 /* DP3TSDK */; };
 		6D2CA48524B4C69B00981DA4 /* PositiveExposedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2CA48324B4C69B00981DA4 /* PositiveExposedViewController.swift */; };
 		6D2CA48624B4C69B00981DA4 /* PositiveExposed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2CA48424B4C69B00981DA4 /* PositiveExposed.storyboard */; };
+		6D2CA48024B3353600981DA4 /* ErrorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2CA47F24B3353600981DA4 /* ErrorUseCase.swift */; };
+		6D2CA48224B3571900981DA4 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2CA48124B3571900981DA4 /* Error.swift */; };
 		6D5AFC8D2492827C00EFE838 /* muli_extrabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC892492827B00EFE838 /* muli_extrabold.ttf */; };
 		6D5AFC8E2492827C00EFE838 /* muli_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC8A2492827C00EFE838 /* muli_semibold.ttf */; };
 		6D5AFC8F2492827C00EFE838 /* muli_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC8B2492827C00EFE838 /* muli_bold.ttf */; };
@@ -181,6 +183,8 @@
 		39C3FEC22497746900D1A13E /* DiagnosisCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisCodeUseCase.swift; sourceTree = "<group>"; };
 		6D2CA48324B4C69B00981DA4 /* PositiveExposedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositiveExposedViewController.swift; sourceTree = "<group>"; };
 		6D2CA48424B4C69B00981DA4 /* PositiveExposed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PositiveExposed.storyboard; sourceTree = "<group>"; };
+		6D2CA47F24B3353600981DA4 /* ErrorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorUseCase.swift; sourceTree = "<group>"; };
+		6D2CA48124B3571900981DA4 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		6D5AFC892492827B00EFE838 /* muli_extrabold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = muli_extrabold.ttf; sourceTree = "<group>"; };
 		6D5AFC8A2492827C00EFE838 /* muli_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = muli_semibold.ttf; sourceTree = "<group>"; };
 		6D5AFC8B2492827C00EFE838 /* muli_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = muli_bold.ttf; sourceTree = "<group>"; };
@@ -655,6 +659,7 @@
 				6DE27D4024A7A08C00BBCF40 /* SyncUseCase.swift */,
 				6DAD76AD24A884EF00643AAD /* ResetDataUseCase.swift */,
 				6D78B44024A9F13A00FBC23F /* SetupUseCase.swift */,
+				6D2CA47F24B3353600981DA4 /* ErrorUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -714,6 +719,7 @@
 				6D5AFCF12493910900EFE838 /* QuestionOption.swift */,
 				6DB541982498A55700166D37 /* Settings.swift */,
 				6DE27C82249A7E3900BBCF40 /* Poll.swift */,
+				6D2CA48124B3571900981DA4 /* Error.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -946,6 +952,7 @@
 				6DB541952498A29D00166D37 /* ConfiguratioUseCase.swift in Sources */,
 				6DF6ECAA248E7621007EAA40 /* AppRouter.swift in Sources */,
 				76D9BD3A24A8992000BA6697 /* NVActivityIndicatorAnimationLineScale.swift in Sources */,
+				6D2CA48224B3571900981DA4 /* Error.swift in Sources */,
 				76D9BD2E24A8992000BA6697 /* NVActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				76D9BD3424A8992000BA6697 /* NVActivityIndicatorAnimationBlank.swift in Sources */,
 				76D9BD2424A8992000BA6697 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
@@ -1008,6 +1015,7 @@
 				3944328C248939F000FF0217 /* SceneDelegate.swift in Sources */,
 				6D7AB26D24ADCC9A00F30E0B /* NotificationHandler.swift in Sources */,
 				76D9BD2724A8992000BA6697 /* NVActivityIndicatorAnimationBallDoubleBounce.swift in Sources */,
+				6D2CA48024B3353600981DA4 /* ErrorUseCase.swift in Sources */,
 				399CA88124913B0E000B6BF4 /* MyHealthReportedViewController.swift in Sources */,
 				6D5AFCDE2493626C00EFE838 /* QuestionDto.swift in Sources */,
 				6DB5417B2497DFFE00166D37 /* QuestionItemCell.swift in Sources */,
@@ -1171,7 +1179,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/debug.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1194,7 +1202,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/release.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1273,7 +1281,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/release.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1356,7 +1364,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/debug.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

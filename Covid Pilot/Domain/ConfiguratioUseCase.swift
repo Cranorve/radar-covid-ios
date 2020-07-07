@@ -16,31 +16,40 @@ class ConfigurationUseCase {
     private let tokenApi: TokenAPI
     private let settingsApi: SettingsAPI
     private let versionHandler: VersionHandler
+    private let syncUseCase: SyncUseCase
     
     init(settingsRepository: SettingsRepository,
          tokenApi: TokenAPI,
          settingsApi: SettingsAPI,
-         versionHandler: VersionHandler) {
+         versionHandler: VersionHandler,
+         syncUseCase: SyncUseCase) {
         self.settingsRepository = settingsRepository
         self.tokenApi = tokenApi
         self.settingsApi = settingsApi
         self.versionHandler = versionHandler
+        self.syncUseCase = syncUseCase
     }
     
-    func getConfig() -> Observable<Settings> {
-        .deferred { [weak self] in
-            Observable<Settings>.zip(self?.getUuid() ?? .empty(),
-                        self?.settingsApi.getSettings() ?? .empty() ) { token, backSettings in
-                    let settings = Settings()
-                    settings.udid = token
-                    settings.parameters = backSettings
-                    self?.loadParameters(settings)
-                    self?.settingsRepository.save(settings: settings)
-                    if let currentVersion  = self?.versionHandler.getCurrenVersion(), let minVersion = settings.parameters?.applicationVersion?.ios?.compilation {
-                        settings.isUpdated = currentVersion >= minVersion
-                    }
-                    return settings
-            }
+    func loadConfig() -> Observable<Settings> {
+
+        getConfig().flatMap { [weak self] settings in
+            self?.syncUseCase.syncIfNeeded().map { _ in settings } ?? .empty()
+        }
+    
+    }
+    
+    private func getConfig() -> Observable<Settings> {
+        Observable<Settings>.zip(getUuid(),
+                                 settingsApi.getSettings() ) { [weak self] token, backSettings in
+                let settings = Settings()
+                settings.udid = token
+                settings.parameters = backSettings
+                self?.loadParameters(settings)
+                self?.settingsRepository.save(settings: settings)
+                if let currentVersion  = self?.versionHandler.getCurrenVersion(), let minVersion = settings.parameters?.applicationVersion?.ios?.compilation {
+                    settings.isUpdated = currentVersion >= minVersion
+                }
+                return settings
         }
     }
     

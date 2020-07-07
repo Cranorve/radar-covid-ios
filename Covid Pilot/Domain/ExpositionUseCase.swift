@@ -16,26 +16,30 @@ class ExpositionUseCase: DP3TTracingDelegate {
     
     private let expositionInfoRepository: ExpositionInfoRepository
     private let notificationHandler: NotificationHandler
+    private let errorUseCase: ErrorUseCase
     
     init(notificationHandler: NotificationHandler,
-         expositionInfoRepository: ExpositionInfoRepository) {
+         expositionInfoRepository: ExpositionInfoRepository,
+         errorUseCase: ErrorUseCase) {
         self.notificationHandler = notificationHandler
         self.expositionInfoRepository = expositionInfoRepository
+        self.errorUseCase = errorUseCase
         DP3TTracing.delegate = self
     }
     
     func DP3TTracingStateChanged(_ state: TracingState) {
-        let expositionInfo = tracingStatusToExpositionInfo(tStatus: state)
-        subject.onNext(expositionInfo)
-        if (showNotification(expositionInfo)) {
-            notificationHandler.scheduleNotification(expositionInfo: expositionInfo)
+        if let expositionInfo = tracingStatusToExpositionInfo(tStatus: state) {
+            subject.onNext(expositionInfo)
+            if (showNotification(expositionInfo)) {
+                notificationHandler.scheduleNotification(expositionInfo: expositionInfo)
+            }
+            expositionInfoRepository.save(expositionInfo: expositionInfo)
         }
-        expositionInfoRepository.save(expositionInfo: expositionInfo)
     }
     
     
     func getExpositionInfo() -> Observable<ExpositionInfo> {
-        subject.asObservable()
+        Observable.of(subject.asObservable(),getExpositionInfoErrors()).merge()
     }
     
     func updateExpositionInfo() {
@@ -43,7 +47,9 @@ class ExpositionUseCase: DP3TTracingDelegate {
         DP3TTracing.status { result in
             switch result {
             case let .success(state):
-                subject.onNext(tracingStatusToExpositionInfo(tStatus: state))
+                if let ei = tracingStatusToExpositionInfo(tStatus: state) {
+                    subject.onNext(ei)
+                }
             case .failure:
                 subject.onError("Error retrieving exposition status")
             }
@@ -52,19 +58,28 @@ class ExpositionUseCase: DP3TTracingDelegate {
     }
     
     // Metodo para mapear un TracingState a un ExpositionInfo
-    private func tracingStatusToExpositionInfo(tStatus: TracingState) -> ExpositionInfo {
+    private func tracingStatusToExpositionInfo(tStatus: TracingState) -> ExpositionInfo? {
+        
+        switch tStatus.trackingState {
+            case .inactive(let error):
+                return dp3tTracingErrorToDomain(error)
+            case .stopped:
+                return nil
+            default: break
+        }
+        
         switch tStatus.infectionStatus {
-        case .healthy:
-            var info = ExpositionInfo(level: ExpositionInfo.Level.Healthy)
-            info.lastCheck = tStatus.lastSync
-            return info
-        case .infected:
-            return ExpositionInfo(level: ExpositionInfo.Level.Infected)
-        case .exposed(days: let days):
-            var info = ExpositionInfo(level: ExpositionInfo.Level.Exposed)
-            info.since = days.first?.exposedDate
-            info.lastCheck = tStatus.lastSync
-            return info
+            case .healthy:
+                var info = ExpositionInfo(level: ExpositionInfo.Level.Healthy)
+                info.lastCheck = tStatus.lastSync
+                return info
+            case .infected:
+                return ExpositionInfo(level: ExpositionInfo.Level.Infected)
+            case .exposed(days: let days):
+                var info = ExpositionInfo(level: ExpositionInfo.Level.Exposed)
+                info.since = days.first?.exposedDate
+                info.lastCheck = tStatus.lastSync
+                return info
         }
     }
     
@@ -73,6 +88,30 @@ class ExpositionUseCase: DP3TTracingDelegate {
             return localEI != expositionInfo
         }
         return false
+    }
+    
+    private func dp3tTracingErrorToDomain(_ error: DP3TTracingError) -> ExpositionInfo? {
+        var ei = ExpositionInfo(level: .Error)
+        switch error {
+            case .bluetoothTurnedOff:
+                ei.error = .BluetoothTurnedOff
+            case .permissonError:
+                ei.error = .NotAuthorized
+            default:
+                debugPrint("Error State \(error)")
+                return nil
+        }
+        return ei
+    }
+    
+    private func getExpositionInfoErrors() -> Observable<ExpositionInfo> {
+        errorUseCase.errors().filter{
+            $0 != nil
+        }.map { error in
+            var ei = ExpositionInfo(level: .Error)
+            ei.error = error
+            return ei
+        }
     }
     
     
