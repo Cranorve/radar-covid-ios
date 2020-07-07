@@ -65,6 +65,7 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
         for error in errors {
             debugPrint("DP3T Sync error \(error)")
         }
+        preferencesRepository.setLastSync(date: Date())
     }
     
     func fakeRequestCompleted(result: Result<Int, DP3TNetworkingError>) {
@@ -140,8 +141,10 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
     }
     
     func performBackgroundTasks(completionHandler: @escaping (Bool) -> Void) {
+        debugPrint("performBackgroundTasks")
+        let sync = preferencesRepository.getLastSync()?.description ?? "no Sync"
         if Config.debug {
-            notificationHandler.scheduleNotification(title: "BackgroundTask", body: "Sync?", sound: .default)
+            notificationHandler.scheduleNotification(title: "BackgroundTask", body: "Last sync: \(sync)", sound: .default)
         }
     }
     

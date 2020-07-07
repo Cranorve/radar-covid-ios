@@ -42,12 +42,12 @@
 		6D5AFCFD2493B3AA00EFE838 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCFB2493B3AA00EFE838 /* SelectViewController.swift */; };
 		6D5AFCFE2493B3AA00EFE838 /* SelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFCFC2493B3AA00EFE838 /* SelectViewController.xib */; };
 		6D78B44124A9F13A00FBC23F /* SetupUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D78B44024A9F13A00FBC23F /* SetupUseCase.swift */; };
+		6D7AB26D24ADCC9A00F30E0B /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB26C24ADCC9A00F30E0B /* NotificationHandler.swift */; };
+		6D7AB26F24ADED7400F30E0B /* ExpositionInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB26E24ADED7400F30E0B /* ExpositionInfoRepository.swift */; };
 		6D7AB27324AE375200F30E0B /* AttenuationFactorDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB27024AE375200F30E0B /* AttenuationFactorDto.swift */; };
 		6D7AB27424AE375200F30E0B /* VersionDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB27124AE375200F30E0B /* VersionDto.swift */; };
 		6D7AB27524AE375200F30E0B /* ApplicationVersionDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB27224AE375200F30E0B /* ApplicationVersionDto.swift */; };
 		6D7AB27724AF1CBD00F30E0B /* VersionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB27624AF1CBD00F30E0B /* VersionHandler.swift */; };
-		6D7AB26D24ADCC9A00F30E0B /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB26C24ADCC9A00F30E0B /* NotificationHandler.swift */; };
-		6D7AB26F24ADED7400F30E0B /* ExpositionInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB26E24ADED7400F30E0B /* ExpositionInfoRepository.swift */; };
 		6DA18CBB2491055D00BE8AAB /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CBA2491055D00BE8AAB /* BackgroundView.swift */; };
 		6DA18CC024916B3300BE8AAB /* Exposition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA18CBF24916B3300BE8AAB /* Exposition.storyboard */; };
 		6DA18CC224916B4100BE8AAB /* ExpositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */; };
@@ -202,12 +202,12 @@
 		6D5AFCFB2493B3AA00EFE838 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		6D5AFCFC2493B3AA00EFE838 /* SelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectViewController.xib; sourceTree = "<group>"; };
 		6D78B44024A9F13A00FBC23F /* SetupUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupUseCase.swift; sourceTree = "<group>"; };
+		6D7AB26C24ADCC9A00F30E0B /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		6D7AB26E24ADED7400F30E0B /* ExpositionInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpositionInfoRepository.swift; sourceTree = "<group>"; };
 		6D7AB27024AE375200F30E0B /* AttenuationFactorDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttenuationFactorDto.swift; sourceTree = "<group>"; };
 		6D7AB27124AE375200F30E0B /* VersionDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionDto.swift; sourceTree = "<group>"; };
 		6D7AB27224AE375200F30E0B /* ApplicationVersionDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationVersionDto.swift; sourceTree = "<group>"; };
 		6D7AB27624AF1CBD00F30E0B /* VersionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionHandler.swift; sourceTree = "<group>"; };
-		6D7AB26C24ADCC9A00F30E0B /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
-		6D7AB26E24ADED7400F30E0B /* ExpositionInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpositionInfoRepository.swift; sourceTree = "<group>"; };
 		6DA18CBA2491055D00BE8AAB /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		6DA18CBF24916B3300BE8AAB /* Exposition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exposition.storyboard; sourceTree = "<group>"; };
 		6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpositionViewController.swift; sourceTree = "<group>"; };
@@ -1183,6 +1183,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/debug.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 50;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1205,6 +1206,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/release.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 50;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1283,6 +1285,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/release.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 50;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1365,6 +1368,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/debug.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 50;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

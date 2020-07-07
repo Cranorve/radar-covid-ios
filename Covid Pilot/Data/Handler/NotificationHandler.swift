@@ -60,7 +60,7 @@ class NotificationHandler: NSObject, UNUserNotificationCenterDelegate {
                 body = "Tu exposicion ahora es baja"
                 sound = .default
             default:
-                debugPrint("No notification exposition: \(expositionInfo.level.rawValue)")
+                debugPrint("No notification for exposition: \(expositionInfo.level.rawValue)")
         }
         if let title = title, let body = body, let sound = sound {
             scheduleNotification(title: title, body: body, sound: sound)
