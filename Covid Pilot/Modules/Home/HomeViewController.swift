@@ -91,6 +91,8 @@ class HomeViewController: UIViewController {
                     router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo?.since)
                 case .Infected:
                     router?.route(to: Routes.PositiveExposed, from: self, parameters: expositionInfo?.lastCheck)
+                case .Error:
+                    debugPrint("Navigate to Error")
             }
         } else {
             router?.route(to: Routes.Exposition, from: self, parameters: Date())
@@ -110,8 +112,6 @@ class HomeViewController: UIViewController {
         radarSwitch.tintColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         radarSwitch.layer.cornerRadius = radarSwitch.frame.height / 2
         radarSwitch.backgroundColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
-        
-        updateExpositionInfo(ExpositionInfo.init(level: .Healthy))
 
         resetDataButton.isHidden = !Config.debug
         if Config.endpoints == .pre {
@@ -142,9 +142,13 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let isTracingActive = radarStatusUseCase?.isTracingActive() ?? false
-        changeRadarMessage(active: isTracingActive)
-        radarSwitch.isOn = isTracingActive
+        radarStatusUseCase?.restoreLastState().subscribe(
+            onNext:{ [weak self] isTracingActive in
+                self?.changeRadarMessage(active: isTracingActive)
+                self?.radarSwitch.isOn = isTracingActive
+            }, onError: { error in
+                debugPrint(error)
+        }).disposed(by: disposeBag)
         
         //Remove comminication covid button if already infected
         if (expositionInfo?.level == .Infected ){
@@ -206,6 +210,9 @@ class HomeViewController: UIViewController {
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
                 break;
 
+            case .Error:
+                debugPrint("Error")
+                expositionTitle.text = exposition.error?.rawValue
         }
         
     }

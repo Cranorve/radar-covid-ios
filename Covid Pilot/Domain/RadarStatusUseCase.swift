@@ -9,17 +9,17 @@
 import DP3TSDK
 import Foundation
 import RxSwift
+import ExposureNotification
 
 class RadarStatusUseCase {
     
     private let preferencesRepository: PreferencesRepository
+    private let errorUseCase: ErrorUseCase
     
-    init(preferencesRepository: PreferencesRepository) {
+    init(preferencesRepository: PreferencesRepository,
+         errorUseCase: ErrorUseCase) {
         self.preferencesRepository = preferencesRepository
-    }
-    
-    func isTracingActive() -> Bool {
-        preferencesRepository.isTracingActive()
+        self.errorUseCase = errorUseCase
     }
     
     func changeTracingStatus(active: Bool) -> Observable<Bool> {
@@ -27,14 +27,15 @@ class RadarStatusUseCase {
             if (active){
                 do {
                     try DP3TTracing.startTracing { error in
+                        guard let strongSelf = self else {
+                            return
+                        }
                         if let error =  error {
-                            observer.onError("Error starting tracing. : \(error)")
-
-                        }else{
+                            observer.onError(strongSelf.handle(error: error))
+                        } else {
                             self?.preferencesRepository.setTracing(active: active)
                             observer.onNext(active)
                             observer.onCompleted()
-
                         }
                     }
                    
@@ -45,7 +46,7 @@ class RadarStatusUseCase {
             } else {
                 DP3TTracing.stopTracing { error in
                     if let error =  error {
-                        observer.onError("Error starting tracing. : \(error)")
+                        observer.onError("Error stopping tracing. : \(error)")
                     }else{
                         self?.preferencesRepository.setTracing(active: active)
                         observer.onNext(active)
@@ -57,6 +58,26 @@ class RadarStatusUseCase {
             return Disposables.create()
         }
             
+    }
+    
+    func restoreLastState() -> Observable<Bool> {
+        changeTracingStatus(active: preferencesRepository.isTracingActive())
+    }
+    
+    private func handle(error: Error) -> Error {
+        var domainError: DomainError = DomainError.Unexpected
+        if let dp3tError = error as? DP3TTracingError {
+            
+        }
+        
+        if let enError = error as? ENError {
+            if enError.code == ENError.Code.notAuthorized {
+                domainError = DomainError.NotAuthorized
+                errorUseCase.setState(error: domainError)
+            }
+        }
+        
+        return domainError
     }
 
 }
