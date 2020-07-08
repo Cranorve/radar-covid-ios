@@ -16,29 +16,19 @@ class ConfigurationUseCase {
     private let tokenApi: TokenAPI
     private let settingsApi: SettingsAPI
     private let versionHandler: VersionHandler
-    private let syncUseCase: SyncUseCase
     
     init(settingsRepository: SettingsRepository,
          tokenApi: TokenAPI,
          settingsApi: SettingsAPI,
-         versionHandler: VersionHandler,
-         syncUseCase: SyncUseCase) {
+         versionHandler: VersionHandler) {
         self.settingsRepository = settingsRepository
         self.tokenApi = tokenApi
         self.settingsApi = settingsApi
         self.versionHandler = versionHandler
-        self.syncUseCase = syncUseCase
     }
     
     func loadConfig() -> Observable<Settings> {
 
-        getConfig().flatMap { [weak self] settings in
-            self?.syncUseCase.syncIfNeeded().map { _ in settings } ?? .empty()
-        }
-    
-    }
-    
-    private func getConfig() -> Observable<Settings> {
         Observable<Settings>.zip(getUuid(),
                                  settingsApi.getSettings() ) { [weak self] token, backSettings in
                 let settings = Settings()
@@ -51,7 +41,9 @@ class ConfigurationUseCase {
                 }
                 return settings
         }
+    
     }
+
     
     private func getUuid() -> Observable<String?> {
         .deferred {

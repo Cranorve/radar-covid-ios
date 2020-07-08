@@ -15,11 +15,14 @@ class RadarStatusUseCase {
     
     private let preferencesRepository: PreferencesRepository
     private let errorUseCase: ErrorUseCase
+    private let syncUseCase: SyncUseCase
     
     init(preferencesRepository: PreferencesRepository,
-         errorUseCase: ErrorUseCase) {
+         errorUseCase: ErrorUseCase,
+         syncUseCase: SyncUseCase) {
         self.preferencesRepository = preferencesRepository
         self.errorUseCase = errorUseCase
+        self.syncUseCase = syncUseCase
     }
     
     func changeTracingStatus(active: Bool) -> Observable<Bool> {
@@ -57,8 +60,10 @@ class RadarStatusUseCase {
             
     }
     
-    func restoreLastState() -> Observable<Bool> {
-        changeTracingStatus(active: preferencesRepository.isTracingActive())
+    func restoreLastStateAndSync() -> Observable<Bool> {
+        changeTracingStatus(active: preferencesRepository.isTracingActive()).flatMap { [weak self] active in
+            self?.syncUseCase.syncIfNeeded().map { active } ?? .empty()
+        }
     }
     
     

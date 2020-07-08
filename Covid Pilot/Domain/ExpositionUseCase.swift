@@ -85,9 +85,13 @@ class ExpositionUseCase: DP3TTracingDelegate {
     
     private func showNotification(_ expositionInfo: ExpositionInfo) -> Bool {
         if let localEI = expositionInfoRepository.getExpositionInfo() {
-            return localEI != expositionInfo
+            return !equals(localEI, expositionInfo)
         }
         return false
+    }
+    
+    private func equals(_ ei1: ExpositionInfo, _ ei2: ExpositionInfo) -> Bool {
+        ei1.level == ei2.level && ei1.since == ei2.since
     }
     
     private func dp3tTracingErrorToDomain(_ error: DP3TTracingError) -> ExpositionInfo? {

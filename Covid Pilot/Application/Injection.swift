@@ -120,7 +120,8 @@ class Injection {
         
         container.register(RadarStatusUseCase.self) { r in
             RadarStatusUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!,
-                               errorUseCase: r.resolve(ErrorUseCase.self)!)
+                               errorUseCase: r.resolve(ErrorUseCase.self)!,
+                               syncUseCase: r.resolve(SyncUseCase.self)!)
         }.inObjectScope(.container)
         
         container.register(BluetoothUseCase.self) { r in
@@ -148,8 +149,7 @@ class Injection {
             ConfigurationUseCase(settingsRepository: r.resolve(SettingsRepository.self)!,
                                  tokenApi: r.resolve(TokenAPI.self)!,
                                  settingsApi: r.resolve(SettingsAPI.self)!,
-                                 versionHandler: r.resolve(VersionHandler.self)!,
-                                 syncUseCase: r.resolve(SyncUseCase.self)!)
+                                 versionHandler: r.resolve(VersionHandler.self)!)
         }.inObjectScope(.container)
         
         container.register(SyncUseCase.self) { r in
