@@ -18,6 +18,8 @@
 		39A1AD46249225510049E48B /* HighExposition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39A1AD45249225510049E48B /* HighExposition.storyboard */; };
 		39A1AD48249225A40049E48B /* HighExpositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1AD47249225A40049E48B /* HighExpositionViewController.swift */; };
 		39C3FEC32497746900D1A13E /* DiagnosisCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3FEC22497746900D1A13E /* DiagnosisCodeUseCase.swift */; };
+		5C90212224B4C28C00C5704F /* PositiveExposed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C90212024B4C28B00C5704F /* PositiveExposed.storyboard */; };
+		5C90212324B4C28C00C5704F /* PositiveExposedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C90212124B4C28B00C5704F /* PositiveExposedViewController.swift */; };
 		6D1F99D724AA1C60001CFDE2 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 6D1F99D624AA1C60001CFDE2 /* DP3TSDK */; };
 		6D2CA48524B4C69B00981DA4 /* PositiveExposedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2CA48324B4C69B00981DA4 /* PositiveExposedViewController.swift */; };
 		6D2CA48624B4C69B00981DA4 /* PositiveExposed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2CA48424B4C69B00981DA4 /* PositiveExposed.storyboard */; };
