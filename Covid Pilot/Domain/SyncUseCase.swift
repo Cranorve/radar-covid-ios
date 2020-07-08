@@ -13,8 +13,9 @@ import DP3TSDK
 
 class SyncUseCase {
     
-    private let syncInterval: TimeInterval = 10
-    
+    // Force sync if last sync was older than 12 hours
+    private let syncInterval: TimeInterval = 12 * 60 * 60
+
     private let preferencesRepository: PreferencesRepository
     
     init(preferencesRepository: PreferencesRepository) {
