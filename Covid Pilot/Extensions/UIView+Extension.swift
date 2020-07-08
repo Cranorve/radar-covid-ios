@@ -36,10 +36,11 @@ extension UIView {
             }
         }
     }
-    func fadeIn(){
+    func fadeIn(_ alpha: CGFloat? = 1.0){
         self.alpha = 0.0
+        
         UIView.animate(withDuration: 0.3, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
-            self.alpha = 1.0
+            self.alpha = alpha!
         }, completion: nil)
     }
     

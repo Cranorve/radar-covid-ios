@@ -45,7 +45,7 @@ class UserDefaultsPreferencesRepository : PreferencesRepository {
     }
     
     func isTracingActive() -> Bool {
-        userDefaults.object(forKey: UserDefaultsPreferencesRepository.kTracing) as? Bool ?? false
+        userDefaults.object(forKey: UserDefaultsPreferencesRepository.kTracing) as? Bool ?? true
     }
     
     func setTracing(active: Bool) {

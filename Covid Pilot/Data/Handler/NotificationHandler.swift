@@ -8,21 +8,32 @@
 
 import Foundation
 import UserNotifications
+import RxSwift
 
 class NotificationHandler: NSObject, UNUserNotificationCenterDelegate {
     
     private let formatter: DateFormatter = DateFormatter()
 
-    func setupNotifications() {
-        let notificationCenter = UNUserNotificationCenter.current()
-        notificationCenter.delegate = self
-        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
-        notificationCenter.requestAuthorization(options: options) {
-            (didAllow, error) in
-            if !didAllow {
-                print("User has declined notifications")
+    func setupNotifications() -> Observable<Bool> {
+        .create { (observer) -> Disposable in
+            let notificationCenter = UNUserNotificationCenter.current()
+            notificationCenter.delegate = self
+            let options: UNAuthorizationOptions = [.alert, .sound]
+            notificationCenter.requestAuthorization(options: options) { didAllow, error in
+                if let error = error {
+                    observer.onError(error)
+                } else {
+                    if !didAllow {
+                        debugPrint("User has declined notifications")
+                    }
+                    observer.onNext(didAllow)
+                    observer.onCompleted()
+                }
+
             }
+            return Disposables.create()
         }
+        
     }
     
     func scheduleNotification(title: String, body: String, sound: UNNotificationSound) {
@@ -34,7 +45,6 @@ class NotificationHandler: NSObject, UNUserNotificationCenterDelegate {
         content.title = title
         content.body = body
         content.sound = sound
-        content.badge = 1
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
 

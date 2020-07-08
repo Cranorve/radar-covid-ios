@@ -35,10 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             debugPrint("Error initializing DP3T \(error)")
         }
         
-        let notificationHandler = injection.resolve(NotificationHandler.self)!
-        
-        notificationHandler.setupNotifications()
-        
         return true
     }
 

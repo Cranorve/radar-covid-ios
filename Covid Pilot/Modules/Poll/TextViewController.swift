@@ -19,6 +19,8 @@ class TextViewController: UIViewController, UITextViewDelegate, QuestionControll
         textView.delegate = self
         textView.clipsToBounds = true;
         textView.layer.cornerRadius = 10.0;
+        textView.text = "Describir...";
+        textView.textColor = UIColor.lightGray
         // Do any additional setup after loading the view.
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
@@ -27,6 +29,20 @@ class TextViewController: UIViewController, UITextViewDelegate, QuestionControll
     
     override func viewWillDisappear(_ animated: Bool) {
         endEditingTextView()
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Describir..."
+            textView.textColor = UIColor.lightGray
+        }
     }
     
     func textViewDidChange(_ textView: UITextView) {
