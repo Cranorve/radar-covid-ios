@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import RxSwift
 
 class ActivateCovidNotificationViewController: UIViewController {
     
+    private let disposeBag = DisposeBag()
+    
     var router: AppRouter?
     var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
+    var radarStatusUseCase: RadarStatusUseCase?
     
     @IBOutlet weak var helpView: UIView!
     
@@ -19,13 +23,20 @@ class ActivateCovidNotificationViewController: UIViewController {
         self.helpView.isHidden = false
         self.helpView.fadeIn(0.9)
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) { [weak self] in
-            guard let this = self else {
-                return
-            }
-            this.router?.route(to: .ActivatePush, from: this)
-        }
+        radarStatusUseCase?.restoreLastStateAndSync().subscribe(
+            onNext:{ [weak self] isTracingActive in
+                self?.activationFinished()
+            }, onError: { [weak self] error in
+                debugPrint(error)
+                self?.activationFinished()
+        }).disposed(by: disposeBag)
+        
     }
+    
+    func activationFinished() {
+        router?.route(to: .ActivatePush, from: self)
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)

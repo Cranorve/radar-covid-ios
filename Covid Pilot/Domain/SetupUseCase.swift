@@ -46,15 +46,6 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
                                                 jwtPublicKey: Config.validationKey,
                                                 mode: Config.dp3tMode), backgroundHandler: self)
         
-        if (preferencesRepository.isTracingActive()) {
-            do {
-                try DP3TTracing.startTracing()
-            } catch {
-                debugPrint("Error starting tracing \(error)")
-            }
-        } else {
-            DP3TTracing.stopTracing()
-        }
         
     }
     

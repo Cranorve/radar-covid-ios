@@ -268,6 +268,7 @@ class Injection {
             let activateCovidVC = ActivateCovidNotificationViewController()
             activateCovidVC.router = r.resolve(AppRouter.self)!
             activateCovidVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
+            activateCovidVC.radarStatusUseCase = r.resolve(RadarStatusUseCase.self)!
             return activateCovidVC
         }
         
