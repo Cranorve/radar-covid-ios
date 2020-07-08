@@ -13,9 +13,12 @@ import RxSwift
 class RadarStatusUseCase {
     
     private let preferencesRepository: PreferencesRepository
+    private let syncUseCase: SyncUseCase
     
-    init(preferencesRepository: PreferencesRepository) {
+    init(preferencesRepository: PreferencesRepository,
+         syncUseCase: SyncUseCase) {
         self.preferencesRepository = preferencesRepository
+        self.syncUseCase = syncUseCase
     }
     
     func isTracingActive() -> Bool {
@@ -58,6 +61,13 @@ class RadarStatusUseCase {
         }
             
     }
+    
+    func restoreLastStateAndSync() -> Observable<Bool> {
+        changeTracingStatus(active: preferencesRepository.isTracingActive()).flatMap { [weak self] active in
+            self?.syncUseCase.syncIfNeeded().map { active } ?? .empty()
+        }
+    }
+
 
 }
     
