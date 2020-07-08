@@ -63,8 +63,11 @@ class RadarStatusUseCase {
     }
     
     func restoreLastStateAndSync() -> Observable<Bool> {
-        changeTracingStatus(active: preferencesRepository.isTracingActive()).flatMap { [weak self] active in
-            self?.syncUseCase.syncIfNeeded().map { active } ?? .empty()
+        changeTracingStatus(active: preferencesRepository.isTracingActive()).flatMap { [weak self] active -> Observable<Bool> in
+            if (active) {
+                return self?.syncUseCase.syncIfNeeded().map { active } ?? .empty()
+            }
+            return .just(active)
         }
     }
 
