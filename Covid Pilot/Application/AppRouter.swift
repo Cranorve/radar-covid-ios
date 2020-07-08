@@ -29,6 +29,9 @@ public enum Routes {
     case PositiveExposed
     case Poll
     case PollFinished
+    case ActivateCovid
+    case ActivatePush
+
 }
 
 class AppRouter : Router {
@@ -45,7 +48,9 @@ class AppRouter : Router {
     var pollVC: PollViewController?
     var pollFinishedVC: FinishPollViewController?
     var welcomeVC: WelcomeViewController?
-    
+    var activateCovid: ActivateCovidNotificationViewController?
+    var activatePush: ActivatePushNotificationViewController?
+
     func route(to routeID: Routes, from context: UIViewController, parameters: Any?...) {
         switch routeID {
         case .Welcome:
@@ -56,6 +61,10 @@ class AppRouter : Router {
             routeToHome(context)
         case .Info:
             routeToInfo(context)
+        case .ActivateCovid:
+            routeToCovid(context)
+        case .ActivatePush:
+            routeToPush(context)
         case .MyHealth:
             routeToMyHealth(context)
         case .MyHealthReported:
@@ -83,6 +92,14 @@ class AppRouter : Router {
     
     private func routeToInfo(_ context: UIViewController) {
         context.navigationController?.pushViewController(infoVC!, animated: true)
+    }
+    
+    private func routeToCovid(_ context: UIViewController) {
+       context.navigationController?.pushViewController(activateCovid!, animated: true)
+    }
+    
+    private func routeToPush(_ context: UIViewController) {
+       context.navigationController?.pushViewController(activatePush!, animated: true)
     }
     
     private func routeToMyHealth(_ context: UIViewController) {

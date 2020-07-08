@@ -78,6 +78,10 @@ class Injection {
             appRouter.pollVC = r.resolve(PollViewController.self)!
             appRouter.pollFinishedVC = r.resolve(FinishPollViewController.self)!
             appRouter.welcomeVC = r.resolve(WelcomeViewController.self)!
+            appRouter.activateCovid = r.resolve(ActivateCovidNotificationViewController.self)!
+            appRouter.activatePush = r.resolve(ActivatePushNotificationViewController.self)!
+
+
         }
         
         container.register(PreferencesRepository.self) { r in
@@ -258,6 +262,20 @@ class Injection {
             welcomeVC.router = r.resolve(AppRouter.self)!
             welcomeVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
             return welcomeVC
+        }
+        
+        container.register(ActivateCovidNotificationViewController.self) {  r in
+            let activateCovidVC = ActivateCovidNotificationViewController()
+            activateCovidVC.router = r.resolve(AppRouter.self)!
+            activateCovidVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
+            return activateCovidVC
+        }
+        
+        container.register(ActivatePushNotificationViewController.self) {  r in
+            let activatePushVC = ActivatePushNotificationViewController()
+            activatePushVC.router = r.resolve(AppRouter.self)!
+            activatePushVC.notificationHandler = r.resolve(NotificationHandler.self)
+            return activatePushVC
         }
     }
     

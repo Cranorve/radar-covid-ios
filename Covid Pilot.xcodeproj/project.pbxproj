@@ -19,10 +19,10 @@
 		39A1AD48249225A40049E48B /* HighExpositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1AD47249225A40049E48B /* HighExpositionViewController.swift */; };
 		39C3FEC32497746900D1A13E /* DiagnosisCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3FEC22497746900D1A13E /* DiagnosisCodeUseCase.swift */; };
 		6D1F99D724AA1C60001CFDE2 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 6D1F99D624AA1C60001CFDE2 /* DP3TSDK */; };
-		6D2CA48524B4C69B00981DA4 /* PositiveExposedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2CA48324B4C69B00981DA4 /* PositiveExposedViewController.swift */; };
-		6D2CA48624B4C69B00981DA4 /* PositiveExposed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2CA48424B4C69B00981DA4 /* PositiveExposed.storyboard */; };
 		6D2CA48024B3353600981DA4 /* ErrorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2CA47F24B3353600981DA4 /* ErrorUseCase.swift */; };
 		6D2CA48224B3571900981DA4 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2CA48124B3571900981DA4 /* Error.swift */; };
+		6D2CA48524B4C69B00981DA4 /* PositiveExposedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2CA48324B4C69B00981DA4 /* PositiveExposedViewController.swift */; };
+		6D2CA48624B4C69B00981DA4 /* PositiveExposed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2CA48424B4C69B00981DA4 /* PositiveExposed.storyboard */; };
 		6D5AFC8D2492827C00EFE838 /* muli_extrabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC892492827B00EFE838 /* muli_extrabold.ttf */; };
 		6D5AFC8E2492827C00EFE838 /* muli_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC8A2492827C00EFE838 /* muli_semibold.ttf */; };
 		6D5AFC8F2492827C00EFE838 /* muli_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC8B2492827C00EFE838 /* muli_bold.ttf */; };
@@ -123,6 +123,10 @@
 		6DF6ECE52490C1F5007EAA40 /* BluetoothHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECE42490C1F5007EAA40 /* BluetoothHandler.swift */; };
 		766C73A524B4DF440056D2DB /* PositiveExposedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766C73A324B4DF430056D2DB /* PositiveExposedViewController.swift */; };
 		766C73A624B4DF440056D2DB /* PositiveExposed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766C73A424B4DF440056D2DB /* PositiveExposed.storyboard */; };
+		766C73A924B561B80056D2DB /* ActivateCovidNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766C73A724B561B70056D2DB /* ActivateCovidNotificationViewController.swift */; };
+		766C73AA24B561B80056D2DB /* ActivateCovidNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766C73A824B561B70056D2DB /* ActivateCovidNotificationViewController.xib */; };
+		766C73AD24B567C50056D2DB /* ActivatePushNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766C73AB24B567C50056D2DB /* ActivatePushNotificationViewController.swift */; };
+		766C73AE24B567C50056D2DB /* ActivatePushNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766C73AC24B567C50056D2DB /* ActivatePushNotificationViewController.xib */; };
 		76D9BD1C24A8992000BA6697 /* NVActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9BCF124A8992000BA6697 /* NVActivityIndicatorAnimationDelegate.swift */; };
 		76D9BD1D24A8992000BA6697 /* NVActivityIndicatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9BCF324A8992000BA6697 /* NVActivityIndicatorPresenter.swift */; };
 		76D9BD1E24A8992000BA6697 /* NVActivityIndicatorViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9BCF424A8992000BA6697 /* NVActivityIndicatorViewable.swift */; };
@@ -181,10 +185,10 @@
 		39A1AD45249225510049E48B /* HighExposition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HighExposition.storyboard; sourceTree = "<group>"; };
 		39A1AD47249225A40049E48B /* HighExpositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighExpositionViewController.swift; sourceTree = "<group>"; };
 		39C3FEC22497746900D1A13E /* DiagnosisCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisCodeUseCase.swift; sourceTree = "<group>"; };
-		6D2CA48324B4C69B00981DA4 /* PositiveExposedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositiveExposedViewController.swift; sourceTree = "<group>"; };
-		6D2CA48424B4C69B00981DA4 /* PositiveExposed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PositiveExposed.storyboard; sourceTree = "<group>"; };
 		6D2CA47F24B3353600981DA4 /* ErrorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorUseCase.swift; sourceTree = "<group>"; };
 		6D2CA48124B3571900981DA4 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		6D2CA48324B4C69B00981DA4 /* PositiveExposedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositiveExposedViewController.swift; sourceTree = "<group>"; };
+		6D2CA48424B4C69B00981DA4 /* PositiveExposed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PositiveExposed.storyboard; sourceTree = "<group>"; };
 		6D5AFC892492827B00EFE838 /* muli_extrabold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = muli_extrabold.ttf; sourceTree = "<group>"; };
 		6D5AFC8A2492827C00EFE838 /* muli_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = muli_semibold.ttf; sourceTree = "<group>"; };
 		6D5AFC8B2492827C00EFE838 /* muli_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = muli_bold.ttf; sourceTree = "<group>"; };
@@ -283,6 +287,10 @@
 		6DF6ECE42490C1F5007EAA40 /* BluetoothHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothHandler.swift; sourceTree = "<group>"; };
 		766C73A324B4DF430056D2DB /* PositiveExposedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositiveExposedViewController.swift; sourceTree = "<group>"; };
 		766C73A424B4DF440056D2DB /* PositiveExposed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PositiveExposed.storyboard; sourceTree = "<group>"; };
+		766C73A724B561B70056D2DB /* ActivateCovidNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivateCovidNotificationViewController.swift; path = "Covid Pilot/Modules/OnBoarding/ActivateCovidNotificationViewController.swift"; sourceTree = SOURCE_ROOT; };
+		766C73A824B561B70056D2DB /* ActivateCovidNotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActivateCovidNotificationViewController.xib; path = "Covid Pilot/Modules/OnBoarding/ActivateCovidNotificationViewController.xib"; sourceTree = SOURCE_ROOT; };
+		766C73AB24B567C50056D2DB /* ActivatePushNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivatePushNotificationViewController.swift; sourceTree = "<group>"; };
+		766C73AC24B567C50056D2DB /* ActivatePushNotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivatePushNotificationViewController.xib; sourceTree = "<group>"; };
 		76D9BCF124A8992000BA6697 /* NVActivityIndicatorAnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationDelegate.swift; sourceTree = "<group>"; };
 		76D9BCF324A8992000BA6697 /* NVActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorPresenter.swift; sourceTree = "<group>"; };
 		76D9BCF424A8992000BA6697 /* NVActivityIndicatorViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorViewable.swift; sourceTree = "<group>"; };
@@ -437,6 +445,10 @@
 				394E962B248E3F6E009F640E /* OnBoarding.storyboard */,
 				6DF6ECC9248F743B007EAA40 /* OnBoardingViewController.swift */,
 				6DE27CA824A0D34C00BBCF40 /* TableHeaderView.swift */,
+				766C73A724B561B70056D2DB /* ActivateCovidNotificationViewController.swift */,
+				766C73A824B561B70056D2DB /* ActivateCovidNotificationViewController.xib */,
+				766C73AB24B567C50056D2DB /* ActivatePushNotificationViewController.swift */,
+				766C73AC24B567C50056D2DB /* ActivatePushNotificationViewController.xib */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -888,6 +900,7 @@
 				6DE27C87249E14CA00BBCF40 /* TextViewController.xib in Resources */,
 				39443296248939F500FF0217 /* LaunchScreen.storyboard in Resources */,
 				6DF6ECD4248FA0B3007EAA40 /* HelpLine.storyboard in Resources */,
+				766C73AA24B561B80056D2DB /* ActivateCovidNotificationViewController.xib in Resources */,
 				6DF6EC99248E59C6007EAA40 /* Info.storyboard in Resources */,
 				6DF6ECCF248FA032007EAA40 /* MyData.storyboard in Resources */,
 				6D5AFC9A249296F000EFE838 /* Poll.storyboard in Resources */,
@@ -895,6 +908,7 @@
 				6DB5417C2497DFFE00166D37 /* QuestionItemCell.xib in Resources */,
 				6D5AFC932492883700EFE838 /* muli_regular.ttf in Resources */,
 				6DE27C9F24A0AA2300BBCF40 /* WelcomeViewController.xib in Resources */,
+				766C73AE24B567C50056D2DB /* ActivatePushNotificationViewController.xib in Resources */,
 				399CA87D24912B96000B6BF4 /* MyHealthReported.storyboard in Resources */,
 				6D5AFCFE2493B3AA00EFE838 /* SelectViewController.xib in Resources */,
 				394E962F248E7F25009F640E /* MyHealth.storyboard in Resources */,
@@ -967,6 +981,7 @@
 				6DE27D4124A7A08C00BBCF40 /* SyncUseCase.swift in Sources */,
 				76D9BD4124A8992000BA6697 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				76D9BD1C24A8992000BA6697 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
+				766C73A924B561B80056D2DB /* ActivateCovidNotificationViewController.swift in Sources */,
 				6DA18CC224916B4100BE8AAB /* ExpositionViewController.swift in Sources */,
 				6DB5418F24989C2500166D37 /* SettingsDto.swift in Sources */,
 				6DE27C78249A6D4600BBCF40 /* AlamofireImplementations.swift in Sources */,
@@ -1038,6 +1053,7 @@
 				6DF6ECC4248F691E007EAA40 /* HomeViewController.swift in Sources */,
 				6D7AB26F24ADED7400F30E0B /* ExpositionInfoRepository.swift in Sources */,
 				6DE27CA924A0D34C00BBCF40 /* TableHeaderView.swift in Sources */,
+				766C73AD24B567C50056D2DB /* ActivatePushNotificationViewController.swift in Sources */,
 				6D5AFCFA2493AA7F00EFE838 /* QuestionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

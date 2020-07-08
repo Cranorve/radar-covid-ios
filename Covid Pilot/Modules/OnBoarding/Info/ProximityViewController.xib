@@ -33,7 +33,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clA-8A-tCK">
-                    <rect key="frame" x="0.0" y="44" width="414" height="672"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="732"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l55-Aw-9eh">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="558.5"/>
@@ -146,7 +146,7 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="ynP-56-ZDW"/>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJN-UP-OSP">
-                    <rect key="frame" x="0.0" y="716" width="414" height="146"/>
+                    <rect key="frame" x="0.0" y="776" width="414" height="86"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gh7-C2-OVe">
                             <rect key="frame" x="16" y="10" width="382" height="56"/>
@@ -155,7 +155,7 @@
                                 <constraint firstAttribute="height" constant="56" id="3cO-0b-3sv"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
-                            <state key="normal" title="Activar Rastreo Bluetooth" backgroundImage="GradientBackgroundButton">
+                            <state key="normal" title="Continuar" backgroundImage="GradientBackgroundButton">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -169,43 +169,13 @@
                                 <action selector="onContinue:" destination="-1" eventType="primaryActionTriggered" id="YJV-d9-3AK"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQO-n1-ENt">
-                            <rect key="frame" x="16" y="80" width="382" height="56"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="56" id="34M-cj-rei"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
-                            <state key="normal" title="Continuar sin activar">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="10"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
-                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                    <color key="value" red="0.43921568630000002" green="0.31372549020000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                    <integer key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="continueNoBluetooth:" destination="-1" eventType="primaryActionTriggered" id="DpW-Di-ENR"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" name="bgColor"/>
                     <constraints>
                         <constraint firstItem="Gh7-C2-OVe" firstAttribute="leading" secondItem="QJN-UP-OSP" secondAttribute="leading" constant="16" id="5rg-wX-fXR"/>
-                        <constraint firstItem="VQO-n1-ENt" firstAttribute="leading" secondItem="QJN-UP-OSP" secondAttribute="leading" constant="16" id="6sc-dt-eyA"/>
-                        <constraint firstAttribute="trailing" secondItem="VQO-n1-ENt" secondAttribute="trailing" constant="16" id="Eam-cf-0dc"/>
                         <constraint firstItem="Gh7-C2-OVe" firstAttribute="top" secondItem="QJN-UP-OSP" secondAttribute="top" constant="10" id="IDG-IN-5Xh"/>
                         <constraint firstAttribute="trailing" secondItem="Gh7-C2-OVe" secondAttribute="trailing" constant="16" id="NPl-Si-Bnn"/>
-                        <constraint firstItem="VQO-n1-ENt" firstAttribute="top" secondItem="Gh7-C2-OVe" secondAttribute="bottom" constant="14" id="OGM-pr-1Nc"/>
-                        <constraint firstAttribute="bottom" secondItem="VQO-n1-ENt" secondAttribute="bottom" constant="10" id="eqf-VF-Bub"/>
+                        <constraint firstAttribute="bottom" secondItem="Gh7-C2-OVe" secondAttribute="bottom" constant="20" id="Uu8-j4-rAF"/>
                     </constraints>
                 </view>
             </subviews>
