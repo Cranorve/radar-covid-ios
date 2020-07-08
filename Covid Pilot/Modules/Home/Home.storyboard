@@ -31,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUO-V4-jee" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="722.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="711.66666666666663"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="Ker-eU-Kvi" userLabel="circleBG">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="330.66666666666669"/>
@@ -50,7 +50,7 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgD-SH-6Y2">
-                                                <rect key="frame" x="10" y="658.33333333333337" width="394" height="54"/>
+                                                <rect key="frame" x="10" y="647.66666666666663" width="394" height="54"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="54" id="UKC-Bh-shj"/>
                                                 </constraints>
@@ -69,16 +69,16 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hz-zu-Mhb" customClass="BackgroundView" customModule="Radar_COVID" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="271.33333333333331" width="394" height="139"/>
+                                                <rect key="frame" x="10" y="271.33333333333331" width="394" height="133.66666666666669"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Exposición baja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Tiy-hB-953">
-                                                        <rect key="frame" x="10" y="18.333333333333371" width="179.33333333333334" height="30.333333333333329"/>
+                                                        <rect key="frame" x="10" y="19.666666666666686" width="170" height="28"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XCQ-uz-Hi1">
-                                                        <rect key="frame" x="10" y="58.666666666666686" width="364" height="60.333333333333343"/>
+                                                        <rect key="frame" x="10" y="57.666666666666686" width="364" height="56"/>
                                                         <string key="text">Te informaremos en el caso de un posible contacto. 
 Cuídate y cuida a los demás.</string>
                                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
@@ -101,10 +101,10 @@ Cuídate y cuida a los demás.</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuQ-dg-Nwm" customClass="BackgroundView" customModule="Radar_COVID" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="430.33333333333326" width="394" height="218"/>
+                                                <rect key="frame" x="10" y="425.00000000000006" width="394" height="212.66666666666669"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radar COVID activo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p5A-O2-cnn">
-                                                        <rect key="frame" x="26" y="20" width="287.66666666666669" height="25.333333333333329"/>
+                                                        <rect key="frame" x="26" y="20" width="287.66666666666669" height="23.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -116,20 +116,20 @@ Cuídate y cuida a los demás.</string>
                                                         </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="NOTIFICACIONES DE EXPOSICIÓN A LA COVID-19 DESACTIVADAS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Le3-5O-yti" userLabel="notification inactive message">
-                                                        <rect key="frame" x="26" y="75.333333333333371" width="288" height="40.666666666666657"/>
+                                                        <rect key="frame" x="26" y="73.333333333333314" width="288" height="40.666666666666657"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="darkPeach"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdH-mH-0eN">
-                                                        <rect key="frame" x="339" y="75.666666666666686" width="35" height="22"/>
+                                                        <rect key="frame" x="339" y="73.333333333333314" width="35" height="22"/>
                                                         <state key="normal" title="Button" image="arrowRight"/>
                                                         <connections>
                                                             <action selector="ActivateNotifications:" destination="boN-vE-v6h" eventType="touchUpInside" id="qQr-gy-eeT"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Las interacciones con móviles cercanos se registarán siempre anónimamente. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5DO-YK-Xnt">
-                                                        <rect key="frame" x="26" y="147.66666666666669" width="348" height="40.333333333333343"/>
+                                                        <rect key="frame" x="26" y="145.33333333333337" width="348" height="37.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -207,7 +207,7 @@ Cuídate y cuida a los demás.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhE-Do-sZ1">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <color key="backgroundColor" red="0.53333333333333333" green="0.58431372549019611" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -220,7 +220,7 @@ Cuídate y cuida a los demás.</string>
                             <constraint firstItem="uUO-V4-jee" firstAttribute="width" secondItem="bH7-lt-L7E" secondAttribute="width" id="BUG-wc-oBe"/>
                             <constraint firstItem="lhE-Do-sZ1" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" id="GES-HC-08X"/>
                             <constraint firstItem="JEu-F8-ZM1" firstAttribute="top" secondItem="bH7-lt-L7E" secondAttribute="top" id="Ij6-j4-nUd"/>
-                            <constraint firstItem="lhE-Do-sZ1" firstAttribute="top" secondItem="AA3-07-0Pc" secondAttribute="top" id="KuV-aC-xCG"/>
+                            <constraint firstItem="lhE-Do-sZ1" firstAttribute="top" secondItem="bH7-lt-L7E" secondAttribute="top" id="KuV-aC-xCG"/>
                             <constraint firstItem="AKG-lv-3X4" firstAttribute="centerX" secondItem="bH7-lt-L7E" secondAttribute="centerX" id="MVc-Dr-zgZ"/>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="bottom" secondItem="lhE-Do-sZ1" secondAttribute="bottom" id="Otg-Jj-Elh"/>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="AKG-lv-3X4" secondAttribute="trailing" constant="112.5" id="SI4-y6-eEz"/>
@@ -240,6 +240,7 @@ Cuídate y cuida a los demás.</string>
                         <outlet property="expositionView" destination="6hz-zu-Mhb" id="8iB-cX-vMh"/>
                         <outlet property="helpView" destination="lhE-Do-sZ1" id="QHD-vS-dWe"/>
                         <outlet property="imageCheck" destination="s47-VN-7tM" id="pmS-0V-GBe"/>
+                        <outlet property="imageCircle" destination="Ker-eU-Kvi" id="bfD-Fp-gvF"/>
                         <outlet property="imageDefault" destination="6NQ-cJ-mH8" id="Vdx-I6-dIm"/>
                         <outlet property="notificationInactiveMessage" destination="Le3-5O-yti" id="zZ8-Wv-yLt"/>
                         <outlet property="radarMessage" destination="5DO-YK-Xnt" id="mg3-Yj-6Kn"/>

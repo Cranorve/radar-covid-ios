@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var topRadarTitle: NSLayoutConstraint!
     @IBOutlet weak var topActiveNotification: NSLayoutConstraint!
+    @IBOutlet weak var imageCircle: UIImageView!
     @IBOutlet weak var envLabel: UILabel!
     @IBOutlet weak var imageDefault: UIImageView!
     @IBOutlet weak var imageCheck: UIImageView!
@@ -48,14 +49,15 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var resetDataButton: UIButton!
     
     private var expositionInfo: ExpositionInfo?
-    
+    var isColor = true
     var router: AppRouter?
     var expositionUseCase: ExpositionUseCase?
     var radarStatusUseCase: RadarStatusUseCase?
     var syncUseCase: SyncUseCase?
     var resetDataUseCase: ResetDataUseCase?
     var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
-    
+    var originalImage: UIImage?
+    var originalCircleImage: UIImage?
     @IBAction func onCommunicate(_ sender: Any) {
         guard let expositionInfo = expositionInfo else {
             return
@@ -76,10 +78,14 @@ class HomeViewController: UIViewController {
             self.helpView.fadeIn(0.9)
             let alert = Alert.showAlertCancelContinue(title: "¿Estas seguro de desactivar Radar COVID?", message: "Si desactivas Radar COVID, la aplicación dejará de registrar contactos. Ayúdanos a cuidarte" , buttonOkTitle: "Desactivar", buttonCancelTitle: "Mantener activo",
                 okHandler: { [weak self] _ in self?.changeRadarStatus(false)
+                    self?.imageDefault.image = self?.originalImage?.grayScale
+                    self?.imageCircle.image = self?.originalCircleImage?.grayScale
                     self?.helpView.isHidden = true
                     self?.helpView.fadeOut()
                 },
                 cancelHandler: { [weak self] _ in self?.radarSwitch.isOn = true
+                    self?.imageDefault.image = self?.originalImage
+                    self?.imageCircle.image = self?.originalCircleImage
                     self?.helpView.isHidden = true
                     self?.helpView.fadeOut()
             })
@@ -121,9 +127,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        checkOnboarding()
-        
+        self.originalImage = self.imageDefault.image
+        self.originalCircleImage = self.imageCircle.image
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.onExpositionTap))
         expositionView.addGestureRecognizer(gesture)
         radarView.image = UIImage(named: "WhiteCard")
@@ -155,6 +160,7 @@ class HomeViewController: UIViewController {
                 self?.view.hideLoading()
                 self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
+        checkOnboarding()
         
     }
     
@@ -212,6 +218,8 @@ class HomeViewController: UIViewController {
                 ActivateNotificationButton.isHidden = true
                 topActiveNotification.priority = .defaultLow
                 topRadarTitle.priority = .defaultHigh
+                self.imageDefault.image = self.originalImage
+                self.imageCircle.image = self.originalCircleImage
                 break
             case .Healthy:
                 expositionTitle.text = "Exposición baja"
@@ -228,6 +236,8 @@ class HomeViewController: UIViewController {
                 ActivateNotificationButton.isHidden = true
                 topActiveNotification.priority = .defaultLow
                 topRadarTitle.priority = .defaultHigh
+                self.imageDefault.image = self.originalImage
+                self.imageCircle.image = self.originalCircleImage
                 break
             case .Infected:
                 expositionTitle.text = "COVID-19 Positivo"
@@ -239,6 +249,8 @@ class HomeViewController: UIViewController {
                 ActivateNotificationButton.isHidden = true
                 topActiveNotification.priority = .defaultLow
                 topRadarTitle.priority = .defaultHigh
+                self.imageDefault.image = self.originalImage
+                self.imageCircle.image = self.originalCircleImage
                 break;
 
             case .Error:
@@ -256,6 +268,8 @@ class HomeViewController: UIViewController {
                 ActivateNotificationButton.isHidden = false
                 topActiveNotification.priority = .defaultHigh
                 topRadarTitle.priority = .defaultLow
+                self.imageDefault.image = self.originalImage?.grayScale
+                self.imageCircle.image = self.originalCircleImage?.grayScale
         }
         
     }
@@ -285,9 +299,7 @@ class HomeViewController: UIViewController {
                 
                 self.imageCheck.isHidden = true
                 self.imageDefault.isHidden = false
-                
             }
         }
     }
-    
 }
