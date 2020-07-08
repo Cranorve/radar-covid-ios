@@ -68,9 +68,9 @@ class RadarStatusUseCase {
     
     
     private func handle(error: Error) -> Error {
-        var domainError: DomainError = DomainError.Unexpected
+        let domainError: DomainError = DomainError.Unexpected
         if let dp3tError = error as? DP3TTracingError {
-            
+            debugPrint(dp3tError)
         }
         
         if let enError = error as? ENError {
