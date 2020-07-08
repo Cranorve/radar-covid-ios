@@ -34,7 +34,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="494"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJg-TW-Zyr">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="647"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="682.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkC-Jh-ngm">
                                     <rect key="frame" x="113" y="0.0" width="207" height="206.5"/>
@@ -60,13 +60,13 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activa el registro y las notificaciones de exposición a la COVID-19" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ln-m6-qGi">
-                                    <rect key="frame" x="16" y="150" width="288" height="130.5"/>
+                                    <rect key="frame" x="16" y="150" width="288" height="141"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txD-dN-Bbt">
-                                    <rect key="frame" x="16" y="300.5" width="284" height="326.5"/>
+                                    <rect key="frame" x="16" y="311" width="284" height="351.5"/>
                                     <string key="text">Para identificar si está en riesgo de infección y poder avisarte, debes habilitar estas opciones.
 
 En cualquier momento, podrás deshabilitar estas opciones.
@@ -128,17 +128,17 @@ Radar COVID utiliza Bluetooth Low Energy para intercambiar ID aleatoreas entre d
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona “Activar” en la ventana que aparecerá a continuación" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqY-fz-6bU">
-                            <rect key="frame" x="35" y="100" width="250" height="121.5"/>
+                            <rect key="frame" x="35" y="70" width="250" height="131"/>
                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="26"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.50588235294117645" green="0.5490196078431373" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.53333333333333333" green="0.58431372549019611" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="sqY-fz-6bU" firstAttribute="leading" secondItem="33g-9O-dbz" secondAttribute="leading" constant="35" id="5bT-Is-cBj"/>
                         <constraint firstAttribute="trailing" secondItem="sqY-fz-6bU" secondAttribute="trailing" constant="35" id="ZmD-71-xmZ"/>
-                        <constraint firstItem="sqY-fz-6bU" firstAttribute="top" secondItem="33g-9O-dbz" secondAttribute="top" constant="100" id="hyM-VZ-wKX"/>
+                        <constraint firstItem="sqY-fz-6bU" firstAttribute="top" secondItem="33g-9O-dbz" secondAttribute="top" constant="70" id="hyM-VZ-wKX"/>
                     </constraints>
                 </view>
             </subviews>
