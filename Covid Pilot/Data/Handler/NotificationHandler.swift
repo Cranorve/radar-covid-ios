@@ -16,7 +16,7 @@ class NotificationHandler: NSObject, UNUserNotificationCenterDelegate {
     func setupNotifications() {
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.delegate = self
-        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
+        let options: UNAuthorizationOptions = [.alert, .sound]
         notificationCenter.requestAuthorization(options: options) {
             (didAllow, error) in
             if !didAllow {
@@ -34,7 +34,6 @@ class NotificationHandler: NSObject, UNUserNotificationCenterDelegate {
         content.title = title
         content.body = body
         content.sound = sound
-        content.badge = 1
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
 
