@@ -59,7 +59,7 @@ class HomeViewController: UIViewController {
         let active = radarSwitch.isOn
         
         if !active {
-            let alert = Alert.showAlertCancelContinue(title: "¿Estas seguro?", message: "Si desactivas Radar COVID (el Bluetooth), no podremos avisarte." , buttonOkTitle: "Continuar", buttonCancelTitle: "Cancelar",
+            let alert = Alert.showAlertCancelContinue(title: "¿Estas seguro?", message: "Si desactivas Radar COVID (el Bluetooth), no podremos avisarte. Ayúdanos a cuidarte" , buttonOkTitle: "Continuar", buttonCancelTitle: "Cancelar",
                 okHandler: { [weak self] _ in self?.changeRadarStatus(false)},
                 cancelHandler: { [weak self] _ in self?.radarSwitch.isOn = true})
         
@@ -223,7 +223,7 @@ class HomeViewController: UIViewController {
             radarMessage.textColor = UIColor.black
         } else {
             radarTitle.text = "Radar COVID inactivo"
-            radarMessage.text = "Por favor, activa esta opción para poder identificar posibles contagios."
+            radarMessage.text = "Por favor, activa esta opción para que la aplicación funcione."
             radarMessage.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         }
     }
