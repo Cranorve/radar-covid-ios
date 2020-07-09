@@ -116,7 +116,6 @@
 		6DF6ECD6248FA0D0007EAA40 /* HelpLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECD5248FA0D0007EAA40 /* HelpLineViewController.swift */; };
 		6DF6ECD8248FBEC2007EAA40 /* MyHealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECD7248FBEC2007EAA40 /* MyHealthViewController.swift */; };
 		6DF6ECDB248FD641007EAA40 /* ExpositionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECDA248FD641007EAA40 /* ExpositionUseCase.swift */; };
-		6DF6ECDE248FD751007EAA40 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6DF6ECDD248FD751007EAA40 /* RxSwift */; };
 		6DF6ECE0248FD772007EAA40 /* ExpositionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECDF248FD772007EAA40 /* ExpositionInfo.swift */; };
 		6DF6ECE22490B83E007EAA40 /* BluetoothUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECE12490B83E007EAA40 /* BluetoothUseCase.swift */; };
 		6DF6ECE52490C1F5007EAA40 /* BluetoothHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6ECE42490C1F5007EAA40 /* BluetoothHandler.swift */; };
@@ -124,6 +123,8 @@
 		763489FD24B7530500B31C59 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763489FC24B7530500B31C59 /* UIFont+Extension.swift */; };
 		763489FF24B75A6900B31C59 /* TransparentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 763489FE24B75A6900B31C59 /* TransparentView.xib */; };
 		76348A0124B75A8500B31C59 /* TransparentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76348A0024B75A8500B31C59 /* TransparentView.swift */; };
+		764C6D1324B7E5BB002FA594 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 764C6D1224B7E5BB002FA594 /* RxSwift */; };
+		764C6D1524B7E5BB002FA594 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 764C6D1424B7E5BB002FA594 /* RxCocoa */; };
 		766C73A524B4DF440056D2DB /* PositiveExposedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766C73A324B4DF430056D2DB /* PositiveExposedViewController.swift */; };
 		766C73A624B4DF440056D2DB /* PositiveExposed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766C73A424B4DF440056D2DB /* PositiveExposed.storyboard */; };
 		766C73A924B561B80056D2DB /* ActivateCovidNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766C73A724B561B70056D2DB /* ActivateCovidNotificationViewController.swift */; };
@@ -347,9 +348,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DF6ECDE248FD751007EAA40 /* RxSwift in Frameworks */,
+				764C6D1524B7E5BB002FA594 /* RxCocoa in Frameworks */,
 				6D5AFCE8249369FE00EFE838 /* Alamofire in Frameworks */,
 				6D1F99D724AA1C60001CFDE2 /* DP3TSDK in Frameworks */,
+				764C6D1324B7E5BB002FA594 /* RxSwift in Frameworks */,
 				6DF6ECB3248EAA65007EAA40 /* Pageboy in Frameworks */,
 				6DF6ECA8248E7453007EAA40 /* Swinject in Frameworks */,
 			);
@@ -844,9 +846,10 @@
 			packageProductDependencies = (
 				6DF6ECA7248E7453007EAA40 /* Swinject */,
 				6DF6ECB2248EAA65007EAA40 /* Pageboy */,
-				6DF6ECDD248FD751007EAA40 /* RxSwift */,
 				6D5AFCE7249369FE00EFE838 /* Alamofire */,
 				6D1F99D624AA1C60001CFDE2 /* DP3TSDK */,
+				764C6D1224B7E5BB002FA594 /* RxSwift */,
+				764C6D1424B7E5BB002FA594 /* RxCocoa */,
 			);
 			productName = "Covid Pilot";
 			productReference = 39443286248939F000FF0217 /* Radar COVID.app */;
@@ -879,9 +882,9 @@
 			packageReferences = (
 				6DF6ECA6248E7453007EAA40 /* XCRemoteSwiftPackageReference "Swinject" */,
 				6DF6ECB1248EAA65007EAA40 /* XCRemoteSwiftPackageReference "Pageboy" */,
-				6DF6ECDC248FD751007EAA40 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				6D5AFCE6249369FE00EFE838 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				6D1F99D524AA1C60001CFDE2 /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */,
+				764C6D1124B7E5BB002FA594 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 39443287248939F000FF0217 /* Products */;
 			projectDirPath = "";
@@ -1468,12 +1471,12 @@
 				version = 3.6.1;
 			};
 		};
-		6DF6ECDC248FD751007EAA40 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		764C6D1124B7E5BB002FA594 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
-				kind = exactVersion;
-				version = 5.1.1;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1499,10 +1502,15 @@
 			package = 6DF6ECB1248EAA65007EAA40 /* XCRemoteSwiftPackageReference "Pageboy" */;
 			productName = Pageboy;
 		};
-		6DF6ECDD248FD751007EAA40 /* RxSwift */ = {
+		764C6D1224B7E5BB002FA594 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6DF6ECDC248FD751007EAA40 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 764C6D1124B7E5BB002FA594 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		764C6D1424B7E5BB002FA594 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 764C6D1124B7E5BB002FA594 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
