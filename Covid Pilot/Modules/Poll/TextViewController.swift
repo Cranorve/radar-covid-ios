@@ -29,6 +29,28 @@ class TextViewController: UIViewController, UITextViewDelegate, QuestionControll
         endEditingTextView()
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+        
+        //resize textEditor
+        let constraint = self.textView.constraints.first(where: {$0.identifier == "textViewHeigh"})
+        constraint?.constant = 100
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Describir..."
+            textView.textColor = UIColor.lightGray
+        }
+        //resize textEditor
+        let constraint = self.textView.constraints.first(where: {$0.identifier == "textViewHeigh"})
+        constraint?.constant = 250
+    }
+    
+
     func textViewDidChange(_ textView: UITextView) {
         question?.valuesSelected = [textView.text]
     }
@@ -36,6 +58,12 @@ class TextViewController: UIViewController, UITextViewDelegate, QuestionControll
     func endEditingTextView(){
         textView.endEditing(true)
     }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        //500 chars restriction
+        return textView.text.count + (text.count - range.length) <= 500
+    }
+    
 
     
     
