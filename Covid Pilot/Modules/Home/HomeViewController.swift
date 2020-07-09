@@ -34,20 +34,20 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var radarView: BackgroundView!
     @IBOutlet weak var communicationButton: UIButton!
     @IBOutlet weak var ActivateNotificationButton: UIButton!
+    @IBOutlet weak var notificationInactiveMessage: UILabel!
+    @IBOutlet weak var resetDataButton: UIButton!
     
     @IBAction func ActivateNotifications(_ sender: Any) {
-        self.helpView.isHidden = false
-        self.helpView.fadeIn(0.9)
-        let alert = Alert.showAlertOk(title: "Notificaciones de exposición a la COVID-19 desactivadas", message: "Para que Radar COVID pueda funcionar, es necesario que actives las notificaciones de exposición a la COVID-19", buttonTitle: "Activar") { (action) in
-            UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
-            self.helpView.isHidden = true;
-            self.helpView.fadeOut()
-        }
-        self.present(alert, animated: true)
+        self.showCovidAlert()
     }
-    @IBOutlet weak var notificationInactiveMessage: UILabel!
-    @IBOutlet weak var helpView: UIView!
-    @IBOutlet weak var resetDataButton: UIButton!
+
+    
+    func showCovidAlert(){
+        self.showAlertOk(title: "Notificaciones de exposición a la COVID-19 desactivadas", message: "Para que Radar COVID pueda funcionar, es necesario que actives las notificaciones de exposición a la COVID-19", buttonTitle: "Activar") { (action) in
+            UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+        }
+    }
+    
     
     private var expositionInfo: ExpositionInfo?
     var isColor = true
@@ -75,22 +75,17 @@ class HomeViewController: UIViewController {
         let active = radarSwitch.isOn
         
         if !active {
-            self.helpView.isHidden = false
-            self.helpView.fadeIn(0.9)
-            let alert = Alert.showAlertCancelContinue(title: "¿Estas seguro de desactivar Radar COVID?", message: "Si desactivas Radar COVID, la aplicación dejará de registrar contactos. Ayúdanos a cuidarte" , buttonOkTitle: "Desactivar", buttonCancelTitle: "Mantener activo",
+            self.showAlertCancelContinue(title: "¿Estas seguro de desactivar Radar COVID?", message: "Si desactivas Radar COVID, la aplicación dejará de registrar contactos. Ayúdanos a cuidarte" , buttonOkTitle: "Desactivar", buttonCancelTitle: "Mantener activo",
                 okHandler: { [weak self] _ in self?.changeRadarStatus(false)
                     self?.imageDefault.image = self?.originalImage?.grayScale
                     self?.imageCircle.image = self?.originalCircleImage?.grayScale
-                    self?.helpView.isHidden = true
-                    self?.helpView.fadeOut()
+
                 },
                 cancelHandler: { [weak self] _ in self?.radarSwitch.isOn = true
                     self?.imageDefault.image = self?.originalImage
                     self?.imageCircle.image = self?.originalCircleImage
-                    self?.helpView.isHidden = true
-                    self?.helpView.fadeOut()
+
             })
-            present(alert, animated: true)
                 
         } else {
             changeRadarStatus(active)
@@ -150,7 +145,7 @@ class HomeViewController: UIViewController {
                 self?.updateExpositionInfo(expositionInfo)
             }, onError: { [weak self] error in
                 debugPrint(error)
-                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar"), animated: true)
+                self?.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar")
         }).disposed(by: disposeBag)
         
         checkOnboarding()
@@ -176,9 +171,9 @@ class HomeViewController: UIViewController {
     
     @IBAction func onReset(_ sender: Any) {
         
-        present(Alert.showAlertCancelContinue(title:  "Confirmación", message: "¿Confirmas el reseteo?", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar") { [weak self] (UIAlertAction) in
+        self.showAlertCancelContinue(title:  "Confirmación", message: "¿Confirmas el reseteo?", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar") { [weak self] (UIAlertAction) in
             self?.reset()
-        },animated: true)
+        }
 
     }
     
@@ -186,10 +181,10 @@ class HomeViewController: UIViewController {
         resetDataUseCase?.reset().subscribe(
                 onNext:{ [weak self] expositionInfo in
                     debugPrint("Data reseted")
-                    self?.present(Alert.showAlertOk(title: "Reset", message: "Datos reseteados", buttonTitle: "Aceptar"), animated: true)
+                    self?.showAlertOk(title: "Reset", message: "Datos reseteados", buttonTitle: "Aceptar")
                 }, onError: { [weak self] error in
                     debugPrint(error)
-                    self?.present(Alert.showAlertOk(title: "Error", message: "Error resetear datos", buttonTitle: "Aceptar"), animated: true)
+                    self?.showAlertOk(title: "Error", message: "Error resetear datos", buttonTitle: "Aceptar")
             }).disposed(by: disposeBag)
     }
     
