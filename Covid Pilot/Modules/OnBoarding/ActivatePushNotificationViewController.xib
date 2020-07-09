@@ -125,8 +125,8 @@ Para avisarte de forma automática,  es necesario que nos permitas enviarte noti
                 <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33g-9O-dbz">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona “Activar” en la ventana que aparecerá a continuación" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqY-fz-6bU">
-                            <rect key="frame" x="35" y="100" width="250" height="121.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona “Permitir” en la ventana que aparecerá a continuación" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqY-fz-6bU">
+                            <rect key="frame" x="35" y="70" width="250" height="121.5"/>
                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="26"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -136,7 +136,7 @@ Para avisarte de forma automática,  es necesario que nos permitas enviarte noti
                     <constraints>
                         <constraint firstItem="sqY-fz-6bU" firstAttribute="leading" secondItem="33g-9O-dbz" secondAttribute="leading" constant="35" id="5bT-Is-cBj"/>
                         <constraint firstAttribute="trailing" secondItem="sqY-fz-6bU" secondAttribute="trailing" constant="35" id="ZmD-71-xmZ"/>
-                        <constraint firstItem="sqY-fz-6bU" firstAttribute="top" secondItem="33g-9O-dbz" secondAttribute="top" constant="100" id="hyM-VZ-wKX"/>
+                        <constraint firstItem="sqY-fz-6bU" firstAttribute="top" secondItem="33g-9O-dbz" secondAttribute="top" constant="70" id="hyM-VZ-wKX"/>
                     </constraints>
                 </view>
             </subviews>

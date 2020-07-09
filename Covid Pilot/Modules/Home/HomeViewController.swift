@@ -19,6 +19,9 @@ class HomeViewController: UIViewController {
     private let bgImageGreen = UIImage(named: "GradientBackgroundGreen")
     
 
+    @IBOutlet weak var topRadarTitle: NSLayoutConstraint!
+    @IBOutlet weak var topActiveNotification: NSLayoutConstraint!
+    @IBOutlet weak var imageCircle: UIImageView!
     @IBOutlet weak var envLabel: UILabel!
     @IBOutlet weak var imageDefault: UIImageView!
     @IBOutlet weak var imageCheck: UIImageView!
@@ -30,18 +33,32 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var radarTitle: UILabel!
     @IBOutlet weak var radarView: BackgroundView!
     @IBOutlet weak var communicationButton: UIButton!
+    @IBOutlet weak var ActivateNotificationButton: UIButton!
     
+    @IBAction func ActivateNotifications(_ sender: Any) {
+        self.helpView.isHidden = false
+        self.helpView.fadeIn(0.9)
+        let alert = Alert.showAlertOk(title: "Notificaciones de exposición a la COVID-19 desactivadas", message: "Para que Radar COVID pueda funcionar, es necesario que actives las notificaciones de exposición a la COVID-19", buttonTitle: "Activar") { (action) in
+            UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+            self.helpView.isHidden = true;
+            self.helpView.fadeOut()
+        }
+        self.present(alert, animated: true)
+    }
+    @IBOutlet weak var notificationInactiveMessage: UILabel!
+    @IBOutlet weak var helpView: UIView!
     @IBOutlet weak var resetDataButton: UIButton!
     
     private var expositionInfo: ExpositionInfo?
-    
+    var isColor = true
     var router: AppRouter?
     var expositionUseCase: ExpositionUseCase?
     var radarStatusUseCase: RadarStatusUseCase?
     var syncUseCase: SyncUseCase?
     var resetDataUseCase: ResetDataUseCase?
     var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
-    
+    var originalImage: UIImage?
+    var originalCircleImage: UIImage?
     @IBAction func onCommunicate(_ sender: Any) {
         guard let expositionInfo = expositionInfo else {
             return
@@ -55,14 +72,24 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func onRadarSwitchChange(_ sender: Any) {
-        
         let active = radarSwitch.isOn
         
         if !active {
-            let alert = Alert.showAlertCancelContinue(title: "¿Estas seguro?", message: "Si desactivas Radar COVID (el Bluetooth), no podremos avisarte." , buttonOkTitle: "Continuar", buttonCancelTitle: "Cancelar",
-                okHandler: { [weak self] _ in self?.changeRadarStatus(false)},
-                cancelHandler: { [weak self] _ in self?.radarSwitch.isOn = true})
-        
+            self.helpView.isHidden = false
+            self.helpView.fadeIn(0.9)
+            let alert = Alert.showAlertCancelContinue(title: "¿Estas seguro de desactivar Radar COVID?", message: "Si desactivas Radar COVID, la aplicación dejará de registrar contactos. Ayúdanos a cuidarte" , buttonOkTitle: "Desactivar", buttonCancelTitle: "Mantener activo",
+                okHandler: { [weak self] _ in self?.changeRadarStatus(false)
+                    self?.imageDefault.image = self?.originalImage?.grayScale
+                    self?.imageCircle.image = self?.originalCircleImage?.grayScale
+                    self?.helpView.isHidden = true
+                    self?.helpView.fadeOut()
+                },
+                cancelHandler: { [weak self] _ in self?.radarSwitch.isOn = true
+                    self?.imageDefault.image = self?.originalImage
+                    self?.imageCircle.image = self?.originalCircleImage
+                    self?.helpView.isHidden = true
+                    self?.helpView.fadeOut()
+            })
             present(alert, animated: true)
                 
         } else {
@@ -80,6 +107,7 @@ class HomeViewController: UIViewController {
                 self?.changeRadarMessage(active: false)
         }).disposed(by: disposeBag)
     }
+    
     
     @objc func onExpositionTap() {
         if let level = expositionInfo?.level {
@@ -100,11 +128,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        checkOnboarding()
-        
+        self.originalImage = self.imageDefault.image
+        self.originalCircleImage = self.imageCircle.image
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.onExpositionTap))
-        
         expositionView.addGestureRecognizer(gesture)
         radarView.image = UIImage(named: "WhiteCard")
         
@@ -119,22 +145,15 @@ class HomeViewController: UIViewController {
             envLabel.text = ""
         }
         
-        //        syncUseCase?.sync().subscribe(
-        //            onError: { [weak self] error in
-        //                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener datos de exposición", buttonTitle: "Aceptar"), animated: true)
-        //            }, onCompleted: {
-        //                debugPrint("Sync Completed")
-        //        }).disposed(by: disposeBag)
-        
         expositionUseCase?.getExpositionInfo().subscribe(
             onNext:{ [weak self] expositionInfo in
-                self?.view.hideLoading()
                 self?.updateExpositionInfo(expositionInfo)
             }, onError: { [weak self] error in
                 debugPrint(error)
-                self?.view.hideLoading()
                 self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
+        
+        checkOnboarding()
         
     }
     
@@ -188,6 +207,12 @@ class HomeViewController: UIViewController {
                 expositionDescription.attributedText  = attributedString
                 expositionView.image = bgImageRed
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
+                notificationInactiveMessage.isHidden = true
+                ActivateNotificationButton.isHidden = true
+                topActiveNotification.priority = .defaultLow
+                topRadarTitle.priority = .defaultHigh
+                self.imageDefault.image = self.originalImage
+                self.imageCircle.image = self.originalCircleImage
                 break
             case .Healthy:
                 expositionTitle.text = "Exposición baja"
@@ -200,6 +225,12 @@ class HomeViewController: UIViewController {
                 expositionDescription.attributedText  = attributedString
                 expositionView.image = bgImageGreen
                 expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)
+                notificationInactiveMessage.isHidden = true
+                ActivateNotificationButton.isHidden = true
+                topActiveNotification.priority = .defaultLow
+                topRadarTitle.priority = .defaultHigh
+                self.imageDefault.image = self.originalImage
+                self.imageCircle.image = self.originalCircleImage
                 break
             case .Infected:
                 expositionTitle.text = "COVID-19 Positivo"
@@ -207,10 +238,31 @@ class HomeViewController: UIViewController {
                 expositionDescription.attributedText  = attributedString
                 expositionView.image = bgImageRed
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
+                notificationInactiveMessage.isHidden = true
+                ActivateNotificationButton.isHidden = true
+                topActiveNotification.priority = .defaultLow
+                topRadarTitle.priority = .defaultHigh
+                self.imageDefault.image = self.originalImage
+                self.imageCircle.image = self.originalCircleImage
                 break;
 
             case .Error:
-                expositionTitle.text = exposition.error?.rawValue
+                expositionTitle.text = "Exposición baja"
+                let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un\nposible contacto de riesgo.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
+                  .font: UIFont(name: "Muli-Light", size: 16.0)!,
+                  .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
+                ])
+                attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 0, length: 61))
+                
+                expositionDescription.attributedText  = attributedString
+                expositionView.image = bgImageGreen
+                expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)
+                notificationInactiveMessage.isHidden = false
+                ActivateNotificationButton.isHidden = false
+                topActiveNotification.priority = .defaultHigh
+                topRadarTitle.priority = .defaultLow
+                self.imageDefault.image = self.originalImage?.grayScale
+                self.imageCircle.image = self.originalCircleImage?.grayScale
         }
         
     }
@@ -240,9 +292,7 @@ class HomeViewController: UIViewController {
                 
                 self.imageCheck.isHidden = true
                 self.imageDefault.isHidden = false
-                
             }
         }
     }
-    
 }
