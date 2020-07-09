@@ -34,6 +34,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var radarView: BackgroundView!
     @IBOutlet weak var communicationButton: UIButton!
     @IBOutlet weak var ActivateNotificationButton: UIButton!
+    
     @IBAction func ActivateNotifications(_ sender: Any) {
         self.helpView.isHidden = false
         self.helpView.fadeIn(0.9)
@@ -144,22 +145,14 @@ class HomeViewController: UIViewController {
             envLabel.text = ""
         }
         
-        //        syncUseCase?.sync().subscribe(
-        //            onError: { [weak self] error in
-        //                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener datos de exposición", buttonTitle: "Aceptar"), animated: true)
-        //            }, onCompleted: {
-        //                debugPrint("Sync Completed")
-        //        }).disposed(by: disposeBag)
-        
         expositionUseCase?.getExpositionInfo().subscribe(
             onNext:{ [weak self] expositionInfo in
-                self?.view.hideLoading()
                 self?.updateExpositionInfo(expositionInfo)
             }, onError: { [weak self] error in
                 debugPrint(error)
-                self?.view.hideLoading()
                 self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar"), animated: true)
         }).disposed(by: disposeBag)
+        
         checkOnboarding()
         
     }
