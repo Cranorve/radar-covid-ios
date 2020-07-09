@@ -148,6 +148,9 @@ class HomeViewController: UIViewController {
                 self?.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar")
         }).disposed(by: disposeBag)
         
+        //get current exposition info in repository
+        self.updateExpositionInfo((expositionUseCase?.getExpositionInfoFromRepository())!)
+        
         checkOnboarding()
         
     }

@@ -42,6 +42,10 @@ class ExpositionUseCase: DP3TTracingDelegate {
         Observable.of(subject.asObservable(),getExpositionInfoErrors()).merge()
     }
     
+    func getExpositionInfoFromRepository() -> ExpositionInfo! {
+        return expositionInfoRepository.getExpositionInfo() ?? ExpositionInfo(level: .Healthy)
+    }
+    
     func updateExpositionInfo() {
         
         DP3TTracing.status { result in
