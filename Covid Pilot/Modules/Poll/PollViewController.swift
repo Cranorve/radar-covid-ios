@@ -40,10 +40,9 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         if currentQuestion.hasResponse() {
             nextConfirmed()
         } else {
-            let alert = Alert.showAlertCancelContinue(title:  "No has respondido a una pregunta", message: "", buttonOkTitle: "Continuar sin respuesta", buttonCancelTitle: "Responder") { [weak self] _ in
+            self.showAlertCancelContinue(title:  "No has respondido a una pregunta", message: "", buttonOkTitle: "Continuar sin respuesta", buttonCancelTitle: "Responder") { [weak self] _ in
                 self?.nextConfirmed()
             }
-            present(alert, animated: true)
         }
 
     }
@@ -106,12 +105,10 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
             }, onError: {  [weak self] error in
                 self?.view.hideLoading()
                 debugPrint(error)
-                let alert = Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar") { (action) in
+                self?.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar") { (action) in
                     self?.navigationController?.popViewController(animated: true)
-
                 }
-                self?.present(alert, animated: true)
-//                self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
+
         }).disposed(by: disposeBag)
     }
     
@@ -201,7 +198,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
                 }
             }, onError: {  [weak self] error in
                 debugPrint("Error saving poll \(error)")
-                self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar"), animated: true)
+                self?.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar")
         }).disposed(by: disposeBag)
     }
     

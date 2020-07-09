@@ -206,10 +206,6 @@ Cuídate y cuida a los demás.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhE-Do-sZ1">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
-                                <color key="backgroundColor" red="0.53333333333333333" green="0.58431372549019611" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" name="bgColor"/>
                         <constraints>
@@ -218,15 +214,11 @@ Cuídate y cuida a los demás.</string>
                             <constraint firstAttribute="trailing" secondItem="JEu-F8-ZM1" secondAttribute="trailing" id="7V8-R5-VYd"/>
                             <constraint firstItem="iWR-aJ-g5N" firstAttribute="centerX" secondItem="bH7-lt-L7E" secondAttribute="centerX" id="9bg-Pf-NvC"/>
                             <constraint firstItem="uUO-V4-jee" firstAttribute="width" secondItem="bH7-lt-L7E" secondAttribute="width" id="BUG-wc-oBe"/>
-                            <constraint firstItem="lhE-Do-sZ1" firstAttribute="leading" secondItem="AA3-07-0Pc" secondAttribute="leading" id="GES-HC-08X"/>
                             <constraint firstItem="JEu-F8-ZM1" firstAttribute="top" secondItem="bH7-lt-L7E" secondAttribute="top" id="Ij6-j4-nUd"/>
-                            <constraint firstItem="lhE-Do-sZ1" firstAttribute="top" secondItem="bH7-lt-L7E" secondAttribute="top" id="KuV-aC-xCG"/>
                             <constraint firstItem="AKG-lv-3X4" firstAttribute="centerX" secondItem="bH7-lt-L7E" secondAttribute="centerX" id="MVc-Dr-zgZ"/>
-                            <constraint firstItem="AA3-07-0Pc" firstAttribute="bottom" secondItem="lhE-Do-sZ1" secondAttribute="bottom" id="Otg-Jj-Elh"/>
                             <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="AKG-lv-3X4" secondAttribute="trailing" constant="112.5" id="SI4-y6-eEz"/>
                             <constraint firstAttribute="bottom" secondItem="JEu-F8-ZM1" secondAttribute="bottom" id="Ujw-3N-fKK"/>
                             <constraint firstItem="iWR-aJ-g5N" firstAttribute="top" secondItem="AKG-lv-3X4" secondAttribute="bottom" id="bwu-jd-7qJ"/>
-                            <constraint firstItem="AA3-07-0Pc" firstAttribute="trailing" secondItem="lhE-Do-sZ1" secondAttribute="trailing" id="j69-p9-dbR"/>
                             <constraint firstItem="JEu-F8-ZM1" firstAttribute="leading" secondItem="bH7-lt-L7E" secondAttribute="leading" id="xoj-7X-mMq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AA3-07-0Pc"/>
@@ -238,7 +230,6 @@ Cuídate y cuida a los demás.</string>
                         <outlet property="expositionDescription" destination="XCQ-uz-Hi1" id="SgW-aX-6xj"/>
                         <outlet property="expositionTitle" destination="Tiy-hB-953" id="d36-84-O30"/>
                         <outlet property="expositionView" destination="6hz-zu-Mhb" id="8iB-cX-vMh"/>
-                        <outlet property="helpView" destination="lhE-Do-sZ1" id="QHD-vS-dWe"/>
                         <outlet property="imageCheck" destination="s47-VN-7tM" id="pmS-0V-GBe"/>
                         <outlet property="imageCircle" destination="Ker-eU-Kvi" id="bfD-Fp-gvF"/>
                         <outlet property="imageDefault" destination="6NQ-cJ-mH8" id="Vdx-I6-dIm"/>

@@ -41,9 +41,7 @@ class ProximityViewController: UIViewController {
             router?.route(to: Routes.Home, from: self)
         } else {
             
-            let alert = Alert.showAlertOk(title:  "Bluetooth Inactivo", message: "Es necesario activar bluetooth para poder usar la aplicación", buttonTitle: "OK")
-            
-            present(alert, animated: true)
+            self.showAlertOk(title:  "Bluetooth Inactivo", message: "Es necesario activar bluetooth para poder usar la aplicación", buttonTitle: "OK")
         }
     }
 

@@ -17,12 +17,9 @@ class ActivateCovidNotificationViewController: UIViewController {
     var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
     var radarStatusUseCase: RadarStatusUseCase?
     
-    @IBOutlet weak var helpView: UIView!
     
     @IBAction func onContinue(_ sender: Any) {
-        self.helpView.isHidden = false
-        self.helpView.fadeIn(0.9)
-        
+        self.view.showTransparentBackground(withColor: UIColor.blueyGrey90, alpha: 1, nil, "Selecciona “<b>Activar</b>” en la ventana que aparecerá a continuación".htmlToAttributedString, UIColor.white)
         radarStatusUseCase?.restoreLastStateAndSync().subscribe(
             onNext:{ [weak self] isTracingActive in
                 self?.activationFinished()
