@@ -21,7 +21,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActivateCovidNotificationViewController" customModule="Radar_COVID" customModuleProvider="target">
             <connections>
-                <outlet property="helpView" destination="33g-9O-dbz" id="ja8-FN-eE3"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7Ry-pS-xMF"/>
             </connections>
         </placeholder>
@@ -124,29 +123,9 @@ Radar COVID utiliza Bluetooth Low Energy para intercambiar ID aleatoreas entre d
                         <action selector="onContinue:" destination="-1" eventType="primaryActionTriggered" id="BHS-aM-Uab"/>
                     </connections>
                 </button>
-                <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33g-9O-dbz">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona “Activar” en la ventana que aparecerá a continuación" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqY-fz-6bU">
-                            <rect key="frame" x="35" y="70" width="250" height="121.5"/>
-                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="26"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.53333333333333333" green="0.58431372549019611" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstItem="sqY-fz-6bU" firstAttribute="leading" secondItem="33g-9O-dbz" secondAttribute="leading" constant="35" id="5bT-Is-cBj"/>
-                        <constraint firstAttribute="trailing" secondItem="sqY-fz-6bU" secondAttribute="trailing" constant="35" id="ZmD-71-xmZ"/>
-                        <constraint firstItem="sqY-fz-6bU" firstAttribute="top" secondItem="33g-9O-dbz" secondAttribute="top" constant="70" id="hyM-VZ-wKX"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" name="bgColor"/>
             <constraints>
-                <constraint firstItem="33g-9O-dbz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="4Lf-cF-KgO"/>
-                <constraint firstItem="33g-9O-dbz" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="6IE-qA-Ecx"/>
-                <constraint firstItem="33g-9O-dbz" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8R8-XT-Kty"/>
                 <constraint firstItem="0ks-pf-IGN" firstAttribute="top" secondItem="QAR-Iy-hQc" secondAttribute="bottom" constant="10" id="GxU-t4-Qkd"/>
                 <constraint firstAttribute="trailing" secondItem="0ks-pf-IGN" secondAttribute="trailing" constant="16" id="d8A-3e-cAd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QAR-Iy-hQc" secondAttribute="trailing" id="f35-a4-UTy"/>
@@ -154,7 +133,6 @@ Radar COVID utiliza Bluetooth Low Energy para intercambiar ID aleatoreas entre d
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0ks-pf-IGN" secondAttribute="bottom" constant="10" id="s6y-In-9Sd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="QAR-Iy-hQc" secondAttribute="top" id="usK-6X-z6K"/>
                 <constraint firstItem="0ks-pf-IGN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="weM-ih-7J9"/>
-                <constraint firstItem="33g-9O-dbz" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="xRJ-wy-Ok5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="153.2608695652174"/>

@@ -12,11 +12,12 @@ class ActivatePushNotificationViewController: UIViewController {
     
     var router: AppRouter?
     
-    @IBOutlet weak var helpView: UIView!
     var notificationHandler: NotificationHandler?
     @IBAction func onContinue(_ sender: Any) {
-        self.helpView.isHidden = false
-        self.helpView.fadeIn(0.9)
+
+        
+        self.view.showTransparentBackground(withColor: UIColor.blueyGrey90, alpha: 1, nil, "Selecciona “<b>Activar</b>” en la ventana que aparecerá a continuación".htmlToAttributedString, UIColor.white)
+        
         self.notificationHandler?.setupNotifications().subscribe(onNext: { (accepted) in
             print("notification accepted", accepted)
             DispatchQueue.main.async {

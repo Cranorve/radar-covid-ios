@@ -26,7 +26,7 @@ class LocalizationUseCase: LocalizationSource {
 //    }
     
     func loadlocalization() -> Observable<[String : String]?> {
-        Observable.just(mockService()).delay(.seconds(5), scheduler: <#SchedulerType#>)
+        Observable.just(mockService()).delay(.seconds(5), scheduler: MainScheduler.instance)
 
     }
     
