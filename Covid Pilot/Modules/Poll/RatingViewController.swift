@@ -28,7 +28,7 @@ class RatingViewController: UIViewController, QuestionController {
         loadValues()
         if (question?._id == 8){
             labelmuymala.text = "seguro que no"
-            labelexcelente.text = "seguro que si"
+            labelexcelente.text = "seguro que sí"
         }
     }
     

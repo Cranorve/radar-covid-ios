@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             debugPrint("Error initializing DP3T \(error)")
         }
+        UIApplication.shared.applicationIconBadgeNumber = 0
         
         return true
     }
