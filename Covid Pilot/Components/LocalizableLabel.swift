@@ -13,7 +13,11 @@ extension UILabel : XibLocalizable {
     @IBInspectable var locKey: String? {
         get { return nil }
         set(key) {
-            text = ""
+            if key?.isAttributedText ?? false {
+                text = locKey?.localized
+            } else {
+                attributedText = key?.localizedAttributed
+            }
         }
     }
 }

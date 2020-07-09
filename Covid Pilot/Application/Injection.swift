@@ -167,6 +167,10 @@ class Injection {
                          notificationHandler: r.resolve(NotificationHandler.self)!)
         }.inObjectScope(.container)
         
+        container.register(LocalizationUseCase.self) { r in
+            LocalizationUseCase()
+        }.inObjectScope(.container)
+        
         container.register(TabBarController.self) { r in
             TabBarController(
                 homeViewController: r.resolve(HomeViewController.self)!,
