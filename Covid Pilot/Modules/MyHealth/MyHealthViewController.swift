@@ -17,6 +17,7 @@ class MyHealthViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollContainer: UIView!
 
+    @IBOutlet weak var helpView: UIView!
     var diagnosisCodeUseCase: DiagnosisCodeUseCase?
     var statusBar: UIView?
     @IBOutlet var codeChars: [UITextField]!
@@ -24,9 +25,16 @@ class MyHealthViewController: UIViewController {
     var diagnosticEnabled: Bool = false
     
     @IBAction func onBack(_ sender: Any) {
-        let alert = Alert.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar") { (UIAlertAction) in
+        self.helpView.isHidden = false
+        self.helpView.fadeIn(0.9)
+        let alert = Alert.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar", okHandler: { (UIAlertAction) in
                 self.navigationController?.popViewController(animated: true)
-        }
+            self.helpView.isHidden = true
+            self.helpView.fadeOut()
+        }, cancelHandler: { (UIAlertAction) in
+                self.helpView.isHidden = true
+                self.helpView.fadeOut()
+        })
         endEditingCodeChars()
         present(alert, animated: true)
     }
@@ -39,7 +47,13 @@ class MyHealthViewController: UIViewController {
 
     @IBAction func onReportDiagnosis(_ sender: Any) {
         if !diagnosticEnabled {
-            present(Alert.showAlertOk(title: "Error", message: "Por favor introduce un código válido de 12 dígitos", buttonTitle: "Aceptar"), animated: true)
+            self.helpView.isHidden = false
+            self.helpView.fadeIn(0.9)
+            present(Alert.showAlertOk(title: "Error", message: "Por favor introduce un código válido de 12 dígitos", buttonTitle: "Aceptar"){ (action) in
+                UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+                self.helpView.isHidden = true;
+                self.helpView.fadeOut()
+            }, animated: true)
 
         } else {
             view.showLoading()
@@ -56,7 +70,13 @@ class MyHealthViewController: UIViewController {
                 }, onError: {  [weak self] error in
                     self?.view.hideLoading()
                     print("Error reporting diagnosis \(error)")
-                    self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"), animated: true)
+                    self?.helpView.isHidden = false
+                    self?.helpView.fadeIn(0.9)
+                    self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"){ (action) in
+                        UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+                        self?.helpView.isHidden = true;
+                        self?.helpView.fadeOut()
+                    }, animated: true)
 
             }).disposed(by: disposeBag)
         }

@@ -313,6 +313,10 @@ COVID positivo</string>
                                 <viewLayoutGuide key="contentLayoutGuide" id="KL5-cb-JoN"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="uLC-oe-quZ"/>
                             </scrollView>
+                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jnv-5p-9a1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.53333333329999999" green="0.58431372550000005" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="bgColor"/>
                         <constraints>
@@ -321,16 +325,21 @@ COVID positivo</string>
                             <constraint firstItem="8qu-xN-VKL" firstAttribute="leading" secondItem="N4X-xp-aN3" secondAttribute="leading" id="68S-YW-W4r"/>
                             <constraint firstAttribute="bottom" secondItem="8qu-xN-VKL" secondAttribute="bottom" id="BCo-02-kbu"/>
                             <constraint firstItem="599-Qh-McL" firstAttribute="trailing" secondItem="6r9-h6-6CB" secondAttribute="trailing" constant="20" id="DVe-IS-lAq"/>
+                            <constraint firstItem="Jnv-5p-9a1" firstAttribute="leading" secondItem="N4X-xp-aN3" secondAttribute="leading" id="IZg-cR-SJS"/>
+                            <constraint firstItem="Jnv-5p-9a1" firstAttribute="trailing" secondItem="N4X-xp-aN3" secondAttribute="trailing" id="MBF-5l-dNf"/>
                             <constraint firstItem="6r9-h6-6CB" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" constant="20" id="MbO-K5-IgW"/>
                             <constraint firstItem="aqS-jX-ZBj" firstAttribute="width" secondItem="N4X-xp-aN3" secondAttribute="width" id="ZGm-Ar-hOn"/>
                             <constraint firstItem="6r9-h6-6CB" firstAttribute="top" secondItem="599-Qh-McL" secondAttribute="top" constant="20" id="ZYG-sq-rnK"/>
                             <constraint firstAttribute="trailing" secondItem="8qu-xN-VKL" secondAttribute="trailing" id="gE4-QW-OD6"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Jnv-5p-9a1" secondAttribute="bottom" id="lca-Ts-JEL"/>
+                            <constraint firstItem="Jnv-5p-9a1" firstAttribute="top" secondItem="N4X-xp-aN3" secondAttribute="topMargin" id="tG0-fc-SEM"/>
                             <constraint firstItem="j1B-pg-cG8" firstAttribute="top" secondItem="599-Qh-McL" secondAttribute="top" constant="-45" id="tMc-zY-ofj"/>
                             <constraint firstItem="j1B-pg-cG8" firstAttribute="leading" secondItem="599-Qh-McL" secondAttribute="leading" id="uB4-Iw-qf1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="599-Qh-McL"/>
                     </view>
                     <connections>
+                        <outlet property="helpView" destination="Jnv-5p-9a1" id="cxu-E6-Ven"/>
                         <outlet property="scrollContainer" destination="aqS-jX-ZBj" id="eG0-WE-Ykf"/>
                         <outlet property="scrollView" destination="8qu-xN-VKL" id="2et-HO-0LF"/>
                         <outlet property="scrollViewBottonConstraint" destination="BCo-02-kbu" id="pCN-GQ-d9a"/>
