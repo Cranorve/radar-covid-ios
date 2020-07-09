@@ -147,7 +147,7 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
     
     private func mapInitializeError(_ error: Error) -> DomainError {
         if let e = error as? DP3TTracingError {
-            debugPrint("Error \(error)")
+            debugPrint("Error \(e)")
         }
         
         return DomainError.Unexpected

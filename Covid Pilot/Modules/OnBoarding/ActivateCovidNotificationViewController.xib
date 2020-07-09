@@ -128,17 +128,17 @@ Radar COVID utiliza Bluetooth Low Energy para intercambiar ID aleatoreas entre d
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona “Activar” en la ventana que aparecerá a continuación" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqY-fz-6bU">
-                            <rect key="frame" x="35" y="100" width="250" height="121.5"/>
+                            <rect key="frame" x="35" y="70" width="250" height="121.5"/>
                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="26"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.50588235294117645" green="0.5490196078431373" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.53333333333333333" green="0.58431372549019611" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="sqY-fz-6bU" firstAttribute="leading" secondItem="33g-9O-dbz" secondAttribute="leading" constant="35" id="5bT-Is-cBj"/>
                         <constraint firstAttribute="trailing" secondItem="sqY-fz-6bU" secondAttribute="trailing" constant="35" id="ZmD-71-xmZ"/>
-                        <constraint firstItem="sqY-fz-6bU" firstAttribute="top" secondItem="33g-9O-dbz" secondAttribute="top" constant="100" id="hyM-VZ-wKX"/>
+                        <constraint firstItem="sqY-fz-6bU" firstAttribute="top" secondItem="33g-9O-dbz" secondAttribute="top" constant="70" id="hyM-VZ-wKX"/>
                     </constraints>
                 </view>
             </subviews>
