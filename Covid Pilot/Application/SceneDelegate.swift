@@ -32,25 +32,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let router = AppDelegate.shared.injection.resolve(AppRouter.self)!
         let configUseCase =  AppDelegate.shared.injection.resolve(ConfigurationUseCase.self)!
         
-        configUseCase.getConfig().subscribe(
+        configUseCase.loadConfig().subscribe(
             onNext:{ settings in
                 debugPrint("Configuration  finished")
 
                 if  !(settings.isUpdated ?? false) {
                     let configUrl = settings.parameters?.applicationVersion?.ios?.bundleUrl ?? "itms://itunes.apple.com"
-                    let alert = Alert.showAlertOk(title: "Error", message: "Para poder seguir utilizando Radar COVID es necesario que actualices la aplicación.", buttonTitle: "ACTUALIZAR") { (action) in
+                    self.window?.rootViewController?.showAlertOk(title: "Error", message: "Para poder seguir utilizando Radar COVID es necesario que actualices la aplicación.", buttonTitle: "ACTUALIZAR") { (action) in
                         if let url = NSURL(string: configUrl) as URL? {
                             UIApplication.shared.open(url) { (open) in
                                 exit(0);
                             }
                         }
                     }
-                    self.window?.rootViewController?.present(alert, animated: true)
                 }
                 
             }, onError: {  [weak self] error in
                 debugPrint("Configuration errro \(error)")
-                self?.window?.rootViewController?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar"), animated: true)
+                self?.window?.rootViewController?.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar")
         }).disposed(by: disposeBag)
         
         router.route(to: Routes.Welcome, from: navigationController)

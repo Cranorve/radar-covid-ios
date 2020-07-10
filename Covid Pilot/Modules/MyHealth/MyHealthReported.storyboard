@@ -75,7 +75,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="Tfz-Cw-9y6"/>
                                                 </constraints>
-                                                <string key="text">Sin revelar tu identidad en ningún momento, vamos a identificar qué móviles han estado cerca de ti en los últimos días y les enviaremos una alerta anónima para su seguridad.</string>
+                                                <string key="text">Sin revelar tu identidad en ningún momento, vamos a rastrear qué móviles han estado cerca de ti en los últimos días y les enviaremos una alerta para su seguridad.</string>
                                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

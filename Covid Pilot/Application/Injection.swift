@@ -74,9 +74,14 @@ class Injection {
             appRouter.myHealthReportedVC = r.resolve(MyHealthReportedViewController.self)!
             appRouter.expositionVC = r.resolve(ExpositionViewController.self)!
             appRouter.highExpositionVC = r.resolve(HighExpositionViewController.self)!
+            appRouter.positiveExposedVC = r.resolve(PositiveExposedViewController.self)!
             appRouter.pollVC = r.resolve(PollViewController.self)!
             appRouter.pollFinishedVC = r.resolve(FinishPollViewController.self)!
             appRouter.welcomeVC = r.resolve(WelcomeViewController.self)!
+            appRouter.activateCovid = r.resolve(ActivateCovidNotificationViewController.self)!
+            appRouter.activatePush = r.resolve(ActivatePushNotificationViewController.self)!
+
+
         }
         
         container.register(PreferencesRepository.self) { r in
@@ -109,11 +114,14 @@ class Injection {
         
         container.register(ExpositionUseCase.self) { r in
             ExpositionUseCase(notificationHandler: r.resolve(NotificationHandler.self)!,
-                              expositionInfoRepository: r.resolve(ExpositionInfoRepository.self)!)
+                              expositionInfoRepository: r.resolve(ExpositionInfoRepository.self)!,
+                              errorUseCase: r.resolve(ErrorUseCase.self)!)
         }.inObjectScope(.container)
         
         container.register(RadarStatusUseCase.self) { r in
-            RadarStatusUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!)
+            RadarStatusUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!,
+                               errorUseCase: r.resolve(ErrorUseCase.self)!,
+                               syncUseCase: r.resolve(SyncUseCase.self)!)
         }.inObjectScope(.container)
         
         container.register(BluetoothUseCase.self) { r in
@@ -145,12 +153,17 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(SyncUseCase.self) { r in
-            SyncUseCase()
+            SyncUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!)
+        }.inObjectScope(.container)
+        
+        container.register(ErrorUseCase.self) { r in
+            ErrorUseCase()
         }.inObjectScope(.container)
         
         container.register(SetupUseCase.self) { r in
             SetupUseCase(preferencesRepository: r.resolve(PreferencesRepository.self)!,
                          kpiApi: r.resolve(KpiControllerAPI.self)!,
+                         errorUseCase: r.resolve(ErrorUseCase.self)!,
                          notificationHandler: r.resolve(NotificationHandler.self)!)
         }.inObjectScope(.container)
         
@@ -183,6 +196,10 @@ class Injection {
         
         container.register(HighExpositionViewController.self) {  r in
             self.createViewController(storyboard: "HighExposition", id: "HighExpositionViewController") as! HighExpositionViewController
+        }
+        
+        container.register(PositiveExposedViewController.self) {  r in
+            self.createViewController(storyboard: "PositiveExposed", id: "PositiveExposedViewController") as! PositiveExposedViewController
         }
         
         container.register(HomeViewController.self) {  r in
@@ -245,6 +262,21 @@ class Injection {
             welcomeVC.router = r.resolve(AppRouter.self)!
             welcomeVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
             return welcomeVC
+        }
+        
+        container.register(ActivateCovidNotificationViewController.self) {  r in
+            let activateCovidVC = ActivateCovidNotificationViewController()
+            activateCovidVC.router = r.resolve(AppRouter.self)!
+            activateCovidVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
+            activateCovidVC.radarStatusUseCase = r.resolve(RadarStatusUseCase.self)!
+            return activateCovidVC
+        }
+        
+        container.register(ActivatePushNotificationViewController.self) {  r in
+            let activatePushVC = ActivatePushNotificationViewController()
+            activatePushVC.router = r.resolve(AppRouter.self)!
+            activatePushVC.notificationHandler = r.resolve(NotificationHandler.self)
+            return activatePushVC
         }
     }
     

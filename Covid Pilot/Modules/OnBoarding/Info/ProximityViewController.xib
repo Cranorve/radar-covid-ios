@@ -33,10 +33,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clA-8A-tCK">
-                    <rect key="frame" x="0.0" y="44" width="414" height="672"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="732"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l55-Aw-9eh">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="607.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="558.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUN-Rp-dez">
                                     <rect key="frame" x="207" y="0.0" width="207" height="206.5"/>
@@ -63,43 +63,43 @@
                                     <viewLayoutGuide key="safeArea" id="QFz-FT-HWn"/>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cómo funciona" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkV-ML-gs8">
-                                    <rect key="frame" x="16" y="145" width="382" height="35.5"/>
+                                    <rect key="frame" x="16" y="145" width="382" height="33"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pB4-tP-eNW">
-                                    <rect key="frame" x="16" y="200.5" width="38.5" height="40.5"/>
+                                    <rect key="frame" x="16" y="198" width="36" height="37.5"/>
                                     <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="32"/>
                                     <color key="textColor" red="0.4392156862745098" green="0.31372549019607843" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3x-dp-zNZ">
-                                    <rect key="frame" x="16" y="319.5" width="38.5" height="40.5"/>
+                                    <rect key="frame" x="16" y="310.5" width="36" height="37.5"/>
                                     <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="32"/>
                                     <color key="textColor" red="0.43921568630000002" green="0.31372549020000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSf-Zq-yVw">
-                                    <rect key="frame" x="16" y="463.5" width="38.5" height="40.5"/>
+                                    <rect key="frame" x="16" y="446" width="36" height="37.5"/>
                                     <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="32"/>
                                     <color key="textColor" red="0.43921568630000002" green="0.31372549020000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activa tu Bluetooth. Eso es todo lo que te pedimos. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRE-DP-Oha">
-                                    <rect key="frame" x="16" y="249" width="382" height="50.5"/>
+                                    <rect key="frame" x="16" y="243.5" width="382" height="47"/>
                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visita la App con frecuencia para visualizar tu grado de exposición al coronavirus." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLu-AC-alt">
-                                    <rect key="frame" x="16" y="368" width="382" height="75.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En caso de tener un diagnóstico positivo, introduce de forma anónima el código entregado en Radar COVID." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLu-AC-alt">
+                                    <rect key="frame" x="16" y="356" width="382" height="70"/>
                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En caso de haber estado expuesto o reportar un diagnóstico positivo sigue las indicaciones que te enviaremos." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2g-Q2-hb8">
-                                    <rect key="frame" x="16" y="512" width="382" height="75.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En caso de haber estado expuesto sigue las indicaciones que te enviaremos." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2g-Q2-hb8">
+                                    <rect key="frame" x="16" y="491.5" width="382" height="47"/>
                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -146,7 +146,7 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="ynP-56-ZDW"/>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJN-UP-OSP">
-                    <rect key="frame" x="0.0" y="716" width="414" height="146"/>
+                    <rect key="frame" x="0.0" y="776" width="414" height="86"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gh7-C2-OVe">
                             <rect key="frame" x="16" y="10" width="382" height="56"/>
@@ -155,7 +155,7 @@
                                 <constraint firstAttribute="height" constant="56" id="3cO-0b-3sv"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
-                            <state key="normal" title="Activar Rastreo Bluetooth" backgroundImage="GradientBackgroundButton">
+                            <state key="normal" title="Activar Bluetooth" backgroundImage="GradientBackgroundButton">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -169,43 +169,13 @@
                                 <action selector="onContinue:" destination="-1" eventType="primaryActionTriggered" id="YJV-d9-3AK"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQO-n1-ENt">
-                            <rect key="frame" x="16" y="80" width="382" height="56"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="56" id="34M-cj-rei"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
-                            <state key="normal" title="Continuar sin activar">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="10"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
-                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                    <color key="value" red="0.43921568630000002" green="0.31372549020000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                    <integer key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="continueNoBluetooth:" destination="-1" eventType="primaryActionTriggered" id="DpW-Di-ENR"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" name="bgColor"/>
                     <constraints>
                         <constraint firstItem="Gh7-C2-OVe" firstAttribute="leading" secondItem="QJN-UP-OSP" secondAttribute="leading" constant="16" id="5rg-wX-fXR"/>
-                        <constraint firstItem="VQO-n1-ENt" firstAttribute="leading" secondItem="QJN-UP-OSP" secondAttribute="leading" constant="16" id="6sc-dt-eyA"/>
-                        <constraint firstAttribute="trailing" secondItem="VQO-n1-ENt" secondAttribute="trailing" constant="16" id="Eam-cf-0dc"/>
                         <constraint firstItem="Gh7-C2-OVe" firstAttribute="top" secondItem="QJN-UP-OSP" secondAttribute="top" constant="10" id="IDG-IN-5Xh"/>
                         <constraint firstAttribute="trailing" secondItem="Gh7-C2-OVe" secondAttribute="trailing" constant="16" id="NPl-Si-Bnn"/>
-                        <constraint firstItem="VQO-n1-ENt" firstAttribute="top" secondItem="Gh7-C2-OVe" secondAttribute="bottom" constant="14" id="OGM-pr-1Nc"/>
-                        <constraint firstAttribute="bottom" secondItem="VQO-n1-ENt" secondAttribute="bottom" constant="10" id="eqf-VF-Bub"/>
+                        <constraint firstAttribute="bottom" secondItem="Gh7-C2-OVe" secondAttribute="bottom" constant="20" id="Uu8-j4-rAF"/>
                     </constraints>
                 </view>
             </subviews>

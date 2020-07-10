@@ -24,11 +24,12 @@ class MyHealthViewController: UIViewController {
     var diagnosticEnabled: Bool = false
     
     @IBAction func onBack(_ sender: Any) {
-        let alert = Alert.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar") { (UIAlertAction) in
+        self.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar", okHandler: { (UIAlertAction) in
                 self.navigationController?.popViewController(animated: true)
-        }
+        }, cancelHandler: { (UIAlertAction) in
+              
+        })
         endEditingCodeChars()
-        present(alert, animated: true)
     }
     
     func endEditingCodeChars(){
@@ -39,7 +40,10 @@ class MyHealthViewController: UIViewController {
 
     @IBAction func onReportDiagnosis(_ sender: Any) {
         if !diagnosticEnabled {
-            present(Alert.showAlertOk(title: "Error", message: "Por favor introduce un código válido de 12 dígitos", buttonTitle: "Aceptar"), animated: true)
+
+            self.showAlertOk(title: "Error", message: "Por favor introduce un código válido de 12 dígitos", buttonTitle: "Aceptar"){ (action) in
+                UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+            }
 
         } else {
             view.showLoading()
@@ -55,8 +59,9 @@ class MyHealthViewController: UIViewController {
                     self?.navigateIf(reported: reportedCodeBool)
                 }, onError: {  [weak self] error in
                     self?.view.hideLoading()
-                    print("Error reporting diagnosis \(error)")
-                    self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"), animated: true)
+                    self?.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"){ (action) in
+                        UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+                    }
 
             }).disposed(by: disposeBag)
         }

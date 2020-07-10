@@ -29,11 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let setupUseCase = injection.resolve(SetupUseCase.self)!
         
-        setupUseCase.initializeSDK()
-        
-        let notificationHandler = injection.resolve(NotificationHandler.self)!
-        
-        notificationHandler.setupNotifications()
+        do {
+            try setupUseCase.initializeSDK()
+        } catch {
+            debugPrint("Error initializing DP3T \(error)")
+        }
+        UIApplication.shared.applicationIconBadgeNumber = 0
         
         return true
     }

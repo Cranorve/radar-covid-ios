@@ -13,6 +13,7 @@ struct ExpositionInfo: Codable, Equatable {
     var level: Level
     var lastCheck: Date?
     var since: Date?
+    var error: DomainError?
     
     public init(level: Level) {
         self.level = level
@@ -22,6 +23,7 @@ struct ExpositionInfo: Codable, Equatable {
          case Healthy
          case Exposed
          case Infected
+         case Error
     }
     
 }
