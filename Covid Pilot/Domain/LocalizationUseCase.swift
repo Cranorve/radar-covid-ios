@@ -11,6 +11,8 @@ import RxSwift
 
 class LocalizationUseCase: LocalizationSource {
     
+    private let settingsApi: SettingsAPI
+    
 //    private let localizationRepository: LocalizationRepository
     
     private var _localizationMap: [String : String]?
@@ -21,13 +23,18 @@ class LocalizationUseCase: LocalizationSource {
         }
     }
     
-//    init(localizationRepository: LocalizationRepository) {
-//        self.localizationRepository = localizationRepository
-//    }
+    init(settingsApi: SettingsAPI) {
+        self.settingsApi = settingsApi
+    }
     
     func loadlocalization() -> Observable<[String : String]?> {
-        Observable.just(mockService()).delay(.seconds(5), scheduler: MainScheduler.instance)
-
+        settingsApi.getSettings().map { [weak self] settinngs in
+            self?._localizationMap = self?.mockService()
+            return self?._localizationMap
+        }.catchError { [weak self] _ in
+            self?._localizationMap = self?.mockService()
+            return .just(self?._localizationMap)
+        }
     }
     
     private func mockService() -> [String : String] {

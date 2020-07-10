@@ -168,7 +168,7 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(LocalizationUseCase.self) { r in
-            LocalizationUseCase()
+            LocalizationUseCase(settingsApi: r.resolve(SettingsAPI.self)!)
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in

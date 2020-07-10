@@ -14,9 +14,9 @@ extension UILabel : XibLocalizable {
         get { return nil }
         set(key) {
             if key?.isAttributedText ?? false {
-                text = locKey?.localized
-            } else {
                 attributedText = key?.localizedAttributed
+            } else {
+                text = key?.localized
             }
         }
     }

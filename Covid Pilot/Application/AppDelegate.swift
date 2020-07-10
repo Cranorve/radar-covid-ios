@@ -36,31 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             debugPrint("Error initializing DP3T \(error)")
         }
-        loadLocalization()
         
         return true
     }
     
-    func loadLocalization() {
 
-        let localizationUseCase = injection.resolve(LocalizationUseCase.self)!
-        LocalizationHolder.source = localizationUseCase
-        
-        let group = DispatchGroup()
-        group.enter()
-        
-        localizationUseCase.loadlocalization().subscribe(
-            onNext:{  active in
-                debugPrint("Ok")
-                group.leave()
-            }, onError: { error in
-                debugPrint(error)
-                group.leave()
-        }).disposed(by: disposeBag)
-
-        group.wait()
-
-    }
 
     // MARK: UISceneSession Lifecycle
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

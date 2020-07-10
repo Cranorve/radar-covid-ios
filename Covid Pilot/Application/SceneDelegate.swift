@@ -52,7 +52,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 self?.window?.rootViewController?.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar")
         }).disposed(by: disposeBag)
         
-        router.route(to: Routes.Welcome, from: navigationController)
+        let localizationUseCase = AppDelegate.shared.injection.resolve(LocalizationUseCase.self)!
+        LocalizationHolder.source = localizationUseCase
+        
+        localizationUseCase.loadlocalization().subscribe(
+            onNext:{  active in
+                debugPrint("Ok")
+                 router.route(to: Routes.Welcome, from: navigationController)
+            }, onError: { error in
+                debugPrint(error)
+                 router.route(to: Routes.Welcome, from: navigationController)
+        }).disposed(by: self.disposeBag)
         
     }
 
