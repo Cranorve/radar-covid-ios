@@ -55,18 +55,6 @@ class HomeViewController: UIViewController {
         self.showCovidAlert()
     }
     
-    
-    private var expositionInfo: ExpositionInfo?
-    var isColor = true
-    var router: AppRouter?
-    var expositionUseCase: ExpositionUseCase?
-    var radarStatusUseCase: RadarStatusUseCase?
-    var syncUseCase: SyncUseCase?
-    var resetDataUseCase: ResetDataUseCase?
-    var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
-    var originalImage: UIImage?
-    var originalCircleImage: UIImage?
-    
     @IBAction func onCommunicate(_ sender: Any) {
         guard let expositionInfo = expositionInfo else {
             return
