@@ -7,11 +7,8 @@
 //
 
 import UIKit
-import RxSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
-    private let disposeBag = DisposeBag()
 
     var window: UIWindow?
 
@@ -24,45 +21,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = UINavigationController()
         navigationController.setNavigationBarHidden(true, animated: false)
         
+        
+        let router = AppDelegate.shared.injection.resolve(AppRouter.self)!
+        
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
-        let router = AppDelegate.shared.injection.resolve(AppRouter.self)!
-        let configUseCase =  AppDelegate.shared.injection.resolve(ConfigurationUseCase.self)!
-        
-        configUseCase.loadConfig().subscribe(
-            onNext:{ settings in
-                debugPrint("Configuration  finished")
-
-                if  !(settings.isUpdated ?? false) {
-                    let configUrl = settings.parameters?.applicationVersion?.ios?.bundleUrl ?? "itms://itunes.apple.com"
-                    self.window?.rootViewController?.showAlertOk(title: "Error", message: "Para poder seguir utilizando Radar COVID es necesario que actualices la aplicación.", buttonTitle: "ACTUALIZAR") { (action) in
-                        if let url = NSURL(string: configUrl) as URL? {
-                            UIApplication.shared.open(url) { (open) in
-                                exit(0);
-                            }
-                        }
-                    }
-                }
-                
-            }, onError: {  [weak self] error in
-                debugPrint("Configuration errro \(error)")
-                self?.window?.rootViewController?.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar")
-        }).disposed(by: disposeBag)
-        
-        let localizationUseCase = AppDelegate.shared.injection.resolve(LocalizationUseCase.self)!
-        LocalizationHolder.source = localizationUseCase
-        
-        localizationUseCase.loadlocalization().subscribe(
-            onNext:{  active in
-                debugPrint("Ok")
-                 router.route(to: Routes.Welcome, from: navigationController)
-            }, onError: { error in
-                debugPrint(error)
-                 router.route(to: Routes.Welcome, from: navigationController)
-        }).disposed(by: self.disposeBag)
+        router.route(to: Routes.Root, from: navigationController)
         
     }
 

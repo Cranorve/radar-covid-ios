@@ -67,7 +67,7 @@ class Injection {
         }.inObjectScope(.container)
         .initCompleted {r, appRouter in
             appRouter.infoVC = r.resolve(InfoViewController.self)!
-            appRouter.homeVC = r.resolve(HomeViewController.self)!
+            appRouter.rootVC = r.resolve(RootViewController.self)!
             appRouter.onBoardingVC = r.resolve(OnBoardingViewController.self)!
             appRouter.tabBarController = r.resolve(TabBarController.self)!
             appRouter.myHealthVC = r.resolve(MyHealthViewController.self)!
@@ -264,7 +264,6 @@ class Injection {
         container.register(WelcomeViewController.self) {  r in
             let welcomeVC = WelcomeViewController()
             welcomeVC.router = r.resolve(AppRouter.self)!
-            welcomeVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
             return welcomeVC
         }
         
@@ -281,6 +280,15 @@ class Injection {
             activatePushVC.router = r.resolve(AppRouter.self)!
             activatePushVC.notificationHandler = r.resolve(NotificationHandler.self)
             return activatePushVC
+        }
+        
+        container.register(RootViewController.self) { r in
+            let rootVC = RootViewController()
+            rootVC.configurationUseCasee = r.resolve(ConfigurationUseCase.self)!
+            rootVC.localizationUseCase = r.resolve(LocalizationUseCase.self)!
+            rootVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
+            rootVC.router = r.resolve(AppRouter.self)!
+            return rootVC
         }
     }
     

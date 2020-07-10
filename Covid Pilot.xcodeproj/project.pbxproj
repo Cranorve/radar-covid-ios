@@ -59,6 +59,8 @@
 		6D83344724B72C3B00223071 /* LocalizationHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D83344624B72C3B00223071 /* LocalizationHolder.swift */; };
 		6D83344924B7303500223071 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D83344824B7303500223071 /* String+Localizable.swift */; };
 		6D83344B24B73CC200223071 /* LocalizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D83344A24B73CC200223071 /* LocalizationUseCase.swift */; };
+		6D83344F24B8350300223071 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D83344D24B8350300223071 /* RootViewController.swift */; };
+		6D83345024B8350300223071 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D83344E24B8350300223071 /* RootViewController.xib */; };
 		6DA18CBB2491055D00BE8AAB /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CBA2491055D00BE8AAB /* BackgroundView.swift */; };
 		6DA18CC024916B3300BE8AAB /* Exposition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA18CBF24916B3300BE8AAB /* Exposition.storyboard */; };
 		6DA18CC224916B4100BE8AAB /* ExpositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */; };
@@ -235,6 +237,8 @@
 		6D83344624B72C3B00223071 /* LocalizationHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationHolder.swift; sourceTree = "<group>"; };
 		6D83344824B7303500223071 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		6D83344A24B73CC200223071 /* LocalizationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationUseCase.swift; sourceTree = "<group>"; };
+		6D83344D24B8350300223071 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		6D83344E24B8350300223071 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		6DA18CBA2491055D00BE8AAB /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		6DA18CBF24916B3300BE8AAB /* Exposition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exposition.storyboard; sourceTree = "<group>"; };
 		6DA18CC124916B4100BE8AAB /* ExpositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpositionViewController.swift; sourceTree = "<group>"; };
@@ -437,6 +441,7 @@
 		394E9628248E3E71009F640E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6D83344C24B834DD00223071 /* Root */,
 				6D5AFC952492963B00EFE838 /* Poll */,
 				6DA18CBE24916B1800BE8AAB /* Exposition */,
 				6DF6ECD2248FA091007EAA40 /* HelpLine */,
@@ -562,12 +567,20 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		6D83344C24B834DD00223071 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				6D83344D24B8350300223071 /* RootViewController.swift */,
+				6D83344E24B8350300223071 /* RootViewController.xib */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		6DA18CB92491053700BE8AAB /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				76D9BCF024A8992000BA6697 /* NVActivityIndicatorView */,
 				6DA18CBA2491055D00BE8AAB /* BackgroundView.swift */,
-				6DA18CC52492044E00BE8AAB /* Alert.swift */,
 				6D2CA48724B60EFD00981DA4 /* LocalizableLabel.swift */,
 				6D2CA48924B60F5F00981DA4 /* Localizable.swift */,
 				6D2CA48B24B612E000981DA4 /* XibLocalizable.swift */,
@@ -952,6 +965,7 @@
 				394E962C248E3F6E009F640E /* OnBoarding.storyboard in Resources */,
 				6D5AFC8F2492827C00EFE838 /* muli_bold.ttf in Resources */,
 				6D5AFC942492883700EFE838 /* muli_italic.ttf in Resources */,
+				6D83345024B8350300223071 /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1066,6 +1080,7 @@
 				6DF6ECCA248F743B007EAA40 /* OnBoardingViewController.swift in Sources */,
 				76D9BD3924A8992000BA6697 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				6DF6ECC8248F70DF007EAA40 /* PreferencesRepository.swift in Sources */,
+				6D83344F24B8350300223071 /* RootViewController.swift in Sources */,
 				6D5AFCFD2493B3AA00EFE838 /* SelectViewController.swift in Sources */,
 				3944328C248939F000FF0217 /* SceneDelegate.swift in Sources */,
 				6D2CA48A24B60F5F00981DA4 /* Localizable.swift in Sources */,
