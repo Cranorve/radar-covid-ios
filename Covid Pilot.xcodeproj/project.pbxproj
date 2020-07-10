@@ -447,7 +447,10 @@
 		394E962A248E3EEB009F640E /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
-				6DF6EC97248E5987007EAA40 /* Info */,
+				6DF6EC98248E59C6007EAA40 /* Info.storyboard */,
+				6DF6EC9A248E5C77007EAA40 /* InfoViewController.swift */,
+				6DF6ECB8248F5E56007EAA40 /* ProximityViewController.swift */,
+				6DF6ECB9248F5E56007EAA40 /* ProximityViewController.xib */,
 				6DE27C9E24A0AA2300BBCF40 /* WelcomeViewController.xib */,
 				6DF6ECB4248EAC7F007EAA40 /* WelcomeViewController.swift */,
 				394E962B248E3F6E009F640E /* OnBoarding.storyboard */,
@@ -655,17 +658,6 @@
 				39443297248939F500FF0217 /* Info.plist */,
 			);
 			path = Supporting;
-			sourceTree = "<group>";
-		};
-		6DF6EC97248E5987007EAA40 /* Info */ = {
-			isa = PBXGroup;
-			children = (
-				6DF6EC98248E59C6007EAA40 /* Info.storyboard */,
-				6DF6EC9A248E5C77007EAA40 /* InfoViewController.swift */,
-				6DF6ECB8248F5E56007EAA40 /* ProximityViewController.swift */,
-				6DF6ECB9248F5E56007EAA40 /* ProximityViewController.xib */,
-			);
-			path = Info;
 			sourceTree = "<group>";
 		};
 		6DF6ECAE248E88B9007EAA40 /* Domain */ = {

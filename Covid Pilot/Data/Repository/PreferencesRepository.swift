@@ -20,6 +20,9 @@ protocol PreferencesRepository {
     
     func getLastSync() -> Date?
     func setLastSync(date: Date)
+    
+    func isTracingInit() -> Bool
+    func setTracing(initialized: Bool)
 }
 
 class UserDefaultsPreferencesRepository : PreferencesRepository {
@@ -27,6 +30,7 @@ class UserDefaultsPreferencesRepository : PreferencesRepository {
     private static let kOnboarding = "UserDefaultsPreferencesRepository.onboarding"
     private static let kPoll = "UserDefaultsPreferencesRepository.poll"
     private static let kTracing = "UserDefaultsPreferencesRepository.tracing"
+    private static let kTracingInit = "UserDefaultsPreferencesRepository.tracingInit"
     private static let kSyncDate = "UserDefaultsPreferencesRepository.syncDate"
     
     private let userDefaults: UserDefaults
@@ -66,6 +70,14 @@ class UserDefaultsPreferencesRepository : PreferencesRepository {
     
     func setLastSync(date: Date) {
         userDefaults.set(date, forKey: UserDefaultsPreferencesRepository.kSyncDate)
+    }
+    
+    func isTracingInit() -> Bool {
+        userDefaults.object(forKey: UserDefaultsPreferencesRepository.kTracingInit) as? Bool ?? false
+    }
+    
+    func setTracing(initialized: Bool) {
+        userDefaults.set(initialized, forKey: UserDefaultsPreferencesRepository.kTracingInit)
     }
     
 }

@@ -185,7 +185,7 @@ class Injection {
         
         container.register(ProximityViewController.self) {  r in
             let proxVC = ProximityViewController()
-            proxVC.bluetoothUseCase = r.resolve(BluetoothUseCase.self)!
+            proxVC.radarStatusUseCase = r.resolve(RadarStatusUseCase.self)!
             proxVC.router = r.resolve(AppRouter.self)!
             return proxVC
         }
