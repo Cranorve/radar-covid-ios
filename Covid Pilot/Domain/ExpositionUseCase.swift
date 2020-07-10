@@ -48,6 +48,10 @@ class ExpositionUseCase: DP3TTracingDelegate {
         return expositionInfoRepository.getExpositionInfo() ?? ExpositionInfo(level: .Healthy)
     }
     
+    func getExpositionInfoFromRepository() -> ExpositionInfo! {
+        return expositionInfoRepository.getExpositionInfo() ?? ExpositionInfo(level: .Healthy)
+    }
+    
     func updateExpositionInfo() {
         
         DP3TTracing.status { result in
