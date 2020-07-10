@@ -52,10 +52,6 @@ class TextViewController: UIViewController, UITextViewDelegate, QuestionControll
         constraint?.constant = 250
     }
     
-<<<<<<< HEAD
-=======
-
->>>>>>> master
     func textViewDidChange(_ textView: UITextView) {
         question?.valuesSelected = [textView.text]
     }
