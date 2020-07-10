@@ -33,7 +33,9 @@ class ExpositionUseCase: DP3TTracingDelegate {
             if (showNotification(expositionInfo)) {
                 notificationHandler.scheduleNotification(expositionInfo: expositionInfo)
             }
-            expositionInfoRepository.save(expositionInfo: expositionInfo)
+            if (expositionInfo.level != .Error ) {
+                expositionInfoRepository.save(expositionInfo: expositionInfo)
+            }
         }
     }
     

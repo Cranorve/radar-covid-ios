@@ -48,7 +48,6 @@ class HomeViewController: UIViewController {
         }
     }
     
-    
     private var expositionInfo: ExpositionInfo?
     var isColor = true
     var router: AppRouter?
@@ -59,6 +58,7 @@ class HomeViewController: UIViewController {
     var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
     var originalImage: UIImage?
     var originalCircleImage: UIImage?
+    
     @IBAction func onCommunicate(_ sender: Any) {
         guard let expositionInfo = expositionInfo else {
             return
@@ -106,18 +106,22 @@ class HomeViewController: UIViewController {
     
     @objc func onExpositionTap() {
         if let level = expositionInfo?.level {
-            switch level {
-                case .Healthy:
-                    router?.route(to: Routes.Exposition, from: self, parameters: expositionInfo?.lastCheck)
-                case .Exposed:
-                    router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo?.since)
-                case .Infected:
-                    router?.route(to: Routes.PositiveExposed, from: self, parameters: expositionInfo?.lastCheck)
-                case .Error:
-                    debugPrint("Navigate to Error")
-            }
+            navigateToDetail(level)
         } else {
             router?.route(to: Routes.Exposition, from: self, parameters: Date())
+        }
+    }
+    
+    private func navigateToDetail(_ level: ExpositionInfo.Level) {
+        switch level {
+            case .Healthy:
+                router?.route(to: Routes.Exposition, from: self, parameters: expositionInfo?.lastCheck)
+            case .Exposed:
+                router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo?.since)
+            case .Infected:
+                router?.route(to: Routes.PositiveExposed, from: self, parameters: expositionInfo?.lastCheck)
+            case .Error:
+                navigateToDetail(expositionUseCase?.getExpositionInfoFromRepository()?.level ?? .Healthy)
         }
     }
     
@@ -140,6 +144,11 @@ class HomeViewController: UIViewController {
             envLabel.text = ""
         }
         
+        //get current exposition info in repository
+        if let exposition = expositionUseCase?.getExpositionInfoFromRepository() {
+            self.updateExpositionInfo(exposition)
+        }
+        
         expositionUseCase?.getExpositionInfo().subscribe(
             onNext:{ [weak self] expositionInfo in
                 self?.updateExpositionInfo(expositionInfo)
@@ -147,9 +156,6 @@ class HomeViewController: UIViewController {
                 debugPrint(error)
                 self?.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar")
         }).disposed(by: disposeBag)
-        
-        //get current exposition info in repository
-        self.updateExpositionInfo((expositionUseCase?.getExpositionInfoFromRepository())!)
         
         checkOnboarding()
         
