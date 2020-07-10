@@ -1202,14 +1202,14 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/debug.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 50;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = es.gob.radarcovid;
 				PRODUCT_NAME = "Radar COVID";
 				PROVISIONING_PROFILE_SPECIFIER = RadarCovidDevelopmentExposure;
@@ -1225,14 +1225,14 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/release.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 50;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = es.gob.radarcovid;
 				PRODUCT_NAME = "Radar COVID";
 				PROVISIONING_PROFILE_SPECIFIER = RadarCovidDevelopmentExposure;
@@ -1304,14 +1304,14 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/release.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 50;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = es.gob.radarcovid;
 				PRODUCT_NAME = "Radar COVID";
 				PROVISIONING_PROFILE_SPECIFIER = RadarCovidDevelopmentExposure;
@@ -1387,14 +1387,14 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/debug.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 50;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = es.gob.radarcovid;
 				PRODUCT_NAME = "Radar COVID";
 				PROVISIONING_PROFILE_SPECIFIER = RadarCovidDevelopmentExposure;
