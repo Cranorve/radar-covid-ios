@@ -9,6 +9,8 @@
 import UIKit
 import RxSwift
 import DP3TSDK
+import RxCocoa
+
 
 class HomeViewController: UIViewController {
     
@@ -37,16 +39,22 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var notificationInactiveMessage: UILabel!
     @IBOutlet weak var resetDataButton: UIButton!
     
+    private var expositionInfo: ExpositionInfo?
+       var isColor = true
+       var router: AppRouter?
+       var expositionUseCase: ExpositionUseCase?
+       var radarStatusUseCase: RadarStatusUseCase?
+       var syncUseCase: SyncUseCase?
+       var resetDataUseCase: ResetDataUseCase?
+       var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
+       var originalImage: UIImage?
+       var originalCircleImage: UIImage?
+    
+    
     @IBAction func ActivateNotifications(_ sender: Any) {
         self.showCovidAlert()
     }
-
     
-    func showCovidAlert(){
-        self.showAlertOk(title: "Notificaciones de exposición a la COVID-19 desactivadas", message: "Para que Radar COVID pueda funcionar, es necesario que actives las notificaciones de exposición a la COVID-19", buttonTitle: "Activar") { (action) in
-            UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
-        }
-    }
     
     private var expositionInfo: ExpositionInfo?
     var isColor = true
@@ -71,6 +79,8 @@ class HomeViewController: UIViewController {
         
     }
     
+    
+    
     @IBAction func onRadarSwitchChange(_ sender: Any) {
         let active = radarSwitch.isOn
         
@@ -91,6 +101,12 @@ class HomeViewController: UIViewController {
             changeRadarStatus(active)
         }
         
+    }
+    
+    func showCovidAlert(){
+        self.showAlertOk(title: "Notificaciones de exposición a la COVID-19 desactivadas", message: "Para que Radar COVID pueda funcionar, es necesario que actives las notificaciones de exposición a la COVID-19", buttonTitle: "Activar") { (action) in
+            UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+        }
     }
     
     func changeRadarStatus(_ active: Bool) {
