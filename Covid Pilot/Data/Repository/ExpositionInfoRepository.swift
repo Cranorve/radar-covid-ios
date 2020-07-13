@@ -28,11 +28,10 @@ class UserDefaultsExpositionInfoRepository : ExpositionInfoRepository {
     }
     
     func getExpositionInfo() -> ExpositionInfo? {
-        let uncoded = userDefaults.data(forKey: UserDefaultsExpositionInfoRepository.kData) ?? Data()
-        if (uncoded.isEmpty) {
-            return nil
+        if let uncoded = userDefaults.data(forKey: UserDefaultsExpositionInfoRepository.kData), !uncoded.isEmpty {
+            return try? decoder.decode(ExpositionInfo.self, from: uncoded)
         }
-        return try? decoder.decode(ExpositionInfo.self, from: uncoded)
+        return nil
     }
     
     func save(expositionInfo: ExpositionInfo) {

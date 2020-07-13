@@ -9,6 +9,8 @@
 import UIKit
 import RxSwift
 import DP3TSDK
+import RxCocoa
+
 
 class HomeViewController: UIViewController {
     
@@ -37,28 +39,22 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var notificationInactiveMessage: UILabel!
     @IBOutlet weak var resetDataButton: UIButton!
     
+    private var expositionInfo: ExpositionInfo?
+       var isColor = true
+       var router: AppRouter?
+       var expositionUseCase: ExpositionUseCase?
+       var radarStatusUseCase: RadarStatusUseCase?
+       var syncUseCase: SyncUseCase?
+       var resetDataUseCase: ResetDataUseCase?
+       var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
+       var originalImage: UIImage?
+       var originalCircleImage: UIImage?
+    
+    
     @IBAction func ActivateNotifications(_ sender: Any) {
         self.showCovidAlert()
     }
-
     
-    func showCovidAlert(){
-        self.showAlertOk(title: "Notificaciones de exposición a la COVID-19 desactivadas", message: "Para que Radar COVID pueda funcionar, es necesario que actives las notificaciones de exposición a la COVID-19", buttonTitle: "Activar") { (action) in
-            UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
-        }
-    }
-    
-    
-    private var expositionInfo: ExpositionInfo?
-    var isColor = true
-    var router: AppRouter?
-    var expositionUseCase: ExpositionUseCase?
-    var radarStatusUseCase: RadarStatusUseCase?
-    var syncUseCase: SyncUseCase?
-    var resetDataUseCase: ResetDataUseCase?
-    var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
-    var originalImage: UIImage?
-    var originalCircleImage: UIImage?
     @IBAction func onCommunicate(_ sender: Any) {
         guard let expositionInfo = expositionInfo else {
             return
@@ -70,6 +66,8 @@ class HomeViewController: UIViewController {
         }
         
     }
+    
+    
     
     @IBAction func onRadarSwitchChange(_ sender: Any) {
         let active = radarSwitch.isOn
@@ -93,6 +91,12 @@ class HomeViewController: UIViewController {
         
     }
     
+    func showCovidAlert(){
+        self.showAlertOk(title: "Notificaciones de exposición a la COVID-19 desactivadas", message: "Para que Radar COVID pueda funcionar, es necesario que actives las notificaciones de exposición a la COVID-19", buttonTitle: "Activar") { (action) in
+            UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+        }
+    }
+    
     func changeRadarStatus(_ active: Bool) {
         radarStatusUseCase?.changeTracingStatus(active: active).subscribe(
             onNext:{ [weak self] active in
@@ -106,18 +110,22 @@ class HomeViewController: UIViewController {
     
     @objc func onExpositionTap() {
         if let level = expositionInfo?.level {
-            switch level {
-                case .Healthy:
-                    router?.route(to: Routes.Exposition, from: self, parameters: expositionInfo?.lastCheck)
-                case .Exposed:
-                    router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo?.since)
-                case .Infected:
-                    router?.route(to: Routes.PositiveExposed, from: self, parameters: expositionInfo?.lastCheck)
-                case .Error:
-                    debugPrint("Navigate to Error")
-            }
+            navigateToDetail(level)
         } else {
             router?.route(to: Routes.Exposition, from: self, parameters: Date())
+        }
+    }
+    
+    private func navigateToDetail(_ level: ExpositionInfo.Level) {
+        switch level {
+            case .Healthy:
+                router?.route(to: Routes.Exposition, from: self, parameters: expositionInfo?.lastCheck)
+            case .Exposed:
+                router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo?.since)
+            case .Infected:
+                router?.route(to: Routes.PositiveExposed, from: self, parameters: expositionInfo?.lastCheck)
+            case .Error:
+                navigateToDetail(expositionUseCase?.getExpositionInfoFromRepository()?.level ?? .Healthy)
         }
     }
     
@@ -140,6 +148,11 @@ class HomeViewController: UIViewController {
             envLabel.text = ""
         }
         
+        //get current exposition info in repository
+        if let exposition = expositionUseCase?.getExpositionInfoFromRepository() {
+            self.updateExpositionInfo(exposition)
+        }
+        
         expositionUseCase?.getExpositionInfo().subscribe(
             onNext:{ [weak self] expositionInfo in
                 self?.updateExpositionInfo(expositionInfo)
@@ -147,9 +160,6 @@ class HomeViewController: UIViewController {
                 debugPrint(error)
                 self?.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar")
         }).disposed(by: disposeBag)
-        
-        //get current exposition info in repository
-        self.updateExpositionInfo((expositionUseCase?.getExpositionInfoFromRepository())!)
         
         checkOnboarding()
         
@@ -273,7 +283,7 @@ class HomeViewController: UIViewController {
             radarMessage.textColor = UIColor.black
         } else {
             radarTitle.text = "Radar COVID inactivo"
-            radarMessage.text = "Por favor, activa esta opción para poder identificar posibles contagios."
+            radarMessage.text = "Por favor, activa esta opción para que la aplicación funcione."
             radarMessage.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         }
     }
