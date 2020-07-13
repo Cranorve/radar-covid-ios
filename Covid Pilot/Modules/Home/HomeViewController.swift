@@ -206,7 +206,7 @@ class HomeViewController: UIViewController {
         self.expositionInfo = exposition
         switch exposition.level {
             case .Exposed:
-                expositionTitle.text = "Exposición alta"
+                expositionTitle.text = "exposiont_title".localized
                let attributedString = NSMutableAttributedString(string: "Has estado en contacto con una persona contagiada de Covid-19.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas", attributes: [
                   .font: UIFont(name: "Muli-Light", size: 16.0)!,
                   .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
@@ -293,11 +293,10 @@ class HomeViewController: UIViewController {
         if !(self.onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? true) {
             imageCheck.isHidden = false
             imageDefault.isHidden = true
+            self.onBoardingCompletedUseCase?.setOnboarding(completed: true)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 //Update UI
-                
-                self.onBoardingCompletedUseCase?.setOnboarding(completed: true)
-                
+
                 self.imageCheck.isHidden = true
                 self.imageDefault.isHidden = false
             }
