@@ -94,36 +94,36 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
         let date = dateFormatter.string(from: Date())
         if summary.attenuationDurations.count >= 3 {
             kpiDtos.append(KpiDto(
-                kpi: KpiDto.Kpi.attenuationDurations1, timestamp: date,
+                kpi: .attenuationDurations1, timestamp: date,
                 value: summary.attenuationDurations[0] as? Int
             ))
             kpiDtos.append(KpiDto(
-                kpi: KpiDto.Kpi.attenuationDurations2, timestamp: date,
+                kpi: .attenuationDurations2, timestamp: date,
                 value: summary.attenuationDurations[1] as? Int
             ))
             kpiDtos.append(KpiDto(
-                kpi: KpiDto.Kpi.attenuationDurations3, timestamp: date,
+                kpi: .attenuationDurations3, timestamp: date,
                 value: summary.attenuationDurations[2] as? Int
             ))
         }
         
         kpiDtos.append(KpiDto(
-            kpi: KpiDto.Kpi.daysSinceLastExposure, timestamp: date,
+            kpi: .daysSinceLastExposure, timestamp: date,
             value: summary.daysSinceLastExposure
         ))
         
         kpiDtos.append(KpiDto(
-            kpi: KpiDto.Kpi.matchedKeyCount, timestamp: date,
+            kpi: .matchedKeyCount, timestamp: date,
             value: Int(exactly: summary.matchedKeyCount)
         ))
         
         kpiDtos.append(KpiDto(
-            kpi: KpiDto.Kpi.maximumRiskScore, timestamp: date,
+            kpi: .maximumRiskScore, timestamp: date,
             value: Int(exactly: summary.maximumRiskScore)
         ))
 
         kpiDtos.append(KpiDto(
-            kpi: KpiDto.Kpi.summationRiskScore,
+            kpi: .summationRiskScore,
             timestamp: date,
             value: summary.metadata?["riskScoreSumFullRange"] as? Int
         ))
