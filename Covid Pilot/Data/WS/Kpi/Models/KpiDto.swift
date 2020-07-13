@@ -19,6 +19,7 @@ public struct KpiDto: Codable {
         case attenuationDurations2 = "ATTENUATION_DURATIONS_2"
         case attenuationDurations3 = "ATTENUATION_DURATIONS_3"
         case summationRiskScore = "SUMMATION_RISK_SCORE"
+        case matchConfirmed = "MATCH_CONFIRMED"
     }
     public var kpi: Kpi?
     public var timestamp: String?

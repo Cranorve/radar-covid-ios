@@ -206,7 +206,7 @@ class HomeViewController: UIViewController {
         self.expositionInfo = exposition
         switch exposition.level {
             case .Exposed:
-                expositionTitle.text = "exposiont_title".localized
+                expositionTitle.text = "Exposición alta"
                let attributedString = NSMutableAttributedString(string: "Has estado en contacto con una persona contagiada de Covid-19.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas", attributes: [
                   .font: UIFont(name: "Muli-Light", size: 16.0)!,
                   .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
