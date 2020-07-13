@@ -38,7 +38,8 @@ class LocalizationUseCase: LocalizationSource {
     }
     
     private func mockService() -> [String : String] {
-        ["title" : "Este es un titulo traducido"]
+        ["title" : "Este es un titulo traducido",
+         "communicateButton": "Comunica tu positivo COOOOVID-19"]
     }
     
 }

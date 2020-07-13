@@ -142,11 +142,8 @@ class HomeViewController: UIViewController {
         radarSwitch.backgroundColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
 
         resetDataButton.isHidden = !Config.debug
-        if Config.endpoints == .pre {
-            envLabel.text = Config.environment
-        } else {
-            envLabel.text = ""
-        }
+        
+        envLabel.isHidden = Config.endpoints == .pro
         
         //get current exposition info in repository
         if let exposition = expositionUseCase?.getExpositionInfoFromRepository() {
