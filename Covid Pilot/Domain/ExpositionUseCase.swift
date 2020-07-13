@@ -12,15 +12,22 @@ import RxSwift
 
 class ExpositionUseCase: DP3TTracingDelegate {
     
+    private let disposeBag = DisposeBag()
+    private let dateFormatter = DateFormatter()
+    
     private let subject = BehaviorSubject<ExpositionInfo>(value: ExpositionInfo(level: .Healthy))
     
     private let expositionInfoRepository: ExpositionInfoRepository
     private let notificationHandler: NotificationHandler
+    private let kpiControllerApi: KpiControllerAPI
     
     init(notificationHandler: NotificationHandler,
-         expositionInfoRepository: ExpositionInfoRepository) {
+         expositionInfoRepository: ExpositionInfoRepository,
+         kpiControllerApi: KpiControllerAPI) {
         self.notificationHandler = notificationHandler
         self.expositionInfoRepository = expositionInfoRepository
+        self.kpiControllerApi = kpiControllerApi
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss.SSS z"
         DP3TTracing.delegate = self
     }
     
@@ -29,6 +36,15 @@ class ExpositionUseCase: DP3TTracingDelegate {
         subject.onNext(expositionInfo)
         if (showNotification(expositionInfo)) {
             notificationHandler.scheduleNotification(expositionInfo: expositionInfo)
+            kpiControllerApi.saveKpi(body: [KpiDto(
+                kpi: .matchConfirmed,
+                timestamp: dateFormatter.string(from: Date()),
+                value: 1)]).subscribe (
+                onError: { error in
+                        debugPrint("Erorr sending MatchConfirmed KPI \(error)")
+                }, onCompleted:{
+                    debugPrint("MatchConfirmed KPI sent")
+                }).disposed(by: disposeBag)
         }
         expositionInfoRepository.save(expositionInfo: expositionInfo)
     }
@@ -74,7 +90,7 @@ class ExpositionUseCase: DP3TTracingDelegate {
     
     private func showNotification(_ expositionInfo: ExpositionInfo) -> Bool {
         if let localEI = expositionInfoRepository.getExpositionInfo() {
-            return !equals(localEI, expositionInfo)
+            return !equals(localEI, expositionInfo) && expositionInfo.level == .Exposed
         }
         return false
     }

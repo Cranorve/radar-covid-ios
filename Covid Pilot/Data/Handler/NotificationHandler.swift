@@ -47,17 +47,18 @@ class NotificationHandler: NSObject, UNUserNotificationCenterDelegate {
         formatter.dateFormat = "dd.MM.YYYY"
         switch expositionInfo.level {
             case .Exposed:
-                title = "Exposición Alta"
-                var desde = ""
-                if let since = expositionInfo.since {
-                    desde = "Desde \(formatter.string(from: since))"
-                }
-                body = "Has estado expuesto. \(desde)"
+                title = "Riesgo de exposición alto"
+                body = "Llama gratis al \(Config.contactNumber) para reportarlo y continuar la simulación del piloto."
+//                var desde = ""
+//                if let since = expositionInfo.since {
+//                    desde = "Desde \(formatter.string(from: since))"
+//                }
+//                body = "Has estado expuesto. \(desde)"
                 sound = .defaultCritical
-            case .Healthy:
-                title = "Exposición Baja"
-                body = "Tu exposicion ahora es baja"
-                sound = .default
+//            case .Healthy:
+//                title = "Exposición Baja"
+//                body = "Tu exposicion ahora es baja"
+//                sound = .default
             default:
                 debugPrint("No notification for exposition: \(expositionInfo.level.rawValue)")
         }
