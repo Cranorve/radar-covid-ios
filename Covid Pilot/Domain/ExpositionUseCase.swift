@@ -12,30 +12,49 @@ import RxSwift
 
 class ExpositionUseCase: DP3TTracingDelegate {
     
+    private let disposeBag = DisposeBag()
+    private let dateFormatter = DateFormatter()
+    
     private let subject = BehaviorSubject<ExpositionInfo>(value: ExpositionInfo(level: .Healthy))
     
     private let expositionInfoRepository: ExpositionInfoRepository
     private let notificationHandler: NotificationHandler
     private let errorUseCase: ErrorUseCase
+    private let kpiControllerApi: KpiControllerAPI
     
     init(notificationHandler: NotificationHandler,
          expositionInfoRepository: ExpositionInfoRepository,
-         errorUseCase: ErrorUseCase) {
+         errorUseCase: ErrorUseCase,
+         kpiControllerApi: KpiControllerAPI) {
         self.notificationHandler = notificationHandler
         self.expositionInfoRepository = expositionInfoRepository
         self.errorUseCase = errorUseCase
+        self.kpiControllerApi = kpiControllerApi
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss.SSS z"
         DP3TTracing.delegate = self
     }
     
     func DP3TTracingStateChanged(_ state: TracingState) {
+
         if let expositionInfo = tracingStatusToExpositionInfo(tStatus: state) {
             subject.onNext(expositionInfo)
             if (showNotification(expositionInfo)) {
+                    kpiControllerApi.saveKpi(body: [KpiDto(
+                    kpi: .matchConfirmed,
+                    timestamp: dateFormatter.string(from: Date()),
+                    value: 1)]).subscribe (
+                onError: { error in
+                        debugPrint("Erorr sending MatchConfirmed KPI \(error)")
+                }, onCompleted:{
+                    debugPrint("MatchConfirmed KPI sent")
+                }).disposed(by: disposeBag)
+
                 notificationHandler.scheduleNotification(expositionInfo: expositionInfo)
             }
             if (expositionInfo.level != .Error ) {
                 expositionInfoRepository.save(expositionInfo: expositionInfo)
             }
+
         }
     }
     
@@ -91,7 +110,7 @@ class ExpositionUseCase: DP3TTracingDelegate {
     
     private func showNotification(_ expositionInfo: ExpositionInfo) -> Bool {
         if let localEI = expositionInfoRepository.getExpositionInfo() {
-            return !equals(localEI, expositionInfo)
+            return !equals(localEI, expositionInfo) && expositionInfo.level == .Exposed
         }
         return false
     }

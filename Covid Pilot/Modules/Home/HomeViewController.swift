@@ -293,11 +293,10 @@ class HomeViewController: UIViewController {
         if !(self.onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? true) {
             imageCheck.isHidden = false
             imageDefault.isHidden = true
+            self.onBoardingCompletedUseCase?.setOnboarding(completed: true)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 //Update UI
-                
-                self.onBoardingCompletedUseCase?.setOnboarding(completed: true)
-                
+
                 self.imageCheck.isHidden = true
                 self.imageDefault.isHidden = false
             }
