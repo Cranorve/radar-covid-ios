@@ -16,7 +16,7 @@ class ActivatePushNotificationViewController: UIViewController {
     @IBAction func onContinue(_ sender: Any) {
 
         
-        self.view.showTransparentBackground(withColor: UIColor.blueyGrey90, alpha: 1, nil, "Selecciona “<b>Activar</b>” en la ventana que aparecerá a continuación".htmlToAttributedString, UIColor.white)
+        self.view.showTransparentBackground(withColor: UIColor.blueyGrey90, alpha: 1, nil, "Selecciona “<b>Permitir</b>” en la ventana que aparecerá a continuación".htmlToAttributedString, UIColor.white)
         
         self.notificationHandler?.setupNotifications().subscribe(onNext: { (accepted) in
             print("notification accepted", accepted)
