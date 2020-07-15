@@ -15,8 +15,7 @@ class ExpositionUseCase: DP3TTracingDelegate {
     private let disposeBag = DisposeBag()
     private let dateFormatter = DateFormatter()
     
-    private let subject = BehaviorSubject<ExpositionInfo>(value: ExpositionInfo(level: .Healthy))
-    
+    private let subject: BehaviorSubject<ExpositionInfo>
     private let expositionInfoRepository: ExpositionInfoRepository
     private let notificationHandler: NotificationHandler
     private let errorUseCase: ErrorUseCase
@@ -26,12 +25,17 @@ class ExpositionUseCase: DP3TTracingDelegate {
          expositionInfoRepository: ExpositionInfoRepository,
          errorUseCase: ErrorUseCase,
          kpiControllerApi: KpiControllerAPI) {
+        
         self.notificationHandler = notificationHandler
         self.expositionInfoRepository = expositionInfoRepository
         self.errorUseCase = errorUseCase
         self.kpiControllerApi = kpiControllerApi
+        self.subject = BehaviorSubject<ExpositionInfo>(value: expositionInfoRepository.getExpositionInfo() ?? ExpositionInfo(level: .Healthy))
+        
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss.SSS z"
+        
         DP3TTracing.delegate = self
+        
     }
     
     func DP3TTracingStateChanged(_ state: TracingState) {
