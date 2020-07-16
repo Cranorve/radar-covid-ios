@@ -206,12 +206,18 @@ class Injection {
         container.register(HomeViewController.self) {  r in
             let homeVC = self.createViewController(storyboard: "Home", id: "HomeViewController") as! HomeViewController
             homeVC.router = r.resolve(AppRouter.self)!
-            homeVC.expositionUseCase = r.resolve(ExpositionUseCase.self)!
-            homeVC.radarStatusUseCase = r.resolve(RadarStatusUseCase.self)!
-            homeVC.resetDataUseCase = r.resolve(ResetDataUseCase.self)!
-            homeVC.syncUseCase = r.resolve(SyncUseCase.self)!
-            homeVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
+            homeVC.viewModel = r.resolve(HomeViewModel.self)!
             return homeVC
+        }
+        
+        container.register(HomeViewModel.self) { r in
+            let homeVM = HomeViewModel()
+            homeVM.expositionUseCase = r.resolve(ExpositionUseCase.self)!
+            homeVM.radarStatusUseCase = r.resolve(RadarStatusUseCase.self)!
+            homeVM.resetDataUseCase = r.resolve(ResetDataUseCase.self)!
+            homeVM.syncUseCase = r.resolve(SyncUseCase.self)!
+            homeVM.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!
+            return homeVM
         }
         
         container.register(MyDataViewController.self) {  r in
