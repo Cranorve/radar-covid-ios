@@ -63,13 +63,15 @@ class HomeViewController: UIViewController {
     @IBAction func onRadarSwitchChange(_ sender: Any) {
         let active = radarSwitch.isOn
         
-        if !active {
-            self.showAlertCancelContinue(title: "¿Estas seguro de desactivar Radar COVID?", message: "Si desactivas Radar COVID, la aplicación dejará de registrar contactos. Ayúdanos a cuidarte" , buttonOkTitle: "Desactivar", buttonCancelTitle: "Mantener activo",
+        if active {
+            viewModel?.changeRadarStatus(true)
+        } else {
+            self.showAlertCancelContinue(title: "¿Estas seguro de desactivar Radar COVID?", message: "Si desactivas Radar COVID, la aplicación dejará de registrar contactos. Ayúdanos a cuidarte" , buttonOkTitle: "Desactivar", buttonCancelTitle:  "Mantener activo",
                 okHandler: { [weak self] _ in
                     self?.viewModel?.changeRadarStatus(false)
-                })
-        } else {
-            viewModel?.changeRadarStatus(active)
+                }, cancelHandler: { [weak self] _ in
+                    self?.radarSwitch.isOn = true
+            })
         }
     }
     
