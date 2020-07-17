@@ -59,10 +59,7 @@ class MyHealthViewController: UIViewController {
                     self?.navigateIf(reported: reportedCodeBool)
                 }, onError: {  [weak self] error in
                     self?.view.hideLoading()
-                    self?.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"){ (action) in
-                        UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
-                    }
-
+                    self?.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok")
             }).disposed(by: disposeBag)
         }
     }
