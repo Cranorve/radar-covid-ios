@@ -100,8 +100,6 @@ class ExpositionUseCase: DP3TTracingDelegate {
         switch tStatus.trackingState {
             case .inactive(let error):
                 return dp3tTracingErrorToDomain(error)
-            case .stopped:
-                return nil
             default: break
         }
         
