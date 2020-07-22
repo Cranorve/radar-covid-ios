@@ -40,10 +40,18 @@ class ExpositionUseCase: DP3TTracingDelegate {
     
     func DP3TTracingStateChanged(_ state: TracingState) {
 
-        if let expositionInfo = tracingStatusToExpositionInfo(tStatus: state) {
+        if var expositionInfo = tracingStatusToExpositionInfo(tStatus: state) {
             subject.onNext(expositionInfo)
-            if (showNotification(expositionInfo)) {
-                    kpiControllerApi.saveKpi(body: [KpiDto(
+            
+            let localEI = expositionInfoRepository.getExpositionInfo()
+            
+            if isNewInfected(localEI, expositionInfo) {
+                expositionInfo.since = Date()
+            }
+            
+            if showNotification(localEI, expositionInfo) {
+                    
+                kpiControllerApi.saveKpi(body: [KpiDto(
                     kpi: .matchConfirmed,
                     timestamp: dateFormatter.string(from: Date()),
                     value: 1)]).subscribe (
@@ -112,8 +120,8 @@ class ExpositionUseCase: DP3TTracingDelegate {
         }
     }
     
-    private func showNotification(_ expositionInfo: ExpositionInfo) -> Bool {
-        if let localEI = expositionInfoRepository.getExpositionInfo() {
+    private func showNotification(_ localEI:ExpositionInfo?,  _ expositionInfo: ExpositionInfo) -> Bool {
+        if let localEI = localEI {
             return !equals(localEI, expositionInfo) && expositionInfo.level == .Exposed
         }
         return false
@@ -121,6 +129,14 @@ class ExpositionUseCase: DP3TTracingDelegate {
     
     private func equals(_ ei1: ExpositionInfo, _ ei2: ExpositionInfo) -> Bool {
         ei1.level == ei2.level && ei1.since == ei2.since
+    }
+    
+    private func isNewInfected(_ localEI:ExpositionInfo?,  _ expositionInfo: ExpositionInfo) -> Bool {
+        if let localEI = localEI {
+            return !equals(localEI, expositionInfo) && expositionInfo.level == .Infected
+        }
+        return expositionInfo.level == .Infected
+        
     }
     
     private func dp3tTracingErrorToDomain(_ error: DP3TTracingError) -> ExpositionInfo? {

@@ -94,7 +94,7 @@ class HomeViewController: UIViewController {
             case .Exposed:
                 router?.route(to: Routes.HighExposition, from: self, parameters: info.since)
             case .Infected:
-                router?.route(to: Routes.PositiveExposed, from: self, parameters: info.lastCheck)
+                router?.route(to: Routes.PositiveExposed, from: self, parameters: info.since)
             case .Error:
                 debugPrint("Error level should not be here")
         }
