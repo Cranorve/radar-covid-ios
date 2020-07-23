@@ -50,7 +50,7 @@
         <image name="GobImage" width="169" height="80"/>
         <image name="semiCircle" width="375" height="812"/>
         <namedColor name="bgColor">
-            <color red="0.98000001907348633" green="0.97600001096725464" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98039215686274506" green="0.97647058823529409" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

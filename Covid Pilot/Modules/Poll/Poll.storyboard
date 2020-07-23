@@ -87,6 +87,9 @@
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                 <color key="textColor" name="brownGrey"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="POLL_TELL_YOUR_EXPERIENCE"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMn-C9-gIK">
                                 <rect key="frame" x="16" y="138" width="343" height="0.0"/>

@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
+
     private let disposeBag = DisposeBag()
 
     var window: UIWindow?
@@ -20,18 +20,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
+
         let navigationController = UINavigationController()
         navigationController.setNavigationBarHidden(true, animated: false)
-        
+
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        
+
         let router = AppDelegate.shared.injection.resolve(AppRouter.self)!
         let configUseCase =  AppDelegate.shared.injection.resolve(ConfigurationUseCase.self)!
-        
+
         configUseCase.loadConfig().subscribe(
             onNext:{ settings in
                 debugPrint("Configuration  finished")
@@ -46,14 +46,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         }
                     }
                 }
-                
-            }, onError: {  [weak self] error in
-                debugPrint("Configuration errro \(error)")
-                self?.window?.rootViewController?.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar")
+
+        }, onError: {  [weak self] error in
+            debugPrint("Configuration errro \(error)")
+            self?.window?.rootViewController?.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar")
         }).disposed(by: disposeBag)
-        
-        router.route(to: Routes.Welcome, from: navigationController)
-        
+
+        router.route(to: Routes.Root, from: navigationController)
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -86,4 +86,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
+
+
 

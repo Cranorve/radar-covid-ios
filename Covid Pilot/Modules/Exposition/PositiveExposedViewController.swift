@@ -11,14 +11,14 @@ import UIKit
 class PositiveExposedViewController: UIViewController {
     private let bgImageRed = UIImage(named: "GradientBackgroundRed")
     
-    @IBOutlet weak var infectedText: UILabel!
+    @IBOutlet weak var realInfectedText: UILabel!
     @IBOutlet weak var moreInfoView: UIView!
     @IBOutlet weak var expositionBGView : BackgroundView!
     var since:Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.infectedText.attributedText = setInfectedText()
+        setInfectedText()
         
         expositionBGView.image = bgImageRed
         
@@ -26,7 +26,7 @@ class PositiveExposedViewController: UIViewController {
         moreInfoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userDidTapLabel(tapGestureRecognizer:))))
     }
     
-    func setInfectedText() -> NSMutableAttributedString{
+    func setInfectedText() {
         let date = self.since ?? Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.YYYY"
@@ -37,8 +37,7 @@ class PositiveExposedViewController: UIViewController {
         if daysSinceLastInfection == 0 {
             daysSinceLastInfection = 1
         }
-        let text = "<b>\(daysSinceLastInfection) días</b> (actualizado \(actualizado))".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli", andSize: 16)
-        return text ?? NSMutableAttributedString()
+        realInfectedText.attributedText = "EXPOSITION_EXPOSED_DESCRIPTION".localizedAttributed(withParams: [String(daysSinceLastInfection), actualizado])
     }
     
     @objc func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {

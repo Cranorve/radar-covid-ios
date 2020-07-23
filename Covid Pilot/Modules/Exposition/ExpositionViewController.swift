@@ -14,13 +14,16 @@ class ExpositionViewController: UIViewController {
     
     @IBOutlet weak var moreInfoView: UIView!
     @IBOutlet weak var expositionDate: UILabel!
+    @IBOutlet weak var sincontactos: UILabel!
     @IBOutlet weak var expositionBGView : BackgroundView!
     var lastCheck:Date? 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.expositionDate.text = "(actualizado \(expositionDateWithFormat()))"
+        self.sincontactos.attributedText = "EXPOSITION_LOW_DESCRIPTION".localizedAttributed(withParams: [expositionDateWithFormat()])
+        
+//        self.expositionDate.text = "(actualizado \(expositionDateWithFormat()))"
         expositionBGView.image = bgImageGreen
         
         moreInfoView.isUserInteractionEnabled = true
@@ -33,7 +36,7 @@ class ExpositionViewController: UIViewController {
             formatter.dateFormat = "dd.MM.YYYY"
             return formatter.string(from: date)
         }
-        return ""
+        return "01.07.2020"
     }
     
     @objc func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {

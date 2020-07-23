@@ -44,7 +44,7 @@ class TextViewController: UIViewController, UITextViewDelegate, QuestionControll
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "Describir..."
+            textView.text = "POLL_TEXTAREA_PLACEHOLDER".localizedAttributed.string
             textView.textColor = UIColor.lightGray
         }
         //resize textEditor

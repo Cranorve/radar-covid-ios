@@ -18,6 +18,7 @@ protocol Router {
 }
 
 public enum Routes {
+    case Root
     case Welcome
     case OnBoarding
     case Home
@@ -37,8 +38,8 @@ public enum Routes {
 class AppRouter : Router {
     
     var infoVC: InfoViewController?
-    var homeVC: HomeViewController?
     var onBoardingVC: OnBoardingViewController?
+    var rootVC: RootViewController?
     var tabBarController: TabBarController?
     var myHealthVC: MyHealthViewController?
     var myHealthReportedVC: MyHealthReportedViewController?
@@ -53,6 +54,8 @@ class AppRouter : Router {
 
     func route(to routeID: Routes, from context: UIViewController, parameters: Any?...) {
         switch routeID {
+        case .Root:
+            routeToRoot(context)
         case .Welcome:
             routeToWelcome(context)
         case .OnBoarding:
@@ -84,6 +87,10 @@ class AppRouter : Router {
     
     private func routeToOnboarding(_ context: UIViewController) {
         context.navigationController?.pushViewController(onBoardingVC!, animated: true)
+    }
+    
+    private func routeToRoot(_ context: UIViewController) {
+        loadViewAsRoot(navController: context as? UINavigationController, view: rootVC!)
     }
     
     private func routeToHome(_ context: UIViewController) {
@@ -131,16 +138,17 @@ class AppRouter : Router {
     
     private func routeToPollFinished(_ context: UIViewController) {
         context.navigationController?.pushViewController(pollFinishedVC!, animated: true)
+
     }
     
     private func routeToWelcome(_ context: UIViewController) {
-        loadViewAsRoot(navController: context as? UINavigationController, view: welcomeVC!)
+        loadViewAsRoot(navController: context.navigationController, view: welcomeVC!)
     }
     
-    private func loadViewAsRoot(navController: UINavigationController?, view: UIViewController) {
+    private func loadViewAsRoot(navController: UINavigationController?, view: UIViewController, animated: Bool = false) {
         navController?.viewControllers.removeAll()
         navController?.popToRootViewController(animated: false)
-        navController?.pushViewController(view, animated: false)
+        navController?.pushViewController(view, animated: animated)
     }
 
 }
