@@ -54,9 +54,9 @@ extension NSMutableAttributedString {
 }
 
 extension NSAttributedString {
-    func formatHtmlString(withBaseFont font: String, andSize size: CGFloat) -> NSMutableAttributedString {
+    func formatHtmlString(withBaseFont font: String, andSize size: CGFloat, perserveFont: Bool = false) -> NSMutableAttributedString {
         let attributedString = self
         let fontFamily =  UIFont(name: font, size: size) ?? UIFont.systemFont(ofSize: size)
-        return NSMutableAttributedString(attributedString: attributedString).setBaseFont(baseFont: fontFamily, preserveFontSizes: false)
+        return NSMutableAttributedString(attributedString: attributedString).setBaseFont(baseFont: fontFamily, preserveFontSizes: perserveFont)
     }
 }

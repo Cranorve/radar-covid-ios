@@ -19,8 +19,9 @@ extension String: Localizable {
     }
     
     var localizedAttributed: NSMutableAttributedString {
+        let string = LocalizationHolder.localizationMap?[self] ?? NSLocalizedString(self, comment: "")
 //        TODO: parsear string y obtener las secciones negrita etc...
-        NSMutableAttributedString()
+        return string.htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli", andSize: 16, perserveFont: true) ?? NSMutableAttributedString(string: string)
     }
     
     

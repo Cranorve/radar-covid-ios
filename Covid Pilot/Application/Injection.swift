@@ -59,7 +59,13 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(SettingsAPI.self) { r in
-            SettingsAPI(clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue)!)
+            SettingsAPI(
+                clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue)!
+            )
+        }.inObjectScope(.container)
+        
+        container.register(LanguageApi.self) { r in
+            LanguageApi()
         }.inObjectScope(.container)
         
         container.register(AppRouter.self) { r in
@@ -168,7 +174,7 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(LocalizationUseCase.self) { r in
-            LocalizationUseCase(settingsApi: r.resolve(SettingsAPI.self)!)
+            LocalizationUseCase(settingsApi: r.resolve(SettingsAPI.self)!, localizationApi: r.resolve(LanguageApi.self)!)
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in
