@@ -274,75 +274,12 @@ public enum NVActivityIndicatorType: CaseIterable {
     // swiftlint:disable:next cyclomatic_complexity function_body_length
     func animation() -> NVActivityIndicatorAnimationDelegate {
         switch self {
-        case .blank:
-            return NVActivityIndicatorAnimationBlank()
-        case .ballPulse:
-            return NVActivityIndicatorAnimationBallPulse()
-        case .ballGridPulse:
-            return NVActivityIndicatorAnimationBallGridPulse()
-        case .ballClipRotate:
-            return NVActivityIndicatorAnimationBallClipRotate()
-        case .squareSpin:
-            return NVActivityIndicatorAnimationSquareSpin()
-        case .ballClipRotatePulse:
-            return NVActivityIndicatorAnimationBallClipRotatePulse()
-        case .ballClipRotateMultiple:
-            return NVActivityIndicatorAnimationBallClipRotateMultiple()
-        case .ballPulseRise:
-            return NVActivityIndicatorAnimationBallPulseRise()
-        case .ballRotate:
-            return NVActivityIndicatorAnimationBallRotate()
-        case .cubeTransition:
-            return NVActivityIndicatorAnimationCubeTransition()
-        case .ballZigZag:
-            return NVActivityIndicatorAnimationBallZigZag()
-        case .ballZigZagDeflect:
-            return NVActivityIndicatorAnimationBallZigZagDeflect()
-        case .ballTrianglePath:
-            return NVActivityIndicatorAnimationBallTrianglePath()
-        case .ballScale:
-            return NVActivityIndicatorAnimationBallScale()
-        case .lineScale:
-            return NVActivityIndicatorAnimationLineScale()
-        case .lineScaleParty:
-            return NVActivityIndicatorAnimationLineScaleParty()
         case .ballScaleMultiple:
             return NVActivityIndicatorAnimationBallScaleMultiple()
-        case .ballPulseSync:
-            return NVActivityIndicatorAnimationBallPulseSync()
-        case .ballBeat:
-            return NVActivityIndicatorAnimationBallBeat()
-        case .ballDoubleBounce:
-            return NVActivityIndicatorAnimationBallDoubleBounce()
-        case .lineScalePulseOut:
-            return NVActivityIndicatorAnimationLineScalePulseOut()
-        case .lineScalePulseOutRapid:
-            return NVActivityIndicatorAnimationLineScalePulseOutRapid()
-        case .ballScaleRipple:
-            return NVActivityIndicatorAnimationBallScaleRipple()
-        case .ballScaleRippleMultiple:
-            return NVActivityIndicatorAnimationBallScaleRippleMultiple()
-        case .ballSpinFadeLoader:
-            return NVActivityIndicatorAnimationBallSpinFadeLoader()
-        case .lineSpinFadeLoader:
-            return NVActivityIndicatorAnimationLineSpinFadeLoader()
-        case .triangleSkewSpin:
-            return NVActivityIndicatorAnimationTriangleSkewSpin()
-        case .pacman:
-            return NVActivityIndicatorAnimationPacman()
-        case .ballGridBeat:
-            return NVActivityIndicatorAnimationBallGridBeat()
-        case .semiCircleSpin:
-            return NVActivityIndicatorAnimationSemiCircleSpin()
-        case .ballRotateChase:
-            return NVActivityIndicatorAnimationBallRotateChase()
-        case .orbit:
-            return NVActivityIndicatorAnimationOrbit()
-        case .audioEqualizer:
-            return NVActivityIndicatorAnimationAudioEqualizer()
-        case .circleStrokeSpin:
-            return NVActivityIndicatorAnimationCircleStrokeSpin()
+        default:
+            return NVActivityIndicatorAnimationBallScaleMultiple()
         }
+       
     }
 }
 

@@ -12,6 +12,7 @@ class HighExpositionViewController: UIViewController {
     
     private let bgImageRed = UIImage(named: "GradientBackgroundRed")
     
+    @IBOutlet weak var podriasestar: UILabel!
     @IBOutlet weak var infectedText: UILabel!
     @IBOutlet weak var phoneView: BackgroundView!
     @IBOutlet weak var timeTableLabel: UILabel!
@@ -22,7 +23,7 @@ class HighExpositionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.infectedText.attributedText = setInfectedText()
+        setInfectedText()
         
         expositionBGView.image = bgImageRed
         
@@ -36,19 +37,16 @@ class HighExpositionViewController: UIViewController {
         timeTableLabel.text = Config.timeTable
     }
     
-    func setInfectedText() -> NSMutableAttributedString{
+    func setInfectedText() {
         let date = self.since ?? Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.YYYY"
         let actualizado = formatter.string(from: date)
-        
-        
         var daysSinceLastInfection = Date().days(sinceDate: since ?? Date()) ?? 1
         if daysSinceLastInfection == 0 {
             daysSinceLastInfection = 1
         }
-        let text = "<b>\(daysSinceLastInfection) días</b> (actualizado \(actualizado))".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli", andSize: 16)
-        return text ?? NSMutableAttributedString()
+        podriasestar.attributedText = "EXPOSITION_HIGH_DESCRIPTION".localizedAttributed(withParams: [String(daysSinceLastInfection), actualizado])
     }
     
     @objc func onCallTap(tapGestureRecognizer: UITapGestureRecognizer) {

@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import RxSwift
 
 class ActivatePushNotificationViewController: UIViewController {
-    
+    private let disposeBag = DisposeBag()
     var router: AppRouter?
     
     var notificationHandler: NotificationHandler?
@@ -18,21 +19,25 @@ class ActivatePushNotificationViewController: UIViewController {
         
         self.view.showTransparentBackground(withColor: UIColor.blueyGrey90, alpha: 1, nil, "Selecciona “<b>Permitir</b>” en la ventana que aparecerá a continuación".htmlToAttributedString, UIColor.white)
         
-        self.notificationHandler?.setupNotifications().subscribe(onNext: { (accepted) in
+        self.notificationHandler?.setupNotifications().subscribe(onNext: { [weak self] accepted in
             print("notification accepted", accepted)
             DispatchQueue.main.async {
-                self.router?.route(to: .Home, from: self)
+                self?.navigateHome()
             }
-        })
+        }).disposed(by: disposeBag)
         
+    }
+    
+    private func navigateHome() {
+         router?.route(to: .Home, from: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
    

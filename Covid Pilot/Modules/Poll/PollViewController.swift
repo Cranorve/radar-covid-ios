@@ -40,7 +40,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
         if currentQuestion.hasResponse() {
             nextConfirmed()
         } else {
-            self.showAlertCancelContinue(title:  "No has respondido a una pregunta", message: "", buttonOkTitle: "Continuar sin respuesta", buttonCancelTitle: "Responder") { [weak self] _ in
+            self.showAlertCancelContinue(title:  "ALERT_POLL_TITLE".localizedAttributed.string, message: "", buttonOkTitle: "ALERT_POLL_OK_BUTTON".localizedAttributed.string, buttonCancelTitle: "ALERT_POLL_CANCEL_BUTTON".localizedAttributed.string) { [weak self] _ in
                 self?.nextConfirmed()
             }
         }
@@ -105,7 +105,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
             }, onError: {  [weak self] error in
                 self?.view.hideLoading()
                 debugPrint(error)
-                self?.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar") { (action) in
+                self?.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_GENERIC_ERROR_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed.string) { (action) in
                     self?.navigationController?.popViewController(animated: true)
                 }
 
@@ -113,7 +113,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
     }
     
     private func load(poll: Poll?) {
-        nextButton.titleLabel?.text = "Siguiente"
+        nextButton.titleLabel?.text = "POLL_NEXT_BUTON".localizedAttributed.string
         self.poll = poll
         poll?.questions?.forEach {question in
             var vc: QuestionController?
@@ -181,9 +181,9 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
             loadPageIndex()
         }
         if poll?.isLast(question: currentQuestion) ?? false {
-            nextButton.setTitle("Finalizar", for: .normal)
+            nextButton.setTitle("POLL_END_BUTON".localizedAttributed.string, for: .normal)
         } else {
-            nextButton.setTitle("Siguiente", for: .normal)
+            nextButton.setTitle("POLL_NEXT_BUTON".localizedAttributed.string, for: .normal)
         }
     }
     
@@ -198,7 +198,7 @@ class PollViewController: PageboyViewController, PageboyViewControllerDataSource
                 }
             }, onError: {  [weak self] error in
                 debugPrint("Error saving poll \(error)")
-                self?.showAlertOk(title: "Error", message: "Se ha producido un error de conexíon.", buttonTitle: "Aceptar")
+                self?.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_GENERIC_ERROR_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed.string)
         }).disposed(by: disposeBag)
     }
     

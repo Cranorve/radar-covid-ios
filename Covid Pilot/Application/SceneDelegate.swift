@@ -7,11 +7,8 @@
 //
 
 import UIKit
-import RxSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
-    private let disposeBag = DisposeBag()
 
     var window: UIWindow?
 
@@ -24,13 +21,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = UINavigationController()
         navigationController.setNavigationBarHidden(true, animated: false)
         
+        
+        let router = AppDelegate.shared.injection.resolve(AppRouter.self)!
+        
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
-        let router = AppDelegate.shared.injection.resolve(AppRouter.self)!
-        let configUseCase =  AppDelegate.shared.injection.resolve(ConfigurationUseCase.self)!
+        router.route(to: Routes.Root, from: navigationController)
         
         configUseCase.loadConfig().subscribe(
             onNext:{ settings in

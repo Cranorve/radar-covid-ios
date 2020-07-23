@@ -64,6 +64,7 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="HOME_BUTTON_SEND_POSITIVE"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="onCommunicate:" destination="boN-vE-v6h" eventType="primaryActionTriggered" id="V3n-sM-LVk"/>
@@ -121,6 +122,9 @@ Cuídate y cuida a los demás.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="darkPeach"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ALERT_HOME_COVID_NOTIFICATION_TITLE"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdH-mH-0eN">
                                                         <rect key="frame" x="339" y="73.333333333333314" width="35" height="22"/>
@@ -200,8 +204,8 @@ Cuídate y cuida a los demás.</string>
                                     <action selector="onReset:" destination="boN-vE-v6h" eventType="primaryActionTriggered" id="7cg-2h-x95"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWR-aJ-g5N">
-                                <rect key="frame" x="173.66666666666666" y="144" width="66.666666666666657" height="31.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWR-aJ-g5N">
+                                <rect key="frame" x="182.66666666666666" y="144" width="49" height="31.333333333333343"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
