@@ -209,7 +209,7 @@ class HomeViewController: UIViewController {
 //                  .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
 //                ])
 //                attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 0, length: 63))
-                expositionDescription.attributedText  = "HOME_EXPOSITION_MESSAGE_HIGH".localizedAttributed
+                expositionDescription.attributedText  = "HOME_EXPOSITION_MESSAGE_HIGH".localizedAttributed(withParams: ["90000000"])
                 expositionView.image = bgImageRed
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
                 notificationInactiveMessage.isHidden = true

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String: Localizable {
     
@@ -15,13 +16,26 @@ extension String: Localizable {
     }
     
     var isAttributedText: Bool {
-        localized.contains("/>")
+        localized.contains("</")
     }
     
     var localizedAttributed: NSMutableAttributedString {
+        return localizedAttributed()
+    }
+    
+    func localizedAttributed(withParams params:[String] ) -> NSMutableAttributedString{
+        var string = self.localized
+        if string.contains("%@") {
+            string = String(format: string, arguments: params)
+        }
+        return string.localizedAttributed
+        
+    }
+    
+    func localizedAttributed(withSize size: CGFloat = 16) -> NSMutableAttributedString{
         let string = LocalizationHolder.localizationMap?[self] ?? NSLocalizedString(self, comment: "")
-//        TODO: parsear string y obtener las secciones negrita etc...
-        return string.htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli", andSize: 16, perserveFont: true) ?? NSMutableAttributedString(string: string)
+        return string.htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli", andSize: size, perserveFont: true) ?? NSMutableAttributedString(string: string)
+        
     }
     
     

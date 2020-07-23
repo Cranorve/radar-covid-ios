@@ -17,9 +17,6 @@
         <array key="muli_light.ttf">
             <string>Muli-Light</string>
         </array>
-        <array key="muli_regular.ttf">
-            <string>Muli-Regular</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Positive Exposed View Controller-->
@@ -143,19 +140,16 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="EXPOSITION_EXPOSED_TITLE_2"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu diagnóstico fue enviado hace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VDp-8X-dw5">
-                                                        <rect key="frame" x="26" y="77" width="329" height="19"/>
-                                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="EXPOSITION_EXPOSED_DESCRIPTION"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 días (actualizado 01.06.2020)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="T2f-Fr-TBp">
-                                                        <rect key="frame" x="26" y="101" width="329" height="19"/>
-                                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VDp-8X-dw5">
+                                                        <rect key="frame" x="26" y="77" width="329" height="20.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Tu diagnóstico fue enviado hace">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIAGNÓSTICO COMUNICADO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fk-UA-jNI">
@@ -171,12 +165,9 @@
                                                 <constraints>
                                                     <constraint firstItem="sso-zP-dSu" firstAttribute="leading" secondItem="NRt-Tw-ftg" secondAttribute="leading" constant="26" id="3Zv-yS-iW8"/>
                                                     <constraint firstItem="VDp-8X-dw5" firstAttribute="leading" secondItem="NRt-Tw-ftg" secondAttribute="leading" constant="26" id="76D-q0-Ovd"/>
-                                                    <constraint firstItem="T2f-Fr-TBp" firstAttribute="leading" secondItem="NRt-Tw-ftg" secondAttribute="leading" constant="26" id="97z-kd-lh2"/>
                                                     <constraint firstAttribute="height" constant="160" id="Buc-1K-Dvt"/>
-                                                    <constraint firstItem="T2f-Fr-TBp" firstAttribute="top" secondItem="VDp-8X-dw5" secondAttribute="bottom" constant="5" id="CVr-ba-aX8"/>
                                                     <constraint firstItem="8Fk-UA-jNI" firstAttribute="top" secondItem="NRt-Tw-ftg" secondAttribute="top" constant="15" id="LHD-Lx-EqR"/>
                                                     <constraint firstItem="sso-zP-dSu" firstAttribute="top" secondItem="8Fk-UA-jNI" secondAttribute="bottom" constant="5" id="XvS-s6-was"/>
-                                                    <constraint firstAttribute="trailing" secondItem="T2f-Fr-TBp" secondAttribute="trailing" constant="19" id="nyw-03-MIX"/>
                                                     <constraint firstItem="8Fk-UA-jNI" firstAttribute="leading" secondItem="NRt-Tw-ftg" secondAttribute="leading" constant="26" id="szO-CE-m9l"/>
                                                     <constraint firstItem="VDp-8X-dw5" firstAttribute="top" secondItem="sso-zP-dSu" secondAttribute="bottom" constant="10" id="xIV-In-DXc"/>
                                                     <constraint firstAttribute="trailing" secondItem="VDp-8X-dw5" secondAttribute="trailing" constant="19" id="xZg-lZ-Upm"/>
@@ -397,8 +388,8 @@
                     <size key="freeformSize" width="414" height="1400"/>
                     <connections>
                         <outlet property="expositionBGView" destination="NRt-Tw-ftg" id="9sh-JY-79f"/>
-                        <outlet property="infectedText" destination="T2f-Fr-TBp" id="WfR-b6-02B"/>
                         <outlet property="moreInfoView" destination="Q62-2f-7cL" id="tuF-uG-zA3"/>
+                        <outlet property="realInfectedText" destination="VDp-8X-dw5" id="C7n-SU-h4a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxn-LZ-mDG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
