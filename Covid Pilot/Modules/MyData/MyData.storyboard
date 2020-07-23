@@ -31,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VwZ-tl-fSP">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="548.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="560"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIS DATOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9Bl-bV-W3d">
                                                 <rect key="frame" x="16" y="100" width="343" height="14"/>
@@ -52,7 +52,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uiy-SU-ykG">
-                                                <rect key="frame" x="32" y="217.33333333333331" width="327" height="74"/>
+                                                <rect key="frame" x="32" y="224.33333333333331" width="327" height="74"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="•">
                                                         <attributes>
@@ -92,7 +92,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OpI-sc-jmF">
-                                                <rect key="frame" x="16" y="413" width="343" height="60.333333333333314"/>
+                                                <rect key="frame" x="16" y="424.33333333333331" width="343" height="60.333333333333314"/>
                                                 <string key="text">Los datos son guardados en tu teléfono y la conexión con el servidor están encriptados
 </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
@@ -103,7 +103,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aC-xr-L9s" userLabel="CheckView">
-                                                <rect key="frame" x="16" y="483.33333333333337" width="343" height="55.333333333333371"/>
+                                                <rect key="frame" x="16" y="494.66666666666657" width="343" height="55.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwU-rQ-MAh">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="18.666666666666668"/>
@@ -134,7 +134,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fH-8T-cla">
-                                                        <rect key="frame" x="0.0" y="36.666666666666629" width="343" height="18.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="36.666666666666742" width="343" height="18.666666666666671"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Consulta las ">
                                                                 <attributes>
@@ -178,7 +178,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfk-6L-D4d">
-                                                <rect key="frame" x="32" y="321.33333333333331" width="327" height="40.666666666666686"/>
+                                                <rect key="frame" x="32" y="333.33333333333331" width="327" height="40.666666666666686"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="• NO recogemos ningún dato pesonal (nombre, dirección, ed">
                                                         <attributes>
@@ -188,8 +188,8 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGg-ID-I2N">
-                                                <rect key="frame" x="16" y="382" width="343" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGg-ID-I2N">
+                                                <rect key="frame" x="16" y="394" width="343" height="20.333333333333314"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Por tanto">
                                                         <attributes>
@@ -209,8 +209,8 @@
                                             <constraint firstItem="OpI-sc-jmF" firstAttribute="top" secondItem="RGg-ID-I2N" secondAttribute="bottom" constant="10" id="Lzp-HR-1dU"/>
                                             <constraint firstAttribute="trailing" secondItem="7aC-xr-L9s" secondAttribute="trailing" constant="16" id="Mna-Hr-WBO"/>
                                             <constraint firstItem="OpI-sc-jmF" firstAttribute="leading" secondItem="VwZ-tl-fSP" secondAttribute="leading" constant="16" id="QOJ-RT-JWK"/>
-                                            <constraint firstItem="Uiy-SU-ykG" firstAttribute="bottom" secondItem="Rfk-6L-D4d" secondAttribute="top" constant="-30" id="aFA-1h-7SA"/>
-                                            <constraint firstItem="KyZ-ry-hvw" firstAttribute="bottom" secondItem="Uiy-SU-ykG" secondAttribute="top" constant="-23" id="bNv-4y-gfU"/>
+                                            <constraint firstItem="Uiy-SU-ykG" firstAttribute="bottom" secondItem="Rfk-6L-D4d" secondAttribute="top" constant="-35" id="aFA-1h-7SA"/>
+                                            <constraint firstItem="KyZ-ry-hvw" firstAttribute="bottom" secondItem="Uiy-SU-ykG" secondAttribute="top" constant="-30" id="bNv-4y-gfU"/>
                                             <constraint firstItem="RGg-ID-I2N" firstAttribute="leading" secondItem="VwZ-tl-fSP" secondAttribute="leading" constant="16" id="boK-zc-5FW"/>
                                             <constraint firstAttribute="trailing" secondItem="RGg-ID-I2N" secondAttribute="trailing" constant="16" id="ccn-1P-p1e"/>
                                             <constraint firstItem="RGg-ID-I2N" firstAttribute="top" secondItem="Rfk-6L-D4d" secondAttribute="bottom" constant="20" id="eSF-K4-qGY"/>
