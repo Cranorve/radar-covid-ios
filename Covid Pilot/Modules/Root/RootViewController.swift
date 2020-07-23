@@ -38,7 +38,7 @@ class RootViewController: UIViewController {
 
                 if  !(settings.isUpdated ?? false) {
                     let configUrl = settings.parameters?.applicationVersion?.ios?.bundleUrl ?? "itms://itunes.apple.com"
-                    self?.showAlertOk(title: "Error", message: "Para poder seguir utilizando Radar COVID es necesario que actualices la aplicación.", buttonTitle: "ACTUALIZAR") { (action) in
+                    self?.showAlertOk(title: "ALERT_UPDATE_TEXT_TITLE".localizedAttributed.string, message: "ALERT_UPDATE_TEXT_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_UPDATE_BUTTON".localizedAttributed.string) { (action) in
                         if let url = NSURL(string: configUrl) as URL? {
                             UIApplication.shared.open(url) { (open) in
                                 exit(0);
@@ -49,7 +49,7 @@ class RootViewController: UIViewController {
                 
             }, onError: {  [weak self] error in
                 debugPrint("Configuration errro \(error)")
-                self?.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar")
+                self?.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_GENERIC_ERROR_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed.string)
         }).disposed(by: disposeBag)
     }
 

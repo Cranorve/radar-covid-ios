@@ -63,7 +63,7 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="communicateButton"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="HOME_BUTTON_SEND_POSITIVE"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="onCommunicate:" destination="boN-vE-v6h" eventType="primaryActionTriggered" id="V3n-sM-LVk"/>
@@ -121,6 +121,9 @@ Cuídate y cuida a los demás.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="darkPeach"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ALERT_HOME_COVID_NOTIFICATION_TITLE"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdH-mH-0eN">
                                                         <rect key="frame" x="339" y="73.333333333333314" width="35" height="22"/>

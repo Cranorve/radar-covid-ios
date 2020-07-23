@@ -77,36 +77,36 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
     }
     
     private func loadTexts() {
-        let attributedString = NSMutableAttributedString(string: "Muchas gracias por participar en el piloto de la APP Radar COVID.  Contándonos tu opinión de forma anónima nos ayuda a mejorar  y contribuir a prevenir futuros contagios.", attributes: [
-          .font: UIFont(name: "Muli-Light", size: 16.0)!,
-          .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
-        ])
-        attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 66, length: 60))
+//        let attributedString = NSMutableAttributedString(string: "Muchas gracias por participar en el piloto de la APP Radar COVID.  Contándonos tu opinión de forma anónima nos ayuda a mejorar  y contribuir a prevenir futuros contagios.", attributes: [
+//          .font: UIFont(name: "Muli-Light", size: 16.0)!,
+//          .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
+//        ])
+//        attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 66, length: 60))
         
-        thanksLabel.attributedText = attributedString
+        thanksLabel.attributedText = "HELP_LINE_PARAGRAPH_1".localizedAttributed
         
-        let attributedString2 = NSMutableAttributedString(string: "Contacta con nosotros si tu riesgo de exposición en la aplicación es alto o si tienes cualquier incidencia sobre la aplicación.", attributes: [
-          .font: UIFont(name: "Muli-Light", size: 16.0)!,
-          .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
-        ])
-        attributedString2.addAttribute(.font, value: UIFont(name: "Muli-SemiBold", size: 16.0)!, range: NSRange(location: 22, length: 51))
-        attributedString2.addAttribute(.font, value: UIFont(name: "Muli-SemiBold", size: 16.0)!, range: NSRange(location: 96, length: 10))
+//        let attributedString2 = NSMutableAttributedString(string: "Contacta con nosotros si tu riesgo de exposición en la aplicación es alto o si tienes cualquier incidencia sobre la aplicación.", attributes: [
+//          .font: UIFont(name: "Muli-Light", size: 16.0)!,
+//          .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
+//        ])
+//        attributedString2.addAttribute(.font, value: UIFont(name: "Muli-SemiBold", size: 16.0)!, range: NSRange(location: 22, length: 51))
+//        attributedString2.addAttribute(.font, value: UIFont(name: "Muli-SemiBold", size: 16.0)!, range: NSRange(location: 96, length: 10))
         
-        reportLabel.attributedText = attributedString2
+        reportLabel.attributedText = "HELP_LINE_PHONE_PARAGRAPH_1".localizedAttributed
         
    
 
-        let attributedString3 = NSMutableAttributedString(string: "Un paso más\n\n¿Te interesaría participar en una entrevista telefónica para conocer más sobre tu experiencia con Radar COVID? Escribe a:\npiloto.appcovid@economia.gob.es\n\nNos pondremos en contacto contigo para fijar el día y la hora que se adapte mejor a tí.")
-
-        attributedString3.addAttribute(NSAttributedString.Key.font, value:UIFont(name:"Muli-Bold", size:18.0)!, range:NSMakeRange(0,13))
-        attributedString3.addAttribute(NSAttributedString.Key.font, value:UIFont(name:"Muli-Light", size:16.0)!, range:NSMakeRange(13,122))
-        attributedString3.addAttribute(NSAttributedString.Key.font, value:UIFont(name:"Muli-Bold", size:16.0)!, range:NSMakeRange(135,33))
-        attributedString3.addAttribute(NSAttributedString.Key.font, value:UIFont(name:"Muli-Light", size:16.0)!, range:NSMakeRange(168,87))
-
+//        let attributedString3 = NSMutableAttributedString(string: "Un paso más\n\n¿Te interesaría participar en una entrevista telefónica para conocer más sobre tu experiencia con Radar COVID? Escribe a:\npiloto.appcovid@economia.gob.es\n\nNos pondremos en contacto contigo para fijar el día y la hora que se adapte mejor a tí.")
+//
+//        attributedString3.addAttribute(NSAttributedString.Key.font, value:UIFont(name:"Muli-Bold", size:18.0)!, range:NSMakeRange(0,13))
+//        attributedString3.addAttribute(NSAttributedString.Key.font, value:UIFont(name:"Muli-Light", size:16.0)!, range:NSMakeRange(13,122))
+//        attributedString3.addAttribute(NSAttributedString.Key.font, value:UIFont(name:"Muli-Bold", size:16.0)!, range:NSMakeRange(135,33))
+//        attributedString3.addAttribute(NSAttributedString.Key.font, value:UIFont(name:"Muli-Light", size:16.0)!, range:NSMakeRange(168,87))
+//
+//
+//        attributedString3.addAttribute(NSAttributedString.Key.underlineStyle, value:1.0, range:NSMakeRange(135,33))
         
-        attributedString3.addAttribute(NSAttributedString.Key.underlineStyle, value:1.0, range:NSMakeRange(135,33))
-        
-        infoLabel.attributedText = attributedString3
+        infoLabel.attributedText = "HELP_LINE_ONE_MORE_STEP".localizedAttributed
        
         
         

@@ -73,7 +73,7 @@ class HomeViewController: UIViewController {
         let active = radarSwitch.isOn
         
         if !active {
-            self.showAlertCancelContinue(title: "¿Estas seguro de desactivar Radar COVID?", message: "Si desactivas Radar COVID, la aplicación dejará de registrar contactos. Ayúdanos a cuidarte" , buttonOkTitle: "Desactivar", buttonCancelTitle: "Mantener activo",
+            self.showAlertCancelContinue(title: "ALERT_HOME_RADAR_TITLE".localizedAttributed.string, message: "ALERT_HOME_RADAR_CONTENT".localizedAttributed.string , buttonOkTitle: "ALERT_HOME_RADAR_OK_BUTTON".localizedAttributed.string, buttonCancelTitle: "ALERT_HOME_RADAR_CANCEL_BUTTON".localizedAttributed.string,
                 okHandler: { [weak self] _ in self?.changeRadarStatus(false)
                     self?.imageDefault.image = self?.originalImage?.grayScale
                     self?.imageCircle.image = self?.originalCircleImage?.grayScale
@@ -92,7 +92,7 @@ class HomeViewController: UIViewController {
     }
     
     func showCovidAlert(){
-        self.showAlertOk(title: "Notificaciones de exposición a la COVID-19 desactivadas", message: "Para que Radar COVID pueda funcionar, es necesario que actives las notificaciones de exposición a la COVID-19", buttonTitle: "Activar") { (action) in
+        self.showAlertOk(title: "HOME_NOTIFICATION_INACTIVE_MESSAGE".localizedAttributed.string, message: "Para que Radar COVID pueda funcionar, es necesario que actives las notificaciones de exposición a la COVID-19", buttonTitle: "ALERT_HOME_COVID_NOTIFICATION_OK_BUTTON".localizedAttributed.string) { (action) in
             UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
         }
     }
@@ -155,7 +155,7 @@ class HomeViewController: UIViewController {
                 self?.updateExpositionInfo(expositionInfo)
             }, onError: { [weak self] error in
                 debugPrint(error)
-                self?.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar")
+                self?.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_HOME_EXPOSITION_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed.string)
         }).disposed(by: disposeBag)
         
         checkOnboarding()
@@ -181,7 +181,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func onReset(_ sender: Any) {
         
-        self.showAlertCancelContinue(title:  "Confirmación", message: "¿Confirmas el reseteo?", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar") { [weak self] (UIAlertAction) in
+        self.showAlertCancelContinue(title:  "ALERT_HOME_RESET_TITLE".localizedAttributed.string, message: "ALERT_HOME_RESET_CONTENT".localizedAttributed.string, buttonOkTitle: "ALERT_OK_BUTTON".localizedAttributed.string, buttonCancelTitle: "ALERT_CANCEL_BUTTON".localizedAttributed.string) { [weak self] (UIAlertAction) in
             self?.reset()
         }
 
@@ -191,10 +191,10 @@ class HomeViewController: UIViewController {
         resetDataUseCase?.reset().subscribe(
                 onNext:{ [weak self] expositionInfo in
                     debugPrint("Data reseted")
-                    self?.showAlertOk(title: "Reset", message: "Datos reseteados", buttonTitle: "Aceptar")
+                    self?.showAlertOk(title: "ALERT_HOME_RESET_TITLE".localizedAttributed.string, message: "ALERT_HOME_RESET_SUCCESS_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed.string)
                 }, onError: { [weak self] error in
                     debugPrint(error)
-                    self?.showAlertOk(title: "Error", message: "Error resetear datos", buttonTitle: "Aceptar")
+                    self?.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_HOME_RESET_ERROR_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed.string)
             }).disposed(by: disposeBag)
     }
     
@@ -203,13 +203,13 @@ class HomeViewController: UIViewController {
         self.expositionInfo = exposition
         switch exposition.level {
             case .Exposed:
-                expositionTitle.text = "Exposición alta"
-               let attributedString = NSMutableAttributedString(string: "Has estado en contacto con una persona contagiada de Covid-19.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas", attributes: [
-                  .font: UIFont(name: "Muli-Light", size: 16.0)!,
-                  .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
-                ])
-                attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 0, length: 63))
-                expositionDescription.attributedText  = attributedString
+                expositionTitle.text = "HOME_EXPOSITION_TITLE_HIGH".localizedAttributed.string
+//               let attributedString = NSMutableAttributedString(string: "Has estado en contacto con una persona contagiada de Covid-19.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas", attributes: [
+//                  .font: UIFont(name: "Muli-Light", size: 16.0)!,
+//                  .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
+//                ])
+//                attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 0, length: 63))
+                expositionDescription.attributedText  = "HOME_EXPOSITION_MESSAGE_HIGH".localizedAttributed
                 expositionView.image = bgImageRed
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
                 notificationInactiveMessage.isHidden = true
@@ -220,14 +220,14 @@ class HomeViewController: UIViewController {
                 self.imageCircle.image = self.originalCircleImage
                 break
             case .Healthy:
-                expositionTitle.text = "Exposición baja"
-                let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un\nposible contacto de riesgo.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
-                  .font: UIFont(name: "Muli-Light", size: 16.0)!,
-                  .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
-                ])
-                attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 0, length: 61))
+                expositionTitle.text = "HOME_EXPOSITION_TITLE_LOW".localizedAttributed.string
+//                let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un\nposible contacto de riesgo.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
+//                  .font: UIFont(name: "Muli-Light", size: 16.0)!,
+//                  .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
+//                ])
+//                attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 0, length: 61))
                 
-                expositionDescription.attributedText  = attributedString
+                expositionDescription.attributedText  = "HOME_EXPOSITION_MESSAGE_LOW".localizedAttributed
                 expositionView.image = bgImageGreen
                 expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)
                 notificationInactiveMessage.isHidden = true
@@ -238,9 +238,9 @@ class HomeViewController: UIViewController {
                 self.imageCircle.image = self.originalCircleImage
                 break
             case .Infected:
-                expositionTitle.text = "COVID-19 Positivo"
-                let attributedString = "<b>Tu diagnóstico ha sido enviado.<br>Por favor, aíslate durante 14 días</b>.<br> Recuerda que esta aplicación es un piloto y sus alertas son simuladas".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli-Light", andSize: 16)
-                expositionDescription.attributedText  = attributedString
+                expositionTitle.text = "HOME_EXPOSITION_TITLE_POSITIVE".localizedAttributed.string
+//                let attributedString = "<b>Tu diagnóstico ha sido enviado.<br>Por favor, aíslate durante 14 días</b>.<br> Recuerda que esta aplicación es un piloto y sus alertas son simuladas".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli-Light", andSize: 16)
+                expositionDescription.attributedText  = "HOME_EXPOSITION_MESSAGE_INFECTED".localizedAttributed
                 expositionView.image = bgImageRed
                 expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
                 notificationInactiveMessage.isHidden = true
@@ -275,12 +275,12 @@ class HomeViewController: UIViewController {
     private func changeRadarMessage(active: Bool) {
         radarSwitch.isOn = active
         if (active) {
-            radarTitle.text = "Radar COVID activo"
-            radarMessage.text = "Las interacciones con móviles cercanos se registarán siempre anónimamente. "
+            radarTitle.text = "HOME_RADAR_TITLE_ACTIVE".localizedAttributed.string
+            radarMessage.text = "HOME_RADAR_CONTENT_ACTIVE".localizedAttributed.string
             radarMessage.textColor = UIColor.black
         } else {
-            radarTitle.text = "Radar COVID inactivo"
-            radarMessage.text = "Por favor, activa esta opción para que la aplicación funcione."
+            radarTitle.text = "HOME_RADAR_TITLE_INACTIVE".localizedAttributed.string
+            radarMessage.text = "HOME_RADAR_CONTENT_INACTIVE".localizedAttributed.string
             radarMessage.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         }
     }

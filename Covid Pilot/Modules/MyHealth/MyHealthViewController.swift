@@ -24,7 +24,7 @@ class MyHealthViewController: UIViewController {
     var diagnosticEnabled: Bool = false
     
     @IBAction func onBack(_ sender: Any) {
-        self.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar", okHandler: { (UIAlertAction) in
+        self.showAlertCancelContinue(title:  "ALERT_MY_HEALTH_SEND_TITLE".localizedAttributed.string, message: "ALERT_MY_HEALTH_SEND_CONTENT".localizedAttributed.string, buttonOkTitle: "ALERT_OK_BUTTON".localizedAttributed.string, buttonCancelTitle: "ALERT_CANCEL_BUTTON".localizedAttributed.string, okHandler: { (UIAlertAction) in
                 self.navigationController?.popViewController(animated: true)
         }, cancelHandler: { (UIAlertAction) in
               
@@ -41,7 +41,7 @@ class MyHealthViewController: UIViewController {
     @IBAction func onReportDiagnosis(_ sender: Any) {
         if !diagnosticEnabled {
 
-            self.showAlertOk(title: "Error", message: "Por favor introduce un código válido de 12 dígitos", buttonTitle: "Aceptar"){ (action) in
+            self.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_MY_HEALTH_CODE_VALIDATION_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed.string){ (action) in
                 UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
             }
 
@@ -59,7 +59,7 @@ class MyHealthViewController: UIViewController {
                     self?.navigateIf(reported: reportedCodeBool)
                 }, onError: {  [weak self] error in
                     self?.view.hideLoading()
-                    self?.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"){ (action) in
+                    self?.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_MY_HEALTH_CODE_VALIDATION_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_OK_BUTTON".localizedAttributed.string){ (action) in
                         UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
                     }
 

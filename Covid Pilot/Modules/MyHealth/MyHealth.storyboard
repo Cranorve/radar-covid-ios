@@ -62,6 +62,9 @@ COVID positivo</string>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="MY_HEALTH_TITLE"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enviando tu diagnóstico anónimo COVID-19, estás contribuyendo a detener la propagación del virus. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CSp-Na-Mxg">
                                                 <rect key="frame" x="20" y="152" width="374" height="71"/>
@@ -71,18 +74,27 @@ COVID positivo</string>
                                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="MY_HEALTH_PARAGRAPH_1"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracias por ayudarnos a cuidar a los demás." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ySm-4q-hhL">
                                                 <rect key="frame" x="20" y="243" width="374" height="19"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="MY_HEALTH_PARAGRAPH_2"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu información está segura y será tratada siempre anónimamente " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YOD-Rc-mbN">
                                                 <rect key="frame" x="20" y="282" width="374" height="37.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="MY_HEALTH_PARAGRAPH_3"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="codeInputFrame" translatesAutoresizingMaskIntoConstraints="NO" id="c5d-kc-7Ws">
                                                 <rect key="frame" x="228.5" y="335.5" width="165.5" height="161"/>
@@ -92,18 +104,27 @@ COVID positivo</string>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="MY_HEALTH_DIAGNOSTIC_CODE_TITLE"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduce el código que te han enviado" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lr1-Za-iuV">
                                                 <rect key="frame" x="20" y="387" width="208.5" height="37.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="MY_HEALTH_DIAGNOSTIC_CODE_CONTENT"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ej. 123456789123" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LVk-tn-nfe">
                                                 <rect key="frame" x="20" y="560.5" width="104" height="15.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Italic" family="Muli" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="MY_HEALTH_DIAGNOSTIC_CODE_EXAMPLE"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yjq-yA-SHq">
                                                 <rect key="frame" x="20" y="616" width="374" height="56"/>
@@ -120,6 +141,7 @@ COVID positivo</string>
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="btn.clipsToBounds" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="MY_HEALTH_DIAGNOSTIC_CODE_SEND_BUTTON"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="onReportDiagnosis:" destination="vmx-lJ-Xhc" eventType="touchUpInside" id="8nB-va-nlc"/>
