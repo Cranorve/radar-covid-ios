@@ -66,7 +66,7 @@ class HomeViewController: UIViewController {
         if active {
             viewModel?.changeRadarStatus(true)
         } else {
-            self.showAlertCancelContinue(title: "¿Estas seguro de desactivar Radar COVID?", message: "Si desactivas Radar COVID, la aplicación dejará de registrar contactos. Ayúdanos a cuidarte" , buttonOkTitle: "Desactivar", buttonCancelTitle:  "Mantener activo",
+            self.showAlertCancelContinue(title: "ALERT_HOME_RADAR_TITLE".localizedAttributed().string, message: "ALERT_HOME_RADAR_CONTENT".localizedAttributed().string , buttonOkTitle: "ALERT_HOME_RADAR_OK_BUTTON".localizedAttributed().string, buttonCancelTitle:  "ALERT_HOME_RADAR_CANCEL_BUTTON".localizedAttributed().string,
                 okHandler: { [weak self] _ in
                     self?.viewModel?.changeRadarStatus(false)
                 }, cancelHandler: { [weak self] _ in
@@ -76,7 +76,7 @@ class HomeViewController: UIViewController {
     }
     
     func showActivationMessage() {
-        self.showAlertOk(title: "Notificaciones de exposición a la COVID-19 desactivadas", message: "Para que Radar COVID pueda funcionar, es necesario que actives las notificaciones de exposición a la COVID-19", buttonTitle: "Activar") { (action) in
+        self.showAlertOk(title: "ALERT_HOME_COVID_NOTIFICATION_TITLE".localizedAttributed().string, message: "Para que Radar COVID pueda funcionar, es necesario que actives las notificaciones de exposición a la COVID-19", buttonTitle: "ALERT_HOME_COVID_NOTIFICATION_OK_BUTTON".localizedAttributed().string) { (action) in
             UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
         }
     }
@@ -155,7 +155,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func onReset(_ sender: Any) {
         
-        self.showAlertCancelContinue(title:  "Confirmación", message: "¿Confirmas el reseteo?", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar") { [weak self] (UIAlertAction) in
+        self.showAlertCancelContinue(title:  "ALERT_HOME_RESET_TITLE".localizedAttributed().string, message: "ALERT_HOME_RESET_CONTENT".localizedAttributed().string, buttonOkTitle: "ALERT_OK_BUTTON".localizedAttributed().string, buttonCancelTitle: "ALERT_CANCEL_BUTTON".localizedAttributed().string) { [weak self] (UIAlertAction) in
             self?.viewModel!.reset()
         }
 
@@ -178,36 +178,24 @@ class HomeViewController: UIViewController {
     }
     
     private func setExposed() {
-        expositionTitle.text = "Exposición alta"
-        let attributedString = NSMutableAttributedString(string: "Has estado en contacto con una persona contagiada de COVID-19.\nInfórmalo en el \(Config.contactNumber) (gratuito). \nRecuerda que esta aplicación es un piloto y sus alertas son simuladas", attributes: [
-          .font: UIFont(name: "Muli-Light", size: 16.0)!,
-          .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
-        ])
-        attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 0, length: 63))
-        expositionDescription.attributedText  = attributedString
+        expositionTitle.text = "HOME_EXPOSITION_TITLE_HIGH".localizedAttributed().string
+        expositionDescription.attributedText  = "HOME_EXPOSITION_MESSAGE_HIGH".localizedAttributed()
         expositionView.image = bgImageRed
         expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         communicationButton.isHidden = false
     }
     
     private func setHealthy() {
-        expositionTitle.text = "Exposición baja"
-        let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un\nposible contacto de riesgo.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
-          .font: UIFont(name: "Muli-Light", size: 16.0)!,
-          .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
-        ])
-        attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 0, length: 61))
-        
-        expositionDescription.attributedText  = attributedString
+        expositionTitle.text = "HOME_EXPOSITION_TITLE_LOW".localizedAttributed().string
+        expositionDescription.attributedText  = "HOME_EXPOSITION_MESSAGE_LOW".localizedAttributed()
         expositionView.image = bgImageGreen
         expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)
         communicationButton.isHidden = false
     }
     
     private func setInfected() {
-        expositionTitle.text = "COVID-19 Positivo"
-        let attributedString = "<b>Tu diagnóstico ha sido enviado.<br>Por favor, aíslate durante 14 días</b>.<br> Recuerda que esta aplicación es un piloto y sus alertas son simuladas".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli-Light", andSize: 16)
-        expositionDescription.attributedText  = attributedString
+        expositionTitle.text = "HOME_EXPOSITION_TITLE_POSITIVE".localizedAttributed().string
+        expositionDescription.attributedText  = "HOME_EXPOSITION_MESSAGE_INFECTED".localizedAttributed()
         expositionView.image = bgImageRed
         expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         communicationButton.isHidden = true
@@ -256,13 +244,13 @@ class HomeViewController: UIViewController {
     
     private func showError(message: String?) {
         if let message = message {
-            showAlertOk(title: "Error", message: message, buttonTitle: "Aceptar")
+            showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed().string, message: message, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed().string)
         }
     }
     
     private func showAlert(message:String?) {
         if let message = message {
-            showAlertOk(title: "Mensaje", message: message, buttonTitle: "Aceptar")
+            showAlertOk(title: "Mensaje", message: message, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed().string)
         }
     }
     
