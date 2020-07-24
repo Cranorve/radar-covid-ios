@@ -117,7 +117,7 @@ class LocalizationUseCase: LocalizationSource {
             "HOME_EXPOSITION_MESSAGE_LOW": "<b>Te informaremos en el caso de un posible contacto de riesgo.</b><br>Recuerda que esta aplicación es un piloto y sus alertas son simuladas.",
             "HOME_EXPOSITION_MESSAGE_INFECTED": "<b>Tu diagnóstico ha sido enviado.<br>Por favor, aíslate durante 14 días</b>.<br> Recuerda que esta aplicación es un piloto y sus alertas son simuladas",
             "HOME_NOTIFICATION_INACTIVE_MESSAGE": "Notificaciones de exposición a la COVID-19 DESACTIVADAS",
-            "HOME_BUTTON_SEND_POSITIVE": "Comunica tu positivo COVID-19",
+            "HOME_BUTTON_SEND_POSITIVE": "Comunica tu positivo COVID",
             "MY_HEALTH_TITLE": "Envía tu diagnóstico <br> COVID positivo",
             "MY_HEALTH_PARAGRAPH_1": "Enviando tu diagnóstico anónimo COVID-19, estás contribuyendo a detener la propagación del virus. ",
             "MY_HEALTH_PARAGRAPH_2": "<b>Gracias por ayudarnos a cuidar a los demás.</b>",
