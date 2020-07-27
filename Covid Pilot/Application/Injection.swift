@@ -64,6 +64,18 @@ class Injection {
             )
         }.inObjectScope(.container)
         
+        container.register(TextsAPI.self) { r in
+            TextsAPI(
+                clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue)!
+            )
+        }.inObjectScope(.container)
+        
+        container.register(MasterDataAPI.self) { r in
+            MasterDataAPI(
+                clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue)!
+            )
+        }.inObjectScope(.container)
+        
         container.register(LanguageApi.self) { r in
             LanguageApi()
         }.inObjectScope(.container)
@@ -86,8 +98,6 @@ class Injection {
             appRouter.welcomeVC = r.resolve(WelcomeViewController.self)!
             appRouter.activateCovid = r.resolve(ActivateCovidNotificationViewController.self)!
             appRouter.activatePush = r.resolve(ActivatePushNotificationViewController.self)!
-
-
         }
         
         container.register(PreferencesRepository.self) { r in
@@ -100,6 +110,10 @@ class Injection {
         
         container.register(ExpositionInfoRepository.self) { r in
             UserDefaultsExpositionInfoRepository()
+        }.inObjectScope(.container)
+        
+        container.register(LocalizationRepository.self) { r in
+            UserDefaultsLocalizationRepository()
         }.inObjectScope(.container)
         
         container.register(BluetoothHandler.self) { r in
@@ -175,7 +189,8 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(LocalizationUseCase.self) { r in
-            LocalizationUseCase(settingsApi: r.resolve(SettingsAPI.self)!, localizationApi: r.resolve(LanguageApi.self)!)
+            LocalizationUseCase(textsApi: r.resolve(TextsAPI.self)!,
+                                localizationRepository: r.resolve(LocalizationRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in

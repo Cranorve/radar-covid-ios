@@ -16,12 +16,13 @@ public struct VersionDto: Codable {
     public var version: String?
     /** Compilation identifier */
     public var compilation: Int?
-    
+    /** URL */
     public var bundleUrl: String?
 
-    public init(version: String?, compilation: Int?) {
+    public init(version: String?, compilation: Int?, bundleUrl: String?) {
         self.version = version
         self.compilation = compilation
+        self.bundleUrl = bundleUrl
     }
 
 
