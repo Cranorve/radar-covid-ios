@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZX-eB-vJ1" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="754"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="516"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightTopShade" translatesAutoresizingMaskIntoConstraints="NO" id="26u-YC-f5R">
                                                 <rect key="frame" x="91.5" y="0.0" width="283.5" height="206.5"/>
@@ -41,44 +41,108 @@
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5oe-1F-JPZ">
-                                                <rect key="frame" x="16" y="120" width="343" height="547"/>
+                                                <rect key="frame" x="16" y="120" width="343" height="309"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu privacidad es nuestra prioridad" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cjg-pU-6HI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="70.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qok-ac-Npf">
-                                                        <rect key="frame" x="0.0" y="85.5" width="343" height="461.5"/>
-                                                        <string key="text">Nuestros compromisos
-
-Anonimato 
-La aplicación funciona sin revelar tu identidad ni la de tu smartphone. 
-NO se recoge tu nombre, email, geolocalización ni tu teléfono
-
-Discreción 
-Las alertas de exposición se envían sin indicar cuándo y dónde se produjo la exposición.
-
-Tú decides
-Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la App</string>
-                                                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="22"/>
-                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxa-Hb-Im5" userLabel="step2Title">
+                                                        <rect key="frame" x="0.0" y="90.5" width="343" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_2_TITLE"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ns7-D4-wdm" userLabel="paragraph1Title">
+                                                        <rect key="frame" x="0.0" y="131" width="343" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_2_PARAGRAPH_1_TITLE"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dm3-PE-YEM" userLabel="paragraph1Description">
+                                                        <rect key="frame" x="0.0" y="156.5" width="343" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_2_PARAGRAPH_1_DESCRIPTION"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXX-N4-u7T" userLabel="paragraph2Title">
+                                                        <rect key="frame" x="0.0" y="197" width="343" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_2_PARAGRAPH_2_TITLE"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWH-9x-I7h" userLabel="paragraph2Description">
+                                                        <rect key="frame" x="0.0" y="222.5" width="343" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_2_PARAGRAPH_2_DESCRIPTION"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkq-E0-sSJ" userLabel="paragraph3Description">
+                                                        <rect key="frame" x="0.0" y="288.5" width="343" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_2_PARAGRAPH_3_DESCRIPTION"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEh-4f-uik" userLabel="paragraph3Title">
+                                                        <rect key="frame" x="0.0" y="263" width="343" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_2_PARAGRAPH_3_TITLE"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="UEh-4f-uik" secondAttribute="trailing" id="0je-YV-58Q"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zxa-Hb-Im5" secondAttribute="trailing" id="2Zl-x8-FfA"/>
                                                     <constraint firstItem="Cjg-pU-6HI" firstAttribute="leading" secondItem="5oe-1F-JPZ" secondAttribute="leading" id="2c0-ac-exv"/>
-                                                    <constraint firstItem="qok-ac-Npf" firstAttribute="leading" secondItem="5oe-1F-JPZ" secondAttribute="leading" id="2nd-Tw-CCF"/>
-                                                    <constraint firstItem="qok-ac-Npf" firstAttribute="top" secondItem="Cjg-pU-6HI" secondAttribute="bottom" constant="20" id="5af-40-Uxy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="vkq-E0-sSJ" secondAttribute="bottom" id="5af-40-Uxy"/>
+                                                    <constraint firstItem="zxa-Hb-Im5" firstAttribute="leading" secondItem="5oe-1F-JPZ" secondAttribute="leading" id="5tu-2n-Irh"/>
+                                                    <constraint firstItem="dm3-PE-YEM" firstAttribute="leading" secondItem="5oe-1F-JPZ" secondAttribute="leading" id="9Gw-vP-IDc"/>
+                                                    <constraint firstItem="Ns7-D4-wdm" firstAttribute="top" secondItem="zxa-Hb-Im5" secondAttribute="bottom" constant="20" id="Aj5-bY-SX5"/>
+                                                    <constraint firstItem="UEh-4f-uik" firstAttribute="top" secondItem="OWH-9x-I7h" secondAttribute="bottom" constant="20" id="B3W-D0-1P6"/>
+                                                    <constraint firstItem="UEh-4f-uik" firstAttribute="leading" secondItem="5oe-1F-JPZ" secondAttribute="leading" id="DHh-gq-IYk"/>
+                                                    <constraint firstItem="NXX-N4-u7T" firstAttribute="top" secondItem="dm3-PE-YEM" secondAttribute="bottom" constant="20" id="Ffi-ur-FPB"/>
+                                                    <constraint firstItem="OWH-9x-I7h" firstAttribute="top" secondItem="NXX-N4-u7T" secondAttribute="bottom" constant="5" id="GTp-SX-gBZ"/>
+                                                    <constraint firstItem="OWH-9x-I7h" firstAttribute="leading" secondItem="5oe-1F-JPZ" secondAttribute="leading" id="ICg-uq-iOf"/>
                                                     <constraint firstItem="Cjg-pU-6HI" firstAttribute="top" secondItem="5oe-1F-JPZ" secondAttribute="top" id="ISw-zm-pXX"/>
-                                                    <constraint firstAttribute="bottom" secondItem="qok-ac-Npf" secondAttribute="bottom" id="bG2-HM-rql"/>
+                                                    <constraint firstItem="dm3-PE-YEM" firstAttribute="top" secondItem="Ns7-D4-wdm" secondAttribute="bottom" constant="5" id="Nyp-jk-bfh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vkq-E0-sSJ" secondAttribute="trailing" id="Pif-bL-ikN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dm3-PE-YEM" secondAttribute="trailing" id="QO7-Dz-kXE"/>
+                                                    <constraint firstItem="Ns7-D4-wdm" firstAttribute="leading" secondItem="5oe-1F-JPZ" secondAttribute="leading" id="Zzf-ZJ-T2L"/>
+                                                    <constraint firstItem="vkq-E0-sSJ" firstAttribute="leading" secondItem="5oe-1F-JPZ" secondAttribute="leading" id="ab5-lu-7GN"/>
+                                                    <constraint firstItem="NXX-N4-u7T" firstAttribute="leading" secondItem="5oe-1F-JPZ" secondAttribute="leading" id="hCH-q5-8zv"/>
                                                     <constraint firstAttribute="trailing" secondItem="Cjg-pU-6HI" secondAttribute="trailing" id="iCx-zk-q2T"/>
-                                                    <constraint firstAttribute="trailing" secondItem="qok-ac-Npf" secondAttribute="trailing" id="mlG-Vb-8R0"/>
+                                                    <constraint firstAttribute="trailing" secondItem="NXX-N4-u7T" secondAttribute="trailing" id="kgs-x8-NFO"/>
+                                                    <constraint firstItem="vkq-E0-sSJ" firstAttribute="top" secondItem="UEh-4f-uik" secondAttribute="bottom" constant="5" id="sXo-DH-DXq"/>
+                                                    <constraint firstItem="zxa-Hb-Im5" firstAttribute="top" secondItem="Cjg-pU-6HI" secondAttribute="bottom" constant="20" id="tCs-Py-aiX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OWH-9x-I7h" secondAttribute="trailing" id="vve-w9-oGz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ns7-D4-wdm" secondAttribute="trailing" id="wFR-Yc-0AI"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SwM-SS-Bb9" userLabel="CheckView">
-                                                <rect key="frame" x="16" y="687" width="343" height="57"/>
+                                                <rect key="frame" x="16" y="449" width="343" height="57"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvQ-IX-8Bm">
                                                         <rect key="frame" x="30" y="0.0" width="313" height="19.5"/>
@@ -225,14 +289,13 @@ Elige en todo momento si quieres desactivar el servicio o dejar de utilizar la A
                         <outlet property="acceptTermsLabel" destination="aNP-Ib-LaU" id="Swl-OP-M3y"/>
                         <outlet property="acceptView" destination="XRM-kg-RAx" id="Bc4-iU-0Eh"/>
                         <outlet property="checkBoxImage" destination="jHq-8U-BtL" id="63v-Vg-llX"/>
-                        <outlet property="descriptionLabel" destination="qok-ac-Npf" id="sPh-W7-4hY"/>
                         <outlet property="privacyLabel" destination="qvQ-IX-8Bm" id="KA9-TZ-gKW"/>
                         <outlet property="scrollView" destination="put-jW-Lmz" id="UnR-cA-MSy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsl-oB-D5A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="91.304347826086968" y="103.125"/>
+            <point key="canvasLocation" x="90.400000000000006" y="102.99850074962519"/>
         </scene>
     </scenes>
     <resources>
