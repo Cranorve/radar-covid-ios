@@ -22,7 +22,7 @@ public enum Routes {
     case Welcome
     case OnBoarding
     case Home
-    case Info
+    case Proximity
     case MyHealth
     case MyHealthReported
     case Exposition
@@ -37,7 +37,7 @@ public enum Routes {
 
 class AppRouter : Router {
     
-    var infoVC: InfoViewController?
+    var proxymityVC: ProximityViewController?
     var onBoardingVC: OnBoardingViewController?
     var rootVC: RootViewController?
     var tabBarController: TabBarController?
@@ -62,8 +62,8 @@ class AppRouter : Router {
             routeToOnboarding(context)
         case .Home:
             routeToHome(context)
-        case .Info:
-            routeToInfo(context)
+        case .Proximity:
+            routeToProximity(context)
         case .ActivateCovid:
             routeToCovid(context)
         case .ActivatePush:
@@ -97,8 +97,8 @@ class AppRouter : Router {
         loadViewAsRoot(navController: context.navigationController, view: tabBarController!)
     }
     
-    private func routeToInfo(_ context: UIViewController) {
-        context.navigationController?.pushViewController(infoVC!, animated: true)
+    private func routeToProximity(_ context: UIViewController) {
+        context.navigationController?.pushViewController(proxymityVC!, animated: true)
     }
     
     private func routeToCovid(_ context: UIViewController) {
