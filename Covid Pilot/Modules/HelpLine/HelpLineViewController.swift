@@ -21,7 +21,10 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
     @IBOutlet weak var timeTableLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var one_more_step_2: UILabel!
     
+    @IBOutlet weak var lblEmail: UILabel!
+    @IBOutlet weak var one_more_step_3: UILabel!
     @IBOutlet weak var phoneView: BackgroundView!
     var pollUseCase: PollUseCase?
     @IBAction func onPollSelected(_ sender: Any) {
@@ -106,8 +109,10 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
 //
 //        attributedString3.addAttribute(NSAttributedString.Key.underlineStyle, value:1.0, range:NSMakeRange(135,33))
         
-        infoLabel.attributedText = "HELP_LINE_ONE_MORE_STEP".localizedAttributed
-       
+        infoLabel.attributedText = "HELP_LINE_ONE_MORE_STEP_PARAGRAPH_1".localizedAttributed
+        one_more_step_2.attributedText = "HELP_LINE_ONE_MORE_STEP_PARAGRAPH_2".localizedAttributed
+        one_more_step_3.attributedText = "HELP_LINE_ONE_MORE_STEP_PARAGRAPH_3".localizedAttributed
+        lblEmail.attributedText = "CONTACT_EMAIL".localizedAttributed()
         
         
     }

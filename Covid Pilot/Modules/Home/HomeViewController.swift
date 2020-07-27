@@ -105,6 +105,8 @@ class HomeViewController: UIViewController {
         
         setupBindings()
         
+//        self.communicationButton.setAttributedTitle("HOME_BUTTON_SEND_POSITIVE".localizedAttributed(), for: <#T##UIControl.State#>)
+        
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.onExpositionTap))
         expositionView.addGestureRecognizer(gesture)
         radarView.image = UIImage(named: "WhiteCard")

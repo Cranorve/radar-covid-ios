@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJ6-m7-TJp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="945"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="938"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ayúdanos a mejorar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cst-er-eD4">
                                                 <rect key="frame" x="23" y="100" width="329" height="33"/>
@@ -141,6 +141,9 @@
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="CONTACT_PHONE"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
@@ -156,43 +159,35 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAO-RJ-tDo">
-                                                <rect key="frame" x="16" y="769" width="343" height="156"/>
+                                                <rect key="frame" x="16" y="769" width="343" height="21.5"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment>
-                                                        <string key="content">Un paso más
-</string>
+                                                    <fragment content="Un paso más">
                                                         <attributes>
                                                             <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <font key="NSFont" metaFont="system" size="18"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="13" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
                                                     </fragment>
-                                                    <fragment>
-                                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIP-aI-Crz" userLabel="one_more_step_2">
+                                                <rect key="frame" x="16" y="810.5" width="343" height="20.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Label">
                                                         <attributes>
-                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <font key="NSFont" metaFont="system" size="16"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                            <font key="NSFont" metaFont="system" size="17"/>
                                                         </attributes>
                                                     </fragment>
-                                                    <fragment>
-                                                        <string key="content">piloto.appcovid@economia.gob.es
-</string>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yt7-mj-NqE" userLabel="one_more_step_3">
+                                                <rect key="frame" x="16" y="887" width="343" height="21"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Label">
                                                         <attributes>
-                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <font key="NSFont" metaFont="system" size="16"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                            <integer key="NSUnderline" value="1"/>
-                                                            <color key="NSUnderlineColor" red="0.050979999999999998" green="0.81176000000000004" blue="0.85489999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="Uno de  nuestros colaboradores se pondrá en contacto contigo para fijar el día y la hora que se adapte mejor a tí">
-                                                        <attributes>
-                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <font key="NSFont" metaFont="system" size="16"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="8" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                            <font key="NSFont" metaFont="system" size="17"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -207,23 +202,42 @@ Cg
                                                     <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="HELP_LINE_PHONE_TITLE"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcN-aB-nDk" userLabel="lblemail">
+                                                <rect key="frame" x="16" y="841" width="343" height="21"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Label">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="17"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" name="bgColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="lAO-RJ-tDo" secondAttribute="trailing" constant="16" id="0wG-Aw-1eJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Yt7-mj-NqE" secondAttribute="trailing" constant="16" id="5NY-Zd-Cdh"/>
                                             <constraint firstItem="Cst-er-eD4" firstAttribute="top" secondItem="UJ6-m7-TJp" secondAttribute="top" constant="100" id="6aj-WW-r0v"/>
+                                            <constraint firstItem="fIP-aI-Crz" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="AeT-pB-Uvc"/>
                                             <constraint firstItem="Cst-er-eD4" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="23" id="CSX-5l-JUX"/>
                                             <constraint firstItem="geQ-iZ-DDL" firstAttribute="top" secondItem="jGs-Ug-xTr" secondAttribute="bottom" constant="20" id="Fi1-uY-u2c"/>
                                             <constraint firstAttribute="trailing" secondItem="M8G-Nn-de4" secondAttribute="trailing" constant="16" id="Gsy-1v-FWo"/>
                                             <constraint firstItem="1da-Fl-GEo" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="14" id="HhP-fG-QJ1"/>
+                                            <constraint firstAttribute="trailing" secondItem="EcN-aB-nDk" secondAttribute="trailing" constant="16" id="I3E-wO-2VB"/>
+                                            <constraint firstItem="Yt7-mj-NqE" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="I3c-NY-9BY"/>
+                                            <constraint firstAttribute="trailing" secondItem="fIP-aI-Crz" secondAttribute="trailing" constant="16" id="LvS-BD-lHI"/>
                                             <constraint firstItem="lAO-RJ-tDo" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="OJA-aD-pvL"/>
                                             <constraint firstItem="Cst-er-eD4" firstAttribute="bottom" secondItem="w9H-Jy-4ca" secondAttribute="top" constant="-20" id="PKM-RQ-AzA"/>
                                             <constraint firstAttribute="trailing" secondItem="Cst-er-eD4" secondAttribute="trailing" constant="23" id="RRl-eo-dto"/>
                                             <constraint firstItem="jGs-Ug-xTr" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="UcJ-1n-ApH"/>
-                                            <constraint firstAttribute="bottom" secondItem="lAO-RJ-tDo" secondAttribute="bottom" constant="20" id="Ugp-lt-OUE"/>
+                                            <constraint firstItem="fIP-aI-Crz" firstAttribute="top" secondItem="lAO-RJ-tDo" secondAttribute="bottom" constant="20" id="Ugp-lt-OUE"/>
                                             <constraint firstItem="w9H-Jy-4ca" firstAttribute="centerX" secondItem="UJ6-m7-TJp" secondAttribute="centerX" id="Ugt-r6-NJE"/>
+                                            <constraint firstItem="EcN-aB-nDk" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="WEW-oM-rKr"/>
+                                            <constraint firstItem="EcN-aB-nDk" firstAttribute="top" secondItem="fIP-aI-Crz" secondAttribute="bottom" constant="10" id="bqp-pX-grS"/>
                                             <constraint firstAttribute="trailing" secondItem="1da-Fl-GEo" secondAttribute="trailing" constant="14" id="clL-b8-EpE"/>
                                             <constraint firstItem="geQ-iZ-DDL" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="de5-1a-Gcy"/>
+                                            <constraint firstAttribute="bottom" secondItem="Yt7-mj-NqE" secondAttribute="bottom" constant="30" id="f5n-ia-v4b"/>
                                             <constraint firstAttribute="trailing" secondItem="geQ-iZ-DDL" secondAttribute="trailing" constant="16" id="kpy-AS-W8a"/>
                                             <constraint firstAttribute="trailing" secondItem="0HS-MA-jpT" secondAttribute="trailing" constant="16" id="l1q-lm-fTD"/>
                                             <constraint firstItem="1da-Fl-GEo" firstAttribute="bottom" secondItem="lAO-RJ-tDo" secondAttribute="top" constant="-20" id="nhK-oT-FtC"/>
@@ -231,6 +245,7 @@ Cg
                                             <constraint firstItem="M8G-Nn-de4" firstAttribute="bottom" secondItem="0HS-MA-jpT" secondAttribute="top" constant="-20" id="oEA-dz-u3J"/>
                                             <constraint firstItem="M8G-Nn-de4" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="oVY-OP-hxZ"/>
                                             <constraint firstItem="jGs-Ug-xTr" firstAttribute="top" secondItem="0HS-MA-jpT" secondAttribute="bottom" constant="20" id="q2J-et-BgO"/>
+                                            <constraint firstItem="Yt7-mj-NqE" firstAttribute="top" secondItem="EcN-aB-nDk" secondAttribute="bottom" constant="25" id="r8C-Zr-ttb"/>
                                             <constraint firstItem="0HS-MA-jpT" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="wA7-bp-OtO"/>
                                             <constraint firstItem="1da-Fl-GEo" firstAttribute="top" secondItem="geQ-iZ-DDL" secondAttribute="bottom" constant="20" id="xMm-k3-cRk"/>
                                         </constraints>
@@ -264,6 +279,9 @@ Cg
                     </view>
                     <connections>
                         <outlet property="infoLabel" destination="lAO-RJ-tDo" id="Td0-ue-gWl"/>
+                        <outlet property="lblEmail" destination="EcN-aB-nDk" id="19i-PI-5p3"/>
+                        <outlet property="one_more_step_2" destination="fIP-aI-Crz" id="tRb-zJ-cQq"/>
+                        <outlet property="one_more_step_3" destination="Yt7-mj-NqE" id="C0Z-CP-yXc"/>
                         <outlet property="phoneNumberLabel" destination="UhJ-I7-T6K" id="19E-b2-ABo"/>
                         <outlet property="phoneView" destination="1da-Fl-GEo" id="E5d-MT-S53"/>
                         <outlet property="reportLabel" destination="geQ-iZ-DDL" id="PuU-c1-hqh"/>
@@ -273,7 +291,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBY-8b-jcn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63.768115942028992" y="34.821428571428569"/>
+            <point key="canvasLocation" x="63.200000000000003" y="34.632683658170919"/>
         </scene>
     </scenes>
     <resources>
