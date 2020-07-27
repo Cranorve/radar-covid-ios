@@ -11,9 +11,6 @@
         <array key="muli_bold.ttf">
             <string>Muli-Bold</string>
         </array>
-        <array key="muli_light.ttf">
-            <string>Muli-Light</string>
-        </array>
         <array key="muli_semibold.ttf">
             <string>Muli-SemiBold</string>
         </array>
@@ -21,7 +18,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="Radar_COVID" customModuleProvider="target">
             <connections>
-                <outlet property="bulletTextView" destination="yPI-qo-fJp" id="al5-Dw-hpi"/>
+                <outlet property="stepbullet1" destination="yMv-ck-JYx" id="gOm-v8-mcH"/>
+                <outlet property="stepbullet2" destination="W2A-1t-Mhn" id="vQV-3k-lFa"/>
+                <outlet property="stepbullet3" destination="OyH-o9-UvP" id="NHs-K7-jf7"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7Ry-pS-xMF"/>
             </connections>
         </placeholder>
@@ -34,7 +33,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="494"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJg-TW-Zyr">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="464"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="545.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkC-Jh-ngm">
                                     <rect key="frame" x="113" y="0.0" width="207" height="206.5"/>
@@ -66,19 +65,19 @@ Radar COVID</string>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_1_TITLE"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracias por cuidarte y ayudarnos a proteger a los demás." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cpa-3O-7Z9">
-                                    <rect key="frame" x="16" y="384" width="288" height="70"/>
+                                    <rect key="frame" x="16" y="465.5" width="288" height="70"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_1_THANKS"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
-                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPI-qo-fJp">
-                                    <rect key="frame" x="5" y="344" width="299" height="40"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Kjg-12-rKN">
                                     <rect key="frame" x="16" y="235.5" width="288" height="93.5"/>
                                     <string key="text">Fase Piloto sólo operativa en San Sebastián de
@@ -86,24 +85,85 @@ la Gomera. Recuerda que las alertas son simuladas.</string>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_1_SUBTITLE"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMv-ck-JYx" userLabel="stepbullet1">
+                                    <rect key="frame" x="32" y="344" width="272" height="20.5"/>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_1_BULLET_1"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QR7-i5-ImM">
+                                    <rect key="frame" x="16" y="414" width="10" height="29"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <color key="textColor" red="0.3483489293" green="0.26916854210000002" blue="0.61393559639999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2A-1t-Mhn" userLabel="stepbullet2">
+                                    <rect key="frame" x="32" y="379.5" width="272" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_1_BULLET_2"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyH-o9-UvP" userLabel="stepbullet3">
+                                    <rect key="frame" x="32" y="415" width="272" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_1_BULLET_3"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNN-3A-qYp">
+                                    <rect key="frame" x="16" y="340" width="10" height="29"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <color key="textColor" red="0.3483489293" green="0.26916854210000002" blue="0.61393559639999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDd-xc-3dr">
+                                    <rect key="frame" x="16" y="468" width="10" height="29"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <color key="textColor" red="0.3483489293" green="0.26916854210000002" blue="0.61393559639999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" name="bgColor"/>
                             <constraints>
-                                <constraint firstItem="yPI-qo-fJp" firstAttribute="trailing" secondItem="8Ln-m6-qGi" secondAttribute="trailing" id="2xF-ew-wvQ"/>
+                                <constraint firstAttribute="trailing" secondItem="OyH-o9-UvP" secondAttribute="trailing" constant="16" id="3hH-7e-8M3"/>
+                                <constraint firstAttribute="trailing" secondItem="yMv-ck-JYx" secondAttribute="trailing" constant="16" id="75F-IH-cmX"/>
                                 <constraint firstItem="8Ln-m6-qGi" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="16" id="Caw-JH-QSF"/>
+                                <constraint firstItem="RDd-xc-3dr" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="16" id="Egr-WT-p8k"/>
                                 <constraint firstItem="cpa-3O-7Z9" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="16" id="Hf6-a3-gBF"/>
                                 <constraint firstAttribute="trailing" secondItem="Kjg-12-rKN" secondAttribute="trailing" constant="16" id="I5L-L3-PS0"/>
-                                <constraint firstItem="cpa-3O-7Z9" firstAttribute="top" secondItem="yPI-qo-fJp" secondAttribute="bottom" id="N2m-Gw-Y2k"/>
+                                <constraint firstItem="QR7-i5-ImM" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="16" id="IsG-Qo-Xv5"/>
+                                <constraint firstItem="cpa-3O-7Z9" firstAttribute="top" secondItem="OyH-o9-UvP" secondAttribute="bottom" constant="30" id="N2m-Gw-Y2k"/>
+                                <constraint firstItem="fNN-3A-qYp" firstAttribute="top" secondItem="Kjg-12-rKN" secondAttribute="bottom" constant="11" id="Oob-1c-ZCz"/>
                                 <constraint firstItem="Kjg-12-rKN" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="16" id="Rs1-jd-sGD"/>
+                                <constraint firstItem="fNN-3A-qYp" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="16" id="U7l-z4-M2K"/>
                                 <constraint firstAttribute="bottom" secondItem="cpa-3O-7Z9" secondAttribute="bottom" constant="10" id="Vf5-PP-KX4"/>
+                                <constraint firstAttribute="trailing" secondItem="W2A-1t-Mhn" secondAttribute="trailing" constant="16" id="YoB-Pp-53o"/>
+                                <constraint firstItem="QR7-i5-ImM" firstAttribute="top" secondItem="fNN-3A-qYp" secondAttribute="bottom" constant="45" id="Zc2-X2-NGd"/>
+                                <constraint firstItem="RDd-xc-3dr" firstAttribute="top" secondItem="QR7-i5-ImM" secondAttribute="bottom" constant="25" id="byv-8s-CHM"/>
                                 <constraint firstItem="Kjg-12-rKN" firstAttribute="top" secondItem="8Ln-m6-qGi" secondAttribute="bottom" constant="20" id="d4e-RK-UzM"/>
                                 <constraint firstAttribute="trailing" secondItem="8Ln-m6-qGi" secondAttribute="trailing" constant="16" id="dw4-fJ-q2u"/>
+                                <constraint firstItem="OyH-o9-UvP" firstAttribute="top" secondItem="W2A-1t-Mhn" secondAttribute="bottom" constant="15" id="fTK-QO-FLI"/>
                                 <constraint firstItem="8Ln-m6-qGi" firstAttribute="top" secondItem="BJg-TW-Zyr" secondAttribute="top" constant="150" id="fVr-J1-V9v"/>
+                                <constraint firstItem="W2A-1t-Mhn" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="32" id="fvo-PW-l2E"/>
                                 <constraint firstAttribute="trailing" secondItem="lkC-Jh-ngm" secondAttribute="trailing" id="gPR-lk-4uH"/>
                                 <constraint firstItem="lkC-Jh-ngm" firstAttribute="top" secondItem="BJg-TW-Zyr" secondAttribute="top" id="gvm-9Z-jh4"/>
-                                <constraint firstItem="yPI-qo-fJp" firstAttribute="top" secondItem="Kjg-12-rKN" secondAttribute="bottom" constant="15" id="llm-DJ-BeN"/>
-                                <constraint firstItem="yPI-qo-fJp" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="5" id="pED-c9-siy"/>
+                                <constraint firstItem="yMv-ck-JYx" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="32" id="h3E-uT-sgL"/>
+                                <constraint firstItem="OyH-o9-UvP" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="32" id="p4o-eh-E8m"/>
+                                <constraint firstItem="yMv-ck-JYx" firstAttribute="top" secondItem="Kjg-12-rKN" secondAttribute="bottom" constant="15" id="psV-ND-egb"/>
+                                <constraint firstItem="fNN-3A-qYp" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="16" id="rta-fa-5gk"/>
+                                <constraint firstItem="W2A-1t-Mhn" firstAttribute="top" secondItem="yMv-ck-JYx" secondAttribute="bottom" constant="15" id="z6u-zw-fF9"/>
                                 <constraint firstAttribute="trailing" secondItem="cpa-3O-7Z9" secondAttribute="trailing" constant="16" id="zFa-PV-PNN"/>
                             </constraints>
                         </view>
@@ -153,7 +213,7 @@ la Gomera. Recuerda que las alertas son simuladas.</string>
                 <constraint firstItem="0ks-pf-IGN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="weM-ih-7J9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="137.68115942028987" y="153.2608695652174"/>
+            <point key="canvasLocation" x="136.875" y="153.16901408450704"/>
         </view>
     </objects>
     <resources>
