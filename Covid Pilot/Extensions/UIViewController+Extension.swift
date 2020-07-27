@@ -22,6 +22,7 @@ extension UIViewController {
     }
     
     func showAlertOk(title: String, message: String, buttonTitle: String, _ callback: ((Any) -> Void)? = nil) {
+        
         let uiAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let action = UIAlertAction(title: buttonTitle, style: .default) { (alert) in

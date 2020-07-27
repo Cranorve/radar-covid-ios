@@ -39,6 +39,11 @@ class LocalizationUseCase: LocalizationSource {
                 self?._localizationMap = texts
                 self?.localizationRepository.setTexts(texts)
                 return texts
+            }.catchError{ [weak self] error -> Observable<[String : String]?> in
+                guard let localization = self?.localizationMap else {
+                    throw error
+                }
+                return .just(localization)
             } ?? .empty()
         }
 
