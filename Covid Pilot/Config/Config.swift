@@ -77,8 +77,6 @@ struct Config {
     
     
     static let timeTable = "Horario lunes a viernes de 08H a 20H"
-    static let contactNumber = "900 112 061"
-    static let contactEmail = "piloto.appcovid@economia.gob.es"
     
     
     static private let privateKeyPro = """

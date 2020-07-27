@@ -59,7 +59,7 @@ class NotificationHandler: NSObject, UNUserNotificationCenterDelegate {
         switch expositionInfo.level {
             case .Exposed:
                 title = "Riesgo de exposición alto"
-                body = "Llama gratis al \(Config.contactNumber) para reportarlo y continuar la simulación del piloto."
+                body = "Llama gratis al \("CONTACT_PHONE".localizedAttributed()) para reportarlo y continuar la simulación del piloto."
 //                var desde = ""
 //                if let since = expositionInfo.since {
 //                    desde = "Desde \(formatter.string(from: since))"
