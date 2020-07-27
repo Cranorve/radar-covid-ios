@@ -15,6 +15,7 @@ class RootViewController: UIViewController {
     
     var router: AppRouter?
     var configurationUseCasee: ConfigurationUseCase?
+    var ccaaUseCase: CCAAUseCase?
     var localizationUseCase: LocalizationUseCase?
     var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
 
@@ -22,6 +23,12 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
 
         LocalizationHolder.source = localizationUseCase
+        
+        ccaaUseCase!.getCCAA().subscribe(onNext:{ [weak self] ccaas in
+                debugPrint(ccaas)
+            }, onError: {  [weak self]  error in
+                debugPrint(error)
+        }).disposed(by: self.disposeBag)
         
         localizationUseCase!.loadlocalization().subscribe(
             onNext:{ [weak self] active in
