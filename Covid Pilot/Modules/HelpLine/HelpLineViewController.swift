@@ -47,7 +47,7 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
         phoneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCallTap(tapGestureRecognizer:))))
 
         timeTableLabel.text = Config.timeTable
-        phoneNumberLabel.text = Config.contactNumber
+        phoneNumberLabel.attributedText = "CONTACT_PHONE".localizedAttributed()
         phoneView.image = UIImage(named: "WhiteCard")
         
         infoLabel.isUserInteractionEnabled = true
@@ -56,11 +56,11 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
     }
     
     @objc func onCallTap(tapGestureRecognizer: UITapGestureRecognizer) {
-        open(phone: Config.contactNumber)
+        open(phone: "CONTACT_PHONE".localized)
     }
     
     @objc func onEmailTap(tapGestureRecognizer: UITapGestureRecognizer) {
-        let email = Config.contactEmail
+        let email = "CONTACT_EMAIL".localized
         
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()

@@ -64,31 +64,21 @@ class Injection {
             )
         }.inObjectScope(.container)
         
+        container.register(TextsAPI.self) { r in
+            TextsAPI(
+                clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue)!
+            )
+        }.inObjectScope(.container)
+        
+        container.register(MasterDataAPI.self) { r in
+            MasterDataAPI(
+                clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue)!
+            )
+        }.inObjectScope(.container)
+        
         container.register(LanguageApi.self) { r in
             LanguageApi()
         }.inObjectScope(.container)
-        
-        container.register(AppRouter.self) { r in
-            AppRouter()
-        }.inObjectScope(.container)
-        .initCompleted {r, appRouter in
-            appRouter.infoVC = r.resolve(InfoViewController.self)!
-            appRouter.rootVC = r.resolve(RootViewController.self)!
-            appRouter.onBoardingVC = r.resolve(OnBoardingViewController.self)!
-            appRouter.tabBarController = r.resolve(TabBarController.self)!
-            appRouter.myHealthVC = r.resolve(MyHealthViewController.self)!
-            appRouter.myHealthReportedVC = r.resolve(MyHealthReportedViewController.self)!
-            appRouter.expositionVC = r.resolve(ExpositionViewController.self)!
-            appRouter.highExpositionVC = r.resolve(HighExpositionViewController.self)!
-            appRouter.positiveExposedVC = r.resolve(PositiveExposedViewController.self)!
-            appRouter.pollVC = r.resolve(PollViewController.self)!
-            appRouter.pollFinishedVC = r.resolve(FinishPollViewController.self)!
-            appRouter.welcomeVC = r.resolve(WelcomeViewController.self)!
-            appRouter.activateCovid = r.resolve(ActivateCovidNotificationViewController.self)!
-            appRouter.activatePush = r.resolve(ActivatePushNotificationViewController.self)!
-
-
-        }
         
         container.register(PreferencesRepository.self) { r in
             UserDefaultsPreferencesRepository()
@@ -100,6 +90,10 @@ class Injection {
         
         container.register(ExpositionInfoRepository.self) { r in
             UserDefaultsExpositionInfoRepository()
+        }.inObjectScope(.container)
+        
+        container.register(LocalizationRepository.self) { r in
+            UserDefaultsLocalizationRepository()
         }.inObjectScope(.container)
         
         container.register(BluetoothHandler.self) { r in
@@ -175,7 +169,12 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(LocalizationUseCase.self) { r in
-            LocalizationUseCase(settingsApi: r.resolve(SettingsAPI.self)!, localizationApi: r.resolve(LanguageApi.self)!)
+            LocalizationUseCase(textsApi: r.resolve(TextsAPI.self)!,
+                                localizationRepository: r.resolve(LocalizationRepository.self)!)
+        }.inObjectScope(.container)
+        
+        container.register(CCAAUseCase.self) { r in
+            CCAAUseCase(masterDataApi: r.resolve(MasterDataAPI.self)!)
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in
@@ -188,11 +187,25 @@ class Injection {
             )
         }
         
-        container.register(InfoViewController.self) { r in
-            let termsVC = self.createViewController(storyboard: "Info", id: "TermsViewController") as! InfoViewController
-            termsVC.proximityVC = r.resolve(ProximityViewController.self)!
-            return termsVC
+        container.register(AppRouter.self) { r in
+            AppRouter()
+        }.initCompleted {r, appRouter in
+            appRouter.rootVC = r.resolve(RootViewController.self)!
+            appRouter.proxymityVC  = r.resolve(ProximityViewController.self)!
+            appRouter.onBoardingVC = r.resolve(OnBoardingViewController.self)!
+            appRouter.tabBarController = r.resolve(TabBarController.self)!
+            appRouter.myHealthVC = r.resolve(MyHealthViewController.self)!
+            appRouter.myHealthReportedVC = r.resolve(MyHealthReportedViewController.self)!
+            appRouter.expositionVC = r.resolve(ExpositionViewController.self)!
+            appRouter.highExpositionVC = r.resolve(HighExpositionViewController.self)!
+            appRouter.positiveExposedVC = r.resolve(PositiveExposedViewController.self)!
+            appRouter.pollVC = r.resolve(PollViewController.self)!
+            appRouter.pollFinishedVC = r.resolve(FinishPollViewController.self)!
+            appRouter.welcomeVC = r.resolve(WelcomeViewController.self)!
+            appRouter.activateCovid = r.resolve(ActivateCovidNotificationViewController.self)!
+            appRouter.activatePush = r.resolve(ActivatePushNotificationViewController.self)!
         }
+        
         
         container.register(ProximityViewController.self) {  r in
             let proxVC = ProximityViewController()
@@ -297,6 +310,7 @@ class Injection {
         
         container.register(RootViewController.self) { r in
             let rootVC = RootViewController()
+            rootVC.ccaaUseCase = r.resolve(CCAAUseCase.self)!
             rootVC.configurationUseCasee = r.resolve(ConfigurationUseCase.self)!
             rootVC.localizationUseCase = r.resolve(LocalizationUseCase.self)!
             rootVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!

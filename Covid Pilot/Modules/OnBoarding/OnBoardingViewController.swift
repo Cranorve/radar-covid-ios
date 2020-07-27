@@ -26,7 +26,7 @@ class OnBoardingViewController: UIViewController {
     @IBOutlet weak var acceptButton: UIButton!
     
     @IBAction func onOk(_ sender: Any) {
-        router?.route(to: Routes.Info, from:self)
+        router?.route(to: Routes.Proximity, from:self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
