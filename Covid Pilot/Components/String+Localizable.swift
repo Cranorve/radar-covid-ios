@@ -16,7 +16,7 @@ extension String: Localizable {
     }
     
     var isAttributedText: Bool {
-        localized.contains("</")
+        localized.contains("</") || localized.contains("<br")
     }
     
     var localizedAttributed: NSMutableAttributedString {
