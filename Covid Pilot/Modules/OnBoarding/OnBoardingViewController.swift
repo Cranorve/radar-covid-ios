@@ -21,8 +21,6 @@ class OnBoardingViewController: UIViewController {
     @IBOutlet weak var acceptTermsLabel: UILabel!
     @IBOutlet weak var privacyLabel: UILabel!
     
-    @IBOutlet weak var descriptionLabel: UILabel!
-    
     @IBOutlet weak var acceptView: UIView!
     
     @IBOutlet weak var acceptButton: UIButton!
@@ -38,8 +36,6 @@ class OnBoardingViewController: UIViewController {
 
         acceptButton.isEnabled = termsAccepted
         scrollView.alwaysBounceVertical = false
-        
-        loadTexts()
     }
     
     override func viewDidLoad() {
@@ -89,24 +85,6 @@ class OnBoardingViewController: UIViewController {
             let vc = SFSafariViewController(url: url, configuration: config)
             present(vc, animated: true)
         }
-    }
-    
-    private func loadTexts() {
-        let attributedString = NSMutableAttributedString(string: "Nuestros compromisos\n\nAnonimato \nLa aplicación funciona sin revelar tu identidad ni la de tu smartphone. \nNO se recoge tu nombre, email, geolocalización, ni tu teléfono.\n\nDiscreción \nLas alertas de exposición se envían sin indicar cuándo y dónde se produjo la exposición.\n\nTú decides\nElige en todo momento si quieres desactivar el servicio o dejar de utilizar la App.", attributes: [
-          .font: UIFont(name: "Muli-Light", size: 20.0)!,
-          .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
-        ])
-        attributedString.addAttributes([
-          .font: UIFont(name: "Muli-Bold", size: 22.0)!,
-          .foregroundColor: UIColor(red: 112.0 / 255.0, green: 80.0 / 255.0, blue: 156.0 / 255.0, alpha: 1.0)
-        ], range: NSRange(location: 0, length: 21))
-        attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 21, length: 12))
-        attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 106, length: 2))
-        attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 170, length: 13))
-        attributedString.addAttribute(.font, value: UIFont(name: "Muli-ExtraBold", size: 20.0)!, range: NSRange(location: 273, length: 11))
-        
-        descriptionLabel.attributedText = attributedString
-        
     }
 
 }
