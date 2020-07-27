@@ -182,7 +182,6 @@ class Injection {
                 homeViewController: r.resolve(HomeViewController.self)!,
                 myDataViewController: r.resolve(MyDataViewController.self)!,
                 helpLineViewController: r.resolve(HelpLineViewController.self)!,
-                finishPollViewController: r.resolve(FinishPollViewController.self)!,
                 preferencesRepository: r.resolve(PreferencesRepository.self)!
             )
         }
@@ -199,8 +198,6 @@ class Injection {
             appRouter.expositionVC = r.resolve(ExpositionViewController.self)!
             appRouter.highExpositionVC = r.resolve(HighExpositionViewController.self)!
             appRouter.positiveExposedVC = r.resolve(PositiveExposedViewController.self)!
-            appRouter.pollVC = r.resolve(PollViewController.self)!
-            appRouter.pollFinishedVC = r.resolve(FinishPollViewController.self)!
             appRouter.welcomeVC = r.resolve(WelcomeViewController.self)!
             appRouter.activateCovid = r.resolve(ActivateCovidNotificationViewController.self)!
             appRouter.activatePush = r.resolve(ActivatePushNotificationViewController.self)!
@@ -249,23 +246,9 @@ class Injection {
         
         container.register(HelpLineViewController.self) {  r in
             let helpVC = self.createViewController(storyboard: "HelpLine", id: "HelpLineViewController") as! HelpLineViewController
-            helpVC.pollUseCase = r.resolve(PollUseCase.self)!
             helpVC.router = r.resolve(AppRouter.self)!
             helpVC.preferencesRepository = r.resolve(PreferencesRepository.self)!
             return helpVC
-        }
-        
-        container.register(PollViewController.self) {  r in
-            let pollVC = self.createViewController(storyboard: "Poll", id: "PollViewController") as! PollViewController
-            pollVC.pollUseCase = r.resolve(PollUseCase.self)!
-            pollVC.finishPollVC = r.resolve(FinishPollViewController.self)!
-            pollVC.router = r.resolve(AppRouter.self)!
-            return pollVC
-        }
-        
-        container.register(FinishPollViewController.self) {  r in
-            let finishPollVC = FinishPollViewController()
-            return finishPollVC
         }
         
         container.register(MyHealthViewController.self) {  r in
