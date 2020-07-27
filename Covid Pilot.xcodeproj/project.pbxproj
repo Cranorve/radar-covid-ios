@@ -32,8 +32,6 @@
 		6D5AFC902492827C00EFE838 /* muli_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC8C2492827C00EFE838 /* muli_light.ttf */; };
 		6D5AFC932492883700EFE838 /* muli_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC912492883700EFE838 /* muli_regular.ttf */; };
 		6D5AFC942492883700EFE838 /* muli_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC922492883700EFE838 /* muli_italic.ttf */; };
-		6D5AFC9A249296F000EFE838 /* Poll.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFC99249296F000EFE838 /* Poll.storyboard */; };
-		6D5AFC9E2492972800EFE838 /* PollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFC9D2492972800EFE838 /* PollViewController.swift */; };
 		6D5AFCD72493626C00EFE838 /* QuestionnaireControllerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCC62493626C00EFE838 /* QuestionnaireControllerAPI.swift */; };
 		6D5AFCD82493626C00EFE838 /* AnswersControllerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCC72493626C00EFE838 /* AnswersControllerAPI.swift */; };
 		6D5AFCDD2493626C00EFE838 /* QuestionOptionDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCCD2493626C00EFE838 /* QuestionOptionDto.swift */; };
@@ -43,11 +41,6 @@
 		6D5AFCEE24938CC000EFE838 /* PollUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCED24938CC000EFE838 /* PollUseCase.swift */; };
 		6D5AFCF024938D1900EFE838 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCEF24938D1900EFE838 /* Question.swift */; };
 		6D5AFCF22493910900EFE838 /* QuestionOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCF12493910900EFE838 /* QuestionOption.swift */; };
-		6D5AFCF72493A6E900EFE838 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCF52493A6E900EFE838 /* RatingViewController.swift */; };
-		6D5AFCF82493A6E900EFE838 /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFCF62493A6E900EFE838 /* RatingViewController.xib */; };
-		6D5AFCFA2493AA7F00EFE838 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCF92493AA7F00EFE838 /* QuestionController.swift */; };
-		6D5AFCFD2493B3AA00EFE838 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5AFCFB2493B3AA00EFE838 /* SelectViewController.swift */; };
-		6D5AFCFE2493B3AA00EFE838 /* SelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D5AFCFC2493B3AA00EFE838 /* SelectViewController.xib */; };
 		6D78B44124A9F13A00FBC23F /* SetupUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D78B44024A9F13A00FBC23F /* SetupUseCase.swift */; };
 		6D7AB26D24ADCC9A00F30E0B /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB26C24ADCC9A00F30E0B /* NotificationHandler.swift */; };
 		6D7AB26F24ADED7400F30E0B /* ExpositionInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7AB26E24ADED7400F30E0B /* ExpositionInfoRepository.swift */; };
@@ -68,10 +61,6 @@
 		6DAD76AE24A884EF00643AAD /* ResetDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAD76AD24A884EF00643AAD /* ResetDataUseCase.swift */; };
 		6DB14CC024A8F498001FC6C1 /* KpiControllerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB14CBD24A8F498001FC6C1 /* KpiControllerAPI.swift */; };
 		6DB14CC124A8F498001FC6C1 /* KpiDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB14CBF24A8F498001FC6C1 /* KpiDto.swift */; };
-		6DB5417B2497DFFE00166D37 /* QuestionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB541792497DFFE00166D37 /* QuestionItemCell.swift */; };
-		6DB5417C2497DFFE00166D37 /* QuestionItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5417A2497DFFE00166D37 /* QuestionItemCell.xib */; };
-		6DB541812497F55900166D37 /* FinishPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5417F2497F55900166D37 /* FinishPollViewController.swift */; };
-		6DB541822497F55900166D37 /* FinishPollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB541802497F55900166D37 /* FinishPollViewController.xib */; };
 		6DB5418D24989C2500166D37 /* TokenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5418524989C2500166D37 /* TokenAPI.swift */; };
 		6DB5418E24989C2500166D37 /* SettingsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5418624989C2500166D37 /* SettingsAPI.swift */; };
 		6DB5418F24989C2500166D37 /* SettingsDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5418824989C2500166D37 /* SettingsDto.swift */; };
@@ -95,8 +84,6 @@
 		6DE27C79249A6D4600BBCF40 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C6F249A6D4500BBCF40 /* APIHelper.swift */; };
 		6DE27C7A249A6D4600BBCF40 /* CodableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C70249A6D4500BBCF40 /* CodableHelper.swift */; };
 		6DE27C83249A7E3900BBCF40 /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C82249A7E3900BBCF40 /* Poll.swift */; };
-		6DE27C86249E14CA00BBCF40 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C84249E14CA00BBCF40 /* TextViewController.swift */; };
-		6DE27C87249E14CA00BBCF40 /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE27C85249E14CA00BBCF40 /* TextViewController.xib */; };
 		6DE27C97249FB1F600BBCF40 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C96249FB1F600BBCF40 /* UIViewController+Extension.swift */; };
 		6DE27C9F24A0AA2300BBCF40 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE27C9E24A0AA2300BBCF40 /* WelcomeViewController.xib */; };
 		6DE27CA924A0D34C00BBCF40 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27CA824A0D34C00BBCF40 /* TableHeaderView.swift */; };
@@ -182,8 +169,6 @@
 		6D5AFC8C2492827C00EFE838 /* muli_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = muli_light.ttf; sourceTree = "<group>"; };
 		6D5AFC912492883700EFE838 /* muli_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = muli_regular.ttf; sourceTree = "<group>"; };
 		6D5AFC922492883700EFE838 /* muli_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = muli_italic.ttf; sourceTree = "<group>"; };
-		6D5AFC99249296F000EFE838 /* Poll.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Poll.storyboard; sourceTree = "<group>"; };
-		6D5AFC9D2492972800EFE838 /* PollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollViewController.swift; sourceTree = "<group>"; };
 		6D5AFCC62493626C00EFE838 /* QuestionnaireControllerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireControllerAPI.swift; sourceTree = "<group>"; };
 		6D5AFCC72493626C00EFE838 /* AnswersControllerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersControllerAPI.swift; sourceTree = "<group>"; };
 		6D5AFCCD2493626C00EFE838 /* QuestionOptionDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionOptionDto.swift; sourceTree = "<group>"; };
@@ -192,11 +177,6 @@
 		6D5AFCED24938CC000EFE838 /* PollUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollUseCase.swift; sourceTree = "<group>"; };
 		6D5AFCEF24938D1900EFE838 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		6D5AFCF12493910900EFE838 /* QuestionOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOption.swift; sourceTree = "<group>"; };
-		6D5AFCF52493A6E900EFE838 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
-		6D5AFCF62493A6E900EFE838 /* RatingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
-		6D5AFCF92493AA7F00EFE838 /* QuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
-		6D5AFCFB2493B3AA00EFE838 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
-		6D5AFCFC2493B3AA00EFE838 /* SelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectViewController.xib; sourceTree = "<group>"; };
 		6D78B44024A9F13A00FBC23F /* SetupUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupUseCase.swift; sourceTree = "<group>"; };
 		6D7AB26C24ADCC9A00F30E0B /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		6D7AB26E24ADED7400F30E0B /* ExpositionInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpositionInfoRepository.swift; sourceTree = "<group>"; };
@@ -217,10 +197,6 @@
 		6DAD76AD24A884EF00643AAD /* ResetDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetDataUseCase.swift; sourceTree = "<group>"; };
 		6DB14CBD24A8F498001FC6C1 /* KpiControllerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KpiControllerAPI.swift; sourceTree = "<group>"; };
 		6DB14CBF24A8F498001FC6C1 /* KpiDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KpiDto.swift; sourceTree = "<group>"; };
-		6DB541792497DFFE00166D37 /* QuestionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItemCell.swift; sourceTree = "<group>"; };
-		6DB5417A2497DFFE00166D37 /* QuestionItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionItemCell.xib; sourceTree = "<group>"; };
-		6DB5417F2497F55900166D37 /* FinishPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishPollViewController.swift; sourceTree = "<group>"; };
-		6DB541802497F55900166D37 /* FinishPollViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinishPollViewController.xib; sourceTree = "<group>"; };
 		6DB5418524989C2500166D37 /* TokenAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenAPI.swift; sourceTree = "<group>"; };
 		6DB5418624989C2500166D37 /* SettingsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAPI.swift; sourceTree = "<group>"; };
 		6DB5418824989C2500166D37 /* SettingsDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDto.swift; sourceTree = "<group>"; };
@@ -245,8 +221,6 @@
 		6DE27C6F249A6D4500BBCF40 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		6DE27C70249A6D4500BBCF40 /* CodableHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableHelper.swift; sourceTree = "<group>"; };
 		6DE27C82249A7E3900BBCF40 /* Poll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
-		6DE27C84249E14CA00BBCF40 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
-		6DE27C85249E14CA00BBCF40 /* TextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
 		6DE27C96249FB1F600BBCF40 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		6DE27C9E24A0AA2300BBCF40 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		6DE27CA824A0D34C00BBCF40 /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
@@ -384,7 +358,6 @@
 			isa = PBXGroup;
 			children = (
 				6D83344C24B834DD00223071 /* Root */,
-				6D5AFC952492963B00EFE838 /* Poll */,
 				6DA18CBE24916B1800BE8AAB /* Exposition */,
 				6DF6ECD2248FA091007EAA40 /* HelpLine */,
 				6DF6ECCD248FA01E007EAA40 /* MyData */,
@@ -432,26 +405,6 @@
 				399CA88024913B0E000B6BF4 /* MyHealthReportedViewController.swift */,
 			);
 			path = MyHealth;
-			sourceTree = "<group>";
-		};
-		6D5AFC952492963B00EFE838 /* Poll */ = {
-			isa = PBXGroup;
-			children = (
-				6D5AFC99249296F000EFE838 /* Poll.storyboard */,
-				6D5AFC9D2492972800EFE838 /* PollViewController.swift */,
-				6D5AFCF52493A6E900EFE838 /* RatingViewController.swift */,
-				6D5AFCF62493A6E900EFE838 /* RatingViewController.xib */,
-				6D5AFCF92493AA7F00EFE838 /* QuestionController.swift */,
-				6D5AFCFB2493B3AA00EFE838 /* SelectViewController.swift */,
-				6D5AFCFC2493B3AA00EFE838 /* SelectViewController.xib */,
-				6DB541792497DFFE00166D37 /* QuestionItemCell.swift */,
-				6DB5417A2497DFFE00166D37 /* QuestionItemCell.xib */,
-				6DB5417F2497F55900166D37 /* FinishPollViewController.swift */,
-				6DB541802497F55900166D37 /* FinishPollViewController.xib */,
-				6DE27C84249E14CA00BBCF40 /* TextViewController.swift */,
-				6DE27C85249E14CA00BBCF40 /* TextViewController.xib */,
-			);
-			path = Poll;
 			sourceTree = "<group>";
 		};
 		6D5AFC9F2493621300EFE838 /* WS */ = {
@@ -845,24 +798,18 @@
 				6DF6ECBB248F5E56007EAA40 /* ProximityViewController.xib in Resources */,
 				6D5AFC8E2492827C00EFE838 /* muli_semibold.ttf in Resources */,
 				6DF6ECC2248F68DF007EAA40 /* Home.storyboard in Resources */,
-				6DB541822497F55900166D37 /* FinishPollViewController.xib in Resources */,
 				39A1AD46249225510049E48B /* HighExposition.storyboard in Resources */,
 				6D5AFC8D2492827C00EFE838 /* muli_extrabold.ttf in Resources */,
 				6DA18CC024916B3300BE8AAB /* Exposition.storyboard in Resources */,
-				6D5AFCF82493A6E900EFE838 /* RatingViewController.xib in Resources */,
-				6DE27C87249E14CA00BBCF40 /* TextViewController.xib in Resources */,
 				39443296248939F500FF0217 /* LaunchScreen.storyboard in Resources */,
 				6DF6ECD4248FA0B3007EAA40 /* HelpLine.storyboard in Resources */,
 				766C73AA24B561B80056D2DB /* ActivateCovidNotificationViewController.xib in Resources */,
 				6DF6ECCF248FA032007EAA40 /* MyData.storyboard in Resources */,
-				6D5AFC9A249296F000EFE838 /* Poll.storyboard in Resources */,
 				6D2CA48624B4C69B00981DA4 /* PositiveExposed.storyboard in Resources */,
-				6DB5417C2497DFFE00166D37 /* QuestionItemCell.xib in Resources */,
 				6D5AFC932492883700EFE838 /* muli_regular.ttf in Resources */,
 				6DE27C9F24A0AA2300BBCF40 /* WelcomeViewController.xib in Resources */,
 				766C73AE24B567C50056D2DB /* ActivatePushNotificationViewController.xib in Resources */,
 				399CA87D24912B96000B6BF4 /* MyHealthReported.storyboard in Resources */,
-				6D5AFCFE2493B3AA00EFE838 /* SelectViewController.xib in Resources */,
 				394E962F248E7F25009F640E /* MyHealth.storyboard in Resources */,
 				39443293248939F500FF0217 /* Assets.xcassets in Resources */,
 				766C73A624B4DF440056D2DB /* PositiveExposed.storyboard in Resources */,
@@ -917,7 +864,6 @@
 				6DF6ECAA248E7621007EAA40 /* AppRouter.swift in Sources */,
 				6D2CA48224B3571900981DA4 /* Error.swift in Sources */,
 				6DB5419224989C2500166D37 /* ExposureConfigurationDto.swift in Sources */,
-				6DB541812497F55900166D37 /* FinishPollViewController.swift in Sources */,
 				766C73A524B4DF440056D2DB /* PositiveExposedViewController.swift in Sources */,
 				6DF6ECB0248E88E6007EAA40 /* OnBoardingCompletedUseCase.swift in Sources */,
 				6DE27CB324A379F800BBCF40 /* NetworkActivityLogger.swift in Sources */,
@@ -934,7 +880,6 @@
 				6DE27C97249FB1F600BBCF40 /* UIViewController+Extension.swift in Sources */,
 				6DE27D3F24A76D7E00BBCF40 /* AttenuationDurationThresholdsDto.swift in Sources */,
 				6DB14CC124A8F498001FC6C1 /* KpiDto.swift in Sources */,
-				6DE27C86249E14CA00BBCF40 /* TextViewController.swift in Sources */,
 				6DF8211624CEDB49000ED0D2 /* MasterDataAPI.swift in Sources */,
 				6D5AFCD72493626C00EFE838 /* QuestionnaireControllerAPI.swift in Sources */,
 				6DF6ECDB248FD641007EAA40 /* ExpositionUseCase.swift in Sources */,
@@ -946,7 +891,6 @@
 				6DB5419124989C2500166D37 /* UuidDto.swift in Sources */,
 				6DF6ECE0248FD772007EAA40 /* ExpositionInfo.swift in Sources */,
 				6DB541992498A55700166D37 /* Settings.swift in Sources */,
-				6D5AFCF72493A6E900EFE838 /* RatingViewController.swift in Sources */,
 				76D9BD4724A8CA8800BA6697 /* UIColor+Extension.swift in Sources */,
 				6D83344524B72BC800223071 /* LocalizationSource.swift in Sources */,
 				6DF6ECBA248F5E56007EAA40 /* ProximityViewController.swift in Sources */,
@@ -957,13 +901,11 @@
 				76D9BD2024A8992000BA6697 /* NVActivityIndicatorView.swift in Sources */,
 				76D9BD1D24A8992000BA6697 /* NVActivityIndicatorPresenter.swift in Sources */,
 				6DF6ECD8248FBEC2007EAA40 /* MyHealthViewController.swift in Sources */,
-				6D5AFC9E2492972800EFE838 /* PollViewController.swift in Sources */,
 				6DE27C73249A6D4600BBCF40 /* APIs.swift in Sources */,
 				6DF6ECCA248F743B007EAA40 /* OnBoardingViewController.swift in Sources */,
 				76D9BD3924A8992000BA6697 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				6DF6ECC8248F70DF007EAA40 /* PreferencesRepository.swift in Sources */,
 				6D83344F24B8350300223071 /* RootViewController.swift in Sources */,
-				6D5AFCFD2493B3AA00EFE838 /* SelectViewController.swift in Sources */,
 				3944328C248939F000FF0217 /* SceneDelegate.swift in Sources */,
 				6D2CA48A24B60F5F00981DA4 /* Localizable.swift in Sources */,
 				6D7AB26D24ADCC9A00F30E0B /* NotificationHandler.swift in Sources */,
@@ -971,7 +913,6 @@
 				6D2CA48024B3353600981DA4 /* ErrorUseCase.swift in Sources */,
 				399CA88124913B0E000B6BF4 /* MyHealthReportedViewController.swift in Sources */,
 				6D5AFCDE2493626C00EFE838 /* QuestionDto.swift in Sources */,
-				6DB5417B2497DFFE00166D37 /* QuestionItemCell.swift in Sources */,
 				6DB541972498A31700166D37 /* SettingsRepository.swift in Sources */,
 				6DE27C7A249A6D4600BBCF40 /* CodableHelper.swift in Sources */,
 				6DE27C77249A6D4600BBCF40 /* JSONValue.swift in Sources */,
@@ -989,7 +930,6 @@
 				6D83344924B7303500223071 /* String+Localizable.swift in Sources */,
 				6DE27CA924A0D34C00BBCF40 /* TableHeaderView.swift in Sources */,
 				766C73AD24B567C50056D2DB /* ActivatePushNotificationViewController.swift in Sources */,
-				6D5AFCFA2493AA7F00EFE838 /* QuestionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

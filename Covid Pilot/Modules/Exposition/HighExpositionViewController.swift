@@ -33,7 +33,7 @@ class HighExpositionViewController: UIViewController {
         
         phoneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCallTap(tapGestureRecognizer:))))
         phoneView.image = UIImage(named: "WhiteCard")
-        phoneLabel.text = Config.contactNumber
+        phoneLabel.attributedText = "CONTACT_PHONE".localizedAttributed()
         timeTableLabel.text = Config.timeTable
     }
     
@@ -50,7 +50,7 @@ class HighExpositionViewController: UIViewController {
     }
     
     @objc func onCallTap(tapGestureRecognizer: UITapGestureRecognizer) {
-        open(phone: Config.contactNumber)
+        open(phone: "CONTACT_PHONE".localized)
     }
     
     @objc func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
