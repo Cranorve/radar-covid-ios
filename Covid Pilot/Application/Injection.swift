@@ -76,10 +76,6 @@ class Injection {
             )
         }.inObjectScope(.container)
         
-        container.register(LanguageApi.self) { r in
-            LanguageApi()
-        }.inObjectScope(.container)
-        
         container.register(PreferencesRepository.self) { r in
             UserDefaultsPreferencesRepository()
         }.inObjectScope(.container)
