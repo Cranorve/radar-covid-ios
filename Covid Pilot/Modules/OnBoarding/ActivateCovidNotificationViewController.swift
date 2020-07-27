@@ -19,7 +19,7 @@ class ActivateCovidNotificationViewController: UIViewController {
     
     
     @IBAction func onContinue(_ sender: Any) {
-        self.view.showTransparentBackground(withColor: UIColor.blueyGrey90, alpha: 1, nil, "Selecciona “<b>Activar</b>” en la ventana que aparecerá a continuación".htmlToAttributedString, UIColor.white)
+        self.view.showTransparentBackground(withColor: UIColor.blueyGrey90, alpha: 1, nil, "ACTIVATE_COVID_NOTIFICATION_POPUP_HOVER".localizedAttributed(), UIColor.white)
         radarStatusUseCase?.restoreLastStateAndSync().subscribe(
             onNext:{ [weak self] isTracingActive in
                 self?.activationFinished()
