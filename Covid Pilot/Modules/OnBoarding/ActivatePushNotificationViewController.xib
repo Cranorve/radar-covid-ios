@@ -11,9 +11,6 @@
         <array key="muli_bold.ttf">
             <string>Muli-Bold</string>
         </array>
-        <array key="muli_regular.ttf">
-            <string>Muli-Regular</string>
-        </array>
         <array key="muli_semibold.ttf">
             <string>Muli-SemiBold</string>
         </array>
@@ -33,7 +30,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="494"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJg-TW-Zyr">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="465.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="484.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkC-Jh-ngm">
                                     <rect key="frame" x="113" y="0.0" width="207" height="206.5"/>
@@ -41,7 +38,7 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightTopShade" translatesAutoresizingMaskIntoConstraints="NO" id="DpS-EF-eHd">
                                             <rect key="frame" x="-76.5" y="0.0" width="283.5" height="206.5"/>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GirlMobile" translatesAutoresizingMaskIntoConstraints="NO" id="7ke-rT-ezJ">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_push_notification" translatesAutoresizingMaskIntoConstraints="NO" id="7ke-rT-ezJ">
                                             <rect key="frame" x="66" y="21" width="118" height="131"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="131" id="ccD-xA-MY9"/>
@@ -63,13 +60,19 @@
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ACTIVATE_PUSH_NOTIFICATION_TITLE"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txD-dN-Bbt">
-                                    <rect key="frame" x="16" y="235.5" width="284" height="210"/>
-                                    <string key="text">Las notificaciones permiten que Radar COVID te avise si has estado potencialmente expuesto al coronavirus.
-
-Para avisarte de forma automática,  es necesario que nos permitas enviarte notificaciones.</string>
-                                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Las notificaciones permiten que Radar COVID te avise si has estado potencialmente expuesto al coronavirus." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkC-WK-MSs" userLabel="bullet_1">
+                                    <rect key="frame" x="16" y="240.5" width="288" height="95.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para avisarte de forma automática,  es necesario que nos permitas enviarte notificaciones." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifb-ww-k2d" userLabel="bullet_2">
+                                    <rect key="frame" x="16" y="351" width="288" height="93.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -77,14 +80,17 @@ Para avisarte de forma automática,  es necesario que nos permitas enviarte noti
                             <color key="backgroundColor" name="bgColor"/>
                             <constraints>
                                 <constraint firstItem="8Ln-m6-qGi" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="16" id="Caw-JH-QSF"/>
-                                <constraint firstItem="txD-dN-Bbt" firstAttribute="top" secondItem="8Ln-m6-qGi" secondAttribute="bottom" constant="20" id="OiS-VQ-HrC"/>
-                                <constraint firstAttribute="trailing" secondItem="txD-dN-Bbt" secondAttribute="trailing" constant="20" id="RVd-5G-bSx"/>
-                                <constraint firstItem="txD-dN-Bbt" firstAttribute="leading" secondItem="8Ln-m6-qGi" secondAttribute="leading" id="YtP-12-9gX"/>
+                                <constraint firstItem="TkC-WK-MSs" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="16" id="M6d-4Q-wkJ"/>
+                                <constraint firstAttribute="bottom" secondItem="ifb-ww-k2d" secondAttribute="bottom" constant="40" id="QpA-xh-inN"/>
                                 <constraint firstAttribute="trailing" secondItem="8Ln-m6-qGi" secondAttribute="trailing" constant="16" id="dw4-fJ-q2u"/>
                                 <constraint firstItem="8Ln-m6-qGi" firstAttribute="top" secondItem="BJg-TW-Zyr" secondAttribute="top" constant="150" id="fVr-J1-V9v"/>
                                 <constraint firstAttribute="trailing" secondItem="lkC-Jh-ngm" secondAttribute="trailing" id="gPR-lk-4uH"/>
                                 <constraint firstItem="lkC-Jh-ngm" firstAttribute="top" secondItem="BJg-TW-Zyr" secondAttribute="top" id="gvm-9Z-jh4"/>
-                                <constraint firstAttribute="bottom" secondItem="txD-dN-Bbt" secondAttribute="bottom" constant="20" id="vDj-hf-Crp"/>
+                                <constraint firstItem="TkC-WK-MSs" firstAttribute="top" secondItem="8Ln-m6-qGi" secondAttribute="bottom" constant="25" id="klw-Kt-LYb"/>
+                                <constraint firstAttribute="trailing" secondItem="TkC-WK-MSs" secondAttribute="trailing" constant="16" id="qzj-CO-gpB"/>
+                                <constraint firstItem="ifb-ww-k2d" firstAttribute="leading" secondItem="BJg-TW-Zyr" secondAttribute="leading" constant="16" id="rn4-F5-Ljn"/>
+                                <constraint firstAttribute="trailing" secondItem="ifb-ww-k2d" secondAttribute="trailing" constant="16" id="sGw-vA-9Wd"/>
+                                <constraint firstItem="ifb-ww-k2d" firstAttribute="top" secondItem="TkC-WK-MSs" secondAttribute="bottom" constant="15" id="xFl-lF-krw"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -116,6 +122,7 @@ Para avisarte de forma automática,  es necesario que nos permitas enviarte noti
                             <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath=" btn.clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="locKey" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="onContinue:" destination="-1" eventType="primaryActionTriggered" id="BHS-aM-Uab"/>
@@ -137,8 +144,8 @@ Para avisarte de forma automática,  es necesario que nos permitas enviarte noti
         </view>
     </objects>
     <resources>
-        <image name="GirlMobile" width="118" height="131"/>
         <image name="GradientBackgroundButton" width="343" height="56"/>
+        <image name="Image_push_notification" width="130" height="138"/>
         <image name="RightTopShade" width="283.5" height="206.5"/>
         <namedColor name="bgColor">
             <color red="0.98039215686274506" green="0.97647058823529409" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

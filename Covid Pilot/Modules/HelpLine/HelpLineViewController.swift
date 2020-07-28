@@ -42,6 +42,7 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         infoLabel.isUserInteractionEnabled = true
         infoLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onEmailTap(tapGestureRecognizer:))))
+        lblEmail.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onEmailTap(tapGestureRecognizer:))))
         
     }
     
@@ -60,7 +61,7 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
 
             present(mail, animated: true)
         } else {
-            // show failure alert
+            print("--------adkjbdkasdkasbd---------")
         }
 
     }

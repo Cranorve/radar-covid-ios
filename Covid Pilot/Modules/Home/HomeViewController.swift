@@ -76,7 +76,7 @@ class HomeViewController: UIViewController {
     }
     
     func showActivationMessage() {
-        self.showAlertOk(title: "ALERT_HOME_COVID_NOTIFICATION_TITLE".localizedAttributed().string, message: "Para que Radar COVID pueda funcionar, es necesario que actives las notificaciones de exposición a la COVID-19", buttonTitle: "ALERT_HOME_COVID_NOTIFICATION_OK_BUTTON".localizedAttributed().string) { (action) in
+        self.showAlertOk(title: "ALERT_HOME_COVID_NOTIFICATION_TITLE".localizedAttributed().string, message: "HOME_COVID_NOTIFICATION_POPUP_INACTIVE".localizedAttributed().string, buttonTitle: "ALERT_HOME_COVID_NOTIFICATION_OK_BUTTON".localizedAttributed().string) { (action) in
             UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
         }
     }
@@ -252,7 +252,7 @@ class HomeViewController: UIViewController {
     
     private func showAlert(message:String?) {
         if let message = message {
-            showAlertOk(title: "Mensaje", message: message, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed().string)
+            showAlertOk(title: "MESSAGE_POPUP".localizedAttributed().string, message: message, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed().string)
         }
     }
     
