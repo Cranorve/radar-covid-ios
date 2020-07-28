@@ -37,6 +37,13 @@ enum Endpoits {
         case .pro: return "https://radarcovid.covid19.gob.es/dp3t"
         }
     }
+    
+    var verification: String {
+        switch self {
+        case .pre: return "https://d3d0clxg4q92wk.cloudfront.net/dp3t"
+        case .pro: return "https://radarcovid.covid19.gob.es/dp3t"
+        }
+    }
 }
 
 struct Config {

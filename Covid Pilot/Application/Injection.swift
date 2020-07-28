@@ -16,6 +16,7 @@ class Injection {
         case POLL
         case CONFIG
         case KPI
+        case VERIFICATION
     }
     
     private let container: Container;
@@ -26,20 +27,26 @@ class Injection {
         
         container.register(SwaggerClientAPI.self, name: Endpoint.POLL.rawValue) { r in
             let swaggerApi = SwaggerClientAPI()
-            swaggerApi.basePath = Config.endpoints.poll;
-            return swaggerApi;
+            swaggerApi.basePath = Config.endpoints.poll
+            return swaggerApi
         }.inObjectScope(.container)
         
         container.register(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue) { r in
             let swaggerApi = SwaggerClientAPI()
-            swaggerApi.basePath = Config.endpoints.config;
-            return swaggerApi;
+            swaggerApi.basePath = Config.endpoints.config
+            return swaggerApi
         }.inObjectScope(.container)
         
         container.register(SwaggerClientAPI.self, name: Endpoint.KPI.rawValue) { r in
             let swaggerApi = SwaggerClientAPI()
-            swaggerApi.basePath = Config.endpoints.kpi;
-            return swaggerApi;
+            swaggerApi.basePath = Config.endpoints.kpi
+            return swaggerApi
+        }.inObjectScope(.container)
+        
+        container.register(SwaggerClientAPI.self, name: Endpoint.VERIFICATION.rawValue) { r in
+            let swaggerApi = SwaggerClientAPI()
+            swaggerApi.basePath = Config.endpoints.verification
+            return swaggerApi
         }.inObjectScope(.container)
         
         container.register(QuestionnaireControllerAPI.self) { r in
@@ -73,6 +80,12 @@ class Injection {
         container.register(MasterDataAPI.self) { r in
             MasterDataAPI(
                 clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.CONFIG.rawValue)!
+            )
+        }.inObjectScope(.container)
+        
+        container.register(VerificationControllerAPI.self) { r in
+            VerificationControllerAPI(
+                clientApi: r.resolve(SwaggerClientAPI.self, name: Endpoint.VERIFICATION.rawValue)!
             )
         }.inObjectScope(.container)
         
