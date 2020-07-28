@@ -66,7 +66,7 @@ class HomeViewController: UIViewController {
         if active {
             viewModel?.changeRadarStatus(true)
         } else {
-            self.showAlertCancelContinue(title: "ALERT_HOME_RADAR_TITLE".localizedAttributed().string, message: "ALERT_HOME_RADAR_CONTENT".localizedAttributed().string , buttonOkTitle: "ALERT_HOME_RADAR_OK_BUTTON".localizedAttributed().string, buttonCancelTitle:  "ALERT_HOME_RADAR_CANCEL_BUTTON".localizedAttributed().string,
+            self.showAlertCancelContinue(title: "ALERT_HOME_RADAR_TITLE".localized, message: "ALERT_HOME_RADAR_CONTENT".localized , buttonOkTitle: "ALERT_HOME_RADAR_OK_BUTTON".localized, buttonCancelTitle:  "ALERT_HOME_RADAR_CANCEL_BUTTON".localized,
                 okHandler: { [weak self] _ in
                     self?.viewModel?.changeRadarStatus(false)
                 }, cancelHandler: { [weak self] _ in
@@ -76,7 +76,7 @@ class HomeViewController: UIViewController {
     }
     
     func showActivationMessage() {
-        self.showAlertOk(title: "ALERT_HOME_COVID_NOTIFICATION_TITLE".localizedAttributed().string, message: "HOME_COVID_NOTIFICATION_POPUP_INACTIVE".localizedAttributed().string, buttonTitle: "ALERT_HOME_COVID_NOTIFICATION_OK_BUTTON".localizedAttributed().string) { (action) in
+        self.showAlertOk(title: "ALERT_HOME_COVID_NOTIFICATION_TITLE".localized, message: "HOME_COVID_NOTIFICATION_POPUP_INACTIVE".localized, buttonTitle: "ALERT_HOME_COVID_NOTIFICATION_OK_BUTTON".localized) { (action) in
             UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
         }
     }
@@ -157,7 +157,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func onReset(_ sender: Any) {
         
-        self.showAlertCancelContinue(title:  "ALERT_HOME_RESET_TITLE".localizedAttributed().string, message: "ALERT_HOME_RESET_CONTENT".localizedAttributed().string, buttonOkTitle: "ALERT_OK_BUTTON".localizedAttributed().string, buttonCancelTitle: "ALERT_CANCEL_BUTTON".localizedAttributed().string) { [weak self] (UIAlertAction) in
+        self.showAlertCancelContinue(title:  "ALERT_HOME_RESET_TITLE".localized, message: "ALERT_HOME_RESET_CONTENT".localized, buttonOkTitle: "ALERT_OK_BUTTON".localized, buttonCancelTitle: "ALERT_CANCEL_BUTTON".localized) { [weak self] (UIAlertAction) in
             self?.viewModel!.reset()
         }
 
@@ -180,7 +180,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setExposed() {
-        expositionTitle.text = "HOME_EXPOSITION_TITLE_HIGH".localizedAttributed().string
+        expositionTitle.text = "HOME_EXPOSITION_TITLE_HIGH".localized
         expositionDescription.attributedText  = "HOME_EXPOSITION_MESSAGE_HIGH".localizedAttributed()
         expositionView.image = bgImageRed
         expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
@@ -188,7 +188,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setHealthy() {
-        expositionTitle.text = "HOME_EXPOSITION_TITLE_LOW".localizedAttributed().string
+        expositionTitle.text = "HOME_EXPOSITION_TITLE_LOW".localized
         expositionDescription.attributedText  = "HOME_EXPOSITION_MESSAGE_LOW".localizedAttributed()
         expositionView.image = bgImageGreen
         expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)
@@ -196,7 +196,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setInfected() {
-        expositionTitle.text = "HOME_EXPOSITION_TITLE_POSITIVE".localizedAttributed().string
+        expositionTitle.text = "HOME_EXPOSITION_TITLE_POSITIVE".localized
         expositionDescription.attributedText  = "HOME_EXPOSITION_MESSAGE_INFECTED".localizedAttributed()
         expositionView.image = bgImageRed
         expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
@@ -246,13 +246,13 @@ class HomeViewController: UIViewController {
     
     private func showError(message: String?) {
         if let message = message {
-            showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed().string, message: message, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed().string)
+            showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localized, message: message, buttonTitle: "ALERT_ACCEPT_BUTTON".localized)
         }
     }
     
     private func showAlert(message:String?) {
         if let message = message {
-            showAlertOk(title: "MESSAGE_POPUP".localizedAttributed().string, message: message, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed().string)
+            showAlertOk(title: "MESSAGE_POPUP".localized, message: message, buttonTitle: "ALERT_ACCEPT_BUTTON".localized)
         }
     }
     

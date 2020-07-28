@@ -42,7 +42,7 @@ class HomeViewModel {
                 self?.checkExpositionLevel(exposition)
             }, onError: { [weak self] error in
                 debugPrint(error)
-                self?.errorMessage.onNext("ALERT_HOME_EXPOSITION_CONTENT".localizedAttributed().string)
+                self?.errorMessage.onNext("ALERT_HOME_EXPOSITION_CONTENT".localized)
         }).disposed(by: disposeBag)
     }
     
@@ -72,10 +72,10 @@ class HomeViewModel {
         resetDataUseCase?.reset().subscribe(
             onNext:{ [weak self] expositionInfo in
                 debugPrint("Data reseted")
-                self?.alertMessage.onNext("ALERT_HOME_RESET_SUCCESS_CONTENT".localizedAttributed().string)
+                self?.alertMessage.onNext("ALERT_HOME_RESET_SUCCESS_CONTENT".localized)
             }, onError: { [weak self] error in
                 debugPrint(error)
-                self?.errorMessage.onNext("ALERT_HOME_RESET_ERROR_CONTENT".localizedAttributed().string)
+                self?.errorMessage.onNext("ALERT_HOME_RESET_ERROR_CONTENT".localized)
         }).disposed(by: disposeBag)
     }
     
