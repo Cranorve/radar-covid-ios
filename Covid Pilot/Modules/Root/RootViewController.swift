@@ -24,7 +24,7 @@ class RootViewController: UIViewController {
 
         LocalizationHolder.source = localizationUseCase
         
-        ccaaUseCase!.getCCAA().subscribe(onNext:{ ccaas in
+        ccaaUseCase!.loadCCAA().subscribe(onNext:{ ccaas in
                 debugPrint(ccaas)
             }, onError: {  error in
                 debugPrint(error)

@@ -170,7 +170,8 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(CCAAUseCase.self) { r in
-            CCAAUseCase(masterDataApi: r.resolve(MasterDataAPI.self)!)
+            CCAAUseCase(masterDataApi: r.resolve(MasterDataAPI.self)!,
+                        localizationRepository: r.resolve(LocalizationRepository.self)!)
         }.inObjectScope(.container)
         
         container.register(TabBarController.self) { r in

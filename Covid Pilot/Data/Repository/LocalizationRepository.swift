@@ -17,6 +17,9 @@ protocol LocalizationRepository {
     
     func setTexts(_ texts: [String:String])
     func getTexts() -> [String:String]?
+
+    func getCCAA() -> [String:String?]?
+    func setCCAA(_ ccaa: [String:String?])
 }
 
 class UserDefaultsLocalizationRepository : LocalizationRepository {
@@ -24,6 +27,7 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
     private static let kCA = "UserDefaultsLocalizationRepository.ca"
     private static let kLocale = "UserDefaultsLocalizationRepository.locale"
     private static let kTexts = "UserDefaultsLocalizationRepository.texts"
+    private static let kCCAA = "UserDefaultsLocalizationRepository.kCCAA"
     
     private let userDefaults: UserDefaults
     
@@ -53,6 +57,14 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
     
     func getTexts() -> [String : String]? {
         userDefaults.object(forKey: UserDefaultsLocalizationRepository.kTexts) as? [String : String]
+    }
+    
+    func getCCAA() -> [String : String?]? {
+        userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCCAA) as? [String : String]
+    }
+    
+    func setCCAA(_ ccaa: [String : String?]) {
+        userDefaults.set(ccaa, forKey: UserDefaultsLocalizationRepository.kCCAA)
     }
     
 }
