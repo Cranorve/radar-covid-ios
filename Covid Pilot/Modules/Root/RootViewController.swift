@@ -41,7 +41,6 @@ class RootViewController: UIViewController {
                 }
         }).disposed(by: self.disposeBag)
         
-
     }
     
     private func loadConfiguration() {

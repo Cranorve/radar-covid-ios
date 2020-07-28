@@ -13,11 +13,11 @@ import Foundation
 public struct Code: Codable {
 
     /** Date the patient indicates that he/she is infected */
-    public var date: Date
+    public var date: Date?
     /** 12 digits code */
     public var code: String
 
-    public init(date: Date, code: String) {
+    public init(date: Date?, code: String) {
         self.date = date
         self.code = code
     }

@@ -17,30 +17,36 @@ class DiagnosisCodeUseCase {
     private let dateFormatter = DateFormatter()
     
     private let settingsRepository: SettingsRepository
+    private let verificationApi: VerificationControllerAPI
     
     private let isfake = false
     
-    init(settingsRepository: SettingsRepository) {
+    init(settingsRepository: SettingsRepository,
+         verificationApi: VerificationControllerAPI) {
         self.settingsRepository = settingsRepository
+        self.verificationApi  = verificationApi
         dateFormatter.dateFormat = "yyyy-MM-dd"
     }
     
     func sendDiagnosisCode(code: String) -> Observable<Bool> {
-        .create { [weak self] observer in
-            
-            let onset = Date(timeIntervalSinceNow: TimeInterval(Config.timeForKeys))
-//            let udid: String = self?.settingsRepository.getSettings()?.udid ?? ""
-            let udid = UUID().uuidString
-            guard let token = self?.getToken(id: udid, reportCode: code, onset: onset) else {
-                observer.onError("Couldn't Create Token")
-                return Disposables.create()
+
+        return verificationApi.verifyCode(body: Code( date: nil, code: code ) )
+            .catchError { [weak self] error in throw self?.mapError(error) ?? error }
+            .flatMap { [weak self] tokenResponse -> Observable<Bool> in
+//                let parsed = try self?.parseToken(tokenResponse.token)
+//                parsed?.claims.onset
+                return self?.iWasExposed(onset: Date(), token: tokenResponse.token) ?? .empty()
             }
             
+    }
+    
+    private func iWasExposed(onset: Date, token: String) -> Observable<Bool> {
+        .create { [weak self] observer in
             DP3TTracing.iWasExposed(onset: onset,
                                     authentication: .HTTPAuthorizationBearer(token: token), isFakeRequest: self?.isfake ?? false) {  result in
                 switch result {
                     case let .failure(error):
-                        observer.onError(error)
+                        observer.onError(self?.mapError(error) ?? error)
                     default:
                         observer.onNext(true)
                         observer.onCompleted()
@@ -48,35 +54,47 @@ class DiagnosisCodeUseCase {
             }
             return Disposables.create()
         }
-            
     }
     
-    private func getToken(id: String, reportCode: String, onset: Date) -> String? {
-
-        let expirationDate = Date(timeIntervalSinceNow: TimeInterval(tokenValidity))
-        
-        let header = Header()
-        var claims = MyClaims(exp: Int(expirationDate.timeIntervalSince1970), iat: Int((Date().timeIntervalSince1970)))
-        claims.iss = "http://es.gob.radarcovid.android"
-        claims.aud = "http://es.gob.radarcovid.android"
-        claims.sub = "iosApp"
-        claims.jti = id
-        claims.scope = "exposed"
-        claims.onset = dateFormatter.string(from: onset)
-        claims.tan = reportCode
-        
-        let privateKey: Data? = Config.privateKey.data(using: .utf8)!
-        var myJWT = JWT(header: header, claims: claims)
-        let jwtSigner = JWTSigner.rs256(privateKey: privateKey ?? Data())
-        
-        do {
-            let signedJWT = try myJWT.sign(using: jwtSigner)
-            return signedJWT.description
-        } catch let error {
-            os_log("Error signing token  %@", log: OSLog.default, type: .error,  error.localizedDescription)
+    private func parseToken(_ signedJWT: String) throws -> JWT<MyClaims> {
+        let jwtVerifier = JWTVerifier.rs256(publicKey: Config.validationKey)
+        let jwtDecoder = JWTDecoder(jwtVerifier: jwtVerifier)
+        return try jwtDecoder.decode(JWT<MyClaims>.self, fromString: signedJWT)
+    }
+    
+    private func is404(_ error: Error) -> Bool {
+        if let code = getErrorCode(error) {
+            return code == 404
         }
-            
+        return false
+    }
+
+    private func isPermissionRejected(_ error: Error) -> Bool {
+        if let error = error as? DP3TTracingError {
+            if case .exposureNotificationError = error {
+                return true
+            }
+        }
+        return false
+    }
+    
+    private func getErrorCode(_ error: Error) -> Int? {
+        if let error = error as? ErrorResponse {
+            if case .error(let code, _, _) = error {
+                return code
+            }
+        }
         return nil
+    }
+    
+    private func mapError(_ error: Error) -> DiagnosisError {
+        if is404(error) {
+            return .IdAlreadyUsed(error)
+        }
+        if isPermissionRejected(error) {
+            return .ApiRejected(error)
+        }
+        return .UnknownError(error)
     }
     
 }
@@ -91,6 +109,12 @@ struct MyClaims : Claims {
     public var tan: String?
     public var scope: String?
     public var onset: String?
+}
+
+enum DiagnosisError: Error {
+    case IdAlreadyUsed(Error?)
+    case ApiRejected(Error?)
+    case UnknownError(Error?)
 }
 
 
