@@ -22,6 +22,7 @@ class MyHealthViewController: UIViewController {
     @IBOutlet var codeChars: [UITextField]!
     @IBOutlet weak var sendDiagnosticButton: UIButton!
     var diagnosticEnabled: Bool = false
+    var router: AppRouter?
     
     @IBAction func onBack(_ sender: Any) {
         self.showAlertCancelContinue(title:  "ALERT_MY_HEALTH_SEND_TITLE".localizedAttributed.string, message: "ALERT_MY_HEALTH_SEND_CONTENT".localizedAttributed.string, buttonOkTitle: "ALERT_OK_BUTTON".localizedAttributed.string, buttonCancelTitle: "ALERT_CANCEL_BUTTON".localizedAttributed.string, okHandler: { (UIAlertAction) in
@@ -41,9 +42,7 @@ class MyHealthViewController: UIViewController {
     @IBAction func onReportDiagnosis(_ sender: Any) {
         if !diagnosticEnabled {
 
-            self.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_MY_HEALTH_CODE_VALIDATION_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed.string){ (action) in
-                UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
-            }
+            self.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_MY_HEALTH_CODE_VALIDATION_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed.string)
 
         } else {
             view.showLoading()
@@ -59,15 +58,11 @@ class MyHealthViewController: UIViewController {
                     self?.navigateIf(reported: reportedCodeBool)
                 }, onError: {  [weak self] error in
                     self?.view.hideLoading()
-                    self?.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_MY_HEALTH_CODE_VALIDATION_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_OK_BUTTON".localizedAttributed.string){ (action) in
-                        UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
-                    }
+                    self?.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_MY_HEALTH_CODE_VALIDATION_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_OK_BUTTON".localizedAttributed.string)
 
             }).disposed(by: disposeBag)
         }
     }
-    
-    var router: AppRouter?
     
     override func viewWillAppear(_ animated: Bool) {        
         self.codeChars.forEach { (char) in
