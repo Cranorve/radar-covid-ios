@@ -57,7 +57,7 @@ class DiagnosisCodeUseCase {
     }
     
     private func parseToken(_ signedJWT: String) throws -> JWT<MyClaims> {
-        let jwtVerifier = JWTVerifier.rs256(publicKey: Config.validationKey)
+        let jwtVerifier = JWTVerifier.rs256(publicKey: Config.verificationKey)
         let jwtDecoder = JWTDecoder(jwtVerifier: jwtVerifier)
         return try jwtDecoder.decode(JWT<MyClaims>.self, fromString: signedJWT)
     }

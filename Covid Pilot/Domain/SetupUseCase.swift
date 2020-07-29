@@ -43,7 +43,7 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
         try! DP3TTracing.initialize(with: .init(appId: "es.gob.radarcovid",
                                                 bucketBaseUrl: url,
                                                 reportBaseUrl: url,
-                                                jwtPublicKey: Config.validationKey,
+                                                jwtPublicKey: Config.dp3tValidationKey,
                                                 mode: Config.dp3tMode), backgroundHandler: self)
         
         
