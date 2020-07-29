@@ -41,6 +41,12 @@ class RootViewController: UIViewController {
                 }
         }).disposed(by: self.disposeBag)
         
+        ccaaUseCase?.getCCAA().subscribe(onNext:{ ccaas in
+                debugPrint(ccaas)
+            }, onError: {  error in
+                debugPrint(error)
+        }).disposed(by: self.disposeBag)
+        
 
     }
     

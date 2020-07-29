@@ -18,8 +18,11 @@ protocol LocalizationRepository {
     func setTexts(_ texts: [String:String])
     func getTexts() -> [String:String]?
 
-    func getCCAA() -> [String:String?]?
-    func setCCAA(_ ccaa: [String:String?])
+    func getCCAA() -> [CaData]?
+    func setCCAA(_ ccaa: [CaData])
+    
+    func setCurrent(ca: CaData)
+    func getCurrent() -> CaData?
 }
 
 class UserDefaultsLocalizationRepository : LocalizationRepository {
@@ -28,6 +31,8 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
     private static let kLocale = "UserDefaultsLocalizationRepository.locale"
     private static let kTexts = "UserDefaultsLocalizationRepository.texts"
     private static let kCCAA = "UserDefaultsLocalizationRepository.kCCAA"
+    private static let kCurrentCA = "UserDefaultsLocalizationRepository.kCurrentCa"
+
     
     private let userDefaults: UserDefaults
     
@@ -59,12 +64,21 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
         userDefaults.object(forKey: UserDefaultsLocalizationRepository.kTexts) as? [String : String]
     }
     
-    func getCCAA() -> [String : String?]? {
-        userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCCAA) as? [String : String]
+    func getCCAA() -> [CaData]? {
+        try? PropertyListDecoder().decode([CaData].self, from: userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCCAA) as! Data)
     }
     
-    func setCCAA(_ ccaa: [String : String?]) {
-        userDefaults.set(ccaa, forKey: UserDefaultsLocalizationRepository.kCCAA)
+    func setCCAA(_ ccaa: [CaData]) {
+        let data = try? PropertyListEncoder().encode(ccaa)
+        userDefaults.set(data, forKey: UserDefaultsLocalizationRepository.kCCAA)
+    }
+    
+    func getCurrent() -> CaData? {
+        userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCurrentCA) as? CaData
+    }
+    
+    func setCurrent(ca: CaData) {
+         userDefaults.set(ca, forKey: UserDefaultsLocalizationRepository.kCurrentCA)
     }
     
 }
