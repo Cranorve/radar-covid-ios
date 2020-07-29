@@ -36,17 +36,11 @@ class RootViewController: UIViewController {
             }, onError: {  [weak self]  error in
                 debugPrint(error)
 
+                // Not use i18n for this alert!
                 self?.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar") { (action) in
-                        exit(0)
+                    exit(0)
                 }
         }).disposed(by: self.disposeBag)
-        
-        ccaaUseCase?.getCCAA().subscribe(onNext:{ ccaas in
-                debugPrint(ccaas)
-            }, onError: {  error in
-                debugPrint(error)
-        }).disposed(by: self.disposeBag)
-        
 
     }
     
