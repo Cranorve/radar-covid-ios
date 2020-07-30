@@ -87,7 +87,6 @@
 		6DE27C83249A7E3900BBCF40 /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C82249A7E3900BBCF40 /* Poll.swift */; };
 		6DE27C97249FB1F600BBCF40 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27C96249FB1F600BBCF40 /* UIViewController+Extension.swift */; };
 		6DE27C9F24A0AA2300BBCF40 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE27C9E24A0AA2300BBCF40 /* WelcomeViewController.xib */; };
-		6DE27CA924A0D34C00BBCF40 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27CA824A0D34C00BBCF40 /* TableHeaderView.swift */; };
 		6DE27CAB24A25F9D00BBCF40 /* JailBreakDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27CAA24A25F9D00BBCF40 /* JailBreakDetect.swift */; };
 		6DE27CB324A379F800BBCF40 /* NetworkActivityLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27CB224A379F800BBCF40 /* NetworkActivityLogger.swift */; };
 		6DE27D3F24A76D7E00BBCF40 /* AttenuationDurationThresholdsDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE27D3E24A76D7D00BBCF40 /* AttenuationDurationThresholdsDto.swift */; };
@@ -231,7 +230,6 @@
 		6DE27C82249A7E3900BBCF40 /* Poll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
 		6DE27C96249FB1F600BBCF40 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		6DE27C9E24A0AA2300BBCF40 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
-		6DE27CA824A0D34C00BBCF40 /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
 		6DE27CAA24A25F9D00BBCF40 /* JailBreakDetect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JailBreakDetect.swift; sourceTree = "<group>"; };
 		6DE27CB224A379F800BBCF40 /* NetworkActivityLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityLogger.swift; sourceTree = "<group>"; };
 		6DE27CB424A37EF500BBCF40 /* debug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = debug.entitlements; sourceTree = "<group>"; };
@@ -401,7 +399,6 @@
 				6DF6ECB4248EAC7F007EAA40 /* WelcomeViewController.swift */,
 				394E962B248E3F6E009F640E /* OnBoarding.storyboard */,
 				6DF6ECC9248F743B007EAA40 /* OnBoardingViewController.swift */,
-				6DE27CA824A0D34C00BBCF40 /* TableHeaderView.swift */,
 				766C73A724B561B70056D2DB /* ActivateCovidNotificationViewController.swift */,
 				766C73A824B561B70056D2DB /* ActivateCovidNotificationViewController.xib */,
 				766C73AB24B567C50056D2DB /* ActivatePushNotificationViewController.swift */,
@@ -980,7 +977,6 @@
 				6DF6ECC4248F691E007EAA40 /* HomeViewController.swift in Sources */,
 				6D7AB26F24ADED7400F30E0B /* ExpositionInfoRepository.swift in Sources */,
 				6D83344924B7303500223071 /* String+Localizable.swift in Sources */,
-				6DE27CA924A0D34C00BBCF40 /* TableHeaderView.swift in Sources */,
 				766C73AD24B567C50056D2DB /* ActivatePushNotificationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
