@@ -25,7 +25,6 @@ class BaseViewController: UIViewController {
 
             }
             //Do something with label
-           
             
         }
         
