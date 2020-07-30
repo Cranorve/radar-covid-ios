@@ -33,7 +33,7 @@ class DiagnosisCodeUseCase {
         return verificationApi.verifyCode(body: Code( date: nil, code: code ) )
             .catchError { [weak self] error in throw self?.mapError(error) ?? error }
             .flatMap { [weak self] tokenResponse -> Observable<Bool> in
-//                let parsed = try self?.parseToken(tokenResponse.token)
+                let parsed = try self?.parseToken(tokenResponse.token)
 //                parsed?.claims.onset
                 return self?.iWasExposed(onset: Date(), token: tokenResponse.token) ?? .empty()
             }
@@ -108,7 +108,7 @@ struct MyClaims : Claims {
     public var jti: String?
     public var tan: String?
     public var scope: String?
-    public var onset: String?
+    public var onset: Int?
 }
 
 enum DiagnosisError: Error {
