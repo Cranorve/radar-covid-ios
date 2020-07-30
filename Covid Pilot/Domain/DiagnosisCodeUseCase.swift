@@ -33,9 +33,11 @@ class DiagnosisCodeUseCase {
         return verificationApi.verifyCode(body: Code( date: nil, code: code ) )
             .catchError { [weak self] error in throw self?.mapError(error) ?? error }
             .flatMap { [weak self] tokenResponse -> Observable<Bool> in
-                let parsed = try self?.parseToken(tokenResponse.token)
-//                parsed?.claims.onset
-                return self?.iWasExposed(onset: Date(), token: tokenResponse.token) ?? .empty()
+                guard let jwtOnset = try self?.parseToken(tokenResponse.token).claims.onset else {
+                    throw DiagnosisError.UnknownError("Onset parameter not found in token")
+                }
+                let onset = Date(timeIntervalSince1970: TimeInterval(jwtOnset))
+                return self?.iWasExposed(onset: onset, token: tokenResponse.token) ?? .empty()
             }
             
     }
