@@ -20,21 +20,32 @@ class HighExpositionViewController: BaseExposed {
 
     var since:Date?
     
+    @IBOutlet weak var selectorView : BackgroundView!
+    @IBOutlet weak var caSelectorButton: UIButton!
+    
+    var toolBar = UIToolbar()
+    var picker  = UIPickerView()
+    var ccaUseCase: CCAAUseCase!
+    var ccaArray:[CaData]?
+    var pickerOpened = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setInfectedText()
-        
         expositionBGView.image = bgImageRed
-        
-      
         phoneView.isUserInteractionEnabled = true
-        
         phoneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCallTap(tapGestureRecognizer:))))
         phoneView.image = UIImage(named: "WhiteCard")
-        phoneLabel.attributedText = "CONTACT_PHONE".localizedAttributed()
+        
         timeTableLabel.text = Config.timeTable
+        
+        self.setCaSelector()
         super.viewDidLoad()
+        
+        
     }
+    
+    
     
     func setInfectedText() {
         let date = self.since ?? Date()

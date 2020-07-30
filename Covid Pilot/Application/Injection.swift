@@ -222,9 +222,7 @@ class Injection {
         }
         
         container.register(ExpositionViewController.self) {  r in
-            let exposition = self.createViewController(storyboard: "Exposition", id: "ExpositionViewController") as! ExpositionViewController
-            exposition.ccaUseCase = r.resolve(CCAAUseCase.self)!
-            return exposition
+            self.createViewController(storyboard: "Exposition", id: "ExpositionViewController") as! ExpositionViewController
         }
         
         
@@ -236,9 +234,8 @@ class Injection {
         }
         
         container.register(PositiveExposedViewController.self) {  r in
-            let positiveExposition = self.createViewController(storyboard: "PositiveExposed", id: "PositiveExposedViewController") as! PositiveExposedViewController
-            positiveExposition.ccaUseCase = r.resolve(CCAAUseCase.self)!
-            return positiveExposition
+            self.createViewController(storyboard: "PositiveExposed", id: "PositiveExposedViewController") as! PositiveExposedViewController
+            
         }
         
         container.register(HomeViewController.self) {  r in
