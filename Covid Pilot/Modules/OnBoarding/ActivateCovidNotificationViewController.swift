@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class ActivateCovidNotificationViewController: UIViewController {
+class ActivateCovidNotificationViewController: BaseViewController {
     
     private let disposeBag = DisposeBag()
     

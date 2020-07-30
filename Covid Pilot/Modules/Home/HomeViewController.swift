@@ -12,7 +12,7 @@ import DP3TSDK
 import RxCocoa
 
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     
     private let disposeBag = DisposeBag()
     
@@ -153,6 +153,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel?.restoreLastStateAndSync()
+        super.viewWillAppear(true)
     }
     
     @IBAction func onReset(_ sender: Any) {

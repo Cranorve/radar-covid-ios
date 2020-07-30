@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HighExpositionViewController: UIViewController {
+class HighExpositionViewController: BaseExposed {
     
     private let bgImageRed = UIImage(named: "GradientBackgroundRed")
     
@@ -17,8 +17,7 @@ class HighExpositionViewController: UIViewController {
     @IBOutlet weak var phoneView: BackgroundView!
     @IBOutlet weak var timeTableLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var moreInfoView: UIView!
-    @IBOutlet weak var expositionBGView : BackgroundView!
+
     var since:Date?
     
     override func viewDidLoad() {
@@ -27,14 +26,14 @@ class HighExpositionViewController: UIViewController {
         
         expositionBGView.image = bgImageRed
         
-        moreInfoView.isUserInteractionEnabled = true
-        moreInfoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userDidTapLabel(tapGestureRecognizer:))))
+      
         phoneView.isUserInteractionEnabled = true
         
         phoneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCallTap(tapGestureRecognizer:))))
         phoneView.image = UIImage(named: "WhiteCard")
         phoneLabel.attributedText = "CONTACT_PHONE".localizedAttributed()
         timeTableLabel.text = Config.timeTable
+        super.viewDidLoad()
     }
     
     func setInfectedText() {
@@ -53,21 +52,7 @@ class HighExpositionViewController: UIViewController {
         open(phone: "CONTACT_PHONE".localized)
     }
     
-    @objc func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
-        guard let url = URL(string: "https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/ciudadania.htm") else { return }
-        UIApplication.shared.open(url)
-    }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    @IBAction func onBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
+   
     
 }
