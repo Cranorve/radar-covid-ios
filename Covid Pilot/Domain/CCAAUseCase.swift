@@ -48,7 +48,7 @@ class CCAAUseCase {
     }
     
     public func getCurrent() -> CaData? {
-        localizationRepository.getCurrent()
+        localizationRepository.getCurrentCA()
     }
     
     public func setCurrent(ca: CaData) {

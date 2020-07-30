@@ -9,8 +9,6 @@
 import Foundation
 
 protocol LocalizationRepository {
-    func getCA() -> String?
-    func setCA(_ ca: String)
     
     func getLocale() -> String?
     func setLocale(_ locale: String)
@@ -22,12 +20,11 @@ protocol LocalizationRepository {
     func setCCAA(_ ccaa: [CaData])
     
     func setCurrent(ca: CaData)
-    func getCurrent() -> CaData?
+    func getCurrentCA() -> CaData?
 }
 
 class UserDefaultsLocalizationRepository : LocalizationRepository {
 
-    private static let kCA = "UserDefaultsLocalizationRepository.ca"
     private static let kLocale = "UserDefaultsLocalizationRepository.locale"
     private static let kTexts = "UserDefaultsLocalizationRepository.texts"
     private static let kCCAA = "UserDefaultsLocalizationRepository.kCCAA"
@@ -38,14 +35,6 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
     
     init() {
         userDefaults = UserDefaults(suiteName: "es.gob.radarcovid") ?? UserDefaults.standard
-    }
-    
-    func getCA() -> String? {
-        userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCA) as? String
-    }
-    
-    func setCA(_ ca: String) {
-        userDefaults.set(ca, forKey: UserDefaultsLocalizationRepository.kCA)
     }
     
     func getLocale() -> String? {
@@ -73,7 +62,7 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
         userDefaults.set(data, forKey: UserDefaultsLocalizationRepository.kCCAA)
     }
     
-    func getCurrent() -> CaData? {
+    func getCurrentCA() -> CaData? {
         try? PropertyListDecoder().decode(CaData.self, from: userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCurrentCA) as? Data ?? Data())
     }
     
