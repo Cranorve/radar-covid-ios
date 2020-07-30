@@ -34,8 +34,10 @@ class LocalizationUseCase: LocalizationSource {
     func loadlocalization() -> Observable<[String : String]?> {
         
         return .deferred { [weak self] in
-            let ca = self?.localizationRepository.getCA() ?? "ES-MD"
-            return self?.textsApi.getTexts(ccaa: ca).map { texts in
+            let ca = self?.localizationRepository.getCA()
+            let locale = self?.localizationRepository.getLocale()
+            return self?.textsApi.getTexts(ccaa: ca, locale: locale).map { texts in
+                let texts = texts.additionalProperties
                 self?._localizationMap = texts
                 self?.localizationRepository.setTexts(texts)
                 return texts

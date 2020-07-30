@@ -11,7 +11,7 @@ import RxSwift
 
 class CCAAUseCase {
     
-    private var ccaa: [String:String?]?
+    private var ccaa: [CaData]?
     private let masterDataApi: MasterDataAPI
     private let localizationRepository: LocalizationRepository
     
@@ -20,20 +20,21 @@ class CCAAUseCase {
         self.localizationRepository = localizationRepository
     }
     
-    public func loadCCAA() -> Observable<[String:String?]> {
+    public func loadCCAA() -> Observable<[CaData]> {
         masterDataApi.getCcaa().map { [weak self] values in
-            var ccaa : [String:String?] = [:]
+            var ccaa : [CaData] = []
             values.forEach { v in
-                if let id = v._id {
-                    ccaa[id] = v._description
+                if let ca = self?.mapCa(v) {
+                    ccaa.append(ca)
                 }
             }
+            self?.ccaa = ccaa
             self?.localizationRepository.setCCAA(ccaa)
             return ccaa
         }
     }
     
-    public func getCCAA() -> Observable<[String:String?]> {
+    public func getCCAA() -> Observable<[CaData]> {
         .deferred { [weak self] in
             if let ccaa = self?.ccaa {
                 return .just(ccaa)
@@ -44,6 +45,18 @@ class CCAAUseCase {
             return self?.loadCCAA() ?? .empty()
         }
 
+    }
+    
+    public func getCurrent() -> CaData? {
+        localizationRepository.getCurrent()
+    }
+    
+    public func setCurrent(ca: CaData) {
+        localizationRepository.setCurrent(ca: ca)
+    }
+    
+    private func mapCa(_ caDto: CcaaKeyValueDto) -> CaData {
+        CaData(id: caDto._id, description: caDto._description, phone: caDto.phone, email: caDto.email, additionalInfo: caDto.additionalInfo)
     }
     
 }
