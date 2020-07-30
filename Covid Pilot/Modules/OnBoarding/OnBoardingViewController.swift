@@ -70,7 +70,7 @@ class OnBoardingViewController: UIViewController {
     }
     
     @objc func userDidTapTerms(tapGestureRecognizer: UITapGestureRecognizer) {
-        let urlString = "https://radarcovid.covid19.gob.es/terms-of-service/use-conditions.html"
+        let urlString =  "USE_CONDITIONS_URL".localized
         if let url = URL(string: urlString) {
             let config = SFSafariViewController.Configuration()
             let vc = SFSafariViewController(url: url, configuration: config)
@@ -79,7 +79,7 @@ class OnBoardingViewController: UIViewController {
     }
     
     @objc func userDidTapPrivacy(tapGestureRecognizer: UITapGestureRecognizer) {
-        let urlString = "https://radarcovid.covid19.gob.es/terms-of-service/privacy-policy.html"
+        let urlString = "PRIVACY_POLICY_URL".localized
         if let url = URL(string: urlString) {
             let config = SFSafariViewController.Configuration()
             let vc = SFSafariViewController(url: url, configuration: config)
