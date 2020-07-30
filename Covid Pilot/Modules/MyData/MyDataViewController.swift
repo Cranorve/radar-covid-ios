@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class MyDataViewController: BaseViewController {
+class MyDataViewController: UIViewController {
 
     @IBOutlet weak var acceptTermsLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!

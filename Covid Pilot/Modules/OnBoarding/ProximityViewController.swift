@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class ProximityViewController: BaseViewController {
+class ProximityViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     

@@ -377,7 +377,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="GVx-3c-EyF" firstAttribute="leading" secondItem="bN3-KM-Seu" secondAttribute="leading" id="364-g7-fhd"/>
                                                     <constraint firstAttribute="bottom" secondItem="GVx-3c-EyF" secondAttribute="bottom" id="L7E-bn-LsC"/>

@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class MyHealthViewController: BaseViewController {
+class MyHealthViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     
