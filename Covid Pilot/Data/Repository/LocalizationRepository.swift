@@ -13,6 +13,9 @@ protocol LocalizationRepository {
     func getLocale() -> String?
     func setLocale(_ locale: String)
     
+    func getLocales() -> [String:String?]?
+    func setLocales(_ locales: [String:String?])
+    
     func setTexts(_ texts: [String:String])
     func getTexts() -> [String:String]?
 
@@ -24,8 +27,9 @@ protocol LocalizationRepository {
 }
 
 class UserDefaultsLocalizationRepository : LocalizationRepository {
-
+    
     private static let kLocale = "UserDefaultsLocalizationRepository.locale"
+    private static let kLocales = "UserDefaultsLocalizationRepository.kLocales"
     private static let kTexts = "UserDefaultsLocalizationRepository.texts"
     private static let kCCAA = "UserDefaultsLocalizationRepository.kCCAA"
     private static let kCurrentCA = "UserDefaultsLocalizationRepository.kCurrentCa"
@@ -69,6 +73,14 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
     func setCurrent(ca: CaData) {
         let data = try? PropertyListEncoder().encode(ca)
         userDefaults.set(data, forKey: UserDefaultsLocalizationRepository.kCurrentCA)
+    }
+    
+    func getLocales() -> [String : String?]? {
+         userDefaults.object(forKey: UserDefaultsLocalizationRepository.kLocales) as? [String : String?]
+    }
+    
+    func setLocales(_ localea: [String : String?]) {
+        userDefaults.set(localea, forKey: UserDefaultsLocalizationRepository.kLocales)
     }
     
 }

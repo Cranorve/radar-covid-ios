@@ -69,7 +69,7 @@ class AppRouter : Router {
         case .MyHealthReported:
             routeToMyHealthReported(context)
         case .Exposition:
-            routeToExposition(context, lastCheck: parameters[0] as? Date)
+            routeToHighExposition(context, since: parameters[0] as? Date)
         case .HighExposition:
             routeToHighExposition(context, since: parameters[0] as? Date)
         case .PositiveExposed:
