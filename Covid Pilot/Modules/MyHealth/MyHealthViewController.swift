@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class MyHealthViewController: UIViewController {
+class MyHealthViewController: BaseViewController {
     private let disposeBag = DisposeBag()
     
     
@@ -72,6 +72,7 @@ class MyHealthViewController: UIViewController {
             
 
         }
+        super.viewWillAppear(true)
         
         self.diagnosticEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
 

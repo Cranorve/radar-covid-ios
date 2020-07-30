@@ -7,3 +7,36 @@
 //
 
 import Foundation
+import UIKit
+
+class BaseViewController: UIViewController {
+    override func viewWillAppear(_ animated: Bool) {
+        listSubviewsOfView(view: self.view)
+    }
+    
+    
+    
+    func listSubviewsOfView(view: UIView) {
+        let labels = view.subviews.compactMap { $0 as? LocalizableLabel }
+        for label in labels {
+            if (label.locKeyLocalizable != nil) {
+                label.updateTexts()
+
+            }
+            //Do something with label
+           
+            
+        }
+        
+        let subviews = view.subviews
+        if (subviews.count == 0) { return }
+        
+        
+        for subview in subviews {
+         
+            self.listSubviewsOfView(view: subview as UIView)
+        }
+    }
+    
+
+}

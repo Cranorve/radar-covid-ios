@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyHealthReportedViewController: UIViewController {
+class MyHealthReportedViewController: BaseViewController {
 
     var router: AppRouter?
     

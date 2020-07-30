@@ -8,12 +8,10 @@
 
 import UIKit
 
-class PositiveExposedViewController: UIViewController {
+class PositiveExposedViewController: BaseExposed {
     private let bgImageRed = UIImage(named: "GradientBackgroundRed")
     
     @IBOutlet weak var realInfectedText: UILabel!
-    @IBOutlet weak var moreInfoView: UIView!
-    @IBOutlet weak var expositionBGView : BackgroundView!
     var since:Date?
     
     override func viewDidLoad() {
@@ -21,9 +19,7 @@ class PositiveExposedViewController: UIViewController {
         setInfectedText()
         
         expositionBGView.image = bgImageRed
-        
-        moreInfoView.isUserInteractionEnabled = true
-        moreInfoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userDidTapLabel(tapGestureRecognizer:))))
+        super.viewDidLoad()
     }
     
     func setInfectedText() {
@@ -40,12 +36,6 @@ class PositiveExposedViewController: UIViewController {
         realInfectedText.attributedText = "EXPOSITION_EXPOSED_DESCRIPTION".localizedAttributed(withParams: [String(daysSinceLastInfection), actualizado])
     }
     
-    @objc func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
-        guard let url = URL(string: "https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/ciudadania.htm") else { return }
-        UIApplication.shared.open(url)
-    }
     
-    @IBAction func onBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
+    
 }

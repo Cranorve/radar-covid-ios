@@ -222,15 +222,26 @@ class Injection {
         }
         
         container.register(ExpositionViewController.self) {  r in
-            self.createViewController(storyboard: "Exposition", id: "ExpositionViewController") as! ExpositionViewController
+            let exposition = self.createViewController(storyboard: "Exposition", id: "ExpositionViewController") as! ExpositionViewController
+            exposition.ccaUseCase = r.resolve(CCAAUseCase.self)!
+            exposition.localizationUseCase = r.resolve(LocalizationUseCase.self)!
+            return exposition
         }
         
+        
+        
         container.register(HighExpositionViewController.self) {  r in
-            self.createViewController(storyboard: "HighExposition", id: "HighExpositionViewController") as! HighExpositionViewController
+            let highExposition = self.createViewController(storyboard: "HighExposition", id: "HighExpositionViewController") as! HighExpositionViewController
+            highExposition.ccaUseCase = r.resolve(CCAAUseCase.self)!
+            highExposition.localizationUseCase = r.resolve(LocalizationUseCase.self)!
+            return highExposition
         }
         
         container.register(PositiveExposedViewController.self) {  r in
-            self.createViewController(storyboard: "PositiveExposed", id: "PositiveExposedViewController") as! PositiveExposedViewController
+            let positiveExposition = self.createViewController(storyboard: "PositiveExposed", id: "PositiveExposedViewController") as! PositiveExposedViewController
+            positiveExposition.ccaUseCase = r.resolve(CCAAUseCase.self)!
+            positiveExposition.localizationUseCase = r.resolve(LocalizationUseCase.self)!
+            return positiveExposition
         }
         
         container.register(HomeViewController.self) {  r in
@@ -282,6 +293,7 @@ class Injection {
         
         container.register(WelcomeViewController.self) {  r in
             let welcomeVC = WelcomeViewController()
+            welcomeVC.localizationRepository = r.resolve(LocalizationRepository.self)!
             welcomeVC.router = r.resolve(AppRouter.self)!
             return welcomeVC
         }
@@ -300,6 +312,7 @@ class Injection {
             activatePushVC.notificationHandler = r.resolve(NotificationHandler.self)
             return activatePushVC
         }
+        
         
         container.register(RootViewController.self) { r in
             let rootVC = RootViewController()
