@@ -14,12 +14,8 @@ class LocalizationHolder {
     
     static var localizationMap: [String:String]? {
         get {
-            
             if let source = source {
                 _localizationMap = source.localizationMap
-            }
-            if let localizationMap = _localizationMap {
-                return localizationMap
             }
             return _localizationMap
         }
