@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class OnBoardingViewController: BaseViewController {
+class OnBoardingViewController: UIViewController {
     
     var router: AppRouter?
     

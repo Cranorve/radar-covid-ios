@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BaseExposed: BaseViewController {
+class BaseExposed: UIViewController {
     var toolBar = UIToolbar()
     var picker  = UIPickerView()
     @IBOutlet weak var moreInfoView: UIView!

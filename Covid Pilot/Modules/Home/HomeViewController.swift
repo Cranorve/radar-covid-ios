@@ -12,7 +12,7 @@ import DP3TSDK
 import RxCocoa
 
 
-class HomeViewController: BaseViewController {
+class HomeViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     

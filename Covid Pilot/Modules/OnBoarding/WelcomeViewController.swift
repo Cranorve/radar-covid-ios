@@ -28,7 +28,7 @@ extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
-class WelcomeViewController: BaseViewController {
+class WelcomeViewController: UIViewController {
     
     var router: AppRouter?
     var picker = UIPickerView()

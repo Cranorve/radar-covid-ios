@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class ActivatePushNotificationViewController: BaseViewController {
+class ActivatePushNotificationViewController: UIViewController {
     private let disposeBag = DisposeBag()
     var router: AppRouter?
     

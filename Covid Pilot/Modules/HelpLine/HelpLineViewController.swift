@@ -10,7 +10,7 @@ import UIKit
 import MessageUI
 import RxSwift
 
-class HelpLineViewController: BaseViewController, MFMailComposeViewControllerDelegate {
+class HelpLineViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     var router: AppRouter?
     var preferencesRepository: PreferencesRepository?
