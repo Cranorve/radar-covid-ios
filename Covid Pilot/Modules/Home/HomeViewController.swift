@@ -153,7 +153,6 @@ class HomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel?.restoreLastStateAndSync()
-        super.viewWillAppear(true)
     }
     
     @IBAction func onReset(_ sender: Any) {

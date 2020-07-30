@@ -24,8 +24,6 @@ class BaseViewController: UIViewController {
                 label.updateTexts()
 
             }
-            //Do something with label
-            
         }
         
         let subviews = view.subviews
