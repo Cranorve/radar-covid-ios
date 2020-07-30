@@ -65,7 +65,7 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
     }
     
     func getCCAA() -> [CaData]? {
-        try? PropertyListDecoder().decode([CaData].self, from: userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCCAA) as! Data)
+        try? PropertyListDecoder().decode([CaData].self, from: userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCCAA) as? Data ?? Data())
     }
     
     func setCCAA(_ ccaa: [CaData]) {
@@ -74,11 +74,12 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
     }
     
     func getCurrent() -> CaData? {
-        userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCurrentCA) as? CaData
+        try? PropertyListDecoder().decode(CaData.self, from: userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCurrentCA) as? Data ?? Data())
     }
     
     func setCurrent(ca: CaData) {
-         userDefaults.set(ca, forKey: UserDefaultsLocalizationRepository.kCurrentCA)
+        let data = try? PropertyListEncoder().encode(ca)
+        userDefaults.set(data, forKey: UserDefaultsLocalizationRepository.kCurrentCA)
     }
     
 }

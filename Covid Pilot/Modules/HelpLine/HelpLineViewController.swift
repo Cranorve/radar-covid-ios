@@ -10,7 +10,7 @@ import UIKit
 import MessageUI
 import RxSwift
 
-class HelpLineViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class HelpLineViewController: BaseViewController, MFMailComposeViewControllerDelegate {
     
     var router: AppRouter?
     var preferencesRepository: PreferencesRepository?
@@ -28,6 +28,7 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
     
     override func viewWillAppear(_ animated: Bool) {
         loadTexts()
+        super.viewWillAppear(true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +76,7 @@ class HelpLineViewController: UIViewController, MFMailComposeViewControllerDeleg
         infoLabel.attributedText = "HELP_LINE_ONE_MORE_STEP_PARAGRAPH_1".localizedAttributed
         one_more_step_2.attributedText = "HELP_LINE_ONE_MORE_STEP_PARAGRAPH_2".localizedAttributed
         one_more_step_3.attributedText = "HELP_LINE_ONE_MORE_STEP_PARAGRAPH_3".localizedAttributed
-        lblEmail.attributedText = "CONTACT_EMAIL".localizedAttributed()
+        lblEmail.attributedText = "CONTACT_EMAIL".localizedAttributed
         
         
     }
