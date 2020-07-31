@@ -26,6 +26,7 @@ class DiagnosisCodeUseCase {
         self.settingsRepository = settingsRepository
         self.verificationApi  = verificationApi
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = Locale(identifier: "es_ES")
     }
     
     func sendDiagnosisCode(code: String) -> Observable<Bool> {
@@ -33,13 +34,13 @@ class DiagnosisCodeUseCase {
         return verificationApi.verifyCode(body: Code( date: nil, code: code ) )
             .catchError { [weak self] error in throw self?.mapError(error) ?? error }
             .flatMap { [weak self] tokenResponse -> Observable<Bool> in
-                guard let jwtOnset = try self?.parseToken(tokenResponse.token).claims.onset else {
+                guard let jwtOnset = try self?.parseToken(tokenResponse.token).claims.onset,
+                      let onset = self?.dateFormatter.date(from: jwtOnset) else {
                     throw DiagnosisError.UnknownError("Onset parameter not found in token")
                 }
-                let onset = Date(timeIntervalSince1970: TimeInterval(jwtOnset))
                 return self?.iWasExposed(onset: onset, token: tokenResponse.token) ?? .empty()
             }
-            
+        
     }
     
     private func iWasExposed(onset: Date, token: String) -> Observable<Bool> {
@@ -120,7 +121,7 @@ struct MyClaims : Claims {
     public var jti: String?
     public var tan: String?
     public var scope: String?
-    public var onset: Int?
+    public var onset: String?
 }
 
 enum DiagnosisError: Error {
