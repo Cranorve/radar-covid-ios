@@ -25,7 +25,7 @@ open class MasterDataAPI {
      - parameter additionalInfo: (query)  (optional, default to false)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open func getCcaa(locale: String? = nil, additionalInfo: Bool? = nil, completion: @escaping ((_ data: [CcaaKeyValueDto]?,_ error: Error?) -> Void)) {
+    open func getCcaa(locale: String? = nil, additionalInfo: Bool = true, completion: @escaping ((_ data: [CcaaKeyValueDto]?,_ error: Error?) -> Void)) {
         getCcaaWithRequestBuilder(locale: locale, additionalInfo: additionalInfo).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -37,7 +37,7 @@ open class MasterDataAPI {
      - parameter additionalInfo: (query)  (optional, default to false)
      - returns: Observable<[CcaaKeyValueDto]>
      */
-    open func getCcaa(locale: String? = nil, additionalInfo: Bool? = nil) -> Observable<[CcaaKeyValueDto]> {
+    open func getCcaa(locale: String? = nil, additionalInfo: Bool = true) -> Observable<[CcaaKeyValueDto]> {
         return Observable.create { [weak self] observer -> Disposable in
             self?.getCcaa(locale: locale, additionalInfo: additionalInfo) { data, error in
                 if let error = error {
@@ -73,7 +73,7 @@ open class MasterDataAPI {
 
      - returns: RequestBuilder<[CcaaKeyValueDto]> 
      */
-    open func getCcaaWithRequestBuilder(locale: String? = nil, additionalInfo: Bool? = nil) -> RequestBuilder<[CcaaKeyValueDto]> {
+    open func getCcaaWithRequestBuilder(locale: String? = nil, additionalInfo: Bool = true) -> RequestBuilder<[CcaaKeyValueDto]> {
         let path = "/masterData/ccaa"
         let URLString = clientApi.basePath + path
         let parameters: [String:Any]? = nil

@@ -12,8 +12,7 @@ class ExpositionViewController: BaseExposed {
 
     private let bgImageGreen = UIImage(named: "GradientBackgroundGreen")
     @IBOutlet weak var sincontactos: UILabel!
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

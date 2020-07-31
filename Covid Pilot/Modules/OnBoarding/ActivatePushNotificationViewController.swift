@@ -17,7 +17,7 @@ class ActivatePushNotificationViewController: UIViewController {
     @IBAction func onContinue(_ sender: Any) {
 
         
-        self.view.showTransparentBackground(withColor: UIColor.blueyGrey90, alpha: 1, nil, "ACTIVATE_COVID_NOTIFICATION_POPUP_HOVER".localizedAttributed(), UIColor.white)
+        self.view.showTransparentBackground(withColor: UIColor.blueyGrey90, alpha: 1, nil, "ACTIVATE_PUSH_NOTIFICATION_POPUP_HOVER".localizedAttributed(), UIColor.white)
         
         self.notificationHandler?.setupNotifications().subscribe(onNext: { [weak self] accepted in
             print("notification accepted", accepted)
