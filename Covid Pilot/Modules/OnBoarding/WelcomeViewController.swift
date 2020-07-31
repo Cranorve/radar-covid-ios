@@ -50,19 +50,20 @@ class WelcomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.selectorView.image = UIImage.init(named: "WhiteCard")
         super.viewWillAppear(true)
-    }
-    override func viewDidLoad() {
-        self.localesArray = self.localizationRepository.getLocales()
-        guard let currentLanguage = self.localizationRepository.getLocale() else {
-            return
-        }
-        localizationRepository.setLocale(currentLanguage)
-        self.languageSelector.setTitle(self.localesArray[currentLanguage, default: ""], for: .normal)
-        super.viewDidLoad()
+        self.selectorView.image = UIImage.init(named: "WhiteCard")
 
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        localesArray = localizationRepository.getLocales()
+        if let currentLanguage = localizationRepository.getLocale() {
+            languageSelector.setTitle(localesArray[currentLanguage, default: ""], for: .normal)
+        }
+        
+    }
+    
     @IBAction func selectLanguage(_ sender: Any) {
         if !pickerOpened {
             pickerOpened = true
