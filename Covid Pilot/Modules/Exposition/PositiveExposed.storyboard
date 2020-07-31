@@ -88,7 +88,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evita el contacto con otras personas " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fxs-yo-9ip">
-                                                <rect key="frame" x="95" y="601.5" width="299" height="19"/>
+                                                <rect key="frame" x="95" y="601" width="299" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -104,7 +104,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usa siempre mascarilla quirúrgica" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BBp-lW-vEj">
-                                                <rect key="frame" x="95" y="681.5" width="299" height="19"/>
+                                                <rect key="frame" x="95" y="681" width="299" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -120,7 +120,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lávate las manos frecuentemente" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1sH-I2-0gR">
-                                                <rect key="frame" x="95" y="761.5" width="299" height="19"/>
+                                                <rect key="frame" x="95" y="761" width="299" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -132,7 +132,7 @@
                                                 <rect key="frame" x="20" y="8" width="374" height="160"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="COVID-19 positivo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sso-zP-dSu">
-                                                        <rect key="frame" x="26" y="34" width="233.5" height="33"/>
+                                                        <rect key="frame" x="26" y="35.5" width="248" height="35.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -141,7 +141,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VDp-8X-dw5">
-                                                        <rect key="frame" x="26" y="77" width="329" height="20.5"/>
+                                                        <rect key="frame" x="26" y="81" width="329" height="20.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Tu diagnóstico fue enviado hace">
                                                                 <attributes>
@@ -153,7 +153,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIAGNÓSTICO COMUNICADO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fk-UA-jNI">
-                                                        <rect key="frame" x="26" y="15" width="168" height="14"/>
+                                                        <rect key="frame" x="26" y="15" width="172.5" height="15.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -217,7 +217,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sh-Xc-8hl">
-                                                        <rect key="frame" x="8" y="17" width="134.5" height="21"/>
+                                                        <rect key="frame" x="8" y="16" width="143" height="23"/>
                                                         <string key="text">Más información
 </string>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
@@ -265,7 +265,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ante la aparición de algún síntoma (fiebre, tos, dificultad respiratoria) llama a tu centro de salud" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EPR-mk-BCn">
-                                                <rect key="frame" x="95" y="830" width="299" height="56"/>
+                                                <rect key="frame" x="95" y="828" width="299" height="60.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -281,7 +281,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Si los síntomas empeoran llama al 112" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eRe-2r-Ylu">
-                                                <rect key="frame" x="95" y="920.5" width="299" height="19"/>
+                                                <rect key="frame" x="95" y="920" width="299" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

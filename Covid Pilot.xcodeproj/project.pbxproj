@@ -121,11 +121,11 @@
 		6DF8211B24CF02E9000ED0D2 /* CCAAUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF8211A24CF02E9000ED0D2 /* CCAAUseCase.swift */; };
 		6DF8212124D028E5000ED0D2 /* VerificationControllerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF8211E24D028E4000ED0D2 /* VerificationControllerAPI.swift */; };
 		6DF8212224D028E5000ED0D2 /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF8212024D028E4000ED0D2 /* Code.swift */; };
+		6DF8212524D07D2E000ED0D2 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF8212324D07D2D000ED0D2 /* MessageResponse.swift */; };
+		6DF8212624D07D2E000ED0D2 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF8212424D07D2E000ED0D2 /* TokenResponse.swift */; };
 		6DF8212924D1DC00000ED0D2 /* TextCustomMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF8212724D1DC00000ED0D2 /* TextCustomMap.swift */; };
 		6DF8212A24D1DC00000ED0D2 /* CcaaKeyValueDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF8212824D1DC00000ED0D2 /* CcaaKeyValueDto.swift */; };
 		6DF8212C24D1E2D6000ED0D2 /* CaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF8212B24D1E2D6000ED0D2 /* CaData.swift */; };
-		6DF8212524D07D2E000ED0D2 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF8212324D07D2D000ED0D2 /* MessageResponse.swift */; };
-		6DF8212624D07D2E000ED0D2 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF8212424D07D2E000ED0D2 /* TokenResponse.swift */; };
 		763489FB24B637ED00B31C59 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763489FA24B637ED00B31C59 /* UIImage+Extension.swift */; };
 		763489FD24B7530500B31C59 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763489FC24B7530500B31C59 /* UIFont+Extension.swift */; };
 		763489FF24B75A6900B31C59 /* TransparentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 763489FE24B75A6900B31C59 /* TransparentView.xib */; };
@@ -266,11 +266,11 @@
 		6DF8211A24CF02E9000ED0D2 /* CCAAUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCAAUseCase.swift; sourceTree = "<group>"; };
 		6DF8211E24D028E4000ED0D2 /* VerificationControllerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationControllerAPI.swift; sourceTree = "<group>"; };
 		6DF8212024D028E4000ED0D2 /* Code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Code.swift; sourceTree = "<group>"; };
+		6DF8212324D07D2D000ED0D2 /* MessageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
+		6DF8212424D07D2E000ED0D2 /* TokenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		6DF8212724D1DC00000ED0D2 /* TextCustomMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCustomMap.swift; sourceTree = "<group>"; };
 		6DF8212824D1DC00000ED0D2 /* CcaaKeyValueDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CcaaKeyValueDto.swift; sourceTree = "<group>"; };
 		6DF8212B24D1E2D6000ED0D2 /* CaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaData.swift; sourceTree = "<group>"; };
-		6DF8212324D07D2D000ED0D2 /* MessageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
-		6DF8212424D07D2E000ED0D2 /* TokenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		763489FA24B637ED00B31C59 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		763489FC24B7530500B31C59 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		763489FE24B75A6900B31C59 /* TransparentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransparentView.xib; sourceTree = "<group>"; };
@@ -1130,7 +1130,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/debug.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 70;
+				CURRENT_PROJECT_VERSION = 71;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1153,7 +1153,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/release.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 70;
+				CURRENT_PROJECT_VERSION = 71;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1232,7 +1232,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/release.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 70;
+				CURRENT_PROJECT_VERSION = 71;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1315,7 +1315,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Covid Pilot/Supporting/debug.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 70;
+				CURRENT_PROJECT_VERSION = 71;
 				DEVELOPMENT_TEAM = 2H36E8KFN2;
 				INFOPLIST_FILE = "Covid Pilot/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
