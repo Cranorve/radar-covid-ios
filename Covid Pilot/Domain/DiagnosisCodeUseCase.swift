@@ -70,6 +70,13 @@ class DiagnosisCodeUseCase {
         }
         return false
     }
+    
+    private func is400(_ error: Error) -> Bool {
+        if let code = getErrorCode(error) {
+            return code == 400
+        }
+        return false
+    }
 
     private func isPermissionRejected(_ error: Error) -> Bool {
         if let error = error as? DP3TTracingError {
@@ -92,6 +99,9 @@ class DiagnosisCodeUseCase {
     private func mapError(_ error: Error) -> DiagnosisError {
         if is404(error) {
             return .IdAlreadyUsed(error)
+        }
+        if is400(error) {
+            return .WrongId(error)
         }
         if isPermissionRejected(error) {
             return .ApiRejected(error)
@@ -116,6 +126,7 @@ struct MyClaims : Claims {
 enum DiagnosisError: Error {
     case IdAlreadyUsed(Error?)
     case ApiRejected(Error?)
+    case WrongId(Error?)
     case UnknownError(Error?)
 }
 

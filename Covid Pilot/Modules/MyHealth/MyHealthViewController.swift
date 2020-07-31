@@ -57,12 +57,30 @@ class MyHealthViewController: UIViewController {
                     self?.view.hideLoading()
                     self?.navigateIf(reported: reportedCodeBool)
                 }, onError: {  [weak self] error in
-                    debugPrint("Error sending diagnosis \(error)")
+                    self?.handle(error: error)
+                    
                     self?.view.hideLoading()
-                    self?.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_MY_HEALTH_CODE_VALIDATION_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_OK_BUTTON".localizedAttributed.string)
 
             }).disposed(by: disposeBag)
         }
+    }
+    
+    private func handle(error: Error) {
+        debugPrint("Error sending diagnosis \(error)")
+        var errorMessage = "ALERT_MY_HEALTH_CODE_VALIDATION_CONTENT".localized
+        if let diagnosisError = error as? DiagnosisError {
+            switch diagnosisError {
+            case .ApiRejected:
+                errorMessage = "ALERT_SHARING_REJECTED_ERROR".localized
+            case .IdAlreadyUsed:
+                errorMessage = "ALERT_ID_ALREADY_USED".localized
+            case .WrongId:
+                errorMessage = "ALERT_WRONG_ID".localized
+            default:
+                break
+            }
+        }
+        showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localized, message: errorMessage, buttonTitle: "ALERT_OK_BUTTON".localized)
     }
     
     override func viewWillAppear(_ animated: Bool) {        
