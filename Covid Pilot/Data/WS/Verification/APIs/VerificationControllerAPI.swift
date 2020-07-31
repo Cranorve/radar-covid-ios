@@ -22,10 +22,10 @@ open class VerificationControllerAPI {
     /**
      Verify provided Code
 
-     - parameter body: (body)  
+     - parameter body: (body)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open func verifyCode(body: Code, completion: @escaping ((_ data: JSONValue?,_ error: Error?) -> Void)) {
+    open func verifyCode(body: Code, completion: @escaping ((_ data: TokenResponse?,_ error: Error?) -> Void)) {
         verifyCodeWithRequestBuilder(body: body).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -33,12 +33,12 @@ open class VerificationControllerAPI {
 
     /**
      Verify provided Code
-     - parameter body: (body)  
-     - returns: Observable<JSONValue>
+     - parameter body: (body)
+     - returns: Observable<TokenResponse>
      */
-    open func verifyCode(body: Code) -> Observable<JSONValue> {
+    open func verifyCode(body: Code) -> Observable<TokenResponse> {
         return Observable.create { [weak self] observer -> Disposable in
-            self?.verifyCode(body: body) { data, error in
+            self?.verifyCode(body: body) {  data, error in
                 if let error = error {
                     observer.on(.error(error))
                 } else {
@@ -54,20 +54,21 @@ open class VerificationControllerAPI {
      Verify provided Code
      - POST /verify/code
 
-     - responseHeaders: [X-SEDIA-JWT(String)]
-     - examples: [{contentType=application/json, example={ }}]
-     - parameter body: (body)  
+     - examples: [{contentType=application/json, example={
+  "token" : "token"
+}}]
+     - parameter body: (body)
 
-     - returns: RequestBuilder<JSONValue> 
+     - returns: RequestBuilder<TokenResponse>
      */
-    open func verifyCodeWithRequestBuilder(body: Code) -> RequestBuilder<JSONValue> {
+    open func verifyCodeWithRequestBuilder(body: Code) -> RequestBuilder<TokenResponse> {
         let path = "/verify/code"
         let URLString = clientApi.basePath + path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: body)
 
         let url = URLComponents(string: URLString)
 
-        let requestBuilder: RequestBuilder<JSONValue>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<TokenResponse>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }

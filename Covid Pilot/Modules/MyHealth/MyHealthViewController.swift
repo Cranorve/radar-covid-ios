@@ -57,6 +57,7 @@ class MyHealthViewController: UIViewController {
                     self?.view.hideLoading()
                     self?.navigateIf(reported: reportedCodeBool)
                 }, onError: {  [weak self] error in
+                    debugPrint("Error sending diagnosis \(error)")
                     self?.view.hideLoading()
                     self?.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_MY_HEALTH_CODE_VALIDATION_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_OK_BUTTON".localizedAttributed.string)
 

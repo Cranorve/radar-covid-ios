@@ -152,7 +152,8 @@ class Injection {
         }.inObjectScope(.container)
         
         container.register(DiagnosisCodeUseCase.self) { r in
-            DiagnosisCodeUseCase(settingsRepository: r.resolve(SettingsRepository.self)!)
+            DiagnosisCodeUseCase(settingsRepository: r.resolve(SettingsRepository.self)!,
+                                 verificationApi: r.resolve(VerificationControllerAPI.self)!)
         }.inObjectScope(.container)
         
         container.register(ConfigurationUseCase.self) { r in
