@@ -58,6 +58,7 @@ class WelcomeViewController: UIViewController {
         guard let currentLanguage = self.localizationRepository.getLocale() else {
             return
         }
+        localizationRepository.setLocale(currentLanguage)
         self.languageSelector.setTitle(self.localesArray[currentLanguage, default: ""], for: .normal)
         super.viewDidLoad()
 
