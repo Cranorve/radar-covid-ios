@@ -42,7 +42,7 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
     }
     
     func getLocale() -> String? {
-        userDefaults.object(forKey: UserDefaultsLocalizationRepository.kLocale) as? String
+        userDefaults.object(forKey: UserDefaultsLocalizationRepository.kLocale) as? String ?? self.getLocales()?.keys.first
     }
     
     func setLocale(_ locale: String) {
