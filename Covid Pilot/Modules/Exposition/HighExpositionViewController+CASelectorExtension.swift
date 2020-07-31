@@ -24,6 +24,7 @@ extension HighExpositionViewController: UIPickerViewDelegate, UIPickerViewDataSo
         }
         
         self.phoneLabel.text = currentCa.phone ?? "CONTACT_PHONE".localized
+        self.covidWeb.text = currentCa.web ?? ""
         self.caSelectorButton.setTitle(currentCa.description ?? "Seleccione su comunidad autónoma", for: .normal)
     }
     
@@ -68,7 +69,13 @@ extension HighExpositionViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        ccaUseCase.setCurrent(ca: self.ccaArray?[row] ?? self.ccaArray!.first!)
+        guard let currentCa =  self.ccaArray?[row] ?? self.ccaArray?.first else {
+            return
+        }
+        ccaUseCase.setCurrent(ca: currentCa)
+        self.phoneLabel.text = currentCa.phone ?? "CONTACT_PHONE".localized
+        self.covidWeb.text = currentCa.web ?? ""
+        self.caSelectorButton.setTitle(currentCa.description ?? "Seleccione su comunidad autónoma", for: .normal)
         
     }
 }

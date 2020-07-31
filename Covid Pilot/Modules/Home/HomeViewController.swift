@@ -90,7 +90,7 @@ class HomeViewController: UIViewController {
     private func navigateToDetail(_ info: ExpositionInfo) {
         switch info.level {
             case .Healthy:
-                router?.route(to: Routes.Exposition, from: self, parameters: info.lastCheck)
+                router?.route(to: Routes.HighExposition, from: self, parameters: info.lastCheck)
             case .Exposed:
                 router?.route(to: Routes.HighExposition, from: self, parameters: info.since)
             case .Infected:

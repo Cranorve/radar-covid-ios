@@ -67,7 +67,10 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
     }
     
     func getCurrentCA() -> CaData? {
-        try? PropertyListDecoder().decode(CaData.self, from: userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCurrentCA) as? Data ?? Data())
+        guard let currentCaData = try? PropertyListDecoder().decode(CaData.self, from: userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCurrentCA) as? Data ?? Data()) else {
+            return self.getCCAA()?.first
+        }
+        return currentCaData
     }
     
     func setCurrent(ca: CaData) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class HighExpositionViewController: BaseExposed {
     
@@ -17,7 +18,8 @@ class HighExpositionViewController: BaseExposed {
     @IBOutlet weak var phoneView: BackgroundView!
     @IBOutlet weak var timeTableLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
-
+    @IBOutlet weak var covidWeb: UILabel!
+    
     var since:Date?
     
     @IBOutlet weak var selectorView : BackgroundView!
@@ -34,7 +36,11 @@ class HighExpositionViewController: BaseExposed {
         setInfectedText()
         expositionBGView.image = bgImageRed
         phoneView.isUserInteractionEnabled = true
-        phoneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCallTap(tapGestureRecognizer:))))
+        self.covidWeb.isUserInteractionEnabled = true
+        self.covidWeb.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onWebTap(tapGestureRecognizer:))))
+        
+        self.phoneLabel.isUserInteractionEnabled = true
+        self.phoneLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCallTap(tapGestureRecognizer:))))
         phoneView.image = UIImage(named: "WhiteCard")
         
         timeTableLabel.text = Config.timeTable
@@ -61,6 +67,19 @@ class HighExpositionViewController: BaseExposed {
     
     @objc func onCallTap(tapGestureRecognizer: UITapGestureRecognizer) {
         open(phone: "CONTACT_PHONE".localized)
+    }
+    
+    @objc func onWebTap(tapGestureRecognizer: UITapGestureRecognizer) {
+        var urlString = self.covidWeb.text ?? ""
+        if !urlString.contains("://") {
+            urlString = "https://\(urlString)"
+        }
+        if let url = URL(string: urlString) {
+            let config = SFSafariViewController.Configuration()
+            
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
+        }
     }
     
 
