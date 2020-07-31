@@ -16,6 +16,7 @@ class RootViewController: UIViewController {
     var router: AppRouter?
     var configurationUseCasee: ConfigurationUseCase?
     var ccaaUseCase: CCAAUseCase?
+    var localesUseCase: LocalesUseCase?
     var localizationUseCase: LocalizationUseCase?
     var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
 
@@ -23,6 +24,12 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
 
         LocalizationHolder.source = localizationUseCase
+        
+        localesUseCase!.loadLocales().subscribe(onNext:{ locales in
+                debugPrint(locales)
+            }, onError: {  error in
+                debugPrint(error)
+        }).disposed(by: self.disposeBag)
         
         ccaaUseCase!.loadCCAA().subscribe(onNext:{ ccaas in
                 debugPrint(ccaas)
@@ -36,17 +43,11 @@ class RootViewController: UIViewController {
             }, onError: {  [weak self]  error in
                 debugPrint(error)
 
+                // Not use i18n for this alert!
                 self?.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar") { (action) in
-                        exit(0)
+                    exit(0)
                 }
         }).disposed(by: self.disposeBag)
-        
-        ccaaUseCase?.getCCAA().subscribe(onNext:{ ccaas in
-                debugPrint(ccaas)
-            }, onError: {  error in
-                debugPrint(error)
-        }).disposed(by: self.disposeBag)
-        
 
     }
     

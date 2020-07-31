@@ -44,11 +44,10 @@ class CCAAUseCase {
             }
             return self?.loadCCAA() ?? .empty()
         }
-
     }
     
     public func getCurrent() -> CaData? {
-        localizationRepository.getCurrent()
+        localizationRepository.getCurrentCA()
     }
     
     public func setCurrent(ca: CaData) {
@@ -56,7 +55,7 @@ class CCAAUseCase {
     }
     
     private func mapCa(_ caDto: CcaaKeyValueDto) -> CaData {
-        CaData(id: caDto._id, description: caDto._description, phone: caDto.phone, email: caDto.email, additionalInfo: caDto.additionalInfo)
+        CaData(id: caDto._id, description: caDto._description, phone: caDto.phone, email: caDto.email, web: caDto.web, additionalInfo: caDto.additionalInfo)
     }
     
 }

@@ -187,6 +187,11 @@ class Injection {
                         localizationRepository: r.resolve(LocalizationRepository.self)!)
         }.inObjectScope(.container)
         
+        container.register(LocalesUseCase.self) { r in
+            LocalesUseCase(localizationRepository: r.resolve(LocalizationRepository.self)!,
+                           masterDataApi: r.resolve(MasterDataAPI.self)!)
+        }.inObjectScope(.container)
+        
         container.register(TabBarController.self) { r in
             TabBarController(
                 homeViewController: r.resolve(HomeViewController.self)!,
@@ -311,6 +316,7 @@ class Injection {
         container.register(RootViewController.self) { r in
             let rootVC = RootViewController()
             rootVC.ccaaUseCase = r.resolve(CCAAUseCase.self)!
+            rootVC.localesUseCase = r.resolve(LocalesUseCase.self)!
             rootVC.configurationUseCasee = r.resolve(ConfigurationUseCase.self)!
             rootVC.localizationUseCase = r.resolve(LocalizationUseCase.self)!
             rootVC.onBoardingCompletedUseCase = r.resolve(OnboardingCompletedUseCase.self)!

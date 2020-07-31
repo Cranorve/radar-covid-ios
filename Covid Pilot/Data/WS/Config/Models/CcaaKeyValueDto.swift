@@ -15,21 +15,24 @@ public struct CcaaKeyValueDto: Codable {
     public var _description: String?
     public var phone: String?
     public var email: String?
+    public var web: String?
     public var additionalInfo: String?
 
-    public init(_id: String?, _description: String?, phone: String?, email: String?, additionalInfo: String?) {
+    public init(_id: String?, _description: String?, phone: String?, email: String?, web: String?, additionalInfo: String?) {
         self._id = _id
         self._description = _description
         self.phone = phone
         self.email = email
+        self.web = web
         self.additionalInfo = additionalInfo
     }
 
-    public enum CodingKeys: String, CodingKey { 
+    public enum CodingKeys: String, CodingKey {
         case _id = "id"
         case _description = "description"
         case phone
         case email
+        case web
         case additionalInfo
     }
 
