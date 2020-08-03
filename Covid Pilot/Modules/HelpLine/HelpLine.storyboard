@@ -28,10 +28,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJ6-m7-TJp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="815"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="652"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ayúdanos a mejorar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cst-er-eD4">
-                                                <rect key="frame" x="23" y="100" width="329" height="33"/>
+                                                <rect key="frame" x="23" y="100" width="329" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -40,14 +40,24 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoyGirlHearts" translatesAutoresizingMaskIntoConstraints="NO" id="w9H-Jy-4ca">
-                                                <rect key="frame" x="71.5" y="153" width="232" height="158"/>
+                                                <rect key="frame" x="71.5" y="155.5" width="232" height="158"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="232" id="I00-gL-GWp"/>
                                                     <constraint firstAttribute="height" constant="158" id="aDC-h2-llN"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atención Telefónica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGs-Ug-xTr" customClass="LocalizableLabel" customModule="Radar_COVID" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="353.5" width="168" height="23"/>
+                                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="HELP_LINE_PHONE_TITLE"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKeyLocalizable" value="HELP_LINE_PHONE_TITLE"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geQ-iZ-DDL">
-                                                <rect key="frame" x="16" y="392" width="343" height="83"/>
+                                                <rect key="frame" x="16" y="396.5" width="343" height="83"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">Reportar incidencia
@@ -68,7 +78,7 @@
                                                 </attributedString>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1da-Fl-GEo" customClass="BackgroundView" customModule="Radar_COVID" customModuleProvider="target">
-                                                <rect key="frame" x="14" y="495" width="347" height="131"/>
+                                                <rect key="frame" x="14" y="499.5" width="347" height="136.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="nS9-3b-zgN">
                                                         <rect key="frame" x="16" y="19" width="22" height="22"/>
@@ -78,7 +88,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teléfono de soporte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCK-AU-t8c">
-                                                        <rect key="frame" x="50" y="20" width="281" height="16.5"/>
+                                                        <rect key="frame" x="50" y="20" width="281" height="18"/>
                                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -88,7 +98,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="900 000 000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhJ-I7-T6K">
-                                                        <rect key="frame" x="50" y="56.5" width="281" height="28"/>
+                                                        <rect key="frame" x="50" y="58" width="281" height="30.5"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -98,7 +108,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="llamada gratuita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2k-dl-4NZ">
-                                                        <rect key="frame" x="50" y="94.5" width="100.5" height="16.5"/>
+                                                        <rect key="frame" x="50" y="98.5" width="110" height="18"/>
                                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -121,90 +131,22 @@
                                                     <constraint firstItem="W2k-dl-4NZ" firstAttribute="leading" secondItem="1da-Fl-GEo" secondAttribute="leading" constant="50" id="xU2-8v-X8r"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAO-RJ-tDo" customClass="LocalizableLabel" customModule="Radar_COVID" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="646" width="343" height="21.5"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Un paso más">
-                                                        <attributes>
-                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <font key="NSFont" metaFont="system" size="18"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="13" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIP-aI-Crz" userLabel="one_more_step_2" customClass="LocalizableLabel" customModule="Radar_COVID" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="687.5" width="343" height="20.5"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Label">
-                                                        <attributes>
-                                                            <font key="NSFont" metaFont="system" size="17"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yt7-mj-NqE" userLabel="one_more_step_3" customClass="LocalizableLabel" customModule="Radar_COVID" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="764" width="343" height="21"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Label">
-                                                        <attributes>
-                                                            <font key="NSFont" metaFont="system" size="17"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atención Telefónica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGs-Ug-xTr" customClass="LocalizableLabel" customModule="Radar_COVID" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="351" width="157" height="21"/>
-                                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="HELP_LINE_PHONE_TITLE"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="locKeyLocalizable" value="HELP_LINE_PHONE_TITLE"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcN-aB-nDk" userLabel="lblemail" customClass="LocalizableLabel" customModule="Radar_COVID" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="718" width="343" height="21"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Label">
-                                                        <attributes>
-                                                            <font key="NSFont" metaFont="system" size="17"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" name="bgColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="lAO-RJ-tDo" secondAttribute="trailing" constant="16" id="0wG-Aw-1eJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="Yt7-mj-NqE" secondAttribute="trailing" constant="16" id="5NY-Zd-Cdh"/>
                                             <constraint firstItem="Cst-er-eD4" firstAttribute="top" secondItem="UJ6-m7-TJp" secondAttribute="top" constant="100" id="6aj-WW-r0v"/>
-                                            <constraint firstItem="fIP-aI-Crz" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="AeT-pB-Uvc"/>
+                                            <constraint firstAttribute="bottom" secondItem="1da-Fl-GEo" secondAttribute="bottom" constant="16" id="8Eo-D2-eXX"/>
                                             <constraint firstItem="Cst-er-eD4" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="23" id="CSX-5l-JUX"/>
                                             <constraint firstItem="geQ-iZ-DDL" firstAttribute="top" secondItem="jGs-Ug-xTr" secondAttribute="bottom" constant="20" id="Fi1-uY-u2c"/>
                                             <constraint firstItem="1da-Fl-GEo" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="14" id="HhP-fG-QJ1"/>
-                                            <constraint firstAttribute="trailing" secondItem="EcN-aB-nDk" secondAttribute="trailing" constant="16" id="I3E-wO-2VB"/>
-                                            <constraint firstItem="Yt7-mj-NqE" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="I3c-NY-9BY"/>
-                                            <constraint firstAttribute="trailing" secondItem="fIP-aI-Crz" secondAttribute="trailing" constant="16" id="LvS-BD-lHI"/>
-                                            <constraint firstItem="lAO-RJ-tDo" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="OJA-aD-pvL"/>
                                             <constraint firstItem="jGs-Ug-xTr" firstAttribute="top" secondItem="w9H-Jy-4ca" secondAttribute="bottom" constant="40" id="ORq-vG-yse"/>
                                             <constraint firstItem="Cst-er-eD4" firstAttribute="bottom" secondItem="w9H-Jy-4ca" secondAttribute="top" constant="-20" id="PKM-RQ-AzA"/>
                                             <constraint firstAttribute="trailing" secondItem="Cst-er-eD4" secondAttribute="trailing" constant="23" id="RRl-eo-dto"/>
                                             <constraint firstItem="jGs-Ug-xTr" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="UcJ-1n-ApH"/>
-                                            <constraint firstItem="fIP-aI-Crz" firstAttribute="top" secondItem="lAO-RJ-tDo" secondAttribute="bottom" constant="20" id="Ugp-lt-OUE"/>
                                             <constraint firstItem="w9H-Jy-4ca" firstAttribute="centerX" secondItem="UJ6-m7-TJp" secondAttribute="centerX" id="Ugt-r6-NJE"/>
-                                            <constraint firstItem="EcN-aB-nDk" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="WEW-oM-rKr"/>
-                                            <constraint firstItem="EcN-aB-nDk" firstAttribute="top" secondItem="fIP-aI-Crz" secondAttribute="bottom" constant="10" id="bqp-pX-grS"/>
                                             <constraint firstAttribute="trailing" secondItem="1da-Fl-GEo" secondAttribute="trailing" constant="14" id="clL-b8-EpE"/>
                                             <constraint firstItem="geQ-iZ-DDL" firstAttribute="leading" secondItem="UJ6-m7-TJp" secondAttribute="leading" constant="16" id="de5-1a-Gcy"/>
-                                            <constraint firstAttribute="bottom" secondItem="Yt7-mj-NqE" secondAttribute="bottom" constant="30" id="f5n-ia-v4b"/>
                                             <constraint firstAttribute="trailing" secondItem="geQ-iZ-DDL" secondAttribute="trailing" constant="16" id="kpy-AS-W8a"/>
-                                            <constraint firstItem="1da-Fl-GEo" firstAttribute="bottom" secondItem="lAO-RJ-tDo" secondAttribute="top" constant="-20" id="nhK-oT-FtC"/>
-                                            <constraint firstItem="Yt7-mj-NqE" firstAttribute="top" secondItem="EcN-aB-nDk" secondAttribute="bottom" constant="25" id="r8C-Zr-ttb"/>
                                             <constraint firstItem="1da-Fl-GEo" firstAttribute="top" secondItem="geQ-iZ-DDL" secondAttribute="bottom" constant="20" id="xMm-k3-cRk"/>
                                         </constraints>
                                     </view>
@@ -236,10 +178,6 @@
                         <viewLayoutGuide key="safeArea" id="ucK-r6-0qo"/>
                     </view>
                     <connections>
-                        <outlet property="infoLabel" destination="lAO-RJ-tDo" id="Td0-ue-gWl"/>
-                        <outlet property="lblEmail" destination="EcN-aB-nDk" id="19i-PI-5p3"/>
-                        <outlet property="one_more_step_2" destination="fIP-aI-Crz" id="tRb-zJ-cQq"/>
-                        <outlet property="one_more_step_3" destination="Yt7-mj-NqE" id="C0Z-CP-yXc"/>
                         <outlet property="phoneNumberLabel" destination="UhJ-I7-T6K" id="19E-b2-ABo"/>
                         <outlet property="phoneView" destination="1da-Fl-GEo" id="E5d-MT-S53"/>
                         <outlet property="reportLabel" destination="geQ-iZ-DDL" id="PuU-c1-hqh"/>
