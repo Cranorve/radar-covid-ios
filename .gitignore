@@ -10,3 +10,4 @@ Covid Pilot.xcodeproj/project.xcworkspace/xcuserdata/
 
 .DS_Store
 Package.resolved
+Podfile.lock

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RxSwift
+import Firebase
 
 @UIApplicationMain
 
@@ -16,8 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     var injection: Injection = Injection();
-    
-    private let disposeBag = DisposeBag()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         if JailBreakDetect.isJailbroken() {
@@ -26,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Config.debug {
              NetworkActivityLogger.shared.startLogging()
         }
+        
+        FirebaseApp.configure()
         
         debugPrint("Current Environment: \(Config.environment)")
         
