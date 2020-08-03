@@ -21,7 +21,6 @@ class MyHealthViewController: UIViewController {
     var statusBar: UIView?
     @IBOutlet var codeChars: [UITextField]!
     @IBOutlet weak var sendDiagnosticButton: UIButton!
-    var diagnosticEnabled: Bool = false
     var router: AppRouter?
     
     @IBAction func onBack(_ sender: Any) {
@@ -40,29 +39,25 @@ class MyHealthViewController: UIViewController {
     }
 
     @IBAction func onReportDiagnosis(_ sender: Any) {
-        if !diagnosticEnabled {
 
-            self.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_MY_HEALTH_CODE_VALIDATION_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed.string)
-
-        } else {
-            view.showLoading()
-            var codigoString = ""
-            codeChars.forEach {
-                let s: String = $0.text ?? ""
-                codigoString += s
-            }
-
-            diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
-                onNext:{ [weak self] reportedCodeBool in
-                    self?.view.hideLoading()
-                    self?.navigateIf(reported: reportedCodeBool)
-                }, onError: {  [weak self] error in
-                    self?.handle(error: error)
-                    
-                    self?.view.hideLoading()
-
-            }).disposed(by: disposeBag)
+        view.showLoading()
+        var codigoString = ""
+        codeChars.forEach {
+            let s: String = $0.text ?? ""
+            codigoString += s
         }
+
+        diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
+            onNext:{ [weak self] reportedCodeBool in
+                self?.view.hideLoading()
+                self?.navigateIf(reported: reportedCodeBool)
+            }, onError: {  [weak self] error in
+                self?.handle(error: error)
+                
+                self?.view.hideLoading()
+
+        }).disposed(by: disposeBag)
+        
     }
     
     private func handle(error: Error) {
@@ -93,8 +88,7 @@ class MyHealthViewController: UIViewController {
         }
         super.viewWillAppear(true)
         
-        self.diagnosticEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
-
+        sendDiagnosticButton.isEnabled = checkSendEnabled()
     }
     
     
@@ -102,8 +96,6 @@ class MyHealthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
        
         // Do any additional setup after loading the view.
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
@@ -153,9 +145,12 @@ class MyHealthViewController: UIViewController {
             }
         }
        
-        self.diagnosticEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
+        sendDiagnosticButton.isEnabled = checkSendEnabled()
     }
     
+    private func checkSendEnabled() -> Bool {
+        codeChars.filter({ $0.text != "\u{200B}" }).count == codeChars.count
+    }
     
     @IBAction func insertCode(_ sender: Any) {
         guard let emptyInput = self.codeChars.filter({ $0.text == "\u{200B}" }).first else {
@@ -176,20 +171,15 @@ class MyHealthViewController: UIViewController {
            // if keyboard size is not available for some reason, dont do anything
            return
         }
-      
-      // move the root view up by the distance of keyboard height
+        // move the root view up by the distance of keyboard height
         DispatchQueue.main.async {
             self.scrollViewBottonConstraint.constant = keyboardSize.height
             self.scrollView.setContentOffset(CGPoint(x: 0, y: keyboardSize.height), animated: true)
-           
-
         }
-
-//        self.scrollView.setContentOffset(CGPoint(x: 0, y: keyboardSize.height), animated: true)
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-      // move back the root view origin to zero
+        // move back the root view origin to zero
         self.scrollViewBottonConstraint.constant = 0
         self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
