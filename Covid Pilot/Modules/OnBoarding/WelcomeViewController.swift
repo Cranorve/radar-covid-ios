@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Darwin
 
 extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -27,6 +28,7 @@ extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         self.languageSelector.setTitle(self.localesArray[key, default: ""], for: .normal)
 
         localizationRepository.setLocale(key)
+        
     }
 }
 
@@ -87,8 +89,17 @@ class WelcomeViewController: UIViewController {
     
     @objc func onDoneButtonTapped() {
         self.pickerOpened = false
+        
         toolBar.removeFromSuperview()
         picker.removeFromSuperview()
+        self.showAlertOk(title: "Idioma", message: "Para realizar el cambio de idioma la app va a cerrarse", buttonTitle: "OK") { (cb) in
+            exit(0)
+//            if (!(self.localizationRepository.getLocale() ?? "").contains("es")){
+//                UIControl().sendAction(#selector(NSXPCConnection.suspend),
+//                                       to: UIApplication.shared, for: nil)
+//            }
+        }
+        
     }
     
 }

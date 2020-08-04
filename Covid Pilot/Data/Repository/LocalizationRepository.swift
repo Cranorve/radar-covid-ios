@@ -42,7 +42,9 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
     }
     
     func getLocale() -> String? {
-        userDefaults.object(forKey: UserDefaultsLocalizationRepository.kLocale) as? String ?? self.getLocales()?.keys.first
+        userDefaults.object(forKey: UserDefaultsLocalizationRepository.kLocale) as? String ?? self.getLocales()?.keys.filter({ (key) -> Bool in
+            key.contains("es")
+        }).first
     }
     
     func setLocale(_ locale: String) {
@@ -67,10 +69,7 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
     }
     
     func getCurrentCA() -> CaData? {
-        guard let currentCaData = try? PropertyListDecoder().decode(CaData.self, from: userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCurrentCA) as? Data ?? Data()) else {
-            return self.getCCAA()?.first
-        }
-        return currentCaData
+        try? PropertyListDecoder().decode(CaData.self, from: userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCurrentCA) as? Data ?? Data())
     }
     
     func setCurrent(ca: CaData) {

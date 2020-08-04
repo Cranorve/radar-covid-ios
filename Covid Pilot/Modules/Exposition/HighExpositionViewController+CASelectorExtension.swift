@@ -20,9 +20,15 @@ extension HighExpositionViewController: UIPickerViewDelegate, UIPickerViewDataSo
             self.ccaArray = []
         })
         guard let currentCa = self.ccaUseCase.getCurrent() else {
+            self.phoneView.isHidden = true
+            self.phoneViewHiddenConstraint.priority = .defaultHigh
+            self.phoneViewVisibleConstraint.priority = .defaultLow
             return
         }
         
+        self.phoneViewHiddenConstraint.priority = .defaultLow
+        self.phoneViewVisibleConstraint.priority = .defaultHigh
+        self.phoneView.isHidden = false
         self.phoneLabel.text = currentCa.phone ?? "CONTACT_PHONE".localized
         self.covidWeb.text = currentCa.web ?? ""
         self.caSelectorButton.setTitle(currentCa.description ?? "Seleccione su comunidad autónoma", for: .normal)
@@ -53,6 +59,7 @@ extension HighExpositionViewController: UIPickerViewDelegate, UIPickerViewDataSo
         toolBar.removeFromSuperview()
         picker.removeFromSuperview()
         pickerOpened = false;
+        self.setCaSelector()
     }
     
     
@@ -73,9 +80,6 @@ extension HighExpositionViewController: UIPickerViewDelegate, UIPickerViewDataSo
             return
         }
         ccaUseCase.setCurrent(ca: currentCa)
-        self.phoneLabel.text = currentCa.phone ?? "CONTACT_PHONE".localized
-        self.covidWeb.text = currentCa.web ?? ""
-        self.caSelectorButton.setTitle(currentCa.description ?? "Seleccione su comunidad autónoma", for: .normal)
         
     }
 }

@@ -20,6 +20,8 @@ class HighExpositionViewController: BaseExposed {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var covidWeb: UILabel!
     
+    @IBOutlet weak var phoneViewVisibleConstraint: NSLayoutConstraint!
+    @IBOutlet weak var phoneViewHiddenConstraint: NSLayoutConstraint!
     var since:Date?
     
     @IBOutlet weak var selectorView : BackgroundView!
