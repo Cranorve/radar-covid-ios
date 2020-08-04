@@ -42,7 +42,9 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
     }
     
     func getLocale() -> String? {
-        userDefaults.object(forKey: UserDefaultsLocalizationRepository.kLocale) as? String ?? self.getLocales()?.keys.first
+        userDefaults.object(forKey: UserDefaultsLocalizationRepository.kLocale) as? String ?? self.getLocales()?.keys.filter({ (key) -> Bool in
+            key.contains("es")
+        }).first
     }
     
     func setLocale(_ locale: String) {
