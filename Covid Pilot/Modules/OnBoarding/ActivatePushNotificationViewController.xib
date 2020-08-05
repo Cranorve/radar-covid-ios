@@ -70,12 +70,18 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ACTIVATE_PUSH_NOTIFICATION_BULLET_1"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para avisarte de forma automática,  es necesario que nos permitas enviarte notificaciones." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifb-ww-k2d" userLabel="bullet_2">
                                     <rect key="frame" x="16" y="351" width="288" height="93.5"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ACTIVATE_PUSH_NOTIFICATION_BULLET_2"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" name="bgColor"/>
