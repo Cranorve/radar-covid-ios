@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class OnBoardingViewController: UIViewController {
     
@@ -70,21 +69,11 @@ class OnBoardingViewController: UIViewController {
     }
     
     @objc func userDidTapTerms(tapGestureRecognizer: UITapGestureRecognizer) {
-        let urlString =  "USE_CONDITIONS_URL".localized
-        if let url = URL(string: urlString) {
-            let config = SFSafariViewController.Configuration()
-            let vc = SFSafariViewController(url: url, configuration: config)
-            present(vc, animated: true)
-        }
+        onWebTap(tapGestureRecognizer: tapGestureRecognizer, urlString: "USE_CONDITIONS_URL".localized)
     }
     
     @objc func userDidTapPrivacy(tapGestureRecognizer: UITapGestureRecognizer) {
-        let urlString = "PRIVACY_POLICY_URL".localized
-        if let url = URL(string: urlString) {
-            let config = SFSafariViewController.Configuration()
-            let vc = SFSafariViewController(url: url, configuration: config)
-            present(vc, animated: true)
-        }
+        onWebTap(tapGestureRecognizer: tapGestureRecognizer, urlString: "PRIVACY_POLICY_URL".localized)
     }
 
 }
