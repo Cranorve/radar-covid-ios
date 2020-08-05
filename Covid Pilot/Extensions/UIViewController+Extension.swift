@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 extension UIViewController {
     
@@ -66,6 +67,26 @@ extension UIViewController {
     
     func showAlertCancelContinue(title: String, message: String, buttonOkTitle: String, buttonCancelTitle: String,  okHandler:  ((UIAlertAction) -> Void)? = nil ) {
         showAlertCancelContinue(title: title, message: message, buttonOkTitle: buttonOkTitle, buttonCancelTitle: buttonCancelTitle, okHandler: okHandler, cancelHandler: nil)
+    }
+    
+    @objc func onWebTap(tapGestureRecognizer: UITapGestureRecognizer) {
+        onWebTap(tapGestureRecognizer: tapGestureRecognizer, urlString: (tapGestureRecognizer.view as? UILabel)?.text)
+    }
+    
+    @objc func onWebTap(tapGestureRecognizer: UITapGestureRecognizer, urlString: String? = nil) {
+        guard var urlString = urlString else {
+            return
+        }
+        
+        if !urlString.contains("://") {
+            urlString = "https://\(urlString)"
+        }
+        if let url = URL(string: urlString) {
+            let config = SFSafariViewController.Configuration()
+            
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
+        }
     }
     
 }

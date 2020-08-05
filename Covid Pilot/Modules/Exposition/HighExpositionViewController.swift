@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class HighExpositionViewController: BaseExposed {
     
@@ -44,16 +43,11 @@ class HighExpositionViewController: BaseExposed {
         self.phoneLabel.isUserInteractionEnabled = true
         self.phoneLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCallTap(tapGestureRecognizer:))))
         phoneView.image = UIImage(named: "WhiteCard")
-        
-        timeTableLabel.text = Config.timeTable
-        
+                
         self.setCaSelector()
         super.viewDidLoad()
         
-        
     }
-    
-    
     
     func setInfectedText() {
         let date = self.since ?? Date()
@@ -71,20 +65,5 @@ class HighExpositionViewController: BaseExposed {
         open(phone: "CONTACT_PHONE".localized)
     }
     
-    @objc func onWebTap(tapGestureRecognizer: UITapGestureRecognizer) {
-        var urlString = self.covidWeb.text ?? ""
-        if !urlString.contains("://") {
-            urlString = "https://\(urlString)"
-        }
-        if let url = URL(string: urlString) {
-            let config = SFSafariViewController.Configuration()
-            
-            let vc = SFSafariViewController(url: url, configuration: config)
-            present(vc, animated: true)
-        }
-    }
-    
-
-   
     
 }
