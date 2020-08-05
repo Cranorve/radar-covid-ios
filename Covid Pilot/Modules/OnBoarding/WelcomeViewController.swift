@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Darwin
 
 extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -92,12 +91,8 @@ class WelcomeViewController: UIViewController {
         
         toolBar.removeFromSuperview()
         picker.removeFromSuperview()
-        self.showAlertOk(title: "Idioma", message: "LOCALE_CHANGE_WARING".localized , buttonTitle: "OK") { (cb) in
+        self.showAlertOk(title: "Idioma", message: "LOCALE_CHANGE_WARNING".localized , buttonTitle: "OK") { (cb) in
             exit(0)
-//            if (!(self.localizationRepository.getLocale() ?? "").contains("es")){
-//                UIControl().sendAction(#selector(NSXPCConnection.suspend),
-//                                       to: UIApplication.shared, for: nil)
-//            }
         }
         
     }

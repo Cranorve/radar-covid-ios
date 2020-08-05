@@ -9,8 +9,6 @@
 import UIKit
 import RxSwift
 import DP3TSDK
-import RxCocoa
-
 
 class HomeViewController: UIViewController {
     
