@@ -65,5 +65,9 @@ class HighExpositionViewController: BaseExposed {
         open(phone: "CONTACT_PHONE".localized)
     }
     
+    @objc override func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
+        onWebTap(tapGestureRecognizer: tapGestureRecognizer, urlString: "EXPOSURE_HIGH_INFO_URL".localized)
+    }
+    
     
 }

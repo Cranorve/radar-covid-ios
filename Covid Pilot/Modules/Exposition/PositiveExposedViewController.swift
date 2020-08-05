@@ -36,6 +36,10 @@ class PositiveExposedViewController: BaseExposed {
         realInfectedText.attributedText = "EXPOSITION_EXPOSED_DESCRIPTION".localizedAttributed(withParams: [String(daysSinceLastInfection), actualizado])
     }
     
+    @objc override func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
+        onWebTap(tapGestureRecognizer: tapGestureRecognizer, urlString: "EXPOSURE_INFECTED_INFO_URL".localized)
+    }
+    
     
     
 }

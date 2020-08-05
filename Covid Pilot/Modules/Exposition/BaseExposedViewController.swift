@@ -9,18 +9,16 @@
 import Foundation
 import UIKit
 
-class BaseExposed: UIViewController {
+protocol ExpositionView {
+    func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer)
+}
+
+class BaseExposed: UIViewController, ExpositionView {
 
     @IBOutlet weak var moreInfoView: UIView!
     @IBOutlet weak var expositionBGView : BackgroundView!
     var lastCheck:Date?
 
-    
-    @objc func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
-        guard let url = URL(string: "https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/ciudadania.htm") else { return }
-        UIApplication.shared.open(url)
-    }
-    
     override func viewDidLoad() {
         moreInfoView.isUserInteractionEnabled = true
         moreInfoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(userDidTapLabel(tapGestureRecognizer:))))
@@ -31,6 +29,10 @@ class BaseExposed: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-   
+    @objc func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
+
+    }
     
+   
 }
+

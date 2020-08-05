@@ -35,6 +35,8 @@ class ExpositionViewController: BaseExposed {
     }
     
    
-
+    @objc override func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
+        onWebTap(tapGestureRecognizer: tapGestureRecognizer, urlString: "EXPOSURE_LOW_INFO_URL".localized)
+    }
     
 }
