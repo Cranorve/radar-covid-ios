@@ -22,7 +22,6 @@ class ActivatePushNotificationViewController: UIViewController {
         self.view.showTransparentBackground(withColor: UIColor.blueyGrey90, alpha: 1, nil, "ACTIVATE_PUSH_NOTIFICATION_POPUP_HOVER".localizedAttributed(), UIColor.white)
         
         self.notificationHandler?.setupNotifications().subscribe(onNext: { [weak self] accepted in
-            print("notification accepted", accepted)
             DispatchQueue.main.async {
                 self?.navigateHome()
             }
