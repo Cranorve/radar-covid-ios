@@ -18,6 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActivatePushNotificationViewController" customModule="Radar_COVID" customModuleProvider="target">
             <connections>
+                <outlet property="allowButton" destination="0ks-pf-IGN" id="eQh-op-vFk"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7Ry-pS-xMF"/>
             </connections>
         </placeholder>

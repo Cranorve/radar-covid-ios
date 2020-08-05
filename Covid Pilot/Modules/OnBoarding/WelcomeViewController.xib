@@ -18,6 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="Radar_COVID" customModuleProvider="target">
             <connections>
+                <outlet property="continueButton" destination="0ks-pf-IGN" id="NSG-Ea-ygE"/>
                 <outlet property="languageSelector" destination="Bst-TA-Vrn" id="ekC-Q8-Jn8"/>
                 <outlet property="selectorView" destination="rSt-AF-pW4" id="cIY-tF-OYO"/>
                 <outlet property="stepbullet1" destination="yMv-ck-JYx" id="gOm-v8-mcH"/>

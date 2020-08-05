@@ -32,7 +32,7 @@ class OnBoardingViewController: UIViewController {
         super.viewWillAppear(animated)
         self.acceptTermsLabel.attributedText = "MY_DATA_TERMS".localizedAttributed()
         self.privacyLabel.attributedText = "MY_DATA_PRIVACY".localizedAttributed()
-
+        acceptButton.setTitle("ONBOARDING_CONTINUE_BUTTON".localized, for: .normal)
         acceptButton.isEnabled = termsAccepted
         scrollView.alwaysBounceVertical = false
     }

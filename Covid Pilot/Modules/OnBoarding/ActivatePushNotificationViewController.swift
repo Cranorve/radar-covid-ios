@@ -14,9 +14,11 @@ class ActivatePushNotificationViewController: UIViewController {
     var router: AppRouter?
     
     var notificationHandler: NotificationHandler?
+    
+    @IBOutlet weak var allowButton: UIButton!
+    
     @IBAction func onContinue(_ sender: Any) {
 
-        
         self.view.showTransparentBackground(withColor: UIColor.blueyGrey90, alpha: 1, nil, "ACTIVATE_PUSH_NOTIFICATION_POPUP_HOVER".localizedAttributed(), UIColor.white)
         
         self.notificationHandler?.setupNotifications().subscribe(onNext: { [weak self] accepted in
@@ -33,11 +35,12 @@ class ActivatePushNotificationViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        allowButton.setTitle("ACTIVATE_PUSH_NOTIFICATION_ALLOW_BUTTON".localized, for: .normal)
     }
     
    

@@ -13,6 +13,8 @@ class ProximityViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    @IBOutlet weak var continueButton: UIButton!
+    
     var router: AppRouter?
     var radarStatusUseCase: RadarStatusUseCase?
 
@@ -26,6 +28,7 @@ class ProximityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        continueButton.setTitle("ONBOARDING_CONTINUE_BUTTON".localized, for: .normal)
     }
     
 

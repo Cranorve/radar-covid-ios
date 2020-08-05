@@ -103,7 +103,7 @@ class HomeViewController: UIViewController {
         
         setupBindings()
         
-//        self.communicationButton.setAttributedTitle("HOME_BUTTON_SEND_POSITIVE".localizedAttributed(), for: <#T##UIControl.State#>)
+        self.communicationButton.setTitle("HOME_BUTTON_SEND_POSITIVE".localized, for: .normal)
         
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.onExpositionTap))
         expositionView.addGestureRecognizer(gesture)

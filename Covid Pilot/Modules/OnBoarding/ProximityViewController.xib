@@ -24,6 +24,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProximityViewController" customModule="Radar_COVID" customModuleProvider="target">
             <connections>
+                <outlet property="continueButton" destination="Gh7-C2-OVe" id="dgK-cd-i3s"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

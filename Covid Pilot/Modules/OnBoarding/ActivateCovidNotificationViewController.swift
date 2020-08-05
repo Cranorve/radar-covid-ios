@@ -16,6 +16,7 @@ class ActivateCovidNotificationViewController: UIViewController {
     var router: AppRouter?
     var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
     var radarStatusUseCase: RadarStatusUseCase?
+    @IBOutlet weak var activateButton: UIButton!
     
     
     @IBAction func onContinue(_ sender: Any) {
@@ -36,11 +37,11 @@ class ActivateCovidNotificationViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        activateButton.setTitle("ALERT_HOME_COVID_NOTIFICATION_OK_BUTTON".localized, for: .normal)
     }
     
    

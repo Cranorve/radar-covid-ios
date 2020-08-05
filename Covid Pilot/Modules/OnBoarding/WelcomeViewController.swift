@@ -33,6 +33,7 @@ extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
 class WelcomeViewController: UIViewController {
     
+    @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var languageSelector: UIButton!
     var router: AppRouter?
     var pickerOpened = false;
@@ -58,6 +59,7 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        continueButton.setTitle("ONBOARDING_CONTINUE_BUTTON".localized, for: .normal)
         localesArray = localizationRepository.getLocales()
         if let currentLanguage = localizationRepository.getLocale() {
             languageSelector.setTitle(localesArray[currentLanguage, default: ""], for: .normal)
