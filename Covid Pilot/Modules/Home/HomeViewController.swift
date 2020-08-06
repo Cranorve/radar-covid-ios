@@ -206,7 +206,7 @@ class HomeViewController: UIViewController {
             activateNotificationButton.isHidden = true
             topActiveNotification.priority = .defaultLow
             topRadarTitle.priority = .defaultHigh
-            setImagesInactive(false)
+//            setImagesInactive(false)
         } else {
             notificationInactiveMessage.isHidden = false
             activateNotificationButton.isHidden = false
