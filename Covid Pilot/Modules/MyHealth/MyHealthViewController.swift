@@ -75,7 +75,7 @@ class MyHealthViewController: UIViewController {
                 break
             }
         }
-        showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localized, message: errorMessage, buttonTitle: "ALERT_OK_BUTTON".localized)
+        showAlertOk(title: "ALERT_MY_HEALTH_CODE_ERROR_CONTENT".localized, message: errorMessage, buttonTitle: "ALERT_OK_BUTTON".localized)
     }
     
     override func viewWillAppear(_ animated: Bool) {        

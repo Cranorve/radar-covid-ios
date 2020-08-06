@@ -99,7 +99,7 @@ class DiagnosisCodeUseCase {
     
     private func mapError(_ error: Error) -> DiagnosisError {
         if is404(error) {
-            return .IdAlreadyUsed(error)
+            return .WrongId(error)
         }
         if is400(error) {
             return .WrongId(error)
