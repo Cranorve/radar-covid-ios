@@ -14,14 +14,11 @@ import ExposureNotification
 class RadarStatusUseCase {
     
     private let preferencesRepository: PreferencesRepository
-    private let errorUseCase: ErrorUseCase
     private let syncUseCase: SyncUseCase
     
     init(preferencesRepository: PreferencesRepository,
-         errorUseCase: ErrorUseCase,
          syncUseCase: SyncUseCase) {
         self.preferencesRepository = preferencesRepository
-        self.errorUseCase = errorUseCase
         self.syncUseCase = syncUseCase
     }
     

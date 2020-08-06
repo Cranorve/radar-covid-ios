@@ -18,17 +18,14 @@ class ExpositionUseCase: DP3TTracingDelegate {
     private let subject: BehaviorSubject<ExpositionInfo>
     private let expositionInfoRepository: ExpositionInfoRepository
     private let notificationHandler: NotificationHandler
-    private let errorUseCase: ErrorUseCase
     private let kpiControllerApi: KpiControllerAPI
     
     init(notificationHandler: NotificationHandler,
          expositionInfoRepository: ExpositionInfoRepository,
-         errorUseCase: ErrorUseCase,
          kpiControllerApi: KpiControllerAPI) {
         
         self.notificationHandler = notificationHandler
         self.expositionInfoRepository = expositionInfoRepository
-        self.errorUseCase = errorUseCase
         self.kpiControllerApi = kpiControllerApi
         self.subject = BehaviorSubject<ExpositionInfo>(value: expositionInfoRepository.getExpositionInfo() ?? ExpositionInfo(level: .Healthy))
         
@@ -41,9 +38,8 @@ class ExpositionUseCase: DP3TTracingDelegate {
     func DP3TTracingStateChanged(_ state: TracingState) {
 
         if var expositionInfo = tracingStatusToExpositionInfo(tStatus: state) {
-            subject.onNext(expositionInfo)
             
-            let localEI = expositionInfoRepository.getExpositionInfo()
+            let localEI  = expositionInfoRepository.getExpositionInfo()
             
             if isNewInfected(localEI, expositionInfo) {
                 expositionInfo.since = Date()
@@ -63,16 +59,17 @@ class ExpositionUseCase: DP3TTracingDelegate {
 
                 notificationHandler.scheduleNotification(expositionInfo: expositionInfo)
             }
-            if (expositionInfo.level != .Error ) {
+            if (expositionInfo.error == nil ) {
                 expositionInfoRepository.save(expositionInfo: expositionInfo)
             }
-
+            
+            subject.onNext(expositionInfo)
         }
     }
     
     
     func getExpositionInfo() -> Observable<ExpositionInfo> {
-        Observable.of(subject.asObservable(),getExpositionInfoErrors()).merge()
+        subject.asObservable()
     }
     
     func getExpositionInfoFromRepository() -> ExpositionInfo! {
@@ -99,7 +96,9 @@ class ExpositionUseCase: DP3TTracingDelegate {
         
         switch tStatus.trackingState {
             case .inactive(let error):
-                return dp3tTracingErrorToDomain(error)
+                var errorEI = ExpositionInfo(level: expositionInfoRepository.getExpositionInfo()?.level ?? .Healthy)
+                errorEI.error = dp3tTracingErrorToDomain(error)
+                return errorEI
             default: break
         }
         
@@ -137,29 +136,17 @@ class ExpositionUseCase: DP3TTracingDelegate {
         
     }
     
-    private func dp3tTracingErrorToDomain(_ error: DP3TTracingError) -> ExpositionInfo? {
-        var ei = ExpositionInfo(level: .Error)
+    private func dp3tTracingErrorToDomain(_ error: DP3TTracingError) -> DomainError? {
         switch error {
             case .bluetoothTurnedOff:
-                ei.error = .BluetoothTurnedOff
+                return .BluetoothTurnedOff
             case .permissonError:
-                ei.error = .NotAuthorized
+                return .NotAuthorized
             default:
                 debugPrint("Error State \(error)")
                 return nil
         }
-        return ei
     }
     
-    private func getExpositionInfoErrors() -> Observable<ExpositionInfo> {
-        errorUseCase.errors().filter{
-            $0 != nil
-        }.map { error in
-            var ei = ExpositionInfo(level: .Error)
-            ei.error = error
-            return ei
-        }
-    }
-    
-    
+
 }

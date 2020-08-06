@@ -50,10 +50,10 @@ class HomeViewModel {
         guard let exposition = exposition else {
             return
         }
-        if (exposition.level == .Error) {
-            errorState.onNext(exposition.error)
+        expositionInfo.onNext(exposition)
+        if let error = exposition.error {
+            errorState.onNext(error)
         } else {
-            expositionInfo.onNext(exposition)
             errorState.onNext(nil)
         }
     }

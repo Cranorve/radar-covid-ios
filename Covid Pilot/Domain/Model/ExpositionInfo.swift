@@ -23,7 +23,6 @@ struct ExpositionInfo: Codable, Equatable {
          case Healthy
          case Exposed
          case Infected
-         case Error
     }
     
 }

@@ -19,18 +19,15 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
     
     private let preferencesRepository: PreferencesRepository
     private let notificationHandler: NotificationHandler
-    private let errorUseCase: ErrorUseCase
     private let kpiApi: KpiControllerAPI
     
     init(preferencesRepository: PreferencesRepository,
          kpiApi: KpiControllerAPI,
-         errorUseCase: ErrorUseCase,
          notificationHandler: NotificationHandler) {
         self.preferencesRepository = preferencesRepository
         self.kpiApi  = kpiApi
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss.SSS z"
         self.notificationHandler = notificationHandler
-        self.errorUseCase = errorUseCase
     }
     
     func initializeSDK() throws {
