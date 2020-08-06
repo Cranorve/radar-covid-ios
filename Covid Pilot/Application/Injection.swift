@@ -132,11 +132,6 @@ class Injection {
                                syncUseCase: r.resolve(SyncUseCase.self)!)
         }.inObjectScope(.container)
         
-        container.register(BluetoothUseCase.self) { r in
-            BluetoothUseCase(bluetoothHandler: r.resolve(BluetoothHandler.self)!,
-                             preferencesRepository: r.resolve(PreferencesRepository.self)!)
-        }.inObjectScope(.container)
-        
         container.register(ResetDataUseCase.self) { r in
             ResetDataUseCase(setupUseCase: r.resolve(SetupUseCase.self)!,
                              expositionInfoRepository: r.resolve(ExpositionInfoRepository.self)!)
