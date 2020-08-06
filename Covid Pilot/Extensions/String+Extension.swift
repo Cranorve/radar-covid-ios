@@ -15,19 +15,19 @@ extension String: LocalizedError {
 
 
 extension String {
-    var htmlToAttributedString: NSAttributedString? {
-        guard let data = data(using: .utf8) else { return NSAttributedString() }
+    var htmlToAttributedString: NSMutableAttributedString? {
+        guard let data = data(using: .utf8) else { return NSMutableAttributedString() }
         do {
-            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
+            return try NSMutableAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
         } catch {
-            return NSAttributedString()
+            return NSMutableAttributedString()
         }
     }
     var htmlToString: String {
         return htmlToAttributedString?.string ?? ""
     }
+    
 }
-
 
 extension NSMutableAttributedString {
 
@@ -54,9 +54,11 @@ extension NSMutableAttributedString {
 }
 
 extension NSAttributedString {
-    func formatHtmlString(withBaseFont font: String, andSize size: CGFloat, perserveFont: Bool = false) -> NSMutableAttributedString {
-        let attributedString = self
-        let fontFamily =  UIFont(name: font, size: size) ?? UIFont.systemFont(ofSize: size)
-        return NSMutableAttributedString(attributedString: attributedString).setBaseFont(baseFont: fontFamily, preserveFontSizes: perserveFont)
+    
+    func formatHtmlString(withBaseFont font: UIFont?, perserveFont: Bool = false) -> NSMutableAttributedString {
+            let attributedString = self
+            let fontFamily =  font ?? UIFont.systemFont(ofSize: 16)
+            return NSMutableAttributedString(attributedString: attributedString).setBaseFont(baseFont: fontFamily, preserveFontSizes: perserveFont)
     }
+
 }

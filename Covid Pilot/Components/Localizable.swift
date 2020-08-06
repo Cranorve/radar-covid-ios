@@ -11,5 +11,5 @@ import Foundation
 protocol Localizable {
     var localized: String { get }
     var isAttributedText: Bool { get }
-    var localizedAttributed: NSMutableAttributedString { get }
+    var localizedAttributed: NSAttributedString { get }
 }

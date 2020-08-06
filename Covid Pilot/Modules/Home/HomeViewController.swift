@@ -179,7 +179,7 @@ class HomeViewController: UIViewController {
     
     private func setExposed() {
         expositionTitle.text = "HOME_EXPOSITION_TITLE_HIGH".localized
-        expositionDescription.attributedText  = "HOME_EXPOSITION_MESSAGE_HIGH".localizedAttributed()
+        expositionDescription.attributedText = "HOME_EXPOSITION_MESSAGE_HIGH".localizedAttributed(withParams: ["CONTACT_PHONE".localized])
         expositionView.image = bgImageRed
         expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         communicationButton.isHidden = false
@@ -187,7 +187,7 @@ class HomeViewController: UIViewController {
     
     private func setHealthy() {
         expositionTitle.text = "HOME_EXPOSITION_TITLE_LOW".localized
-        expositionDescription.attributedText  = "HOME_EXPOSITION_MESSAGE_LOW".localizedAttributed()
+        expositionDescription.locKey  = "HOME_EXPOSITION_MESSAGE_LOW"
         expositionView.image = bgImageGreen
         expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)
         communicationButton.isHidden = false
@@ -195,7 +195,7 @@ class HomeViewController: UIViewController {
     
     private func setInfected() {
         expositionTitle.text = "HOME_EXPOSITION_TITLE_POSITIVE".localized
-        expositionDescription.attributedText  = "HOME_EXPOSITION_MESSAGE_INFECTED".localizedAttributed()
+        expositionDescription.locKey = "HOME_EXPOSITION_MESSAGE_INFECTED"
         expositionView.image = bgImageRed
         expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         communicationButton.isHidden = true
@@ -203,18 +203,18 @@ class HomeViewController: UIViewController {
     
     private func setErrorState(_ error: DomainError?) {
 
-        if let error = error {
-            notificationInactiveMessage.isHidden = false
-            activateNotificationButton.isHidden = false
-            topActiveNotification.priority = .defaultHigh
-            topRadarTitle.priority = .defaultLow
-            setImagesInactive(true)
-        } else {
+        if error == nil {
             notificationInactiveMessage.isHidden = true
             activateNotificationButton.isHidden = true
             topActiveNotification.priority = .defaultLow
             topRadarTitle.priority = .defaultHigh
             setImagesInactive(false)
+        } else {
+            notificationInactiveMessage.isHidden = false
+            activateNotificationButton.isHidden = false
+            topActiveNotification.priority = .defaultHigh
+            topRadarTitle.priority = .defaultLow
+            setImagesInactive(true)
         }
     }
     

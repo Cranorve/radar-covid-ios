@@ -18,7 +18,6 @@ class MyDataViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadTexts()
     }
     
     override func viewDidLoad() {
@@ -40,15 +39,5 @@ class MyDataViewController: UIViewController {
         onWebTap(tapGestureRecognizer: tapGestureRecognizer, urlString: "PRIVACY_POLICY_URL".localized)
     }
     
-    private func loadTexts() {
-
-        descriptionLabel.attributedText = "MY_DATA_BULLET_1".localizedAttributed
-        bullet2.attributedText = "MY_DATA_BULLET_2".localizedAttributed
-        bullet3.attributedText = "MY_DATA_BULLET_3".localizedAttributed
-
-        privacyLabel.attributedText = "MY_DATA_PRIVACY".localizedAttributed        
-   
-        acceptTermsLabel.attributedText = "MY_DATA_TERMS".localizedAttributed
-    }
     
 }

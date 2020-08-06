@@ -15,7 +15,7 @@ extension UILabel : XibLocalizable {
         get { return nil }
         set(key) {
             if key?.isAttributedText ?? false {
-                attributedText = key?.localizedAttributed(withSize: self.font.pointSize)
+                attributedText = key?.localizedAttributed(attributes: attributedText?.attributes(at: 0, effectiveRange: nil) ?? [:])
             } else {
                 let finalText = key?.localized
                 text = finalText

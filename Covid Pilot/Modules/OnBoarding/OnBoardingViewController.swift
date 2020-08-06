@@ -30,9 +30,9 @@ class OnBoardingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.acceptTermsLabel.attributedText = "ONBOARDING_STEP_2_USAGE_CONDITIONS".localizedAttributed()
-        self.privacyLabel.attributedText = "ONBOARDING_STEP_2_PRIVACY_POLICY".localizedAttributed()
+        
         acceptButton.setTitle("ONBOARDING_CONTINUE_BUTTON".localized, for: .normal)
+        
         acceptButton.isEnabled = termsAccepted
         scrollView.alwaysBounceVertical = false
     }

@@ -521,7 +521,6 @@
 				6D2CA48B24B612E000981DA4 /* XibLocalizable.swift */,
 				6D83344424B72BC800223071 /* LocalizationSource.swift */,
 				6D83344624B72C3B00223071 /* LocalizationHolder.swift */,
-				6D83344824B7303500223071 /* String+Localizable.swift */,
 				763489FE24B75A6900B31C59 /* TransparentView.xib */,
 				76348A0024B75A8500B31C59 /* TransparentView.swift */,
 			);
@@ -612,6 +611,7 @@
 		6DE27C622499116F00BBCF40 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6D83344824B7303500223071 /* String+Localizable.swift */,
 				6DE27C632499118200BBCF40 /* String+Extension.swift */,
 				6DE27C96249FB1F600BBCF40 /* UIViewController+Extension.swift */,
 				76D9BD4424A8996700BA6697 /* UIView+Extension.swift */,

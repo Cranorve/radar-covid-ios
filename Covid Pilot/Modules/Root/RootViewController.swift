@@ -59,9 +59,9 @@ class RootViewController: UIViewController {
                     self?.navigateFirst()
                 } else {
                     let configUrl = settings.parameters?.applicationVersion?.ios?.bundleUrl ?? "itms://itunes.apple.com"
-                    self?.showAlertOk(title: "ALERT_UPDATE_TEXT_TITLE".localizedAttributed.string,
-                                      message: "ALERT_UPDATE_TEXT_CONTENT".localizedAttributed.string,
-                                      buttonTitle: "ALERT_UPDATE_BUTTON".localizedAttributed.string) { (action) in
+                    self?.showAlertOk(title: "ALERT_UPDATE_TEXT_TITLE".localized,
+                                      message: "ALERT_UPDATE_TEXT_CONTENT".localized,
+                                      buttonTitle: "ALERT_UPDATE_BUTTON".localized) { (action) in
                         if let url = NSURL(string: configUrl) as URL? {
                             UIApplication.shared.open(url) { (open) in
                                 exit(0)
@@ -72,7 +72,7 @@ class RootViewController: UIViewController {
                 
             }, onError: {  [weak self] error in
                 debugPrint("Configuration errro \(error)")
-                self?.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localizedAttributed.string, message: "ALERT_GENERIC_ERROR_CONTENT".localizedAttributed.string, buttonTitle: "ALERT_ACCEPT_BUTTON".localizedAttributed.string) { (action) in
+                self?.showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localized, message: "ALERT_GENERIC_ERROR_CONTENT".localized, buttonTitle: "ALERT_ACCEPT_BUTTON".localized) { (action) in
                     self?.navigateFirst()
                 }
                 
