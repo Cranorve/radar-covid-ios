@@ -50,7 +50,8 @@ class HighExpositionViewController: BaseExposed, UIPickerViewDelegate, UIPickerV
         phoneView.image = UIImage(named: "WhiteCard")
         
         self.setCaSelector()
-        super.viewDidLoad()
+        
+        caSelectorButton.setTitle("LOCALE_SELECTION_REGION_DEFAULT".localized, for: .normal)
         
     }
     
