@@ -16,14 +16,16 @@ public struct CcaaKeyValueDto: Codable {
     public var phone: String?
     public var email: String?
     public var web: String?
+    public var webName: String?
     public var additionalInfo: String?
 
-    public init(_id: String?, _description: String?, phone: String?, email: String?, web: String?, additionalInfo: String?) {
+    public init(_id: String?, _description: String?, phone: String?, email: String?, web: String?, webName: String?, additionalInfo: String?) {
         self._id = _id
         self._description = _description
         self.phone = phone
         self.email = email
         self.web = web
+        self.webName = webName
         self.additionalInfo = additionalInfo
     }
 
@@ -33,6 +35,7 @@ public struct CcaaKeyValueDto: Codable {
         case phone
         case email
         case web
+        case webName
         case additionalInfo
     }
 

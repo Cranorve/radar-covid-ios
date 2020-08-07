@@ -55,7 +55,7 @@ class CCAAUseCase {
     }
     
     private func mapCa(_ caDto: CcaaKeyValueDto) -> CaData {
-        CaData(id: caDto._id, description: caDto._description, phone: caDto.phone, email: caDto.email, web: caDto.web, additionalInfo: caDto.additionalInfo)
+        CaData(id: caDto._id, description: caDto._description, phone: caDto.phone, email: caDto.email, web: caDto.web, webName: caDto.webName, additionalInfo: caDto.additionalInfo)
     }
     
 }
