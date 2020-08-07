@@ -17,8 +17,14 @@ class HomeViewController: UIViewController {
     private let bgImageRed = UIImage(named: "GradientBackgroundRed")
     private let bgImageOrange = UIImage(named: "GradientBackgroundOrange")
     private let bgImageGreen = UIImage(named: "GradientBackgroundGreen")
-    
+    private let imageHomeGray = UIImage(named: "imageHome")?.grayScale
+    private let imageHome = UIImage(named: "imageHome")
+    private let circle = UIImage(named: "circle")
+    private let circleGray = UIImage(named: "circle")?.grayScale
 
+    @IBOutlet weak var topRadarTitle: NSLayoutConstraint!
+    @IBOutlet weak var topActiveNotification: NSLayoutConstraint!
+    @IBOutlet weak var imageCircle: UIImageView!
     @IBOutlet weak var envLabel: UILabel!
     @IBOutlet weak var imageDefault: UIImageView!
     @IBOutlet weak var imageCheck: UIImageView!
@@ -29,20 +35,20 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var radarMessage: UILabel!
     @IBOutlet weak var radarTitle: UILabel!
     @IBOutlet weak var radarView: BackgroundView!
-    
+    @IBOutlet weak var communicationButton: UIButton!
+    @IBOutlet weak var activateNotificationButton: UIButton!
+    @IBOutlet weak var notificationInactiveMessage: UILabel!
     @IBOutlet weak var resetDataButton: UIButton!
     
-    private var expositionInfo: ExpositionInfo?
-    
     var router: AppRouter?
-    var expositionUseCase: ExpositionUseCase?
-    var radarStatusUseCase: RadarStatusUseCase?
-    var syncUseCase: SyncUseCase?
-    var resetDataUseCase: ResetDataUseCase?
-    var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
+    var viewModel: HomeViewModel?
+
+    @IBAction func ActivateNotifications(_ sender: Any) {
+        self.showActivationMessage()
+    }
     
     @IBAction func onCommunicate(_ sender: Any) {
-        guard let expositionInfo = expositionInfo else {
+        guard let expositionInfo = try? viewModel?.expositionInfo.value() else {
             return
         }
         if (expositionInfo.level == .Infected) {
@@ -50,193 +56,204 @@ class HomeViewController: UIViewController {
         } else {
             router?.route(to: Routes.MyHealth, from: self)
         }
-        
     }
     
     @IBAction func onRadarSwitchChange(_ sender: Any) {
-        
         let active = radarSwitch.isOn
         
-        if !active {
-            let alert = Alert.showAlertCancelContinue(title: "¿Estas seguro?", message: "Si desactivas Radar COVID (el Bluetooth), no podremos avisarte." , buttonOkTitle: "Continuar", buttonCancelTitle: "Cancelar",
-                okHandler: { [weak self] _ in self?.changeRadarStatus(false)},
-                cancelHandler: { [weak self] _ in self?.radarSwitch.isOn = true})
-        
-            present(alert, animated: true)
-                
+        if active {
+            viewModel?.changeRadarStatus(true)
         } else {
-            changeRadarStatus(active)
+            self.showAlertCancelContinue(title: "ALERT_HOME_RADAR_TITLE".localized, message: "ALERT_HOME_RADAR_CONTENT".localized , buttonOkTitle: "ALERT_HOME_RADAR_OK_BUTTON".localized, buttonCancelTitle:  "ALERT_HOME_RADAR_CANCEL_BUTTON".localized,
+                okHandler: { [weak self] _ in
+                    self?.viewModel?.changeRadarStatus(false)
+                }, cancelHandler: { [weak self] _ in
+                    self?.radarSwitch.isOn = true
+            })
         }
-        
     }
     
-    func changeRadarStatus(_ active: Bool) {
-        radarStatusUseCase?.changeTracingStatus(active: active).subscribe(
-            onNext:{ [weak self] active in
-                self?.changeRadarMessage(active: active)
-            }, onError: {  [weak self] error in
-                debugPrint(error)
-                self?.changeRadarMessage(active: false)
-        }).disposed(by: disposeBag)
+    func showActivationMessage() {
+        self.showAlertOk(title: "ALERT_HOME_COVID_NOTIFICATION_TITLE".localized, message: "HOME_COVID_NOTIFICATION_POPUP_INACTIVE".localized, buttonTitle: "ALERT_HOME_COVID_NOTIFICATION_OK_BUTTON".localized) { (action) in
+            UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
+        }
     }
     
     @objc func onExpositionTap() {
-        if let level = expositionInfo?.level {
-            switch level {
-                case .Healthy:
-                    router?.route(to: Routes.Exposition, from: self, parameters: expositionInfo?.lastCheck)
-                case .Exposed:
-                    router?.route(to: Routes.HighExposition, from: self, parameters: expositionInfo?.since)
-                case .Infected:
-                    router?.route(to: Routes.MyHealthReported, from: self)
-            }
-        } else {
-            router?.route(to: Routes.Exposition, from: self, parameters: Date())
+        if let level =  try? viewModel?.expositionInfo.value() {
+            navigateToDetail(level)
+        }
+    }
+    
+    private func navigateToDetail(_ info: ExpositionInfo) {
+        switch info.level {
+            case .Healthy:
+                router?.route(to: Routes.Exposition, from: self, parameters: info.lastCheck)
+            case .Exposed:
+                router?.route(to: Routes.HighExposition, from: self, parameters: info.since)
+            case .Infected:
+                router?.route(to: Routes.PositiveExposed, from: self, parameters: info.since)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        checkOnboarding()
+        
+        setupBindings()
+        
+        self.communicationButton.setTitle("HOME_BUTTON_SEND_POSITIVE".localized, for: .normal)
         
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.onExpositionTap))
-        
         expositionView.addGestureRecognizer(gesture)
         radarView.image = UIImage(named: "WhiteCard")
         
         radarSwitch.tintColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         radarSwitch.layer.cornerRadius = radarSwitch.frame.height / 2
         radarSwitch.backgroundColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
-        
-        updateExpositionInfo(ExpositionInfo.init(level: .Healthy))
 
         resetDataButton.isHidden = !Config.debug
-        if Config.endpoints == .pre {
-            envLabel.text = Config.environment
-        } else {
-            envLabel.text = ""
-        }
         
+        viewModel!.checkInitialExposition()
         
-        expositionUseCase?.getExpositionInfo().subscribe(
-            onNext:{ [weak self] expositionInfo in
-                self?.view.hideLoading()
-                self?.updateExpositionInfo(expositionInfo)
-            }, onError: { [weak self] error in
-                debugPrint(error)
-                self?.view.hideLoading()
-                self?.present(Alert.showAlertOk(title: "Error", message: "Error al obtener el estado de exposición", buttonTitle: "Aceptar"), animated: true)
-        }).disposed(by: disposeBag)
+        viewModel!.checkOnboarding()
         
-
-        //get current exposition info in repository
-        self.updateExpositionInfo((expositionUseCase?.getExpositionInfoFromRepository())!)
+    }
+    
+    private func setupBindings() {
+        viewModel?.radarStatus.subscribe { [weak self] active in
+            self?.changeRadarMessage(active: active.element ?? false)
+        }.disposed(by: disposeBag)
         
-        checkOnboarding()
+        viewModel?.expositionInfo.subscribe { [weak self] exposition in
+            self?.updateExpositionInfo(exposition.element)
+        }.disposed(by: disposeBag)
         
+        viewModel?.errorMessage.subscribe { [weak self] message in
+            self?.showError(message: message.element)
+        }.disposed(by: disposeBag)
+        
+        viewModel?.alertMessage.subscribe { [weak self] message in
+            self?.showAlert(message: message.element)
+        }.disposed(by: disposeBag)
+        
+        viewModel?.checkState.subscribe { [weak self] showCheck in
+            self?.showCheckState(showCheck.element)
+        }.disposed(by: disposeBag)
+        
+        viewModel!.errorState.subscribe { [weak self] error in
+            self?.setErrorState(error.element ?? nil)
+        }.disposed(by: disposeBag)
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        radarStatusUseCase?.restoreLastStateAndSync().subscribe(
-            onNext:{ [weak self] isTracingActive in
-                self?.changeRadarMessage(active: isTracingActive)
-            }, onError: { [weak self] error in
-                debugPrint(error)
-                self?.changeRadarMessage(active: false)
-        }).disposed(by: disposeBag)
-        
+        viewModel?.restoreLastStateAndSync()
     }
     
     @IBAction func onReset(_ sender: Any) {
         
-        present(Alert.showAlertCancelContinue(title:  "Confirmación", message: "¿Confirmas el reseteo?", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar") { [weak self] (UIAlertAction) in
-            self?.reset()
-        },animated: true)
+        self.showAlertCancelContinue(title:  "ALERT_HOME_RESET_TITLE".localized, message: "ALERT_HOME_RESET_CONTENT".localized, buttonOkTitle: "ALERT_OK_BUTTON".localized, buttonCancelTitle: "ALERT_CANCEL_BUTTON".localized) { [weak self] (UIAlertAction) in
+            self?.viewModel!.reset()
+        }
 
     }
     
-    private func reset() {
-        resetDataUseCase?.reset().subscribe(
-                onNext:{ [weak self] expositionInfo in
-                    debugPrint("Data reseted")
-                    self?.present(Alert.showAlertOk(title: "Reset", message: "Datos reseteados", buttonTitle: "Aceptar"), animated: true)
-                }, onError: { [weak self] error in
-                    debugPrint(error)
-                    self?.present(Alert.showAlertOk(title: "Error", message: "Error resetear datos", buttonTitle: "Aceptar"), animated: true)
-            }).disposed(by: disposeBag)
-    }
-    
-    private func updateExpositionInfo(_ exposition: ExpositionInfo) {
-                
-        self.expositionInfo = exposition
+    private func updateExpositionInfo(_ exposition: ExpositionInfo?) {
+        guard let exposition = exposition else {
+            return
+        }
         switch exposition.level {
             case .Exposed:
-                expositionTitle.text = "Exposición alta"
-                let attributedString = NSMutableAttributedString(string: "Has estado en contacto con una persona contagiada de COVID-19.\nInfórmalo en el \(Config.contactNumber) (gratuito). \nRecuerda que esta aplicación es un piloto y sus alertas son simuladas", attributes: [
-                  .font: UIFont(name: "Muli-Light", size: 16.0)!,
-                  .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
-                ])
-                attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 0, length: 63))
-                expositionDescription.attributedText  = attributedString
-                expositionView.image = bgImageRed
-                expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
-                break
+                setExposed()
             case .Healthy:
-                expositionTitle.text = "Exposición baja"
-                let attributedString = NSMutableAttributedString(string: "Te informaremos en el caso de un\nposible contacto de riesgo.\nRecuerda que esta aplicación es un piloto y sus alertas son simuladas.", attributes: [
-                  .font: UIFont(name: "Muli-Light", size: 16.0)!,
-                  .foregroundColor: UIColor(white: 0.0, alpha: 1.0)
-                ])
-                attributedString.addAttribute(.font, value: UIFont(name: "Muli-Bold", size: 16.0)!, range: NSRange(location: 0, length: 61))
-                
-                expositionDescription.attributedText  = attributedString
-                expositionView.image = bgImageGreen
-                expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)
-                break
+                setHealthy()
             case .Infected:
-                expositionTitle.text = "COVID-19 Positivo"
-                let attributedString = "<b>Tu diagnóstico ha sido enviado.<br>Por favor, aíslate durante 14 días</b>.<br> Recuerda que esta aplicación es un piloto y sus alertas son simuladas".htmlToAttributedString?.formatHtmlString(withBaseFont: "Muli-Light", andSize: 16)
-                expositionDescription.attributedText  = attributedString
-                expositionView.image = bgImageRed
-                expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
-                break;
-
+                setInfected()
+            default:
+                debugPrint("Error Exposition Level")
         }
-        
+    }
+    
+    private func setExposed() {
+        expositionTitle.text = "HOME_EXPOSITION_TITLE_HIGH".localized
+        expositionDescription.attributedText = "HOME_EXPOSITION_MESSAGE_HIGH".localizedAttributed(withParams: ["CONTACT_PHONE".localized])
+        expositionView.image = bgImageRed
+        expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
+        communicationButton.isHidden = false
+    }
+    
+    private func setHealthy() {
+        expositionTitle.text = "HOME_EXPOSITION_TITLE_LOW".localized
+        expositionDescription.locKey  = "HOME_EXPOSITION_MESSAGE_LOW"
+        expositionView.image = bgImageGreen
+        expositionTitle.textColor = #colorLiteral(red: 0.3449999988, green: 0.6899999976, blue: 0.4160000086, alpha: 1)
+        communicationButton.isHidden = false
+    }
+    
+    private func setInfected() {
+        expositionTitle.text = "HOME_EXPOSITION_TITLE_POSITIVE".localized
+        expositionDescription.locKey = "HOME_EXPOSITION_MESSAGE_INFECTED"
+        expositionView.image = bgImageRed
+        expositionTitle.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
+        communicationButton.isHidden = true
+    }
+    
+    private func setErrorState(_ error: DomainError?) {
+
+        if error == nil {
+            notificationInactiveMessage.isHidden = true
+            activateNotificationButton.isHidden = true
+            topActiveNotification.priority = .defaultLow
+            topRadarTitle.priority = .defaultHigh
+        } else {
+            notificationInactiveMessage.isHidden = false
+            activateNotificationButton.isHidden = false
+            topActiveNotification.priority = .defaultHigh
+            topRadarTitle.priority = .defaultLow
+            setImagesInactive(true)
+        }
+    }
+    
+    private func setImagesInactive(_ inactive: Bool) {
+        if inactive {
+            imageDefault.image = imageHomeGray
+            imageCircle.image = circleGray
+        } else {
+            imageDefault.image = imageHome
+            imageCircle.image = circle
+        }
     }
     
     private func changeRadarMessage(active: Bool) {
         radarSwitch.isOn = active
+        setImagesInactive(!active)
         if (active) {
-            radarTitle.text = "Radar COVID activo"
-            radarMessage.text = "Las interacciones con móviles cercanos se registarán siempre anónimamente. "
+            radarTitle.text = "HOME_RADAR_TITLE_ACTIVE".localizedAttributed.string
+            radarMessage.text = "HOME_RADAR_CONTENT_ACTIVE".localizedAttributed.string
             radarMessage.textColor = UIColor.black
         } else {
-            radarTitle.text = "Radar COVID inactivo"
-            radarMessage.text = "Por favor, activa el Bluetooth para poder identificar posibles contagios."
+            radarTitle.text = "HOME_RADAR_TITLE_INACTIVE".localizedAttributed.string
+            radarMessage.text = "HOME_RADAR_CONTENT_INACTIVE".localizedAttributed.string
             radarMessage.textColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
         }
     }
     
-    private func checkOnboarding() {
-        //show check image 1.5 sec
-        if !(self.onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? true) {
-            imageCheck.isHidden = false
-            imageDefault.isHidden = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                //Update UI
-                
-                self.onBoardingCompletedUseCase?.setOnboarding(completed: true)
-                
-                self.imageCheck.isHidden = true
-                self.imageDefault.isHidden = false
-                
-            }
+    private func showError(message: String?) {
+        if let message = message {
+            showAlertOk(title: "ALERT_GENERIC_ERROR_TITLE".localized, message: message, buttonTitle: "ALERT_ACCEPT_BUTTON".localized)
         }
     }
     
+    private func showAlert(message:String?) {
+        if let message = message {
+            showAlertOk(title: "MESSAGE_POPUP".localized, message: message, buttonTitle: "ALERT_ACCEPT_BUTTON".localized)
+        }
+    }
+    
+    private func showCheckState(_ showCheck: Bool?) {
+        let showCheck = showCheck ?? false
+        imageCheck.isHidden = !showCheck
+        imageDefault.isHidden = showCheck
+    }
 }

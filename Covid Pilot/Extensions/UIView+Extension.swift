@@ -9,6 +9,51 @@
 import Foundation
 import UIKit
 extension UIView {
+    func showTransparentBackground(withColor color: UIColor, alpha: CGFloat, _ message: String? = nil, _ attributedMessage: NSAttributedString? = nil, _ textColor: UIColor? = nil){
+        let transparentView = Bundle.main.loadNibNamed("TransparentView", owner: self, options: nil)?.first as? TransparentView
+
+        transparentView?.frame = self.frame
+        transparentView!.backgroundColor = color
+        transparentView!.alpha = 0
+        transparentView!.tag = 1111
+        
+        if let messageView = transparentView?.messageView {
+            if let regularText = message {
+                messageView.text = regularText
+            }else{
+                messageView.attributedText = attributedMessage
+            }
+            messageView.textColor = textColor ?? UIColor.white
+            messageView.font = UIFont().defaultFont(withSize: 26)
+            messageView.numberOfLines = 0
+            messageView.minimumScaleFactor = 0.1
+            messageView.tag = 1122
+            messageView.textAlignment = .center
+            
+            
+            
+        }
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.addSubview(transparentView!)
+            transparentView?.fadeIn(alpha)
+        }
+      
+        
+    }
+    
+    func removeTransparentBackGround(){
+        DispatchQueue.main.async { [weak self] in
+            for view in self?.subviews ?? [] {
+                if view.tag == 1111 || view.tag == 1122 {
+                    view.fadeOut { (_) in
+                        view.removeFromSuperview()
+                    }
+                }
+            }
+        }
+    }
+    
     func showLoading() {
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light )
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -31,22 +76,25 @@ extension UIView {
         DispatchQueue.main.async { [weak self] in
             for view in self?.subviews ?? [] {
                 if view is NVActivityIndicatorView || view.tag == 99{
-                    view.removeFromSuperview()
+                    view.fadeOut { (_) in
+                        view.removeFromSuperview()
+                    }
                 }
             }
         }
     }
-    func fadeIn(){
+    func fadeIn(_ alpha: CGFloat = 1.0, _ completion: ((_ err: Bool) -> Void)? = nil ){
         self.alpha = 0.0
+        
         UIView.animate(withDuration: 0.3, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
-            self.alpha = 1.0
-        }, completion: nil)
+            self.alpha = alpha
+        }, completion: completion)
     }
     
     
-    func fadeOut(){
+    func fadeOut(cb: ((_: Bool)-> Void)? = nil ){
         UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.alpha = 0.0
-        }, completion: nil)
+        }, completion: cb)
     }
 }

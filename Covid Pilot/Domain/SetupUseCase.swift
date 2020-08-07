@@ -18,9 +18,7 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
     private let disposeBag = DisposeBag()
     
     private let preferencesRepository: PreferencesRepository
-    
     private let notificationHandler: NotificationHandler
-    
     private let kpiApi: KpiControllerAPI
     
     init(preferencesRepository: PreferencesRepository,
@@ -32,27 +30,19 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
         self.notificationHandler = notificationHandler
     }
     
-    func initializeSDK() {
+    func initializeSDK() throws {
         
         let url = URL(string: Config.endpoints.dpppt)!
 //        DP3TTracing.loggingEnabled = true
         DP3TTracing.loggingDelegate = self
         DP3TTracing.activityDelegate = self
+        
         try! DP3TTracing.initialize(with: .init(appId: "es.gob.radarcovid",
                                                 bucketBaseUrl: url,
                                                 reportBaseUrl: url,
-                                                jwtPublicKey: Config.validationKey,
+                                                jwtPublicKey: Config.dp3tValidationKey,
                                                 mode: Config.dp3tMode), backgroundHandler: self)
         
-        if (preferencesRepository.isTracingActive()) {
-            do {
-                try DP3TTracing.startTracing()
-            } catch {
-                debugPrint("Error starting tracing \(error)")
-            }
-        } else {
-            DP3TTracing.stopTracing()
-        }
         
     }
     
@@ -150,6 +140,14 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
     
     func didScheduleBackgrounTask() {
         debugPrint("didScheduleBackgrounTask")
+    }
+    
+    private func mapInitializeError(_ error: Error) -> DomainError {
+        if let e = error as? DP3TTracingError {
+            debugPrint("Error \(e)")
+        }
+        
+        return DomainError.Unexpected
     }
 
 }

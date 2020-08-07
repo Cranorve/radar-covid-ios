@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
+
     private let disposeBag = DisposeBag()
 
     var window: UIWindow?
@@ -20,41 +20,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
+
         let navigationController = UINavigationController()
         navigationController.setNavigationBarHidden(true, animated: false)
-        
+
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        
-        let router = AppDelegate.shared.injection.resolve(AppRouter.self)!
-        let configUseCase =  AppDelegate.shared.injection.resolve(ConfigurationUseCase.self)!
-        
-        configUseCase.loadConfig().subscribe(
-            onNext:{ settings in
-                debugPrint("Configuration  finished")
 
-                if  !(settings.isUpdated ?? false) {
-                    let configUrl = settings.parameters?.applicationVersion?.ios?.bundleUrl ?? "itms://itunes.apple.com"
-                    let alert = Alert.showAlertOk(title: "Error", message: "Para poder seguir utilizando Radar COVID es necesario que actualices la aplicación.", buttonTitle: "ACTUALIZAR") { (action) in
-                        if let url = NSURL(string: configUrl) as URL? {
-                            UIApplication.shared.open(url) { (open) in
-                                exit(0);
-                            }
-                        }
-                    }
-                    self.window?.rootViewController?.present(alert, animated: true)
-                }
-                
-            }, onError: {  [weak self] error in
-                debugPrint("Configuration errro \(error)")
-                self?.window?.rootViewController?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar"), animated: true)
-        }).disposed(by: disposeBag)
-        
-        router.route(to: Routes.Welcome, from: navigationController)
-        
+        let router = AppDelegate.shared.injection.resolve(AppRouter.self)!
+
+        router.route(to: Routes.Root, from: navigationController)
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -87,4 +65,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
+
+
 

@@ -28,6 +28,7 @@ class ConfigurationUseCase {
     }
     
     func loadConfig() -> Observable<Settings> {
+
         Observable<Settings>.zip(getUuid(),
                                  settingsApi.getSettings() ) { [weak self] token, backSettings in
                 let settings = Settings()
@@ -40,7 +41,9 @@ class ConfigurationUseCase {
                 }
                 return settings
         }
+    
     }
+
     
     private func getUuid() -> Observable<String?> {
         .deferred {

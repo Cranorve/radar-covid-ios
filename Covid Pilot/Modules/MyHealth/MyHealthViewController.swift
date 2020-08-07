@@ -21,14 +21,15 @@ class MyHealthViewController: UIViewController {
     var statusBar: UIView?
     @IBOutlet var codeChars: [UITextField]!
     @IBOutlet weak var sendDiagnosticButton: UIButton!
-    var diagnosticEnabled: Bool = false
+    var router: AppRouter?
     
     @IBAction func onBack(_ sender: Any) {
-        let alert = Alert.showAlertCancelContinue(title:  "¿Seguro que no quieres enviar tu diagnóstico?", message: "Por favor, ayúdanos a cuidar a los demas y evitemos que el Covid-19 se propague.", buttonOkTitle: "OK", buttonCancelTitle: "Cancelar") { (UIAlertAction) in
+        self.showAlertCancelContinue(title:  "ALERT_MY_HEALTH_SEND_TITLE".localizedAttributed.string, message: "ALERT_MY_HEALTH_SEND_CONTENT".localizedAttributed.string, buttonOkTitle: "ALERT_OK_BUTTON".localizedAttributed.string, buttonCancelTitle: "ALERT_CANCEL_BUTTON".localizedAttributed.string, okHandler: { (UIAlertAction) in
                 self.navigationController?.popViewController(animated: true)
-        }
+        }, cancelHandler: { (UIAlertAction) in
+              
+        })
         endEditingCodeChars()
-        present(alert, animated: true)
     }
     
     func endEditingCodeChars(){
@@ -38,31 +39,44 @@ class MyHealthViewController: UIViewController {
     }
 
     @IBAction func onReportDiagnosis(_ sender: Any) {
-        if !diagnosticEnabled {
-            present(Alert.showAlertOk(title: "Error", message: "Por favor introduce un código válido de 12 dígitos", buttonTitle: "Aceptar"), animated: true)
 
-        } else {
-            view.showLoading()
-            var codigoString = ""
-            codeChars.forEach {
-                let s: String = $0.text ?? ""
-                codigoString += s
-            }
-
-            diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
-                onNext:{ [weak self] reportedCodeBool in
-                    self?.view.hideLoading()
-                    self?.navigateIf(reported: reportedCodeBool)
-                }, onError: {  [weak self] error in
-                    self?.view.hideLoading()
-                    print("Error reporting diagnosis \(error)")
-                    self?.present(Alert.showAlertOk(title: "Error", message: "Se ha producido un error al enviar diagnóstico", buttonTitle: "Ok"), animated: true)
-
-            }).disposed(by: disposeBag)
+        view.showLoading()
+        var codigoString = ""
+        codeChars.forEach {
+            let s: String = $0.text ?? ""
+            codigoString += s
         }
+
+        diagnosisCodeUseCase?.sendDiagnosisCode(code: codigoString).subscribe(
+            onNext:{ [weak self] reportedCodeBool in
+                self?.view.hideLoading()
+                self?.navigateIf(reported: reportedCodeBool)
+            }, onError: {  [weak self] error in
+                self?.handle(error: error)
+                
+                self?.view.hideLoading()
+
+        }).disposed(by: disposeBag)
+        
     }
     
-    var router: AppRouter?
+    private func handle(error: Error) {
+        debugPrint("Error sending diagnosis \(error)")
+        var errorMessage = "ALERT_MY_HEALTH_CODE_VALIDATION_CONTENT".localized
+        if let diagnosisError = error as? DiagnosisError {
+            switch diagnosisError {
+            case .ApiRejected:
+                errorMessage = "ALERT_SHARING_REJECTED_ERROR".localized
+            case .IdAlreadyUsed:
+                errorMessage = "ALERT_ID_ALREADY_USED".localized
+            case .WrongId:
+                errorMessage = "ALERT_WRONG_ID".localized
+            default:
+                break
+            }
+        }
+        showAlertOk(title: "ALERT_MY_HEALTH_CODE_ERROR_CONTENT".localized, message: errorMessage, buttonTitle: "ALERT_OK_BUTTON".localized)
+    }
     
     override func viewWillAppear(_ animated: Bool) {        
         self.codeChars.forEach { (char) in
@@ -72,9 +86,9 @@ class MyHealthViewController: UIViewController {
             
 
         }
+        super.viewWillAppear(true)
         
-        self.diagnosticEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
-
+        sendDiagnosticButton.isEnabled = checkSendEnabled()
     }
     
     
@@ -82,8 +96,6 @@ class MyHealthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
        
         // Do any additional setup after loading the view.
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
@@ -93,6 +105,8 @@ class MyHealthViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        sendDiagnosticButton.setTitle("MY_HEALTH_DIAGNOSTIC_CODE_SEND_BUTTON".localized, for: .normal)
 
     }
   
@@ -133,9 +147,12 @@ class MyHealthViewController: UIViewController {
             }
         }
        
-        self.diagnosticEnabled =  self.codeChars.filter({ $0.text != "\u{200B}" }).count == self.codeChars.count
+        sendDiagnosticButton.isEnabled = checkSendEnabled()
     }
     
+    private func checkSendEnabled() -> Bool {
+        codeChars.filter({ $0.text != "\u{200B}" }).count == codeChars.count
+    }
     
     @IBAction func insertCode(_ sender: Any) {
         guard let emptyInput = self.codeChars.filter({ $0.text == "\u{200B}" }).first else {
@@ -156,20 +173,15 @@ class MyHealthViewController: UIViewController {
            // if keyboard size is not available for some reason, dont do anything
            return
         }
-      
-      // move the root view up by the distance of keyboard height
+        // move the root view up by the distance of keyboard height
         DispatchQueue.main.async {
             self.scrollViewBottonConstraint.constant = keyboardSize.height
             self.scrollView.setContentOffset(CGPoint(x: 0, y: keyboardSize.height), animated: true)
-           
-
         }
-
-//        self.scrollView.setContentOffset(CGPoint(x: 0, y: keyboardSize.height), animated: true)
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-      // move back the root view origin to zero
+        // move back the root view origin to zero
         self.scrollViewBottonConstraint.constant = 0
         self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }

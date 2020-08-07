@@ -18,42 +18,52 @@ protocol Router {
 }
 
 public enum Routes {
+    case Root
     case Welcome
     case OnBoarding
     case Home
-    case Info
+    case Proximity
     case MyHealth
     case MyHealthReported
     case Exposition
     case HighExposition
-    case Poll
-    case PollFinished
+    case PositiveExposed
+    case ActivateCovid
+    case ActivatePush
+
 }
 
 class AppRouter : Router {
     
-    var infoVC: InfoViewController?
-    var homeVC: HomeViewController?
+    var proxymityVC: ProximityViewController?
     var onBoardingVC: OnBoardingViewController?
+    var rootVC: RootViewController?
     var tabBarController: TabBarController?
     var myHealthVC: MyHealthViewController?
     var myHealthReportedVC: MyHealthReportedViewController?
     var expositionVC: ExpositionViewController?
     var highExpositionVC: HighExpositionViewController?
-    var pollVC: PollViewController?
-    var pollFinishedVC: FinishPollViewController?
+    var positiveExposedVC: PositiveExposedViewController?
     var welcomeVC: WelcomeViewController?
-    
+    var activateCovid: ActivateCovidNotificationViewController?
+    var activatePush: ActivatePushNotificationViewController?
+
     func route(to routeID: Routes, from context: UIViewController, parameters: Any?...) {
         switch routeID {
+        case .Root:
+            routeToRoot(context)
         case .Welcome:
             routeToWelcome(context)
         case .OnBoarding:
             routeToOnboarding(context)
         case .Home:
             routeToHome(context)
-        case .Info:
-            routeToInfo(context)
+        case .Proximity:
+            routeToProximity(context)
+        case .ActivateCovid:
+            routeToCovid(context)
+        case .ActivatePush:
+            routeToPush(context)
         case .MyHealth:
             routeToMyHealth(context)
         case .MyHealthReported:
@@ -62,10 +72,8 @@ class AppRouter : Router {
             routeToExposition(context, lastCheck: parameters[0] as? Date)
         case .HighExposition:
             routeToHighExposition(context, since: parameters[0] as? Date)
-        case .Poll:
-            routeToPoll(context)
-        case .PollFinished:
-            routeToPollFinished(context)
+        case .PositiveExposed:
+            routeToPositiveExposed(context, since: parameters[0] as? Date)
         }
     }
     
@@ -73,12 +81,24 @@ class AppRouter : Router {
         context.navigationController?.pushViewController(onBoardingVC!, animated: true)
     }
     
+    private func routeToRoot(_ context: UIViewController) {
+        loadViewAsRoot(navController: context as? UINavigationController, view: rootVC!)
+    }
+    
     private func routeToHome(_ context: UIViewController) {
         loadViewAsRoot(navController: context.navigationController, view: tabBarController!)
     }
     
-    private func routeToInfo(_ context: UIViewController) {
-        context.navigationController?.pushViewController(infoVC!, animated: true)
+    private func routeToProximity(_ context: UIViewController) {
+        context.navigationController?.pushViewController(proxymityVC!, animated: true)
+    }
+    
+    private func routeToCovid(_ context: UIViewController) {
+       context.navigationController?.pushViewController(activateCovid!, animated: true)
+    }
+    
+    private func routeToPush(_ context: UIViewController) {
+       context.navigationController?.pushViewController(activatePush!, animated: true)
     }
     
     private func routeToMyHealth(_ context: UIViewController) {
@@ -99,22 +119,19 @@ class AppRouter : Router {
         context.navigationController?.pushViewController(highExpositionVC!, animated: true)
     }
     
-    private func routeToPoll(_ context: UIViewController) {
-        context.navigationController?.pushViewController(pollVC!, animated: true)
-    }
-    
-    private func routeToPollFinished(_ context: UIViewController) {
-        context.navigationController?.pushViewController(pollFinishedVC!, animated: true)
+    private func routeToPositiveExposed(_ context: UIViewController, since: Date?) {
+        positiveExposedVC?.since = since
+        context.navigationController?.pushViewController(positiveExposedVC!, animated: true)
     }
     
     private func routeToWelcome(_ context: UIViewController) {
-        loadViewAsRoot(navController: context as? UINavigationController, view: welcomeVC!)
+        loadViewAsRoot(navController: context.navigationController, view: welcomeVC!)
     }
     
-    private func loadViewAsRoot(navController: UINavigationController?, view: UIViewController) {
+    private func loadViewAsRoot(navController: UINavigationController?, view: UIViewController, animated: Bool = false) {
         navController?.viewControllers.removeAll()
         navController?.popToRootViewController(animated: false)
-        navController?.pushViewController(view, animated: false)
+        navController?.pushViewController(view, animated: animated)
     }
 
 }

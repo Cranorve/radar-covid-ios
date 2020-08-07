@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 
 @UIApplicationMain
 
@@ -25,21 +25,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
              NetworkActivityLogger.shared.startLogging()
         }
         
+        FirebaseApp.configure()
+        
         debugPrint("Current Environment: \(Config.environment)")
         
         let setupUseCase = injection.resolve(SetupUseCase.self)!
         
-        setupUseCase.initializeSDK()
-        
-        let notificationHandler = injection.resolve(NotificationHandler.self)!
-        
-        notificationHandler.setupNotifications()
+        do {
+            try setupUseCase.initializeSDK()
+        } catch {
+            debugPrint("Error initializing DP3T \(error)")
+        }
+        UIApplication.shared.applicationIconBadgeNumber = 0
         
         return true
     }
+    
+
 
     // MARK: UISceneSession Lifecycle
-
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.

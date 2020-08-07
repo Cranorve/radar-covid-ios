@@ -15,7 +15,7 @@ class SyncUseCase {
     
     // Force sync if last sync was older than 12 hours
     private let syncInterval: TimeInterval = 12 * 60 * 60
-
+    
     private let preferencesRepository: PreferencesRepository
     
     init(preferencesRepository: PreferencesRepository) {
