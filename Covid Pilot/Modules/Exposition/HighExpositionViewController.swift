@@ -48,10 +48,15 @@ class HighExpositionViewController: BaseExposed, UIPickerViewDelegate, UIPickerV
         self.phoneLabel.isUserInteractionEnabled = true
         self.phoneLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCallTap(tapGestureRecognizer:))))
         phoneView.image = UIImage(named: "WhiteCard")
-        self.currentCA = ccaUseCase.getCurrent()
+        
         self.setCaSelector()
         super.viewDidLoad()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.currentCA = ccaUseCase.getCurrent()
     }
     
     @objc func userDidTapWeb(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -120,7 +125,7 @@ class HighExpositionViewController: BaseExposed, UIPickerViewDelegate, UIPickerV
             
             toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
             toolBar.barStyle = .default
-            toolBar.items = [UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(onDoneButtonTapped))]
+            toolBar.items = [UIBarButtonItem.init(title: "SELECTOR_DONE".localized, style: .done, target: self, action: #selector(onDoneButtonTapped))]
             self.view.addSubview(toolBar)
         }
         
