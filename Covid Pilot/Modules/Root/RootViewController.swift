@@ -24,30 +24,23 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
 
         LocalizationHolder.source = localizationUseCase
-        
-        localesUseCase!.loadLocales().subscribe(onNext:{ locales in
-                debugPrint(locales)
-            }, onError: {  error in
-                debugPrint(error)
-        }).disposed(by: self.disposeBag)
-        
-        ccaaUseCase!.loadCCAA().subscribe(onNext:{ ccaas in
-                debugPrint(ccaas)
-            }, onError: {  error in
-                debugPrint(error)
-        }).disposed(by: self.disposeBag)
-        
-        localizationUseCase!.loadlocalization().subscribe(
-            onNext:{ [weak self] active in
+        // change to wait for all request before load localization
+        Observable.zip(localesUseCase!.loadLocales(), ccaaUseCase!.loadCCAA(), localizationUseCase!.loadlocalization()).subscribe(
+            // we dont use any of the avove so it is _,
+            // otherwise it would be the name of a variable
+            // that repesent the return of the observables in order
+            onNext: { [weak self] (_, _, _) in
+                // all is ok so we can continue
                 self?.loadConfiguration()
-            }, onError: {  [weak self]  error in
-                debugPrint(error)
 
-                // Not use i18n for this alert!
-                self?.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar") { (action) in
-                    exit(0)
-                }
+        }, onError: {[weak self] (err) in
+            // we get an error so we stop working
+            // Not use i18n for this alert!
+            self?.showAlertOk(title: "Error", message: "Se ha producido un error. Compruebe la conexión", buttonTitle: "Aceptar") { (action) in
+                exit(0)
+            }
         }).disposed(by: self.disposeBag)
+
     }
     
     private func loadConfiguration() {

@@ -15,17 +15,18 @@ extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return localesArray.keys.count
+        return localesKeysArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return localesArray[ Array(self.localesArray.keys)[row] ] ?? ""
+        let key = localesKeysArray[row]
+        return localesArray[key] ?? ""
+     
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let key = Array(self.localesArray.keys)[row]
+        let key = localesKeysArray[row]
         self.languageSelector.setTitle(self.localesArray[key, default: ""], for: .normal)
-
         localizationRepository.setLocale(key)
         
     }
@@ -39,6 +40,7 @@ class WelcomeViewController: UIViewController {
     var pickerOpened = false;
     var picker = UIPickerView()
     var toolBar = UIToolbar()
+    var localesKeysArray:[String] = []
     var localesArray:[String: String?]!
     var localizationRepository: LocalizationRepository!
     @IBOutlet weak var stepbullet1: UILabel!
@@ -61,9 +63,21 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         continueButton.setTitle("ONBOARDING_CONTINUE_BUTTON".localized, for: .normal)
         localesArray = localizationRepository.getLocales()
+        
+        let currentLocale = localizationRepository.getLocale() ?? "es-ES"
+        let keys = Array(self.localesArray.keys) as [String]
         if let currentLanguage = localizationRepository.getLocale() {
             languageSelector.setTitle(localesArray[currentLanguage, default: ""], for: .normal)
         }
+        
+        guard let firstKey = keys.filter({ $0.contains(currentLocale) }).first else {
+            self.localesKeysArray = keys
+            return
+        }
+        let otherKeys = keys.filter{!$0.contains(currentLocale)}
+        self.localesKeysArray.append(firstKey)
+        self.localesKeysArray += otherKeys
+        
         
     }
     

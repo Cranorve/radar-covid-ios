@@ -107,6 +107,7 @@ open class MasterDataAPI {
      */
     open func getLocales(locale: String? = nil) -> Observable<[KeyValueDto]> {
         return Observable.create { [weak self] observer -> Disposable in
+            
             self?.getLocales(locale: locale) { data, error in
                 if let error = error {
                     observer.on(.error(error))

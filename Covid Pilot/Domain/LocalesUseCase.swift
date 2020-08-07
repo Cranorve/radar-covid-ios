@@ -23,7 +23,8 @@ class LocalesUseCase {
     }
     
     public func loadLocales() -> Observable<[String:String?]> {
-        masterDataApi.getLocales().map { [weak self] masterLocales in
+        let currentLocale = localizationRepository.getLocale()
+        return masterDataApi.getLocales(locale: currentLocale).map { [weak self] masterLocales in
             var locales: [String:String?] = [:]
             masterLocales.forEach { loc in
                 if let id = loc._id {
