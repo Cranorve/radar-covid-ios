@@ -92,7 +92,7 @@ class WelcomeViewController: UIViewController {
         toolBar.removeFromSuperview()
         picker.removeFromSuperview()
         if currentLocale != localizationRepository.getLocale() {
-            self.showAlertOk(title: "Idioma", message: "LOCALE_CHANGE_WARNING".localized , buttonTitle: "OK") { (cb) in
+            self.showAlertOk(title: "LOCALE_CHANGE_LANGUAGE".localized, message: "LOCALE_CHANGE_WARNING".localized , buttonTitle: "ALERT_OK_BUTTON".localized) { (cb) in
                 exit(0)
             }
         }
