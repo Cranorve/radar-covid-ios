@@ -10,59 +10,116 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
+    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var languageSelector: UIButton!
     var router: AppRouter?
-    var onBoardingCompletedUseCase: OnboardingCompletedUseCase?
+    var pickerOpened = false;
+    var picker = UIPickerView()
+    var toolBar = UIToolbar()
+    var localesKeysArray:[String] = []
+    var localesArray:[String: String?]!
+    var localizationRepository: LocalizationRepository!
+    private var currentLocale: String = "es-ES"
+    @IBOutlet weak var stepbullet1: UILabel!
+    @IBOutlet weak var selectorView: BackgroundView!
+
+    @IBOutlet weak var stepbullet2: UILabel!
     
-    @IBOutlet weak var bulletTextView: UITextView!
-    
+    @IBOutlet weak var stepbullet3: UILabel!
     @IBAction func onContinue(_ sender: Any) {
         router?.route(to: .OnBoarding, from: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        if (onBoardingCompletedUseCase?.isOnBoardingCompleted() ?? false) {
-            router?.route(to: Routes.Home, from: self)
-        }
-        //router?.route(to: Routes.Home, from: self)
+        selectorView.image = UIImage.init(named: "WhiteCard")
+        loadLocaleValues()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        loadText()
-    }
-    
-    private func loadText() {
-        let bullet1 = "Conoce en todo momento si te expones al coronavirus, ayudándote a protegerte y proteger a los demás.\n"
-        let bullet2 = "Comunica de forma anónima tu diagnóstico Covid positivo.\n"
-        let bullet3 = "Si estuvieras afectado, comunicaremos la exposición de forma anónima a las personas con las que has estado en contacto."
-        let strings = [bullet1, bullet2, bullet3]
         
-        let fullAttributedString = NSMutableAttributedString()
-        for text: String in strings {
-            let bulletAttributes:[NSAttributedString.Key:Any] = [NSAttributedString.Key.font : bulletTextView.font!, NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.5410000086, green: 0.4860000014, blue: 0.7179999948, alpha: 1)]
-            let bodyAttributes:[NSAttributedString.Key:Any] = [NSAttributedString.Key.font : bulletTextView.font!]
-            
-            let bulletPoint: String = "\u{2022}"
-            let attributedString = NSMutableAttributedString(string: bulletPoint, attributes: bulletAttributes)
-            
-            attributedString.append(NSAttributedString(string: "    \(text)    \n", attributes: bodyAttributes))
-            let indent:CGFloat = 40
-            let paragraphStyle = createParagraphAttribute(tabStopLocation: indent, defaultTabInterval: indent, firstLineHeadIndent: indent - 30, headIndent: indent)
-            attributedString.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle], range: NSMakeRange(0, attributedString.length))
-            fullAttributedString.append(attributedString)
-        }
-        bulletTextView.attributedText = fullAttributedString
+        continueButton.setTitle("ONBOARDING_CONTINUE_BUTTON".localized, for: .normal)
+
     }
     
-    private func createParagraphAttribute(tabStopLocation:CGFloat, defaultTabInterval:CGFloat, firstLineHeadIndent:CGFloat, headIndent:CGFloat) -> NSParagraphStyle {
-         let paragraphStyle: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
-         let options:[NSTextTab.OptionKey:Any] = [:]
-         paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: tabStopLocation, options: options)]
-         paragraphStyle.defaultTabInterval = defaultTabInterval
-         paragraphStyle.firstLineHeadIndent = firstLineHeadIndent
-         paragraphStyle.headIndent = headIndent
-         return paragraphStyle
-     }
+    private func loadLocaleValues() {
+        
+        if let locale = localizationRepository.getLocale() {
+            currentLocale = locale
+        }
+        
+        localesArray = localizationRepository.getLocales()
+    
+        let keys = Array(self.localesArray.keys) as [String]
+        if let currentLanguage = localizationRepository.getLocale() {
+            languageSelector.setTitle(localesArray[currentLanguage, default: ""], for: .normal)
+        }
+        
+        guard let firstKey = keys.filter({ $0.contains(currentLocale) }).first else {
+            self.localesKeysArray = keys
+            return
+        }
+        let otherKeys = keys.filter{!$0.contains(currentLocale)}
+        self.localesKeysArray.append(firstKey)
+        self.localesKeysArray += otherKeys
+    }
+    
+    @IBAction func selectLanguage(_ sender: Any) {
+        if !pickerOpened {
+            pickerOpened = true
+            picker = UIPickerView.init()
+            picker.delegate = self
+            picker.dataSource = self
+            picker.backgroundColor = UIColor.white
+            picker.setValue(UIColor.black, forKey: "textColor")
+            picker.autoresizingMask = .flexibleWidth
+            picker.contentMode = .center
+            picker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
+            self.view.addSubview(picker)
+            
+            toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
+            toolBar.barStyle = .default
+            toolBar.items = [UIBarButtonItem.init(title: "SELECTOR_DONE".localized, style: .done, target: self, action: #selector(onDoneButtonTapped))]
+            self.view.addSubview(toolBar)
+        }
+        
+    }
+    
+    @objc func onDoneButtonTapped() {
+        self.pickerOpened = false
+        
+        toolBar.removeFromSuperview()
+        picker.removeFromSuperview()
+        if currentLocale != localizationRepository.getLocale() {
+            self.showAlertOk(title: "LOCALE_CHANGE_LANGUAGE".localized, message: "LOCALE_CHANGE_WARNING".localized , buttonTitle: "ALERT_OK_BUTTON".localized) { (cb) in
+                exit(0)
+            }
+        }
+    }
+    
+}
 
+extension WelcomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return localesKeysArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let key = localesKeysArray[row]
+        return localesArray[key] ?? ""
+     
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let key = localesKeysArray[row]
+        self.languageSelector.setTitle(self.localesArray[key, default: ""], for: .normal)
+        localizationRepository.setLocale(key)
+        
+    }
 }

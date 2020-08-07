@@ -24,11 +24,11 @@ class ResetDataUseCase {
         .deferred { [weak self] in
             do {
                 try DP3TTracing.reset()
+                try self?.setupUseCase.initializeSDK()
+                self?.expositionInfoRepository.clearData()
             } catch {
                 return .error(error)
             }
-            self?.setupUseCase.initializeSDK()
-            self?.expositionInfoRepository.clearData()
             
             return .just(())
         }
