@@ -39,7 +39,7 @@ class HighExpositionViewController: BaseExposed, UIPickerViewDelegate, UIPickerV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setInfectedText()
+
         expositionBGView.image = bgImageRed
         phoneView.isUserInteractionEnabled = true
         self.covidWeb.isUserInteractionEnabled = true
@@ -58,6 +58,7 @@ class HighExpositionViewController: BaseExposed, UIPickerViewDelegate, UIPickerV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.currentCA = ccaUseCase.getCurrent()
+        setInfectedText()
     }
     
     @objc func userDidTapWeb(tapGestureRecognizer: UITapGestureRecognizer) {
