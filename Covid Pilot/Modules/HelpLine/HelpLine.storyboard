@@ -85,8 +85,8 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="HELPLINE_FAQS_WEB_TITLE"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.xxx.es" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IR3-qq-aZZ">
-                                                                <rect key="frame" x="36" y="18.5" width="97" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.xxx.es" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IR3-qq-aZZ">
+                                                                <rect key="frame" x="36" y="18.5" width="272" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
                                                                 <color key="textColor" name="deepLilac"/>
                                                                 <nil key="highlightedColor"/>
@@ -104,6 +104,7 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="IR3-qq-aZZ" firstAttribute="leading" secondItem="Yn8-SE-8b0" secondAttribute="leading" id="Gub-1c-AUl"/>
+                                                            <constraint firstAttribute="trailing" secondItem="IR3-qq-aZZ" secondAttribute="trailing" id="KJI-Na-a3a"/>
                                                             <constraint firstItem="Yn8-SE-8b0" firstAttribute="leading" secondItem="nS9-3b-zgN" secondAttribute="trailing" constant="16" id="Qnp-Dq-9Rc"/>
                                                             <constraint firstAttribute="bottom" secondItem="IR3-qq-aZZ" secondAttribute="bottom" id="bNc-En-Gk6"/>
                                                             <constraint firstItem="nS9-3b-zgN" firstAttribute="top" secondItem="2xA-oN-6Af" secondAttribute="top" id="iY3-8A-RXl"/>
@@ -125,8 +126,8 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="HELPLINE_INFO_WEB_TITLE"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.xxx.es" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bc-4v-TsW">
-                                                                <rect key="frame" x="36" y="18" width="97" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.xxx.es" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bc-4v-TsW">
+                                                                <rect key="frame" x="36" y="18" width="272" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
                                                                 <color key="textColor" name="deepLilac"/>
                                                                 <nil key="highlightedColor"/>
@@ -148,6 +149,7 @@
                                                             <constraint firstItem="92e-p2-KY4" firstAttribute="top" secondItem="FSS-US-QPY" secondAttribute="top" id="GdT-iN-ccy"/>
                                                             <constraint firstItem="8bc-4v-TsW" firstAttribute="top" secondItem="Hoi-vG-cfa" secondAttribute="bottom" id="OFd-Kc-lP2"/>
                                                             <constraint firstAttribute="bottom" secondItem="8bc-4v-TsW" secondAttribute="bottom" id="VQr-ff-0XK"/>
+                                                            <constraint firstAttribute="trailing" secondItem="8bc-4v-TsW" secondAttribute="trailing" id="esK-jv-qZw"/>
                                                             <constraint firstItem="Hoi-vG-cfa" firstAttribute="centerY" secondItem="92e-p2-KY4" secondAttribute="centerY" id="iyf-uD-BBG"/>
                                                             <constraint firstItem="92e-p2-KY4" firstAttribute="leading" secondItem="FSS-US-QPY" secondAttribute="leading" id="lVy-61-CDf"/>
                                                             <constraint firstAttribute="trailing" secondItem="Hoi-vG-cfa" secondAttribute="trailing" id="zDh-jW-hvC"/>
@@ -165,8 +167,8 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="HELPLINE_OTHER_WEB_TITLE"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.xxx.es" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tQ-Xe-eZr">
-                                                                <rect key="frame" x="36" y="18.5" width="97" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.xxx.es" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tQ-Xe-eZr">
+                                                                <rect key="frame" x="36" y="18.5" width="272" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
                                                                 <color key="textColor" name="deepLilac"/>
                                                                 <nil key="highlightedColor"/>
@@ -185,6 +187,7 @@
                                                         <constraints>
                                                             <constraint firstItem="6tQ-Xe-eZr" firstAttribute="leading" secondItem="s9e-IS-p7N" secondAttribute="leading" id="1dB-Ms-k48"/>
                                                             <constraint firstItem="s9e-IS-p7N" firstAttribute="leading" secondItem="Ra2-DC-ZeW" secondAttribute="trailing" constant="16" id="1lR-qg-6W9"/>
+                                                            <constraint firstAttribute="trailing" secondItem="6tQ-Xe-eZr" secondAttribute="trailing" id="21K-Se-Q9I"/>
                                                             <constraint firstAttribute="bottom" secondItem="6tQ-Xe-eZr" secondAttribute="bottom" id="9Uw-2S-4Pu"/>
                                                             <constraint firstItem="Ra2-DC-ZeW" firstAttribute="top" secondItem="Vyg-ZL-yeX" secondAttribute="top" id="RkA-e3-ARe"/>
                                                             <constraint firstItem="Ra2-DC-ZeW" firstAttribute="leading" secondItem="Vyg-ZL-yeX" secondAttribute="leading" id="Ysj-Iq-5dg"/>

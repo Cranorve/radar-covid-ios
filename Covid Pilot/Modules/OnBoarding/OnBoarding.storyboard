@@ -174,7 +174,7 @@
                                                         </attributedString>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_2_USAGE_CONDITIONS"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="ONBOARDING_STEP_2_PRIVACY_POLICY"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNP-Ib-LaU">

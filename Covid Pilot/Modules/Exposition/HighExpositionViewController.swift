@@ -39,7 +39,7 @@ class HighExpositionViewController: BaseExposed, UIPickerViewDelegate, UIPickerV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setInfectedText()
+
         expositionBGView.image = bgImageRed
         phoneView.isUserInteractionEnabled = true
         self.covidWeb.isUserInteractionEnabled = true
@@ -48,15 +48,17 @@ class HighExpositionViewController: BaseExposed, UIPickerViewDelegate, UIPickerV
         self.phoneLabel.isUserInteractionEnabled = true
         self.phoneLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCallTap(tapGestureRecognizer:))))
         phoneView.image = UIImage(named: "WhiteCard")
-        
+                
+        caSelectorButton.setTitle("LOCALE_SELECTION_REGION_DEFAULT".localized, for: .normal)
         self.setCaSelector()
-        super.viewDidLoad()
+
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.currentCA = ccaUseCase.getCurrent()
+        setInfectedText()
     }
     
     @objc func userDidTapWeb(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -76,7 +78,7 @@ class HighExpositionViewController: BaseExposed, UIPickerViewDelegate, UIPickerV
     }
     
     @objc func onCallTap(tapGestureRecognizer: UITapGestureRecognizer) {
-        open(phone: "CONTACT_PHONE".localized)
+        open(phone: currentCA?.phone ?? "CONTACT_PHONE".localized)
     }
     
     @objc override func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -100,7 +102,10 @@ class HighExpositionViewController: BaseExposed, UIPickerViewDelegate, UIPickerV
             self.phoneViewVisibleConstraint.priority = .defaultLow
             return
         }
-        
+        var temporallyCcaArray:[CaData] = []
+        temporallyCcaArray.append(currentCa)
+        temporallyCcaArray += (self.ccaArray ?? []).filter{ $0.id != currentCa.id }
+        self.ccaArray = temporallyCcaArray
         self.phoneViewHiddenConstraint.priority = .defaultLow
         self.phoneViewVisibleConstraint.priority = .defaultHigh
         self.phoneView.isHidden = false
@@ -135,7 +140,20 @@ class HighExpositionViewController: BaseExposed, UIPickerViewDelegate, UIPickerV
         toolBar.removeFromSuperview()
         picker.removeFromSuperview()
         pickerOpened = false;
+
+        guard let _ = self.ccaUseCase.getCurrent() else {
+            // if not current then we need to select the first that was selected
+            guard let firstca = self.ccaArray?.first else {
+                self.setCaSelector()
+                return
+            }
+            ccaUseCase.setCurrent(ca: firstca)
+            self.setCaSelector()
+            return
+        }
         self.setCaSelector()
+
+        
     }
     
     

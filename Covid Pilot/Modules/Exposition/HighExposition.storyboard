@@ -143,7 +143,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="EXPOSITION_HIGH_TITLE_2"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qbx-0G-Sye">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qbx-0G-Sye">
                                                         <rect key="frame" x="26" y="76.666666666666657" width="329" height="20.333333333333329"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Podrías estar infectado desde hace">
@@ -348,6 +348,9 @@
                                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="REGION_INFO_WEB_TITLE"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.xxx.es" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="TPI-5h-zJC">
                                                         <rect key="frame" x="50" y="110.33333333333337" width="288" height="21"/>

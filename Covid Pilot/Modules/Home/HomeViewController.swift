@@ -101,7 +101,7 @@ class HomeViewController: UIViewController {
         
         setupBindings()
         
-        self.communicationButton.setTitle("HOME_BUTTON_SEND_POSITIVE".localized, for: .normal)
+        communicationButton.setTitle("HOME_BUTTON_SEND_POSITIVE".localized, for: .normal)
         
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.onExpositionTap))
         expositionView.addGestureRecognizer(gesture)
@@ -112,6 +112,7 @@ class HomeViewController: UIViewController {
         radarSwitch.backgroundColor = #colorLiteral(red: 0.878000021, green: 0.423999995, blue: 0.3409999907, alpha: 1)
 
         resetDataButton.isHidden = !Config.debug
+        envLabel.isHidden = Config.environment == "PRO"
         
         viewModel!.checkInitialExposition()
         

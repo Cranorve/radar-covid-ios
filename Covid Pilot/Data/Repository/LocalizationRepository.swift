@@ -19,9 +19,6 @@ protocol LocalizationRepository {
     func setTexts(_ texts: [String:String])
     func getTexts() -> [String:String]?
 
-    func getCCAA() -> [CaData]?
-    func setCCAA(_ ccaa: [CaData])
-    
     func setCurrent(ca: CaData)
     func getCurrentCA() -> CaData?
 }
@@ -57,15 +54,6 @@ class UserDefaultsLocalizationRepository : LocalizationRepository {
     
     func getTexts() -> [String : String]? {
         userDefaults.object(forKey: UserDefaultsLocalizationRepository.kTexts) as? [String : String]
-    }
-    
-    func getCCAA() -> [CaData]? {
-        try? PropertyListDecoder().decode([CaData].self, from: userDefaults.object(forKey: UserDefaultsLocalizationRepository.kCCAA) as? Data ?? Data())
-    }
-    
-    func setCCAA(_ ccaa: [CaData]) {
-        let data = try? PropertyListEncoder().encode(ccaa)
-        userDefaults.set(data, forKey: UserDefaultsLocalizationRepository.kCCAA)
     }
     
     func getCurrentCA() -> CaData? {
