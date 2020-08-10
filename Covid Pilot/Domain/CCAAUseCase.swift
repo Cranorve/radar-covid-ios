@@ -29,7 +29,6 @@ class CCAAUseCase {
                 }
             }
             self?.ccaa = ccaa
-            self?.localizationRepository.setCCAA(ccaa)
             return ccaa
         }
     }
@@ -37,9 +36,6 @@ class CCAAUseCase {
     public func getCCAA() -> Observable<[CaData]> {
         .deferred { [weak self] in
             if let ccaa = self?.ccaa {
-                return .just(ccaa)
-            }
-            if let ccaa = self?.localizationRepository.getCCAA() {
                 return .just(ccaa)
             }
             return self?.loadCCAA() ?? .empty()
