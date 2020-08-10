@@ -78,7 +78,7 @@ class HighExpositionViewController: BaseExposed, UIPickerViewDelegate, UIPickerV
     }
     
     @objc func onCallTap(tapGestureRecognizer: UITapGestureRecognizer) {
-        open(phone: "CONTACT_PHONE".localized)
+        open(phone: currentCA?.phone ?? "CONTACT_PHONE".localized)
     }
     
     @objc override func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {

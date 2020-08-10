@@ -29,7 +29,7 @@ public struct CcaaKeyValueDto: Codable {
         self.additionalInfo = additionalInfo
     }
 
-    public enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey { 
         case _id = "id"
         case _description = "description"
         case phone
