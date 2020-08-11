@@ -26,7 +26,10 @@ class SetupUseCase : LoggingDelegate, ActivityDelegate, DP3TBackgroundHandler {
          notificationHandler: NotificationHandler) {
         self.preferencesRepository = preferencesRepository
         self.kpiApi  = kpiApi
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss.SSS z"
+        // CAMBIAR FORMATO DE HORA DE KPI
+//        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss.SSS z"
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+
         self.notificationHandler = notificationHandler
     }
     
